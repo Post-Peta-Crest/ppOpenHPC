@@ -1,0 +1,144 @@
+# A sample of the sandbox module: automatically create a directrory for each job
+# and execute jobs in the directoryies (sandboxes).
+# Derived from range.xcr:
+# * Added 'sandbox' in the use statement in the first line
+# * Added 'copiedfile0' or 'linkedfile0' parameter.
+# * (Changed the value of exe0)
+# * (Changed the value of id}
+use base qw (sandbox core);
+use base qw (limit core);
+use POSIX qw/ceil/;
+limit::initialize(10);
+$env1 = get_local_env();
+print "$env1->{sched}\n";
+
+%template = (
+#    'RANGE0' => [128,112,96,80,64,48,32,16],
+#    'RANGE5' => [1,2,4,8,16],
+    'RANGE0' => [28],
+    'RANGE5' => [1,14],
+    'RANGE6' => [1],
+#    'RANGE1' => ['600'],      
+    'RANGE1' => ['216h','sample'],      
+#    'RANGE1' => ['216h','1ms'],      
+#    'RANGE1' => ['2ms','3ms','4ms'],  
+#    'RANGE1' => ['196kp26'],      
+#    'RANGE1' => ['10ts','108kp22','1188kp25','1ms'],      
+#    'RANGE1' => ['10ts'],      
+#    'RANGE1' => ['108kp22'],      
+#    'RANGE1' => ['100ts'],      
+#    'RANGE1' => ['10ts','216h','100ts'],      
+#    'RANGE1' => ['108kp22'],      
+    'RANGE2' => [4],
+    'RANGE3' => ['BN'],     
+    'RANGE4' => ['_lfmtx'],
+#    'RANGE4' => ['_hmtx_0'],     
+#    'RANGE4' => ['_hlfmtx_0'],     
+    'id@' => sub{"bb$VALUE[1]_e$VALUE[2]$VALUE[3]_$VALUE[0]_$VALUE[5]_$VALUE[6]$VALUE[4]"},
+    ':ncore@'  => sub {"$VALUE[0]"},
+    ':cpc@' => sub {"$VALUE[6]"},
+    'JS_thread@' => sub {"$VALUE[5]"},
+#    'JS_memory' => '32G',
+    'JS_limit_time' => '3:59',
+#    'exe0@' => sub{"export TMPDIR=/LARGE0/gr10034/b31886/tmp"},
+    'exe1@' => sub{"ulimit -s unlimited"},
+    'exe2@' => sub{"cd ./$id"},
+    'exe3@' => sub{
+                   if($env1->{sched} eq'kyoto-laurel' ) {
+                                if ($VALUE[3] eq 'BN') {
+                                             return
+                         "mpiexec.hydra ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 1"
+                               } elsif ($VALUE[3] eq 'DN') {
+                               return
+                         "mpiexec.hydra ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 2"
+                               } elsif ($VALUE[3] eq 'GN') {
+                               return
+                         "mpiexec.hydra ../bem-bb input_$VALUE[1].pbf 1.0e-$VALUE[2] 3"}
+             } elsif ($env1->{sched} eq 'kyoto-magnolia') {
+
+                                if ($VALUE[3] eq 'BN') {
+                                             return
+                         "aprun -n \$LSB_PROCS -d \$LSB_CPUS -N \$LSB_PPN  ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 1.0"
+                               } elsif ($VALUE[3] eq 'DN') {
+                               return
+                         "aprun -n \$LSB_PROCS -d \$LSB_CPUS -N \$LSB_PPN  ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 2.0"
+                               } elsif ($VALUE[3] eq 'GN') {
+                               return
+                         "aprun -n \$LSB_PROCS -d \$LSB_CPUS -N \$LSB_PPN  ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 3.0"}
+             } elsif ($env1->{sched} eq 'tokyo-fx10') {
+                                if ($VALUE[3] eq 'BN') {
+                                             return
+                         "mpiexec ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 1"
+                               } elsif ($VALUE[3] eq 'DN') {
+                               return
+                         "fipp -C -Ihwm -d FIPP_txt mpiexec ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 2"
+                               } elsif ($VALUE[3] eq 'GN') {
+                               return
+                         "mpiexec ../bem-bb-SCM.out input_$VALUE[1].pbf 1.0e-$VALUE[2] 3"}
+                                   }
+                 },
+    'linkedfile0' => './bem-bb-SCM.out',
+    'linkedfile1@' => sub{"../../bem_bb_inputs/input_$VALUE[1].pbf"},
+    'linkedfile2@' => sub{"./bem-bb-config.txt"},
+
+ 
+    # Exectuted asynchronously before submitting a job
+    'before' => sub {
+        print "Submitting $self->{id}\n";
+    },
+    # Exectuted asynchronously after the job is done
+    'after' => sub {
+        print "$self->{id} finished\n";
+    } 
+    );
+my @jobs=prepare (%template); 
+foreach my $j (@jobs) {
+  my $PCORE = 16;
+  my $PMEM = 28000;
+  if($env1->{sched} eq 'kyoto-laurel' ) {
+     $PMEM = 60000;
+  } elsif ($env1->{sched} eq 'kyoto-magnolia') {
+     $PMEM = 60000;
+     $PCORE = 28;
+  } elsif ($env1->{sched} eq 'tokyo-fx10') {
+     $PMEM = 28000;
+  }
+#  print "$PMEM\n";
+  ## # Cores
+  my $ncore = $j->{':ncore'} || 1;  
+  ## # Threads
+  my $nthr = $j->{JS_thread} || 1;  
+  ## # cores / Ccore.
+  my $cpc = $j->{':cpc'} || 1;
+  ## # cores*cpc;
+  my $cpu = $nthr*$cpc;  
+#   print "$cpu\n";
+  ## # MPI processes
+  my $nproc = ceil($ncore/$nthr);  
+#   print "$nproc\n";
+  ## # physical nodes
+  my $phnode = ceil(($nproc*$cpu)/$PCORE);
+  ## memory/proc
+   my $cmem = ceil($PMEM/$nproc)*$phnode; 
+#   print "$cmem\n";
+  $j->{JS_node}= "$nproc";
+  $j->{JS_cpu}= "$cpu";
+  if($env1->{sched} eq 'kyoto-laurel' ) {
+     $j->{JS_memory}= "$cmem"."M";
+  } elsif ($env1->{sched} eq 'kyoto-magnolia') {
+     $j->{JS_memory}= "$cmem"."M";
+  } elsif ($env1->{sched} eq 'tokyo-fx10') {
+    if ($phnode>216) {
+       $j->{JS_queue}='medium';
+       $j->{JS_limit_time}='12:00:00';
+    } elsif ($phnode>11) {
+       $j->{JS_queue}='small';
+       $j->{JS_limit_time}='6:59:00';
+    } else {
+       $j->{JS_queue}='short';
+       $j->{JS_limit_time}='1:59:00';
+    }
+  }
+}
+submit_sync (@jobs);
+

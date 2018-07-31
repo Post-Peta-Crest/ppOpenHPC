@@ -1,0 +1,57 @@
+                                                                        
+   ppohBEM - ppOpen-APPL/BEM code                                       
+                                                                        
+Copyright (c) 2015 <Takeshi Iwashita, Takeshi Mifune, Yuki Noseda,      
+                    Yasuhito Takahashi, Masatoshi Kawai, Akihiro Ida>   
+========================================================================
+
+Overview:
+ppohBEM is software used to support a boundary element analysis executed
+on a parallel computer. The directory "src/framework" includes framework
+ for the boundary element analysis. The files included in 
+ "src/framework_with_templates" support a surface charge method based on
+  the boundary element method.
+
+Introduction:
+  This file is part of ppohBEM.
+  ppohBEM is a free software application, you can use it under the terms
+  of The MIT License (MIT). See LICENSE file and User's guide for more
+  details.
+
+  This software is one of the results of the "ppOpen-HPC: Open Source
+  Infrastructure for Development and Execution of Large-Scale Scientific
+  Applications on Post-Peta-Scale Supercomputers with Automatic Tuning
+  (AT)" project.
+
+  See also the project web site:
+    http://ppopenhpc.cc.u-tokyo.ac.jp/
+========================================================================
+
+How to try our software:
+
+ 1. Copy all files under 
+    ppohBEM_0.4.0/bem-bb-framework_dense/src/framework_with_templates/
+    to user's arbitrary directory.
+
+ 2. Compile and link all source files (Fortran90) with MPI library and an
+    option for OpenMP
+    (1) Modify 'Makefile' to adapt to your computational environment.
+        (Currently, we have confirmed the compilation by Intel Fortran 
+         compiler)
+    (2) Complile ppohBEM with a template for the surface charge method.
+        $>  cd ./
+        $>  make    -> bem-bb-SCM.out
+
+ 3. Run it with MPI library.
+        $>  cd ./
+        $>  mpirun -np 8 ./bem-bb-SCM.out input_sample.pbf (or corresponding operations)
+
+ 4. Find a file named 'sample.output.vtk' in the current directory.
+    The code 'bem-bb-SCM.out' output the file if it is successfully
+    carried out.
+    You can view the result by using a visualization software
+    'paraview'.
+
+If a user intends to solve her or his own problem by using the framework
+software, please read the file 'User's manual_ppohBEM_0.4.0.pdf' under 
+the 'doc' directory.
