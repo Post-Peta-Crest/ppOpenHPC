@@ -22,11 +22,11 @@ extended version of ppOpen-HPC, which is a framework for exa-feasible applicatio
 iterative solvers for quantum sciences, parallel reordering methods, and a framework for AT with a 
 performance model.
 
-You can use the [editor on GitHub](https://github.com/Post-Peta-Crest/sample/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### How to use
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+This repository has *** branches.
+Each branch has another libraries.
+Please checkout branch for using library which you want.
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
