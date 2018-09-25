@@ -1,0 +1,43 @@
+# Install directory
+PREFIX      = /usr/local/ppOpen-HPC
+BINDIR      = $(PREFIX)/bin
+INCDIR      = $(PREFIX)/include
+LIBDIR      = $(PREFIX)/lib
+
+# C compiler settings
+CC          = mpifccpx
+CFLAGS      = $(CINCDIR) $(COPTFLAGS)
+COPTFLAGS   = -Kfast
+CINCDIR     = -I.
+
+# C++ compiler settings
+CXX         = mpiFCCpx
+CXXFLAGS    = $(CXXINCDIR) $(CXXOPTFLAGS)
+CXXOPTFLAGS = -Kfast
+CXXINCDIR   = -I.
+
+# Fortran 77 compiler settings
+FC          = mpifrtpx
+FFLAGS      = $(FINCDIR) $(FOPTFLAGS)
+FOPTFLAGS   = -Kfast
+FINCDIR     = -I.
+
+# Fortran 90 compiler settings
+F90         = mpifrtpx
+F90FLAGS    = $(F90INCDIR) $(F90OPTFLAGS)
+F90OPTFLAGS = -Kfast
+F90INCDIR   = -I.
+
+# Linker settings
+LD          = $(CC)
+LDFLAGS     = $(LIBDIR) $(LIBS)
+LIBS        = -lm
+LDLIBDIR      =
+
+# Archiver settings
+AR          = ar rv
+
+# ETC
+CP          = cp -f
+RM          = rm -rf
+MKDIR       = mkdir -p

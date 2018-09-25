@@ -1,0 +1,117 @@
+### ppOpen-MATH/VIS ver.0.2.0 ###
+
+***********************************************************************************
+1. Descriptions
+This directory contains ppOpen-MATH/VIS (ver.0.2.0),
+and sample codes with data sets. ppOpen-MATH/VIS is a set of libraries
+for parallel visualization. 
+
+Capabilities of ppOpen-MATH/VIS (ver.0.2.0) are as follows:
+
+- Using background voxels with adaptive mesh refinement (AMR)
+- Single UCD file
+- Flat MPI parallel programming models
+  (OpenMP/MPI hybrid will be supported in the future)
+- Can be called from programs written in both of Fortran 90 and C
+- Only FDM-type structured meshes are supported
+
+(New in ver.0.2.0)
+Number of vertices in UCD file is much fewer (less then 20%) than
+that of ver.0.1.0.
+
+***********************************************************************************
+2. Directories
+
+   * $(CUR): current directory
+
+   $(CUR)/src                      : source code files of ppOpen-MATH/VIS
+   $(CUR)/examples/FDM/src         : source code files of sample FDM code (fdm_test) 
+                                     using ppOpen-MATH/VIS (one variable version)
+   $(CUR)/examples/FDM/run         : sample data sets of fdm_test
+   $(CUR)/examples/FDM/run/ppohVIS : directory storing UCD files
+   $(CUR)/examples/FDM/run/results : directory storing sample results
+
+   $(CUR)/examples/FDM3/src         : source code files of sample FDM code (fdm_test) 
+                                      using ppOpen-MATH/VIS (three variable version)
+   $(CUR)/examples/FDM3/run         : sample data sets of fdm_test
+   $(CUR)/examples/FDM3/run/ppohVIS : directory storing UCD files
+   $(CUR)/examples/FDM3/run/results : directory storing sample results
+
+   $(CUR)/include: directory which stores created module files
+   $(CUR)/lib    :                                libraries
+   $(CUR)/bin    :                                exec. files
+
+   $(CUR)/etc    : samples of 'Makefile.in'
+   $(CUR)/doc    : documents
+
+***********************************************************************************
+3. Quick Start
+
+(1) Preparation
+
+ - C and Fortran 90 compliers
+   (Operations have been confirmed by Intel, PGI, Fujitsu compilers)
+ - MPI library
+
+(2) Modify 'Makefile.in', samples are found in $(CUR)/etc
+  $(CUR)/etc/Makefile.in.fx10   : Flat MPI for Fujitsu FX10
+  $(CUR)/etc/Makefile.in.general:              Intel Compiler
+
+   $(CC)         : C compiler with MPI
+   $(COPTFLAGS)  : Optimization options for C compiler
+   $(CXX)        : C++ compiler with MPI
+   $(CXXOPTFLAGS): Optimization options for C++ compiler
+   $(FC)         : F77 compiler with MPI
+   $(FCOPTFLAGS) : Optimization options for F77 compiler
+   $(F90)        : F90 compiler with MPI
+   $(F90OPTFLAGS): Optimization options for F90 compiler
+
+   $(PREFIX)/include   : directory that holds the installed module files
+   $(PREFIX)/lib       :                                    libraries
+   $(PREFIX)/bin       :                                    exec. files
+
+ *** NOTICE ***: $(PREFIX) directory must be specified as ABSOLUTE/FULL path.
+
+(3) Complile/install ppOpen-MATH/VIS and examples
+ $>  cd $(CUR)/
+ $>  make                 -> ppOpen-MATH/VIS
+                             $<CUR>/lib/libppohvisfdm3d.a
+                             $<CUR>/lib/libfppohvisfdm3d.a
+
+ $>  make install         -> Install libraries to the destination
+                             $<PREFIX>/lib/libppohvisfdm3d.a
+                             $<PREFIX>/lib/libfppohvisfdm3d.a
+
+(4) Compile/install "fdm_test" 
+ $>  cd $(CUR)/
+
+(one variable version)
+ $>  make fdm1            -> fdm_test
+                             $<CUR>/example/FDM/run/fdm_test
+(three variable version)
+ $>  make fdm3            -> fdm_test
+                             $<CUR>/example/FDM3/run/fdm_test
+
+ *** NOTICE ***: Process (4) must be done after (3).
+
+(5) Running the code
+
+(one variable version)
+ $>  cd $(CUR)/examples/FDM/run
+ $>  mpirun -np 8 fdm_test (or corresponding operations)
+ $>  (UCD files are created in $(CUR)/examples/FDM/run/ppohVIS)
+
+(three variable version)
+ $>  cd $(CUR)/examples/FDM3/run
+ $>  mpirun -np 8 fdm_test (or corresponding operations)
+ $>  (UCD files are created in $(CUR)/examples/FDM3/run/ppohVIS)
+
+(6) Clean/Unistall
+ $>  cd $(CUR)/
+ $>  make clean          -> Clean files
+ $>  make unistall       -> Delete all installed files and directories
+
+ $>  make fdm1_clean     -> Clean files
+ $>  make fdm3_clean     -> Clean files
+
+***********************************************************************************

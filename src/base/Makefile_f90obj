@@ -1,0 +1,9 @@
+BASEF90OBJS = \
+	$(BASEDIR)/ppohVIS_BASE_Config_F.o \
+	$(BASEDIR)/ppohVIS_BASE_Lib_F.o \
+	$(BASEDIR)/ppohVIS_BASE_Control_F.o \
+	$(BASEDIR)/ppohVIS_BASE_ControlFile_F.o \
+	$(BASEDIR)/ppohVIS_BASE_Mesh_F.o \
+	$(BASEDIR)/ppohVIS_BASE_Result_F.o \
+	$(BASEDIR)/ppohVIS_BASE_Util_F.o
+

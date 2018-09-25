@@ -1,0 +1,7 @@
+64 64 64            NX, NY, NZ
+ 2  2  2            IP, JP, KP
+ 1.0                Q0
+ 1.0   10000.0      DT, TIMEmax
+ 100000             ITERmax
+  10000   1000.0    ITERfreq, TIMEfreq
+ 0.10d-0            OMEGA
