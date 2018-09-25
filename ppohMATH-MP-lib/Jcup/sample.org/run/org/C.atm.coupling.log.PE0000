@@ -1,0 +1,1000 @@
+2012-08-16/16:31:57 :: ISend 4 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 4 size 48                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : atm, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000200 : 20041231000300                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = al_1, data id = 2201                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : atm, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : land, dest model : atm                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000230              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000230                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:57 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:57 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:57 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 42                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 42                                                                                 
+2012-08-16/16:31:57 :: ISend 4 size 42                                                                                        
+2012-08-16/16:31:57 :: ISend finish 4 size 42                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : land, dest model : atm                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : land, dest model : atm                                
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = la_1, data id = 1212                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : land, dest model : atm                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:3                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ocn, number of send data:2                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_1, a_2d_2                                                                        
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : ocn                                    
+2012-08-16/16:31:57 :: get_current_time                                                                                       
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_1__3_atm_1, data id = 3001101, time = 20041231000300  
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_1__3_atm_1, data id = 3001101                                         
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_2__3_atm_2, data id = 3001102, time = 20041231000300  
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_2__3_atm_2, data id = 3001102                                         
+2012-08-16/16:31:57 :: ISend 1 size 36                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 36                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 36                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 36                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : ocn                                
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ocn                                                                  
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ocn, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_3                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : ocn                                    
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_3, data id = 1103, time = 20041231000200              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_3, data id = 1103                                                     
+2012-08-16/16:31:57 :: ISend 1 size 18                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 18                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 18                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 18                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : ocn                                
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ocn                                                                  
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ocn, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_25d_1                                                                               
+2012-08-16/16:31:57 :: exchange_data_25d_double start. source model : atm, dest model : ocn                                   
+2012-08-16/16:31:57 :: get_send_data_double_2d : get data : name = a_25d_1__3_atm_4, data id = 3001104                        
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 2d : name = a_25d_1__3_atm_4, data id = 3001104                                        
+2012-08-16/16:31:57 :: ISend 1 size 90                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 90                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 90                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 90                                                                                 
+2012-08-16/16:31:57 :: exchange_data_25d_double completed. source model : atm, dest model : ocn                               
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ocn                                                                  
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ocn, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_25d_2                                                                               
+2012-08-16/16:31:57 :: exchange_data_25d_double start. source model : atm, dest model : ocn                                   
+2012-08-16/16:31:57 :: get_send_data_double_2d : get data : name = a_25d_2, data id = 1105                                    
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 2d : name = a_25d_2, data id = 1105                                                    
+2012-08-16/16:31:57 :: ISend 1 size 90                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 90                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 90                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 90                                                                                 
+2012-08-16/16:31:57 :: exchange_data_25d_double completed. source model : atm, dest model : ocn                               
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ocn                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 3:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : ocn_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ocn, dest model : atm                                    
+2012-08-16/16:31:57 :: IRecv 1 size 18                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 18                                                                                 
+2012-08-16/16:31:57 :: IRecv 2 size 18                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 18                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ocn, dest model : atm                                
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ocn, dest model : atm                                 
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = oa_1, data id = 1201                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ocn, dest model : atm                             
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:4                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : ice                                    
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000200              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:57 :: ISend 1 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 32                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 32                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : ice                                
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 4:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ice, dest model : atm                                    
+2012-08-16/16:31:57 :: IRecv 1 size 48                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 48                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ice, dest model : atm                                
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ice, dest model : atm                                 
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = ia_1, data id = 1211                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ice, dest model : atm                             
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:3                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ocn, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : land, dest model : ocn                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000230              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000230                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:57 :: ISend 1 size 18                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 18                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 18                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 18                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 12                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : land, dest model : ocn                               
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ocn                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 3:2                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:57 :: SEND DATA NAME : ocn_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ocn, dest model : land                                   
+2012-08-16/16:31:57 :: IRecv 1 size 18                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 18                                                                                 
+2012-08-16/16:31:57 :: IRecv 2 size 18                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 18                                                                                 
+2012-08-16/16:31:57 :: IRecv 3 size 12                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ocn, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ocn, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = ol_1, data id = 2202                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ocn, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:4                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : land, dest model : ice                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000230              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000230                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:57 :: ISend 1 size 72                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 72                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 60                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 60                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 12                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : land, dest model : ice                               
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 4:2                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:57 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ice, dest model : land                                   
+2012-08-16/16:31:57 :: IRecv 1 size 72                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 72                                                                                 
+2012-08-16/16:31:57 :: IRecv 2 size 60                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 60                                                                                 
+2012-08-16/16:31:57 :: IRecv 3 size 12                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ice, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ice, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = il_1, data id = 2203                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ice, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000100                                                          
+2012-08-16/16:31:57 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:57 :: reset data buffer : name = a_3d_1                                                                      
+2012-08-16/16:31:57 :: Get data, data name = oa_1, data id = 1201                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = oa_1, data id = 1201                                                       
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : ca_1                                           
+2012-08-16/16:31:57 :: Get data, data name = la_1, data id = 1212                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = la_1, data id = 1212                                                       
+2012-08-16/16:31:57 :: Get data, data name = ia_1, data id = 1211                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = ia_1, data id = 1211                                                       
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: allocate new data buffer double 1d : name = a_2d_1, data id = 1101, Size:48                            
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1__3_atm_1, data id = 3001101, weight=  0.333                               
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1__3_atm_1, data id = 3001101                         
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000100 : 20041231000600                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_1__3_atm_1, data id = 3001101                                
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:57 :: Put data, data name = a_2d_2__3_atm_2, data id = 3001102, weight=  0.333                               
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_2__3_atm_2, data id = 3001102                         
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:57 :: allocate new data buffer double 1d : name = a_2d_2__3_atm_2, data id = 3001102, Size:48                
+2012-08-16/16:31:57 :: Current time is not send step, put data skipped, data : a_2d_3                                         
+2012-08-16/16:31:57 :: Put data, data name = a_25d_1__3_atm_4, data id = 3001104                                              
+2012-08-16/16:31:57 :: put_send_data_double_2d : put data : name = a_25d_1__3_atm_4, data id = 3001104                        
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:57 :: allocate new data buffer double 2d : name = a_25d_1__3_atm_4, data id = 3001104, Size:48x5             
+2012-08-16/16:31:57 :: Current time is not send step, put data skipped, data : a_25d_2                                        
+2012-08-16/16:31:57 :: Put data, data name = a_3d_1, data id = 1106, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_3d_1, data id = 1106                                     
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: allocate new data buffer double 1d : name = a_3d_1, data id = 1106, Size:384                           
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/3/0, Delta T : 30, component : land                                    
+2012-08-16/16:31:57 :: Same Time : 2004/12/31/0/3/0 has been set. PARALLEL SEND RECV skipped                                  
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000200                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000230                                                          
+2012-08-16/16:31:57 :: reset data buffer : name = land_1                                                                      
+2012-08-16/16:31:57 :: Get data, data name = al_1, data id = 2201                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = al_1, data id = 2201                                                       
+2012-08-16/16:31:57 :: Get data, data name = ol_1, data id = 2202                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = ol_1, data id = 2202                                                       
+2012-08-16/16:31:57 :: Get data, data name = il_1, data id = 2203                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = il_1, data id = 2203                                                       
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reset time buffer : 20041231000300                                                                     
+2012-08-16/16:31:57 :: Current time is not send step, put data skipped, data : land_1                                         
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/3/30, Delta T : 30, component : land                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!    20041231000330   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: exchange component : land                                                                              
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000300                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000200                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000230                                                          
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : al_1                                           
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : il_1                                           
+2012-08-16/16:31:57 :: Put data, data name = land_1, data id = 2101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = land_1, data id = 2101                                     
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000230 : 20041231000330                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = land_1, data id = 2101                                            
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/4/0, Delta T : 60, component : atm                                     
+2012-08-16/16:31:57 :: set current time : 2004/12/31/0/4/0, component : land                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!    20041231000400   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: exchange component : atm                                                                               
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:2                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : land                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000300              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:57 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:57 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:57 :: IRecv 2 size 48                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: IRecv 3 size 42                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 3 size 42                                                                                 
+2012-08-16/16:31:57 :: IRecv 4 size 42                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 4 size 42                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 4 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 4 size 48                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : atm, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000300 : 20041231000400                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = al_1, data id = 2201                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : atm, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : land, dest model : atm                                   
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000330              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000330                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:58 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:58 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:58 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 42                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 42                                                                                 
+2012-08-16/16:31:58 :: ISend 4 size 42                                                                                        
+2012-08-16/16:31:58 :: ISend finish 4 size 42                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : land, dest model : atm                               
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : land, dest model : atm                                
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = la_1, data id = 1212                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : land, dest model : atm                            
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 1:4                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : atm, dest model : ice                                    
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000300              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:58 :: ISend 1 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 1 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 32                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 32                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : atm, dest model : ice                                
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 4:1                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : ice, dest model : atm                                    
+2012-08-16/16:31:58 :: IRecv 1 size 48                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 1 size 48                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : ice, dest model : atm                                
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : ice, dest model : atm                                 
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = ia_1, data id = 1211                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : ice, dest model : atm                             
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 1:5                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, chm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : a_3d_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : atm, dest model : chm                                    
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = a_3d_1, data id = 1106, time = 20041231000300              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = a_3d_1, data id = 1106                                                     
+2012-08-16/16:31:58 :: ISend 1 size 384                                                                                       
+2012-08-16/16:31:58 :: ISend finish 1 size 384                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : atm, dest model : chm                                
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, chm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 5:1                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : chm_1                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : chm, dest model : atm                                    
+2012-08-16/16:31:58 :: IRecv 1 size 384                                                                                       
+2012-08-16/16:31:58 :: IRecv finish 1 size 384                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : chm, dest model : atm                                
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : chm, dest model : atm                                 
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = ca_1, data id = 1206                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : chm, dest model : atm                             
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 2:4                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : land, dest model : ice                                   
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000330              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000330                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:58 :: ISend 1 size 72                                                                                        
+2012-08-16/16:31:58 :: ISend finish 1 size 72                                                                                 
+2012-08-16/16:31:58 :: ISend 2 size 60                                                                                        
+2012-08-16/16:31:58 :: ISend finish 2 size 60                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 12                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 12                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : land, dest model : ice                               
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 4:2                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:58 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : ice, dest model : land                                   
+2012-08-16/16:31:58 :: IRecv 1 size 72                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 1 size 72                                                                                 
+2012-08-16/16:31:58 :: IRecv 2 size 60                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 2 size 60                                                                                 
+2012-08-16/16:31:58 :: IRecv 3 size 12                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 3 size 12                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : ice, dest model : land                               
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : ice, dest model : land                                
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = il_1, data id = 2203                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : ice, dest model : land                            
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000200                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_3                                                                      
+2012-08-16/16:31:58 :: reset data buffer : name = a_25d_2                                                                     
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : oa_1                                           
+2012-08-16/16:31:58 :: Get data, data name = ca_1, data id = 1206                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = ca_1, data id = 1206                                                       
+2012-08-16/16:31:58 :: Get data, data name = la_1, data id = 1212                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = la_1, data id = 1212                                                       
+2012-08-16/16:31:58 :: Get data, data name = ia_1, data id = 1211                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = ia_1, data id = 1211                                                       
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:58 :: search time buffer : usable time found : 20041231000200 : 20041231000400                               
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1__3_atm_1, data id = 3001101, weight=  0.333                               
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1__3_atm_1, data id = 3001101                         
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1__3_atm_1, data id = 3001101                                
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:58 :: Put data, data name = a_2d_2__3_atm_2, data id = 3001102, weight=  0.333                               
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_2__3_atm_2, data id = 3001102                         
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_2__3_atm_2, data id = 3001102                                
+2012-08-16/16:31:58 :: Current time is not send step, put data skipped, data : a_2d_3                                         
+2012-08-16/16:31:58 :: Put data, data name = a_25d_1__3_atm_4, data id = 3001104                                              
+2012-08-16/16:31:58 :: put_send_data_double_2d : put data : name = a_25d_1__3_atm_4, data id = 3001104                        
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 2d : name = a_25d_1__3_atm_4, data id = 3001104                               
+2012-08-16/16:31:58 :: Current time is not send step, put data skipped, data : a_25d_2                                        
+2012-08-16/16:31:58 :: Current time is not send step, put data skipped, data : a_3d_1                                         
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/4/0, Delta T : 30, component : land                                    
+2012-08-16/16:31:58 :: Same Time : 2004/12/31/0/4/0 has been set. PARALLEL SEND RECV skipped                                  
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000330                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = land_1                                                                      
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000300                                                          
+2012-08-16/16:31:58 :: Get data, data name = al_1, data id = 2201                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = al_1, data id = 2201                                                       
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:58 :: Get data, data name = il_1, data id = 2203                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = il_1, data id = 2203                                                       
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: reset time buffer : 20041231000400                                                                     
+2012-08-16/16:31:58 :: Current time is not send step, put data skipped, data : land_1                                         
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/4/30, Delta T : 30, component : land                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!    20041231000430   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: exchange component : land                                                                              
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000400                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000330                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000300                                                          
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : al_1                                           
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : il_1                                           
+2012-08-16/16:31:58 :: Put data, data name = land_1, data id = 2101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = land_1, data id = 2101                                     
+2012-08-16/16:31:58 :: search time buffer : usable time found : 20041231000330 : 20041231000430                               
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = land_1, data id = 2101                                            
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/5/0, Delta T : 60, component : atm                                     
+2012-08-16/16:31:58 :: set current time : 2004/12/31/0/5/0, component : land                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!    20041231000500   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: exchange component : atm                                                                               
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 1:2                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:58 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : atm, dest model : land                                   
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000400              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:58 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:58 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:58 :: IRecv 2 size 48                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 2 size 48                                                                                 
+2012-08-16/16:31:58 :: IRecv 3 size 42                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 3 size 42                                                                                 
+2012-08-16/16:31:58 :: IRecv 4 size 42                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 4 size 42                                                                                 
+2012-08-16/16:31:58 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 4 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 4 size 48                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : atm, dest model : land                               
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : atm, dest model : land                                
+2012-08-16/16:31:58 :: search time buffer : usable time found : 20041231000400 : 20041231000500                               
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = al_1, data id = 2201                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : atm, dest model : land                            
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 2:1                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : land, dest model : atm                                   
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000430              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000430                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:58 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:58 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:58 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 42                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 42                                                                                 
+2012-08-16/16:31:58 :: ISend 4 size 42                                                                                        
+2012-08-16/16:31:58 :: ISend finish 4 size 42                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : land, dest model : atm                               
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : land, dest model : atm                                
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = la_1, data id = 1212                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : land, dest model : atm                            
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 1:4                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : atm, dest model : ice                                    
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000400              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:58 :: ISend 1 size 48                                                                                        
+2012-08-16/16:31:58 :: ISend finish 1 size 48                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 32                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 32                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : atm, dest model : ice                                
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 4:1                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : ice, dest model : atm                                    
+2012-08-16/16:31:58 :: IRecv 1 size 48                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 1 size 48                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : ice, dest model : atm                                
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : ice, dest model : atm                                 
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = ia_1, data id = 1211                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : ice, dest model : atm                             
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 2:4                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:58 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : land, dest model : ice                                   
+2012-08-16/16:31:58 :: get_before_time                                                                                        
+2012-08-16/16:31:58 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000430              
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000430                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:58 :: ISend 1 size 72                                                                                        
+2012-08-16/16:31:58 :: ISend finish 1 size 72                                                                                 
+2012-08-16/16:31:58 :: ISend 2 size 60                                                                                        
+2012-08-16/16:31:58 :: ISend finish 2 size 60                                                                                 
+2012-08-16/16:31:58 :: ISend 3 size 12                                                                                        
+2012-08-16/16:31:58 :: ISend finish 3 size 12                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : land, dest model : ice                               
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: excahnge component id : 4:2                                                                            
+2012-08-16/16:31:58 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:58 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double start. source model : ice, dest model : land                                   
+2012-08-16/16:31:58 :: IRecv 1 size 72                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 1 size 72                                                                                 
+2012-08-16/16:31:58 :: IRecv 2 size 60                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 2 size 60                                                                                 
+2012-08-16/16:31:58 :: IRecv 3 size 12                                                                                        
+2012-08-16/16:31:58 :: IRecv finish 3 size 12                                                                                 
+2012-08-16/16:31:58 :: exchange_data_1d_double completed. source model : ice, dest model : land                               
+2012-08-16/16:31:58 :: interpolate_data_1d_double start. source model : ice, dest model : land                                
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = il_1, data id = 2203                                              
+2012-08-16/16:31:58 :: interpolate_data_1d_double completed. source model : ice, dest model : land                            
+2012-08-16/16:31:58 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000300                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_1__3_atm_1                                                             
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_2__3_atm_2                                                             
+2012-08-16/16:31:58 :: reset data buffer : name = a_25d_1__3_atm_4                                                            
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:58 :: reset data buffer : name = a_3d_1                                                                      
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : oa_1                                           
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : ca_1                                           
+2012-08-16/16:31:58 :: Get data, data name = la_1, data id = 1212                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = la_1, data id = 1212                                                       
+2012-08-16/16:31:58 :: Get data, data name = ia_1, data id = 1211                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = ia_1, data id = 1211                                                       
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:58 :: search time buffer : usable time found : 20041231000300 : 20041231000500                               
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1__3_atm_1, data id = 3001101, weight=  0.333                               
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1__3_atm_1, data id = 3001101                         
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1__3_atm_1, data id = 3001101                                
+2012-08-16/16:31:58 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:58 :: Put data, data name = a_2d_2__3_atm_2, data id = 3001102, weight=  0.333                               
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_2__3_atm_2, data id = 3001102                         
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_2__3_atm_2, data id = 3001102                                
+2012-08-16/16:31:58 :: Put data, data name = a_2d_3, data id = 1103, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_2d_3, data id = 1103                                     
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_2d_3, data id = 1103                                            
+2012-08-16/16:31:58 :: Put data, data name = a_25d_1__3_atm_4, data id = 3001104                                              
+2012-08-16/16:31:58 :: put_send_data_double_2d : put data : name = a_25d_1__3_atm_4, data id = 3001104                        
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000600                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 2d : name = a_25d_1__3_atm_4, data id = 3001104                               
+2012-08-16/16:31:58 :: Put data, data name = a_25d_2, data id = 1105                                                          
+2012-08-16/16:31:58 :: put_send_data_double_2d : put data : name = a_25d_2, data id = 1105                                    
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 2d : name = a_25d_2, data id = 1105                                           
+2012-08-16/16:31:58 :: Put data, data name = a_3d_1, data id = 1106, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = a_3d_1, data id = 1106                                     
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = a_3d_1, data id = 1106                                            
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/5/0, Delta T : 30, component : land                                    
+2012-08-16/16:31:58 :: Same Time : 2004/12/31/0/5/0 has been set. PARALLEL SEND RECV skipped                                  
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000400                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000430                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = land_1                                                                      
+2012-08-16/16:31:58 :: Get data, data name = al_1, data id = 2201                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = al_1, data id = 2201                                                       
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:58 :: Get data, data name = il_1, data id = 2203                                                             
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: get data double 1d : name = il_1, data id = 2203                                                       
+2012-08-16/16:31:58 :: search time buffer : same time found : 20041231000500                                                  
+2012-08-16/16:31:58 :: reset time buffer : 20041231000500                                                                     
+2012-08-16/16:31:58 :: Current time is not send step, put data skipped, data : land_1                                         
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/5/30, Delta T : 30, component : land                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!    20041231000530   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: exchange component : land                                                                              
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000500                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000400                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000430                                                          
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : al_1                                           
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:58 :: Current time is not recv step, get data skipped, data : il_1                                           
+2012-08-16/16:31:58 :: Put data, data name = land_1, data id = 2101, weight=  1.000                                           
+2012-08-16/16:31:58 :: put_send_data_double_1d : put data : name = land_1, data id = 2101                                     
+2012-08-16/16:31:58 :: search time buffer : usable time found : 20041231000430 : 20041231000530                               
+2012-08-16/16:31:58 :: reuse data buffer double 1d : name = land_1, data id = 2101                                            
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!   COUPLER FINALIZE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: check  extra data send                                                                                 
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/6/0, Delta T : 0, component : atm                                      
+2012-08-16/16:31:58 :: set current time : 2004/12/31/0/6/0, component : land                                                  
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000500                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000400                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:58 :: Set Current Time : 2004/12/31/0/6/0, Delta T : 0, component : land                                     
+2012-08-16/16:31:58 :: set current time : 2004/12/31/0/6/0, component : atm                                                   
+2012-08-16/16:31:58 :: Same Time : 2004/12/31/0/6/0 has been set. PARALLEL SEND RECV skipped                                  
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000500                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000530                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = land_1                                                                      
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000500                                                          
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000400                                                          
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!  COUPLING COMPLETED !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: ISend 3 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 4 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 4 size 48                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : atm, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000100 : 20041231000200                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = al_1, data id = 2201                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : atm, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : land, dest model : atm                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000130              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000130                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:57 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:57 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:57 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 42                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 42                                                                                 
+2012-08-16/16:31:57 :: ISend 4 size 42                                                                                        
+2012-08-16/16:31:57 :: ISend finish 4 size 42                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : land, dest model : atm                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : land, dest model : atm                                
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = la_1, data id = 1212                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : land, dest model : atm                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:4                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : ice                                    
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000100              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000100                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:57 :: ISend 1 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 32                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 32                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : ice                                
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 4:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ice, dest model : atm                                    
+2012-08-16/16:31:57 :: IRecv 1 size 48                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 48                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ice, dest model : atm                                
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ice, dest model : atm                                 
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = ia_1, data id = 1211                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ice, dest model : atm                             
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:5                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, chm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : a_3d_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : chm                                    
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_3d_1, data id = 1106, time = 20041231000100              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000100                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_3d_1, data id = 1106                                                     
+2012-08-16/16:31:57 :: ISend 1 size 384                                                                                       
+2012-08-16/16:31:57 :: ISend finish 1 size 384                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : atm, dest model : chm                                
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, chm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 5:1                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : chm_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : chm, dest model : atm                                    
+2012-08-16/16:31:57 :: IRecv 1 size 384                                                                                       
+2012-08-16/16:31:57 :: IRecv finish 1 size 384                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : chm, dest model : atm                                
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : chm, dest model : atm                                 
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = ca_1, data id = 1206                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : chm, dest model : atm                             
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 2:4                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, ice, number of send data:1                                            
+2012-08-16/16:31:57 :: SEND DATA NAME : land_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : land, dest model : ice                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = land_1, data id = 2101, time = 20041231000130              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000130                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = land_1, data id = 2101                                                     
+2012-08-16/16:31:57 :: ISend 1 size 72                                                                                        
+2012-08-16/16:31:57 :: ISend finish 1 size 72                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 60                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 60                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 12                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : land, dest model : ice                               
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, ice                                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 4:2                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:57 :: SEND DATA NAME : ice_1                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : ice, dest model : land                                   
+2012-08-16/16:31:57 :: IRecv 1 size 72                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 1 size 72                                                                                 
+2012-08-16/16:31:57 :: IRecv 2 size 60                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 60                                                                                 
+2012-08-16/16:31:57 :: IRecv 3 size 12                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 3 size 12                                                                                 
+2012-08-16/16:31:57 :: exchange_data_1d_double completed. source model : ice, dest model : land                               
+2012-08-16/16:31:57 :: interpolate_data_1d_double start. source model : ice, dest model : land                                
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = il_1, data id = 2203                                              
+2012-08-16/16:31:57 :: interpolate_data_1d_double completed. source model : ice, dest model : land                            
+2012-08-16/16:31:57 :: EXCHANGE DATA FINISH! dest model, land                                                                 
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000000                                                          
+2012-08-16/16:31:57 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:57 :: reset data buffer : name = a_2d_1                                                                      
+2012-08-16/16:31:57 :: reset data buffer : name = a_2d_2                                                                      
+2012-08-16/16:31:57 :: reset data buffer : name = a_2d_3                                                                      
+2012-08-16/16:31:57 :: reset data buffer : name = a_25d_1                                                                     
+2012-08-16/16:31:57 :: reset data buffer : name = a_25d_2                                                                     
+2012-08-16/16:31:57 :: reset data buffer : name = a_3d_1                                                                      
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : oa_1                                           
+2012-08-16/16:31:57 :: Get data, data name = ca_1, data id = 1206                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = ca_1, data id = 1206                                                       
+2012-08-16/16:31:57 :: Get data, data name = la_1, data id = 1212                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = la_1, data id = 1212                                                       
+2012-08-16/16:31:57 :: Get data, data name = ia_1, data id = 1211                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = ia_1, data id = 1211                                                       
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000000 : 20041231000200                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1__3_atm_1, data id = 3001101, weight=  0.333                               
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1__3_atm_1, data id = 3001101                         
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_1__3_atm_1, data id = 3001101                                
+2012-08-16/16:31:57 :: Put data, data name = a_2d_1, data id = 1101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_1, data id = 1101                                     
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_1, data id = 1101                                            
+2012-08-16/16:31:57 :: Put data, data name = a_2d_2__3_atm_2, data id = 3001102, weight=  0.333                               
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_2__3_atm_2, data id = 3001102                         
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_2__3_atm_2, data id = 3001102                                
+2012-08-16/16:31:57 :: Put data, data name = a_2d_3, data id = 1103, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = a_2d_3, data id = 1103                                     
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = a_2d_3, data id = 1103                                            
+2012-08-16/16:31:57 :: Put data, data name = a_25d_1__3_atm_4, data id = 3001104                                              
+2012-08-16/16:31:57 :: put_send_data_double_2d : put data : name = a_25d_1__3_atm_4, data id = 3001104                        
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000300                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 2d : name = a_25d_1__3_atm_4, data id = 3001104                               
+2012-08-16/16:31:57 :: Put data, data name = a_25d_2, data id = 1105                                                          
+2012-08-16/16:31:57 :: put_send_data_double_2d : put data : name = a_25d_2, data id = 1105                                    
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reuse data buffer double 2d : name = a_25d_2, data id = 1105                                           
+2012-08-16/16:31:57 :: Current time is not send step, put data skipped, data : a_3d_1                                         
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/2/0, Delta T : 30, component : land                                    
+2012-08-16/16:31:57 :: Same Time : 2004/12/31/0/2/0 has been set. PARALLEL SEND RECV skipped                                  
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000100                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000130                                                          
+2012-08-16/16:31:57 :: reset data buffer : name = land_1                                                                      
+2012-08-16/16:31:57 :: Get data, data name = al_1, data id = 2201                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = al_1, data id = 2201                                                       
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:57 :: Get data, data name = il_1, data id = 2203                                                             
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = il_1, data id = 2203                                                       
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: reset time buffer : 20041231000200                                                                     
+2012-08-16/16:31:57 :: Current time is not send step, put data skipped, data : land_1                                         
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/2/30, Delta T : 30, component : land                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!    20041231000230   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: exchange component : land                                                                              
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000200                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000100                                                          
+2012-08-16/16:31:57 :: search and reset time buffer : 20041231000130                                                          
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : al_1                                           
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : ol_1                                           
+2012-08-16/16:31:57 :: Current time is not recv step, get data skipped, data : il_1                                           
+2012-08-16/16:31:57 :: Put data, data name = land_1, data id = 2101, weight=  1.000                                           
+2012-08-16/16:31:57 :: put_send_data_double_1d : put data : name = land_1, data id = 2101                                     
+2012-08-16/16:31:57 :: search time buffer : usable time found : 20041231000130 : 20041231000230                               
+2012-08-16/16:31:57 :: reuse data buffer double 1d : name = land_1, data id = 2101                                            
+2012-08-16/16:31:57 :: Set Current Time : 2004/12/31/0/3/0, Delta T : 60, component : atm                                     
+2012-08-16/16:31:57 :: set current time : 2004/12/31/0/3/0, component : land                                                  
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!    20041231000300   !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:57 :: exchange component : atm                                                                               
+2012-08-16/16:31:57 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-16/16:31:57 :: excahnge component id : 1:2                                                                            
+2012-08-16/16:31:57 :: EXCHANGE DATA START! dest model, land, number of send data:1                                           
+2012-08-16/16:31:57 :: SEND DATA NAME : a_2d_1                                                                                
+2012-08-16/16:31:57 :: exchange_data_1d_double start. source model : atm, dest model : land                                   
+2012-08-16/16:31:57 :: get_before_time                                                                                        
+2012-08-16/16:31:57 :: get_send_data_double_1d : get data : name = a_2d_1, data id = 1101, time = 20041231000200              
+2012-08-16/16:31:57 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-16/16:31:57 :: get data double 1d : name = a_2d_1, data id = 1101                                                     
+2012-08-16/16:31:57 :: Local Data Copy1 size 48                                                                               
+2012-08-16/16:31:57 :: Local Data Copy finish 1 size 48                                                                       
+2012-08-16/16:31:57 :: IRecv 2 size 48                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: IRecv 3 size 42                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 3 size 42                                                                                 
+2012-08-16/16:31:57 :: IRecv 4 size 42                                                                                        
+2012-08-16/16:31:57 :: IRecv finish 4 size 42                                                                                 
+2012-08-16/16:31:57 :: ISend 2 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 2 size 48                                                                                 
+2012-08-16/16:31:57 :: ISend 3 size 48                                                                                        
+2012-08-16/16:31:57 :: ISend finish 3 size 48                                                                                 

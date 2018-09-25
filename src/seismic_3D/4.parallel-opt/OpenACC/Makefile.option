@@ -1,0 +1,29 @@
+# Makefile option setting
+
+# for Intel Fortran compiler
+# FC = mpif90
+# FFLAGS = -O3
+# FFLAGS = -CB -traceback -O0 -fpe0 -g -check # debug mode
+
+# for Intel Fortran compiler on MIC
+# FC = mpif90
+# FFLAGS = -O3 -mmic
+
+# for Gfortran
+# FC = gfortran
+# FFLAGS = -O3 -funroll-loops -msse3 -m64 
+
+# for FX10 fujitsu compiler
+# FC = mpifrtpx
+# FFLAGS = -O3 -Kfast
+
+# PGI compiler
+FC = mpif90
+ifeq ($(build),gpu)
+  FFLAGS = -Mpreprocess -O2 -fastsse -Mipa=fast,inline -m64 \
+	   -mcmodel=medium -Msmartalloc=huge \
+	   -acc -Minfo=accel -Mcuda -ta=tesla,cuda5.5,cc35,ptxinfo,maxregcount:48
+else
+  FFLAGS = -Mpreprocess -O2 -fastsse -Mipa=fast,inline -m64 \
+           -mcmodel=medium -Msmartalloc=huge
+endif

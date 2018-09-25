@@ -1,0 +1,19 @@
+# Makefile option setting
+# for Intel Fortran compiler
+  FC = mpif90
+# FFLAGS = -O3		# pure MPI processing
+  FFLAGS = -O3 -openmp	# MPI/OpenMP processing
+
+# for Intel Fortran compiler on MIC
+# FC = mpif90
+# FFLAGS = -O3 -mmic -align array64byte	# pure MPI processing
+# FFLAGS = -O3 -mmic -openmp -align array64byte	# MPI/OpenMP processing
+
+# for FX10 fujitsu compiler
+# FC = mpifrtpx
+# FFLAGS = -O3 -Kfast # pure MPI processing
+# FFLAGS = -O3 -Kfast -Kopenmp # MPI/OpenMP hybird
+
+# for Gfortran
+# FC = gfortran
+# FFLAGS = -O3 -funroll-loops -msse3 -m64 

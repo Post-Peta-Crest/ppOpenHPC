@@ -1,0 +1,52 @@
+## CODE SELECTOR
+# standard I/O
+CODE_STDIO = m_stdio.f90
+
+# Data Output
+CODE_OUTPUT = m_io.f90
+
+# Condition(medium,station,source)
+CODE_CONDITION = m_set_condition.f90
+
+# Embeded Parameter file
+CODE_PARAMS = m_param.f90
+
+# FDM Computation Kernel Velocity
+CODE_KERNEL_V = m_velocity.f90
+
+# FDM Computation Kernel Pressure
+CODE_KERNEL_S = m_stress.f90
+
+# FDM Differential
+CODE_DIF = m_pfd3d.f90
+
+# Seismic Source
+CODE_SOURCE = m_source.f90
+
+# Seismic Source time function
+CODE_SOURCE_TF = m_pssub.f90
+
+# Surface Boundary Conditions
+CODE_SURFBC = m_boundary.f90
+
+# Boundary Conditions Absorber
+CODE_BOUNDARY = m_sponge_absorber.f90
+
+# Main Program
+CODE_MAIN   = seism3d3n.f90
+
+#---------------------------------------------------------------------
+# To swap uniform structure layer for inhomogeneous structure layer,
+# user interchanges to the following codes
+#---------------------------------------------------------------------
+
+## Condition (medium,station,source) in inhomogeneous structure layer
+# CODE_CONDITION = m_set_condition_real.f90
+
+## Embeded Parameter file
+# CODE_PARAMS = m_param_real.f90
+
+## Main Program
+# CODE_MAIN = seism3d3n_real.f90
+
+#---------------------------------------------------------------------

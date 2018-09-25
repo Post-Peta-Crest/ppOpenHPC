@@ -1,0 +1,62 @@
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 1
+NUM of PE =  4, NUM of POINT = 1440, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1      384
+      2      385      768
+      3      769     1104
+      4     1105     1440
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 1
+NUM of PE =  4, NUM of POINT = 1440, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1      384
+      2      385      768
+      3      769     1104
+      4     1105     1440
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 5

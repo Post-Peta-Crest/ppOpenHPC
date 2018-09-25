@@ -1,0 +1,50 @@
+JCUPLIBDIR    = ${JCUPDIR}/lib
+JCUPINCDIR    = ${JCUPDIR}/include
+
+MPIDIR = /usr/local/openmpi-1.4.4
+MPILIBDIR = ${MPIDIR}/lib
+MPIINCDIR = ${MPIDIR}/include
+MPIBINDIR = ${MPIDIR}/bin
+MPILINK   = 
+
+FC              = ${MPIBINDIR}/mpif90
+CC		= ${MPIBINDIR}/mpicc
+
+DEFMPI = MPI2
+##DEFINES = -DNEW_MPI -D$(DEFMPI) -DNO_OUTPUT_LOG -DNO_OUTPUT_STDERR -DNOPUTPUT_STDOUT
+##DEFINES = -F -DNO_OUTPUT_LOG -DNO_OUTPUT_STDERR -DNO_OUTPUT_STDOUT 
+##DEFINES =  -DNO_OUTPUT_LOG -DNO_OUTPUT_STDERR
+DEFINES = 
+
+#OPTIONS = -cpp  -mcmodel medium -shared-intel -check all -g
+#OPTIONS = -g -cpp -C -ladebug
+#OPTIONS = -check all
+OPTIONS = -cpp  -mcmodel medium -shared-intel  -check all -g
+#OPTIONS = -cpp -g -O
+
+INCDIRS = -I${MPIINCDIR} -I${JCUPSRCDIR}
+
+FFLAGS = ${DEFINES} ${INCDIRS} ${OPTIONS}
+
+
+RM		= rm -f
+AR 		= ar
+ARFLAGS         = rv
+RANLIB		= ranlib
+#RANLIB 	= true
+CP		= cp -f
+
+
+.SUFFIXES	:
+.SUFFIXES	:.o .f90 .a
+.f90.o	:
+	${COMPILE.F} $<
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+!=====================================================================!
+!                                                                     !
+!   Software Name : ppOpen-APPL/FDM                                   !
+!         Version : 0.3                                               !
+!                                                                     !
+!   License                                                           !
+!     This file is part of ppOpen-APPL/FDM.                           !
+!     ppOpen-APPL/FDM is a free software, you can use it under the    !
+!     terms of The MIT License (MIT). See LICENSE file and User's     !
+!     guide for more details.                                         !
+!                                                                     !
+!   ppOpen-HPC project:                                               !
+!     Open Source Infrastructure for Development and Execution of     !
+!     Large-Scale Scientific Applications on Post-Peta-Scale          !
+!     Supercomputers with Automatic Tuning (AT).                      !
+!                                                                     !
+!   Organizations:                                                    !
+!     The University of Tokyo                                         !
+!       - Information Technology Center                               !
+!       - Atmosphere and Ocean Research Institute (AORI)              !
+!       - Interfaculty Initiative in Information Studies              !
+!         /Earthquake Research Institute (ERI)                        !
+!       - Graduate School of Frontier Science                         !
+!     Kyoto University                                                !
+!       - Academic Center for Computing and Media Studies             !
+!     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  !
+!                                                                     !
+!   Sponsorship:                                                      !
+!     Japan Science and Technology Agency (JST), Basic Research       !
+!     Programs: CREST, Development of System Software Technologies    !
+!     for post-Peta Scale High Performance Computing.                 !
+!                                                                     !
+!                 Copyright (c) 2015 T.Furumura                       !
+!                                                                     !
+!=====================================================================!
+Installation procedure of ppOpen-APPL/FDM
+
+This document describes the installation procedure of ppOpen-APPL/FDM
+application for calculating propagation of elastic (seismic) wave in 2D
+and 3D heterogeneous elastic media.
+
+All of the module main program for 2D and 3D and tools provided for the
+ppOpen-APPL/FDM is written in F90. 2D program runs sequentially and 3D
+application runs parallel computer with suitable MPI library.
+
+1) Extracting the ppOpen-APPL/FDM
+This .tar.gz compress file contains 2D and 3D applications, examples,
+documents and tools in subdirectory
+ 
+	% tar xzvf ppohFDM_0.3.0.tar.gz
+
+2) Check and modify Makefile
+Please check and modify Makefile variables in according to your
+environment of F90 compiler and MPI library.
+
+F90
+Fortran compiler
+
+3) Make
+Copy necessary parameter files of ./examples/seismic_2D-example or
+./examples/seismic_3D-example in ./src directory and type 'make' and run.
+
+(2D application)
+Type 'make seism2d' in ./ top directory for the 2D application
+     	% make seism2d
+
+(3D application without the ppOpen-MATH/VIS)
+Type 'make seism3d-parallel' in ./ top directory for the 3D application
+without the ppOpen-MATS/VIS. User change the type of parallel (pure MPI processing and 
+MPI/OpenMP hybrid parallel computing) in ./src/3.parallel/Makefile.in.
+
+     	% make seism3d-parallel
+
+(3D application with the ppOpen-MATH/VIS)
+Type 'make seism3d-ppohVIS' in ./ top directory for the 3D application with
+the ppOpen-MATH/VIS. Note that you need to read the ppOpen-MATH/VIS library.
+
+        % make
+	% make install
+	% make seism3d-ppohVIS
+	% make install
+
+(3D application with the ppOpen-MATH/MP)
+User needs to be compiled four applications that are "JCup", "ppOpen-MATH/MP",
+"FrontISTR++" and "Seism3D+". "JCup", "ppOpen-MATH/MP", "FrontISTR" are in ppohMATH-MP-lib.
+Moreover, "Seism3D+" is in ./src/seismic_3D/2.ppohFDM-ppohMP. Seism3D+ is implemented the ppohMATH-MP-lib.
+
+4) Run
+You can be run in the 2D and 3D applications in ./src/seismic_2D or sub directory of ./src/seismic_3D

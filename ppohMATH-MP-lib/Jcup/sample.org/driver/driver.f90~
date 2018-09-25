@@ -1,0 +1,49 @@
+program main
+#ifdef ATM
+use atm
+#endif
+#ifdef OCN
+use ocn
+#endif
+#ifdef CHM
+use chm
+#endif
+logical :: loop_flag
+
+
+loop_flag = .true.
+
+#ifdef ATM
+  call atm_init()
+
+  do while(loop_flag)
+    call atm_run(loop_flag)
+  end do
+
+  call atm_fin()
+#endif
+
+#ifdef OCN
+  call ocn_init()
+
+  do while(loop_flag)
+    call ocn_run(loop_flag)
+  end do
+
+  call ocn_fin()
+#endif
+
+#ifdef CHM
+  call chm_init()
+
+  do while(loop_flag)
+    call chm_run(loop_flag)
+  end do
+
+  call chm_fin()
+#endif
+
+  stop
+
+end program
+

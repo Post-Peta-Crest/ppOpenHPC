@@ -1,0 +1,44 @@
+#  Control File for FISTR
+## Analysis Control
+!VERSION
+ 3
+!SOLUTION, TYPE=NLSTATIC
+!WRITE,RESULT,FREQUENCY=10
+!WRITE,VISUAL,FREQUENCY=10
+## Solver Control
+### Boundary Conditon
+!BOUNDARY, GRPID=1
+ LOADS, 3, 3, -7.0
+ FIX,   3, 3, 0.0
+ XSYMM, 1, 1, 0.0
+ YSYMM, 2, 2, 0.0
+### STEP
+!STEP, SUBSTEPS=40, CONVERG=1.0e-3
+ BOUNDARY, 1
+### Material
+!MATERIAL, NAME=MAT1
+!ELASTIC
+ 206900.0, 0.29
+!PLASTIC, YIELD=MISES, HARDEN=MULTILINEAR
+ 450.0, 0.0
+ 608.0, 0.05
+ 679.0, 0.1
+ 732.0, 0.2
+ 752.0, 0.3
+ 766.0, 0.4
+ 780.0, 0.5
+### Output
+!OUTPUT_VIS
+ NSTRAIN, ON
+!OUTPUT_RES
+ ISTRESS, ON
+### Solver Setting
+!SOLVER,METHOD=CG,PRECOND=1,ITERLOG=NO,TIMELOG=YES
+ 2000, 1
+ 1.0e-8, 1.0, 0.0
+## Post Control
+!VISUAL, method=PSR
+!surface_num = 1
+!surface 1
+!output_type = COMPLETE_AVS
+!END

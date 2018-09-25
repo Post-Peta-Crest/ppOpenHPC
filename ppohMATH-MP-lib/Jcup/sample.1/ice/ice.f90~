@@ -1,0 +1,226 @@
+module ice
+use jcup_interface
+use field_common
+use component_field, only : component_field_type
+private
+
+public :: ice_init_grid
+public :: ice_init_data
+public :: ice_set_grid_mapping
+public :: ice_put_initial_data
+public :: ice_run
+public :: ice_fin
+
+integer :: DIV_X
+integer :: DIV_Y
+integer :: my_comm, my_group, my_rank, my_size
+
+type(component_field_type) :: field
+
+
+integer :: itime(6)
+integer :: delta_t
+integer :: step_counter
+
+contains
+
+!======================================================================================================
+
+subroutine ice_init_grid()
+  use jcup_interpolation_test
+  use field_def, only : init_field_def, set_field_def, cal_mn, get_local_field, cal_grid_index
+  use component_field, only : init_field, init_field_data
+  implicit none
+  integer, allocatable :: grid_index(:)
+  integer :: lis, lie, ljs, lje
+  integer :: i
+  integer :: comp_id(2)
+
+
+  call jcup_get_mpi_parameter("ice", my_comm, my_group, my_size, my_rank)
+
+  call cal_mn(my_size, DIV_X, DIV_Y)
+
+  call set_field_def(component_name = "ice", grid_name = "ice_grid", &
+                     g_nx = GNXI, g_ny = GNYI, g_nz = 1, hallo = 2, div_x = DIV_X, div_y = DIV_Y)
+  call get_local_field(component_name = "ice", grid_name = "ice_grid", &
+                       local_is = lis, local_ie = lie, local_js = ljs, local_je = lje)
+
+  call init_field(field, "ice_grid", lis, lie, ljs, lje, 1, 1)
+
+  call cal_grid_index("ice","ice_grid", field%grid_index)
+  call jcup_def_grid(field%grid_index, "ice", "ice_grid")
+
+  step_counter = 0
+
+end subroutine ice_init_grid
+
+!======================================================================================================
+
+!======================================================================================================
+
+subroutine ice_init_data()
+  use jcup_mpi_lib
+  use jcup_interpolation_test 
+  use field_def, only : init_field_def, set_field_def, cal_mn, get_local_field, cal_grid_index
+  use component_field, only : init_field, init_field_data
+  implicit none
+  integer, allocatable :: grid_index(:)
+  integer :: lis, lie, ljs, lje
+  integer :: i
+  integer :: comp_id(2)
+
+
+  call init_field_data(field, 1, 2, 3)
+
+  call jcup_def_varp(field%varp(1)%varp_ptr, "ice_1", "ice_grid")
+  call jcup_def_varp(field%varp(2)%varp_ptr, "io_1", "ice_grid")
+  call jcup_def_varg(field%varg(1)%varg_ptr, "oi_1", "ice_grid")
+  call jcup_def_varg(field%varg(2)%varg_ptr, "ai_1", "ice_grid")
+  call jcup_def_varg(field%varg(3)%varg_ptr, "li_1", "ice_grid")
+
+end subroutine ice_init_data
+
+!======================================================================================================
+
+subroutine ice_set_grid_mapping()
+  use jcup_interface
+  use jcup_interpolation_test
+  implicit none
+
+  call set_operation_index("ice","ocn",1)
+
+  call jcup_set_mapping_table("ice", "land", "land_grid", "ice", "ice_grid", 1)
+  call jcup_set_mapping_table("ice", "ice", "ice_grid", "land", "land_grid", 1)
+  call set_operation_index("ice","land",1)
+
+end subroutine ice_set_grid_mapping
+
+!======================================================================================================
+
+subroutine ice_put_initial_data()
+  use jcup_interpolation_test
+  implicit none
+
+  itime(1) = 2004
+  itime(2) = 12
+  itime(3) = 31
+  itime(4) = 0
+  itime(5) = 0
+  itime(6) = 0
+
+  delta_t = 30
+
+  !call jcup_init_time(itime)
+
+  call set_and_put_data(0)
+
+end subroutine ice_put_initial_data
+
+!======================================================================================================
+
+subroutine set_and_put_data(step)
+  use field_def, only : set_send_data_2d
+  implicit none
+  integer, intent(IN) :: step
+  integer :: k
+
+  call set_send_data_2d("ice","ice_grid", field%send_2d(:,:), step, 4)
+  call jcup_put_data(field%varp(1)%varp_ptr, pack(field%send_2d, MASK = field%mask2d))
+  call jcup_put_data(field%varp(2)%varp_ptr, pack(field%send_2d, MASK = field%mask2d))
+
+end subroutine set_and_put_data
+
+!======================================================================================================
+
+subroutine get_and_write_data()
+  use field_def, only : write_data_2d
+  implicit none
+  integer :: k
+
+  goto 8000
+
+  field%buffer1d(:) = 0.d0
+  field%recv_2d(:,:) = 0.d0
+
+  call jcup_get_data(field%varg(1)%varg_ptr, field%buffer1d)
+  field%recv_2d(:,:) = unpack(field%buffer1d, field%mask2d, field%recv_2d)
+  call write_data_2d("ice","ice_grid", "oi_1", field%recv_2d)
+
+  field%buffer1d(:) = 0.d0
+  field%recv_2d(:,:) = 0.d0
+
+  call jcup_get_data(field%varg(2)%varg_ptr, field%buffer1d)
+  field%recv_2d(:,:) = unpack(field%buffer1d, field%mask2d, field%recv_2d)
+  call write_data_2d("ice","ice_grid", "li_1", field%recv_2d)
+
+  return
+
+
+8000 continue
+
+
+  field%buffer1d(:) = 0.d0
+  field%recv_2d(:,:) = 0.d0
+
+  call jcup_get_data(field%varg(1)%varg_ptr, field%buffer1d)
+  field%recv_2d(:,:) = unpack(field%buffer1d, field%mask2d, field%recv_2d)
+  call write_data_2d("ice","ice_grid", "oi_1", field%recv_2d)
+
+  field%buffer1d(:) = 0.d0
+  field%recv_2d(:,:) = 0.d0
+
+  call jcup_get_data(field%varg(2)%varg_ptr, field%buffer1d)
+  field%recv_2d(:,:) = unpack(field%buffer1d, field%mask2d, field%recv_2d)
+  call write_data_2d("ice","ice_grid", "ai_1", field%recv_2d)
+
+  field%buffer1d(:) = 0.d0
+  field%recv_2d(:,:) = 0.d0
+
+  call jcup_get_data(field%varg(3)%varg_ptr, field%buffer1d)
+  field%recv_2d(:,:) = unpack(field%buffer1d, field%mask2d, field%recv_2d)
+  call write_data_2d("ice","ice_grid", "li_1", field%recv_2d)
+
+
+end subroutine get_and_write_data
+
+!======================================================================================================
+
+subroutine ice_run(loop_flag)
+  use field_def
+  implicit none
+  logical, intent(INOUT) :: loop_flag
+  integer :: i, k
+
+  do i = 1, 6
+    step_counter = step_counter+1
+    call jcup_set_time("ice", itime, delta_t)
+
+    call get_and_write_data()
+
+    call set_and_put_data(step_counter)
+
+    call jcup_inc_time("ice", itime)
+
+  end do
+
+  loop_flag = .false.
+
+end subroutine ice_run
+
+!======================================================================================================
+
+subroutine ice_fin()
+  use jcup_interface
+  implicit none
+  integer :: i
+
+  call jcup_coupling_end(itime, .true.)
+
+end subroutine ice_fin
+
+!======================================================================================================
+
+
+end module ice
+

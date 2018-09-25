@@ -1,0 +1,301 @@
+ 
+ --------------------------------------------------------------------------
+ &MODEL
+ NAME    = atm                             
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_2d_1                          ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_2d_2                          ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_2d_3                          ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_25d_1                         ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_25d_2                         ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = a_3d_1                          ,
+ SEND_FLAG       =           1
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = oa_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = ocn                             ,
+ SEND_DATA       = ocn_1                           
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = ca_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         120,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = chm                             ,
+ SEND_DATA       = chm_1                           
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = la_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = land                            ,
+ SEND_DATA       = land_1                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = ia_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = ice                             ,
+ SEND_DATA       = ice_1                           
+ /
+ 
+ --------------------------------------------------------------------------
+ &MODEL
+ NAME    = land                            
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = land_1                          ,
+ SEND_FLAG       =           1
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = al_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_2d_1                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = ol_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = ocn                             ,
+ SEND_DATA       = ocn_1                           
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = il_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = ice                             ,
+ SEND_DATA       = ice_1                           
+ /
+ 
+ --------------------------------------------------------------------------
+ &MODEL
+ NAME    = ocn                             
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = ocn_1                           ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = oi_1                            ,
+ SEND_FLAG       =           1
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_1                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = AVR,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_2d_1                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_2                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = AVR,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_2d_2                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_3                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_2d_3                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_4                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = AVR,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           4,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_25d_1                         
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_5                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           5,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_25d_2                         
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = land_1                          ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           8,
+ SEND_MODEL      = land                            ,
+ SEND_DATA       = land_1                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = ice_1                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =           0,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           5,
+ SEND_MODEL      = ice                             ,
+ SEND_DATA       = io_1                            
+ /
+ 
+ --------------------------------------------------------------------------
+ &MODEL
+ NAME    = ice                             
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = ice_1                           ,
+ SEND_FLAG       =           1
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = io_1                            ,
+ SEND_FLAG       =           1
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = oi_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         180,
+ TIME_LAG        =           0,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = ocn                             ,
+ SEND_DATA       = oi_1                            
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = ai_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_2d_1                          
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = li_1                            ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =          60,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = land                            ,
+ SEND_DATA       = land_1                          
+ /
+ 
+ --------------------------------------------------------------------------
+ &MODEL
+ NAME    = chm                             
+ /
+ 
+ &SENDDATA
+ DATA_NAME       = chm_1                           ,
+ SEND_FLAG       =           1
+ /
+ 
+ &RECVDATA
+ DATA_NAME       = atm_1                           ,
+ RECV_FLAG       =           1,
+ RECV_MODE       = SNP,
+ INTERVAL        =         120,
+ TIME_LAG        =          -1,
+ MAPPING_TAG     =           1,
+ EXCHANGE_TAG    =           1,
+ SEND_MODEL      = atm                             ,
+ SEND_DATA       = a_3d_1                          
+ /

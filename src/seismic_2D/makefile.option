@@ -1,0 +1,13 @@
+# Makefile option setting
+# for Intel Fortran compiler(Serial)
+# FC = ifort
+# FFLAGS = -ipo20 -fast -O3 -xhost -warn all
+# FFLAGS = -CB -traceback -O0 -fpe0 -g -check # debug mode
+
+# for Gfortran
+# FC = gfortran
+# FFLAGS = -O3 -funroll-loops -msse3 -m64 
+
+# for FX10 fujitsu compiler
+FC = frtpx
+FFLAGS = -O3 -Kfast

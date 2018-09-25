@@ -1,0 +1,34 @@
+BASECOBJS = \
+	$(BASEDIR)/ppohVIS_BASE_Lib.o \
+	$(BASEDIR)/ppohVIS_BASE_F2CUtil.o \
+	$(BASEDIR)/ppohVIS_BASE_Error.o \
+	$(BASEDIR)/ppohVIS_BASE_Parallel.o \
+	$(BASEDIR)/ppohVIS_BASE_ParallelBoundingBox.o \
+	$(BASEDIR)/ppohVIS_BASE_ParallelVoxel.o \
+	$(BASEDIR)/ppohVIS_BASE_Control.o \
+	$(BASEDIR)/ppohVIS_BASE_Control_F2C.o \
+	$(BASEDIR)/ppohVIS_BASE_Control_C2F.o \
+	$(BASEDIR)/ppohVIS_BASE_ControlFile.o \
+	$(BASEDIR)/ppohVIS_BASE_GetControl_IF.o \
+	$(BASEDIR)/ppohVIS_BASE_Mesh.o \
+	$(BASEDIR)/ppohVIS_BASE_Geometry.o \
+	$(BASEDIR)/ppohVIS_BASE_Edge.o \
+	$(BASEDIR)/ppohVIS_BASE_TriangularSurface.o \
+	$(BASEDIR)/ppohVIS_BASE_QuadrilateralSurface.o \
+	$(BASEDIR)/ppohVIS_BASE_FreeSurface.o \
+	$(BASEDIR)/ppohVIS_BASE_BoundingBox.o \
+	$(BASEDIR)/ppohVIS_BASE_Result.o \
+	$(BASEDIR)/ppohVIS_BASE_Result_F2C.o \
+	$(BASEDIR)/ppohVIS_BASE_UCD.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelUtil.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelItem.o \
+	$(BASEDIR)/ppohVIS_BASE_InitialVoxel.o \
+	$(BASEDIR)/ppohVIS_BASE_Voxel.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelValue.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelCost.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelUtilGetCoord.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelUtilSetValue.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelUtilSearchInside.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelUtilSetChildProp.o \
+	$(BASEDIR)/ppohVIS_BASE_VoxelCount.o
+

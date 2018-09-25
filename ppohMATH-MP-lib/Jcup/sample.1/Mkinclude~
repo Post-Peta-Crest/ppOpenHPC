@@ -1,0 +1,32 @@
+# $Id: Makefile, 2001/01/01 jchiang $
+##
+# Makefile for pom00
+#
+
+MI6DIR = $(HOME)/Jcup/sample
+BINDIR = $(MI6DIR)/bin
+JCUPDIR = $(HOME)/Jcup
+COMMONDIR = $(MI6DIR)/common
+DRIVER = $(MI6DIR)/driver
+ATMDIR = $(MI6DIR)/atm
+LANDDIR = $(MI6DIR)/land
+ICEDIR = $(MI6DIR)/ice
+DYNAMICS = $(ATMDIR)/dynamics
+OCNDIR = $(MI6DIR)/ocn
+CHMDIR = $(MI6DIR)/chm
+
+LIBJCUP = $(JCUPDIR)/lib/libjcup.a
+INCJCUP = $(JCUPDIR)/include
+
+JOBJ = jcup_interpolation_sample.o
+
+FC = mpif90 
+LD = mpif90
+#NC_INCDIR = $(HOME)/bin/
+
+# 32-bit mode
+DEFMPI = MPI2
+#FFLAGS = -c -O2 -KV8PLUS -Am -Ay
+FFLAGS = -cpp -mcmodel medium -shared-intel -O1 -debug all -check all -g
+#FFLAGS = -c -g -cpp -ladebug 
+LDOPT  = ${libdir}/libjcup.a

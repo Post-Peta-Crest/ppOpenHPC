@@ -1,0 +1,308 @@
+!=====================================================================!
+!                                                                     !
+!   Software Name : ppOpen-APPL/FDM                                   !
+!         Version : 0.3                                               !
+!                                                                     !
+!   License                                                           !
+!     This file is part of ppOpen-APPL/FDM.                           !
+!     ppOpen-APPL/FDM is a free software, you can use it under the    !
+!     terms of The MIT License (MIT). See LICENSE file and User's     !
+!     guide for more details.                                         !
+!                                                                     !
+!   ppOpen-HPC project:                                               !
+!     Open Source Infrastructure for Development and Execution of     !
+!     Large-Scale Scientific Applications on Post-Peta-Scale          !
+!     Supercomputers with Automatic Tuning (AT).                      !
+!                                                                     !
+!   Organizations:                                                    !
+!     The University of Tokyo                                         !
+!       - Information Technology Center                               !
+!       - Atmosphere and Ocean Research Institute (AORI)              !
+!       - Interfaculty Initiative in Information Studies              !
+!         /Earthquake Research Institute (ERI)                        !
+!       - Graduate School of Frontier Science                         !
+!     Kyoto University                                                !
+!       - Academic Center for Computing and Media Studies             !
+!     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  !
+!                                                                     !
+!   Sponsorship:                                                      !
+!     Japan Science and Technology Agency (JST), Basic Research       !
+!     Programs: CREST, Development of System Software Technologies    !
+!     for post-Peta Scale High Performance Computing.                 !
+!                                                                     !
+!                 Copyright (c) 2015 T.Furumura                       !
+!                                                                     !
+!=====================================================================!
+EXAMPLE_README
+
+This document describes the sample parameters used for ppOpen-APPL/FDM
+applications.
+
+----------------------------------------------------------------------
+Examples for seismic wave propagation in 2D (seismic_2D)	      
+----------------------------------------------------------------------
+1) Simulation parameter file (m_params.f90)
+Simulation parameters such as model size and resolution etc are set
+in 'm_params.f90'.
+
+2) Input parameters
+Input parameters are set to 'station.dat', 'source.dat', and 'medium.dat'.
+
+2-1) station.dat
+You can set number of observation points (stations) and their locations
+as (distance and depth)
+
+# station parameter
+# number of station
+# location of station (X, Z: km)
+# 
+5
+4.0 0.0
+8.0 0.0
+12.0 0.0
+16.0 0.0
+20.0 0.0
+
+2-2) source.dat
+You can set source parameters such as locations (distance and depth),
+fault parameters (strike, dip, rake) and source duration time 
+and central time (at, t0)
+
+# Source parameter
+# Source location: X and Z (km)
+# Source mechanism: STRIKE, DIP, LAKE
+# Source time function: AT, T0
+60.0 40.0
+0.0 45.0 90.0
+0.5 1.0
+
+2-3) medium.dat
+You can set a layered medium structure with parameters (Ro, Vp, Vs)
+in each layer as : 
+
+# medium parameter
+# number of layers
+# Z (km), RO (t/m3), Vp(km/s), Vs(km/s)
+# 
+4
+20 2.3 3.0 1.7
+30 2.3 3.3 2.3
+40 2.7 5.0 3.3
+50 2.7 6.0 4.0
+
+3) Execution
+Copy necessary parameter files (station.dat, source.dat, medium.dat
+and m_param.f90) of ./example/seismic_2D-example in ./src directory
+and type 'make seism2d' in ./ and an run in ./src/seismic_2D
+
+% make seism2d
+% cd ./src/seismic_2D
+% ./seism2d_psv
+
+You can check the simulation result by comparing the output log
+for 2D simulaiton in ./examples/results/2D.
+
+4) Output
+After program stops you can get four output files in ./src/seismic_2D/out:
+- Seism2D.SPS: snapshots of seismic wavefield (binary)
+- Seism2D.WAV: waveform at each station (binary)
+- Seism2D.prm: parameters used in this simulation (ascii)
+- Seism2D-result.dat: waveform at each station (ascii)
+Moreover, you can get visualization files for the commercial visuzalizaiton soft AVS/Express
+- seism2d-***.cod : coordinate files
+- seism2d-***.dat : data files
+- seism2d.fld : field files
+Note: *** is the time-step
+
+5) Post processing
+5-1) Illustrating snapshots of seismic wavefield
+For illustrating snapshots of seismic wave propagation at each time
+step derived by the present simulation use visualization tools ppmxy2d
+in tools sub directory as: 
+
+%ppmxy2d -f Seism2D.prm -tim -tick -pall -pmul 1e3 -smul 1e3 -ptype SPS
+
+ppmxy2d set necessary parameters such as grid size and axis of
+illustration using parameter file  Seism2D.prm automatically and users
+need setting another parameters such as plotting amplitude.
+Image file is created in directory snap/ in ppm format.
+Please also see list of parameters by simply typing
+
+% ppmxy2d
+
+Moreover, you can visualize using AVS/Express.
+
+5-2) Illustrating waveforms at each station
+For illustarating waveforms at each station calculated by the present
+simulation use visualization tools rwav2d in tools sub directory as:
+
+% rwav2d seismic_2d-result.dat
+rwav2d can convert to gnuplot format 
+
+% gnuplot
+%plot "seismic_2d-result-plotdata.dat" index 0 using 4:5 w l
+
+You can find a sample of visualized wavefield for this example
+in the User's guide.
+
+----------------------------------------------------------------------
+Examples for seismic wave propagation in 3D (seismic_3D)
+----------------------------------------------------------------------
+
+1) Simulation parameter file (m_params.f90)
+Simulation parameters such as model size and resolution etc are set in
+'m_params.f90'.
+
+2) Input parameters
+Input parameters are set to 'station.dat', 'source.dat', and 'medium.dat'.
+
+2-1) station.dat
+You can set number of observation points (stations) and their locations
+as (distance and depth)
+
+# station parameter
+# number of station
+# location of station (X,Y,Z: km)
+# 
+4
+10.0 10.0 0.0
+40.0 10.0 0.0
+10.0 40.0 0.0
+40.0 40.0 0.0
+EOF
+
+2-2) source.dat
+You can set source parameters such as locations (distance and depth),
+fault parameters (strike, dip, rake) and source duration time
+and central time (at, t0)
+
+# Source parameter
+# Source location: X, Y and Z (km)
+# Source mechanism: STRIKE, DIP, LAKE
+# Source time function: AT, T0
+16.0 16.0 16.0
+0.0 45.0 90.0
+0.5 1.0
+EOF
+
+2-3-1) medium.dat in uniform layer
+You can set a layered medium structure with parameters (Ro, Vp, Vs)
+in each layer as : 
+
+# medium parameter
+# number of layers
+# Z (km), RO (t/m3), Vp(km/s), Vs(km/s)
+# 
+4
+20 2.3 3.0 1.7
+30 2.3 3.3 2.3
+40 2.7 5.0 3.3
+50 2.7 6.0 4.0
+
+2-4-1) medium.dat in inhomogeneous structure
+You can set a inhomogeneous medium structure with parameters (No., Ro, Vp, Vs) in each layer as :
+# medium parameter
+# number of layers
+# N0., RO (t/m3), Vp(km/s), Vs(km/s)
+#
+23
+1  1.95 1.8 0.50
+2  2.05 2.1 0.70
+3  2.15 2.4 1.00
+4  2.20 2.7 1.30
+5  2.30 3.2 1.70
+....
+21  2.60 5.4 2.80
+22  2.80 6.5 3.50
+23  3.40 8.1 4.60
+
+2-4-2) geometry.dat in inhomogeneous structure
+You can set each geometry data
+# Number of structure
+# File name 
+23
+MODEL00.geom
+MODEL01.geom
+MODEL02.geom
+MODEL03.geom
+MODEL04.geom
+...
+MODEL21.geom
+MODEL22.geom
+MODEL23.geom
+
+2-4-3) structure data
+Structure data (extention is geom) prepare ./example/seismic_3D-example/kobe-structure
+
+3) Execution
+(in uniform structure)
+Copy necessary parameter files (station.dat, source.dat, medium.dat and m_param.f90) of ./example/seismic_3D-example to ./src directory
+and type 'make seism3d-parallel' in ./ and run.
+User change the type of parallel computing in ./src/seismic_3D/3.parallel/Makefile.option.
+
+(in inhomogeneous structure layer)
+Copy necessary parameter files (station.dat, source.dat, medium_real.dat, m_param_real.f90) of ./example/seismic_3D-example to ./src directory.
+And copy structure data (extention is geom) of kobe region prepare of ./example/seismic_3D-example/kobe-structure to ./src directory.
+Next type 'make seism3d-ppohVIS' or 'make seism3d-parallel' in ./ and run.
+User change the type of parallel computing in Makefile.option and Makefile.code of ./src/seismic_3D. 
+
+(in parallel)
+% make seism3d
+% cd ./src/seismic_3D/3.parallel
+% mpirun -np 8 ./seism3d3n or run
+
+Note that sub directory ./ppohVIS, ./out and ./out/snap must be created to store results before running program.
+
+You can check the simulation result by comparing the output log for 3D simulaiton in ./examples/results/3D.
+
+4) Output
+After program stops you can get six output files in ./out:
+- SEISM3D.SPS: snapshots of seismic wavefield (binary)
+- SEISM3D.XY: snapshots of seismic wavefield in XY (binary)
+- SEISM3D.XZ: snapshots of seismic wavefield in XY (binary)
+- SEISM3D.YZ: snapshots of seismic wavefield in XY (binary)
+- SEISM3D.WAV: waveform at each station (binary)
+- SEISM3D.prm: parameters used in this simulation (ascii)
+
+Moreover, you can get the visualization files in ./ppohVIS. Currently, these files can visualization using AVS/Express and ParaVIEW etc.
+
+5) Post processing
+5-1)Combining files
+The calculated results are divided by the MPI.Therefore, combining
+the file is required.You use combining tools catsnap and catwav
+in tools sub directory as:
+
+% catsnap SEISM3D3.prm
+% catwav SEISM3D3.prm
+
+The snapshot and wave form results are combined by catsnap and
+catwav using parameter file SEISM3D3.prm.
+
+5-2) Illustrating snapshots of seismic wavefield
+For illustrating snapshots of seismic wave propagation at each time
+step derived by the present simulation use visualization tools
+ppmxy3d3 in tools sub directory as: 
+
+%ppmxy3d3 -f Seism3D.prm -tim -tick -pall -pmul 1e3 -smul 1e3 -ptype SPS
+
+ppmxy3d3 set necessary parameters such as grid size and axis of
+illustration using parameter file  SEISM3D3.prm automatically and users
+need setting another parameters such as plotting amplitude.
+Image file is created in directory snap/ in ppm format.
+Please also see list of parameters by simply typing
+
+% ppmxy3d3
+
+5-3) Illustrating waveforms at each station
+For illustarating waveforms at each station calculated by the present
+simulation use visualization tools rwav3d in tools sub directory as:
+
+% rwav3d SEISM3D3.WAV > wave.dat
+rwav3d can convert to binary to ascii format. The converted format is
+available in gnuplot.
+
+%gnuplot
+%plot "wave.dat" index 0 using 5:6 w l
+
+You can find a sample of visualized wavefield for this example
+in the User's guide.

@@ -1,0 +1,597 @@
+&coupler_config
+  log_level  = 2
+  log_stderr = 1
+&end
+
+&model
+  name = "atm"
+&end
+
+&senddata
+  data_name   = "a_2d_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "a_2d_2"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "a_2d_3"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "a_25d_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "a_25d_2"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "a_3d_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "ao_7"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ac_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "ac_2"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ac_3"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ac_4"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "ac_5"
+  send_flag   = 0
+&end
+
+
+&recvdata
+  data_name    = "oa_1"
+  recv_flag    = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model   = "ocn"
+  send_data    = "ocn_1"
+&end
+
+&recvdata
+  data_name    = "oa_2"
+  recv_flag    = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 2
+  send_model   = "ocn"
+  send_data    = "ocn_2"
+&end
+
+&recvdata
+  data_name    = "oa_3"
+  recv_flag    = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 3
+  send_model   = "ocn"
+  send_data    = "ocn_3"
+&end
+
+&recvdata
+  data_name    = "oa_4"
+  recv_flag    = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 4
+  send_model   = "ocn"
+  send_data    = "ocn_4"
+&end
+
+&recvdata
+  data_name    = "oa_5"
+  recv_flag    = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 5
+  send_model   = "ocn"
+  send_data    = "ocn_5"
+&end
+
+&recvdata
+  data_name   = "ca_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "chm"
+  send_data   = "chm_1"
+&end
+
+&recvdata
+  data_name   = "ca_2"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 2
+  exchange_tag = 2
+  send_model  = "chm"
+  send_data   = "chm_2"
+&end
+
+&recvdata
+  data_name   = "ca_3"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 2
+  exchange_tag = 3
+  send_model  = "chm"
+  send_data   = "chm_3"
+&end
+
+&recvdata
+  data_name   = "ca_4"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 2
+  exchange_tag = 4
+  send_model  = "chm"
+  send_data   = "chm_4"
+&end
+
+&recvdata
+  data_name   = "ca_5"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 2
+  exchange_tag = 5
+  send_model  = "chm"
+  send_data   = "chm_5"
+&end
+
+&recvdata
+  data_name   = "ia_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "ice"
+  send_data   = "ice_1"
+&end
+
+&recvdata
+  data_name   = "la_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "land"
+  send_data   = "land_1"
+&end
+
+-----------------------------------------
+
+&model
+
+  name = "land"
+
+&end
+
+&senddata
+  data_name   = "land_1"
+  send_flag   = 1
+&end
+
+
+&recvdata
+  data_name   = "al_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_2d_1"
+&end
+
+
+&recvdata
+  data_name   = "ol_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "ocn"
+  send_data   = "ocn_1"
+&end
+
+&recvdata
+  data_name   = "il_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "ice"
+  send_data   = "ice_1"
+&end
+
+-----------------------------------------
+
+&model
+
+  name = "ocn"
+
+&end
+
+&senddata
+  data_name   = "ocn_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "ocn_2"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ocn_3"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ocn_4"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "ocn_5"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name = "ob_1"
+  send_flag = 0
+&end
+
+&senddata
+  data_name = "oi_1"
+  send_flag = 1
+&end
+
+&recvdata
+  data_name   = "atm_1"
+  recv_flag   = 1
+  recv_mode   = 'AVR'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_2d_1"
+&end
+
+&recvdata
+  data_name   = "atm_2"
+  recv_flag   = 1
+  recv_mode   = 'AVR'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_2d_2"
+&end
+
+&recvdata
+  data_name   = "atm_3"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_2d_3"
+&end
+
+&recvdata
+  data_name   = "atm_4"
+  recv_flag   = 1
+  recv_mode   = 'AVR'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 4
+  send_model  = "atm"
+  send_data   = "a_25d_1"
+&end
+
+&recvdata
+  data_name   = "atm_5"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 5
+  send_model  = "atm"
+  send_data   = "a_25d_2"
+&end
+
+&recvdata
+  data_name   = "atm_6"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 6
+  send_model  = "atm"
+  send_data   = "ao_6"
+&end
+
+&recvdata
+  data_name   = "atm_7"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 7
+  send_model  = "atm"
+  send_data   = "ao_7"
+&end
+
+&recvdata
+  data_name   = "land_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 8
+  send_model  = "land"
+  send_data   = "land_1"
+&end
+
+&recvdata
+  data_name   = "ice_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = 0
+  mapping_tag = 1
+  exchange_tag = 8
+  send_model  = "ice"
+  send_data   = "io_1"
+&end
+
+
+-----------------------------------------
+
+&model
+
+  name = "ice"
+
+&end
+
+&senddata
+  data_name   = "ice_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "io_1"
+  send_flag   = 1
+&end
+
+&recvdata
+  data_name   = "oi_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = 0
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "ocn"
+  send_data   = "oi_1"
+&end
+
+
+&recvdata
+  data_name   = "ai_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_2d_1"
+&end
+
+&recvdata
+  data_name   = "li_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 1
+  time_lag    = -1
+  mapping_tag = 1
+  exchange_tag = 1
+  send_model  = "land"
+  send_data   = "land_1"
+&end
+
+
+-----------------------------------------
+
+&model
+
+  name = "chm"
+
+&end
+
+&senddata
+  data_name   = "chm_1"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "chm_2"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "chm_3"
+  send_flag   = 0
+&end
+
+&senddata
+  data_name   = "chm_4"
+  send_flag   = 1
+&end
+
+&senddata
+  data_name   = "chm_5"
+  send_flag   = 0
+&end
+
+&recvdata
+  data_name   = "atm_1"
+  recv_flag   = 1
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = -1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "a_3d_1"
+&end
+
+&recvdata
+  data_name   = "atm_2"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = 1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "ac_2"
+&end
+
+&recvdata
+  data_name   = "atm_3"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = 1
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "atm"
+  send_data   = "ac_3"
+&end
+
+
+&recvdata
+  data_name   = "atm_4"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = 1
+  mapping_tag  = 2
+  exchange_tag = 4
+  send_model  = "atm"
+  send_data   = "ac_4"
+&end
+
+
+&recvdata
+  data_name   = "atm_5"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 2
+  time_lag    = 1
+  mapping_tag  = 2
+  exchange_tag = 5
+  send_model  = "atm"
+  send_data   = "ac_5"
+&end
+
+-----------------------------------------
+
+&model
+
+  name = "bio"
+
+&end
+
+&senddata
+  data_name   = "bio_1"
+  send_flag   = 0
+&end
+
+
+&recvdata
+  data_name   = "ocn_1"
+  recv_flag   = 0
+  recv_mode   = 'SNP'
+  interval    = 3
+  time_lag    = 0
+  mapping_tag  = 1
+  exchange_tag = 1
+  send_model  = "ocn"
+  send_data   = "ob_1"
+&end
+
+
+-----------------------------------------
+

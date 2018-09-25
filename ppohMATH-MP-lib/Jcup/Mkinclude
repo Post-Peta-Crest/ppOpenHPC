@@ -1,0 +1,20 @@
+
+JCUPDIR = /group1/gc26/share/HPCchallenge2014/prog/Jcup
+
+############# 1. System Specification #################################
+### select one of following by un-comment it, or create new one.
+########################################################################
+###SYSTEM         = ES
+SYSTEM               = Oakleaf.cross
+#SYSTEM          = Linux-IFC.mpich
+#SYSTEM          = Linux-IFC.openmpi
+
+################ Directory Specification ###############
+
+TOPDIR		= $(JCUPDIR)
+
+######## Other directories
+SRCDIR		= $(TOPDIR)
+SYSMAKEDIR	= $(SRCDIR)/sysdep
+
+include $(SYSMAKEDIR)/Makedef.$(SYSTEM)

@@ -1,0 +1,158 @@
+ =======================================================
+ my name : ocn
+   exchange interval 
+                     atm        land         ocn         ice         chm
+                     180         180    99999999         180    99999999
+                       0           0    99999999           2    99999999
+ -------------------------------------------------------
+ocn_1         T  F
+  recv model   recv data  intrvl  is average
+         atm        oa_1     180           F
+        land        ol_1     180           F
+ocn_2         F  F
+  recv model   recv data  intrvl  is average
+ocn_3         F  F
+  recv model   recv data  intrvl  is average
+ocn_4         F  F
+  recv model   recv data  intrvl  is average
+ocn_5         F  F
+  recv model   recv data  intrvl  is average
+ob_1          F  F
+  recv model   recv data  intrvl  is average
+oi_1          T  F
+  recv model   recv data  intrvl  is average
+         ice        oi_1     180           F
+ -------------------------------------------------------
+atm_1         T  T   180  1  1 atm         a_2d_1      
+atm_2         T  T   180  1  1 atm         a_2d_2      
+atm_3         T  F   180  1  1 atm         a_2d_3      
+atm_4         T  T   180  1  4 atm         a_25d_1     
+atm_5         T  F   180  1  5 atm         a_25d_2     
+atm_6         F  F   180  1  6 atm         ao_6        
+atm_7         F  F   180  1  7 atm         ao_7        
+land_1        T  F   180  1  8 land        land_1      
+ice_1         T  F   180  1  8 ice         io_1        
+ =======================================================
+atm          12 12
+ -------------------------------------------------------
+a_2d_1        T  T
+  recv model   recv data  intrvl  is average
+        land        al_1      60           F
+         ocn       atm_1     180           T
+         ice        ai_1      60           F
+a_2d_2        T  T
+  recv model   recv data  intrvl  is average
+         ocn       atm_2     180           T
+a_2d_3        T  F
+  recv model   recv data  intrvl  is average
+         ocn       atm_3     180           F
+a_25d_1       T  T
+  recv model   recv data  intrvl  is average
+         ocn       atm_4     180           T
+a_25d_2       T  F
+  recv model   recv data  intrvl  is average
+         ocn       atm_5     180           F
+a_3d_1        T  F
+  recv model   recv data  intrvl  is average
+         chm       atm_1     120           F
+ao_7          F  F
+  recv model   recv data  intrvl  is average
+ac_1          F  F
+  recv model   recv data  intrvl  is average
+ac_2          F  F
+  recv model   recv data  intrvl  is average
+ac_3          F  F
+  recv model   recv data  intrvl  is average
+ac_4          F  F
+  recv model   recv data  intrvl  is average
+ac_5          F  F
+  recv model   recv data  intrvl  is average
+ -------------------------------------------------------
+oa_1          T  F   180  1  1 ocn         ocn_1       
+oa_2          F  F   180  1  2 ocn         ocn_2       
+oa_3          F  F   180  1  3 ocn         ocn_3       
+oa_4          F  F   180  1  4 ocn         ocn_4       
+oa_5          F  F   180  1  5 ocn         ocn_5       
+ca_1          T  F   120  1  1 chm         chm_1       
+ca_2          F  F   120  2  2 chm         chm_2       
+ca_3          F  F   120  2  3 chm         chm_3       
+ca_4          F  F   120  2  4 chm         chm_4       
+ca_5          F  F   120  2  5 chm         chm_5       
+ia_1          T  F    60  1  1 ice         ice_1       
+la_1          T  F    60  1  1 land        land_1      
+ =======================================================
+land          1  3
+ -------------------------------------------------------
+land_1        T  F
+  recv model   recv data  intrvl  is average
+         atm        la_1      60           F
+         ocn      land_1     180           F
+         ice        li_1      60           F
+ -------------------------------------------------------
+al_1          T  F    60  1  1 atm         a_2d_1      
+ol_1          T  F   180  1  1 ocn         ocn_1       
+il_1          T  F    60  1  1 ice         ice_1       
+ =======================================================
+ocn           7  9
+ -------------------------------------------------------
+ocn_1         T  F
+  recv model   recv data  intrvl  is average
+         atm        oa_1     180           F
+        land        ol_1     180           F
+ocn_2         F  F
+  recv model   recv data  intrvl  is average
+ocn_3         F  F
+  recv model   recv data  intrvl  is average
+ocn_4         F  F
+  recv model   recv data  intrvl  is average
+ocn_5         F  F
+  recv model   recv data  intrvl  is average
+ob_1          F  F
+  recv model   recv data  intrvl  is average
+oi_1          T  F
+  recv model   recv data  intrvl  is average
+         ice        oi_1     180           F
+ -------------------------------------------------------
+atm_1         T  T   180  1  1 atm         a_2d_1      
+atm_2         T  T   180  1  1 atm         a_2d_2      
+atm_3         T  F   180  1  1 atm         a_2d_3      
+atm_4         T  T   180  1  4 atm         a_25d_1     
+atm_5         T  F   180  1  5 atm         a_25d_2     
+atm_6         F  F   180  1  6 atm         ao_6        
+atm_7         F  F   180  1  7 atm         ao_7        
+land_1        T  F   180  1  8 land        land_1      
+ice_1         T  F   180  1  8 ice         io_1        
+ =======================================================
+ice           2  3
+ -------------------------------------------------------
+ice_1         T  F
+  recv model   recv data  intrvl  is average
+         atm        ia_1      60           F
+        land        il_1      60           F
+io_1          T  F
+  recv model   recv data  intrvl  is average
+         ocn       ice_1     180           F
+ -------------------------------------------------------
+oi_1          T  F   180  1  1 ocn         oi_1        
+ai_1          T  F    60  1  1 atm         a_2d_1      
+li_1          T  F    60  1  1 land        land_1      
+ =======================================================
+chm           5  5
+ -------------------------------------------------------
+chm_1         T  F
+  recv model   recv data  intrvl  is average
+         atm        ca_1     120           F
+chm_2         F  F
+  recv model   recv data  intrvl  is average
+chm_3         F  F
+  recv model   recv data  intrvl  is average
+chm_4         F  F
+  recv model   recv data  intrvl  is average
+chm_5         F  F
+  recv model   recv data  intrvl  is average
+ -------------------------------------------------------
+atm_1         T  F   120  1  1 atm         a_3d_1      
+atm_2         F  F   120  1  1 atm         ac_2        
+atm_3         F  F   120  1  1 atm         ac_3        
+atm_4         F  F   120  2  4 atm         ac_4        
+atm_5         F  F   120  2  5 atm         ac_5        

@@ -1,0 +1,18 @@
+#
+# for partitioner
+#
+!MESH, NAME=part_in,TYPE=HECMW-ENTIRE
+ ground.msh
+!MESH, NAME=part_out,TYPE=HECMW-DIST
+ ground_16
+#
+# for solver
+#
+!MESH, NAME=fstrMSH, TYPE=HECMW-DIST
+ ground_16
+!CONTROL, NAME=fstrCNT
+ ground.cnt
+!RESULT, NAME=fstrRES, IO=OUT
+ ground.res
+!RESULT, NAME=vis_out, IO=OUT
+ ground.vis

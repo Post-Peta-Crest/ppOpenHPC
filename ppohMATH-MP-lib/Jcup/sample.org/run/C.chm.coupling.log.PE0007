@@ -1,0 +1,228 @@
+2012-08-23/15:15:56 :: coupler initialization compoleted                                                                      
+2012-08-23/15:15:56 :: assigned component name : chm                                                                          
+2012-08-23/15:15:56 :: jcup_def_grid_1d : component name : chm, grid name : chm_grid, grid size : 1440, min : 1, max : 1440   
+2012-08-23/15:15:56 :: Grid definition completed                                                                              
+2012-08-23/15:15:56 :: jcup_def_varp : Send data definition : chm_1, defined data dimension : 1                               
+2012-08-23/15:15:56 :: jcup_def_varg : Recv data definition : atm_1, defined data dimension : 1                               
+2012-08-23/15:15:56 :: set_mapping_table 1                                                                                    
+2012-08-23/15:15:56 :: set_mapping_table 2                                                                                    
+2012-08-23/15:15:56 :: set_mapping_table 3                                                                                    
+2012-08-23/15:15:56 :: set_mapping_table 4                                                                                    
+2012-08-23/15:15:56 :: set_mapping_table 5                                                                                    
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 1                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 2                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 3                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 4                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 5                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 6                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 7                                                                            
+2012-08-23/15:15:56 :: set_local_grid_mapping_1d 8                                                                            
+2012-08-23/15:15:56 :: set_mapping_table 6                                                                                    
+2012-08-23/15:15:56 :: set mapping table: atm:chm, table number = 1, grid number = 2:1                                        
+2012-08-23/15:15:56 :: set mapping table: chm:atm, table number = 1, grid number = 1:2                                        
+2012-08-23/15:15:56 :: Time Initialize OK. Start Time : 2004/12/31/0/0/0                                                      
+2012-08-23/15:15:56 :: Put data, data name = chm_1, data id = 5101, weight=  1.000                                            
+2012-08-23/15:15:56 :: put_send_data_double_1d : put data : name = chm_1, data id = 5101                                      
+2012-08-23/15:15:56 :: search time buffer : usable time found : 10000101010000 : 20041231000000                               
+2012-08-23/15:15:56 :: allocate data buffer double 1d : name = chm_1, Size:1440                                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = chm_1, data id = 5101                                             
+2012-08-23/15:15:56 :: Set Current Time : 2004/12/31/0/0/0, Delta T : 120, component : chm                                    
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!    20041231000000   !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: exchange component : chm                                                                               
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 1:5                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, chm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : a_3d_1                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : atm, dest model : chm                                    
+2012-08-23/15:15:56 :: IRecv 1 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 2 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 3 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: IRecv 4 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : atm, dest model : chm                                
+2012-08-23/15:15:56 :: interpolate_data_1d_double start. source model : atm, dest model : chm                                 
+2012-08-23/15:15:56 :: search time buffer : usable time found : 10000101010000 : 20041231000000                               
+2012-08-23/15:15:56 :: allocate data buffer double 1d : name = atm_1, Size:1440                                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = atm_1, data id = 3201                                             
+2012-08-23/15:15:56 :: interpolate_data_1d_double completed. source model : atm, dest model : chm                             
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, chm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 5:1                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : chm_1                                                                                 
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : chm, dest model : atm                                    
+2012-08-23/15:15:56 :: get_current_time                                                                                       
+2012-08-23/15:15:56 :: get_send_data_double_1d : get data : name = chm_1, data id = 5101, time = 20041231000000               
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000000                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = chm_1, data id = 5101                                                      
+2012-08-23/15:15:56 :: ISend 1 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 2 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 3 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: ISend 4 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : chm, dest model : atm                                
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: Get data, data name = atm_1, data id = 3201                                                            
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000000                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = atm_1, data id = 3201                                                      
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000000                                                  
+2012-08-23/15:15:56 :: reset time buffer : 20041231000000                                                                     
+2012-08-23/15:15:56 :: Put data, data name = chm_1, data id = 5101, weight=  1.000                                            
+2012-08-23/15:15:56 :: put_send_data_double_1d : put data : name = chm_1, data id = 5101                                      
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000000                                                  
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = chm_1, data id = 5101                                             
+2012-08-23/15:15:56 :: Set Current Time : 2004/12/31/0/2/0, Delta T : 120, component : chm                                    
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!    20041231000200   !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: exchange component : chm                                                                               
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 1:5                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, chm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : a_3d_1                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : atm, dest model : chm                                    
+2012-08-23/15:15:56 :: IRecv 1 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 2 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 3 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: IRecv 4 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : atm, dest model : chm                                
+2012-08-23/15:15:56 :: interpolate_data_1d_double start. source model : atm, dest model : chm                                 
+2012-08-23/15:15:56 :: search time buffer : usable time found : 20041231000000 : 20041231000200                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = atm_1, data id = 3201                                             
+2012-08-23/15:15:56 :: interpolate_data_1d_double completed. source model : atm, dest model : chm                             
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, chm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 5:1                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : chm_1                                                                                 
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : chm, dest model : atm                                    
+2012-08-23/15:15:56 :: get_before_time                                                                                        
+2012-08-23/15:15:56 :: get_send_data_double_1d : get data : name = chm_1, data id = 5101, time = 20041231000000               
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000000                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = chm_1, data id = 5101                                                      
+2012-08-23/15:15:56 :: ISend 1 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 2 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 3 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: ISend 4 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : chm, dest model : atm                                
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: Get data, data name = atm_1, data id = 3201                                                            
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = atm_1, data id = 3201                                                      
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-23/15:15:56 :: reset time buffer : 20041231000200                                                                     
+2012-08-23/15:15:56 :: Put data, data name = chm_1, data id = 5101, weight=  1.000                                            
+2012-08-23/15:15:56 :: put_send_data_double_1d : put data : name = chm_1, data id = 5101                                      
+2012-08-23/15:15:56 :: insert time buffer : 20041231000200                                                                    
+2012-08-23/15:15:56 :: allocate data buffer double 1d : name = chm_1, Size:1440                                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = chm_1, data id = 5101                                             
+2012-08-23/15:15:56 :: Set Current Time : 2004/12/31/0/4/0, Delta T : 120, component : chm                                    
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! DATA EXCHANGE START !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!  PARALLEL  EXCHANGE !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!    20041231000400   !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: exchange component : chm                                                                               
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 1:5                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, chm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : a_3d_1                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : atm, dest model : chm                                    
+2012-08-23/15:15:56 :: IRecv 1 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 2 size 384                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: IRecv 3 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: IRecv 4 size 336                                                                                       
+2012-08-23/15:15:56 :: IRecv finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : atm, dest model : chm                                
+2012-08-23/15:15:56 :: interpolate_data_1d_double start. source model : atm, dest model : chm                                 
+2012-08-23/15:15:56 :: search time buffer : usable time found : 20041231000200 : 20041231000400                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = atm_1, data id = 3201                                             
+2012-08-23/15:15:56 :: interpolate_data_1d_double completed. source model : atm, dest model : chm                             
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, chm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE START  !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: excahnge component id : 5:1                                                                            
+2012-08-23/15:15:56 :: EXCHANGE DATA START! dest model, atm, number of send data:1                                            
+2012-08-23/15:15:56 :: SEND DATA NAME : chm_1                                                                                 
+2012-08-23/15:15:56 :: exchange_data_1d_double start. source model : chm, dest model : atm                                    
+2012-08-23/15:15:56 :: get_before_time                                                                                        
+2012-08-23/15:15:56 :: get_send_data_double_1d : get data : name = chm_1, data id = 5101, time = 20041231000200               
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000200                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = chm_1, data id = 5101                                                      
+2012-08-23/15:15:56 :: ISend 1 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 1 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 2 size 384                                                                                       
+2012-08-23/15:15:56 :: ISend finish 2 size 384                                                                                
+2012-08-23/15:15:56 :: ISend 3 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 3 size 336                                                                                
+2012-08-23/15:15:56 :: ISend 4 size 336                                                                                       
+2012-08-23/15:15:56 :: ISend finish 4 size 336                                                                                
+2012-08-23/15:15:56 :: exchange_data_1d_double completed. source model : chm, dest model : atm                                
+2012-08-23/15:15:56 :: EXCHANGE DATA FINISH! dest model, atm                                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!! LOCAL EXCHANGE FINISH !!!!!!!!!!!!!!                                                  
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!  PARALLEL  EXCHANGE  !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!! DATA EXCHANGE FINISH !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: search and reset time buffer : 20041231000000                                                          
+2012-08-23/15:15:56 :: reset data buffer : name = chm_1                                                                       
+2012-08-23/15:15:56 :: Get data, data name = atm_1, data id = 3201                                                            
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-23/15:15:56 :: get data double 1d : name = atm_1, data id = 3201                                                      
+2012-08-23/15:15:56 :: search time buffer : same time found : 20041231000400                                                  
+2012-08-23/15:15:56 :: reset time buffer : 20041231000400                                                                     
+2012-08-23/15:15:56 :: Put data, data name = chm_1, data id = 5101, weight=  1.000                                            
+2012-08-23/15:15:56 :: put_send_data_double_1d : put data : name = chm_1, data id = 5101                                      
+2012-08-23/15:15:56 :: search time buffer : usable time found : 20041231000000 : 20041231000400                               
+2012-08-23/15:15:56 :: reuse data buffer double 1d : name = chm_1, data id = 5101                                             
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!   COUPLER FINALIZE  !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: check  extra data send                                                                                 
+2012-08-23/15:15:56 :: Set Current Time : 2004/12/31/0/6/0, Delta T : 0, component : chm                                      
+2012-08-23/15:15:56 :: search and reset time buffer : 20041231000400                                                          
+2012-08-23/15:15:56 :: search and reset time buffer : 20041231000200                                                          
+2012-08-23/15:15:56 :: reset data buffer : name = chm_1                                                                       
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!  COUPLING COMPLETED !!!!!!!!!!!!!!!                                                   
+2012-08-23/15:15:56 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: search and reset time buffer : 20041231000200                                                          
+2012-08-16/16:31:58 :: reset data buffer : name = chm_1                                                                       
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!  COUPLING COMPLETED !!!!!!!!!!!!!!!                                                   
+2012-08-16/16:31:58 :: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                                                   

@@ -1,0 +1,542 @@
+make[1]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1' に入ります
+if [ ! -d include ]; then \
+		mkdir -p include; \
+	fi
+if [ ! -d lib ]; then \
+		mkdir -p lib; \
+	fi
+rm -f ./include/*
+rm -f ./lib/*
+make[2]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src' に入ります
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/common' に入ります
+cp -f hecmw_struct.h hecmw_util.h hecmw_comm.h hecmw_conn_conv.h hecmw_error.h hecmw_malloc.h hecmw_log.h hecmw_msg.h hecmw_msgno.h hecmw_config.h hecmw_init.h hecmw_finalize.h hecmw_lib_fc.h hecmw_control.h hecmw_ctrllex.h hecmw_bit_array.h hecmw_map_int.h hecmw_set_int.h hecmw_varray_int.h hecmw_common.h hecmw_common_define.h hecmw_etype.h hecmw_debug_write_dist.h hecmw_reorder.h hecmw_dist.h hecmw_dist_alloc.h hecmw_dist_print.h hecmw_dist_copy_f2c.h hecmw_dist_copy_c2f.h hecmw_dist_free.h hecmw_dist_refine.h hecmw_geometric.h hecmw_ablex.h hecmw_gflex.h hecmw_heclex.h hecmw_io.h hecmw_io_dist.h hecmw_io_geofem.h hecmw_io_nastran.h hecmw_io_get_mesh.h hecmw_io_hec.h hecmw_io_abaqus.h hecmw_io_mesh.h hecmw_io_put_mesh.h hecmw_io_struct.h hecmw_path.h hecmw_restart.h hecmw_result.h hecmw_ucd_print.h hecmw_result_copy_c2f.h hecmw_result_copy_f2c.h hecmw_system.h hecmw_time.h ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/common' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver' に入ります
+make[3]: `install-header' に対して行うべき事はありません.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/visualizer' に入ります
+cp -f hecmw_vis_mem_util.h hecmw_vis_comm_util.h hecmw_vis_read_control.h hecmw_vis_SF_geom.h hecmw_vis_ray_trace.h hecmw_vis_psf_rendering.h hecmw_visualizer.h ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/visualizer' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/common' に入ります
+ar ruv ../../lib/libhecmw.a hecmw_init.o hecmw_finalize.o hecmw_comm.o hecmw_conn_conv.o hecmw_error.o hecmw_util.o hecmw_malloc.o hecmw_log.o hecmw_msg.o hecmw_msg_table.o hecmw_lib_fc.o hecmw_control.o hecmw_ctrllex.o hecmw_bit_array.o hecmw_map_int.o hecmw_set_int.o hecmw_varray_int.o hecmw_etype.o hecmw_debug_write_dist.o hecmw_reorder.o hecmw_gflex.o hecmw_heclex.o hecmw_ablex.o hecmw_io_hec.o hecmw_io_abaqus.o hecmw_io_nastran_dummy.o hecmw_io_geofem.o hecmw_io_dist.o hecmw_io_mesh.o hecmw_io_get_mesh.o hecmw_io_get_mesh_if.o hecmw_io_put_mesh.o hecmw_dist.o hecmw_dist_alloc.o hecmw_dist_print.o hecmw_dist_free.o hecmw_dist_copy_f2c.o hecmw_dist_copy_c2f.o hecmw_dist_refine.o hecmw_ucd_print.o hecmw_geometric.o hecmw_path.o hecmw_put_mesh_if.o hecmw_restart.o hecmw_bin_io.o hecmw_result.o hecmw_result_copy_c2f.o hecmw_result_copy_f2c.o hecmw_visual_if.o hecmw_system.o hecmw_time.o
+ar: creating ../../lib/libhecmw.a
+a - hecmw_init.o
+a - hecmw_finalize.o
+a - hecmw_comm.o
+a - hecmw_conn_conv.o
+a - hecmw_error.o
+a - hecmw_util.o
+a - hecmw_malloc.o
+a - hecmw_log.o
+a - hecmw_msg.o
+a - hecmw_msg_table.o
+a - hecmw_lib_fc.o
+a - hecmw_control.o
+a - hecmw_ctrllex.o
+a - hecmw_bit_array.o
+a - hecmw_map_int.o
+a - hecmw_set_int.o
+a - hecmw_varray_int.o
+a - hecmw_etype.o
+a - hecmw_debug_write_dist.o
+a - hecmw_reorder.o
+a - hecmw_gflex.o
+a - hecmw_heclex.o
+a - hecmw_ablex.o
+a - hecmw_io_hec.o
+a - hecmw_io_abaqus.o
+a - hecmw_io_nastran_dummy.o
+a - hecmw_io_geofem.o
+a - hecmw_io_dist.o
+a - hecmw_io_mesh.o
+a - hecmw_io_get_mesh.o
+a - hecmw_io_get_mesh_if.o
+a - hecmw_io_put_mesh.o
+a - hecmw_dist.o
+a - hecmw_dist_alloc.o
+a - hecmw_dist_print.o
+a - hecmw_dist_free.o
+a - hecmw_dist_copy_f2c.o
+a - hecmw_dist_copy_c2f.o
+a - hecmw_dist_refine.o
+a - hecmw_ucd_print.o
+a - hecmw_geometric.o
+a - hecmw_path.o
+a - hecmw_put_mesh_if.o
+a - hecmw_restart.o
+a - hecmw_bin_io.o
+a - hecmw_result.o
+a - hecmw_result_copy_c2f.o
+a - hecmw_result_copy_f2c.o
+a - hecmw_visual_if.o
+a - hecmw_system.o
+a - hecmw_time.o
+ar ruv ../../lib/libfhecmw.a hecmw_util_f.o
+ar: creating ../../lib/libfhecmw.a
+a - hecmw_util_f.o
+ar ruv ../../lib/libfhecmw.a hecmw_logging.o hecmw_msgno_f.o hecmw_msg_f.o hecmw_control_f.o hecmw_result_f.o hecmw_restart_f.o hecmw_dist_copy_f2c_f.o hecmw_dist_copy_c2f_f.o hecmw_dist_free_f.o hecmw_dist_print_f.o hecmw_visualizer_f.o hecmw_etype_f.o hecmw_io.o
+a - hecmw_logging.o
+a - hecmw_msgno_f.o
+a - hecmw_msg_f.o
+a - hecmw_control_f.o
+a - hecmw_result_f.o
+a - hecmw_restart_f.o
+a - hecmw_dist_copy_f2c_f.o
+a - hecmw_dist_copy_c2f_f.o
+a - hecmw_dist_free_f.o
+a - hecmw_dist_print_f.o
+a - hecmw_visualizer_f.o
+a - hecmw_etype_f.o
+a - hecmw_io.o
+cp -f *.mod ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/common' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver' に入ります
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/communication' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_comm_f.o hecmw_solver_SR_11.o hecmw_solver_SR_11i.o hecmw_solver_SR_22.o hecmw_solver_SR_22i.o hecmw_solver_SR_33.o hecmw_solver_SR_33i.o hecmw_solver_SR_mm.o hecmw_solver_SR_mmi.o
+a - hecmw_comm_f.o
+a - hecmw_solver_SR_11.o
+a - hecmw_solver_SR_11i.o
+a - hecmw_solver_SR_22.o
+a - hecmw_solver_SR_22i.o
+a - hecmw_solver_SR_33.o
+a - hecmw_solver_SR_33i.o
+a - hecmw_solver_SR_mm.o
+a - hecmw_solver_SR_mmi.o
+ar ruv ../../../lib/libfhecmw.a hecmw_solver_misc.o
+a - hecmw_solver_misc.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/communication' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/matrix' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_allocate.o hecmw_matrix_contact.o hecmw_matrix_misc.o hecmw_matrix_ordering_CM.o hecmw_matrix_ordering_MC.o hecmw_matrix_reorder.o hecmw_mat_con.o hecmw_mat_ass.o hecmw_matrix_dump.o
+a - hecmw_allocate.o
+a - hecmw_matrix_contact.o
+a - hecmw_matrix_misc.o
+a - hecmw_matrix_ordering_CM.o
+a - hecmw_matrix_ordering_MC.o
+a - hecmw_matrix_reorder.o
+a - hecmw_mat_con.o
+a - hecmw_mat_ass.o
+a - hecmw_matrix_dump.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/matrix' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/init' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_solve_init.o hecmw_solve_error.o
+a - hecmw_solve_init.o
+a - hecmw_solve_error.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/init' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/sparse_matrix' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a sparse_matrix.o sparse_matrix_hec.o
+a - sparse_matrix.o
+a - sparse_matrix_hec.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/sparse_matrix' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_mumps' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_MUMPS_wrapper_dumm.o hecmw_solver_direct_MUMPS.o
+a - hecmw_MUMPS_wrapper_dumm.o
+a - hecmw_solver_direct_MUMPS.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_mumps' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_11' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_solver_las_11.o hecmw_solver_CG_11.o hecmw_solver_11.o
+a - hecmw_solver_las_11.o
+a - hecmw_solver_CG_11.o
+a - hecmw_solver_11.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_11' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_22' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_solver_las_22.o hecmw_solver_CG_22.o hecmw_solver_BLCG_22.o hecmw_solver_22.o
+a - hecmw_solver_las_22.o
+a - hecmw_solver_CG_22.o
+a - hecmw_solver_BLCG_22.o
+a - hecmw_solver_22.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_22' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_33' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_jadm.o hecmw_tuning_fx.o hecmw_solver_las_33.o hecmw_solver_scaling_33.o hecmw_precond_BILU_33.o hecmw_precond_DIAG_33.o hecmw_precond_SSOR_33.o hecmw_precond_33.o hecmw_solver_CG_33.o hecmw_solver_BiCGSTAB_33.o hecmw_solver_GMRES_33.o hecmw_solver_GPBiCG_33.o hecmw_solver_33.o
+a - hecmw_jadm.o
+a - hecmw_tuning_fx.o
+a - hecmw_solver_las_33.o
+a - hecmw_solver_scaling_33.o
+a - hecmw_precond_BILU_33.o
+a - hecmw_precond_DIAG_33.o
+a - hecmw_precond_SSOR_33.o
+a - hecmw_precond_33.o
+a - hecmw_solver_CG_33.o
+a - hecmw_solver_BiCGSTAB_33.o
+a - hecmw_solver_GMRES_33.o
+a - hecmw_solver_GPBiCG_33.o
+a - hecmw_solver_33.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_33' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a hecmw_solver_direct.o
+a - hecmw_solver_direct.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_parallel' に入ります
+ar ruv ../../../lib/libhecmw.a matrix2graph.o matrix_repart.o mem_util.o separator_c2f_c.o 
+a - matrix2graph.o
+a - matrix_repart.o
+a - mem_util.o
+a - separator_c2f_c.o
+ar ruv ../../../lib/libfhecmw.a m_irjc_matrix.o m_crs_matrix.o m_child_matrix.o m_matrix_partition_info.o m_elap.o hecmw_solver_direct_parallel.o
+a - m_irjc_matrix.o
+a - m_crs_matrix.o
+a - m_child_matrix.o
+a - m_matrix_partition_info.o
+a - m_elap.o
+a - hecmw_solver_direct_parallel.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_parallel' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_lag' に入ります
+ar ruv ../../../lib/libhecmw.a 
+ar ruv ../../../lib/libfhecmw.a my_hecmw_util_f_lag.o m_irjc_matrix_lag.o m_child_matrix_lag.o m_crs_matrix_lag.o hecmw_solver_direct_serial_lag.o
+a - my_hecmw_util_f_lag.o
+a - m_irjc_matrix_lag.o
+a - m_child_matrix_lag.o
+a - m_crs_matrix_lag.o
+a - hecmw_solver_direct_serial_lag.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver/solver_direct_lag' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/solver' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/hecmw' に入ります
+rm -f *.o *.o *.mod
+ar ruv ../../lib/libhecmw.a 
+mpifrtpx -c hecmw.f90 -I. -I../../include  -Kfast,openmp 
+ar ruv ../../lib/libfhecmw.a hecmw.o
+a - hecmw.o
+cp -f hecmw.h ../../include/.
+cp -f *.mod ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/hecmw' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/visualizer' に入ります
+ar ruv ../../lib/libhecmw.a hecmw_vis_read_control.o hecmw_visualizer.o hecmw_vis_surface_main.o hecmw_vis_comm_util.o hecmw_vis_mem_util.o hecmw_vis_connectivity_build.o hecmw_vis_surface_compute.o hecmw_vis_case_table.o hecmw_vis_calc_attr.o hecmw_vis_intersection_find.o hecmw_vis_patch_const.o hecmw_vis_tetra_intersect.o hecmw_vis_combine.o hecmw_vis_rendering.o hecmw_vis_define_parameters.o hecmw_vis_font_texture.o hecmw_vis_color_mapping.o hecmw_vis_color_composite_sf.o hecmw_vis_generate_histogram_sf.o hecmw_vis_subimage_composite_sf.o hecmw_vis_endian.o hecmw_fstr_output_femap.o hecmw_vis_pvr_main.o hecmw_vis_comm_util.o hecmw_vis_mem_util.o hecmw_vis_new_refine.o hecmw_vis_ray_trace.o hecmw_vis_define_parameters.o hecmw_vis_font_texture.o hecmw_vis_color_mapping.o hecmw_vis_ucd_trans.o hecmw_vis_voxel_gen.o hecmw_vis_read_voxel.o hecmw_vis_mesh_extent.o hecmw_vis_color_composite_vr.o hecmw_vis_generate_histogram_vr.o hecmw_vis_subimage_composite_vr.o 
+a - hecmw_vis_read_control.o
+a - hecmw_visualizer.o
+a - hecmw_vis_surface_main.o
+a - hecmw_vis_comm_util.o
+a - hecmw_vis_mem_util.o
+a - hecmw_vis_connectivity_build.o
+a - hecmw_vis_surface_compute.o
+a - hecmw_vis_case_table.o
+a - hecmw_vis_calc_attr.o
+a - hecmw_vis_intersection_find.o
+a - hecmw_vis_patch_const.o
+a - hecmw_vis_tetra_intersect.o
+a - hecmw_vis_combine.o
+a - hecmw_vis_rendering.o
+a - hecmw_vis_define_parameters.o
+a - hecmw_vis_font_texture.o
+a - hecmw_vis_color_mapping.o
+a - hecmw_vis_color_composite_sf.o
+a - hecmw_vis_generate_histogram_sf.o
+a - hecmw_vis_subimage_composite_sf.o
+a - hecmw_vis_endian.o
+a - hecmw_fstr_output_femap.o
+a - hecmw_vis_pvr_main.o
+a - hecmw_vis_comm_util.o
+a - hecmw_vis_mem_util.o
+a - hecmw_vis_new_refine.o
+a - hecmw_vis_ray_trace.o
+a - hecmw_vis_define_parameters.o
+a - hecmw_vis_font_texture.o
+a - hecmw_vis_color_mapping.o
+a - hecmw_vis_ucd_trans.o
+a - hecmw_vis_voxel_gen.o
+a - hecmw_vis_read_voxel.o
+a - hecmw_vis_mesh_extent.o
+a - hecmw_vis_color_composite_vr.o
+a - hecmw_vis_generate_histogram_vr.o
+a - hecmw_vis_subimage_composite_vr.o
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src/visualizer' から出ます
+make[2]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1/src' から出ます
+make[1]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/hecmw1' から出ます
+make[1]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1' に入ります
+if [ ! -d include ]; then \
+		mkdir -p include; \
+	fi
+if [ ! -d lib ]; then \
+		mkdir -p lib; \
+	fi
+if [ ! -d bin ]; then \
+		mkdir -p bin; \
+	fi
+rm -f ./include/*
+rm -f ./lib/*
+make[2]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src' に入ります
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/common' に入ります
+cp -f hecmw2fstr_connect_conv.h fstr_ctrl_util.h fstr_sort_index.h ../../include/.
+cp -f fstr_ctrl_util_f.inc ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/common' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib' に入ります
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/utilities' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar: creating ../../../lib/libfistr.a
+ar ruv ../../../lib/libffistr.a utilities.o ttable.o
+ar: creating ../../../lib/libffistr.a
+a - utilities.o
+a - ttable.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/utilities' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/user' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a umat.o uyield.o uelastic.o uload.o
+a - umat.o
+a - uyield.o
+a - uelastic.o
+a - uload.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/user' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/element' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a line2n.o line3n.o tri3n.o tri6n.o quad4n.o quad8n.o quad9n.o hex8n.o hex20n.o tet4n.o tet10n.o prism6n.o prism15n.o quadrature.o element.o
+a - line2n.o
+a - line3n.o
+a - tri3n.o
+a - tri6n.o
+a - quad4n.o
+a - quad8n.o
+a - quad9n.o
+a - hex8n.o
+a - hex20n.o
+a - tet4n.o
+a - tet10n.o
+a - prism6n.o
+a - prism15n.o
+a - quadrature.o
+a - element.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/element' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/physics' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a material.o mechgauss.o ElasticLinear.o Hyperelastic.o Elastoplastic.o Viscoelastic.o creep.o calMatMatrix.o
+a - material.o
+a - mechgauss.o
+a - ElasticLinear.o
+a - Hyperelastic.o
+a - Elastoplastic.o
+a - Viscoelastic.o
+a - creep.o
+a - calMatMatrix.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/physics' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/contact' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a surf_ele.o contact_lib.o fstr_contact_def.o
+a - surf_ele.o
+a - contact_lib.o
+a - fstr_contact_def.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib/contact' から出ます
+make BUILD_CURR
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib' に入ります
+ar ruv ../../lib/libfistr.a 
+ar ruv ../../lib/libffistr.a fstr_lczparm.o m_step.o m_Makrose.o m_MakrosePartMesh.o m_out.o m_common_struct.o m_fstr.o m_fstr_freqdata.o GaussM.o static_LIB_1d.o static_LIB_2d.o static_LIB_3d.o static_LIB_C3D8.o static_LIB_3dIC.o static_LIB_beam.o static_LIB_shell.o heat_LIB_CAPACITY.o heat_LIB_DFLUX.o heat_LIB_FILM.o heat_LIB_NEUTRAL.o heat_LIB_RADIATE.o heat_LIB_THERMAL.o eigen_LIB_2d1mass.o eigen_LIB_2d2mass.o eigen_LIB_3d1mass.o eigen_LIB_3d2mass.o precheck_LIB_2d.o precheck_LIB_3d.o precheck_LIB_shell.o m_Metis403API_f_dumm.o m_fstr_para_contact.o solve_LINEQ.o static_LIB.o eigen_LIB.o heat_LIB.o
+a - fstr_lczparm.o
+a - m_step.o
+a - m_Makrose.o
+a - m_MakrosePartMesh.o
+a - m_out.o
+a - m_common_struct.o
+a - m_fstr.o
+a - m_fstr_freqdata.o
+a - GaussM.o
+a - static_LIB_1d.o
+a - static_LIB_2d.o
+a - static_LIB_3d.o
+a - static_LIB_C3D8.o
+a - static_LIB_3dIC.o
+a - static_LIB_beam.o
+a - static_LIB_shell.o
+a - heat_LIB_CAPACITY.o
+a - heat_LIB_DFLUX.o
+a - heat_LIB_FILM.o
+a - heat_LIB_NEUTRAL.o
+a - heat_LIB_RADIATE.o
+a - heat_LIB_THERMAL.o
+a - eigen_LIB_2d1mass.o
+a - eigen_LIB_2d2mass.o
+a - eigen_LIB_3d1mass.o
+a - eigen_LIB_3d2mass.o
+a - precheck_LIB_2d.o
+a - precheck_LIB_3d.o
+a - precheck_LIB_shell.o
+a - m_Metis403API_f_dumm.o
+a - m_fstr_para_contact.o
+a - solve_LINEQ.o
+a - static_LIB.o
+a - eigen_LIB.o
+a - heat_LIB.o
+F90="mpifrtpx" F90FLAGS="-Kfast,openmp" F90TARGET="libffistr.a" AR="ar ruv" RM="rm -f" sh test_flush.sh
+cp -f *.mod ../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/lib' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/common' に入ります
+ar ruv ../../lib/libfistr.a hecmw2fstr_connect_conv.o fstr_ctrl_util.o fstr_sort_index.o
+a - hecmw2fstr_connect_conv.o
+a - fstr_ctrl_util.o
+a - fstr_sort_index.o
+ar ruv ../../lib/libffistr.a hecmw2fstr_mesh_conv.o fstr_setup_util.o fstr_ctrl_modifier.o fstr_contact.o fstr_ctrl_common.o fstr_ctrl_material.o fstr_ctrl_static.o fstr_ctrl_heat.o fstr_ctrl_eigen.o fstr_ctrl_dynamic.o fstr_get_prop.o fstr_setup.o fstr_debug_dump.o fstr_precheck.o fstr_rcap_io_dummy.o
+a - hecmw2fstr_mesh_conv.o
+a - fstr_setup_util.o
+a - fstr_ctrl_modifier.o
+a - fstr_contact.o
+a - fstr_ctrl_common.o
+a - fstr_ctrl_material.o
+a - fstr_ctrl_static.o
+a - fstr_ctrl_heat.o
+a - fstr_ctrl_eigen.o
+a - fstr_ctrl_dynamic.o
+a - fstr_get_prop.o
+a - fstr_setup.o
+a - fstr_debug_dump.o
+a - fstr_precheck.o
+a - fstr_rcap_io_dummy.o
+cp -f *.mod ../../include/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/common' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis' に入ります
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/static' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a fstr_Restart.o fstr_NodalStress.o fstr_StiffMatrix.o fstr_Update.o readtemp.o static_echo.o static_make_result.o fstr_ass_load.o static_output.o static_mat_ass_main.o fstr_mat_con_contact.o fstr_Residual.o fstr_AddContactStiff.o fstr_AddBC.o static_mat_ass.o fstr_solve_LINEAR.o fstr_mat_resid_contact.o sparse_matrix_contact.o solve_LINEQ_MUMPS_contact.o set_arrays_DirectSolver.o solve_LINEQ_mkl.o solve_LINEQ_direct_serial_lag.o solve_LINEQ_contact.o fstr_solve_NonLinear.o fstr_solve_NLGEOM.o dummy_solve_LINEQ_mkl.o
+a - fstr_Restart.o
+a - fstr_NodalStress.o
+a - fstr_StiffMatrix.o
+a - fstr_Update.o
+a - readtemp.o
+a - static_echo.o
+a - static_make_result.o
+a - fstr_ass_load.o
+a - static_output.o
+a - static_mat_ass_main.o
+a - fstr_mat_con_contact.o
+a - fstr_Residual.o
+a - fstr_AddContactStiff.o
+a - fstr_AddBC.o
+a - static_mat_ass.o
+a - fstr_solve_LINEAR.o
+a - fstr_mat_resid_contact.o
+a - sparse_matrix_contact.o
+a - solve_LINEQ_MUMPS_contact.o
+a - set_arrays_DirectSolver.o
+a - solve_LINEQ_mkl.o
+a - solve_LINEQ_direct_serial_lag.o
+a - solve_LINEQ_contact.o
+a - fstr_solve_NonLinear.o
+a - fstr_solve_NLGEOM.o
+a - dummy_solve_LINEQ_mkl.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/static' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic' に入ります
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/mode' に入ります
+ar ruv ../../../../lib/libfistr.a 
+ar ruv ../../../../lib/libffistr.a fstr_EIG_lczeigenm.o fstr_EIG_getamat.o fstr_EIG_lanczos.o fstr_EIG_matmult.o fstr_EIG_mgs1.o fstr_EIG_setMASS.o fstr_EIG_tridiag.o fstr_EIG_output.o fstr_solve_eigen.o
+a - fstr_EIG_lczeigenm.o
+a - fstr_EIG_getamat.o
+a - fstr_EIG_lanczos.o
+a - fstr_EIG_matmult.o
+a - fstr_EIG_mgs1.o
+a - fstr_EIG_setMASS.o
+a - fstr_EIG_tridiag.o
+a - fstr_EIG_output.o
+a - fstr_solve_eigen.o
+cp -f *.mod ../../../../include/.
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/mode' から出ます
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/freq' に入ります
+ar ruv ../../../../lib/libfistr.a 
+ar ruv ../../../../lib/libffistr.a fstr_frequency_analysis.o
+a - fstr_frequency_analysis.o
+cp -f *.mod ../../../../include/.
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/freq' から出ます
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/transit' に入ります
+ar ruv ../../../../lib/libfistr.a 
+mpifrtpx -c -I. -I../../../../include -I../../../../../hecmw1/include  -Kfast,openmp  -I../../../../../..//Jcup/include -I../../../../../..//ppohMATHMP  fstr_dynamic_implicit.f90 -o fstr_dynamic_implicit.o
+Fortran diagnostic messages: program name(fstr_dynamic_implicit)
+  jwd8220o-i  "fstr_dynamic_implicit.f90", line 17: 副作用の可能性のある最適化を行いました.
+ Module subprogram name(fstr_solve_dynamic_implicit)
+  jwd2008i-i  "fstr_dynamic_implicit.f90", line 45: この仮引数'fstrRESULT'は,副プログラム中で使用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 68: この名前'ime'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 68: この名前'ims'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 68: この名前'ide'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 68: この名前'ids'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 70: この名前'idummy'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 80: この名前'restrt_step'は,宣言だけされていて引用されていません.
+  jwd2006i-i  "fstr_dynamic_implicit.f90", line 100: この名前'num_of_step'は,宣言だけされていて引用されていません.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 250: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 255: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 256: 多項式の演算順序を変更しました.
+  jwd8220o-i  "fstr_dynamic_implicit.f90", line 395: 副作用の可能性のある最適化を行いました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 419: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 421: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 463: 多項式の演算順序を変更しました.
+  jwd8206o-i  "fstr_dynamic_implicit.f90", line 546: 除算を逆数の乗算に変更しました.
+  jwd8206o-i  "fstr_dynamic_implicit.f90", line 547: 除算を逆数の乗算に変更しました.
+  jwd8206o-i  "fstr_dynamic_implicit.f90", line 548: 除算を逆数の乗算に変更しました.
+  jwd8208o-i  "fstr_dynamic_implicit.f90", line 625: ループ内の総和または乗積演算の計算方法を変更しました.
+  jwd8201o-i  "fstr_dynamic_implicit.f90", line 661: ループ内での不変式をループの外に移動しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 669: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 671: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 673: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 675: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 677: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 679: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 688: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 690: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 692: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 694: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 734: 多項式の演算順序を変更しました.
+  jwd8209o-i  "fstr_dynamic_implicit.f90", line 736: 多項式の演算順序を変更しました.
+ar ruv ../../../../lib/libffistr.a table_dyn.o dynamic_mat_ass_load.o dynamic_mat_ass_bc.o dynamic_mat_ass_bc_vl.o dynamic_mat_ass_bc_ac.o dynamic_mat_ass_couple.o dynamic_var_init.o dynamic_make_result.o dynamic_output.o fstr_dynamic_explicit.o fstr_dynamic_implicit.o fstr_dynamic_nlexplicit.o fstr_dynamic_nlimplicit.o fstr_solve_dynamic.o
+a - table_dyn.o
+a - dynamic_mat_ass_load.o
+a - dynamic_mat_ass_bc.o
+a - dynamic_mat_ass_bc_vl.o
+a - dynamic_mat_ass_bc_ac.o
+a - dynamic_mat_ass_couple.o
+a - dynamic_var_init.o
+a - dynamic_make_result.o
+a - dynamic_output.o
+a - fstr_dynamic_explicit.o
+a - fstr_dynamic_implicit.o
+a - fstr_dynamic_nlexplicit.o
+a - fstr_dynamic_nlimplicit.o
+a - fstr_solve_dynamic.o
+cp -f *.mod ../../../../include/.
+make[5]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic/transit' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/dynamic' から出ます
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/heat' に入ります
+ar ruv ../../../lib/libfistr.a 
+ar ruv ../../../lib/libffistr.a heat_init.o heat_get_amplitude.o heat_echo.o heat_mat_ass_bc_CFLUX.o heat_mat_ass_bc_DFLUX.o heat_mat_ass_bc_FILM.o heat_mat_ass_bc_FIXT.o heat_mat_ass_bc_RADIATE.o heat_mat_ass_boundary.o heat_mat_ass_capacity.o heat_mat_ass_conductivity.o heat_solve_SS.o heat_solve_TRAN.o fstr_solve_heat.o
+a - heat_init.o
+a - heat_get_amplitude.o
+a - heat_echo.o
+a - heat_mat_ass_bc_CFLUX.o
+a - heat_mat_ass_bc_DFLUX.o
+a - heat_mat_ass_bc_FILM.o
+a - heat_mat_ass_bc_FIXT.o
+a - heat_mat_ass_bc_RADIATE.o
+a - heat_mat_ass_boundary.o
+a - heat_mat_ass_capacity.o
+a - heat_mat_ass_conductivity.o
+a - heat_solve_SS.o
+a - heat_solve_TRAN.o
+a - fstr_solve_heat.o
+cp -f *.mod ../../../include/.
+make[4]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis/heat' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/analysis' から出ます
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/main' に入ります
+mpifrtpx -I. -I../../include -I../../../hecmw1/include  -I/home/c26019/tools/metis-4.0.3//Lib   -I../../../..//Jcup/include -I../../../..//ppohMATHMP -Kfast,openmp   \
+	-o fistr1_binaryout_substep_10 \
+	fistr_main.o -L../../lib -lffistr -lfistr -L../../../hecmw1/lib -lfhecmw -lhecmw  -L/home/c26019/tools/metis-4.0.3/ -lmetis    -SCALAPACK -SSL2BLAMP -L../../../..//ppohMATHMP -lppohMATHMP -L../../../..//Jcup/lib -ljcup
+cp -f fistr1_binaryout_substep_10 ../../bin/.
+make[3]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src/main' から出ます
+make[2]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1/src' から出ます
+make[1]: ディレクトリ `/group3/gx53/share/HPCchallenge2014/FrontISTR/fistr1' から出ます

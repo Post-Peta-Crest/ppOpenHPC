@@ -1,0 +1,79 @@
+!=====================================================================!
+!                                                                     !
+!   Software Name : ppOpen-APPL/FDM                                   !
+!         Version : 0.3                                               !
+!                                                                     !
+!   License                                                           !
+!     This file is part of ppOpen-APPL/FDM.                           !
+!     ppOpen-APPL/FDM is a free software, you can use it under the    !
+!     terms of The MIT License (MIT). See LICENSE file and User's     !
+!     guide for more details.                                         !
+!                                                                     !
+!   ppOpen-HPC project:                                               !
+!     Open Source Infrastructure for Development and Execution of     !
+!     Large-Scale Scientific Applications on Post-Peta-Scale          !
+!     Supercomputers with Automatic Tuning (AT).                      !
+!                                                                     !
+!   Organizations:                                                    !
+!     The University of Tokyo                                         !
+!       - Information Technology Center                               !
+!       - Atmosphere and Ocean Research Institute (AORI)              !
+!       - Interfaculty Initiative in Information Studies              !
+!         /Earthquake Research Institute (ERI)                        !
+!       - Graduate School of Frontier Science                         !
+!     Kyoto University                                                !
+!       - Academic Center for Computing and Media Studies             !
+!     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  !
+!                                                                     !
+!   Sponsorship:                                                      !
+!     Japan Science and Technology Agency (JST), Basic Research       !
+!     Programs: CREST, Development of System Software Technologies    !
+!     for post-Peta Scale High Performance Computing.                 !
+!                                                                     !
+!                 Copyright (c) 2015 T.Furumura                       !
+!                                                                     !
+!=====================================================================!
+
+Installation procedure of ppOpen-APPL/FDM visualization tools for 2D
+and 3D wavefield
+
+This document describes how to use visualization tools to illustrate
+snapshots and waveform output of the ppOpen-APPL/FDM program for 2D and
+3D model
+
+(a) tools_2D
+Visualization tool for 2D wavefield contains 
+ ppmxy2d.f90: to make image (ppm format) of snapshots of seismic wave
+              field
+
+ rwav2d.f90: to convert to gnuplot format
+
+these programs use the following modules:
+m_daytim.f90, m_endian.f90, m_getopt.f90, m_number1.f90, m_ppm.f90,
+m_readprm.f90, m_system.f90
+
+Instrations: 
+Type 'make' to create  ppmxy2d and rwav2d
+
+% make
+
+(b)tools_3D
+Visualization tool for 3D wavefield contains contains 
+
+ catsnap.f90:  to combine a set of separated snapshots created by
+               parallel simulation into a single snapshot file
+
+ ppmxy3d3.f90: to make image (ppm format) of snapshots of seismic
+               wave field
+
+ catwav.f90:  to combine a set of separated waveform output created
+              by parallel simulation into a single waveform file
+
+ rwav3d.f90 : to make waveform in ascii format
+
+these programs can be compiled with the m_stdio module.
+
+Instrations: 
+Type 'make' to create  catsnap, catwav and rwav3d
+
+% make

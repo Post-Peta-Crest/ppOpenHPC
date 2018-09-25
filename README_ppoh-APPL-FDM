@@ -1,0 +1,164 @@
+!=====================================================================!
+!                                                                     !
+!   Software Name : ppOpen-APPL/FDM                                   !
+!         Version : 0.3                                               !
+!                                                                     !
+!   License                                                           !
+!     This file is part of ppOpen-APPL/FDM.                           !
+!     ppOpen-APPL/FDM is a free software, you can use it under the    !
+!     terms of The MIT License (MIT). See LICENSE file and User's     !
+!     guide for more details.                                         !
+!                                                                     !
+!   ppOpen-HPC project:                                               !
+!     Open Source Infrastructure for Development and Execution of     !
+!     Large-Scale Scientific Applications on Post-Peta-Scale          !
+!     Supercomputers with Automatic Tuning (AT).                      !
+!                                                                     !
+!   Organizations:                                                    !
+!     The University of Tokyo                                         !
+!       - Information Technology Center                               !
+!       - Atmosphere and Ocean Research Institute (AORI)              !
+!       - Interfaculty Initiative in Information Studies              !
+!         /Earthquake Research Institute (ERI)                        !
+!       - Graduate School of Frontier Science                         !
+!     Kyoto University                                                !
+!       - Academic Center for Computing and Media Studies             !
+!     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  !
+!                                                                     !
+!   Sponsorship:                                                      !
+!     Japan Science and Technology Agency (JST), Basic Research       !
+!     Programs: CREST, Development of System Software Technologies    !
+!     for post-Peta Scale High Performance Computing.                 !
+!                                                                     !
+!                 Copyright (c) 2015 T.Furumura                       !
+!                                                                     !
+!=====================================================================!
+
+README for ppOpen-APPL/FDM Ver.0.3  (released  **/**/2015)
+
+ppOpen-APPL/FDM is a application software for the FDM simulation of seismic
+wave propagation in elastic media in 2D and 3D.
+The 2D application is prepared for a single-CPU (sequential) calculation
+and the 3D application use MPI and OpenMP for parallel computing.
+
+Teh pure MPI in the 3D application includes the ppOpen-MATH/VIS for the visualization
+
+(1) What you can do by this kit
+    - Elastic wave propagation analysis 
+      - for 2D/3D elastic media
+      - using 2nd/4th/8th order staggered-grid FDM
+    - Visualization program for seismic wavefield
+    - Data conversion program for plotting seismograms using gnuplot
+
+(2) Files in this directory
+./doc                          --- user's manual and reference guide
+./examples                     --- parameter files for 2D and 3D
+./examples/seismic_2D-example  --- parameter files for 2D
+./examples/seismic_3D-example  --- parameter files for 3D
+./examples/results/2D          --- output log for 2D simulation
+./examples/results/3D          --- output log for 3D simulation
+./examples/EXAMPLE_README      --- readme for sample
+./src                          --- source code files of ppOpen-APPL/FDM
+./src/seismic_2D               --- 2D source code
+./src/seismic_3D               --- 3D source code
+./tools                        --- tools files for 2D and 3D
+./tools/seismic_2D-tools       --- tools files for 2D
+./tools/seismic_3D-tools       --- tools files for 3D
+./tools/TOOLS_INSTALL          --- readme for tools
+./etc			       --- Makefile.in for FX10 and general compiler
+./ppohMATH-VIS-lib/base	       --- source code files of ppOpen-MATH/VIS-FDM3D
+./ppohMATH-VIS-lib/FDM3D       --- source code files of ppOpen-MATH/VIS-FDM3D
+./ppohMATH-VIS-install         --- directory which sotres created modulle files
+			           of ppOpen-MATH/VIS-FDM3D
+./ppohMATH-MP-lib/Jcup	       --- source code files of ppOpen-MATH/MP
+./ppohMATH-MP-lib/ppohMATHMP   --- source code files of ppOpen-MATH/MP
+./ppohMATH-MP-lib/FrontISTR    --- source code files of FrontISTR using ppOpen-APPL/FEM library
+./ppohMATH-VIS-install/lib     --- libraries
+./ppohMATH-VIS-install/bin     --- exec.files
+./INSTALL_ppohAPPL-FDM         --- install procedure
+./LICENSE_ppohAPPL-FDM         --- license for ppOpen-APPL/FDM
+./LICENSE_ppohMATH-VIS         --- license for ppOpen-MATH/VIS
+./README_ppoh-APPL-FDM         --- readme
+
+Please read README files which are associated with the each directories
+in detail.
+
+(3) How to Compile
+All simulation can compile in ./ top directory
+Please check Makefile.
+
+Seismic wave propagation in 2D (seismic_2D)
+(3-1-1)
+Modify 'makefile.option', samples are found in ./src/seismic_2D
+'makefile.option' includes Intel Compiler, Gfortran, and Fujitsu FX10
+
+./src/seismic_2D/makefile.option
+
+(3-1-2)
+Copy necessary parameter files (m_param.f90, station.dat, source.dat,
+medium.dat) of ./examples/seismic_2D-example in ./src directory and
+type 'make seism2d' of ./ and run in ./src/seismic_2D
+
+% make seism2d
+% cd ./src/seismic_2D
+% ./seism2d_psv
+
+You can check the simulation result by comparing the output log
+for 2D simulaiton in ./examples/results/2D.
+
+(3-1-3)
+Clean: type 'make clean1' in ./
+% make clean1				:Clean files
+
+Seismic wave propagation in 3D (seismic_3D) without ppOpen-MATH/VIS
+(3-2-1)
+Modify 'Makefile.in' of ./, sample are found in ./ 'Makefile.option' 
+includes Intel Compiler and Fujitsu FX10.
+User changes the type of parallel computing in ./src/seismic_3D/3.parallel/Makefile.option.
+
+./src/seismic_3D/3.parallel/Makefile.option
+
+(3-2-2)
+Copy necessary parameter files (m_param.f90, station.dat, source.dat,
+medium.dat) of ./examples/seismic_3D-example in ./src directory and
+type 'make seism3d-parallel' of ./  and run in sub directory 3.parallel of ./src/seismic_3D.
+
+(pure MPI processing and MPI/OpenMP hybird parallel computing)
+% make seism3d-parallel
+% cd ./src/seismic_3D/3.parallel
+% run
+
+You can check the simulation result by comparing the output log
+for 3D simulaiton in ./examples/results/3D.
+
+(3-2-3)
+Clean: type 'make clean4' in ./
+% make clean4				:Clean files for parallel
+
+Seismic wave propagation in 3D (seismic_3D) with ppOpen-MATH/VIS
+(3-3-1)
+Modify 'Makefile.in' of ./, sample are found in ./ 'Makefile.in' 
+includes Intel Compiler and Fujitsu FX10 sample is in ./etc
+
+(3-3-2)
+Copy necessary parameter files (cotrol.dat, m_param.f90, station.dat,
+source.dat, medium.dat) of ./examples/seismic_3D-example in ./src directory
+and type 'make seism3d-ppohVIS' of ./  and run in sub directory 1.ppohFDM-ppohVIS
+
+% make
+% make install
+% cd ./src/seismic_3D/1.ppohFDM-ppohVIS
+% run
+
+You can check the simulation result by comparing the output log
+for 3D simulaiton in ./examples/results/3D.
+
+(3-3-3)
+Clean: type 'make clean2' in ./
+% make clean2				:Clean files for ppohFDM-ppohVIS
+
+Moreover, the uninstall of library is type 'make uninstall' in ./
+% make uninstall		   	      	:unistall ppohVIS library
+
+Note that copy necessary parameter files (m_param_real.f90, medium_real.dat, geometry_real.dat, station.dat, source.dat)
+when user calculate using inhomogenous structure. How to compile and execute is same.

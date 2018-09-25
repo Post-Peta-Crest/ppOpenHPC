@@ -1,0 +1,100 @@
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 1, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 1, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 2, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 2, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 1
+NUM of PE =  4, NUM of POINT =   72, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+      2       19       36
+      3       37       54
+      4       55       72
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 1
+NUM of PE =  1, NUM of POINT =   18, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 2
+NUM of PE =  4, NUM of POINT =   72, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+      2       19       36
+      3       37       54
+      4       55       72
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 2
+NUM of PE =  1, NUM of POINT =   18, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 4
+NUM of PE =  2, NUM of POINT =   36, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+      2       19       36
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 4
+NUM of PE =  1, NUM of POINT =   18, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+SEND PE ARRAY, send_comp_id= 3, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 3, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 1
+NUM of PE =  2, NUM of POINT =   90, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       48
+      3       49       90
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 1
+NUM of PE =  2, NUM of POINT =   72, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       48
+      3       49       72
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 2
+NUM of PE =  4, NUM of POINT =  288, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       72
+      2       73      144
+      3      145      216
+      4      217      288
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 2
+NUM of PE =  1, NUM of POINT =   72, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       72
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 3
+NUM of PE =  2, NUM of POINT =   36, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+      2       19       36
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 3
+NUM of PE =  2, NUM of POINT =   36, NUM of DATA =    0
+ PE NUM, S POINT, E POINT
+      1        1       18
+      2       19       36
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 4, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 4, send_comp_id= 5
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 1
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 1
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 2
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 2
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 3
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 3
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 4
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 4
+SEND PE ARRAY, send_comp_id= 5, recv_comp_id= 5
+RECV PE ARRAY, recv_comp_id= 5, send_comp_id= 5

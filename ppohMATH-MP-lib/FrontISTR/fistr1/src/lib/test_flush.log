@@ -1,0 +1,8 @@
++ cat test_flush_sub.f90
+program test_flush
+  implicit none
+  write(6,'(A)') 'test_flush'
+  call flush(6)
+end program test_flush
++ mpifrtpx -o test_flush_sub test_flush_sub.f90
++ HAVE_FLUSH_SUB=1

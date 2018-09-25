@@ -1,0 +1,11 @@
+#
+# for solver
+#
+!MESH, NAME=fstrMSH, TYPE=HECMW-ENTIRE
+ cylinder.msh
+!CONTROL, NAME=fstrCNT
+ cylinder.cnt
+!RESULT, NAME=fstrRES, IO=OUT
+ cylinder.res
+!RESULT, NAME=vis_out, IO=OUT
+ cylinder_vis

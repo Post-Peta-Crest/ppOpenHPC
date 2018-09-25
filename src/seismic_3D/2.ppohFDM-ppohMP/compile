@@ -1,0 +1,29 @@
+mpifrtpx -Kfast,openmp -c    m_stdio.f90
+mpifrtpx -Kfast,openmp -c    m_param_real_mp.f90
+mpifrtpx -Kfast,openmp -c    m_pssub.f90
+mpifrtpx -Kfast,openmp -c    m_io.f90
+mpifrtpx -Kfast,openmp -c    m_coupling_prm.f90
+mpifrtpx -Kfast,openmp -c    m_set_condition_real.f90
+mpifrtpx -Kfast,openmp -c    m_velocity.f90
+mpifrtpx -Kfast,openmp -c    m_stress.f90
+mpifrtpx -Kfast,openmp -c    m_pfd3d.f90
+mpifrtpx -Kfast,openmp -c    m_source.f90
+mpifrtpx -Kfast,openmp -c    m_boundary.f90
+mpifrtpx -Kfast,openmp -c    m_sponge_absorber.f90
+mpifrtpx -Kfast,openmp -c   -I../../../ppohMATH-MP-lib/ppohMATHMP/ -I../../../ppohMATH-MP-lib/Jcup/include seism3d3n_real.f90
+mpifrtpx -Kfast,openmp  m_stdio.o m_param_real_mp.o m_pssub.o m_io.o m_set_condition_real.o m_coupling_prm.o m_velocity.o m_stress.o m_pfd3d.o m_source.o m_boundary.o m_sponge_absorber.o seism3d3n_real.o -L../../../ppohMATH-MP-lib/ppohMATHMP -lppohMATHMP -L../../../ppohMATH-MP-lib/Jcup/lib -ljcup -o seism3d3n
+
+# mpif90 -openmp -c    m_stdio.f90
+# mpif90 -openmp -c    m_param_real_mp.f90
+# mpif90 -openmp -c    m_pssub.f90
+# mpif90 -openmp -c    m_io.f90
+# mpif90 -openmp -c    m_coupling_prm.f90
+# mpif90 -openmp -c    m_set_condition_real.f90
+# mpif90 -openmp -c    m_velocity.f90
+# mpif90 -openmp -c    m_stress.f90
+# mpif90 -openmp -c    m_pfd3d.f90
+# mpif90 -openmp -c    m_source.f90
+# mpif90 -openmp -c    m_boundary.f90
+# mpif90 -openmp -c    m_sponge_absorber.f90
+# mpif90 -openmp -c   -I../../../ppohMATH-MP-lib/ppohMATHMP/ -I../../../ppohMATH-MP-lib/Jcup/include seism3d3n_real.f90
+# mpif90 -openmp  m_stdio.o m_param_real_mp.o m_pssub.o m_io.o m_set_condition_real.o m_coupling_prm.o m_velocity.o m_stress.o m_pfd3d.o m_source.o m_boundary.o m_sponge_absorber.o seism3d3n_real.o -L../../../ppohMATH-MP-lib/ppohMATHMP -lppohMATHMP -L../../../ppohMATH-MP-lib/Jcup/lib -ljcup -o seism3d3n

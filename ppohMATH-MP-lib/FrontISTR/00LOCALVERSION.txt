@@ -1,0 +1,8 @@
+20141125	17:38
+based on
+FrontISTR_V43_parallel_OpenMP_multiple_run_binary_output_substep_max_10_20141124
+
+
+20141126	13:01
+change substep_max as 5 so it is equivalent to
+FrontISTR_V43_parallel_OpenMP_multiple_run_binary_output_substep_max_5_20141124

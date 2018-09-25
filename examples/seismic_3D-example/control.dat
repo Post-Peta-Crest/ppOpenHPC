@@ -1,0 +1,6 @@
+[Refine]
+AvailableMemory = 8.0
+MaxVoxelCount = 1000
+MaxRefineLevel = 200
+[Simple]
+ReductionRate = 0.0

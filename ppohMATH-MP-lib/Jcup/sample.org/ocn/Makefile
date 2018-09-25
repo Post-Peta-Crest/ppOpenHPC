@@ -1,0 +1,29 @@
+include ../Mkinclude
+
+.SUFFIXES: .f90 .o
+
+MODEL = ocn
+TARGET = $(MODEL).exe
+OBJS = $(MODEL).o field_def.o driver.o ice.o
+SRCS = $(OBJS:.o=.f90)
+MODS = $(OBJS:.o=.mod)
+
+${TARGET} : $(OBJS)
+	cd $(BINDIR) ; $(FC) $(LDFLAGS) -o $@ $^ $(JOBJ) $(LIBS) $(LIBJCUP)
+
+clean:
+	-rm -f *mod *o
+
+.f90.o:	
+	$(FC) $(FFLAGS) -I$(INCJCUP) -I$(BINDIR) -c $<
+	mv $(MODEL).o $(BINDIR) 
+	mv mod_$(MODEL).mod $(BINDIR)
+
+field_def.o:
+	cd $(COMMONDIR) ; make
+
+driver.o:
+	cd $(DRIVER) ; make $(MODEL)
+
+ice.o:
+	cd $(ICEDIR) ; make

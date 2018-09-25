@@ -1,0 +1,734 @@
+module jcup_io
+  use jcup_constant, only : NAME_LEn
+  include "mpif.h"
+  private
+
+  public :: jcup_init_io ! subroutine (comp_name)
+  public :: jcup_io_init_file ! subroutine (comp_name, file_code, data_name, ni, nj, nk, is, ie, js, je, ks, ke)
+  public :: set_current_time ! subroutine (time(6))
+  public :: jcup_write_data ! subroutine (data, ni, name), subroutine (data, file_code, data_name)
+  public :: jcup_read_data
+  public :: jcup_io_close_file ! subroutine (file_code, data_name)
+
+! --------------- AGCM variables ---------------
+
+  interface jcup_read_data
+    module procedure jcup_read_data_1d, jcup_read_data_2d, jcup_read_data_25d
+  end interface
+
+  interface jcup_write_data
+    module procedure jcup_write_data_2d_all, jcup_write_data_25d_all
+    module procedure jcup_write_data_2d, jcup_write_data_25d
+  end interface
+
+  integer :: time(6)
+  character(len=14) :: time_str
+
+  integer, parameter :: FILE_ID = 298
+
+  integer :: LOG_FILE_ID 
+
+  type ft_type ! file type type
+    character(len=NAME_LEN) :: grid_name
+    integer :: ft_id ! file type ID
+    integer, pointer :: grid_index(:)
+    integer :: file_type
+    type(ft_type), pointer :: next_ptr
+  end type
+
+  type (ft_type), pointer :: ft_ptr
+
+  type fh_type ! file handler type
+    integer :: fh_id ! file handler ID
+    character(len=NAME_LEN) :: file_code
+    character(len=NAME_LEN) :: data_name
+    character(len=NAME_LEN) :: file_name
+    type(ft_type), pointer :: file_type
+    integer :: file_handler
+    integer :: offset
+    type(fh_type), pointer :: next_ptr
+  end type
+ 
+  type(fh_type), pointer :: fh_ptr
+
+
+
+  integer, allocatable :: filetype_real(:)
+  integer, allocatable :: filetype_double(:)
+  integer :: filetype_3d_real
+  integer :: filetype_3d_double
+  integer :: my_comm, my_group, my_size, my_rank
+
+contains
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_init_io(comp_name)
+  use jcup_interface, only : jcup_get_mpi_parameter
+  implicit none
+  character(len=*), intent(IN) :: comp_name
+
+  call jcup_get_mpi_parameter(comp_name, my_comm, my_group, my_size, my_rank)
+
+  nullify(ft_ptr)
+  nullify(fh_ptr)
+
+end subroutine jcup_init_io
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_init_file(ADM_LOG_FID, out_dir, header, file_code, data_name, ni, nj, nk, is, ie, js, je, ks, ke)
+  implicit none
+  integer, intent(IN) :: ADM_LOG_FID
+  character(len=*), intent(IN) :: out_dir
+  character(len=*), intent(IN) :: header 
+  character(len=*), intent(IN) :: file_code ! file_name
+  character(len=*), intent(IN) :: data_name ! data name
+  integer, intent(IN) :: ni, nj, nk ! global array
+  integer, intent(IN) :: is, ie, js, je, ks, ke ! local array
+  type(ft_type), pointer :: current_ft
+  type(fh_type), pointer :: current_fh
+
+  LOG_FILE_ID = ADM_LOG_FID
+
+  if (is < 1) then
+    write(0,*) "jcup_io_init_file, parameter is error. is : ", is
+    stop
+  end if
+
+  if (js < 1) then
+    write(0,*) "jcup_io_init_file, parameter js error. is : ", js
+    stop
+  end if
+
+  if (ks < 1) then
+    write(0,*) "jcup_io_init_file, parameter ks error. is : ", ks
+    stop
+  end if
+    
+  if (ie > ni) then
+    write(0,*) "jcup_io_init_file, parameter ie error. ie : ", ie
+    stop
+  end if
+
+  if (je > nj) then
+    write(0,*) "jcup_io_init_file, parameter je error. je : ", je
+    stop
+  end if
+
+  if (ke > nk) then
+    write(0,*) "jcup_io_init_file, parameter ke error. ke : ", ke
+    stop
+  end if
+
+  if (.not.associated(ft_ptr)) then
+    allocate(ft_ptr)
+    ft_ptr%ft_id = 1
+    call jcup_io_create_file_type(ft_ptr, ni, nj, nk, is, ie, js, je, ks, ke)
+    nullify(ft_ptr%next_ptr)
+    current_ft => ft_ptr
+  else
+    current_ft => ft_ptr
+    do 
+      if (is_same_file_type(current_ft, ni, nj, nk, is, ie, js, je, ks, ke)) then
+        exit
+      end if
+      if (.not.associated(current_ft%next_ptr)) then
+        allocate(current_ft%next_ptr)
+        current_ft%next_ptr%ft_id = current_ft%ft_id + 1 ! set file type ID
+        current_ft => current_ft%next_ptr
+        call jcup_io_create_file_type(current_ft, ni, nj, nk, is, ie, js, je, ks, ke)
+        nullify(current_ft%next_ptr)
+        exit
+      end if
+      current_ft => current_ft%next_ptr
+    end do
+  end if
+
+  if (.not.associated(fh_ptr)) then
+    allocate(fh_ptr)
+    fh_ptr%fh_id = 1
+    fh_ptr%file_type => current_ft
+    call jcup_io_open_file(fh_ptr, out_dir, header, file_code, data_name)
+    nullify(fh_ptr%next_ptr)
+  else
+    current_fh => fh_ptr
+    do 
+      if (trim(current_fh%file_code) == trim(file_code)) then
+        write(0,*) "file : "//trim(file_code)//" already exist"
+        stop
+      end if
+      if (.not.associated(current_fh%next_ptr)) then
+        allocate(current_fh%next_ptr)
+        current_fh%next_ptr%fh_id = current_fh%fh_id + 1
+        current_fh => current_fh%next_ptr
+        current_fh%file_type => current_ft
+        call jcup_io_open_file(current_fh, out_dir, header, file_code, data_name)
+        nullify(current_fh%next_ptr)
+        exit      
+      end if
+      current_fh => current_fh%next_ptr
+    end do
+  end if
+
+
+end subroutine jcup
+
+
+init_file
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_init_file(ADM_LOG_FID, out_dir, header, file_code, data_name, ni, nj, nk, is, ie, js, je, ks, ke)
+  implicit none
+  integer, intent(IN) :: ADM_LOG_FID
+  character(len=*), intent(IN) :: out_dir
+  character(len=*), intent(IN) :: header 
+  character(len=*), intent(IN) :: file_code ! file_name
+  character(len=*), intent(IN) :: data_name ! data name
+  integer, intent(IN) :: ni, nj, nk ! global array
+  integer, intent(IN) :: is, ie, js, je, ks, ke ! local array
+  type(ft_type), pointer :: current_ft
+  type(fh_type), pointer :: current_fh
+
+  LOG_FILE_ID = ADM_LOG_FID
+
+  if (is < 1) then
+    write(0,*) "jcup_io_init_file, parameter is error. is : ", is
+    stop
+  end if
+
+  if (js < 1) then
+    write(0,*) "jcup_io_init_file, parameter js error. is : ", js
+    stop
+  end if
+
+  if (ks < 1) then
+    write(0,*) "jcup_io_init_file, parameter ks error. is : ", ks
+    stop
+  end if
+    
+  if (ie > ni) then
+    write(0,*) "jcup_io_init_file, parameter ie error. ie : ", ie
+    stop
+  end if
+
+  if (je > nj) then
+    write(0,*) "jcup_io_init_file, parameter je error. je : ", je
+    stop
+  end if
+
+  if (ke > nk) then
+    write(0,*) "jcup_io_init_file, parameter ke error. ke : ", ke
+    stop
+  end if
+
+  if (.not.associated(ft_ptr)) then
+    allocate(ft_ptr)
+    ft_ptr%ft_id = 1
+    call jcup_io_create_file_type(ft_ptr, ni, nj, nk, is, ie, js, je, ks, ke)
+    nullify(ft_ptr%next_ptr)
+    current_ft => ft_ptr
+  else
+    current_ft => ft_ptr
+    do 
+      if (is_same_file_type(current_ft, ni, nj, nk, is, ie, js, je, ks, ke)) then
+        exit
+      end if
+      if (.not.associated(current_ft%next_ptr)) then
+        allocate(current_ft%next_ptr)
+        current_ft%next_ptr%ft_id = current_ft%ft_id + 1 ! set file type ID
+        current_ft => current_ft%next_ptr
+        call jcup_io_create_file_type(current_ft, ni, nj, nk, is, ie, js, je, ks, ke)
+        nullify(current_ft%next_ptr)
+        exit
+      end if
+      current_ft => current_ft%next_ptr
+    end do
+  end if
+
+  if (.not.associated(fh_ptr)) then
+    allocate(fh_ptr)
+    fh_ptr%fh_id = 1
+    fh_ptr%file_type => current_ft
+    call jcup_io_open_file(fh_ptr, out_dir, header, file_code, data_name)
+    nullify(fh_ptr%next_ptr)
+  else
+    current_fh => fh_ptr
+    do 
+      if (trim(current_fh%file_code) == trim(file_code)) then
+        write(0,*) "file : "//trim(file_code)//" already exist"
+        stop
+      end if
+      if (.not.associated(current_fh%next_ptr)) then
+        allocate(current_fh%next_ptr)
+        current_fh%next_ptr%fh_id = current_fh%fh_id + 1
+        current_fh => current_fh%next_ptr
+        current_fh%file_type => current_ft
+        call jcup_io_open_file(current_fh, out_dir, header, file_code, data_name)
+        nullify(current_fh%next_ptr)
+        exit      
+      end if
+      current_fh => current_fh%next_ptr
+    end do
+  end if
+
+
+end subroutine jcup_io_init_file
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+logical function is_same_file_type(ftp, ni, nj, nk, is, ie, js, je, ks, ke)
+  implicit none
+  type(ft_type), pointer :: ftp
+  integer, intent(IN) :: ni, nj, nk
+  integer, intent(IN) :: is, ie, js, je, ks, ke
+  
+  is_same_file_type = .false.
+
+  if (ftp%ni /= ni) return
+  if (ftp%nj /= nj) return
+  if (ftp%nk /= nk) return
+
+  if (ftp%is /= is) return
+  if (ftp%ie /= ie) return
+  if (ftp%js /= js) return
+  if (ftp%je /= je) return
+  if (ftp%ks /= ks) return
+  if (ftp%ke /= ke) return
+
+  is_same_file_type = .true.
+
+end function is_same_file_type
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_create_file_type(ftp, ni, nj, nk, is, ie, js, je, ks, ke)
+  implicit none
+  type(ft_type), pointer :: ftp
+  integer, intent(IN) :: ni, nj, nk
+  integer, intent(IN) :: is, ie, js, je, ks, ke
+  integer :: size_2d(2), subsize_2d(2), starts_2d(2)
+  integer :: size_3d(3), subsize_3d(3), starts_3d(3)
+  integer :: ndims
+  integer :: ierror = 0
+
+  if (nk == 1) then
+    ndims = 2
+    size_2d(1) = ni ; size_2d(2) = nj
+    subsize_2d(1) = ie-is+1 ; subsize_2d(2) = je-js+1
+    starts_2d(1) = is-1 ; starts_2d(2) = js-1
+    call MPI_Type_create_subarray(ndims, size_2d, subsize_2d, starts_2d, MPI_ORDER_FORTRAN, &
+                                MPI_REAL4, ftp%file_type, ierror)
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_TYPE_create_subarray error",I5)') ierror 
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_create_file_type, MPI_TYPE_create_subarray 2d error ", ierror
+       stop
+    end if
+
+    call MPI_Type_commit(ftp%file_type, ierror)
+
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_TYPE_commit error",I5)') ierror 
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_create_file_type, MPI_TYPE_commit 2d error ", ierror
+       stop
+    end if
+
+    
+  write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+  write(LOG_FILE_ID, '(" ----- File type : 2D")') 
+  write(LOG_FILE_ID, '(" ------- array size : x =",I7," y =",I7)') size_2d(1), size_2d(2)
+  write(LOG_FILE_ID, '(" ------- sub size   : x =",I7," y =",I7)') subsize_2d(1), subsize_2d(2)
+  write(LOG_FILE_ID, '(" ------- starts     : x =",I7," y =",I7)') starts_2d(1), starts_2d(2)
+  write(LOG_FILE_ID, '(" ------- filetype   :    ",I12,"    ",I3)') ftp%file_type, ierror
+   
+  else 
+    ndims = 3
+    size_3d(1) = ni ; size_3d(2) = nj ; size_3d(3) = nk
+    subsize_3d(1) = ie-is+1 ; subsize_3d(2) = je-js+1 ; subsize_3d(3) = ke-ks+1
+    starts_3d(1) = is-1 ; starts_3d(2) = js-1 ; starts_3d(3) = ks-1
+    call MPI_Type_create_subarray(ndims, size_3d, subsize_3d, starts_3d, MPI_ORDER_FORTRAN, &
+                                MPI_REAL4, ftp%file_type, ierror)
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_TYPE_create_subarray error",I5)') ierror 
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_create_file_type, MPI_TYPE_create_subarray 3d error ", ierror
+       stop
+    end if
+
+    call MPI_Type_commit(ftp%file_type, ierror)
+
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_TYPE_commit error",I5)') ierror 
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_create_file_type, MPI_TYPE_commit 3d error ", ierror
+       stop
+    end if
+
+  write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_create_file_type]/Mod[jcup_io_base]")')
+  write(LOG_FILE_ID, '(" ----- File type : 3D")') 
+  write(LOG_FILE_ID, '(" ------- array size : x =",I7,", y =",I7,", z =",I7)') size_3d(1), size_3d(2), size_3d(3)
+  write(LOG_FILE_ID, '(" ------- sub size   : x =",I7,", y =",I7,", z =",I7)') subsize_3d(1), subsize_3d(2), subsize_3d(3)
+  write(LOG_FILE_ID, '(" ------- starts     : x =",I7,", y =",I7,", z =",I7)') starts_3d(1), starts_3d(2), starts_3d(3)
+  write(LOG_FILE_ID, '(" ------- filetype   :    ",I12,",    ",I3)') ftp%file_type, ierror
+
+  end if
+   
+  ftp%ni = ni 
+  ftp%nj = nj 
+  ftp%nk = nk
+  ftp%is = is ; ftp%ie = ie
+  ftp%js = js ; ftp%je = je
+  ftp%ks = ks ; ftp%ke = ke
+ 
+end subroutine jcup_io_create_file_type
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_open_file(fhp, out_dir, header, file_code, data_name)
+  implicit none
+  type(fh_type), pointer :: fhp
+  character(len=*), intent(IN) :: out_dir
+  character(len=*), intent(IN) :: header 
+  character(len=*), intent(IN) :: file_code ! data name
+  character(len=*), intent(IN) :: data_name
+  character(len=32) :: datarep
+  integer :: ierror = 0
+  integer(kind=MPI_OFFSET_KIND) :: offset
+  
+
+  fhp%file_code = file_code
+  fhp%data_name = data_name
+
+  fhp%file_name = trim(out_dir)//trim(header)//trim(file_code)//".grd"
+
+  call MPI_File_Open(my_comm, trim(fhp%file_name), &
+                     MPI_MODE_CREATE + MPI_MODE_RDWR, MPI_INFO_NULL, fhp%file_handler, ierror)
+
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_open_file]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_File_open error",I5)') ierror 
+       write(LOG_FILE_ID, '(" ----- file name : ",A)') trim(fhp%file_name)
+       write(LOG_FILE_ID, '(" ------- file_handler id =",I3," file_handler =",I5,", file_type id =",I3," file_type =",I12)') &
+                           fhp%fh_id, fhp%file_handler, fhp%file_type%ft_id, fhp%file_type%file_type
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_open_file, MPI_File_Open error ", ierror
+       stop
+    end if
+
+  write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_open_file]/Mod[jcup_io_base]")')
+  write(LOG_FILE_ID, '(" ----- File open : ",A)') trim(fhp%file_name)
+  write(LOG_FILE_ID, '(" ------- file_handler id =",I3," file_handler =",I5,", file_type id =",I3," file_type =",I12)') &
+                      fhp%fh_id, fhp%file_handler, fhp%file_type%ft_id, fhp%file_type%file_type
+
+  offset = 0 
+  datarep = "native"
+  call MPI_File_set_view(fhp%file_handler, offset, MPI_REAL4, fhp%file_type%file_type, trim(datarep), MPI_INFO_NULL, ierror)
+
+    if (ierror>0) then
+       write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_open_file]/Mod[jcup_io_base]")')
+       write(LOG_FILE_ID, '(" ----- MPI_File_set_view error",I5)') ierror 
+       close(LOG_FILE_ID)
+       write(0,*) "jcup_io_open_file, MPI_File_set_view error ", ierror
+       stop
+    end if
+
+  write(LOG_FILE_ID, '(" ----- File set view")') 
+  write(LOG_FILE_ID, '(" ------- displacement =",I5,", data representation ="A)') &
+                      offset, datarep
+
+end subroutine jcup_io_open_file
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_close_file(data_name)
+  use jcup_interface, only : jcup_error
+  implicit none
+  character(len=*), intent(IN) :: data_name
+  integer :: ierror = 0
+  type(fh_type), pointer :: current_fh
+
+  current_fh => fh_ptr
+  do while(associated(current_fh))
+    if (trim(current_fh%data_name) == trim(data_name)) then
+      call MPI_file_close(current_fh%file_handler, ierror)
+      
+      if (ierror > 0) then
+        write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_close_file]/Mod[jcup_io_base]")')
+        write(LOG_FILE_ID, '(" ----- File close error : ",A)') trim(current_fh%file_name)
+        close(LOG_FILE_ID)
+        write(0,*) "jcup_io_close file, file close error ", ierror
+        stop
+      end if
+
+      write(LOG_FILE_ID, '(" Msg : Sub[jcup_io_close_file]/Mod[jcup_io_base]")')
+      write(LOG_FILE_ID, '(" ----- File close : ",A)') trim(current_fh%file_name)
+
+      return
+    end if
+    current_fh => current_fh%next_ptr
+  end do
+
+  call jcup_error("jcup_io_close_file", "no such data_name. data_name : "//trim(data_name))
+
+end subroutine jcup_io_close_file
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_io_search_file_handler(fhp, data_name)
+  use jcup_interface, only : jcup_error
+  implicit none
+  type(fh_type), pointer :: fhp
+  character(len=*), intent(IN) :: data_name
+  type(fh_type), pointer :: current_fh
+
+  fhp => fh_ptr
+  do while(associated(fhp)) 
+    if (trim(fhp%data_name) == trim(data_name)) then
+      return
+    end if
+    fhp => fhp%next_ptr  
+  end do
+
+  call jcup_error("jcup_io_search_file_handler", "no such data_name. data_name : "//trim(data_name))
+
+end subroutine jcup_io_search_file_handler
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_write_data_2d_all(data, file_code, data_name)
+  implicit none
+  real(kind=4), intent(IN) :: data(:)
+  character(len=*), intent(IN) :: file_code
+  character(len=*), intent(IN) :: data_name ! name of data
+  integer :: ierror
+  integer :: status(MPI_STATUS_SIZE)
+  type(fh_type), pointer :: current_ptr
+  type(ft_type), pointer :: ftp
+  integer :: data_size
+
+  current_ptr => fh_ptr
+  call jcup_io_search_file_handler(current_ptr, data_name)
+  ftp => current_ptr%file_type
+  data_size = (ftp%ie-ftp%is+1)*(ftp%je-ftp%js+1)
+
+  call MPI_File_write_all(current_ptr%file_handler, data, data_size, MPI_REAL4, status, ierror)
+
+  write(LOG_FILE_ID, *)
+  write(LOG_FILE_ID, '(" ---------------------------------------------------------------------------------------")') 
+  write(LOG_FILE_ID, '(" Msg : Sub[jcup_write_data]/Mod[jcup_io_base]")')
+  write(LOG_FILE_ID, '(" --- Write data. data name =",A)') data_name
+  write(LOG_FILE_ID, '(" ----- file id = ",I3,", file type id =",I3,", data size =",I6)') &
+                      current_ptr%fh_id, current_ptr%file_type%ft_id, data_size
+  write(LOG_FILE_ID, '(" ----- max val = ",F16.5,", min val =",F16.5)') &
+                      maxval(data), minval(data)
+
+
+end subroutine jcup_write_data_2d_all
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+subroutine jcup_write_data_25d_all(data, file_code, data_name)
+  implicit none
+  real(kind=4), intent(IN) :: data(:,:)
+  character(len=*), intent(IN) :: file_code
+  character(len=*), intent(IN) :: data_name ! name of data
+  integer :: ierror
+  integer :: status(MPI_STATUS_SIZE)
+  type(fh_type), pointer :: current_ptr
+  type(ft_type), pointer :: ftp
+  integer :: data_size
+  integer :: k
+
+  current_ptr => fh_ptr
+  call jcup_io_search_file_handler(current_ptr, data_name)
+  ftp => current_ptr%file_type
+  data_size = (ftp%ie-ftp%is+1)*(ftp%je-ftp%js+1)*(ftp%ke-ftp%ks+1)
+
+  call MPI_File_write_all(current_ptr%file_handler, data, data_size, MPI_REAL4, status, ierror)
+ 
+  write(LOG_FILE_ID, *)
+  write(LOG_FILE_ID, '(" ---------------------------------------------------------------------------------------")') 
+  write(LOG_FILE_ID, '(" Msg : Sub[jcup_write_data]/Mod[jcup_io_base]")')
+  write(LOG_FILE_ID, '(" --- Write data. data name =",A)') data_name
+  write(LOG_FILE_ID, '(" ----- file id = ",I3,", file type id =",I3,", data size =",I6)') &
+                       current_ptr%fh_id, current_ptr%file_type%ft_id, data_size
+  do k = ftp%ks, ftp%ke
+    write(LOG_FILE_ID, '(" ----- level = ",I5,", max val = ",F16.5,", min val =",F16.5)') &
+                        k, maxval(data(:,k)), minval(data(:,k))
+  end do
+
+end subroutine jcup_write_data_25d_all
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine set_current_time(current_time)
+    implicit none
+    integer, intent(IN) :: current_time(6)
+ 
+    time(:) = current_time(:)
+
+    time_str = "00000000000000"
+
+    write(time_str, '(I4.4,I2.2,I2.2,I2.2,I2.2,I2.2)') current_time(1), current_time(2), current_time(3), &
+                                                       current_time(4), current_time(5), current_time(6)
+
+  end subroutine set_current_time
+
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine jcup_write_data_2d(data, ni, rank, comp, name)
+    implicit none
+    real(kind=8), intent(IN) :: data(:)
+    integer, intent(IN) :: ni
+    integer, intent(IN) :: rank
+    character(len=*), intent(IN) :: comp
+    character(len=*), intent(IN) :: name
+    character(len=6) :: rank_str
+    integer :: i
+
+    rank_str = "PE0000"
+    write(rank_str(3:6), '(I4.4)') rank
+
+    open(unit=FILE_ID, file=trim(comp)//"_"//trim(name)//"_"//time_str//"_"//rank_str//".dat", status="replace")
+    do i = 1, ni
+      write(FILE_ID, *) data(i)
+    end do
+    close(FILE_ID)
+
+  end subroutine jcup_write_data_2d
+  
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine jcup_write_data_25d(data, ni, nk, rank, comp, name)
+    implicit none
+    real(kind=8), intent(IN) :: data(:,:)
+    integer, intent(IN) :: ni, nk
+    integer, intent(IN) :: rank
+    character(len=*), intent(IN) :: comp
+    character(len=*), intent(IN) :: name
+    character(len=6) :: rank_str
+    integer :: i,k
+
+    rank_str = "PE0000"
+    write(rank_str(3:6), '(I4.4)') rank
+
+    open(unit=FILE_ID, file=trim(comp)//"_"//trim(name)//"_"//time_str//"_"//rank_str//".dat", status="replace")
+    do k = 1, nk
+      do i = 1, ni
+        write(FILE_ID, *) data(i,k)
+      end do
+    end do
+    close(FILE_ID)
+
+  end subroutine jcup_write_data_25d
+  
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine jcup_read_data_1d(data, ni, rank, comp, name, path)
+    implicit none
+    real(kind=8), intent(OUT) :: data(:)
+    integer, intent(IN) :: ni
+    integer, intent(IN) :: rank
+    character(len=*), intent(IN) :: comp
+    character(len=*), intent(IN) :: name
+    character(len=*), intent(IN) :: path
+    character(len=6) :: rank_str
+    integer :: i
+
+    rank_str = "PE0000"
+    write(rank_str(3:6), '(I4.4)') rank
+
+    open(unit=FILE_ID, file=trim(path)//trim(comp)//"_"//trim(name)//"_"//time_str//"_"//rank_str//".dat", status="old", ERR=1000)
+
+        do i = 1, ni
+          read(FILE_ID, *) data(i)
+        end do
+    close(FILE_ID)
+
+    return
+
+  1000 continue
+    write(0,*) "file read error"
+
+  end subroutine jcup_read_data_1d
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine jcup_read_data_2d(data, ni, nj, rank, comp, name, path)
+    implicit none
+    real(kind=8), intent(OUT) :: data(:,:)
+    integer, intent(IN) :: ni, nj
+    integer, intent(IN) :: rank
+    character(len=*), intent(IN) :: comp
+    character(len=*), intent(IN) :: name
+    character(len=*), intent(IN) :: path
+    character(len=6) :: rank_str
+    integer :: i,j
+
+    rank_str = "PE0000"
+    write(rank_str(3:6), '(I4.4)') rank
+
+    open(unit=FILE_ID, file=trim(path)//trim(comp)//"_"//trim(name)//"_"//time_str//"_"//rank_str//".dat", status="old", ERR=1000)
+    do j = 1, nj
+        do i = 1, ni
+          read(FILE_ID, *) data(i,j)
+        end do
+    end do
+
+    close(FILE_ID)
+
+    return
+
+  1000 continue
+    write(0,*) "file read error"
+
+  end subroutine jcup_read_data_2d
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+  subroutine jcup_read_data_25d(data, ni, nj, nk, rank, comp, name, path)
+    implicit none
+    real(kind=8), intent(OUT) :: data(:,:)
+    integer, intent(IN) :: ni, nj, nk
+    integer, intent(IN) :: rank
+    character(len=*), intent(IN) :: comp
+    character(len=*), intent(IN) :: name
+    character(len=*), intent(IN) :: path
+    character(len=6) :: rank_str
+    integer :: i,j,k
+
+    rank_str = "PE0000"
+    write(rank_str(3:6), '(I4.4)') rank
+
+    open(unit=FILE_ID, file=trim(path)//trim(comp)//"_"//trim(name)//"_"//time_str//"_"//rank_str//".dat", status="old", ERR=1000)
+    do k = 1, nk
+      do j = 1, nj
+          do i = 1, ni
+            read(FILE_ID, *) data(i,j)
+          end do
+      end do
+    end do
+
+    close(FILE_ID)
+
+    return
+
+  1000 continue
+    write(0,*) "file read error"
+
+  end subroutine jcup_read_data_25d
+
+!*=======+=========+=========+=========+=========+=========+=========+=========+
+
+end module jcup_io_base
+

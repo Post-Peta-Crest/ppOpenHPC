@@ -1,0 +1,112 @@
+
+&fdm_model_config
+  model_name = "SEISM"
+  grid_name  = "SEISM_GRID"
+  xorg = -53760
+  yorg =  21440
+  delta_x = 40
+  delta_y = 40
+  delta_z = 20
+  kfs = 6
+  cod_file = "./out/SEISM3D3.cod"
+  index_file = "./out/SEISM3D3.index"
+&end
+
+&fdm_data_config
+  data_dir = "./output"
+  data_code = "Velocity"
+  velocity_factor = 1.0d0
+&end
+
+&fem_model_config
+  model_name = "FISTR1"
+  grid_name  = "FISTR_GRID"
+  total_rank =  4
+  xorg = -200 
+  yorg = 60 
+  angle = 0.d0
+  global_node_file   =  "./work_trial_ground_mesh_19_proc4_20141114/coupling_global_node.txt"
+  coupling_mesh_file =  "./work_trial_ground_mesh_19_proc4_20141114/ppohMATHMP_mesh"
+  coupling_info_file = "coupling_info.txt"
+&end
+
+
+&mapping_table
+  mapping_table_s = "./mapping_table_s.txt"
+  mapping_table_u = "./mapping_table_u.txt"
+  mapping_table_v = "./mapping_table_v.txt"
+  mapping_table_w = "./mapping_table_w.txt"
+  log_file_name = "./log_mapping_table.txt"
+  kml_output = 0 
+  kml_file_name = "./fs_grid.kml" 
+&end
+
+&coupling_config
+  initial_time(:) = 2014, 7, 1, 0, 0, 0,
+  start_step = 1
+  end_step   = 90000
+  coupling_intvl = 1
+  fdm_delta_t  = 1
+  fem_delta_t  = 1
+  coupling_mode = "NORMAL"
+&end
+
+
+&coupler_config
+  log_level  = 0
+  log_stderr = 0
+&end
+
+
+&model_config
+      comp_put ='SEISM' 
+      comp_get ='FISTR1'      
+      grid_put ='SEISM_GRID'
+      grid_get ='FISTR_GRID'
+      remap_tag = 1
+      fl_remap='./mapping_table_u.txt'
+&end
+
+&var_config
+  var_put ='U'
+  var_get ='DELTA_X' 
+  intvl=1 
+  lag=-1
+  flag='AVR'
+&end
+
+&model_config
+      comp_put ='SEISM' 
+      comp_get ='FISTR1'      
+      grid_put ='SEISM_GRID'
+      grid_get ='FISTR_GRID'
+      remap_tag = 2
+      fl_remap='./mapping_table_v.txt'
+&end
+
+&var_config
+  var_put ='V'
+  var_get ='DELTA_Y' 
+  intvl=1 
+  lag=-1
+  flag='AVR'
+&end
+
+&model_config
+      comp_put ='SEISM' 
+      comp_get ='FISTR1'      
+      grid_put ='SEISM_GRID'
+      grid_get ='FISTR_GRID'
+      remap_tag = 3
+      fl_remap='./mapping_table_w.txt'
+&end
+
+&var_config
+  var_put ='W'
+  var_get ='DELTA_Z' 
+  intvl=1 
+  lag=-1
+  flag='AVR'
+&end
+
+

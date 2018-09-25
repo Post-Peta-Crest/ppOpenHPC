@@ -1,0 +1,10 @@
+# station parameter
+# number of stations
+# location of station (X, Z: km)
+# 
+5
+4.0 0.0
+8.0 0.0
+12.0 0.0
+16.0 0.0
+20.0 0.0

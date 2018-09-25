@@ -1,0 +1,69 @@
+##################################################
+#                                                #
+#     Setup Configulation File for FrontISTR     #
+#                                                #
+##################################################
+
+# MPI
+MPIDIR         = $(HOME)/mpich2-install
+MPIBINDIR      = $(MPIDIR)/bin
+MPILIBDIR      = $(MPIDIR)/lib
+MPIINCDIR      = $(MPIDIR)/include
+MPILIBS        =
+
+# for install option only
+PREFIX         = $(HOME)/FrontISTR
+BINDIR         = $(PREFIX)/bin
+LIBDIR         = $(PREFIX)/lib
+INCLUDEDIR     = $(PREFIX)/include
+
+# Metis
+METISDIR       = $(HOME)/Metis-4.0.3
+METISLIBDIR    = $(METISDIR)
+METISINCDIR    = $(METISDIR)/Lib
+
+# ParMetis
+PARMETISDIR    = $(HOME)/ParMetis-3.2.0
+PARMETISLIBDIR = $(PARMETISDIR)
+PARMETISINCDIR = $(PARMETISDIR)/ParMETISLib
+
+# Refiner
+REFINERDIR     = $(HOME)/REVOCAP_Refiner-1.1.03
+REFINERINCDIR  = $(REFINERDIR)/Refiner
+REFINERLIBDIR  = $(REFINERDIR)/lib/x86_64-linux
+
+# Coupler
+REVOCAPDIR     = $(HOME)/REVOCAP_Coupler-2.0
+REVOCAPINCDIR  = $(REVOCAPDIR)/librcap
+REVOCAPLIBDIR  = $(REVOCAPDIR)/librcap
+
+# MUMPS
+MUMPSDIR       = $(HOME)/MUMPS_4.10.0
+MUMPSINCDIR    = $(MUMPSDIR)/include
+MUMPSLIBDIR    = $(MUMPSDIR)/lib
+
+# C compiler settings
+CC             = mpicc
+CFLAGS         =
+LDFLAGS        = -lm -lstdc++
+OPTFLAGS       = -O3
+CLINKER        = mpicc
+
+# C++ compiler settings
+CPP            = mpic++
+CPPFLAGS       =
+CPPLDFLAGS     =
+CPPOPTFLAGS    = -O3
+
+# Fortran compiler settings
+F90            = mpif90
+F90FLAGS       =
+F90LDFLAGS     = -lstdc++
+F90OPTFLAGS    = -O2
+F90LINKER      = mpif90
+
+MAKE           = make
+AR             = ar ruv
+CP             = cp -f
+RM             = rm -f
+MKDIR          = mkdir -p

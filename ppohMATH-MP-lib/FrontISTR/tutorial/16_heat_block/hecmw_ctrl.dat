@@ -1,0 +1,11 @@
+#
+# for solver
+#
+!MESH, NAME=fstrMSH, TYPE=HECMW-ENTIRE
+ block.msh
+!CONTROL, NAME=fstrCNT
+ block.cnt
+!RESULT, NAME=fstrRES, IO=OUT
+ block.res
+!RESULT, NAME=vis_out, IO=OUT
+ block_vis

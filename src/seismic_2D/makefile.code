@@ -1,0 +1,42 @@
+# code selector
+# Standard Library
+CODE_STDLIB = m_stdlib.f90
+
+# Embeded Parameter file
+CODE_PARAMS = m_params.f90
+
+# Velocity Model Routines
+CODE_VMODEL = m_vmodel.f90
+
+# Common Array
+CODE_COMVAR = m_comvar.f90
+
+# Earth Medium
+CODE_MEDIUM = m_medium.f90
+
+# FDM Computation Kernel
+CODE_KERNEL = m_kernel.f90
+
+# Surface Boundary Conditions
+CODE_SURFBC = m_surfbc.f90
+
+# Seismic Source
+CODE_SOURCE = m_source.f90
+
+# Absorbing Boundary Conditions
+CODE_ABSORB = m_absorb_cerjan.f90
+
+# Data Output
+CODE_OUTPUT = m_output.f90
+
+# Stantard Output 
+CODE_REPORT = m_report.f90
+
+# Stopwatch
+CODE_SWATCH = m_swatch.f90
+
+# AVS Export
+CODE_AVS = m_avs.f90
+
+# Main Program
+CODE_MAIN   = seism2d_psv.f90
