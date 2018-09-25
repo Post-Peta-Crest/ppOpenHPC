@@ -1,0 +1,115 @@
+
+<html>
+<head>
+<title>Err メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.2.5. Err メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>Err</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>main.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>741</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TMainF</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Err ( string s )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>エラーメッセージの表示とログファイルへの出力を行う。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>string s 表示する文字列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>printf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TMainF::ErrF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>81</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TMainF::LogFp</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>78</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------+ 
+   741  +--+ void TMainF::Err(string s) { | 
+           +--+---------------------------+ 
+   742        +--- ErrF = true;
+   743        +--- printf(&quot;*** ERROR *** %s\n&quot;, s.c_str());
+              |  +----------------------+ 
+   744        +--+ if (LogFp != NULL){  | 
+              |  +--+-------------------+ 
+   745        |     +--- fprintf(LogFp, &quot;*** ERROR *** %s\n&quot;, s.c_str());
+              |   +-+---+ 
+   746        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   747      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

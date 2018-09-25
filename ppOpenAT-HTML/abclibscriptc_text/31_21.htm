@@ -1,0 +1,324 @@
+
+<html>
+<head>
+<title>SepLongStr 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.21. SepLongStr 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>SepLongStr</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass3.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>950</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string SepLongStr ( string s )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>長い文字列を72桁で分割して、&amp;をセットする。<br>Ｃ言語の場合は、不要。現在は元の文字列をそのまま戻している。<br>Fortran90の場合もコメント等をそのままにしたいため分割しない。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>元の文字列をそのまま戻している。</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>s   元文字列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_8.htm">TPass5::MakeControlCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_4_10.htm">TPass5::MakeFunctionCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_10.htm">1837</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_4_11.htm">TPass5::MakeFunctionCode_Fortran77</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_11.htm">2252</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_32.htm">TTuneRegion::OutputAutoExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_32.htm">2878</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_10_35.htm">TTuneRegion::OutputFusionDo</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_35.htm">12936</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_10_36.htm">TTuneRegion::OutputLoopFusionExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_36.htm">8004</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_10_42.htm">TTuneRegion::OutputSetParmSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_42.htm">11609</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap><a href="16_10_45.htm">TTuneRegion::OutputUnroll_DoBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap><a href="16_10_47.htm">TTuneRegion::OutputUnroll_IfBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_47.htm">10802</a></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>erase</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------+ 
+   950  +--+ string SepLongStr(string s)  | 
+   951     | {                            | 
+           +--+---------------------------+ 
+   952        +--- int cp;
+   953        +--- string s2,s3;
+   954        +--- string LineStr;
+   955        +--- string rStr;
+   956        |    
+              |  +----------------------------------------+ 
+   957        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |  +--+-------------------------------------+ 
+              |     |  +------------+ 
+   958        |     +--+ return s;  | 
+              |     |  +------------+ 
+              |   +-+---+ 
+   959        |   |  }  | 
+              |   +-----+ 
+   960        +--- rStr = &quot;&quot;;
+              |  +------------------------------------------------+ 
+   961        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |  +--+---------------------------------------------+ 
+   962        |     +--- //
+   963        |     |    //  Fortrn77の場合                                               
+   964        |     |    //  改行までの文字列長さが72を超える場合に、継続行にする。       
+   965        |     |    //  途中に\nがあれば、そこで改行になっているのでそのままとする。 
+   966        |     |    //                                                               
+              |     |  +------------------+ 
+   967        |     +--+ while(s != &quot;&quot;){  | 
+              |     |  +--+---------------+ 
+   968        |     |     +--- cp = s.find('\n');
+              |     |     |  +----------------+ 
+   969        |     |     +--+ if(cp == -1){  | 
+              |     |     |  +--+-------------+ 
+   970        |     |     |     +--- LineStr = s;
+   971        |     |     |     +--- s = &quot;&quot;;
+              |     |     |   +-+---+ 
+   972        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   972        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   973        |     |     |     +--- LineStr = s.substr(0,cp+1);
+   974        |     |     |     +--- s.erase(0,cp+1);
+              |     |     |   +-+---+ 
+   975        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+   976        |     |     +--+ if(LineStr.length() &lt;= 72){  | 
+              |     |     |  +--+---------------------------+ 
+   977        |     |     |     +--- rStr += LineStr;
+              |     |     |   +-+---+ 
+   978        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   978        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   979        |     |     |     +--- // LineStrが１行の長さを超えているので行を複数の行に分割する。
+              |     |     |     |  +--------------------------------+ 
+   980        |     |     |     +--+ while(LineStr.length() &gt; 72){  | 
+              |     |     |     |  +--+-----------------------------+ 
+   981        |     |     |     |     +--- rStr += LineStr.substr(0,72)+&quot;\n&quot;;
+   982        |     |     |     |     +--- LineStr.erase(0,72);
+   983        |     |     |     |     +--- LineStr =  &quot;     &amp;&quot;+LineStr;
+              |     |     |     |   +-+---+ 
+   984        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+   985        |     |     |     +--- rStr += LineStr;
+              |     |     |   +-+---+ 
+   986        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   987        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   988        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   988        |   |  else{  | 
+              |   +-+-------+ 
+   989        |     +--- //
+   990        |     |    //  Fortrn90の場合                                               
+   991        |     |    //  改行までの文字列長さが132を超える場合に、継続行にする。      
+   992        |     |    //  途中に\nがあれば、そこで改行になっているのでそのままとする。 
+   993        |     |    //                                                               
+              |     |  +------------------+ 
+   994        |     +--+ while(s != &quot;&quot;){  | 
+              |     |  +--+---------------+ 
+   995        |     |     +--- cp = s.find('\n');
+              |     |     |  +----------------+ 
+   996        |     |     +--+ if(cp == -1){  | 
+              |     |     |  +--+-------------+ 
+   997        |     |     |     +--- LineStr = s;
+   998        |     |     |     +--- s = &quot;&quot;;
+              |     |     |   +-+---+ 
+   999        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   999        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  1000        |     |     |     +--- LineStr = s.substr(0,cp+1);
+  1001        |     |     |     +--- s.erase(0,cp+1);
+              |     |     |   +-+---+ 
+  1002        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+  1003        |     |     +--+ if(LineStr.length() &lt;= 132){ | 
+              |     |     |  +--+---------------------------+ 
+  1004        |     |     |     +--- rStr += LineStr;
+              |     |     |   +-+---+ 
+  1005        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  1005        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  1006        |     |     |     +--- // LineStrが１行の長さを超えているので行を複数の行に分割する。
+              |     |     |     |  +--------------------------------+ 
+  1007        |     |     |     +--+ while(LineStr.length() &gt; 132){ | 
+              |     |     |     |  +--+-----------------------------+ 
+  1008        |     |     |     |     +--- rStr += LineStr.substr(0,131)+&quot;&amp;\n&quot;;
+  1009        |     |     |     |     +--- LineStr.erase(0,131);
+  1010        |     |     |     |     +--- LineStr =  &quot;     &amp;&quot;+LineStr;
+              |     |     |     |   +-+---+ 
+  1011        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1012        |     |     |     +--- rStr += LineStr;
+              |     |     |   +-+---+ 
+  1013        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1014        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1015        |   |  }  | 
+              |   +-----+ 
+              |  +--------------+ 
+  1016        +--+ return rStr; | 
+              |  +--------------+ 
+            +-+---+ 
+  1017      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

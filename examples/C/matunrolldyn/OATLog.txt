@@ -1,0 +1,68 @@
+--- ppOpenAT version 0.2.3 ---
+OAT_PATH = ""
+CommandLine = test.exe  c:/ppOpenAT/examples/C/matunrolldyn/matunrolldyn.c 
+**** Start Code Generation ****
+SrcFile ="c:/ppOpenAT/examples/C/matunrolldyn/matunrolldyn.c"
+Pass1 Start
+Pass2 Start
+------ Val List ---------
+0: (MIdx=0) Int N=500.000000 (RW=10,0) DefPos=-11
+1: (MIdx=0) Int i (RW=3,1) DefPos=62
+2: (MIdx=0) Int in (RW=3,1) DefPos=64
+3: (MIdx=0) Real A(0:0)(0:0) (RW=3,0) DefPos=68
+4: (MIdx=0) Real B(0:0)(0:0) (RW=3,0) DefPos=76
+5: (MIdx=0) Real C(0:0)(0:0) (RW=3,0) DefPos=84
+6: (MIdx=0) Real t1 (RW=1,0) DefPos=94
+7: (MIdx=0) Real t2 (RW=1,0) DefPos=96
+8: (MIdx=0) Int iauto (RW=0,1) DefPos=100
+9: (MIdx=1) Real A(0:0)(0:0) (RW=2,0)(Arg) DefPos=273
+10: (MIdx=1) Real N(0:0) (RW=6,0)(Arg) DefPos=275
+11: (MIdx=1) Real B(0:0)(0:0) (RW=2,0)(Arg) DefPos=282
+12: (MIdx=1) Real C(0:0)(0:0) (RW=1,1)(Arg) DefPos=291
+13: (MIdx=1) Int n (RW=4,0)(Arg) DefPos=300
+14: (MIdx=1) Int i (RW=4,1) DefPos=306
+15: (MIdx=1) Int j (RW=4,1) DefPos=308
+16: (MIdx=1) Int k (RW=5,1) DefPos=310
+17: (MIdx=2) Real A(0:0)(0:0) (RW=1,1)(Arg) DefPos=456
+18: (MIdx=2) Real N(0:0) (RW=6,0)(Arg) DefPos=458
+19: (MIdx=2) Real B(0:0)(0:0) (RW=1,2)(Arg) DefPos=465
+20: (MIdx=2) Real C(0:0)(0:0) (RW=1,1)(Arg) DefPos=474
+21: (MIdx=2) Int n (RW=6,0)(Arg) DefPos=483
+22: (MIdx=2) Int i (RW=6,4) DefPos=489
+23: (MIdx=2) Int j (RW=5,2) DefPos=491
+24: (MIdx=3) Real A(0:0)(0:0) (RW=2,0)(Arg) DefPos=644
+25: (MIdx=3) Real N(0:0) (RW=6,0)(Arg) DefPos=646
+26: (MIdx=3) Real B(0:0)(0:0) (RW=1,0)(Arg) DefPos=653
+27: (MIdx=3) Real C(0:0)(0:0) (RW=2,0)(Arg) DefPos=662
+28: (MIdx=3) Int n (RW=3,0)(Arg) DefPos=671
+29: (MIdx=3) Int i (RW=5,1) DefPos=678
+30: (MIdx=3) Int j (RW=5,1) DefPos=680
+31: (MIdx=4) Void tv (RW=4,0) DefPos=768
+32: (MIdx=4) Int tv_sec (RW=1,0) DefPos=783
+33: (MIdx=5) Real A(0:0)(0:0) (RW=2,0)(Arg) DefPos=799
+34: (MIdx=5) Real N(0:0) (RW=6,0)(Arg) DefPos=801
+35: (MIdx=5) Real B(0:0)(0:0) (RW=2,0)(Arg) DefPos=808
+36: (MIdx=5) Real C(0:0)(0:0) (RW=2,0)(Arg) DefPos=817
+37: (MIdx=5) Int n (RW=7,0)(Arg) DefPos=826
+38: (MIdx=5) Int i (RW=10,3) DefPos=832
+39: (MIdx=5) Int j (RW=10,3) DefPos=834
+40: (MIdx=5) Int k (RW=1,0) DefPos=836
+Pass3 Start
+Pass4 Start
+OAT variable:        OAT_DEBUG = 1
+OAT variable:        OAT_NUMPROCS = 4
+OAT variable:        OAT_STARTTUNESIZE = 500
+OAT variable:        OAT_ENDTUNESIZE = 500
+OAT variable:        OAT_SAMPDIST = 100
+Base Paramater (BPset): n
+------ Tuning Region -- Count = 1
+Tuning Region : 0
+Dynamic Unroll MyMatMul
+OAT_DynamicMyMatMul(,,,C,A,B,n) 
+    varied i (0,i<n,) from 1.000000 to 16.000000 step 1.000000
+  RefValStr = ( i, )
+  Case Count = 16
+
+Pass5 Start
+TuneRegion = 1/1
+**** End Code Generation **** OK !

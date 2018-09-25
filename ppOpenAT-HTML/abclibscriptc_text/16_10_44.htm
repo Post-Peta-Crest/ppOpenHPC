@@ -1,0 +1,1149 @@
+
+<html>
+<head>
+<title>OutputUnroll_DoBlock_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.44. OutputUnroll_DoBlock_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputUnroll_DoBlock_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>10311</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int OutputUnroll_DoBlock_C ( FILE * fp , int TokPos , unsigned int UsedDoRefValBits , int RefValIdx )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>多重化したDO_Blockを出力する。<br>RefValIdxは、Countに対しての番号となる。（呼び出し側から指定される）<br>最後のトークン（通常はtid_LineEnd)の位置を返す。<br>多重化に合わせた変数の置換も行われる。<br><br>UseDoRefValBitsは、このブロックで分割対象となっているDoRefValのbitを示す。<br>RefValIdxは、UseDoRefValBitsで1になっているBitのCount総和における番号を示<br>す。<br>呼び出し時のUseDoRefValBitsから新たに1になるBitsだけが繰り返し対象となる。<br>その場合のRefValIdxは、新たなUseDoRefValBitsでのIdxに再計算され先に渡され<br>る。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>TokPos  トークン位置<br>UsedDoRefValBits    使用中ＤＯ参照変数Ｂｉｔｓ<br>RefValIdx   参照変数インデックス</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::OutputUnroll_DoBlock_C</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap>10311</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_46.htm">TTuneRegion::OutputUnroll_IfBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_46.htm">10955</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_4.htm">TTuneRegion::CalNewRefValIdx</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_4.htm">11353</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_6.htm">TTuneRegion::ChangeFromOrgStr</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_6.htm">11408</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_8.htm">TTuneRegion::FindEndDo2</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_8.htm">12637</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_21.htm">TTuneRegion::GetValAddValue</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_21.htm">11508</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_10_23.htm">TTuneRegion::GetValCountOfBit</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_23.htm">11318</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::OutputUnroll_DoBlock_C</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap>10311</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_10_46.htm">TTuneRegion::OutputUnroll_IfBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_46.htm">10955</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>erase</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::BaseValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>216</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::DoEndEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>283</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::DoEndSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>282</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::DoStartEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>281</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::DoStartSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>280</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::DoStepEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>285</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::DoStepSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>284</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::DoToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>278</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::DoTokPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>152</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::DoVal_m</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>155</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TTuneRegion::DoValIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>159</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TTuneRegion::DoValStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>154</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TTuneRegion::OffsetStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>214</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>TTuneRegion::UnrollCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>151</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>TTuneRegion::UnRollDoRefValBits</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>149</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------------------------------------------------+ 
+ 10311  +--+ int TTuneRegion::OutputUnroll_DoBlock_C(FILE *fp,int TokPos,unsigned int UsedDoRefValBits,int RefValIdx) | 
+ 10312     | {                                                                                                        | 
+           +--+-------------------------------------------------------------------------------------------------------+ 
+ 10313        +--- int EndTokPos;
+ 10314        +--- TToken *Token,*Token2;
+ 10315        +--- TValData *ValData;
+ 10316        +--- string s,s2;
+ 10317        +--- int i,j;
+ 10318        +--- int RollCount;
+ 10319        +--- int bkDoValIdx = DoValIdx;
+ 10320        +--- bool UnRollDoF = false;
+ 10321        +--- bool StartValueIs0F;
+ 10322        +--- unsigned int DoRefValBits;
+ 10323        +--- unsigned int NextUsedDoRefValBits;  // 次に渡す Do変数参照(処理済)bit
+ 10324        +--- unsigned int NowUseDoRefValBits;    // 今回の分割数となる UseDoRefValBits
+ 10325        +--- int NewRefValIdx;           // 次に渡すRefValIdx (of NextUseDoRefValBits)
+ 10326        +--- unsigned int bkUnRollDoRefValBits = UnRollDoRefValBits;
+ 10327        +--- int AddValue;
+ 10328        +--- int EndDoPos;
+ 10329        +--- string BaseValName;
+ 10330        +--- string DoEndValReplaseStr = &quot;&quot;; // DOの終了変数の置換の式
+ 10331        +--- //
+ 10332        |    // DO文の入り口の処理を行う。  
+ 10333        |    //                             
+ 10334        +--- EndTokPos = TokenEndPos;
+ 10335        +--- EndDoPos = FindEndDo2(TokenList,TokPos);
+ 10336        +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |  +------------------------------------------------------------------+ 
+ 10337        +--+ if((Token != DoToken[DoValIdx])||(UnrollCount[DoValIdx] &lt;= 1)){  | 
+              |  +--+---------------------------------------------------------------+ 
+ 10338        |     +--- //
+ 10339        |     |    // UnRoll対象でない場合は、DO文の行は、DO参照変数の置換のみを行って戻る。  
+ 10340        |     |    //                                                                         
+              |     |  +----------------------------------+ 
+ 10341        |     +--+ if(Token == DoToken[DoValIdx]){  | 
+              |     |  +--+-------------------------------+ 
+ 10342        |     |     +--- DoValIdx++;
+              |     |   +-+---+ 
+ 10343        |     |   |  }  | 
+              |     |   +-----+ 
+ 10344        |     +--- TokPos = OutputUnroll_Line_C(fp,TokPos,UsedDoRefValBits,RefValIdx);
+ 10345        |     +--- TokPos++; // LineEndをSkipする
+              |   +-+---+ 
+ 10346        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+ 10346        |   |  else{  | 
+              |   +-+-------+ 
+ 10347        |     +--- //
+ 10348        |     |    // UnRoll対象ＤＯ文の入り口の処理を行う。              
+ 10349        |     |    // DOの前処理の式を挿入する。（DO依存変数を含まない)   
+ 10350        |     |    // この場合合も、DO参照変数の置換は、対象とすること。  
+ 10351        |     |    //                                                     
+ 10352        |     |    // Exp.       im =  N/2  // Unrollした変数             
+ 10353        |     |    //            i = 1      // 参照変数                   
+ 10354        |     |    //            do ii=1,im // doの実行回数も変更         
+ 10355        |     |    //                                                     
+ 10356        |     |    //[       im = N/2]                                    
+ 10357        |     |                                                           
+ 10358        |     +--- UnRollDoF = true;
+ 10359        |     +--- UnRollDoRefValBits |= (1 &lt;&lt; DoValIdx); // 変数Bitsをセットする。
+ 10360        |     |                                                                     
+ 10361        |     +--- s = ChangeFromOrgStr(DoToken[DoValIdx]-&gt;OrgStr,s);  // Doの変数を置換
+ 10362        |     +--- // 開始が0かチェック
+ 10363        |     +--- StartValueIs0F = false;
+              |     |  +--------------------------------------------------------+ 
+ 10364        |     +--+ if(DoStartSPos[DoValIdx]+1 == DoStartEPos[DoValIdx]){  | 
+              |     |  +--+-----------------------------------------------------+ 
+ 10365        |     |     +--- Token = (TToken *)TokenList-&gt;Items[DoStartSPos[DoValIdx]];
+              |     |     |  +------------------------------+ 
+ 10366        |     |     +--+ if(Trim(Token-&gt;Str) == &quot;0&quot;){ | 
+              |     |     |  +--+---------------------------+ 
+ 10367        |     |     |     +--- StartValueIs0F = true;
+              |     |     |   +-+---+ 
+ 10368        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 10369        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------------------------------------------+ 
+ 10370        |     +--+ if((DoStartSPos[DoValIdx]+1 != DoStartEPos[DoValIdx])||(!StartValueIs0F)){ | 
+              |     |  +--+-------------------------------------------------------------------------+ 
+ 10371        |     |     +--- s += &quot;(&quot;;
+              |     |   +-+---+ 
+ 10372        |     |   |  }  | 
+              |     |   +-----+ 
+ 10373        |     +--- AddValue = 0;
+ 10374        |     +--- i = DoEndSPos[DoValIdx];
+ 10375        |     +--- Token = (TToken *)TokenList-&gt;Items[i++];
+ 10376        |     +--- // ここも、変数変更
+ 10377        |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |  +----------------------------------------------------------------------------+ 
+ 10378        |     +--+ if((ValData != NULL)&amp;&amp;((ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits)!= 0)){ | 
+              |     |  +--+-------------------------------------------------------------------------+ 
+ 10379        |     |     +--- AddValue = GetValAddValue(RefValIdx,
+ 10380        |     |     |               ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits, 
+ 10381        |     |     |               DoValIdx,UnrollCount);                      
+              |     |   +-+---+ 
+ 10382        |     |   |  }  | 
+              |     |   +-----+ 
+ 10383        |     +--- Token = (TToken *)TokenList-&gt;Items[i++];
+              |     |  +--------------------------+ 
+ 10384        |     +--+ if(Token-&gt;Str == &quot;&lt;=&quot;){  | 
+              |     |  +--+-----------------------+ 
+ 10385        |     |     +--- AddValue += 1; // 最後の数が＋１までならばLoop数も増える。
+              |     |   +-+---+ 
+ 10386        |     |   |  }  | 
+              |     |   +-----+ 
+ 10387        |     +--- s2 = &quot;&quot;;
+              |     |  +----------------------------------------+ 
+ 10388        |     +--+ for(; i &lt; DoEndEPos[DoValIdx] ; i++){  | 
+              |     |  +--+-------------------------------------+ 
+ 10389        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 10390        |     |     +--- s2 += Token-&gt;Str;
+              |     |   +-+---+ 
+ 10391        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------+ 
+ 10392        |     +--+ if(AddValue != 0){ | 
+              |     |  +--+-----------------+ 
+ 10393        |     |     +--- s += &quot;(&quot;+s2+&quot;+&quot;+IntToStr(AddValue)+&quot;)&quot;;
+              |     |   +-+---+ 
+ 10394        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------------------+ 
+ 10394        |     |   |  else if(DoEndSPos[DoValIdx]+2 &gt; DoEndEPos[DoValIdx]){  | 
+              |     |   +-+-------------------------------------------------------+ 
+ 10395        |     |     +--- s += &quot;(&quot;+s2+&quot;)&quot;;
+              |     |   +-+---+ 
+ 10396        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 10396        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 10397        |     |     +--- s += s2;
+              |     |   +-+---+ 
+ 10398        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------+ 
+ 10399        |     +--+ if(!StartValueIs0F){ | 
+              |     |  +--+-------------------+ 
+ 10400        |     |     +--- s += &quot;-&quot;;
+              |     |     |  +--------------------------------------------------------------------+ 
+ 10401        |     |     +--+ for(i = DoStartSPos[DoValIdx] ; i &lt; DoStartEPos[DoValIdx] ; i++){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+ 10402        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 10403        |     |     |     +--- // ここも、変数変更
+ 10404        |     |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+ 10405        |     |     |     +--- AddValue = 0;
+              |     |     |     |  +----------------------------------------------------------------------------+ 
+ 10406        |     |     |     +--+ if((ValData != NULL)&amp;&amp;((ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits)!= 0)){ | 
+              |     |     |     |  +--+-------------------------------------------------------------------------+ 
+ 10407        |     |     |     |     +--- AddValue = GetValAddValue(RefValIdx,
+ 10408        |     |     |     |     |               ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits, 
+ 10409        |     |     |     |     |               DoValIdx,UnrollCount);                      
+              |     |     |     |   +-+---+ 
+ 10410        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------+ 
+ 10411        |     |     |     +--+ if(AddValue != 0){ | 
+              |     |     |     |  +--+-----------------+ 
+ 10412        |     |     |     |     +--- s += &quot;(&quot;+Token-&gt;OrgStr+&quot;+&quot;+IntToStr(AddValue)+&quot;)&quot;;
+              |     |     |     |   +-+---+ 
+ 10413        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+ 10413        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+ 10414        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+ 10415        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 10416        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10417        |     |     +--- s += &quot;+1&quot;;
+              |     |   +-+---+ 
+ 10418        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------------------------------------------+ 
+ 10419        |     +--+ if((DoStartSPos[DoValIdx]+1 != DoStartEPos[DoValIdx])||(!StartValueIs0F)){ | 
+              |     |  +--+-------------------------------------------------------------------------+ 
+ 10420        |     |     +--- s += &quot;)&quot;;
+              |     |   +-+---+ 
+ 10421        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------------------+ 
+ 10422        |     +--+ if(DoStepSPos[DoValIdx] == DoStepEPos[DoValIdx]){  | 
+              |     |  +--+-------------------------------------------------+ 
+ 10423        |     |     +--- s += &quot;/&quot; + IntToStr(UnrollCount[DoValIdx]);
+              |     |   +-+---+ 
+ 10424        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 10424        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 10425        |     |     +--- /* 現状のＣでのStepは Val++ 以外はエラーとしている。Fortranからそのままのため。
+ 10426        |     |     |    */                                                                               
+              |     |   +-+---+ 
+ 10427        |     |   |  }  | 
+              |     |   +-----+ 
+ 10428        |     +--- DoEndValReplaseStr = Trim(s);
+ 10429        |     +--- //      s = SepLongStr(s);
+ 10430        |     |    //      fprintf(fp,&quot;%s;\n&quot;,s.c_str()); 
+ 10431        |     +--- //
+ 10432        |     |    // Do文の出力を行う  
+ 10433        |     |    //                   
+ 10434        |     +--- s = &quot;&quot;;
+              |     |  +----------------------------------------------------+ 
+ 10435        |     +--+ for(i = TokPos ; i &lt;= DoEndEPos[DoValIdx] ; i++){  | 
+              |     |  +--+-------------------------------------------------+ 
+ 10436        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 10437        |     |     +--- // ベース変数名については、Unroll数の整数倍に丸めた変数に置き換える。2012/04/05
+ 10438        |     |     +--- #if 1       // cut im = xxx 2012/09/27 , add im = xxx 2012/10/05
+              |     |     |  +----------------------------------------------------------------------------+ 
+ 10439        |     |     +--+ if((Token-&gt;Str == BaseValList-&gt;Strings[0])&amp;&amp;(UnrollCount[DoValIdx] &gt; 1)){  | 
+              |     |     |  +--+-------------------------------------------------------------------------+ 
+ 10440        |     |     |     +--- s += &quot; &quot;+ DoVal_m[DoValIdx];
+              |     |     |   +-+---+ 
+ 10441        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 10441        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 10442        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |   +-+---+ 
+ 10443        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10444        |     |     +--- #else
+ 10445        |     |     +--- s += Token-&gt;OrgStr;
+ 10446        |     |     +--- #endif
+ 10447        |     |     +--- //      s += &quot;if ((&quot;+BaseValName + &quot; % &quot;+IntToStr(UnrollCount[DoValIdx]) +&quot;) != 0){&quot;;
+              |     |   +-+---+ 
+ 10448        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------+ 
+ 10449        |     +--+ if(UnrollCount[DoValIdx] == 1){  | 
+              |     |  +--+-------------------------------+ 
+ 10450        |     |     +--- s += &quot; &quot;+DoValStr[DoValIdx]+&quot;++&quot;;
+              |     |   +-+---+ 
+ 10451        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 10451        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 10452        |     |     +--- s += &quot; &quot;+DoValStr[DoValIdx]+&quot;+=&quot;+IntToStr(UnrollCount[DoValIdx]);
+              |     |   +-+---+ 
+ 10453        |     |   |  }  | 
+              |     |   +-----+ 
+ 10454        |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+ 10455        |     +--- // Do文の終わりまで TokPosをSkip
+ 10456        |     +--- //      TokPos = FindEndDo2(TokenList,TokPos);
+ 10457        |     +--- int Nest = 0;
+ 10458        |     |    
+              |     |  +------------------------------------------+ 
+ 10459        |     +--+ for( ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |     |  +--+---------------------------------------+ 
+ 10460        |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |     |     |  +--------------------------------+ 
+ 10461        |     |     +--+ if(Token-&gt;TokId == tid_Kakko){ | 
+              |     |     |  +--+-----------------------------+ 
+ 10462        |     |     |     +--- Nest++;
+              |     |     |   +-+---+ 
+ 10463        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------------------------+ 
+ 10464        |     |     +--+ if(Token-&gt;TokId == tid_Kokka){ | 
+              |     |     |  +--+-----------------------------+ 
+ 10465        |     |     |     +--- Nest--;
+              |     |     |     |  +----------------+ 
+ 10466        |     |     |     +--+ if(Nest &lt;= 0){ | 
+              |     |     |     |  +--+-------------+ 
+              |     |     |     |     |  +--------+ 
+ 10467        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+ 10468        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 10469        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 10470        |     |   |  }  | 
+              |     |   +-----+ 
+ 10471        |     +--- DoValIdx++; // Next Nest Do （Doの最後で戻る）
+              |   +-+---+ 
+ 10472        |   |  }  | 
+              |   +-----+ 
+ 10473        +--- //    DoValIdx++; // Next Nest Do （Doの最後で戻る）
+ 10474        +--- //
+ 10475        |    // EndDoまでスキャンする。 
+ 10476        |    //                         
+ 10477        +--- ////    EndDoPos = FindEndDo2(TokenList,TokPos-1);
+              |  +------------------------------------------+ 
+ 10478        +--+ for( ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |  +--+---------------------------------------+ 
+ 10479        |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |     |  +----------------------------+ 
+ 10480        |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |  +--+-------------------------+ 
+ 10481        |     |     +--- // スクリプトは、Ｓｋｉｐ
+              |     |     |  +------------+ 
+ 10482        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 10483        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------+ 
+ 10483        |     |   |  else if(Token-&gt;TokId == tid_Comment){  | 
+              |     |   +-+---------------------------------------+ 
+ 10484        |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // コメントは、そのまま
+              |     |     |  +------------+ 
+ 10485        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 10486        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------+ 
+ 10486        |     |   |  else if(Token-&gt;TokId == tid_LineEnd){  | 
+              |     |   +-+---------------------------------------+ 
+ 10487        |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // 改行も、そのまま
+              |     |     |  +------------+ 
+ 10488        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 10489        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------+ 
+ 10489        |     |   |  else if(TokPos &gt;= EndDoPos){ | 
+              |     |   +-+-----------------------------+ 
+ 10490        |     |     +--- // EndDoの処理へ
+              |     |     |  +--------+ 
+ 10491        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+ 10492        |     |   |  }  | 
+              |     |   +-----+ 
+ 10493        |     +--- //
+ 10494        |     |    // 行内で、UnRoll有効中のDo変数を参照しているかを調べる。  
+ 10495        |     |    // もし、使用中であれば、多重化の対象となる。              
+ 10496        |     |    // 多重化は、代入文とDo文とする。(2004/08/26)              
+ 10497        |     |    //                                                         
+ 10498        |     +--- DoRefValBits = 0;
+              |     |  +------------------------------------------+ 
+ 10499        |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |  +--+---------------------------------------+ 
+ 10500        |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[j];
+              |     |     |  +------------------------+ 
+ 10501        |     |     +--+ if(Token2-&gt;LineEndF){  | 
+              |     |     |  +--+---------------------+ 
+              |     |     |     |  +--------+ 
+ 10502        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+ 10503        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------------------------+ 
+ 10504        |     |     +--+ if(Token2-&gt;TokId == tid_for){  | 
+              |     |     |  +--+-----------------------------+ 
+ 10505        |     |     |     +--- // Doの後の変数をスキップ(除外)　DO 100などはサポート外
+ 10506        |     |     |     +--- j++;
+              |     |     |   +-+---+ 
+ 10507        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+ 10508        |     |     +--+ if(Token2-&gt;ValData == NULL){ | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +------------+ 
+ 10509        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+ 10510        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10511        |     |     +--- ValData = (TValData *)Token2-&gt;ValData;
+ 10512        |     |     +--- DoRefValBits |= ValData-&gt;RefDoValBits;
+              |     |   +-+---+ 
+ 10513        |     |   |  }  | 
+              |     |   +-----+ 
+ 10514        |     +--- /*
+ 10515        |     |            if((DoRefValBits != 0)&amp;&amp;((DoRefValBits &amp; UnRollDoRefValBits) == 0)){ 
+ 10516        |     |                // Do束縛変数への参照がDOLoop外で行われている場合は、            
+ 10517        |     |                // 一時的（現在のUnrollが終わるまで）Do束縛変数でなくする。      
+ 10518        |     |                // 関数から抜ける時には、元に戻す。                              
+ 10519        |     |                DP(ValData-&gt;Str);                                                
+ 10520        |     |            }                                                                    
+ 10521        |     |    */                                                                           
+ 10522        |     +--- DoRefValBits &amp;= UnRollDoRefValBits;
+ 10523        |     +--- // 次に渡す Do変数参照(処理済)bitを決定（OR）
+ 10524        |     +--- NextUsedDoRefValBits = DoRefValBits | UsedDoRefValBits;
+ 10525        |     +--- NowUseDoRefValBits = DoRefValBits &amp; (~UsedDoRefValBits);
+ 10526        |     +--- RollCount = GetValCountOfBit(NowUseDoRefValBits,UnrollCount);
+              |     |  +------------------------------------------------------------------------+ 
+ 10527        |     +--+ for(int AndRefValIdx = 0 ; AndRefValIdx &lt; RollCount ; AndRefValIdx++){ | 
+              |     |  +--+---------------------------------------------------------------------+ 
+ 10528        |     |     +--- //
+ 10529        |     |     |    // NewRefValIdxを計算する。  
+ 10530        |     |     |    //                           
+              |     |     |  +----------------------------------------------------------------------+ 
+ 10531        |     |     +--+ if(RollCount &lt;= 1){ // 分割が発生しない場合は、呼び出し元がそのまま  | 
+              |     |     |  +--+-------------------------------------------------------------------+ 
+ 10532        |     |     |     +--- NewRefValIdx = RefValIdx;
+              |     |     |   +-+---+ 
+ 10533        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 10533        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 10534        |     |     |     +--- // 新たに分割が発生する場合には、計算が必要
+ 10535        |     |     |     |    // RefValIdx : UseDoRefValBits                                   
+ 10536        |     |     |     |    // kk ; AndUseDoRefValBits の２つを合成した NewRefValIdxを計算。 
+ 10537        |     |     |     |    //　[32] の要素で合成する。                                      
+ 10538        |     |     |     |    //                                                               
+ 10539        |     |     |     +--- NewRefValIdx = CalNewRefValIdx(RefValIdx,UsedDoRefValBits,
+ 10540        |     |     |     |                    AndRefValIdx,NowUseDoRefValBits,UnrollCount);  
+              |     |     |   +-+---+ 
+ 10541        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+ 10542        |     |     +--+ if(Token-&gt;TokId == tid_for){ | 
+              |     |     |  +--+---------------------------+ 
+ 10543        |     |     |     +--- // DOのブロックを出力(END_DO,Moduloの処理まで行う)
+ 10544        |     |     |     +--- EndTokPos = OutputUnroll_DoBlock_C(fp,TokPos,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |     |  +----------------------------------------------------------+ 
+ 10545        |     |     |     +--+ if(AndRefValIdx &lt; RollCount-1){ // 継続がある場合は改行  | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+ 10546        |     |     |     |     +--- fprintf(fp,&quot;\n&quot;);
+              |     |     |     |   +-+---+ 
+ 10547        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 10548        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------+ 
+ 10548        |     |     |   |  else if(Token-&gt;TokId == tid_if){ | 
+              |     |     |   +-+---------------------------------+ 
+ 10549        |     |     |     +--- // IFのブロックを出力 if .. endifが対象
+ 10550        |     |     |     +--- EndTokPos = OutputUnroll_IfBlock_C(fp,TokPos,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |   +-+---+ 
+ 10551        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------+ 
+ 10551        |     |     |   |  else if(Token-&gt;ValData != NULL){ | 
+              |     |     |   +-+---------------------------------+ 
+ 10552        |     |     |     +--- // 代入文１行を出力
+ 10553        |     |     |     +--- //              EndTokPos = OutputUnroll_Line_C(fp,TokPos,NextUsedDoRefValBits,NewRefValIdx);
+ 10554        |     |     |     +--- EndTokPos = OutputUnroll_Line_C(fp,TokPos,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |   +-+---+ 
+ 10555        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 10555        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 10556        |     |     |     +--- // それ以外の文は、そのまま出力する
+ 10557        |     |     |     +--- int j;
+ 10558        |     |     |     |    
+ 10559        |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |  +------------------------------------------+ 
+ 10560        |     |     |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |     |     |  +--+---------------------------------------+ 
+ 10561        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+ 10562        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |  +--------------------------------------------------------------------+ 
+ 10563        |     |     |     |     +--+ if((Token-&gt;TokId == tid_DaiKakko)||(Token-&gt;TokId == tid_DaiKokka)  | 
+ 10564        |     |     |     |     |  |     ||(Token-&gt;TokId == tid_Semikoron)){                            | 
+              |     |     |     |     |  +--+-----------------------------------------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+ 10565        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 10566        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 10567        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 10568        |     |     |     +--- s = OffsetStr + s;
+ 10569        |     |     |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+ 10570        |     |     |     +--- EndTokPos = j;
+              |     |     |   +-+---+ 
+ 10571        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 10572        |     |   |  }  | 
+              |     |   +-----+ 
+ 10573        |     +--- TokPos = EndTokPos;
+              |   +-+---+ 
+ 10574        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------------------------------------------+ 
+ 10575        +--+ if(TokPos &gt; TokenEndPos){   // EndDOが見つからなかった。 | 
+              |  +--+-------------------------------------------------------+ 
+ 10576        |     +--- MainF-&gt;ErrMessage(1,&quot;文法解析エラー。ENDDOが見つからなかった。&quot;);
+              |     |  +----------------+ 
+ 10577        |     +--+ return 99999;  | 
+              |     |  +----------------+ 
+              |   +-+---+ 
+ 10578        |   |  }  | 
+              |   +-----+ 
+ 10579        +--- //
+ 10580        |    // EndDoの処理を行う 
+ 10581        |    //                   
+ 10582        +--- DoValIdx = bkDoValIdx;
+ 10583        +--- UnRollDoRefValBits = bkUnRollDoRefValBits;
+ 10584        +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |  +------------------+ 
+ 10585        +--+ if(!UnRollDoF){  | 
+              |  +--+---------------+ 
+ 10586        |     +--- //
+ 10587        |     |    // UnRoll対象でない場合は、ENDDOの行は、DO参照変数の置換のみを行う。 
+ 10588        |     |    //                                                                   
+ 10589        |     +--- TokPos = OutputUnroll_Line_C(fp,TokPos,UsedDoRefValBits,RefValIdx);
+ 10590        |     |    
+ 10591        |     +--- //  }else if(Token-&gt;TokId == tid_ENDDO){
+              |   +-+---+ 
+ 10592        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------+ 
+ 10592        |   |  else if(TokPos &gt;= EndDoPos){ | 
+              |   +-+-----------------------------+ 
+ 10593        |     +--- //
+ 10594        |     |    // EndDoの処理 (DO変数を含まない、これも含む場合あり)  
+ 10595        |     |    // EndDoの前に、変数の加算が入る。                     
+ 10596        |     |    // EndDoの後に、Modulo()の処理が入る                   
+ 10597        |     |    //                                                     
+ 10598        |     +--- string s2,s3;
+ 10599        |     +--- string BaseStr;
+ 10600        |     |    
+ 10601        |     +--- s3 = Token-&gt;OrgStr; // End DO Token
+ 10602        |     +--- /*
+ 10603        |     |            BaseStr = ChangeFromOrgStr(DoToken[DoValIdx]-&gt;OrgStr,&quot;&quot;);                  
+ 10604        |     |            if(UnrollCount[DoValIdx] != 1){                                            
+ 10605        |     |                s2 = BaseStr + &quot;\t&quot;;                                                   
+ 10606        |     |                s2 += DoValStr[DoValIdx] + &quot; = &quot; + DoValStr[DoValIdx] + &quot;+&quot;;           
+ 10607        |     |                s2 += IntToStr(UnrollCount[DoValIdx]);                                 
+ 10608        |     |                                                                                       
+ 10609        |     |                if(DoStepSPos[DoValIdx] != DoStepEPos[DoValIdx]){                      
+ 10610        |     |                    s2 += &quot;*(&quot;;                                                        
+ 10611        |     |                    for(int k3 = DoStepSPos[DoValIdx];k3 &lt; DoStepEPos[DoValIdx];k3++){ 
+ 10612        |     |                        Token = (TToken *)TokenList-&gt;Items[k3];                        
+ 10613        |     |                        s2 += Token-&gt;Str;                                              
+ 10614        |     |                    }                                                                  
+ 10615        |     |                    s2 += &quot;)&quot;;                                                         
+ 10616        |     |                }                                                                      
+ 10617        |     |                fprintf(fp,&quot;%s;\n&quot;,s2.c_str());                                        
+ 10618        |     |            }                                                                          
+ 10619        |     |    */                                                                                 
+ 10620        |     +--- fprintf(fp,&quot;%s\n&quot;,s3.c_str()); // ここは、次のLineEndの変わりに改行をつける。
+ 10621        |     |                                                                                   
+ 10622        |     +--- //
+ 10623        |     |    // 余り部分の処理を行う。  
+ 10624        |     |    //                         
+ 10625        |     +--- s = BaseStr;
+ 10626        |     +--- BaseValName = BaseValList-&gt;Strings[0];
+ 10627        |     +--- s += &quot;if ((&quot;+BaseValName + &quot; % &quot;+IntToStr(UnrollCount[DoValIdx]) +&quot;) != 0){&quot;;
+ 10628        |     +--- fprintf(fp,&quot;\t%s\n&quot;,s.c_str());
+ 10629        |     |    
+ 10630        |     +--- //
+ 10631        |     |    // 余りの処理のためのDo部分の出力                                        
+ 10632        |     |    // これに対しては、内部のUnrollは行わない。（プログラムが長くなるため）  
+ 10633        |     |    //                                                                       
+ 10634        |     +--- int TokPos2; // 内部Do用のTokPos
+ 10635        |     |                                     
+ 10636        |     +--- OffsetStr += &quot;\t&quot;;
+              |     |  +--------------------------------------------------------------------+ 
+ 10637        |     +--+ for(TokPos2 = DoTokPos[DoValIdx] ; TokPos2 &lt;= TokPos ; TokPos2++){ | 
+              |     |  +--+-----------------------------------------------------------------+ 
+ 10638        |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos2];
+ 10639        |     |     +--- s = Token-&gt;OrgStr;
+              |     |     |  +----------------------------+ 
+ 10640        |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |  +--+-------------------------+ 
+ 10641        |     |     |     +--- // スクリプトは、ここでは、Ｓｋｉｐ
+              |     |     |     |  +------------+ 
+ 10642        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+ 10643        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+ 10643        |     |     |   |  else if(Token-&gt;TokId == tid_Comment){  | 
+              |     |     |   +-+---------------------------------------+ 
+ 10644        |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // コメント
+              |     |     |     |  +------------+ 
+ 10645        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+ 10646        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+ 10646        |     |     |   |  else if(Token-&gt;TokId == tid_LineEnd){  | 
+              |     |     |   +-+---------------------------------------+ 
+ 10647        |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // 改行も、そのまま
+              |     |     |     |  +------------+ 
+ 10648        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+ 10649        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------------------------+ 
+ 10649        |     |     |   |  else if(Token == DoToken[DoValIdx]){   // 該当Do文の出現 | 
+              |     |     |   +-+---------------------------------------------------------+ 
+ 10650        |     |     |     +--- //
+ 10651        |     |     |     |    // 初期値を置換した　Doを生成  
+ 10652        |     |     |     |    //                             
+ 10653        |     |     |     +--- s = OffsetStr;
+              |     |     |     |  +----------------------------------------+ 
+ 10654        |     |     |     +--+ for( ; TokPos2 &lt; TokPos ; TokPos2++){  | 
+              |     |     |     |  +--+-------------------------------------+ 
+ 10655        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos2];
+              |     |     |     |     |  +------------------------------------------+ 
+ 10656        |     |     |     |     +--+ if(TokPos2 == DoStartEPos[DoValIdx]-1){  | 
+              |     |     |     |     |  +--+---------------------------------------+ 
+              |     |     |     |     |     |  +------------------------+ 
+ 10657        |     |     |     |     |     +--+ if(Token-&gt;Str == &quot;0&quot;){ | 
+              |     |     |     |     |     |  +--+---------------------+ 
+ 10658        |     |     |     |     |     |     +--- //                          s += &quot; &quot;+DoVal_m[DoValIdx] + &quot;*&quot; + IntToStr(UnrollCount[DoValIdx]); // Doの変数を置換
+ 10659        |     |     |     |     |     |     +--- s += &quot;(&quot;+BaseValName + &quot;/&quot; + IntToStr(UnrollCount[DoValIdx]) +
+ 10660        |     |     |     |     |     |     |        &quot;)*&quot;+ IntToStr(UnrollCount[DoValIdx]);  // Doの変数を置換  
+              |     |     |     |     |     |   +-+---+ 
+ 10661        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 10661        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 10662        |     |     |     |     |     |     +--- s += Token-&gt;Str;
+ 10663        |     |     |     |     |     |     +--- s += &quot;+(&quot;+BaseValName + &quot;/&quot; + IntToStr(UnrollCount[DoValIdx]) +
+ 10664        |     |     |     |     |     |     |        &quot;)*&quot;+ IntToStr(UnrollCount[DoValIdx]);  // Doの変数を置換    
+              |     |     |     |     |     |   +-+---+ 
+ 10665        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+ 10666        |     |     |     |     |     +--- /*
+ 10667        |     |     |     |     |     |                            if(DoStepSPos[DoValIdx] != DoStepEPos[DoValIdx]){                    
+ 10668        |     |     |     |     |     |                                s += &quot;*(&quot;;                                                       
+ 10669        |     |     |     |     |     |                                for(i = DoStepSPos[DoValIdx] ; i &lt; DoStepEPos[DoValIdx] ; i++){  
+ 10670        |     |     |     |     |     |                                    Token = (TToken *)TokenList-&gt;Items[i];                       
+ 10671        |     |     |     |     |     |                                    s += Token-&gt;OrgStr;                                          
+ 10672        |     |     |     |     |     |                                }                                                                
+ 10673        |     |     |     |     |     |                                s += &quot;)&quot;;                                                        
+ 10674        |     |     |     |     |     |                            }                                                                    
+ 10675        |     |     |     |     |     |    */                                                                                           
+              |     |     |     |     |   +-+---+ 
+ 10676        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+ 10676        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+ 10677        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |   +-+---+ 
+ 10678        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------+ 
+ 10679        |     |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |  +--------+ 
+ 10680        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 10681        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 10682        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 10683        |     |     |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+              |     |     |     |  +------------+ 
+ 10684        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+ 10685        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10686        |     |     +--- //
+ 10687        |     |     |    // 行内で、UnRoll有効中のDo変数を参照しているかを調べる。          
+ 10688        |     |     |    // もし、使用中であれば、多重化の対象となる。                      
+ 10689        |     |     |    //                                                                 
+ 10690        |     |     |    // Modulo内での多重化対象は、UnRollしたDO変数自体は対象外とする。  
+ 10691        |     |     |    // ようは、UnRoll対象での外側のUseBitのみが多重化対象となる。      
+ 10692        |     |     |    //                                                                 
+ 10693        |     |     +--- DoRefValBits = 0;
+              |     |     |  +--------------------------------------------+ 
+ 10694        |     |     +--+ for(j = TokPos2 ; j &lt; TokenEndPos ; j++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+ 10695        |     |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[j];
+              |     |     |     |  +------------------------+ 
+ 10696        |     |     |     +--+ if(Token2-&gt;LineEndF){  | 
+              |     |     |     |  +--+---------------------+ 
+              |     |     |     |     |  +--------+ 
+ 10697        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+ 10698        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------------------+ 
+ 10699        |     |     |     +--+ if(Token2-&gt;TokId == tid_for){  | 
+              |     |     |     |  +--+-----------------------------+ 
+ 10700        |     |     |     |     +--- // Doの後の変数をスキップ(除外)　DO 100などはサポート外
+ 10701        |     |     |     |     +--- j++;
+              |     |     |     |   +-+---+ 
+ 10702        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------+ 
+ 10703        |     |     |     +--+ if(Token2-&gt;ValData == NULL){ | 
+              |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |  +------------+ 
+ 10704        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 10705        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 10706        |     |     |     +--- ValData = (TValData *)Token2-&gt;ValData;
+ 10707        |     |     |     +--- DoRefValBits |= ValData-&gt;RefDoValBits;
+              |     |     |   +-+---+ 
+ 10708        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10709        |     |     +--- DoRefValBits &amp;= UnRollDoRefValBits; // UnRoll対象(今のDoを除く)
+ 10710        |     |     +--- // 次に渡す Do変数参照(処理済)bitを決定（OR）
+ 10711        |     |     +--- NextUsedDoRefValBits = DoRefValBits | UsedDoRefValBits;
+ 10712        |     |     +--- NowUseDoRefValBits = DoRefValBits &amp; (~UsedDoRefValBits);
+ 10713        |     |     |    
+ 10714        |     |     +--- //      fprintf(fp,&quot;DoRefValBits %04X UnRollDoRefValBits %04X\n&quot;,
+ 10715        |     |     |    //      DoRefValBits , UnRollDoRefValBits);                                                    
+ 10716        |     |     |    //      fprintf(fp,&quot;UsedDoRefValBits %04X NextUseDoRefValBits %04X NowUseDoRefValBits %04X\n&quot;, 
+ 10717        |     |     |    //      UsedDoRefValBits, NextUsedDoRefValBits , NowUseDoRefValBits);                          
+ 10718        |     |     |                                                                                                   
+ 10719        |     |     +--- RollCount = GetValCountOfBit(NowUseDoRefValBits,UnrollCount);
+              |     |     |  +------------------------------------------------------------------------+ 
+ 10720        |     |     +--+ for(int AndRefValIdx = 0 ; AndRefValIdx &lt; RollCount ; AndRefValIdx++){ | 
+              |     |     |  +--+---------------------------------------------------------------------+ 
+ 10721        |     |     |     +--- //
+ 10722        |     |     |     |    // NewRefValIdxを計算する。  
+ 10723        |     |     |     |    //                           
+              |     |     |     |  +----------------------------------------------------------------------+ 
+ 10724        |     |     |     +--+ if(RollCount &lt;= 1){ // 分割が発生しない場合は、呼び出し元がそのまま  | 
+              |     |     |     |  +--+-------------------------------------------------------------------+ 
+ 10725        |     |     |     |     +--- NewRefValIdx = RefValIdx;
+              |     |     |     |   +-+---+ 
+ 10726        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+ 10726        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+ 10727        |     |     |     |     +--- // 新たに分割が発生する場合には、計算が必要
+ 10728        |     |     |     |     |    // RefValIdx : UseDoRefValBits                                   
+ 10729        |     |     |     |     |    // kk ; AndUseDoRefValBits の２つを合成した NewRefValIdxを計算。 
+ 10730        |     |     |     |     |    //　[32] の要素で合成する。                                      
+ 10731        |     |     |     |     |    //                                                               
+ 10732        |     |     |     |     +--- NewRefValIdx = CalNewRefValIdx(RefValIdx,UsedDoRefValBits,
+ 10733        |     |     |     |     |                    AndRefValIdx,NowUseDoRefValBits,UnrollCount);  
+              |     |     |     |   +-+---+ 
+ 10734        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 10735        |     |     |     +--- //      fprintf(fp,&quot;  NewRefValIdx %d RefValIdx %d\n&quot;,
+ 10736        |     |     |     |    //      NewRefValIdx,RefValIdx);                       
+              |     |     |     |  +------------------------------+ 
+ 10737        |     |     |     +--+ if(Token-&gt;TokId == tid_for){ | 
+              |     |     |     |  +--+---------------------------+ 
+ 10738        |     |     |     |     +--- // DOのブロックを出力(END_DO,Moduloの処理まで行う)
+ 10739        |     |     |     |     +--- EndTokPos = OutputUnroll_DoBlock_C(fp,TokPos2,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |     |   +-+---+ 
+ 10740        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------+ 
+ 10740        |     |     |     |   |  else if(Token-&gt;TokId == tid_if){ | 
+              |     |     |     |   +-+---------------------------------+ 
+ 10741        |     |     |     |     +--- // IFのブロックを出力 if .. endifが対象
+ 10742        |     |     |     |     +--- EndTokPos = OutputUnroll_IfBlock_C(fp,TokPos2,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |     |   +-+---+ 
+ 10743        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------+ 
+ 10743        |     |     |     |   |  else if(Token-&gt;ValData != NULL){ | 
+              |     |     |     |   +-+---------------------------------+ 
+ 10744        |     |     |     |     +--- // 代入文１行を出力
+ 10745        |     |     |     |     +--- EndTokPos = OutputUnroll_Line_C(fp,TokPos2,NextUsedDoRefValBits,NewRefValIdx);
+              |     |     |     |   +-+---+ 
+ 10746        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+ 10746        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+ 10747        |     |     |     |     +--- // それ以外の文は、そのまま出力する
+ 10748        |     |     |     |     +--- int j;
+ 10749        |     |     |     |     |    
+ 10750        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +--------------------------------------------+ 
+ 10751        |     |     |     |     +--+ for(j = TokPos2 ; j &lt; TokenEndPos ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------+ 
+ 10752        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+ 10753        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |  +----------------------+ 
+ 10754        |     |     |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+ 10755        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+ 10756        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 10757        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+ 10758        |     |     |     |     +--- //                  if((s != &quot;&quot;)&amp;&amp;(s[1] == ' ')){
+ 10759        |     |     |     |     +--- s = OffsetStr + s;
+ 10760        |     |     |     |     +--- //                  }
+ 10761        |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+ 10762        |     |     |     |     +--- EndTokPos = j;
+              |     |     |     |   +-+---+ 
+ 10763        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 10764        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 10765        |     |     +--- TokPos2 = EndTokPos;
+              |     |   +-+---+ 
+ 10766        |     |   |  }  | 
+              |     |   +-----+ 
+ 10767        |     +--- s = BaseStr + &quot;}&quot;;
+ 10768        |     +--- fprintf(fp,&quot;\t%s\n&quot;,s.c_str());
+ 10769        |     +--- //      fprintf(fp,&quot;%s&quot;,s.c_str());
+ 10770        |     +--- OffsetStr = OffsetStr.erase(0,1);
+              |   +-+---+ 
+ 10771        |   |  }  | 
+              |   +-----+ 
+              |  +----------------+ 
+ 10772        +--+ return TokPos; | 
+              |  +----------------+ 
+            +-+---+ 
+ 10773      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+
+<html>
+<head>
+<title>TPass4 メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.3.4. TPass4 メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>TPass4</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass4.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>70</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass4</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>TPass4 ( TList * aTokenList , TList * aValDataList , TList * aTuneRegionList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>パス４クラス生成。変数の初期化と、引数データの複写を行う。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>aTokenList  トークンリスト<br>aValDataList  変数データリスト<br>aTuneRegionList 生成されるTuneRegionの格納先リスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>rfind</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass4::OAT_ValList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass4::TokenList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>75</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass4::TuneRegionList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TPass4::ValDataList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>76</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------------+ 
+    70  +--+ TPass4::TPass4(TList *aTokenList,TList *aValDataList,TList *aTuneRegionList) | 
+    71     | {                                                                            | 
+           +--+---------------------------------------------------------------------------+ 
+    72        +--- string DirName;
+    73        +--- string fname;
+    74        |    
+    75        +--- TokenList = aTokenList;
+    76        +--- ValDataList = aValDataList;
+    77        +--- TuneRegionList = aTuneRegionList;
+    78        |    
+    79        +--- OAT_ValList = new TStringList;
+    80        |    
+    81        +--- fname = MainF-&gt;SrcFileNameList.Strings[0];
+    82        +--- DirName = fname.substr(0,fname.rfind(&quot;/&quot;)+1);
+    83        +--- fname = fname.substr(fname.rfind(&quot;/&quot;)+1);
+              |  +--------------------+ 
+    84        +--+ if(DirName == &quot;&quot;){ | 
+              |  +--+-----------------+ 
+    85        |     +--- DirName = &quot;./&quot;;
+              |   +-+---+ 
+    86        |   |  }  | 
+              |   +-----+ 
+    87        +--- //  fname = DirName + &quot;\\OAT/OAT_&quot;+ExtractFileName(fname);
+    88        +--- fname = DirName + &quot;/OAT/OAT_&quot; + fname;
+            +-+---+ 
+    89      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

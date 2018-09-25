@@ -1,0 +1,7 @@
+(MyMatMul
+  (OAT_NUMPROCS 4)
+  (OAT_SAMPDIST 100)
+  (OAT_PROBSIZE 500
+     (MyMatMul_I 3)
+  )
+)

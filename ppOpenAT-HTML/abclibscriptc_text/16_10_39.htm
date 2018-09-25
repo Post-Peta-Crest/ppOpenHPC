@@ -1,0 +1,261 @@
+
+<html>
+<head>
+<title>OutputSelectCaseExecCode_Fortran メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.39. OutputSelectCaseExecCode_Fortran メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputSelectCaseExecCode_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>7860</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputSelectCaseExecCode_Fortran ( FILE * fp , int iusw1 )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>SelectのCase()内に入るコードを出力する<br>Case()内のコード生成要求時に呼ばれる。<br>複数のsub regionから選択か、varidの数値から計算される。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>iusw1   対象iusw1</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_37.htm">TTuneRegion::OutputReplaceSrc</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_37.htm">12094</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::GPUOption</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>260</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::SubRegionList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>211</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_8_1.htm">TSubRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_8_1.htm">375</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------+ 
+  7860  +--+ void TTuneRegion::OutputSelectCaseExecCode_Fortran(FILE *fp,int iusw1) | 
+  7861     | {                                                                      | 
+           +--+---------------------------------------------------------------------+ 
+  7862        +--- int i,idx;
+  7863        +--- TSubRegion *SubRegion = NULL;
+  7864        +--- bool Skip_Pragma_ACCF = false;
+  7865        |    
+  7866        +--- idx = iusw1 - 1;
+              |  +------------------------------------+ 
+  7867        +--+ if(GPUOption == gpu_option_auto){  | 
+              |  +--+---------------------------------+ 
+              |     |  +--------------------------+ 
+  7868        |     +--+ if(idx &gt;= CaseCount/2){  | 
+              |     |  +--+-----------------------+ 
+  7869        |     |     +--- idx -= CaseCount/2;
+              |     |   +-+---+ 
+  7870        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7871        |   |  }  | 
+              |   +-----+ 
+  7872        +--- //
+  7873        |    // autoモードにおいてCPUコードでは, #Pragma accを消す。  
+  7874        |    //                                                       
+              |  +--------------------------------------------------------------+ 
+  7875        +--+ if((GPUOption == gpu_option_auto)&amp;&amp;(iusw1 &lt;= CaseCount/2)){  | 
+              |  +--+-----------------------------------------------------------+ 
+  7876        |     +--- Skip_Pragma_ACCF = true;
+              |   +-+---+ 
+  7877        |   |  }  | 
+              |   +-----+ 
+  7878        +--- //
+  7879        |    //  GPUに対応する #Pragmaを挿入 2010/12/29 
+  7880        |    //                                         
+              |  +----------------------------------------------------------------------------------------------+ 
+  7881        +--+ if((GPUOption == gpu_option_GPU)||((GPUOption == gpu_option_auto)&amp;&amp;(iusw1 &gt; CaseCount/2))){  | 
+              |  +--+-------------------------------------------------------------------------------------------+ 
+              |     |  +------------------------------------+ 
+  7882        |     +--+ if(MainF-&gt;cc_option_str == &quot;PGI&quot;){ | 
+              |     |  +--+---------------------------------+ 
+  7883        |     |     +--- fprintf(fp,&quot;#pragma acc region\n&quot;);
+  7884        |     |     +--- fprintf(fp,&quot;{ // #pragma allocate region start.\n&quot;);
+              |     |   +-+---+ 
+  7885        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+  7885        |     |   |  else if(MainF-&gt;cc_option_str == &quot;OMPCUDA&quot;){  | 
+              |     |   +-+---------------------------------------------+ 
+  7886        |     |     +--- fprintf(fp,&quot;#pragma OMPCUDA gpu region\n&quot;);
+  7887        |     |     +--- fprintf(fp,&quot;{ // #pragma allocate region start.\n&quot;);
+              |     |   +-+---+ 
+  7888        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7889        |   |  }  | 
+              |   +-----+ 
+              |  +--------------------------------+ 
+  7890        +--+ if(SubRegionList-&gt;Count != 0){ | 
+              |  +--+-----------------------------+ 
+              |     |  +----------------------------------------------+ 
+  7891        |     +--+ for(i = 0 ; i &lt; SubRegionList-&gt;Count ; i++){ | 
+              |     |  +--+-------------------------------------------+ 
+  7892        |     |     +--- SubRegion = (TSubRegion *)SubRegionList-&gt;Items[i];
+              |     |     |  +----------------------------------+ 
+  7893        |     |     +--+ if(idx &lt; SubRegion-&gt;CaseCount){  | 
+              |     |     |  +--+-------------------------------+ 
+              |     |     |     |  +--------+ 
+  7894        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+  7895        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7896        |     |     +--- idx -= SubRegion-&gt;CaseCount;
+              |     |   +-+---+ 
+  7897        |     |   |  }  | 
+              |     |   +-----+ 
+  7898        |     +--- OutputReplaceSrc(fp,SubRegion,idx,Skip_Pragma_ACCF);
+              |   +-+---+ 
+  7899        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+  7899        |   |  else{  | 
+              |   +-+-------+ 
+  7900        |     +--- OutputReplaceSrc(fp,NULL,idx,Skip_Pragma_ACCF);
+              |   +-+---+ 
+  7901        |   |  }  | 
+              |   +-----+ 
+  7902        +--- //
+  7903        |    //  GPUに対応する #Pragma ... { に対応する }閉じるを挿入    2011/1/18  
+  7904        |    //                                                                     
+              |  +----------------------------------------------------------------------------------------------+ 
+  7905        +--+ if((GPUOption == gpu_option_GPU)||((GPUOption == gpu_option_auto)&amp;&amp;(iusw1 &gt; CaseCount/2))){  | 
+              |  +--+-------------------------------------------------------------------------------------------+ 
+              |     |  +------------------------------------+ 
+  7906        |     +--+ if(MainF-&gt;cc_option_str == &quot;PGI&quot;){ | 
+              |     |  +--+---------------------------------+ 
+  7907        |     |     +--- fprintf(fp,&quot;} // #pragma allocate region end. \n&quot;);
+              |     |   +-+---+ 
+  7908        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+  7908        |     |   |  else if(MainF-&gt;cc_option_str == &quot;OMPCUDA&quot;){  | 
+              |     |   +-+---------------------------------------------+ 
+  7909        |     |     +--- fprintf(fp,&quot;} // #pragma allocate region end. \n&quot;);
+              |     |   +-+---+ 
+  7910        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7911        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  7912      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

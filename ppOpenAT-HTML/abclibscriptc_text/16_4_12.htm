@@ -1,0 +1,335 @@
+
+<html>
+<head>
+<title>OutputModuleStart メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.12. OutputModuleStart メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputModuleStart</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>3125</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputModuleStart ( FILE * fp , string ModuleName )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Install , static , dynamic　のモジュールの先頭部分を出力する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp 出力先ファイル<br>ModuleName モジュール名</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>モジュール名とモジュールが参照するuse文を出力する。<br>Use文についてはリージョンが参照しているUse文のリストを作成して出力する。</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TStringList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::TokenList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------+ 
+  3125  +--+ void TPass5::OutputModuleStart(FILE *fp,string ModuleName) | 
+  3126     | {                                                          | 
+           +--+---------------------------------------------------------+ 
+  3127        +--- int i,j;
+  3128        +--- TTuneRegion *TuneRegion;
+  3129        +--- string s,s1,s2;
+  3130        +--- TStringList *UseModuleNameList;
+  3131        +--- int TokPos,ModuleIdx;
+  3132        +--- TToken *Token;
+  3133        +--- int NowNestLevel;
+  3134        |    
+  3135        +--- UseModuleNameList = new TStringList;
+              |  +------------------------------------------------+ 
+  3136        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+  3137        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+  3138        |     +--- //
+  3139        |     |    // リージョンの属するモジュールの Useを探してリストに追加する。  
+  3140        |     |    // 開始位置から先頭かモジュールが変化するまで検索する。          
+  3141        |     |    //                                                               
+  3142        |     +--- TokPos = TuneRegion-&gt;TokenStartPos;
+  3143        |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+  3144        |     +--- ModuleIdx = Token-&gt;ModuleIdx;
+              |     |  +--------------------------------+ 
+  3145        |     +--+ for(;TokPos &gt;= 0 ; TokPos--){  | 
+              |     |  +--+-----------------------------+ 
+  3146        |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |     |     |  +------------------------------------+ 
+  3147        |     |     +--+ if(ModuleIdx != Token-&gt;ModuleIdx){ | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +--------+ 
+  3148        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+  3149        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+  3150        |     |     +--+ if(Token-&gt;TokId == tid_USE){ | 
+              |     |     |  +--+---------------------------+ 
+  3151        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos+1];
+              |     |     |     |  +--------------------------------------------------+ 
+  3152        |     |     |     +--+ for(j = 0 ; j &lt; UseModuleNameList-&gt;Count ; j++){ | 
+              |     |     |     |  +--+-----------------------------------------------+ 
+              |     |     |     |     |  +------------------------------------------------------------------------+ 
+  3153        |     |     |     |     +--+ if(LowerCase(UseModuleNameList-&gt;Strings[j]) == LowerCase(Token-&gt;Str)){ | 
+              |     |     |     |     |  +--+---------------------------------------------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  3154        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  3155        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  3156        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------------+ 
+  3157        |     |     |     +--+ if(j &gt;= UseModuleNameList-&gt;Count){ | 
+              |     |     |     |  +--+---------------------------------+ 
+  3158        |     |     |     |     +--- UseModuleNameList-&gt;Add(Token-&gt;Str);
+              |     |     |     |   +-+---+ 
+  3159        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  3160        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  3161        |     |   |  }  | 
+              |     |   +-----+ 
+  3162        |     +--- //
+  3163        |     |    // CONTAINSでのネストがあれば、その上位も対象とする。                    
+  3164        |     |    // CONTAINSの出現までスキャンして、その先のモジュールのUSEも対象とする。 
+  3165        |     |    // 2013/0/05                                                             
+  3166        |     |    //                                                                       
+              |     |  +----------------------------+ 
+  3167        |     +--+ if(Token-&gt;NestLevel &gt;= 1){ | 
+              |     |  +--+-------------------------+ 
+  3168        |     |     +--- NowNestLevel = Token-&gt;NestLevel;
+              |     |     |  +--------------------------------+ 
+  3169        |     |     +--+ for(;TokPos &gt;= 0 ; TokPos--){  | 
+              |     |     |  +--+-----------------------------+ 
+  3170        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |     |     |     |  +----------------------------+ 
+  3171        |     |     |     +--+ if(Token-&gt;NestLevel == 0){ | 
+              |     |     |     |  +--+-------------------------+ 
+              |     |     |     |     |  +--------+ 
+  3172        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  3173        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------------+ 
+  3174        |     |     |     +--+ if(Token-&gt;TokId == tid_CONTAINS){  | 
+              |     |     |     |  +--+---------------------------------+ 
+  3175        |     |     |     |     +--- ModuleIdx = Token-&gt;ModuleIdx;
+              |     |     |     |     |  +--------------------------------+ 
+  3176        |     |     |     |     +--+ for(;TokPos &gt;= 0 ; TokPos--){  | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  3177        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+              |     |     |     |     |     |  +------------------------------------+ 
+  3178        |     |     |     |     |     +--+ if(ModuleIdx != Token-&gt;ModuleIdx){ | 
+              |     |     |     |     |     |  +--+---------------------------------+ 
+  3179        |     |     |     |     |     |     +--- TokPos++;
+              |     |     |     |     |     |     |  +--------+ 
+  3180        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  3181        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +----------------------------+ 
+  3182        |     |     |     |     |     +--+ if(Token-&gt;NestLevel == 0){ | 
+              |     |     |     |     |     |  +--+-------------------------+ 
+  3183        |     |     |     |     |     |     +--- TokPos++;
+              |     |     |     |     |     |     |  +--------+ 
+  3184        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  3185        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +------------------------------+ 
+  3186        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_USE){ | 
+              |     |     |     |     |     |  +--+---------------------------+ 
+  3187        |     |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos+1];
+              |     |     |     |     |     |     |  +--------------------------------------------------+ 
+  3188        |     |     |     |     |     |     +--+ for(j = 0 ; j &lt; UseModuleNameList-&gt;Count ; j++){ | 
+              |     |     |     |     |     |     |  +--+-----------------------------------------------+ 
+              |     |     |     |     |     |     |     |  +------------------------------------------------------------------------+ 
+  3189        |     |     |     |     |     |     |     +--+ if(LowerCase(UseModuleNameList-&gt;Strings[j]) == LowerCase(Token-&gt;Str)){ | 
+              |     |     |     |     |     |     |     |  +--+---------------------------------------------------------------------+ 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+  3190        |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  3191        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  3192        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |  +------------------------------------+ 
+  3193        |     |     |     |     |     |     +--+ if(j &gt;= UseModuleNameList-&gt;Count){ | 
+              |     |     |     |     |     |     |  +--+---------------------------------+ 
+  3194        |     |     |     |     |     |     |     +--- UseModuleNameList-&gt;Add(Token-&gt;Str);
+              |     |     |     |     |     |     |   +-+---+ 
+  3195        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  3196        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  3197        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  3198        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  3199        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  3200        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  3201        |   |  }  | 
+              |   +-----+ 
+  3202        +--- fprintf(fp,&quot;      module %s\n&quot;,ModuleName.c_str());
+  3203        +--- fprintf(fp,&quot;\n&quot;);
+              |  +--------------------------------------------------+ 
+  3204        +--+ for(i = 0 ; i &lt; UseModuleNameList-&gt;Count ; i++){ | 
+              |  +--+-----------------------------------------------+ 
+  3205        |     +--- fprintf(fp,&quot;      use %s\n&quot;,UseModuleNameList-&gt;Strings[i].c_str());
+              |   +-+---+ 
+  3206        |   |  }  | 
+              |   +-----+ 
+  3207        +--- fprintf(fp,&quot;\n&quot;);
+  3208        +--- fprintf(fp,&quot;      implicit none\n&quot;,ModuleName.c_str());
+  3209        +--- fprintf(fp,&quot;      public\n&quot;,ModuleName.c_str());
+  3210        +--- fprintf(fp,&quot;\n&quot;);
+  3211        +--- fprintf(fp,&quot;      contains\n&quot;,ModuleName.c_str());
+  3212        +--- fprintf(fp,&quot;\n&quot;);
+  3213        +--- delete UseModuleNameList;
+  3214        |    
+            +-+---+ 
+  3215      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

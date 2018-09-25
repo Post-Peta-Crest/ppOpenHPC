@@ -1,0 +1,382 @@
+
+<html>
+<head>
+<title>OutputSetParamCode_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.40. OutputSetParamCode_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputSetParamCode_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2668</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputSetParamCode_C ( FILE * fp , int TempLineNo )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_Coontrol.f の ABCLob_SetParam()のコードを出力する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>TempLineNo  作成する行番号のベース</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_7.htm">TPass5::MakeControlCode_C</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_7.htm">440</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_4_8.htm">TPass5::MakeControlCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>strlen</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::BaseValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>216</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::FittingType</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>251</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::Name</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>192</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::TuneGroupName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>196</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------+ 
+  2668  +--+ void TTuneRegion::OutputSetParamCode_C(FILE *fp,int TempLineNo)  | 
+  2669     | {                                                                | 
+           +--+---------------------------------------------------------------+ 
+  2670        +--- fprintf(fp,&quot;\t\tif(strstr(OAT_Routines,\&quot;%s\&quot;) != 0){\n&quot;,Name.c_str());
+              |  +----------------------------------------------+ 
+  2671        +--+ if(FittingType == 0){   // Fittingでない場合 | 
+              |  +--+-------------------------------------------+ 
+  2672        |     +--- fprintf(fp,&quot;\t\t\t*isw = -1;\n&quot;);
+  2673        |     +--- fprintf(fp,&quot;\t\t\tibsw = 1;\n&quot;);
+  2674        |     +--- fprintf(fp,&quot;//---- file create\n&quot;);
+  2675        |     +--- fprintf(fp,&quot;//-----------------------------------------\n&quot;);
+  2676        |     +--- fprintf(fp,&quot;\t\t\tif(myid == 0){\n&quot;);
+  2677        |     +--- fprintf(fp,&quot;\t\t\t\tfp = fopen(\&quot;OAT_%s%sParam.dat\&quot;,\&quot;rt\&quot;);\n&quot;,TuneGroupName.c_str(),Name.c_str());
+  2678        |     +--- fprintf(fp,&quot;\t\t\t\tif(fp == NULL){\n&quot;);
+  2679        |     +--- fprintf(fp,&quot;\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo+2);
+  2680        |     +--- fprintf(fp,&quot;\t\t\t\t}\n&quot;);
+  2681        |     +--- /*
+  2682        |     |            fprintf(fp,&quot;            open(21, status = 'old',\n&quot;);                              
+  2683        |     |            fprintf(fp,&quot;     &amp;         file = 'OAT_%s%sParam.dat',\n&quot;,TuneGroupName,Name);     
+  2684        |     |            fprintf(fp,&quot;     &amp;         action = 'read', pad= 'yes', err =%d)\n&quot;,TempLineNo+2); 
+  2685        |     |            fprintf(fp,&quot;\n&quot;);                                                                  
+  2686        |     |    */                                                                                         
+  2687        |     +--- fprintf(fp,&quot;//--- Seek object file\n&quot;);
+  2688        |     +--- fprintf(fp,&quot;\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2689        |     +--- fprintf(fp,&quot;\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2690        |     +--- fprintf(fp,&quot;\t\t\t\t}\n&quot;);
+  2691        |     +--- fprintf(fp,&quot;\t\t\t\twhile(strstr(cbuf,\&quot;%s\&quot;) == 0){\n&quot;,Name.c_str());
+  2692        |     +--- fprintf(fp,&quot;\t\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2693        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2694        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2695        |     +--- fprintf(fp,&quot;\t\t\t\t}\n&quot;);
+  2696        |     +--- fprintf(fp,&quot;\t\t\t\twhile(1){\n&quot;);
+  2697        |     +--- fprintf(fp,&quot;//--- Find problemsize\n&quot;);
+  2698        |     +--- fprintf(fp,&quot;\t\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2699        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2700        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2701        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile (strstr(cbuf,\&quot;%s\&quot;) == 0){\n&quot;,&quot;OAT_PROBSIZE&quot;);
+  2702        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2703        |     +--- fprintf(fp,&quot;\t\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2704        |     +--- fprintf(fp,&quot;\t\t\t\t\t\t}\n&quot;);
+  2705        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2706        |     +--- fprintf(fp,&quot;// -------------------------------------------\n&quot;);
+  2707        |     +--- fprintf(fp,&quot;\n&quot;);
+  2708        |     +--- fprintf(fp,&quot;//---- find space\n&quot;);
+  2709        |     +--- fprintf(fp,&quot;\t\t\t\t\ti = (char *)strstr(cbuf,\&quot;OAT_PROBSIZE\&quot;)-cbuf+%d;\n&quot;,(int)strlen(&quot;OAT_PROBSIZE&quot;));
+  2710        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile(cbuf[i] == ' '){\n&quot;);
+  2711        |     +--- fprintf(fp,&quot;\t\t\t\t\t\ti = i + 1;\n&quot;);
+  2712        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2713        |     +--- fprintf(fp,&quot;//---------------------------------\n&quot;);
+  2714        |     +--- fprintf(fp,&quot;\n&quot;);
+  2715        |     +--- fprintf(fp,&quot;//---- store digit and change it to integer\n&quot;);
+  2716        |     +--- fprintf(fp,&quot;\t\t\t\t\tj = 0;\n&quot;);
+  2717        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile(cbuf[i] &gt; ' '){\n&quot;);
+  2718        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tdigit[j] = cbuf[i];\n&quot;);
+  2719        |     +--- fprintf(fp,&quot;\t\t\t\t\t\ti = i + 1;\n&quot;);
+  2720        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tj = j + 1;\n&quot;);
+  2721        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2722        |     +--- fprintf(fp,&quot;//---------------------------------\n&quot;);
+  2723        |     +--- fprintf(fp,&quot;\t\t\t\t\tdigit[j] = '\\0';\n&quot;);
+  2724        |     +--- fprintf(fp,&quot;\t\t\t\t\tinum = atoi(digit);\n&quot;);
+  2725        |     +--- fprintf(fp,&quot;//-----------------------------------------\n&quot;);
+  2726        |     +--- fprintf(fp,&quot;\n&quot;);
+  2727        |     +--- fprintf(fp,&quot;//--- Find parameter\n&quot;);
+  2728        |     +--- fprintf(fp,&quot;\t\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2729        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2730        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2731        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile (strstr(cbuf,\&quot;%s_I\&quot;) == 0){\n&quot;,Name.c_str());
+  2732        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tif(fgets(cbuf,sizeof(cbuf),fp) == NULL){\n&quot;);
+  2733        |     +--- fprintf(fp,&quot;\t\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2734        |     +--- fprintf(fp,&quot;\t\t\t\t\t\t}\n&quot;);
+  2735        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2736        |     +--- fprintf(fp,&quot;//-------------------------------------------\n&quot;);
+  2737        |     +--- fprintf(fp,&quot;\n&quot;);
+  2738        |     +--- fprintf(fp,&quot;//---- find space\n&quot;);
+  2739        |     +--- fprintf(fp,&quot;\t\t\t\t\ti = (char *)strstr(cbuf,\&quot;%s_I\&quot;)-cbuf+%d;\n&quot;,Name.c_str(),(int)Name.length()+2);
+  2740        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile(cbuf[i] == ' '){\n&quot;);
+  2741        |     +--- fprintf(fp,&quot;\t\t\t\t\t\ti = i + 1;\n&quot;);
+  2742        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2743        |     +--- fprintf(fp,&quot;//---------------------------------\n&quot;);
+  2744        |     +--- fprintf(fp,&quot;\n&quot;);
+  2745        |     +--- fprintf(fp,&quot;//---- store digit and change it to integer\n&quot;);
+  2746        |     +--- fprintf(fp,&quot;\t\t\t\t\tj = 0;\n&quot;);
+  2747        |     +--- fprintf(fp,&quot;\t\t\t\t\twhile(cbuf[i] &gt; ' '){\n&quot;);
+  2748        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tdigit[j] = cbuf[i];\n&quot;);
+  2749        |     +--- fprintf(fp,&quot;\t\t\t\t\t\ti = i + 1;\n&quot;);
+  2750        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tj = j + 1;\n&quot;);
+  2751        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2752        |     +--- fprintf(fp,&quot;//---------------------------------\n&quot;);
+  2753        |     +--- fprintf(fp,&quot;\t\t\t\t\tdigit[j] = '\\0';\n&quot;);
+  2754        |     +--- fprintf(fp,&quot;\t\t\t\t\tibsw = atoi(digit);\n&quot;);
+  2755        |     +--- fprintf(fp,&quot;\n&quot;);
+  2756        |     +--- //      fprintf(fp,&quot;//--- inputed n is less than filed num?\n&quot;);
+  2757        |     |    //      fprintf(fp,&quot;\t\t\t\t\tif (n &lt;= inum){\n&quot;); // 2012/09/27 
+              |     |  +------------------------------+ 
+  2758        |     +--+ if(BaseValList-&gt;Count &gt; 0){  | 
+              |     |  +--+---------------------------+ 
+  2759        |     |     +--- fprintf(fp,&quot;//--- inputed %s is less than filed num?\n&quot;,BaseValList-&gt;Strings[0].c_str());
+  2760        |     |     +--- fprintf(fp,&quot;\t\t\t\t\tif (%s &lt;= inum){\n&quot;,BaseValList-&gt;Strings[0].c_str());
+              |     |   +-+---+ 
+  2761        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2761        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2762        |     |     +--- //          fprintf(fp,&quot;//--- inputed n is less than filed num?\n&quot;);
+  2763        |     |     |    //          fprintf(fp,&quot;\t\t\t\t\tif (n &lt;= inum){\n&quot;);               
+  2764        |     |     +--- fprintf(fp,&quot;//--- inputed n_bpset is less than filed num?\n&quot;);
+  2765        |     |     +--- fprintf(fp,&quot;\t\t\t\t\tif (n_bpset &lt;= inum){\n&quot;);
+              |     |   +-+---+ 
+  2766        |     |   |  }  | 
+              |     |   +-----+ 
+  2767        |     +--- fprintf(fp,&quot;\t\t\t\t\t\t*isw = ibsw;\n&quot;);
+  2768        |     +--- fprintf(fp,&quot;\t\t\t\t\t\tgoto L%d;\n&quot;,TempLineNo);
+  2769        |     +--- fprintf(fp,&quot;\t\t\t\t\t}\n&quot;);
+  2770        |     +--- fprintf(fp,&quot;\t\t\t\t}\n&quot;);
+  2771        |     +--- fprintf(fp,&quot;//=== end of seeking loop for n\n&quot;);
+  2772        |     +--- fprintf(fp,&quot;L%d:\n&quot;,TempLineNo);
+  2773        |     +--- fprintf(fp,&quot;\n&quot;);
+  2774        |     +--- fprintf(fp,&quot;//--- File close\n&quot;);
+  2775        |     +--- fprintf(fp,&quot;\t\t\t\tfclose(fp);\n&quot;);
+  2776        |     +--- fprintf(fp,&quot;\n&quot;);
+  2777        |     +--- fprintf(fp,&quot;//--- This is last parameter\n&quot;);
+  2778        |     +--- fprintf(fp,&quot;L%d:\n&quot;,TempLineNo+2);
+  2779        |     +--- fprintf(fp,&quot;\t\t\t\tif (*isw == -1){\n&quot;);
+  2780        |     +--- fprintf(fp,&quot;\t\t\t\t\t*isw = ibsw;\n&quot;);
+  2781        |     +--- fprintf(fp,&quot;\t\t\t\t}\n&quot;);
+  2782        |     +--- fprintf(fp,&quot;\n&quot;);
+  2783        |     +--- fprintf(fp,&quot;\t\t\t}\n&quot;);
+  2784        |     +--- fprintf(fp,&quot;//=== end of myid == 1\n&quot;);
+  2785        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  2786        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+  2786        |   |  else{  // Fitting用の出力  | 
+  2787        |   |                             | 
+              |   +-+---------------------------+ 
+  2788        |     +--- fprintf(fp,&quot;//!!!!!fitting用処理\n&quot;);
+  2789        |     +--- fprintf(fp,&quot;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n&quot;);
+  2790        |     +--- fprintf(fp,&quot;\n&quot;);
+  2791        |     +--- fprintf(fp,&quot;          if(myid == 0){\n&quot;);
+  2792        |     +--- fprintf(fp,&quot;\n&quot;);
+  2793        |     +--- fprintf(fp,&quot;//          === file open for LSM\n&quot;);
+  2794        |     +--- //      fprintf(fp,&quot;            fp = fopen(\&quot;OAT_%s%sParam.dat\&quot;,\&quot;rt\&quot;);\n&quot;,TuneGroupName,Name);
+  2795        |     +--- fprintf(fp,&quot;            fp = fopen(\&quot;%s_%c_LSM.dat\&quot;,\&quot;rt\&quot;);\n&quot;,Name.c_str(),*TuneGroupName.c_str());
+  2796        |     +--- fprintf(fp,&quot;\n&quot;);
+  2797        |     +--- fprintf(fp,&quot;//          !!! varidから分かるパラメタの総数\n&quot;);
+  2798        |     +--- //      fprintf(fp,&quot;            nparm = 5;\n&quot;);
+  2799        |     +--- fprintf(fp,&quot;            nparm = %d;\n&quot;,CaseCount);
+  2800        |     +--- fprintf(fp,&quot;\n&quot;);
+  2801        |     +--- fprintf(fp,&quot;//           !!! polynolial x の値\n&quot;);
+  2802        |     +--- fprintf(fp,&quot;            m_lsm = 3;\n&quot;);
+  2803        |     +--- fprintf(fp,&quot;\n&quot;);
+  2804        |     +--- fprintf(fp,&quot;            for(j = 0 ; j &lt; nparm ; j++){\n&quot;);
+  2805        |     +--- fprintf(fp,&quot;              fgets(cbuf,sizeof(cbuf),fp);\n&quot;);
+  2806        |     +--- fprintf(fp,&quot;              dtemp = atof(cbuf);\n&quot;);
+  2807        |     +--- fprintf(fp,&quot;              for(iii=0 ; iii &lt;= m_lsm ; iii++){\n&quot;);
+  2808        |     +--- fprintf(fp,&quot;                a_lsm[iii][j] = atof(cbuf+20*(iii+1));\n&quot;);
+  2809        |     +--- fprintf(fp,&quot;              }\n&quot;);
+  2810        |     +--- fprintf(fp,&quot;            }\n&quot;);
+  2811        |     +--- fprintf(fp,&quot;            fclose(fp);\n&quot;);
+  2812        |     +--- fprintf(fp,&quot;\n&quot;);
+  2813        |     +--- fprintf(fp,&quot;//           do i=1, nparm\n&quot;);
+  2814        |     +--- fprintf(fp,&quot;//              write (*, %d) dble(i),\n&quot;,TempLineNo);
+  2815        |     +--- fprintf(fp,&quot;//     &amp;              (a_lsm(iii, i-1), iii=0, m_lsm)\n&quot;);
+  2816        |     +--- fprintf(fp,&quot;//           enddo&quot;);
+  2817        |     +--- fprintf(fp,&quot;\n&quot;);
+  2818        |     +--- fprintf(fp,&quot;          }\n&quot;);
+  2819        |     +--- fprintf(fp,&quot;\n&quot;);
+  2820        |     +--- fprintf(fp,&quot;\n&quot;);
+  2821        |     |    
+              |     |  +------------------+ 
+  2822        |     +--+ if(MainF-&gt;MPIF){ | 
+              |     |  +--+---------------+ 
+  2823        |     |     +--- fprintf(fp,&quot;      MPI_BCAST(a_lsm,\n&quot;);
+  2824        |     |     +--- fprintf(fp,&quot;              (OATLSM_MAX_M+1)*OATLSM_MAX_NPARM,\n&quot;);
+  2825        |     |     +--- fprintf(fp,&quot;               MPI_DOUBLE_PRECISION,0,\n&quot;);
+  2826        |     |     +--- fprintf(fp,&quot;               MPI_COMM_WORLD,ierr)\n&quot;);
+              |     |   +-+---+ 
+  2827        |     |   |  }  | 
+              |     |   +-----+ 
+  2828        |     +--- fprintf(fp,&quot;\n&quot;);
+  2829        |     +--- fprintf(fp,&quot;\n&quot;);
+  2830        |     +--- fprintf(fp,&quot;//          ==== Tuned Parameters do not exist.\n&quot;);
+  2831        |     +--- fprintf(fp,&quot;//           if (oat_myid .eq. 0) then\n&quot;);
+  2832        |     +--- fprintf(fp,&quot;//              print *, \&quot;I estimate parameters by LSM.\&quot;\n&quot;);
+  2833        |     +--- fprintf(fp,&quot;//           endif\n&quot;);
+  2834        |     +--- fprintf(fp,&quot;\n&quot;);
+  2835        |     +--- fprintf(fp,&quot;//           if (oat_myid .eq. 0) then\n&quot;);
+  2836        |     +--- fprintf(fp,&quot;//             do i=1, nparm\n&quot;);
+  2837        |     +--- fprintf(fp,&quot;//                write (*, %d) dble(i),\n&quot;,TempLineNo+1);
+  2838        |     +--- fprintf(fp,&quot;//     &amp;              (a_lsm_TrdUd(iii, i-1), iii=0, OATLSM_MAX_M)\n&quot;);
+  2839        |     +--- fprintf(fp,&quot;//            enddo\n&quot;);
+  2840        |     +--- fprintf(fp,&quot;//             print *, \&quot;\&quot;\n&quot;);
+  2841        |     +--- fprintf(fp,&quot;// %-6d      format(D20.10, 20D20.10)\n&quot;,TempLineNo+1);
+  2842        |     +--- fprintf(fp,&quot;//           endif\n&quot;);
+  2843        |     +--- fprintf(fp,&quot;\n&quot;);
+  2844        |     +--- fprintf(fp,&quot;          OATLSM_Est_Param(n, nparm, m_lsm,a_lsm, isw);\n&quot;);
+  2845        |     +--- fprintf(fp,&quot;\n&quot;);
+  2846        |     +--- fprintf(fp,&quot;//          print *, \&quot;isw=\&quot;,*isw\n&quot;);
+  2847        |     +--- fprintf(fp,&quot;\n&quot;);
+  2848        |     +--- fprintf(fp,&quot;//!!!!!fitting用処理 の終り\n&quot;);
+  2849        |     +--- fprintf(fp,&quot;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n&quot;);
+  2850        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  2851        |   |  }  | 
+              |   +-----+ 
+  2852        +--- fprintf(fp,&quot;//=== braodcast best param\n&quot;);
+              |  +------------------+ 
+  2853        +--+ if(MainF-&gt;MPIF){ | 
+              |  +--+---------------+ 
+  2854        |     +--- fprintf(fp,&quot;\t\tMPI_BCAST(*isw,1,MPI_INTEGER,0,MPI_COMM_WORLD,ierr)\n&quot;);
+              |   +-+---+ 
+  2855        |   |  }  | 
+              |   +-----+ 
+  2856        +--- fprintf(fp,&quot;\n&quot;);
+  2857        +--- fprintf(fp,&quot;\t\t}\n&quot;);
+  2858        +--- fprintf(fp,&quot;//=== end of %s\n&quot;,Name.c_str());
+            +-+---+ 
+  2859      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

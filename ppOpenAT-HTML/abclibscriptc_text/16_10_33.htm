@@ -1,0 +1,511 @@
+
+<html>
+<head>
+<title>OutputExecCode_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.33. OutputExecCode_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputExecCode_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>7683</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputExecCode_C ( FILE * fp , FILE * fpOutHeader )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_GGGFFF(...) のswich()付きの実行コードを生成する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TStringList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_3.htm">TValData::GetDefStr_C</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_3.htm">2618</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TStringList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_38.htm">TTuneRegion::OutputSelectCaseExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_38.htm">7933</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_10_52.htm">TTuneRegion::RestoreValBits</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_52.htm">2182</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::TuneKind</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>197</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------+ 
+  7683  +--+ void TTuneRegion::OutputExecCode_C(FILE *fp,FILE *fpOutHeader) | 
+  7684     | {                                                              | 
+           +--+-------------------------------------------------------------+ 
+  7685        +--- string s,s2,ValName;
+  7686        +--- int i,j;
+  7687        +--- TValData *ValData;
+  7688        +--- TToken *Token;
+  7689        +--- TStringList *DefValStrList;
+  7690        |    
+  7691        +--- DefValStrList = new TStringList;
+  7692        +--- RestoreValBits(TokenStartPos,TokenEndPos);
+  7693        +--- fprintf(fp,&quot;\n&quot;);
+  7694        +--- s = &quot;int &quot;+FuncName + &quot;(&quot;;
+              |  +--------------------------------------------+ 
+  7695        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+              |     |  +------------------------------------+ 
+  7696        |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |  +--+---------------------------------+ 
+              |     |     |  +------------+ 
+  7697        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  7698        |     |   |  }  | 
+              |     |   +-----+ 
+  7699        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  7700        |     +--- /*
+  7701        |     |            Cの場合は、グローバル変数であっても、引数で渡す形に修正。 2012/03/20                   
+  7702        |     |            if((ValData-&gt;ArgF == false)&amp;&amp;((ValData-&gt;BrNestLevel == 0)||(ValData-&gt;DefPosS == -1))){ 
+  7703        |     |    //          MainF-&gt;print(&quot;グローバル変数1 =  &quot;+ValData-&gt;Str);                                  
+  7704        |     |                continue;   // グローバル変数は定義済みとしてSkip 2011/07/28                       
+  7705        |     |            }                                                                                      
+  7706        |     |    */                                                                                             
+  7707        |     +--- DefValStrList-&gt;Add(ValData-&gt;Str);
+  7708        |     +--- //      s += GetDefStr_C(ValData)+ &quot; &quot;+ValData-&gt;Str;
+  7709        |     +--- s += ValData-&gt;GetDefStr_C()+ValData-&gt;Str;
+              |     |  +--------------------------------------------------------------------+ 
+  7710        |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |  +--+-----------------------------------------------------------------+ 
+  7711        |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7712        |     |     +--- s += Token-&gt;OrgStr;
+              |     |   +-+---+ 
+  7713        |     |   |  }  | 
+              |     |   +-----+ 
+  7714        |     +--- s+= &quot;,&quot;;
+              |   +-+---+ 
+  7715        |   |  }  | 
+              |   +-----+ 
+  7716        +--- s += &quot;int iusw1)&quot;;
+  7717        +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+  7718        +--- fprintf(fpOutHeader,&quot;%s;\n&quot;,s.c_str()); // ヘッダ
+  7719        +--- fprintf(fp,&quot;{\n&quot;);
+  7720        |    
+  7721        +--- //
+  7722        |    // UnRoll時以外は、対象内の変数を定義。              
+  7723        |    // ただし、引数で定義されている変数は対象外となる。  
+  7724        |    //                                                   
+              |  +----------------------------+ 
+  7725        +--+ if(TuneKind != tkUnroll){  | 
+              |  +--+-------------------------+ 
+  7726        |     +--- TValData *ValData;
+  7727        |     |    
+              |     |  +--------------------------------------------------+ 
+  7728        |     +--+ for(i = TokenStartPos ; i &lt;= TokenEndPos ; i++){ | 
+              |     |  +--+-----------------------------------------------+ 
+  7729        |     |     +--- ValData = NULL;
+  7730        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------------+ 
+  7731        |     |     +--+ if(Token-&gt;TokId == tid_Val){ | 
+              |     |     |  +--+---------------------------+ 
+  7732        |     |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |   +-+---+ 
+  7733        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------+ 
+  7734        |     |     +--+ if(ValData == NULL){ | 
+              |     |     |  +--+-------------------+ 
+              |     |     |     |  +------------+ 
+  7735        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7736        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------------------------------------------+ 
+  7737        |     |     +--+ if(DefValStrList-&gt;IndexOf(ValData-&gt;Str) != -1){  | 
+              |     |     |  +--+-----------------------------------------------+ 
+              |     |     |     |  +------------+ 
+  7738        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7739        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7740        |     |     +--- /*
+  7741        |     |     |            Cの場合は、グローバル変数であっても、引数で渡す形に修正。 2012/03/20 
+  7742        |     |     |                if((ValData-&gt;BrNestLevel == 0)||(ValData-&gt;DefPosS == -1)){       
+  7743        |     |     |    //              MainF-&gt;print(&quot;グローバル変数2 =  &quot;+ValData-&gt;Str);            
+  7744        |     |     |                    continue;   // グローバル変数は定義済みとしてSkip 2011/07/28 
+  7745        |     |     |                }                                                                
+  7746        |     |     |    */                                                                           
+  7747        |     |     +--- DefValStrList-&gt;Add(ValData-&gt;Str);
+  7748        |     |     +--- //          s = GetDefStr_C(ValData)+ &quot; &quot;+ValData-&gt;Str;
+  7749        |     |     +--- s = ValData-&gt;GetDefStr_C()+ValData-&gt;Str;
+              |     |     |  +--------------------------------------------------------------------+ 
+  7750        |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+  7751        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7752        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |   +-+---+ 
+  7753        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7754        |     |     +--- fprintf(fp,&quot;\t%s;\n&quot;,s.c_str());
+              |     |   +-+---+ 
+  7755        |     |   |  }  | 
+              |     |   +-----+ 
+  7756        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  7757        |   |  }  | 
+              |   +-----+ 
+  7758        +--- //
+  7759        |    //  for文の変数は、グローバル変数であっても再定義する形とする。Add 2011/09/07  
+  7760        |    //  for( の後の 変数を探して、定義なしであれば定義を行う。                     
+  7761        |    //                                                                             
+              |  +----------------------------+ 
+  7762        +--+ if(TuneKind != tkUnroll){  | 
+              |  +--+-------------------------+ 
+  7763        |     +--- TValData *ValData;
+  7764        |     +--- TToken *Token_2,*Token_1;
+  7765        |     |    
+              |     |  +----------------------------------------------------+ 
+  7766        |     +--+ for(i = TokenStartPos+2 ; i &lt;= TokenEndPos ; i++){ | 
+              |     |  +--+-------------------------------------------------+ 
+  7767        |     |     +--- ValData = NULL;
+  7768        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------------+ 
+  7769        |     |     +--+ if(Token-&gt;TokId == tid_Val){ | 
+              |     |     |  +--+---------------------------+ 
+  7770        |     |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |   +-+---+ 
+  7771        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------+ 
+  7772        |     |     +--+ if(ValData == NULL){ | 
+              |     |     |  +--+-------------------+ 
+              |     |     |     |  +------------+ 
+  7773        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7774        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------------------------------------------+ 
+  7775        |     |     +--+ if(DefValStrList-&gt;IndexOf(ValData-&gt;Str) != -1){  | 
+              |     |     |  +--+-----------------------------------------------+ 
+              |     |     |     |  +------------+ 
+  7776        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7777        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7778        |     |     +--- Token_2 = (TToken *)TokenList-&gt;Items[i-2];
+  7779        |     |     +--- Token_1 = (TToken *)TokenList-&gt;Items[i-1];
+              |     |     |  +------------------------------------------------------------------+ 
+  7780        |     |     +--+ if((Token_2-&gt;TokId != tid_for)||(Token_1-&gt;TokId != tid_Kakko)){  | 
+              |     |     |  +--+---------------------------------------------------------------+ 
+  7781        |     |     |     +--- // for ( の直後の変数のみが対象。
+              |     |     |     |  +------------+ 
+  7782        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7783        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7784        |     |     +--- DefValStrList-&gt;Add(ValData-&gt;Str);
+  7785        |     |     +--- //          s = GetDefStr_C(ValData)+ &quot; &quot;+ValData-&gt;Str;
+  7786        |     |     +--- s = ValData-&gt;GetDefStr_C()+ValData-&gt;Str;
+              |     |     |  +--------------------------------------------------------------------+ 
+  7787        |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+  7788        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7789        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |   +-+---+ 
+  7790        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7791        |     |     +--- MainF-&gt;print(&quot;for( 直後の変数 =  &quot;+ValData-&gt;Str);
+  7792        |     |     +--- fprintf(fp,&quot;\t%s;\n&quot;,s.c_str());
+              |     |   +-+---+ 
+  7793        |     |   |  }  | 
+              |     |   +-----+ 
+  7794        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  7795        |   |  }  | 
+              |   +-----+ 
+  7796        +--- fprintf(fp,&quot;\tswitch(iusw1){\n&quot;);
+  7797        |    
+              |  +------------------------------------+ 
+  7798        +--+ for(i = 1 ; i &lt;= CaseCount ; i++){ | 
+              |  +--+---------------------------------+ 
+              |     |  +--------------------+ 
+  7799        |     +--+ if((i % 10) == 0){ | 
+              |     |  +--+-----------------+ 
+  7800        |     |     +--- //          MainF-&gt;print(&quot;Output Code &quot;+IntToStr(i)+&quot; / &quot;+IntToStr(CaseCount));
+              |     |     |  +------------------------+ 
+  7801        |     |     +--+ if(MainF-&gt;CloseReqF){  | 
+              |     |     |  +--+---------------------+ 
+              |     |     |     |  +----------+ 
+  7802        |     |     |     +--+ return;  | 
+              |     |     |     |  +----------+ 
+              |     |     |   +-+---+ 
+  7803        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  7804        |     |   |  }  | 
+              |     |   +-----+ 
+  7805        |     +--- fprintf(fp,&quot;\tcase %d:\n&quot;,i);
+  7806        |     +--- s = &quot;&quot;;
+              |     |  +--------------------------------------------+ 
+  7807        |     +--+ for(j = 0 ; j &lt; ArgValList-&gt;Count ; j++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+  7808        |     |     +--+ if(ArgValList-&gt;Strings[j] == &quot;&quot;){  | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +------------+ 
+  7809        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7810        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7811        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[j];
+              |     |     |  +--------------+ 
+  7812        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  7813        |     |     |     +--- s += &quot;, &quot;;
+              |     |     |   +-+---+ 
+  7814        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7815        |     |     +--- s += ValData-&gt;Str;
+              |     |   +-+---+ 
+  7816        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------------------------------+ 
+  7817        |     +--+ if(TuneKind == tkUnroll){ // UnRoll時は、サブルーチン集となる  | 
+              |     |  +--+-------------------------------------------------------------+ 
+  7818        |     |     +--- //          s2.printf(&quot;\t\t%s_%d(&quot;,FuncName,i);
+  7819        |     |     +--- s2 = &quot;\t\t&quot;+FuncName+&quot;_&quot;+IntToStr(i)+&quot;(&quot;;
+  7820        |     |     +--- s = s2 + s + &quot;);&quot;;
+  7821        |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+              |     |   +-+---+ 
+  7822        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  7822        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  7823        |     |     +--- // if(TuneKind == tkSelect){ // 当面 Unroll以外は、Selectで処理
+  7824        |     |     |    // Select時は、ソースコード（NestしたRegionがあれば置換する）    
+  7825        |     |     |    // さらに、先に別のネストがある可能性もあるので注意              
+  7826        |     |     +--- OutputSelectCaseExecCode_C(fp,i);
+              |     |   +-+---+ 
+  7827        |     |   |  }  | 
+              |     |   +-----+ 
+  7828        |     +--- fprintf(fp,&quot;\t\tbreak;\n&quot;);
+              |   +-+---+ 
+  7829        |   |  }  | 
+              |   +-----+ 
+  7830        +--- fprintf(fp,&quot;\t}\n&quot;);
+  7831        +--- fprintf(fp,&quot;\treturn 0;\n&quot;);
+  7832        +--- fprintf(fp,&quot;}\n&quot;);
+  7833        +--- fprintf(fp,&quot;\n&quot;);
+  7834        |    
+              |  +----------------------------------------------------------------+ 
+  7835        +--+ if(TuneKind == tkUnroll){ // UnRoll時は、サブルーチン集となる  | 
+              |  +--+-------------------------------------------------------------+ 
+  7836        |     +--- OutputUnrollExecCode_C(fp,fpOutHeader);
+              |   +-+---+ 
+  7837        |   |  }  | 
+              |   +-----+ 
+  7838        +--- delete DefValStrList;
+            +-+---+ 
+  7839      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

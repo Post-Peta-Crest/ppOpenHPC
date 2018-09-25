@@ -1,0 +1,276 @@
+
+<html>
+<head>
+<title>ファイル順取込み図</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">2. ファイル順取込み図</font></td>
+</tr>
+</table>
+
+<p></p>
+<div align="right"><font size="2">レ…標準インクルード</font></div>
+<pre>
+ファイル順取込ツリー図
+
+        <a href="5_1.htm">main.cpp</a>
+      1  +--- <a href="5_9.htm">main.h</a>
+         |     +--- <a href="5_10.htm">pass1.h</a>  -&gt; 24
+         |     +--- <a href="5_11.htm">pass2.h</a>  -&gt; 25
+         |     +--- <a href="5_12.htm">pass3.h</a>  -&gt; 26
+         |     +--- <a href="5_13.htm">pass4.h</a>
+         |     |     +--- <a href="5_9.htm">main.h</a>  -&gt; 1
+         |     +--- <a href="5_14.htm">pass5.h</a>  -&gt; 27
+         |     +--- <a href="5_16.htm">VCL_Lib.h</a>
+         |     |     +--- レalgorith.h
+         |     |     |     +--- レalgorithm
+         |     |     |           +--- レ_algo.h
+         |     |     |           |     +--- レ_algo.c
+         |     |     |           |     +--- レ_heap.h
+         |     |     |           |           +--- レ_heap.c
+         |     |     |           +--- レ_epilog.h  -&gt; 18
+         |     |     |           +--- レ_prolog.h  -&gt; 19
+         |     |     +--- レfstream.h
+         |     |     |     +--- レfstream
+         |     |     |           +--- レ_epilog.h  -&gt; 18
+         |     |     |           +--- レ_fstream.h
+         |     |     |           |     +--- レ_codecvt.h
+         |     |     |           |     +--- レ_fstream.c
+         |     |     |           |     +--- レ_istream.h  -&gt; 4
+         |     |     |           |     +--- レ_streambuf.h
+         |     |     |           |           +--- レ_ios_base.h
+         |     |     |           |           |     +--- レstdexcep.h
+         |     |     |           |           |     |     +--- レstdexcept
+         |     |     |           |           |     |           +--- レcstring.h  -&gt; 10
+      2  |     |     |           |           |     |           +--- レexceptio.h
+         |     |     |           |           |     |           |     +--- レexception
+         |     |     |           |           |     |           |           +--- レexceptio.h  -&gt; 12
+         |     |     |           |           |     |           +--- レstring.h  -&gt; 16
+         |     |     |           |           |     +--- レ_locale.h
+         |     |     |           |           |     |     +--- レcstdlib.h  -&gt; 9
+         |     |     |           |           |     +--- レutility.h
+         |     |     |           |           |           +--- レutility
+         |     |     |           |           |                 +--- レtype_traits.h
+         |     |     |           |           +--- レ_stdio_file.h
+         |     |     |           |           |     +--- レcstddef.h  -&gt; 8
+         |     |     |           |           |     +--- レcstdio.h  -&gt; 11
+         |     |     |           |           +--- レ_streambuf.c
+         |     |     |           +--- レ_prolog.h  -&gt; 19
+         |     |     +--- レiostream.h
+         |     |     |     +--- レiostream
+         |     |     |           +--- レ_epilog.h  -&gt; 18
+      3  |     |     |           +--- レ_iosfwd.h
+         |     |     |           |     +--- レchar_traits.h
+         |     |     |           |           +--- レcstddef.h  -&gt; 8
+         |     |     |           |           +--- レcstring.h  -&gt; 10
+         |     |     |           |           +--- レ_mbstate.h
+         |     |     |           |           +--- レtype_traits.h
+      4  |     |     |           +--- レ_istream.h
+         |     |     |           |     +--- レ_ctraits_fns.h
+         |     |     |           |     +--- レ_ios.h
+         |     |     |           |     |     +--- レ_ctype.h
+         |     |     |           |     |     |     +--- レc_locale.h
+         |     |     |           |     |     |           +--- レcctype.h  -&gt; 21
+         |     |     |           |     |     |           +--- レcstddef.h  -&gt; 8
+         |     |     |           |     |     |           +--- レ_config.h  -&gt; 20
+         |     |     |           |     |     +--- レ_ios.c
+         |     |     |           |     |     +--- レ_numpunct.h
+         |     |     |           |     +--- レ_istream.c
+      5  |     |     |           |     |     +--- レ_limits.h
+         |     |     |           |     |     |     +--- レcfloat.h
+         |     |     |           |     |     |     |     +--- レfloat.h
+         |     |     |           |     |     |     |           +--- レ_stddef.h  -&gt; 29
+         |     |     |           |     |     |     +--- レclimits.h  -&gt; 7
+      6  |     |     |           |     |     |     +--- レcwchar.h
+         |     |     |           |     |     |     |     +--- レcwchar
+         |     |     |           |     |     |     |           +--- レ_cwchar.h
+         |     |     |           |     |     |     |                 +--- レcwchar.h
+         |     |     |           |     |     |     |                 |     +--- レwchar.h
+         |     |     |           |     |     |     |                 |           +--- レtchar.h  -&gt; 30
+         |     |     |           |     |     |     |                 +--- レ_mbstate.h
+         |     |     |           |     |     |     +--- レ_limits.c
+         |     |     |           |     |     +--- レ_num_get.h
+         |     |     |           |     |           +--- レ_num_get.c
+         |     |     |           |     |                 +--- レ_limits.h  -&gt; 5
+         |     |     |           |     +--- レ_istreambuf_iterator.h
+         |     |     |           |     +--- レ_ostream.h
+         |     |     |           |           +--- レ_ostream.c
+         |     |     |           |           |     +--- レ_num_put.h
+         |     |     |           |           |           +--- レ_num_put.c
+         |     |     |           |           |                 +--- レ_limits.h  -&gt; 5
+         |     |     |           |           +--- レ_ostreambuf_iterator.h
+         |     |     |           +--- レ_prolog.h  -&gt; 19
+         |     |     +--- レsstream.h
+         |     |     |     +--- レsstream
+         |     |     |           +--- レ_epilog.h  -&gt; 18
+         |     |     |           +--- レ_prolog.h  -&gt; 19
+         |     |     |           +--- レ_sstream.h
+         |     |     |                 +--- レ_sstream.c
+         |     |     +--- レstring.h  -&gt; 16
+         |     |     +--- レvector.h
+         |     |           +--- レvector
+         |     |                 +--- レ_algobase.h
+      7  |     |                 |     +--- レclimits.h
+         |     |                 |     |     +--- レ_lim.h
+         |     |                 |     |           +--- レ_stddef.h  -&gt; 29
+      8  |     |                 |     +--- レcstddef.h
+         |     |                 |     |     +--- レstddef.h
+         |     |                 |     |           +--- レ_stddef.h  -&gt; 29
+      9  |     |                 |     +--- レcstdlib.h
+         |     |                 |     |     +--- レstdlib.h
+         |     |                 |     |           +--- レ_stddef.h  -&gt; 29
+         |     |                 |     |           +--- レerrno.h
+         |     |                 |     |           |     +--- レ_stddef.h  -&gt; 29
+         |     |                 |     |           +--- レsearch.h
+         |     |                 |     |                 +--- レ_stddef.h  -&gt; 29
+     10  |     |                 |     +--- レcstring.h
+         |     |                 |     |     +--- レ_str.h  -&gt; 17
+         |     |                 |     +--- レ_algobase.c
+         |     |                 |     |     +--- レ_iterator.h
+         |     |                 |     +--- レ_iterator_base.h
+         |     |                 |     |     +--- レcstddef.h  -&gt; 8
+         |     |                 |     |     +--- レtype_traits.h
+         |     |                 |     +--- レ_pair.h
+         |     |                 +--- レ_epilog.h  -&gt; 18
+         |     |                 +--- レ_prolog.h  -&gt; 19
+         |     |                 +--- レ_vector.h
+         |     |                       +--- レ_alloc.h
+         |     |                       |     +--- レcstddef.h  -&gt; 8
+     11  |     |                       |     +--- レcstdio.h
+         |     |                       |     |     +--- レstdio.h  -&gt; 15
+         |     |                       |     +--- レcstdlib.h  -&gt; 9
+         |     |                       |     +--- レcstring.h  -&gt; 10
+         |     |                       |     +--- レnew.h
+         |     |                       |     |     +--- レnew
+         |     |                       |     |           +--- レcstddef.h  -&gt; 8
+         |     |                       |     |           +--- レcstdlib.h  -&gt; 9
+         |     |                       |     |           +--- レnew.h
+         |     |                       |     |                 +--- レalloc.h
+         |     |                       |     |                 |     +--- レ_stddef.h  -&gt; 29
+     12  |     |                       |     |                 +--- レexceptio.h
+         |     |                       |     |                 |     +--- レexcept.h
+         |     |                       |     |                 |     |     +--- レcstdlib.h  -&gt; 9
+         |     |                       |     |                 |     |     +--- レexceptio.h  -&gt; 2
+         |     |                       |     |                 |     |     +--- レ_string_fwd.h
+         |     |                       |     |                 |     |           +--- レiosfwd.h
+         |     |                       |     |                 |     |                 +--- レiosfwd
+         |     |                       |     |                 |     +--- レstddefs.h  -&gt; 13
+         |     |                       |     |                 |     +--- レstdcomp.h  -&gt; 14
+     13  |     |                       |     |                 +--- レstddefs.h
+         |     |                       |     |                 |     +--- レ_defs.h
+         |     |                       |     |                 |     +--- レcstddef.h  -&gt; 8
+         |     |                       |     |                 |     +--- レstdwind.h
+         |     |                       |     |                 |     +--- レstdcomp.h  -&gt; 14
+     14  |     |                       |     |                 +--- レstdcomp.h
+         |     |                       |     |                       +--- レcompnent.h
+         |     |                       |     +--- レ_construct.h
+         |     |                       |     +--- レ_threads.h
+         |     |                       |           +--- レcstddef.h  -&gt; 8
+         |     |                       |           +--- レcstdlib.h  -&gt; 9
+         |     |                       |           +--- レ_threads.c
+         |     |                       +--- レ_bvector.h
+         |     |                       +--- レ_range_errors.h
+         |     |                       +--- レ_relops_cont.h
+         |     |                       +--- レ_uninitialized.h
+         |     |                       |     +--- レcstring.h  -&gt; 10
+         |     |                       +--- レ_vector.c
+     15  |     +--- レstdio.h
+         |     |     +--- レ_nfile.h
+         |     |     +--- レ_stddef.h  -&gt; 29
+     16  |     +--- レstring.h
+     17  |           +--- レ_str.h
+         |           |     +--- レ_stddef.h  -&gt; 29
+         |           |     +--- レmem.h
+         |           |     |     +--- レ_stddef.h  -&gt; 29
+         |           |     +--- レlocale.h
+         |           |           +--- レ_loc.h
+         |           |                 +--- レ_stddef.h  -&gt; 29
+         |           +--- レstring
+     18  |                 +--- レ_epilog.h
+         |                 |     +--- レ_epilog.h
+         |                 |     +--- レ_config_compat_post.h
+     19  |                 +--- レ_prolog.h
+         |                 |     +--- レ_prolog.h
+     20  |                 |     +--- レ_config.h
+         |                 |           +--- レstl_confix.h
+         |                 |           +--- レstlcomp.h
+         |                 |           |     +--- レstl_bc.h
+         |                 |           +--- レ_config_compat.h
+         |                 |           +--- レ_site_config.h
+         |                 |           +--- レstl_user_config.h
+         |                 +--- レ_string.h
+     21  |                       +--- レcctype.h
+         |                       |     +--- レctype.h
+         |                       |           +--- レ_stddef.h  -&gt; 29
+         |                       |           +--- レmbctype.h
+         |                       |                 +--- レ_stddef.h  -&gt; 29
+         |                       +--- レmemory.h
+         |                       |     +--- レmemory
+         |                       |           +--- レ_auto_ptr.h
+         |                       |           +--- レ_raw_storage_iter.h
+         |                       |           +--- レ_tempbuf.h
+         |                       |                 +--- レclimits.h  -&gt; 7
+         |                       |                 +--- レcstdlib.h  -&gt; 9
+         |                       |                 +--- レ_tempbuf.c
+         |                       +--- レ_ctraits_fns.h
+         |                       +--- レ_function.h
+         |                       |     +--- レ_function_base.h
+         |                       +--- レ_string.c
+         |                       |     +--- レ_range_errors.h
+         |                       |     +--- レ_string_fwd.c
+         |                       +--- レ_string_hash.h
+         |                       |     +--- レ_hash_fun.h
+         |                       |           +--- レcstddef.h  -&gt; 8
+         |                       +--- レ_string_io.h
+         |                             +--- レ_string_io.c
+     22  +--- <a href="5_15.htm">TuneRegion.h</a>
+         |     +--- <a href="5_9.htm">main.h</a>  -&gt; 1
+     23  +--- <a href="5_17.htm">Visual.h</a>
+               +--- <a href="5_15.htm">TuneRegion.h</a>  -&gt; 22
+        <a href="5_2.htm">pass1.cpp</a>
+     24  +--- <a href="5_10.htm">pass1.h</a>
+               +--- <a href="5_9.htm">main.h</a>  -&gt; 1
+        <a href="5_3.htm">pass2.cpp</a>
+     25  +--- <a href="5_11.htm">pass2.h</a>
+         |     +--- <a href="5_10.htm">pass1.h</a>  -&gt; 24
+         +--- レmath.h
+               +--- レ_stddef.h  -&gt; 29
+        <a href="5_4.htm">pass3.cpp</a>
+     26  +--- <a href="5_12.htm">pass3.h</a>
+               +--- <a href="5_9.htm">main.h</a>  -&gt; 1
+        <a href="5_5.htm">pass4.cpp</a>
+         +--- <a href="5_15.htm">TuneRegion.h</a>  -&gt; 22
+        <a href="5_6.htm">pass5.cpp</a>
+     27  +--- <a href="5_14.htm">pass5.h</a>
+         |     +--- <a href="5_9.htm">main.h</a>  -&gt; 1
+         +--- <a href="5_15.htm">TuneRegion.h</a>  -&gt; 22
+     28  +--- レdir.h
+     29  |     +--- レ_stddef.h
+         |     |     +--- レ_defs.h
+         |     |     +--- レ_null.h
+     30  |     +--- レtchar.h
+         |           +--- レ_stddef.h  -&gt; 29
+         |           +--- レstring.h
+         |                 +--- レ_str.h  -&gt; 17
+     31  +--- レstat.h
+               +--- レtypes.h
+        <a href="5_7.htm">TuneRegion.cpp</a>
+         +--- <a href="5_15.htm">TuneRegion.h</a>  -&gt; 22
+        <a href="5_8.htm">Visual.cpp</a>
+         +--- <a href="5_17.htm">Visual.h</a>  -&gt; 23
+         +--- レdir.h  -&gt; 28
+         +--- レstat.h  -&gt; 31
+         +--- レcwchar.h  -&gt; 6
+         +--- レ_iosfwd.h  -&gt; 3
+</pre>
+
+</body>
+</html>

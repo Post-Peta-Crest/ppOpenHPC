@@ -1,0 +1,1433 @@
+
+<html>
+<head>
+<title>main.cpp �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.1. main.cpp �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/* =====================================================================*
+     2  |     *                                                                     *       
+     3  |     *   Software Name : ppOpen-AT                                         *       
+     4  |     *         Version : 0.2                                               *       
+     5  |     *                                                                     *       
+     6  |     *   License                                                           *       
+     7  |     *     This file is part of ppOpen-AT.                                 *       
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *       
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *       
+    10  |     *     for more details.                                               *       
+    11  |     *                                                                     *       
+    12  |     *   ppOpen-HPC project:                                               *       
+    13  |     *     Open Source Infrastructure for Development and Execution of     *       
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *       
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *       
+    16  |     *                                                                     *       
+    17  |     *   Organizations:                                                    *       
+    18  |     *     The University of Tokyo                                         *       
+    19  |     *       - Information Technology Center                               *       
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *       
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *       
+    22  |     *         /Earthquake Research Institute (ERI)                        *       
+    23  |     *       - Graduate School of Frontier Science                         *       
+    24  |     *     Kyoto University                                                *       
+    25  |     *       - Academic Center for Computing and Media Studies             *       
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *       
+    27  |     *                                                                     *       
+    28  |     *   Sponsorship:                                                      *       
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *       
+    30  |     *     Programs: CREST, Development of System Software Technologies    *       
+    31  |     *     for post-Peta Scale High Performance Computing.                 *       
+    32  |     *                                                                     *       
+    33  |     *   Copyright (c) 2012                                                *       
+    34  |     *      Information Technology Center, The University of Tokyo         *       
+    35  |     *                                                                     *       
+    36  |     *===================================================================== */     
+    37  |    // --------------------------------------------------------------------------- 
+    38  +--- #include &quot;main.h&quot;
+    39  |    
+    40  +--- #include &quot;TuneRegion.h&quot;
+    41  +--- #include &quot;Visual.h&quot;
+    42  |    
+    43  +--- /* ---------------------------------------------------------------------------- */
+    44  |    //                                                                                 
+    45  |    // 概胒�                                                                         
+    46  |    //                                                                                 
+    47  |    // チBめAッEプロめ[ッDム                                                   
+    48  |    //                                                                                 
+    49  |    // 作成者                                                                       
+    50  |    //                                                                                 
+    51  |    /* ---------------------------------------------------------------------------- */ 
+    52  |                                                                                       
+    53  +--- TMainF *MainF = NULL;
+    54  |    
+    55  +--- /* ---------------------------------------------------------------------------- */
+    56  |    //                                                                                                               
+    57  |    // 1.旁E會�語名                                                                                              
+    58  |    // チBめAッE                                                                                                  
+    59  |    //                                                                                                               
+    60  |    // 2.パラチBゃ\誃�明                                                                                       
+    61  |    // int argc ゃEマンドラめAッE引数ぃ�敁[                                                               
+    62  |    // char *argc[] ゃEマンドラめAッE引数                                                                   
+    63  |    //                                                                                                               
+    64  |    // 3.概胒�                                                                                                     
+    65  |    // 生成時に呃Vぁ[れ、コマンドラめAッEぃ�见v析とMainF作成ぃBゃEッVド生成を行う。   
+    66  |    //                                                                                                               
+    67  |    // 4.機能誃�明                                                                                               
+    68  |    //                                                                                                               
+    69  |    // 5.戃Tり倁A                                                                                                 
+    70  |    // ぃFし                                                                                                       
+    71  |    //                                                                                                               
+    72  |    // 6.備考                                                                                                      
+    73  |    //                                                                                                               
+    74  |    /* ---------------------------------------------------------------------------- */                               
+        |  +------------------------------------+ 
+    75  +--+ int main(int argc, char* argv[]) { | 
+        |  +--+---------------------------------+ 
+    76  |     +--- string s;
+    77  |     +--- string OatPath_EnvStr;
+    78  |     +--- string SrcFileName,DirName;
+    79  |     +--- char *EnvStr;
+    80  |     +--- int i;
+    81  |     |    
+    82  |     +--- EnvStr = getenv(&quot;OAT_PATH&quot;);
+        |     |  +----------------------+ 
+    83  |     +--+ if (EnvStr != NULL){ | 
+        |     |  +--+-------------------+ 
+    84  |     |     +--- OatPath_EnvStr = EnvStr;
+        |     |   +-+---+ 
+    85  |     |   |  }  | 
+        |     |   +-+---+ 
+        |     |   +-+-------+ 
+    86  |     |   |  else{  | 
+        |     |   +-+-------+ 
+    87  |     |     +--- OatPath_EnvStr = &quot;&quot;;
+        |     |   +-+---+ 
+    88  |     |   |  }  | 
+        |     |   +-----+ 
+    89  |     |    
+    90  |     +--- #ifdef _DEBUG // TEST 甃B
+    91  |     |                               
+    92  |     +--- //#define BASE_DIR &quot;c:/MinGW/msys/1.0/home/sakamoto/ppOpen-AT/&quot;
+    93  |     |                                                                     
+    94  |     +--- #define BASE_DIR &quot;c:/ppOpenAT/&quot; // 斁[しいテスト用ぃ�パス。
+    95  |     |                                                                           
+    96  |     |                                                                           
+    97  |     +--- //
+    98  |     |    // 2016ぃ�テストデッVゃ\  
+    99  |     |    //                               
+   100  |     +--- // C言語でぃ�LoopFusion
+   101  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_C/LoopFusionSplit1_C/source.c&quot;};
+   102  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_C/LoopFusionSplit2_C/source.c&quot;};  
+   103  |     |                                                                                                       
+   104  |     +--- // ゃLッEプルぃFゃIッEプル
+   105  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues1/simple1/simple1.f&quot;};
+   106  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues1/simple4a/simple4a.f&quot;}; 
+   107  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues1/simple4b/simple4b.f&quot;}; 
+   108  |     |                                                                                             
+   109  |     |                                                                                             
+   110  |     +--- // Fortran言語でぃ�LoopFusion+Simle
+   111  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_F90/LoopFusionSplit1/source.f&quot;};
+   112  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_F90/LoopFusionSplit2/source.f&quot;};  
+   113  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_F90/sample1/source.f90&quot;};         
+   114  |     |                                                                                                       
+   115  |     +--- // select内にcallを含んだ堃G合の凃�理�V�新規�V�
+   116  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/call_in_select/source.f&quot;};
+   117  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/call_in_select/source.f90&quot;};                               
+   118  |     |    //  char* test_argv[] = {&quot;test.exe &quot; ,&quot;-insert_module_head=source2.f&quot;, BASE_DIR &quot;examples/call_in_select/source.f90&quot; 
+   119  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/call_in_select/source.f90&quot;                                 
+   120  |     |    //              , BASE_DIR &quot;examples/call_in_select/source2.f90&quot;};                                                   
+   121  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/call_in_select/source.f90&quot;};                               
+   122  |     +--- // replase ッFプレッVゃPテスト�V�新規�V�
+   123  |     +--- //- char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/replase1/source.f&quot;};
+   124  |     +--- // 郃B分的ぃH一臃Gする名�@�[ががある堃G合の問�B��V�新規�V�
+   125  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/samename/source.f&quot;};
+   126  |     |                                                                                   
+   127  |     |                                                                                   
+   128  |     +--- // GWV テスト
+   129  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/gwv1/source.f&quot;};
+   130  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/gwv1_c/source.c&quot;};  
+   131  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/gwv2/source.f&quot;};    
+   132  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/gwv3/source.f&quot;};    
+   133  |     +--- // Implicit テスト
+   134  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/implicit/source.f&quot;};
+   135  |     +--- // List テスト
+   136  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/List/source.f&quot;};
+   137  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/List_C/source.c&quot;};  
+   138  |     |                                                                                                 
+   139  |     +--- // unroll テスト
+   140  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/unroll/source.f&quot;};
+   141  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/unroll_C/source.c&quot;};  
+   142  |     |                                                                                                   
+   143  |     +--- // vsd テスト
+   144  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd1/source.f&quot;};
+   145  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd2/source.f&quot;};    
+   146  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd3/source.f&quot;};    
+   147  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd1_C/source.c&quot;};  
+   148  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd2_C/source.c&quot;};  
+   149  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/issues_OpenACC/vsd3_C/source.c&quot;};  
+   150  |     |                                                                                                 
+   151  |     +--- // prefeatch sample
+   152  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/prefetch_sample/srcc-a/solver_ICCG_mc2_p3_AT.f&quot;};
+   153  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , &quot;-free&quot;, BASE_DIR &quot;examples/prefetch_sample/srcc-a/solver_ICCG_mc2_p3_AT.f&quot;}; 
+   154  |     |                                                                                                                         
+   155  |     +--- // FDM
+   156  |     +--- #if 0
+   157  |     +--- char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; , BASE_DIR &quot;examples/ppohFDM_AT_1.0.0/After/3.hybrid_AT/seism3d3n.f90&quot;
+   158  |     |                                            , BASE_DIR &quot;examples/ppohFDM_AT_1.0.0/After/3.hybrid_AT/m_stress.f90&quot;    
+   159  |     |                                            , BASE_DIR &quot;examples/ppohFDM_AT_1.0.0/After/3.hybrid_AT/m_velocity.f90&quot;  
+   160  |     |                                            , BASE_DIR &quot;examples/ppohFDM_AT_1.0.0/After/3.hybrid_AT/m_pfd3d.f90&quot;};   
+   161  |     +--- #endif
+   162  |     |    
+   163  |     +--- // exsampes_0.1.0 Fortran
+   164  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Dynamic_Set1/dynamic1.f&quot;};         
+   165  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Dynamic_Set2/dynamic2.f&quot;};         
+   166  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Fit_Sample1/matmal_fit.f&quot;};        
+   167  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Fit_Sample2/matmal_fit2.f&quot;};       
+   168  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/MGSker/MGSker.f&quot;};                 
+   169  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/SetDebug/debg_num.f&quot;};             
+   170  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/SetNum/number.f&quot;};                 
+   171  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/TDRker/TRDker.f&quot;};                 
+   172  |     |                                                                                                     
+   173  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_i_1_to64/matmul1.f&quot;};         
+   174  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_ijk_1_to_4/matmul1.f&quot;};       
+   175  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_j_1_to64/matmul1.f&quot;};         
+   176  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_k_1_to64/matmul1.f&quot;};         
+   177  |     |                                                                                                     
+   178  |     |                                                                                                     
+   179  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_Select_1/select1.f&quot;};         
+   180  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_Select_1/select1.f&quot;};         
+   181  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_Select_2/select2.f&quot;};         
+   182  |     |    //  char* test_argv[] = {&quot;test.exe &quot;, &quot;-free&quot;, BASE_DIR &quot;examples/F90/Test_Select_2/select2.f&quot;}; 
+   183  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/Test_Select_3/param1.f&quot;};          
+   184  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/F90/TrdMatVec/TrdMatVec.f&quot;};           
+   185  |     |                                                                                                     
+   186  |     |    // exsampes_0.1.0 C                                                                              
+   187  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C/matunroll/matunroll.c&quot;};             
+   188  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C/Test_i_1_to64/matmul.c&quot;};            
+   189  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C/matunrolldyn/matunrolldyn.c&quot;};       
+   190  |     |                                                                                                     
+   191  |     |                                                                                                     
+   192  |     |    // 動�X�テゃPト用。                                                                       
+   193  |     +--- char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/matunroll/matunroll.c&quot;};
+   194  |     +--- //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/matunroll/matunroll.c&quot;,
+   195  |     |    //      BASE_DIR &quot;examples/C_test/matunroll/sub.c&quot;};                                                                                 
+   196  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/matunroll/matunroll.f&quot;,                                             
+   197  |     |    //      BASE_DIR &quot;examples/C_test/matunroll/sub.f&quot;};                                                                                 
+   198  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/List_C/source.c&quot;};                                                  
+   199  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/simple1/simple1.f&quot;};                                                
+   200  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/simple1/simple1.f77&quot;};                                              
+   201  |     |    //  char* test_argv[] = {&quot;test.exe &quot; ,&quot;-free&quot;, BASE_DIR &quot;examples/C_test/simple1/simple1.f&quot;};                                        
+   202  |     |    //  char* test_argv[] = {&quot;test.exe &quot; ,&quot;-free&quot;, BASE_DIR &quot;examples/C_test/simple1/simple1.f90&quot;};                                      
+   203  |     |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples/C_test/simple1/simple1.f90&quot;};                                              
+   204  |     |                                                                                                                                         
+   205  |     |                                                                                                                                         
+   206  |     |    // TEST                                                                                                                              
+   207  |     |    //  char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; ,&quot;-omp_inner&quot; , BASE_DIR &quot;F90examples/test/test.f90&quot;};                                   
+   208  |     |    //  char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; ,&quot;-omp_inner&quot; , BASE_DIR &quot;F90examples/ppOhBEM_0.1.0targetAT/bem-bb-fw-dense-0.1.0.f90&quot;}; 
+   209  |     |                                                                                                                                         
+   210  |     +--- argc = sizeof(test_argv) / sizeof(test_argv[0]);
+   211  |     +--- // argc = 2;
+   212  |     +--- argv = test_argv;
+   213  |     |    
+   214  |     +--- #endif
+   215  |     +--- MainF = new TMainF;
+   216  |     +--- MainF-&gt;GetCommandLineArg(argc, argv);
+        |     |  +----------------------------+ 
+   217  |     +--+ if (MainF-&gt;LogFp == NULL){ | 
+        |     |  +--+-------------------------+ 
+        |     |     |  +----------------------------------------+ 
+   218  |     |     +--+ if(MainF-&gt;SrcFileNameList.Count != 0){ | 
+        |     |     |  +--+-------------------------------------+ 
+   219  |     |     |     +--- SrcFileName = MainF-&gt;SrcFileNameList.Strings[0];
+   220  |     |     |     +--- DirName = SrcFileName.substr(0, SrcFileName.rfind(&quot;/&quot;) + 1);
+        |     |     |   +-+---+ 
+   221  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-------+ 
+   221  |     |     |   |  else{  | 
+        |     |     |   +-+-------+ 
+   222  |     |     |     +--- DirName = &quot;./&quot;;
+        |     |     |   +-+---+ 
+   223  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+   224  |     |     +--- s = DirName + &quot;OATLog.txt&quot;;
+   225  |     |     +--- MainF-&gt;LogFp = fopen(s.c_str(), &quot;wt&quot;);
+        |     |     |  +----------------------------+ 
+   226  |     |     +--+ if (MainF-&gt;LogFp == NULL){ | 
+        |     |     |  +--+-------------------------+ 
+   227  |     |     |     +--- MainF-&gt;ErrMessage(-1, &quot;LogFile &quot; + s + &quot; Open error.&quot;);
+        |     |     |   +-+---+ 
+   228  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   229  |     |   |  }  | 
+        |     |   +-----+ 
+   230  |     +--- // printf(&quot;--- ppOpenAT version 1.0.0 ---\n&quot;);  // Version String
+   231  |     |    // printf(&quot;--- ppOpenAT version 1.0.1 ---\n&quot;);  // Version String                                  
+   232  |     |    // printf(&quot;--- ppOpenAT version 1.0.2 ---\n&quot;);  // Version String                                  
+   233  |     |    // printf(&quot;--- ppOpenAT version 1.0.3 ---\n&quot;);  // Version String 2012/05/17                       
+   234  |     |    // MainF-&gt;print(&quot;--- ppOpenAT version 1.0.4 ---&quot;); // Version String 2012/09/27                    
+   235  |     |    // MainF-&gt;print(&quot;--- ppOpenAT version 1.0.5 ---&quot;); // Version String 2013/03/21 Fortran90寃Z応   
+   236  |     |    //  MainF-&gt;print(&quot;--- ppOpenAT version 1.0.6 ---&quot;); // Version String 2013/07/24 Update            
+   237  |     |    // MainF-&gt;print(&quot;--- ppOpenAT version 0.2.0 ---&quot;); // Version String 2013/08/11 Update             
+   238  |     |    //  MainF-&gt;print(&quot;--- ppOpenAT version 0.2.2 ---&quot;); // Version String 2015/03/01 Update            
+   239  |     +--- MainF-&gt;print(&quot;--- ppOpenAT version 0.2.3 ---&quot;); // Version String 2016/03/08 Update
+   240  |     +--- MainF-&gt;print(&quot;OAT_PATH = \&quot;&quot;+OatPath_EnvStr+&quot;\&quot;&quot;);
+   241  |     +--- s = &quot;&quot;;
+        |     |  +----------------------------------+ 
+   242  |     +--+ for (int i = 0; i &lt; argc; i++){  | 
+        |     |  +--+-------------------------------+ 
+   243  |     |     +--- s += argv[i] + (string)&quot; &quot;;
+        |     |   +-+---+ 
+   244  |     |   |  }  | 
+        |     |   +-----+ 
+   245  |     +--- MainF-&gt;print(&quot;CommandLine = &quot;+s);
+   246  |     +--- MainF-&gt;CodeGen();
+   247  |     |    
+   248  |     +--- delete MainF;
+   249  |     +--- MainF = NULL;
+   250  |     |    
+   251  |     +--- //
+   252  |     |    // 璁[境�A�数指僇�があれぁ[、そぁBらのパスぃH寃Zしても僇��B�する。  
+   253  |     |    //                                                                                             
+        |     |  +----------------------------+ 
+   254  |     +--+ if (OatPath_EnvStr != &quot;&quot;){ | 
+        |     |  +--+-------------------------+ 
+   255  |     |     +--- MainF = new TMainF;
+   256  |     |     +--- MainF-&gt;GetCommandLineArg(argc, argv);
+        |     |     |  +------------------------------------------------------+ 
+   257  |     |     +--+ for (i = 0; i &lt; MainF-&gt;SrcFileNameList.Count; i++){  | 
+        |     |     |  +--+---------------------------------------------------+ 
+   258  |     |     |     +--- SrcFileName = MainF-&gt;SrcFileNameList.Strings[i];
+   259  |     |     |     +--- s = SrcFileName.substr(SrcFileName.rfind(&quot;/&quot;) + 1);
+   260  |     |     |     +--- MainF-&gt;SrcFileNameList.Strings[i] = OatPath_EnvStr + &quot;/&quot; + s;
+        |     |     |   +-+---+ 
+   261  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+   262  |     |     +--- MainF-&gt;CodeGen();
+   263  |     |     +--- delete MainF;
+   264  |     |     +--- MainF = NULL;
+        |     |   +-+---+ 
+   265  |     |   |  }  | 
+        |     |   +-----+ 
+   266  |     +--- #ifdef _DEBUG
+   267  |     +--- getchar();
+   268  |     +--- #endif
+        |     |  +------------+ 
+   269  |     +--+ return 0;  | 
+        |     |  +------------+ 
+        |   +-+---+ 
+   270  |   |  }  | 
+        |   +-----+ 
+   271  |    
+   272  +--- /* ---------------------------------------------------------------------------- */
+   273  |    //                                                                                 
+   274  |    // 1.旁E會�語名                                                                
+   275  |    // MainF生成                                                                     
+   276  |    //                                                                                 
+   277  |    // 2.パラチBゃ\誃�明                                                         
+   278  |    //                                                                                 
+   279  |    // 3.概胒�                                                                       
+   280  |    // 生成時に呃Vぁ[れ�A�数ぃ�初期化を行う。                         
+   281  |    //                                       r                                         
+   282  |    // 4.機能誃�明                                                                 
+   283  |    //                                                                                 
+   284  |    // 5.戃Tり倁A                                                                   
+   285  |    // ぃFし                                                                         
+   286  |    //                                                                                 
+   287  |    // 6.備考                                                                        
+   288  |    //                                                                                 
+   289  |    /* ---------------------------------------------------------------------------- */ 
+        |  +--------------------+ 
+   290  +--+ TMainF::TMainF() { | 
+        |  +--+-----------------+ 
+   291  |     +--- LogFp = NULL;
+   292  |     +--- VisualF = false;
+   293  |     +--- DebugF = true;
+   294  |     +--- EECntlF = false;
+   295  |     +--- CloseReqF = false;
+   296  |     +--- EndF = false;
+   297  |     +--- NoMPIF = false;
+   298  |     +--- MPIF = false;
+   299  |     +--- OMP_OuterF = false;
+   300  |     +--- OMP_InnerF = false;
+   301  |     +--- TimeFunc = &quot;&quot;;
+   302  |     +--- my_timer_start = &quot;&quot;;
+   303  |     +--- my_timer_stop = &quot;&quot;;
+   304  |     +--- cc_option_str = &quot;&quot;;
+   305  |     +--- TokStrList = new TStringList;
+   306  |     +--- TokenList = new TList;
+   307  |     +--- ValDataList = new TList;
+   308  |     +--- TuneRegionList = new TList;
+   309  |     +--- Call_SetParam_Script = NULL; // #pragma call OAT_SetParam() ぃ�ゃPゃbッFプト
+   310  |     +--- Call_ATExec_Script = NULL; // #pragma call OAT_ATexe() ぃ�ゃPゃbッFプト
+   311  |     +--- Call_ATExec_ArgList = new TStringList;
+   312  |     +--- IncludeCodeInContainsF = false;    // Include code in Contains
+        |   +-+---+ 
+   313  |   |  }  | 
+        |   +-----+ 
+   314  |    
+   315  +--- /* ---------------------------------------------------------------------------- */
+   316  |    //                                                                                 
+   317  |    // 1.旁E會�語名                                                                
+   318  |    //                                                                                 
+   319  |    // 2.パラチBゃ\誃�明                                                         
+   320  |    //                                                                                 
+   321  |    // 3.概胒�                                                                       
+   322  |    // 砃G棄時ぃH呃Vぁ[れ、�A�数を開攃Zする。                          
+   323  |    //                                                                                 
+   324  |    // 4.機能誃�明                                                                 
+   325  |    //                                                                                 
+   326  |    // 5.戃Tり倁A                                                                   
+   327  |    // ぃFし                                                                         
+   328  |    //                                                                                 
+   329  |    // 6.備考                                                                        
+   330  |    //                                                                                 
+   331  |    /* ---------------------------------------------------------------------------- */ 
+        |  +----------------------+ 
+   332  +--+ TMainF::~TMainF() {  | 
+        |  +--+-------------------+ 
+   333  |     +--- int i;
+   334  |     |    
+        |     |  +------------------------------------------+ 
+   335  |     +--+ for (i = 0; i &lt; TokenList-&gt;Count; i++){  | 
+        |     |  +--+---------------------------------------+ 
+   336  |     |     +--- delete(TToken*)TokenList-&gt;Items[i];
+        |     |   +-+---+ 
+   337  |     |   |  }  | 
+        |     |   +-----+ 
+   338  |     +--- delete TokenList;
+        |     |  +--------------------------------------------+ 
+   339  |     +--+ for (i = 0; i &lt; ValDataList-&gt;Count; i++){  | 
+        |     |  +--+-----------------------------------------+ 
+   340  |     |     +--- delete(TValData*)ValDataList-&gt;Items[i];
+        |     |   +-+---+ 
+   341  |     |   |  }  | 
+        |     |   +-----+ 
+   342  |     +--- delete ValDataList;
+        |     |  +----------------------------------------------+ 
+   343  |     +--+ for (i = 0; i &lt; TuneRegionList-&gt;Count; i++){ | 
+        |     |  +--+-------------------------------------------+ 
+   344  |     |     +--- delete(TTuneRegion*)TuneRegionList-&gt;Items[i];
+        |     |   +-+---+ 
+   345  |     |   |  }  | 
+        |     |   +-----+ 
+   346  |     +--- delete TuneRegionList;
+        |     |  +--------------------------+ 
+   347  |     +--+ if (TokStrList != NULL){ | 
+        |     |  +--+-----------------------+ 
+   348  |     |     +--- delete TokStrList;
+        |     |   +-+---+ 
+   349  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +------------------------------------+ 
+   350  |     +--+ if (Call_ATExec_ArgList != NULL){  | 
+        |     |  +--+---------------------------------+ 
+   351  |     |     +--- delete Call_ATExec_ArgList;
+   352  |     |     +--- Call_ATExec_ArgList = NULL;
+        |     |   +-+---+ 
+   353  |     |   |  }  | 
+        |     |   +-----+ 
+   354  |     |    
+        |     |  +----------------------+ 
+   355  |     +--+ if (LogFp != NULL){  | 
+        |     |  +--+-------------------+ 
+   356  |     |     +--- fclose(LogFp);
+   357  |     |     +--- LogFp = NULL;
+        |     |   +-+---+ 
+   358  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   359  |   |  }  | 
+        |   +-----+ 
+   360  |    
+   361  +--- /* ---------------------------------------------------------------------------- */
+   362  |    //                                                                                 
+   363  |    // 1.旁E會�語名                                                                
+   364  |    //                                                                                 
+   365  |    // 2.パラチBゃ\誃�明                                                         
+   366  |    //                                                                                 
+   367  |    // 3.概胒�                                                                       
+   368  |    // ゃEマンドラめAッEぃ�见v析と実�B�を行う。                       
+   369  |    //                                                                                 
+   370  |    // 4.機能誃�明                                                                 
+   371  |    //                                                                                 
+   372  |    // 5.戃Tり倁A                                                                   
+   373  |    // ぃFし                                                                         
+   374  |    //                                                                                 
+   375  |    // 6.備考                                                                        
+   376  |    //                                                                                 
+   377  |    /* ---------------------------------------------------------------------------- */ 
+        |  +----------------------------------------------------------+ 
+   378  +--+ void TMainF::GetCommandLineArg(int argc, char* argv[]) { | 
+        |  +--+-------------------------------------------------------+ 
+   379  |     +--- int i, j, cp;
+   380  |     +--- string s, SrcFileName;
+   381  |     +--- TSrcCodeType CodeType;
+   382  |     +--- bool Fortran77F = false;
+   383  |     +--- bool Fortran90F = false;
+   384  |     |    
+   385  |     +--- NotSkipByErrF = false; // ゃBッDッVがあぁvぃ�も僇��B��J��J�
+        |     |  +------------------------------+ 
+   386  |     +--+ for (i = 1; i &lt; argc; i++){  | 
+        |     |  +--+---------------------------+ 
+   387  |     |     +--- s = LowerCase(argv[i]);
+        |     |     |  +------------------------------------------------------------+ 
+   388  |     |     +--+ if ((s.compare(&quot;-visualization&quot;) == 0) &amp;&amp; (i &lt; argc - 1)){ | 
+        |     |     |  +--+---------------------------------------------------------+ 
+   389  |     |     |     +--- s = LowerCase(argv[++i]);
+        |     |     |     |  +----------------------------+ 
+   390  |     |     |     +--+ if (s.compare(&quot;on&quot;) == 0){ | 
+        |     |     |     |  +--+-------------------------+ 
+   391  |     |     |     |     +--- VisualF = true;
+        |     |     |     |   +-+---+ 
+   392  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |     |  +------------+ 
+   393  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   394  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +----------------------------------------------------+ 
+   395  |     |     +--+ if ((s.compare(&quot;-debug&quot;) == 0) &amp;&amp; (i &lt; argc - 1)){ | 
+        |     |     |  +--+-------------------------------------------------+ 
+   396  |     |     |     +--- s = LowerCase(argv[++i]);
+        |     |     |     |  +----------------------------+ 
+   397  |     |     |     +--+ if (s.compare(&quot;on&quot;) == 0){ | 
+        |     |     |     |  +--+-------------------------+ 
+   398  |     |     |     |     +--- DebugF = true;
+        |     |     |     |   +-+---+ 
+   399  |     |     |     |   |  }  | 
+        |     |     |     |   +-+---+ 
+        |     |     |     |   +-+-------+ 
+   400  |     |     |     |   |  else{  | 
+        |     |     |     |   +-+-------+ 
+   401  |     |     |     |     +--- DebugF = false;
+        |     |     |     |   +-+---+ 
+   402  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |     |  +------------+ 
+   403  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   404  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------+ 
+   405  |     |     +--+ if (s.compare(&quot;-nompi&quot;) == 0){ | 
+        |     |     |  +--+-----------------------------+ 
+   406  |     |     |     +--- NoMPIF = true;
+   407  |     |     |     +--- MPIF = false;
+        |     |     |     |  +------------+ 
+   408  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   409  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +------------------------------+ 
+   410  |     |     +--+ if (s.compare(&quot;-mpi&quot;) == 0){ | 
+        |     |     |  +--+---------------------------+ 
+   411  |     |     |     +--- NoMPIF = false;
+   412  |     |     |     +--- MPIF = true;
+        |     |     |     |  +------------+ 
+   413  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   414  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +------------------------------+ 
+   415  |     |     +--+ if (s.compare(&quot;-omp&quot;) == 0){ | 
+        |     |     |  +--+---------------------------+ 
+   416  |     |     |     +--- OMP_OuterF = true;
+        |     |     |     |  +------------+ 
+   417  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   418  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +------------------------------------+ 
+   419  |     |     +--+ if (s.compare(&quot;-omp_outer&quot;) == 0){ | 
+        |     |     |  +--+---------------------------------+ 
+   420  |     |     |     +--- OMP_OuterF = true;
+        |     |     |     |  +------------+ 
+   421  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   422  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +------------------------------------+ 
+   423  |     |     +--+ if (s.compare(&quot;-omp_inner&quot;) == 0){ | 
+        |     |     |  +--+---------------------------------+ 
+   424  |     |     |     +--- OMP_InnerF = true;
+        |     |     |     |  +------------+ 
+   425  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   426  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +----------------------------------+ 
+   427  |     |     +--+ if (s.compare(&quot;-gcforce&quot;) == 0){ | 
+        |     |     |  +--+-------------------------------+ 
+   428  |     |     |     +--- NotSkipByErrF = true; // ゃBッDッVがあぁvぃ�も僇��B��J��J�
+        |     |     |     |  +------------+ 
+   429  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   430  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +----------------------------------------------------+ 
+   431  |     |     +--+ if ((s.compare(&quot;-time&quot;) == 0) &amp;&amp; (i &lt; argc - 1)){  | 
+        |     |     |  +--+-------------------------------------------------+ 
+   432  |     |     |     +--- TimeFunc = LowerCase(argv[++i]);
+   433  |     |     |     +--- /*
+   434  |     |     |     |                if (s.compare(&quot;-mpi&quot;) == 0) {      
+   435  |     |     |     |                    s = &quot;MPI_Wtime&quot;;               
+   436  |     |     |     |                }                                  
+   437  |     |     |     |                else if (s.compare(&quot;-oat&quot;) == 0) { 
+   438  |     |     |     |                    s = &quot;OAT_Wtime&quot;;               
+   439  |     |     |     |                }                                  
+   440  |     |     |     |                TimeFunc = s;                      
+   441  |     |     |     |    */                                             
+        |     |     |     |  +------------+ 
+   442  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   443  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------------------------------------+ 
+   444  |     |     +--+ if ((s.compare(&quot;-stime_and_etime&quot;) == 0) &amp;&amp; (i &lt; argc - 2)){ | 
+        |     |     |  +--+-----------------------------------------------------------+ 
+   445  |     |     |     +--- s = LowerCase(argv[++i]);
+   446  |     |     |     +--- my_timer_start = s;
+   447  |     |     |     +--- s = LowerCase(argv[++i]);
+   448  |     |     |     +--- my_timer_stop = s;
+        |     |     |     |  +------------+ 
+   449  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   450  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +----------------------------------------------------------------------------+ 
+   451  |     |     +--+ if (s.compare(&quot;-eecnt&quot;) == 0){ // -eecntlぃb ON指僇�なしで有効。  | 
+        |     |     |  +--+-------------------------------------------------------------------------+ 
+   452  |     |     |     +--- EECntlF = true;
+        |     |     |     |  +------------+ 
+   453  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   454  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +----------------------------------------------------------------+ 
+   455  |     |     +--+ if ((s.substr(0, 4).compare(&quot;-cc=&quot;) == 0) &amp;&amp; (i &lt; argc - 1)){  | 
+        |     |     |  +--+-------------------------------------------------------------+ 
+        |     |     |     |  +----------------------------------+ 
+   456  |     |     |     +--+ if (s.compare(&quot;-cc=pgi&quot;) == 0){  | 
+        |     |     |     |  +--+-------------------------------+ 
+   457  |     |     |     |     +--- cc_option_str = &quot;PGI&quot;;
+        |     |     |     |   +-+---+ 
+   458  |     |     |     |   |  }  | 
+        |     |     |     |   +-+---+ 
+        |     |     |     |   +-+-----------------------------------------+ 
+   459  |     |     |     |   |  else if (s.compare(&quot;-cc=ompcuda&quot;) == 0){ | 
+        |     |     |     |   +-+-----------------------------------------+ 
+   460  |     |     |     |     +--- cc_option_str = &quot;OMPCUDA&quot;;
+        |     |     |     |   +-+---+ 
+   461  |     |     |     |   |  }  | 
+        |     |     |     |   +-+---+ 
+        |     |     |     |   +-+-------+ 
+   462  |     |     |     |   |  else{  | 
+        |     |     |     |   +-+-------+ 
+   463  |     |     |     |     +--- // print(&quot;-cc=ぃ�後が、PGIぃZたはOMPCUDAぃ@ありぃZせん。");
+   464  |     |     |     |     +--- ErrMessage(-1, &quot;-cc= is not PGI or OMPCUDA.&quot;);
+   465  |     |     |     |     +--- EndF = true;
+        |     |     |     |     |  +--------+ 
+   466  |     |     |     |     +--+ break; | 
+        |     |     |     |     |  +--------+ 
+        |     |     |     |   +-+---+ 
+   467  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |     |  +------------+ 
+   468  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   469  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------------------------------------------------------+ 
+   470  |     |     +--+ if ((s.substr(0, 20).compare(&quot;-insert_module_head=&quot;) == 0) &amp;&amp; (i &lt; argc - 1)){ | 
+        |     |     |  +--+-----------------------------------------------------------------------------+ 
+   471  |     |     |     +--- //
+   472  |     |     |     |    // -insert_module_head=filename 寃Z豁Bを�\�X加する。   
+   473  |     |     |     |    //                                                             
+   474  |     |     |     +--- s = s.substr(20,s.length());
+   475  |     |     |     +--- InsertModulseHeadFileNameList.Add(s); // 寃Z豁BファめAッH名を迃X加する。
+        |     |     |     |  +------------+ 
+   476  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   477  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------+ 
+   478  |     |     +--+ if (s.compare(&quot;-fixed&quot;) == 0){ | 
+        |     |     |  +--+-----------------------------+ 
+   479  |     |     |     +--- Fortran77F = true;
+        |     |     |     |  +------------+ 
+   480  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   481  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------+ 
+   482  |     |     +--+ if (s.compare(&quot;-free&quot;) == 0){  | 
+        |     |     |  +--+-----------------------------+ 
+   483  |     |     |     +--- Fortran90F = true;
+        |     |     |     |  +------------+ 
+   484  |     |     |     +--+ continue;  | 
+        |     |     |     |  +------------+ 
+        |     |     |   +-+---+ 
+   485  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +------------------------------------+ 
+   486  |     |     +--+ if (s.find(&quot;.&quot;) != string::npos){  | 
+        |     |     |  +--+---------------------------------+ 
+   487  |     |     |     +--- SrcFileName = argv[i];
+   488  |     |     |     +--- // ファめAッH名の \\ を / ぃH変更する。
+        |     |     |     |  +--------------------------------------------------+ 
+   489  |     |     |     +--+ for (j = 0; j &lt; (int)SrcFileName.length(); j++){ | 
+        |     |     |     |  +--+-----------------------------------------------+ 
+        |     |     |     |     |  +------------------------------+ 
+   490  |     |     |     |     +--+ if (SrcFileName[j] == '\\'){ | 
+        |     |     |     |     |  +--+---------------------------+ 
+   491  |     |     |     |     |     +--- SrcFileName[j] = '/';
+        |     |     |     |     |   +-+---+ 
+   492  |     |     |     |     |   |  }  | 
+        |     |     |     |     |   +-----+ 
+        |     |     |     |   +-+---+ 
+   493  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+   494  |     |     |     +--- SrcFileNameList.Add(SrcFileName); // 寃Z豁BゃXッVゃPファめAッH名リゃPト。
+        |     |     |   +-+---+ 
+   495  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   496  |     |   |  }  | 
+        |     |   +-----+ 
+   497  |     +--- //
+   498  |     |    // ゃXッVゃPゃEッVドの稃�類を誃\ぃPる。拡弃I子にfが含ぃZれていれぁ[FortranぃBする。  
+   499  |     |    // .f ぃb Fortran  .fxx ぃb　f90ぃBして扃Aう。                                                            
+   500  |     |    // 複数ファめAッH指僇�で畁[ぃFるタめAプが淃L圃Bする堃G合はゃBッDッVぃBする。         
+   501  |     |    //                                                                                                                 
+        |     |  +----------------------------------------------+ 
+   502  |     +--+ for (i = 0; i &lt; SrcFileNameList.Count; i++){ | 
+        |     |  +--+-------------------------------------------+ 
+   503  |     |     +--- SrcFileName = SrcFileNameList.Strings[i];
+   504  |     |     +--- CodeType = sctC;
+   505  |     |     +--- s = LowerCase(SrcFileName);
+   506  |     |     +--- cp = s.rfind('.');
+        |     |     |  +------------------------------------------------+ 
+   507  |     |     +--+ if ((cp != -1) &amp;&amp; (cp + 1 &lt; (int)s.length())){ | 
+        |     |     |  +--+---------------------------------------------+ 
+        |     |     |     |  +------------------------+ 
+   508  |     |     |     +--+ if (s[cp + 1] == 'f'){ | 
+        |     |     |     |  +--+---------------------+ 
+        |     |     |     |     |  +----------------------------------+ 
+   509  |     |     |     |     +--+ if (IsF90SrcFile(SrcFileName)){  | 
+        |     |     |     |     |  +--+-------------------------------+ 
+   510  |     |     |     |     |     +--- CodeType = sctFortran90;
+        |     |     |     |     |   +-+---+ 
+   511  |     |     |     |     |   |  }  | 
+        |     |     |     |     |   +-+---+ 
+        |     |     |     |     |   +-+-------+ 
+   512  |     |     |     |     |   |  else{  | 
+        |     |     |     |     |   +-+-------+ 
+   513  |     |     |     |     |     +--- CodeType = sctFortran77;
+        |     |     |     |     |   +-+---+ 
+   514  |     |     |     |     |   |  }  | 
+        |     |     |     |     |   +-----+ 
+        |     |     |     |   +-+---+ 
+   515  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |   +-+---+ 
+   516  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------+ 
+   517  |     |     +--+ if (i == 0){ | 
+        |     |     |  +--+-----------+ 
+   518  |     |     |     +--- SrcCodeType = CodeType;
+        |     |     |   +-+---+ 
+   519  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-------+ 
+   520  |     |     |   |  else{  | 
+        |     |     |   +-+-------+ 
+        |     |     |     |  +--------------------------------+ 
+   521  |     |     |     +--+ if (SrcCodeType != CodeType){  | 
+        |     |     |     |  +--+-----------------------------+ 
+   522  |     |     |     |     +--- // ErrMessage(-1,&quot;畁[ぃFる拡弃I子が淃L圃Bしています。");
+   523  |     |     |     |     +--- ErrMessage(-1, &quot;A different file extension is intermingled.&quot;);
+        |     |     |     |   +-+---+ 
+   524  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |   +-+---+ 
+   525  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   526  |     |   |  }  | 
+        |     |   +-----+ 
+   527  |     +--- // ゃFプシッ@ッE指僇�がある堃G合は、そぃ�指僇�を儃F先。
+        |     |  +------------------+ 
+   528  |     +--+ if(Fortran77F){  | 
+        |     |  +--+---------------+ 
+   529  |     |     +--- SrcCodeType = sctFortran77;
+        |     |   +-+---+ 
+   530  |     |   |  }  | 
+        |     |   +-+---+ 
+        |     |   +-+---------------------+ 
+   531  |     |   |  else if(Fortran90F){ | 
+        |     |   +-+---------------------+ 
+   532  |     |     +--- SrcCodeType = sctFortran90;
+        |     |   +-+---+ 
+   533  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +--------------------------------------------------------------------------------------------------------+ 
+   534  |     +--+ if (TimeFunc == &quot;&quot;){ // TimeFuncぃ�指僇�がぃFい堃G合はデフゃDッHトをゃTットする。 | 
+        |     |  +--+-----------------------------------------------------------------------------------------------------+ 
+        |     |     |  +------------+ 
+   535  |     |     +--+ if(MPIF){  | 
+        |     |     |  +--+---------+ 
+   536  |     |     |     +--- TimeFunc = &quot;MPI_Wtime&quot;;
+        |     |     |   +-+---+ 
+   537  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-------+ 
+   537  |     |     |   |  else{  | 
+        |     |     |   +-+-------+ 
+   538  |     |     |     +--- TimeFunc = &quot;OAT_Wtime&quot;;
+        |     |     |   +-+---+ 
+   539  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   540  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   541  |   |  }  | 
+        |   +-----+ 
+   542  |    
+   543  +--- /* ---------------------------------------------------------------------------- */
+   544  |    //                                                                                       
+   545  |    // 1.旁E會�語名                                                                      
+   546  |    //                                                                                       
+   547  |    // 2.パラチBゃ\誃�明                                                               
+   548  |    // SrcFileNmae ゃXッVゃPファめAッH名                                             
+   549  |    //                                                                                       
+   550  |    // 3.概胒�                                                                             
+   551  |    // ゃXッVゃPファめAッH名から、f90ぃ�ファめAッHかどうかを�\�す。  
+   552  |    //                                                                                       
+   553  |    // 4.機能誃�明                                                                       
+   554  |    //                                                                                       
+   555  |    // 5.戃Tり倁A                                                                         
+   556  |    // f90ぃ�ファめAッHぃ�堃G合にtrue                                               
+   557  |    //                                                                                       
+   558  |    // 6.備考                                                                              
+   559  |    //                                                                                       
+   560  |    /* ---------------------------------------------------------------------------- */       
+        |  +------------------------------------------------+ 
+   561  +--+ bool TMainF::IsF90SrcFile(string SrcFileName)  | 
+   562  |  | {                                              | 
+        |  +--+---------------------------------------------+ 
+   563  |     +--- string s, s2;
+   564  |     +--- int cp;
+   565  |     |    
+   566  |     +--- //
+   567  |     |    // ゃXッVゃPゃEッVドの拁B弃I子を抜き凃Rして比�V�する。拡弃I子が.f90ぃFらば f90彁u式とする。  
+   568  |     |    //                                                                                                                             
+        |     |  +--------------------------------------------------------+ 
+   569  |     +--+ if ((SrcFileName == &quot;&quot;)&amp;&amp;(SrcFileNameList.Count &gt; 0)){ | 
+        |     |  +--+-----------------------------------------------------+ 
+   570  |     |     +--- SrcFileName = SrcFileNameList.Strings[0];
+        |     |   +-+---+ 
+   571  |     |   |  }  | 
+        |     |   +-----+ 
+   572  |     +--- s = LowerCase(SrcFileName);
+   573  |     +--- cp = s.rfind('.');
+        |     |  +----------------+ 
+   574  |     +--+ if (cp != -1){ | 
+        |     |  +--+-------------+ 
+   575  |     |     +--- s2 = s.substr(cp, s.length());
+        |     |     |  +--------------------+ 
+   576  |     |     +--+ if (s2 == &quot;.f90&quot;){ | 
+        |     |     |  +--+-----------------+ 
+        |     |     |     |  +--------------+ 
+   577  |     |     |     +--+ return true; | 
+        |     |     |     |  +--------------+ 
+        |     |     |   +-+---+ 
+   578  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   579  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +----------------+ 
+   580  |     +--+ return false;  | 
+        |     |  +----------------+ 
+        |   +-+---+ 
+   581  |   |  }  | 
+        |   +-----+ 
+   582  |    
+   583  +--- /* ---------------------------------------------------------------------------- */
+   584  |    //                                                                                 
+   585  |    // 1.旁E會�語名                                                                
+   586  |    //                                                                                 
+   587  |    // 2.パラチBゃ\誃�明                                                         
+   588  |    //                                                                                 
+   589  |    // 3.概胒�                                                                       
+   590  |    // ゃEッVド生成をを�B�う。各パスを順惃�BぃH呃VぃE凃Rす。     
+   591  |    //                                                                                 
+   592  |    // 4.機能誃�明                                                                 
+   593  |    //                                                                                 
+   594  |    // 5.戃Tり倁A                                                                   
+   595  |    // ぃFし                                                                         
+   596  |    //                                                                                 
+   597  |    // 6.備考                                                                        
+   598  |    //                                                                                 
+   599  |    /* ---------------------------------------------------------------------------- */ 
+        |  +--------------------------+ 
+   600  +--+ void TMainF::CodeGen() { | 
+        |  +--+-----------------------+ 
+   601  |     +--- int i;
+   602  |     +--- string s;
+   603  |     +--- TPass4 *Pass4 = NULL;
+   604  |     +--- string DirName, SrcFileName;
+   605  |     |    
+   606  |     +--- ErrCount = 0;
+   607  |     +--- ErrF = false;
+        |     |  +----------------------------------+ 
+   608  |     +--+ if (SrcFileNameList.Count == 0){ | 
+        |     |  +--+-------------------------------+ 
+   609  |     |     +--- print(&quot;SrcFile Open error.&quot;);
+        |     |     |  +----------+ 
+   610  |     |     +--+ return;  | 
+        |     |     |  +----------+ 
+        |     |   +-+---+ 
+   611  |     |   |  }  | 
+        |     |   +-----+ 
+   612  |     +--- print(&quot;**** Start Code Generation ****&quot;);
+        |     |  +----------------------------------------------+ 
+   613  |     +--+ for (i = 0; i &lt; SrcFileNameList.Count; i++){ | 
+        |     |  +--+-------------------------------------------+ 
+   614  |     |     +--- SrcFileNameList.Objects[i] = (void*)(long)TokenList-&gt;Count;
+   615  |     |     +--- // TokenListぃ�開�@��X��X��をセット
+   616  |     |     +--- SrcFileName = SrcFileNameList.Strings[i];
+   617  |     |     +--- print(&quot;SrcFile =\&quot;&quot; + SrcFileName + &quot;\&quot;&quot;);
+        |     |     |  +--------------------------------+ 
+   618  |     |     +--+ if (!FileExists(SrcFileName)){ | 
+        |     |     |  +--+-----------------------------+ 
+   619  |     |     |     +--- printf(&quot;SrcFile Open error.\n&quot;);
+   620  |     |     |     +--- print(&quot;**** End Code Generation **** Error !&quot;);
+        |     |     |     |  +----------+ 
+   621  |     |     |     +--+ return;  | 
+        |     |     |     |  +----------+ 
+        |     |     |   +-+---+ 
+   622  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+   623  |     |     +--- print(&quot;Pass1 Start&quot;);
+   624  |     |     +--- TokenList-&gt;Add((void*)new TToken(&quot;&quot;, tid_null)); // 先頃�ぃHnullを�\�X加。
+   625  |     |     +--- Pass1(SrcFileName, TokenList); // SrcFileをトッVゃbッEぃH见v析し、TokenListを生成
+   626  |     |     +--- TokenList-&gt;Add((void*)new TToken(&quot;&quot;, tid_null)); // 最後
+   627  |     |     +--- #if 0   // Pass1ぃ�後の衃B礃R碃R認用
+   628  |     |     +--- DispTokenList();
+   629  |     |     +--- print(&quot;DispTokenList Count = &quot;+IntToStr(TokenList-&gt;Count) + &quot; ----------------------------\n&quot;);
+   630  |     |     +--- #endif
+        |     |   +-+---+ 
+   631  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +------------------------------+ 
+   632  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+   633  |     |     +--- print(&quot;Pass2 Start&quot;);
+   634  |     |     +--- Pass2(TokenList, ValDataList); // TokenListから構文见v析を行い、ValDataッFゃPトを生成
+   635  |     |     +--- #if 0   // Pass2ぃ�後の衃B礃R碃R認用
+        |     |     |  +----------------------------------------------+ 
+   636  |     |     +--+ for (int i = 0; i &lt; TokenList-&gt;Count; i++){  | 
+        |     |     |  +--+-------------------------------------------+ 
+   637  |     |     |     +--- string s;
+   638  |     |     |     |    
+   639  |     |     |     +--- s = IntToStr(i) + &quot; [&quot; + ((TToken*)TokenList-&gt;Items[i])
+   640  |     |     |     |        -&gt;Str + &quot;] Id = &quot;                                                      
+   641  |     |     |     |    // + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;TokId)                      
+   642  |     |     |     |    + ((TToken*)TokenList-&gt;Items[i])-&gt;GetTokIdStr()                            
+   643  |     |     |     |        + &quot; Line=&quot; + IntToStr(((TToken*)TokenList-&gt;Items[i])-&gt;LineNo)          
+   644  |     |     |     |        + &quot; ModuleIdx=&quot; + IntToStr(((TToken*)TokenList-&gt;Items[i])-&gt;ModuleIdx)  
+   645  |     |     |     |        + &quot; NestLevel=&quot; + IntToStr(((TToken*)TokenList-&gt;Items[i])-&gt;NestLevel)  
+   646  |     |     |     |        + &quot; [&quot; + ((TToken*)TokenList-&gt;Items[i])-&gt;OrgStr + &quot;]&quot;;                 
+        |     |     |     |  +------------------------------------------------+ 
+   647  |     |     |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;LineEndF){ | 
+        |     |     |     |  +--+---------------------------------------------+ 
+   648  |     |     |     |     +--- s += &quot; [LineEnd] &quot;;
+        |     |     |     |   +-+---+ 
+   649  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+        |     |     |     |  +--------------------------------------------------------+ 
+   650  |     |     |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Val){ | 
+        |     |     |     |  +--+-----------------------------------------------------+ 
+   651  |     |     |     |     +--- s += &quot;Val &quot;;
+        |     |     |     |   +-+---+ 
+   652  |     |     |     |   |  }  | 
+        |     |     |     |   +-+---+ 
+        |     |     |     |   +-+-------------------------------------------------------------+ 
+   653  |     |     |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Func){ | 
+        |     |     |     |   +-+-------------------------------------------------------------+ 
+   654  |     |     |     |     +--- s += &quot;Func &quot;;
+        |     |     |     |   +-+---+ 
+   655  |     |     |     |   |  }  | 
+        |     |     |     |   +-----+ 
+   656  |     |     |     +--- MainF-&gt;print(s);
+        |     |     |   +-+---+ 
+   657  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+   658  |     |     +--- #endif
+        |     |   +-+---+ 
+   659  |     |   |  }  | 
+        |     |   +-----+ 
+   660  |     +--- #if 1   // 変数ッFゃPト�B�B礃R
+   661  |     +--- print(&quot;------ Val List ---------&quot;);
+        |     |  +------------------------------------------------+ 
+   662  |     +--+ for (int i = 0; i &lt; ValDataList-&gt;Count; i++){  | 
+        |     |  +--+---------------------------------------------+ 
+   663  |     |     +--- TValData *ValData = (TValData*)ValDataList-&gt;Items[i];
+   664  |     |     +--- print(IntToStr(i) + &quot;:&quot; + ((TValData*)ValDataList-&gt;Items[i])-&gt;ToString
+   665  |     |     |        () + &quot; DefPos=&quot; + IntToStr(ValData-&gt;DefPos));                      
+        |     |   +-+---+ 
+   666  |     |   |  }  | 
+        |     |   +-----+ 
+   667  |     +--- #endif
+   668  |     +--- // ゃPゃbッFプト见v析
+        |     |  +------------------------------+ 
+   669  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+   670  |     |     +--- print(&quot;Pass3 Start&quot;);
+   671  |     |     +--- Pass3(TokenList, ValDataList);
+        |     |   +-+---+ 
+   672  |     |   |  }  | 
+        |     |   +-----+ 
+   673  |     |    
+   674  |     +--- // チュッVニンめ[ッFッVゃNッ@ッE生成
+        |     |  +------------------------------+ 
+   675  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+   676  |     |     +--- print(&quot;Pass4 Start&quot;);
+   677  |     |     +--- Pass4 = new TPass4(TokenList, ValDataList, TuneRegionList);
+   678  |     |     +--- Pass4-&gt;Exec();
+        |     |   +-+---+ 
+   679  |     |   |  }  | 
+        |     |   +-----+ 
+   680  |     +--- #if 1 // 生成されたチチEッVニンめ[ッFッVゃNッ@ッEぃ�衃B礃R
+        |     |  +------------------------------+ 
+   681  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+   682  |     |     +--- print(&quot;------ Tuning Region -- Count = &quot; + IntToStr(TuneRegionList-&gt;Count)
+   683  |     |     |        );                                                                     
+        |     |     |  +--------------------------------------------------+ 
+   684  |     |     +--+ for (int i = 0; i &lt; TuneRegionList-&gt;Count; i++){ | 
+        |     |     |  +--+-----------------------------------------------+ 
+   685  |     |     |     +--- print(&quot;Tuning Region : &quot; + IntToStr(i));
+   686  |     |     |     +--- print(((TTuneRegion*)TuneRegionList-&gt;Items[i])-&gt;GetInfo());
+        |     |     |   +-+---+ 
+   687  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   688  |     |   |  }  | 
+        |     |   +-----+ 
+   689  |     +--- #endif
+   690  |     +--- // 凃R力フめBめAッH生成
+        |     |  +----------------------------------+ 
+   691  |     +--+ if (Call_ATExec_Script == NULL){ | 
+        |     |  +--+-------------------------------+ 
+   692  |     |     +--- ErrMessage(-1, &quot;!OAT$ call OAT_ATexec() Script is not found.&quot;);
+        |     |   +-+---+ 
+   693  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +------------------------------+ 
+   694  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+   695  |     |     +--- print(&quot;Pass5 Start&quot;);
+   696  |     |     +--- Pass5 = new TPass5(TokenList, ValDataList, TuneRegionList);
+   697  |     |     +--- ((TPass5 *)Pass5)-&gt;Exec();
+        |     |   +-+---+ 
+   698  |     |   |  }  | 
+        |     |   +-----+ 
+   699  |     +--- //
+   700  |     |    // Visual化 ファめAッH凃R力   
+   701  |     |    //                                   
+        |     |  +------------------------------+ 
+   702  |     +--+ if (!ErrF || NotSkipByErrF){ | 
+        |     |  +--+---------------------------+ 
+        |     |     |  +----------------+ 
+   703  |     |     +--+ if (VisualF){  | 
+        |     |     |  +--+-------------+ 
+   704  |     |     |     +--- TVisualDM VisualDM;
+   705  |     |     |     +--- VisualDM.Exec();
+        |     |     |   +-+---+ 
+   706  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |   +-+---+ 
+   707  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +--------------+ 
+   708  |     +--+ if (Pass4){  | 
+        |     |  +--+-----------+ 
+   709  |     |     +--- delete Pass4;
+        |     |   +-+---+ 
+   710  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +--------------+ 
+   711  |     +--+ if (Pass5){  | 
+        |     |  +--+-----------+ 
+   712  |     |     +--- delete (TPass5 *)Pass5;
+        |     |   +-+---+ 
+   713  |     |   |  }  | 
+        |     |   +-----+ 
+        |     |  +------------------+ 
+   714  |     +--+ if (CloseReqF){  | 
+        |     |  +--+---------------+ 
+   715  |     |     +--- print(&quot;**** End Code Generation **** Aboart !&quot;);
+   716  |     |     +--- ErrF = true;
+        |     |   +-+---+ 
+   717  |     |   |  }  | 
+        |     |   +-+---+ 
+        |     |   +-+-----------------+ 
+   718  |     |   |  else if (ErrF){  | 
+        |     |   +-+-----------------+ 
+   719  |     |     +--- print(&quot;**** End Code Generation **** Error ! ErrorCount = &quot; + IntToStr
+   720  |     |     |        (ErrCount));                                                       
+        |     |   +-+---+ 
+   721  |     |   |  }  | 
+        |     |   +-+---+ 
+        |     |   +-+-------+ 
+   722  |     |   |  else{  | 
+        |     |   +-+-------+ 
+   723  |     |     +--- print(&quot;**** End Code Generation **** OK !&quot;);
+        |     |   +-+---+ 
+   724  |     |   |  }  | 
+        |     |   +-----+ 
+   725  |     +--- EndF = true;
+        |     |  +----------------------+ 
+   726  |     +--+ if (LogFp != NULL){  | 
+        |     |  +--+-------------------+ 
+   727  |     |     +--- fclose(LogFp);
+   728  |     |     +--- LogFp = NULL;
+        |     |   +-+---+ 
+   729  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   730  |   |  }  | 
+        |   +-----+ 
+   731  |    
+   732  +--- /* ---------------------------------------------------------------------------- */
+   733  |    //                                                                                 
+   734  |    // 1.旁E會�語名                                                                
+   735  |    //                                                                                 
+   736  |    // 2.パラチBゃ\誃�明                                                         
+   737  |    // s   凃R力文字列                                                            
+   738  |    //                                                                                 
+   739  |    // 3.概胒�                                                                       
+   740  |    // デバッグ甃Bぃ�トーゃbッE凃R力                                       
+   741  |    //                                                                                 
+   742  |    // 4.機能誃�明                                                                 
+   743  |    // デバッグ甃BぃHトーゃbッEを出力する。                            
+   744  |    //                                                                                 
+   745  |    // 5.戃Tり倁A                                                                   
+   746  |    // ぃFし                                                                         
+   747  |    //                                                                                 
+   748  |    // 6.備考                                                                        
+   749  |    //                                                                                 
+   750  |    //                                                                                 
+   751  |    /* ---------------------------------------------------------------------------- */ 
+        |  +--------------------------------+ 
+   752  +--+ void TMainF::DispTokenList() { | 
+        |  +--+-----------------------------+ 
+   753  |     +--- string s, ks;
+   754  |     |    
+        |     |  +----------------------------------------------+ 
+   755  |     +--+ for (int i = 0; i &lt; TokenList-&gt;Count; i++){  | 
+        |     |  +--+-------------------------------------------+ 
+   756  |     |     |    
+   757  |     |     +--- s = IntToStr(i) + &quot; [&quot; + ((TToken*)TokenList-&gt;Items[i])-&gt;Str + &quot;](&quot;
+   758  |     |     |    // + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;TokId)                
+   759  |     |     |    + ((TToken*)TokenList-&gt;Items[i])-&gt;GetTokIdStr()                      
+   760  |     |     |    // + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;LineNo)               
+   761  |     |     |    + &quot;)[&quot; + ((TToken*)TokenList-&gt;Items[i])-&gt;OrgStr + &quot;]&quot;;               
+        |     |     |  +------------------------------------------------+ 
+   762  |     |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;LineEndF){ | 
+        |     |     |  +--+---------------------------------------------+ 
+   763  |     |     |     +--- s += &quot; [LineEnd] &quot;;
+        |     |     |   +-+---+ 
+   764  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+        |     |     |  +--------------------------------------------------------+ 
+   765  |     |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Val){ | 
+        |     |     |  +--+-----------------------------------------------------+ 
+   766  |     |     |     +--- s += &quot;Val&quot;;
+        |     |     |   +-+---+ 
+   767  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-------------------------------------------------------------+ 
+   768  |     |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Func){ | 
+        |     |     |   +-+-------------------------------------------------------------+ 
+   769  |     |     |     +--- s += &quot;Func&quot;;
+        |     |     |   +-+---+ 
+   770  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-------------------------------------------------------------+ 
+   771  |     |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Opr){  | 
+        |     |     |   +-+-------------------------------------------------------------+ 
+   772  |     |     |     +--- s += &quot;Opr&quot;;
+        |     |     |   +-+---+ 
+   773  |     |     |   |  }  | 
+        |     |     |   +-+---+ 
+        |     |     |   +-+-----------------------------------------------------------------+ 
+   774  |     |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_DataType){ | 
+        |     |     |   +-+-----------------------------------------------------------------+ 
+   775  |     |     |     +--- s += &quot;Type&quot;;
+        |     |     |   +-+---+ 
+   776  |     |     |   |  }  | 
+        |     |     |   +-----+ 
+   777  |     |     +--- print(s);
+        |     |   +-+---+ 
+   778  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   779  |   |  }  | 
+        |   +-----+ 
+   780  |    
+   781  +--- /* ---------------------------------------------------------------------------- */
+   782  |    //                                                                                 
+   783  |    // 1.旁E會�語名                                                                
+   784  |    //                                                                                 
+   785  |    // 2.パラチBゃ\誃�明                                                         
+   786  |    // s   凃R力文字列                                                            
+   787  |    //                                                                                 
+   788  |    // 3.概胒�                                                                       
+   789  |    // デバッグ甃B凃R力関敁[                                                  
+   790  |    //                                                                                 
+   791  |    // 4.機能誃�明                                                                 
+   792  |    // デバッグ甃B凃R力関敁[。文字列＃Eを出力する。                
+   793  |    //                                                                                 
+   794  |    // 5.戃Tり倁A                                                                   
+   795  |    // ぃFし                                                                         
+   796  |    //                                                                                 
+   797  |    // 6.備考                                                                        
+   798  |    // デバッグ時�T�E外は、�X�\甃BしないこぃB。                       
+   799  |    //                                                                                 
+   800  |    /* ---------------------------------------------------------------------------- */ 
+        |  +----------------------+ 
+   801  +--+ void DP(string s) {  | 
+        |  +--+-------------------+ 
+   802  |     +--- MainF-&gt;print(s);
+        |   +-+---+ 
+   803  |   |  }  | 
+        |   +-----+ 
+   804  |    
+   805  +--- /* ---------------------------------------------------------------------------- */
+   806  |    //                                                                                       
+   807  |    // 1.旁E會�語名                                                                      
+   808  |    //                                                                                       
+   809  |    // 2.パラチBゃ\誃�明                                                               
+   810  |    // string s 衃B礃Rする文僅�列                                                     
+   811  |    //                                                                                       
+   812  |    // 3.概胒�                                                                             
+   813  |    // チBッセッVゃNぃ�衃B礃RぃBッ�め[ファめAッHぃNぃ�凃R力を行う。   
+   814  |    //                                                                                       
+   815  |    // 4.機能誃�明                                                                       
+   816  |    //                                                                                       
+   817  |    // 5.戃Tり倁A                                                                         
+   818  |    // ぃFし                                                                               
+   819  |    //                                                                                       
+   820  |    // 6.備考                                                                              
+   821  |    //                                                                                       
+   822  |    /* ---------------------------------------------------------------------------- */       
+        |  +--------------------------------+ 
+   823  +--+ void TMainF::print(string s) { | 
+        |  +--+-----------------------------+ 
+   824  |     +--- printf(&quot;%s\n&quot;, s.c_str());
+        |     |  +----------------------+ 
+   825  |     +--+ if (LogFp != NULL){  | 
+        |     |  +--+-------------------+ 
+   826  |     |     +--- fprintf(LogFp, &quot;%s\n&quot;, s.c_str());
+        |     |   +-+---+ 
+   827  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   828  |   |  }  | 
+        |   +-----+ 
+   829  |    
+   830  +--- /* ---------------------------------------------------------------------------- */
+   831  |    //                                                                                                   
+   832  |    // 1.旁E會�語名                                                                                  
+   833  |    //                                                                                                   
+   834  |    // 2.パラチBゃ\誃�明                                                                           
+   835  |    // string s 衃B礃Rする文僅�列                                                                 
+   836  |    //                                                                                                   
+   837  |    // 3.概胒�                                                                                         
+   838  |    // ゃBッDッVチBッセッVゃNぃ�衃B礃RぃBッ�め[ファめAッHぃNぃ�凃R力を行う。   
+   839  |    //                                                                                                   
+   840  |    // 4.機能誃�明                                                                                   
+   841  |    //                                                                                                   
+   842  |    // 5.戃Tり倁A                                                                                     
+   843  |    // ぃFし                                                                                           
+   844  |    //                                                                                                   
+   845  |    // 6.備考                                                                                          
+   846  |    //                                                                                                   
+   847  |    /* ---------------------------------------------------------------------------- */                   
+        |  +------------------------------+ 
+   848  +--+ void TMainF::Err(string s) { | 
+        |  +--+---------------------------+ 
+   849  |     +--- ErrF = true;
+   850  |     +--- printf(&quot;*** ERROR *** %s\n&quot;, s.c_str());
+        |     |  +----------------------+ 
+   851  |     +--+ if (LogFp != NULL){  | 
+        |     |  +--+-------------------+ 
+   852  |     |     +--- fprintf(LogFp, &quot;*** ERROR *** %s\n&quot;, s.c_str());
+        |     |   +-+---+ 
+   853  |     |   |  }  | 
+        |     |   +-----+ 
+        |   +-+---+ 
+   854  |   |  }  | 
+        |   +-----+ 
+   855  |    
+   856  +--- /* ---------------------------------------------------------------------------- */
+   857  |    //                                                                                                   
+   858  |    // 1.旁E會�語名                                                                                  
+   859  |    //                                                                                                   
+   860  |    // 2.パラチBゃ\誃�明                                                                           
+   861  |    // string s 衃B礃Rする文僅�列                                                                 
+   862  |    //                                                                                                   
+   863  |    // 3.概胒�                                                                                         
+   864  |    // ゃBッDッVチBッセッVゃNぃ�衃B礃RぃBッ�め[ファめAッHぃNぃ�凃R力を行う。   
+   865  |    //                                                                                                   
+   866  |    // 4.機能誃�明                                                                                   
+   867  |    //                                                                                                   
+   868  |    // 5.戃Tり倁A                                                                                     
+   869  |    // ぃFし                                                                                           
+   870  |    //                                                                                                   
+   871  |    // 6.備考                                                                                          
+   872  |    //                                                                                                   
+   873  |    /* ---------------------------------------------------------------------------- */                   
+        |  +----------------------------------------------+ 
+   874  +--+ void TMainF::ErrMessage(int Pos, string s) { | 
+           +--+-------------------------------------------+ 
+   875        +--- int i;
+   876        +--- TToken *Token;
+   877        +--- int LineNo;
+   878        +--- int sPos;
+   879        +--- string FileName = &quot;&quot;;
+   880        |    
+   881        +--- ErrF = true;
+   882        +--- ErrCount++;
+   883        +--- printf(&quot;*** ERROR *** %s\n&quot;, s.c_str());
+              |  +----------------------+ 
+   884        +--+ if (LogFp != NULL){  | 
+              |  +--+-------------------+ 
+   885        |     +--- fprintf(LogFp, &quot;*** ERROR *** %s\n&quot;, s.c_str());
+              |   +-+---+ 
+   886        |   |  }  | 
+              |   +-----+ 
+   887        +--- //
+   888        |    // Posぃ�礃RすSrcFileNameを所得する。   
+   889        |    //                                               
+              |  +----------------------------------------------+ 
+   890        +--+ for (i = 0; i &lt; SrcFileNameList.Count; i++){ | 
+              |  +--+-------------------------------------------+ 
+   891        |     +--- sPos = (long)SrcFileNameList.Objects[i];
+              |     |  +--------------------+ 
+   892        |     +--+ if (Pos &gt;= sPos){  | 
+              |     |  +--+-----------------+ 
+   893        |     |     +--- FileName = SrcFileNameList.Strings[i];
+              |     |   +-+---+ 
+   894        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   895        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------------------------------+ 
+   896        +--+ if ((Pos &gt;= 0) &amp;&amp; (Pos &lt; TokenList-&gt;Count)){ | 
+              |  +--+-------------------------------------------+ 
+   897        |     +--- Token = (TToken*)TokenList-&gt;Items[Pos];
+              |     |  +----------------------+ 
+   898        |     +--+ if (Token == NULL){  | 
+              |     |  +--+-------------------+ 
+              |     |     |  +----------+ 
+   899        |     |     +--+ return;  | 
+              |     |     |  +----------+ 
+              |     |   +-+---+ 
+   900        |     |   |  }  | 
+              |     |   +-----+ 
+   901        |     +--- LineNo = Token-&gt;LineNo;
+   902        |     +--- s = &quot;&quot;;
+              |     |  +----------------------------+ 
+   903        |     +--+ for (i = Pos; i &gt; 0; i--){ | 
+              |     |  +--+-------------------------+ 
+   904        |     |     +--- Token = (TToken*)TokenList-&gt;Items[i];
+              |     |     |  +--------------------------------+ 
+   905        |     |     +--+ if (LineNo != Token-&gt;LineNo){  | 
+              |     |     |  +--+-----------------------------+ 
+   906        |     |     |     +--- i++;
+              |     |     |     |  +--------+ 
+   907        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   908        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   909        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------------+ 
+   910        |     +--+ for (; i &lt; TokenList-&gt;Count; i++){ | 
+              |     |  +--+---------------------------------+ 
+   911        |     |     +--- Token = (TToken*)TokenList-&gt;Items[i];
+              |     |     |  +--------------------------------------------------------------------------+ 
+   912        |     |     +--+ if (Token-&gt;TokId == tid_LineEnd){ // １�B�単位で见v析を行う。 | 
+              |     |     |  +--+-----------------------------------------------------------------------+ 
+              |     |     |     |  +--------+ 
+   913        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   914        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   915        |     |     +--- s += Token-&gt;OrgStr;
+              |     |   +-+---+ 
+   916        |     |   |  }  | 
+              |     |   +-----+ 
+   917        |     +--- s = FileName + &quot; LineNo = &quot; + IntToStr(LineNo) + &quot; &quot; + s;
+   918        |     +--- s = Trim(s);
+   919        |     +--- printf(&quot;  %s\n&quot;, s.c_str());
+              |     |  +----------------------+ 
+   920        |     +--+ if (LogFp != NULL){  | 
+              |     |  +--+-------------------+ 
+   921        |     |     +--- fprintf(LogFp, &quot;    %s\n&quot;, s.c_str());
+              |     |   +-+---+ 
+   922        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   923        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   924      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

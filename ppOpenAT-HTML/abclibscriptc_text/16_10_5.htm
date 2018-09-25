@@ -1,0 +1,357 @@
+
+<html>
+<head>
+<title>ChackRefDoValF メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.5. ChackRefDoValF メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>ChackRefDoValF</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>1968</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void ChackRefDoValF ( int sPos , int ePos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>各変数がDo変数からの依存かどうかをチェックする。<br>ValData-&gt;RefDoValがセットされる。<br>Do依存の変数は、UnRollの数だけ、別変数に置き換えられる。<br><br>DO i = 1,100 で da = b(i); の場合は、 daは、Do変数依存<br>a(i) = b(i) の場合は、 aに(Do変数 i)があるために依存でない。<br>da = b(i) で daがDo変数依存の場合に dc = 2*da での dcは、Do依存<br>da = b(i) で da = da + c(i) は、 daは Do依存だが、元々Do依存<br>Ｃ言語の場合は、DOでなく for(ValName=s;ValName&lt;e;ValName++)に<br>になるが、動作としてはFortranの場合と同じになる。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>sPos    開始位置<br>ePos    終了位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_26.htm">TTuneRegion::MakeLoopFusionSplitData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_26.htm">1313</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_29.htm">TTuneRegion::MakeUnrollData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_29.htm">1001</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::DoValToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>279</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------+ 
+  1968  +--+ void TTuneRegion::ChackRefDoValF(int sPos,int ePos)  | 
+  1969     | {                                                    | 
+           +--+---------------------------------------------------+ 
+  1970        +--- int i,j;
+  1971        +--- TToken *Token;
+  1972        +--- TValData *ValData,*ValData2;
+  1973        +--- unsigned int RefDoValBits;
+  1974        +--- unsigned int RefDoValBitsInArray;
+  1975        +--- int DoValIdx;
+  1976        +--- TValData *DoValData;
+  1977        |    
+              |  +----------------------------------+ 
+  1978        +--+ for(i = sPos ; i &lt;= ePos ; i++){ | 
+              |  +--+-------------------------------+ 
+  1979        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +------------------------------+ 
+  1980        |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |  +--+---------------------------+ 
+  1981        |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |  +------------------------------------------------------------------+ 
+  1982        |     |     +--+ if((Token-&gt;RefType != vrf_set)&amp;&amp;(Token-&gt;RefType != vrf_refset)){ | 
+              |     |     |  +--+---------------------------------------------------------------+ 
+              |     |     |     |  +------------+ 
+  1983        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  1984        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1985        |     |     +--- RefDoValBits = 0;
+  1986        |     |     +--- RefDoValBitsInArray = 0;
+  1987        |     |     +--- //
+  1988        |     |     |    // 変数への代入が発生、参照変数を調べる。  
+  1989        |     |     |    //                                         
+  1990        |     |     +--- i++; // Skip ValToken
+  1991        |     |     +--- //
+  1992        |     |     |    // 配列への代入の場合は、添え字に、Do依存変数がないかを調べる。  
+  1993        |     |     |    // もし、Do依存変数があれば、それでＯＫとなる。                  
+  1994        |     |     |    //                                                               
+              |     |     |  +--------------------------+ 
+  1995        |     |     +--+ for( ; i &lt; ePos ; i++){  | 
+              |     |     |  +--+-----------------------+ 
+  1996        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |  +----------------------------------------------------+ 
+  1997        |     |     |     +--+ if((Token-&gt;TokId == tid_Set)||(Token-&gt;LineEndF)){  | 
+              |     |     |     |  +--+-------------------------------------------------+ 
+              |     |     |     |     |  +--------+ 
+  1998        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1999        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------+ 
+  2000        |     |     |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |     |     |  +--+---------------------------+ 
+  2001        |     |     |     |     +--- ValData2 = (TValData *)Token-&gt;ValData;
+  2002        |     |     |     |     +--- RefDoValBitsInArray |= ValData2-&gt;RefDoValBits;
+              |     |     |     |   +-+---+ 
+  2003        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2004        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2005        |     |     +--- //
+  2006        |     |     |    // 行末まで、調べて参照変数にDO依存があるかをチェックする、  
+  2007        |     |     |    //                                                           
+              |     |     |  +--------------------------+ 
+  2008        |     |     +--+ for( ; i &lt; ePos ; i++){  | 
+              |     |     |  +--+-----------------------+ 
+  2009        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |  +----------------------+ 
+  2010        |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |  +--------+ 
+  2011        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  2012        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------+ 
+  2013        |     |     |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |     |     |  +--+---------------------------+ 
+  2014        |     |     |     |     +--- ValData2 = (TValData *)Token-&gt;ValData;
+  2015        |     |     |     |     +--- RefDoValBits |= ValData2-&gt;RefDoValBits;
+              |     |     |     |   +-+---+ 
+  2016        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2017        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2018        |     |     +--- //
+  2019        |     |     |    // Do依存の結果を ValDataにセット  
+  2020        |     |     |    //                                 
+  2021        |     |     +--- RefDoValBits &amp;= ~RefDoValBitsInArray;
+  2022        |     |     +--- /*
+  2023        |     |     |                //                                                                     
+  2024        |     |     |                //  参照＆設定のトークン (Exp. S = S + A(I) )の場合は、                
+  2025        |     |     |                //  ePosまでの間の後の式で参照があるかをチェックする。                 
+  2026        |     |     |                //  参照があれば、RefTypeを vrf_setとして扱い、UnRoll対象とする。      
+  2027        |     |     |                //      Add 2009/02/24                                                 
+  2028        |     |     |                //                                                                     
+  2029        |     |     |                if((RefDoValBits != 0)&amp;&amp;(SetValTokenRefType == vrf_refset)){           
+  2030        |     |     |                    for( ; i &lt; ePos ; i++){                                            
+  2031        |     |     |                        Token = (TToken *)TokenList-&gt;Items[i];                         
+  2032        |     |     |                        if((Token-&gt;ValData == ValData)&amp;&amp;(Token-&gt;RefType == vrf_ref)){  
+  2033        |     |     |                            break;                                                     
+  2034        |     |     |                        }                                                              
+  2035        |     |     |                    }                                                                  
+  2036        |     |     |                    if(i == ePos){                                                     
+  2037        |     |     |                        // vrf_refset後の式での参照がなかったので対象外とする。        
+  2038        |     |     |                        // S = S + A(i) でのみ使用として解釈した。                     
+  2039        |     |     |                        continue;                                                      
+  2040        |     |     |                    }                                                                  
+  2041        |     |     |                }                                                                      
+  2042        |     |     |    */                                                                                 
+  2043        |     |     +--- ValData-&gt;RefDoValBits |= RefDoValBits;
+              |     |   +-+---+ 
+  2044        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2045        |   |  }  | 
+              |   +-----+ 
+  2046        +--- //
+  2047        |    //  もし、Unroll 範囲外（UnrollDoValBitとの＆が０）で                  
+  2048        |    //  UnrollDo変数を含まない式での参照がある変数はUnroll対象外とする。   
+  2049        |    //  ValData-&gt;RefDoValBitsの該当するBitをクリアする。                   
+  2050        |    //  参照＆設定についての処理はこちらになった。Add 2010/08/26           
+  2051        |    //                                                                     
+  2052        |    //  例えば、 Unroll k の状態で                                         
+  2053        |    //                                                                     
+  2054        |    //  da1 = 0;                                                           
+  2055        |    //  for(k = xxxl; ... ){  da1 = da1 + xxx; } の場合。                  
+  2056        |    //      da1は Unrollの束縛以外での使用となる。                         
+  2057        |    //                                                                     
+  2058        |    //  for(k = xxxl; ... ){  da1 = 0 ; da1 = da1 + xxx; } の場合は        
+  2059        |    //      da1は Unroll内なので、多重化される。                           
+  2060        |    //                                                                     
+  2061        |                                                                           
+  2062        |    //                                                                     
+  2063        |    //  DoValIdxのDo変数出現前にRefDoValBitsで参照ありの変数が出ていた場合 
+  2064        |    //  RedDoValBitsをリセットする。                                       
+  2065        |    //                                                                     
+              |  +----------------------------------------------------------+ 
+  2066        +--+ for(DoValIdx = 0 ; DoValIdx &lt; variedCount ; DoValIdx++){ | 
+              |  +--+-------------------------------------------------------+ 
+  2067        |     +--- bool FindDoValF;
+  2068        |     |    
+  2069        |     +--- DoValData = (TValData *)DoValToken[DoValIdx]-&gt;ValData;
+  2070        |     +--- RefDoValBits = (1 &lt;&lt; DoValIdx); // 変数Bits
+  2071        |     |                                                 
+              |     |  +----------------------------------+ 
+  2072        |     +--+ for(i = sPos ; i &lt;= ePos ; i++){ | 
+              |     |  +--+-------------------------------+ 
+  2073        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------------+ 
+  2074        |     |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |     |  +--+---------------------------+ 
+  2075        |     |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |     |  +------------------------------------------------------------+ 
+  2076        |     |     |     +--+ if(ValData == DoValData){ // Do変数出現後はなにもしない。  | 
+              |     |     |     |  +--+---------------------------------------------------------+ 
+              |     |     |     |     |  +--------+ 
+  2077        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  2078        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------------------------------------+ 
+  2079        |     |     |     +--+ if((ValData-&gt;RefDoValBits &amp; RefDoValBits) != 0){ | 
+              |     |     |     |  +--+-----------------------------------------------+ 
+  2080        |     |     |     |     +--- //
+  2081        |     |     |     |     |    // 該当Ｄｏ変数を参照している変数あり。                    
+  2082        |     |     |     |     |    // 行末までチェックして、ＤＯ変数がなければリセットする。  
+  2083        |     |     |     |     |    //                                                         
+  2084        |     |     |     |     +--- FindDoValF = false;
+              |     |     |     |     |  +--------------------------------+ 
+  2085        |     |     |     |     +--+ for(j = i  ; j &lt;= ePos ; j++){ | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  2086        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+              |     |     |     |     |     |  +----------------------+ 
+  2087        |     |     |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  2088        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  2089        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +------------------------------+ 
+  2090        |     |     |     |     |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |     |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |     |     |  +----------------------------------------------+ 
+  2091        |     |     |     |     |     |     +--+ if((TValData *)Token-&gt;ValData == DoValData){ | 
+              |     |     |     |     |     |     |  +--+-------------------------------------------+ 
+  2092        |     |     |     |     |     |     |     +--- FindDoValF = true;
+              |     |     |     |     |     |     |     |  +----------------------------------------+ 
+  2093        |     |     |     |     |     |     |     +--+ break; // 行末までにＤｏ変数があった。 | 
+              |     |     |     |     |     |     |     |  +----------------------------------------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  2094        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  2095        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  2096        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +------------------+ 
+  2097        |     |     |     |     +--+ if(!FindDoValF){ | 
+              |     |     |     |     |  +--+---------------+ 
+  2098        |     |     |     |     |     +--- //
+  2099        |     |     |     |     |     |    // 式の行末までにＤｏ変数が出現していない。  
+  2100        |     |     |     |     |     |    // 参照をリセットする。                      
+  2101        |     |     |     |     |     |    //                                           
+  2102        |     |     |     |     |     +--- ValData-&gt;RefDoValBits &amp;= ~RefDoValBits;
+              |     |     |     |     |   +-+---+ 
+  2103        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  2104        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2105        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  2106        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2107        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  2108      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

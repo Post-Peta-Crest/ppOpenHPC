@@ -1,0 +1,197 @@
+
+<html>
+<head>
+<title>TStringList クラス説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.7.1. TStringList クラス説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>クラス名</th>      <td nowrap>TStringList</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>VCL_Lib.h</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>74</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+<pre>
+階層ツリー図
+
+        +-------------+ 
+        | TStringList | 
+        +-------------+ 
+</pre>
+
+<div align="left"><font size="2">　　＋…public派生　♯…protected派生　－…private派生</font></div>
+<p></p>
+メンバ一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>アクセス指定子</th>
+<th nowrap>宣言形式</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>private</td>
+<td nowrap>int SortMode</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>76</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>public</td>
+<td nowrap>std :: vector &lt;string&gt; Strings</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>public</td>
+<td nowrap>std :: vector &lt;void *&gt; Objects</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>79</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>public</td>
+<td nowrap>int Count</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>80</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>public</td>
+<td nowrap>TStringList ( )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>82</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>public</td>
+<td nowrap>int Add ( string Str )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>public</td>
+<td nowrap>int AddObject ( string Str , void * Data )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>public</td>
+<td nowrap>void Delete ( int Idx )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>85</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>public</td>
+<td nowrap>void Remove ( string Str )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>86</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>public</td>
+<td nowrap>void Clear ( )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>public</td>
+<td nowrap>int IndexOf ( string Str )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>public</td>
+<td nowrap>int IndexOfObject ( void * Data )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>89</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>public</td>
+<td nowrap>int Find ( string str , int &amp; Idx )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>90</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>public</td>
+<td nowrap>int FindIC ( string str , int &amp; Idx )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>91</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>public</td>
+<td nowrap>void LoadFromFile ( string FileName )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>93</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>public</td>
+<td nowrap>void Sort ( bool ChangeToLowerCaseF )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>94</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>public</td>
+<td nowrap>void Exchange ( int Idx1 , int Idx2 )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>95</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>public</td>
+<td nowrap>void Insert ( int Idx , string str )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>96</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap>public</td>
+<td nowrap>void InsertObject ( int Idx , string str , void * Data )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>97</td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap>public</td>
+<td nowrap>void Assign ( TStringList * SrcStrList )</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>98</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+
+</body>
+</html>

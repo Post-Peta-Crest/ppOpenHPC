@@ -1,0 +1,347 @@
+
+<html>
+<head>
+<title>TMainF クラス説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.2.1. TMainF クラス説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>クラス名</th>      <td nowrap>TMainF</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>main.h</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>64</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>メインフォームクラス</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>プログラムのメイン。ソースファイル名の所得やメッセージの表示、各パスの呼び<br>出しを行う。</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+<pre>
+階層ツリー図
+
+        +---------+ 
+        | TMainF  | 
+        +---------+ 
+</pre>
+
+<div align="left"><font size="2">　　＋…public派生　♯…protected派生　－…private派生</font></div>
+<p></p>
+メンバ一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>アクセス指定子</th>
+<th nowrap>宣言形式</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>public</td>
+<td nowrap>TSrcCodeType SrcCodeType</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>public</td>
+<td nowrap>TStringList SrcFileNameList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>public</td>
+<td nowrap>FILE * LogFp</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>public</td>
+<td nowrap>int ErrCount</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>80</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>public</td>
+<td nowrap>bool ErrF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>81</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>public</td>
+<td nowrap>bool NotSkipByErrF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>82</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>public</td>
+<td nowrap>bool CloseReqF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>public</td>
+<td nowrap>bool EndF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>public</td>
+<td nowrap>bool VisualF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>85</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>public</td>
+<td nowrap>bool DebugF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>public</td>
+<td nowrap>bool NoMPIF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>89</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>public</td>
+<td nowrap>bool MPIF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>90</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>public</td>
+<td nowrap>bool OMP_OuterF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>91</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>public</td>
+<td nowrap>bool OMP_InnerF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>92</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>public</td>
+<td nowrap>string TimeFunc</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>93</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>public</td>
+<td nowrap>string my_timer_start</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>95</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>public</td>
+<td nowrap>string my_timer_stop</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>96</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>public</td>
+<td nowrap>bool EECntlF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>98</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap>public</td>
+<td nowrap>string cc_option_str</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>100</td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap>public</td>
+<td nowrap>TScript * Call_SetParam_Script</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>102</td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap>public</td>
+<td nowrap>TScript * Call_ATExec_Script</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>104</td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap>public</td>
+<td nowrap>TStringList * Call_ATExec_ArgList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>106</td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap>public</td>
+<td nowrap>TList * TokenList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>24</td>
+<td nowrap>public</td>
+<td nowrap>TList * ValDataList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>110</td>
+</tr>
+<tr>
+<td nowrap>25</td>
+<td nowrap>public</td>
+<td nowrap>TList * TuneRegionList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>111</td>
+</tr>
+<tr>
+<td nowrap>26</td>
+<td nowrap>public</td>
+<td nowrap>int CharMaxLen</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>113</td>
+</tr>
+<tr>
+<td nowrap>27</td>
+<td nowrap>public</td>
+<td nowrap>TStringList * TokStrList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>116</td>
+</tr>
+<tr>
+<td nowrap>28</td>
+<td nowrap>public</td>
+<td nowrap>bool IncludeCodeInContainsF</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>117</td>
+</tr>
+<tr>
+<td nowrap>29</td>
+<td nowrap><a href="16_2_10.htm">public</a></td>
+<td nowrap><a href="16_2_10.htm">TMainF ( )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_10.htm">208</a></td>
+</tr>
+<tr>
+<td nowrap>30</td>
+<td nowrap><a href="16_2_11.htm">public</a></td>
+<td nowrap><a href="16_2_11.htm">~TMainF ( )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_11.htm">250</a></td>
+</tr>
+<tr>
+<td nowrap>31</td>
+<td nowrap><a href="16_2_7.htm">public</a></td>
+<td nowrap><a href="16_2_7.htm">void GetCommandLineArg ( int argc , char * argv [ ] )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_7.htm">296</a></td>
+</tr>
+<tr>
+<td nowrap>32</td>
+<td nowrap><a href="16_2_3.htm">public</a></td>
+<td nowrap><a href="16_2_3.htm">void CodeGen ( )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+<tr>
+<td nowrap>33</td>
+<td nowrap><a href="16_2_9.htm">public</a></td>
+<td nowrap><a href="16_2_9.htm">void print ( string s )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>34</td>
+<td nowrap><a href="16_2_5.htm">public</a></td>
+<td nowrap><a href="16_2_5.htm">void Err ( string s )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_5.htm">741</a></td>
+</tr>
+<tr>
+<td nowrap>35</td>
+<td nowrap><a href="16_2_6.htm">public</a></td>
+<td nowrap><a href="16_2_6.htm">void ErrMessage ( int Pos , string s )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>36</td>
+<td nowrap><a href="16_2_4.htm">public</a></td>
+<td nowrap><a href="16_2_4.htm">void DispTokenList ( )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_4.htm">645</a></td>
+</tr>
+<tr>
+<td nowrap>37</td>
+<td nowrap><a href="16_2_8.htm">public</a></td>
+<td nowrap><a href="16_2_8.htm">bool IsF90SrcFile ( string SrcFileName )</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_8.htm">454</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+</table>
+
+
+</body>
+</html>

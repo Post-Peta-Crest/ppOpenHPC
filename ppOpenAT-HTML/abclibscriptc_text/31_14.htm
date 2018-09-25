@@ -1,0 +1,504 @@
+
+<html>
+<head>
+<title>Pass1_2 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.14. Pass1_2 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>Pass1_2</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass1.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>566</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Pass1_2 ( TList * TokenList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>TokData-&gt;Strの文字列から、TokIdをセットする。<br>また、複数トークンを１つにまとめる。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList 対象トークンリスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="31_13.htm">Pass1</a></td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_13.htm">79</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Delete</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>65</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::Find</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>90</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TStringList::FindIC</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>91</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="31_11.htm">MakeTokStrTbl_C</a></td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_11.htm">943</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="31_12.htm">MakeTokStrTbl_Fortran</a></td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_12.htm">802</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="27_9.htm">TTokId</a></td>
+<td nowrap>列挙型</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="27_9.htm">64</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------+ 
+   566  +--+ void Pass1_2(TList *TokenList) | 
+   567     | {                              | 
+           +--+-----------------------------+ 
+   568        +--- int i;
+   569        +--- int idx;
+   570        +--- TStringList TokStrList;
+   571        +--- TToken *Token;
+   572        +--- string Str,TokStr;
+   573        +--- bool bRet;
+   574        +--- TToken *Token2;
+   575        |    
+              |  +----------------------------------------+ 
+   576        +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |  +--+-------------------------------------+ 
+   577        |     +--- MakeTokStrTbl_Fortran(&amp;TokStrList);
+              |   +-+---+ 
+   578        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   578        |   |  else{  | 
+              |   +-+-------+ 
+   579        |     +--- MakeTokStrTbl_C(&amp;TokStrList);
+              |   +-+---+ 
+   580        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------------------+ 
+   581        +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |  +--+---------------------------------------+ 
+   582        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +--------------------------------+ 
+   583        |     +--+ if(Token-&gt;TokId != tid_null){  | 
+              |     |  +--+-----------------------------+ 
+              |     |     |  +--------------------------+ 
+   584        |     |     +--+ continue;   // 既に確定  | 
+              |     |     |  +--------------------------+ 
+              |     |   +-+---+ 
+   585        |     |   |  }  | 
+              |     |   +-----+ 
+   586        |     +--- Str = Token-&gt;Str;
+              |     |  +------------------------+ 
+   587        |     +--+ if(Str.length() == 0){ | 
+              |     |  +--+---------------------+ 
+              |     |     |  +------------+ 
+   588        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+   589        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------+ 
+   590        |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |  +--+-------------------------------------+ 
+   591        |     |     +--- bRet = TokStrList.FindIC(Str,idx);  // Fortranは大文字小文字が無関係
+              |     |   +-+---+ 
+   592        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   592        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   593        |     |     +--- bRet = TokStrList.Find(Str,idx);
+              |     |   +-+---+ 
+   594        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------+ 
+   595        |     +--+ if(!bRet){  // 該当トークンなし  | 
+              |     |  +--+-------------------------------+ 
+   596        |     |     +--- Token-&gt;TokId = tid_Val; // 変数とする。
+              |     |   +-+---+ 
+   597        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   597        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   598        |     |     +--- //            char TokIdTbl[100];
+   599        |     |     +--- Token-&gt;TokId = (TTokId)((long)TokStrList.Objects[idx]);
+   600        |     |     +--- // TokIdTbl - TokIdTbl;
+   601        |     |     +--- //TokStrList.Objects[idx];
+              |     |   +-+---+ 
+   602        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   603        |   |  }  | 
+              |   +-----+ 
+   604        +--- //
+   605        |    // != 等の２つのトークンを合わせる処理を行う。CとFortranで異なる。 
+   606        |    //                                                                 
+              |  +----------------------------------------------+ 
+   607        +--+ for(i = TokenList-&gt;Count-2 ; i &gt;= 0 ; i--){  | 
+              |  +--+-------------------------------------------+ 
+   608        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+   609        |     +--- Token2 = (TToken *)TokenList-&gt;Items[i+1];
+   610        |     |    
+              |     |  +----------------------------------------+ 
+   611        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |  +--+-------------------------------------+ 
+              |     |     |  +--------------------------------------------------------------+ 
+   612        |     |     +--+ if((Token-&gt;TokId == tid_Val)&amp;&amp;(Token2-&gt;TokId == tid_Kakko)){ | 
+              |     |     |  +--+-----------------------------------------------------------+ 
+   613        |     |     |     +--- Token-&gt;TokId = tid_Func; // （の前の変数は関数
+              |     |     |     |  +------------+ 
+   614        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+   615        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------------------------------------+ 
+   616        |     |     +--+ if((Token-&gt;TokId == tid_Val)&amp;&amp;(Token2-&gt;TokId == tid_Val)){ | 
+              |     |     |  +--+---------------------------------------------------------+ 
+   617        |     |     |     +--- Token-&gt;TokId = tid_DataType; // 変数が連続する場合の前の変数は型名
+              |     |     |     |  +------------+ 
+   618        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+   619        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   620        |     |   |  }  | 
+              |     |   +-----+ 
+   621        |     |    
+   622        |     +--- //
+   623        |     |    // ２つ目の先頭が空白の場合は１つの空白として検索。&quot;end do&quot;等のため。  
+   624        |     |    //                                                                     
+              |     |  +--------------------------------+ 
+   625        |     +--+ if(Token2-&gt;OrgStr[0] == ' '){  | 
+              |     |  +--+-----------------------------+ 
+   626        |     |     +--- Str = Token-&gt;Str + ' ' + Token2-&gt;Str;
+              |     |   +-+---+ 
+   627        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   627        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   628        |     |     +--- Str = Token-&gt;Str + Token2-&gt;Str;
+              |     |   +-+---+ 
+   629        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------+ 
+   630        |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |  +--+-------------------------------------+ 
+   631        |     |     +--- bRet = TokStrList.FindIC(Str,idx);  // Fortranは大文字小文字が無関係
+              |     |   +-+---+ 
+   632        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   632        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   633        |     |     +--- bRet = TokStrList.Find(Str,idx);
+              |     |   +-+---+ 
+   634        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------+ 
+   635        |     +--+ if(bRet){  | 
+              |     |  +--+---------+ 
+   636        |     |     +--- // ２つを合成したトークンあり。 さらに３つも可能 &lt;&lt;= 等
+   637        |     |     |    // トークンとして設定する。ただし、(を含む合成は行わない。 
+   638        |     |     +--- Token-&gt;Str = Str;
+   639        |     |     +--- Token-&gt;OrgStr = Token-&gt;OrgStr + Token2-&gt;OrgStr;
+   640        |     |     +--- //          Token-&gt;TokId = (TTokId)TokStrList.Objects[idx];
+   641        |     |     +--- Token-&gt;TokId = (TTokId)((long)TokStrList.Objects[idx]);
+   642        |     |     +--- delete Token2;
+   643        |     |     +--- TokenList-&gt;Delete(i+1); // リストから削除
+              |     |   +-+---+ 
+   644        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   645        |   |  }  | 
+              |   +-----+ 
+   646        +--- //
+   647        |    //  演算子に優先順位を設定する。 
+   648        |    //                               
+              |  +------------------------------------------+ 
+   649        +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |  +--+---------------------------------------+ 
+   650        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+   651        |     +--- Token-&gt;Idx = i;
+              |     |  +------------------------------+ 
+   652        |     +--+ if(Token-&gt;TokId == tid_Opr){ | 
+              |     |  +--+---------------------------+ 
+   653        |     |     +--- TokStr = Token-&gt;Str;
+              |     |     |  +----------------------------------------+ 
+   654        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+              |     |     |     |  +--------------------+ 
+   655        |     |     |     +--+ if(TokStr == &quot;+&quot;){ | 
+              |     |     |     |  +--+-----------------+ 
+   656        |     |     |     |     +--- Token-&gt;priority = 1;
+              |     |     |     |   +-+---+ 
+   657        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   657        |     |     |     |   |  else if(TokStr == &quot;-&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   658        |     |     |     |     +--- Token-&gt;priority = 1;
+              |     |     |     |   +-+---+ 
+   659        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   659        |     |     |     |   |  else if(TokStr == &quot;*&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   660        |     |     |     |     +--- Token-&gt;priority = 2;
+              |     |     |     |   +-+---+ 
+   661        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   661        |     |     |     |   |  else if(TokStr == &quot;/&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   662        |     |     |     |     +--- Token-&gt;priority = 2;
+              |     |     |     |   +-+---+ 
+   663        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   663        |     |     |     |   |  else if(TokStr == &quot;**&quot;){ | 
+              |     |     |     |   +-+-------------------------+ 
+   664        |     |     |     |     +--- Token-&gt;priority = 3;
+              |     |     |     |   +-+---+ 
+   665        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-----------------------------------------+ 
+   665        |     |     |     |   |  else if(LowerCase(TokStr) == &quot;.neqv.&quot;){  | 
+              |     |     |     |   +-+-----------------------------------------+ 
+   666        |     |     |     |     +--- Token-&gt;priority = 0;
+              |     |     |     |   +-+---+ 
+   667        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------+ 
+   667        |     |     |     |   |  else if(LowerCase(TokStr) == &quot;.eqv.&quot;){ | 
+              |     |     |     |   +-+---------------------------------------+ 
+   668        |     |     |     |     +--- Token-&gt;priority = 0;
+              |     |     |     |   +-+---+ 
+   669        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+   669        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+   670        |     |     |     |     +--- Token-&gt;priority = 1; // その他の演算子は 優先順位1
+              |     |     |     |   +-+---+ 
+   671        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+   672        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------+ 
+   672        |     |     |   |  else{  // C  | 
+              |     |     |   +-+-------------+ 
+              |     |     |     |  +------------------------------------------+ 
+   673        |     |     |     +--+ if((TokStr == &quot;++&quot;)||(TokStr == &quot;--&quot;)){  | 
+              |     |     |     |  +--+---------------------------------------+ 
+   674        |     |     |     |     +--- Token-&gt;priority = 11;
+              |     |     |     |   +-+---+ 
+   675        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------------------------------+ 
+   675        |     |     |     |   |  else if((TokStr == &quot;*&quot;)||(TokStr == &quot;/&quot;)||(TokStr == &quot;%&quot;)){  | 
+              |     |     |     |   +-+-------------------------------------------------------------+ 
+   676        |     |     |     |     +--- Token-&gt;priority = 10;
+              |     |     |     |   +-+---+ 
+   677        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------------+ 
+   677        |     |     |     |   |  else if((TokStr == &quot;+&quot;)||(TokStr == &quot;-&quot;)){ | 
+              |     |     |     |   +-+-------------------------------------------+ 
+   678        |     |     |     |     +--- Token-&gt;priority = 9;
+              |     |     |     |   +-+---+ 
+   679        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------------------------------------------------+ 
+   679        |     |     |     |   |  else if((TokStr == &quot;&lt;&quot;)||(TokStr == &quot;&gt;&quot;)||(TokStr == &quot;&lt;=&quot;)||(TokStr == &quot;&gt;=&quot;)){ | 
+              |     |     |     |   +-+-------------------------------------------------------------------------------+ 
+   680        |     |     |     |     +--- Token-&gt;priority = 8;
+              |     |     |     |   +-+---+ 
+   681        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------------+ 
+   681        |     |     |     |   |  else if((TokStr == &quot;==&quot;)||(TokStr == &quot;!=&quot;)){ | 
+              |     |     |     |   +-+---------------------------------------------+ 
+   682        |     |     |     |     +--- Token-&gt;priority = 7;
+              |     |     |     |   +-+---+ 
+   683        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   683        |     |     |     |   |  else if(TokStr == &quot;&amp;&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   684        |     |     |     |     +--- Token-&gt;priority = 7;
+              |     |     |     |   +-+---+ 
+   685        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   685        |     |     |     |   |  else if(TokStr == &quot;^&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   686        |     |     |     |     +--- Token-&gt;priority = 6;
+              |     |     |     |   +-+---+ 
+   687        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   687        |     |     |     |   |  else if(TokStr == &quot;|&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   688        |     |     |     |     +--- Token-&gt;priority = 4;
+              |     |     |     |   +-+---+ 
+   689        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   689        |     |     |     |   |  else if(TokStr == &quot;&amp;&amp;&quot;){ | 
+              |     |     |     |   +-+-------------------------+ 
+   690        |     |     |     |     +--- Token-&gt;priority = 3;
+              |     |     |     |   +-+---+ 
+   691        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   691        |     |     |     |   |  else if(TokStr == &quot;||&quot;){ | 
+              |     |     |     |   +-+-------------------------+ 
+   692        |     |     |     |     +--- Token-&gt;priority = 2;
+              |     |     |     |   +-+---+ 
+   693        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------+ 
+   693        |     |     |     |   |  else if(TokStr == &quot;,&quot;){  | 
+              |     |     |     |   +-+-------------------------+ 
+   694        |     |     |     |     +--- Token-&gt;priority = 1;
+              |     |     |     |   +-+---+ 
+   695        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+   696        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   697        |     |   |  }  | 
+              |     |   +-----+ 
+   698        |     +--- #if 0
+   699        |     +--- MainF-&gt;print(IntToStr(i) + &quot; [&quot;+((TToken *)TokenList-&gt;Items[i])-&gt;Str+&quot;] Id = &quot;
+   700        |     |        + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;TokId));                       
+   701        |     +--- #endif
+              |   +-+---+ 
+   702        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   703      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

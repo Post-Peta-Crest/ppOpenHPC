@@ -1,0 +1,507 @@
+
+<html>
+<head>
+<title>TuneRegion.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.15. TuneRegion.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *           
+     3  |     *   Software Name : ppOpen-AT                                         *           
+     4  |     *         Version : 0.1                                               *           
+     5  |     *                                                                     *           
+     6  |     *   License                                                           *           
+     7  |     *     This file is part of ppOpen-AT.                                 *           
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *           
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *           
+    10  |     *     for more details.                                               *           
+    11  |     *                                                                     *           
+    12  |     *   ppOpen-HPC project:                                               *           
+    13  |     *     Open Source Infrastructure for Development and Execution of     *           
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *           
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *           
+    16  |     *                                                                     *           
+    17  |     *   Organizations:                                                    *           
+    18  |     *     The University of Tokyo                                         *           
+    19  |     *       - Information Technology Center                               *           
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *           
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *           
+    22  |     *         /Earthquake Research Institute (ERI)                        *           
+    23  |     *       - Graduate School of Frontier Science                         *           
+    24  |     *     Kyoto University                                                *           
+    25  |     *       - Academic Center for Computing and Media Studies             *           
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *           
+    27  |     *                                                                     *           
+    28  |     *   Sponsorship:                                                      *           
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *           
+    30  |     *     Programs: CREST, Development of System Software Technologies    *           
+    31  |     *     for post-Peta Scale High Performance Computing.                 *           
+    32  |     *                                                                     *           
+    33  |     *   Copyright (c) 2012                                                *           
+    34  |     *      Information Technology Center, The University of Tokyo         *           
+    35  |     *                                                                     *           
+    36  |     *=====================================================================*/          
+    37  |     /*----------------------------------------------------------------------------*/  
+    38  |    //                                                                                 
+    39  |    //  概胒�                                                                        
+    40  |    //    チュッVニンめ[ッFッVゃNッ@ッEゃbッDゃP　ヘッダ             
+    41  |    //                                                                                 
+    42  |    //  作成者                                                                      
+    43  |    //                                                                                 
+    44  |    /*----------------------------------------------------------------------------*/   
+    45  |                                                                                       
+    46  +--- #include &quot;main.h&quot;
+    47  |    
+    48  +--- #ifndef TuneRegionH
+    49  +--- #define TuneRegionH
+    50  |    
+    51  +--- //---------------------------------------------------------------------------
+    52  |    //                                                                                         
+    53  |    // 各チチEッVニンめ[ッFッVゃNッ@ッEごとぃH生成されるクッDゃP        
+    54  |    // これを元ぃH Pass5ぃ@ゃXッVゃPゃEッVドが生成される�X�u式に変更    
+    55  |    // TuneRegionListぃH迃X加される。                                                   
+    56  |    //                                                                                         
+    57  |    // 生成ぃb、Pass4ぃ@ぃ�ゃXッVゃPをスゃ�チvッEする彁uぃ@行われる。   
+    58  |    //                                                                                         
+    59  |    /*----------------------------------------------------------------------------*/           
+    60  |    //  1.旁E會�語名                                                                       
+    61  |    //                                                                                         
+    62  |    //  2.概胒�                                                                              
+    63  |    //    チュッVニンめ[め[ッHッVプ�B��類                                          
+    64  |    //                                                                                         
+    65  |    //  3.機能誃�明                                                                        
+    66  |    //                                                                                         
+    67  |    //  4.備考                                                                               
+    68  |    //                                                                                         
+    69  |    /*----------------------------------------------------------------------------*/           
+        |  +--------------------+ 
+    70  +--+ enum TTuneGroup {  | 
+        |  +--+-----------------+ 
+    71  |     +--- tgInstall,
+    72  |     |    tgStatic,  
+    73  |     |    tgDynamic, 
+        |   +-+---+ 
+    74  |   |  }; | 
+        |   +-----+ 
+    75  |    
+    76  +--- /*----------------------------------------------------------------------------*/
+    77  |    //  1.旁E會�語名                                                             
+    78  |    //                                                                               
+    79  |    //  2.概胒�                                                                    
+    80  |    //    チュッVニンめ[稃�類                                                
+    81  |    //                                                                               
+    82  |    //  3.機能誃�明                                                              
+    83  |    //                                                                               
+    84  |    //  4.備考                                                                     
+    85  |    //                                                                               
+    86  |    /*----------------------------------------------------------------------------*/ 
+        |  +------------------+ 
+    87  +--+ enum TTuneKind { | 
+        |  +--+---------------+ 
+    88  |     +--- tkDefine,
+    89  |     |    tkVariable,                                                                                      
+    90  |     |    tkSelect,                                                                                        
+    91  |     |    tkUnroll,                                                                                        
+    92  |     |    tkLoopFusionSplit,                                                                               
+    93  |     |    tkLoopFusion,                                                                                    
+    94  |     |    tkLoopSplit,                                                                                     
+    95  |     |    tkRotationOrder,                                                                                 
+    96  |     |                                                                                                     
+    97  |     |    tkList,             // Add 2012/02/26                                                            
+    98  |     |    tkVariableD,                                                                                     
+    99  |     |    tkListD,                                                                                         
+   100  |     |    tkReplace,                                                                                       
+   101  |     |    tkGWV,                                                                                           
+   102  |     |    tkList_End,         // List稃�類の終わりを礃Rす胅�別甃B。�X�\甃Bぃbしない。  
+        |   +-+---+ 
+   103  |   |  }; | 
+        |   +-----+ 
+   104  +--- /*----------------------------------------------------------------------------*/
+   105  |    //  1.旁E會�語名                                                             
+   106  |    //                                                                               
+   107  |    //  2.概胒�                                                                    
+   108  |    //    ゃIブリッVゃNッ@ッE稃�類                                          
+   109  |    //                                                                               
+   110  |    //  3.機能誃�明                                                              
+   111  |    //                                                                               
+   112  |    //  4.備考                                                                     
+   113  |    //                                                                               
+   114  |    /*----------------------------------------------------------------------------*/ 
+        |  +------------------------+ 
+   115  +--+ enum TSubRegionKind {  | 
+        |  +--+---------------------+ 
+   116  |     +--- srSelect                            // ゃIブリッVゃNッ@ッE稃�類
+        |   +-+-----------------------------------------+ 
+   117  |   |  };  // ゃIブリッVゃNッ@ッE稃�類 | 
+   118  |   |                                           | 
+        |   +-------------------------------------------+ 
+   119  +--- /*----------------------------------------------------------------------------*/
+   120  |    //  1.旁E會�語名                                                             
+   121  |    //                                                                               
+   122  |    //  2.概胒�                                                                    
+   123  |    //    GPU稃�類                                                                 
+   124  |    //                                                                               
+   125  |    //  3.機能誃�明                                                              
+   126  |    //    #Pragma ABCLib allocate ぃ@指僇�される GPUゃFプシッ@ッE         
+   127  |    //                                                                               
+   128  |    //  4.備考                                                                     
+   129  |    //                                                                               
+   130  |    /*----------------------------------------------------------------------------*/ 
+        |  +--------------------+ 
+   131  +--+ enum TGPUOption {  | 
+        |  +--+-----------------+ 
+   132  |     +--- gpu_option_None,    // GPUゃFプシッ@ッEぃFし
+   133  |     |    gpu_option_CPU,     // GPUゃFプシッ@ッE CPU     
+   134  |     |    gpu_option_GPU,     // GPUゃFプシッ@ッE GPU     
+   135  |     |    gpu_option_auto,    // GPUゃFプシッ@ッE auto    
+        |   +-+---+ 
+   136  |   |  }; | 
+        |   +-----+ 
+   137  +--- /*----------------------------------------------------------------------------*/
+   138  |    //  1.旁E會�語名                                                                                                               
+   139  |    //                                                                                                                                 
+   140  |    //  2.概胒�                                                                                                                      
+   141  |    //    チュッVニンめ[ッFッVゃNッ@ッEゃbッDゃP                                                                         
+   142  |    //    各チチEッVニンめ[ッFッVゃNッ@ッEごとぃH生成され、�@�v析に応じぃ�デーゃ\が�B��定される。  
+   143  |    //    ゃXッVゃP生成時にぃb、こぃ�ゃbッDゃPをアゃbゃTゃPして凃R力コッVドが生成される。             
+   144  |    //                                                                                                                                 
+   145  |    //  3.機能誃�明                                                                                                                
+   146  |    //                                                                                                                                 
+   147  |    //  4.備考                                                                                                                       
+   148  |    //                                                                                                                                 
+   149  |    /*----------------------------------------------------------------------------*/                                                   
+        |  +--------------------+ 
+   150  +--+ class TTuneRegion{ | 
+        |  +--+-----------------+ 
+        |     +-----------+ 
+   151  |     |  private: | 
+        |     +-----------+ 
+   152  |     +--- TPass4 *Pass4;
+   153  |     |    
+   154  |     +--- // UnRollぃ@元A通利甃Bされる�A�数
+   155  |     +--- int CaseIdx;
+   156  |     +--- unsigned int UnRollDoRefValBits;            // Unroll寃Z豁Bぃ�DO変数Bit CaseIdxごとぃH変
+   157  |     +--- // 化
+   158  |     +--- int UnrollCount[32];
+   159  |     +--- int DoTokPos[32];
+   160  |     +--- int EndDoTokPos[32];
+   161  |     +--- string DoValStr[32];
+   162  |     +--- string DoVal_m[32];
+   163  |     +--- string DoVal_i[32];
+   164  |     +--- string DoVal_l[32];
+   165  |     +--- string DoValName[32];
+   166  |     +--- int DoValIdx;
+   167  |     +--- int DoValCount;
+   168  |     +--- char Comment;
+   169  |     |    
+   170  |     +--- void OutputLoopFusionExecCode_Fortran(FILE *fp);
+   171  |     +--- void OutputUnrollExecCode_Fortran(FILE *fp);
+   172  |     +--- void OutputLoopFusionExecCode_C(FILE *fp,FILE *fpOutHeader);
+   173  |     +--- void OutputUnrollExecCode_C(FILE *fp,FILE *fpOutHeader);
+   174  |     |    
+   175  |     +--- string GetNewValName(string BaseName,int Idx,TStringList *ArgValList);
+   176  |     +--- string GetNewValName(string BaseName,string AddStr,TStringList *ArgValList);
+   177  |     +--- string GetNewValNameForValData(TValData *ValData,
+   178  |     |            unsigned int UnRollDoRefValBits,int Idx,TStringList *ArgValList);  
+   179  |     +--- int GetBitIdx(unsigned int Bits);
+   180  |     +--- int GetValCountOfBit(unsigned int Bits,int *Count);
+   181  |     +--- string ChangeFromOrgStr(string OrgStr,string Str);
+   182  |     +--- int GetDoValAddValue(int kk,unsigned int UseValBits,int DoValIdx,int *Count);
+   183  |     +--- //    int TTuneRegion::GetValAddValue(int kk,DWORD UseValBits,DWORD UseDoValBits,int DoValIdx,int *Count);
+   184  |     +--- int GetValAddValue(int RefValIdx,unsigned int UseDoValBits,int DoValIdx,int *Count);
+   185  |     +--- int GetValAddValue2(int RefValIdx,unsigned int RefDoValBits,
+   186  |     |        unsigned int UnRollDoRefValBits,int DoValIdx,int *Count);  
+   187  |     |    
+   188  |     +--- //  string SepLongStr(string s);
+   189  |     +--- void MakeArgValList();
+   190  |     +--- int GetNextSemikoronPos(int sPos);
+   191  |     +--- int FindEndDo2(TList *TokenList,int sPos);
+   192  |     +--- int FindEndIf(TList *TokenList,int sPos);
+   193  |     +--- string GetPrePostSubregionStr(int Mode);
+   194  |     |    
+        |     +-----------------------------------------+ 
+   195  |     |  public:     // ッ�ッVゃJッV宁v言 | 
+        |     +-----------------------------------------+ 
+   196  |     +--- TList *TokenList;
+   197  |     +--- TList *ValDataList;
+   198  |     +--- int TokenStartPos;                  // 開�@�トッVゃbッE位�X��（Pass4内参煃@)
+   199  |     +--- int TokenEndPos;                    // 終�R�トッVゃbッE位�X��
+   200  |     |                                                                           
+   201  |     +--- string Name;                    // 名前 name ぃ@指僇�される。
+   202  |     +--- string FuncName;                // 呃VぃE凃Rし関敁[ッTゃIブルッVチン名
+   203  |     +--- string RefValStr;               // デバッグ甃B（�A�数参照文僅�列ッFゃPト�V�
+   204  |     +--- TTuneGroup TuneGroup;
+   205  |     +--- string TuneGroupName;           // Install,Static.Dynamic
+   206  |     +--- TTuneKind TuneKind;
+   207  |     |    
+   208  |     +--- bool UseAccordingF;                 // Sub Regionを含めて According指僇�あり
+   209  |     |                                        // 。                                           
+   210  |     +--- string AccordingStr;            // Accordingぃ@指僇�された　敁[式
+   211  |     +--- bool UsedDynPefThis;                // DynPefThisゃPゃbッFプトが�X�\甃Bされた。
+   212  |     |                                        // Dynamicぃ@呃VぃE凃Rし時ぃ� setParam()をスゃ�ッ   
+   213  |     |                                        // プ                                                         
+   214  |     +--- int Number;                         // ゃPゃbッFプトNumberぃ@ぃ�指僇�
+   215  |     |                                                                                   
+   216  |     +--- TStringList *ArgValList;            // ゃIブルッVチンぃHする堃G合の引数ッFゃPト
+   217  |     +--- TList *UndefinedArgValList;         // 定�Z�Dが胒�つからぃFい�V�数デーゃ\
+   218  |     +--- int CaseCount;                      // ッFッVゃNッ@ッE内の臃F動チチEッVニンめ[が取りうる�B��類数
+   219  |     +--- TList *ValBitsList;                 // ValData-&gt;Bits保持甃B
+   220  |     +--- TList *SubRegionList;               // ゃIブリッVゃNッ@ッEッFゃPト TSubRegion ゃbッDゃP
+   221  |     |                                        // Select sub region ぃFぃD                                    
+   222  |     |                                                                                                         
+   223  |     +--- string OffsetStr;
+   224  |     |    
+   225  |     +--- TStringList *BaseValList;           // 埃R會�パラチBッVゃ\名の変数ッFゃPト Add 2009/03/05
+   226  |     |                                        // BPset(N) や BPset(N,NX)ぃFぃDぃ@訃�定される。           
+   227  |     |                                        // 変数名+ValDataぃNぃ�ポイッEゃ\                           
+   228  |     |                                        // ッFッVゃNッ@ッEデーゃ\作成時にゃTットされる。  
+   229  |     +--- TStringList *ParamValList;          // パラチBッVゃ\文の変数ッFゃPト
+   230  |     |                                                                                     
+   231  |     +--- //
+   232  |     |    // varid (xx[,xx]) from X to Y ぃ�指僇�情堃A (varied指僇�時ぃH有効) 
+   233  |     |    //                                                                             
+   234  |     +--- int variedCount;
+   235  |     +--- string variedValName[32];       // 変数名 （�\�須�V�
+   236  |     +--- /**************************************************************************/
+   237  |     |    //                                                                           
+   238  |     |    //Kogakuin Irie                                                              
+   239  |     |    //実数寃Z応のためぃ�変更                                           
+   240  |     |    //旁u存コッVドはゃEチBッEトアゃ�ト                              
+   241  |     |    //                                                                           
+   242  |     |    //  int variedFromValue[32];            // 開�@�倁A                       
+   243  |     |    //  int variedToValue[32];              // 終�R�倁A                       
+   244  |     +--- float variedFromValue[32];          // 開�@�倁A
+   245  |     +--- float variedToValue[32];            // 終�R�倁A
+   246  |     +--- float variedStepValue[32];          // 増分（間隔�V�倁A
+   247  |     +--- //
+   248  |     |    //変更ここぃZぃ@                                                       
+   249  |     |    //                                                                           
+   250  |     |    /**************************************************************************/ 
+   251  |     +--- void *variedValData[32];            // 変数ぃNぃ�ポイッEゃ\
+   252  |     |                                                                         
+   253  |     |                                                                         
+   254  |     +--- //
+   255  |     |    //  variedD甃B変数 Add 2016/03/01 
+   256  |     |    //                                   
+   257  |     +--- int variedDCount;
+   258  |     +--- string variedDValName[32];      // 変数名 （�\�須�V�
+   259  |     +--- float variedDFromValue[32];         // 開�@�倁A
+   260  |     +--- float variedDToValue[32];           // 終�R�倁A
+   261  |     +--- float variedDStepValue[32];         // 増分（間隔�V�倁A
+   262  |     +--- void *variedDValData[32];           // 変数ぃNぃ�ポイッEゃ\
+   263  |     |                                                                         
+   264  |     +--- //
+   265  |     |    // Fittingぃ�ためぃ�デーゃ\ 
+   266  |     |    //                                 
+   267  |     +--- //d-spline甃B迃X加郃B分
+   268  |     +--- int FittingDspline;
+   269  |     +--- int FittingDynamic;
+   270  |     +--- //d-spline甃B迃X加郃B分ここまぃ@
+   271  |     +--- int FittingType;                    // Type = 0:ぃFし、1:least-square,2:user_
+   272  |     |                                        // defined                                   
+   273  |     +--- int FittingDegree;                  // 多項�V�の欁B敁[
+   274  |     +--- TList *SampledList;                 // intぃ�彁uぃ@ Sampledぃ�倁Aがセット（僇��X�は
+   275  |     |                                        // 、Scriptぃ�デーゃ\）                                
+   276  |     |                                                                                                     
+   277  |     +--- //
+   278  |     |    //  GPUぃ�ためぃ�デーゃ\ 2010/12/28 迃X加 
+   279  |     |    //                                                 
+   280  |     +--- TGPUOption GPUOption;
+   281  |     |    
+   282  |     +--- //
+   283  |     |    //  LoopFusionSplitぃ�ためぃ�デーゃ\ 2012/03/07 
+   284  |     |    //                                                     
+   285  |     +--- int SplitPointCopyDef_StartPos;
+   286  |     +--- int SplitPointCopyDef_EndPos;
+   287  |     |    
+   288  |     +--- //
+   289  |     |    //  Option指僇�文字列 
+   290  |     |    //                         
+   291  |     +--- string OptionStr;
+   292  |     |    
+   293  |     +--- //
+   294  |     |    // Selectぃ�见v析を行う  
+   295  |     |    //                             
+   296  |     +--- void MakeSelectData_Old(int sPos);  // 仁E前のバーゃNッ@ッE 2016/02/26
+   297  |     +--- void MakeSelectData(int sPos);      // Replace等に寃Z応
+   298  |     +--- //
+   299  |     |    //                                                                                                   
+   300  |     |    // UnRollぃ�堃G合の见v析�I�果                                                                
+   301  |     |    // Doぃ�Nestぃb、最夃@32ぃZぃ@を�b�Z豁BぃBする。(元はPass4ぃ@见v析しぃ�いた)  
+   302  |     |    //                                                                                                   
+   303  |     +--- void MakeUnrollData(int sPos);
+   304  |     |    
+   305  |     +--- TToken *DoToken[32];                // Unrollぃ�一畃F外側ぃ�DoトーゃbッE
+   306  |     +--- TToken *DoValToken[32];             // Do変数
+   307  |     +--- int DoStartSPos[32];                // Doぃ�初期倁Aぃ�式
+   308  |     +--- int DoStartEPos[32];
+   309  |     +--- int DoEndSPos[32];                  // Doぃ�終わり倁Aぃ�式
+   310  |     +--- int DoEndEPos[32];
+   311  |     +--- int DoStepSPos[32];                 // Doぃ�増分倁Aぃ�式
+   312  |     +--- int DoStepEPos[32];
+   313  |     |    
+   314  |     +--- //
+   315  |     |    //  LoopFusionぃ�见v析�I�果 
+   316  |     |    //                               
+   317  |     +--- int FusionCount;
+   318  |     |    
+   319  |     +--- void MakeLoopFusionSplitData(int sPos);
+   320  |     +--- TList *MakeRotaionOrderSrcTokenList();
+   321  |     |    
+   322  |     +--- TList *RotaionOrderList;    // RotationOrderぃ�ッFッVゃNッ@ッEトーゃbッE位�X��
+   323  |     |                                // 先頃�ぃB最後が亁A互に允Eる。                    
+   324  |     |                                                                                               
+   325  |     +--- //
+   326  |     |    //  Replase等の见v析�I�果。   
+   327  |     |    //                                   
+   328  |     +--- TStringList *ReplaceStrList;        // replace指僇�僅�で定�Z�Dされた文字列ッFゃPト
+   329  |     +--- TStringList *TargetStrList;         // targer指僇�僅�で定�Z�Dされた文字列ッFゃPト。最後の()を含む堃G合あり。
+   330  |     +--- TStringList *ListSrcStrList;        // list指僇�僅�で定�Z�Dされた�X��換え元�A�数名リゃPト
+   331  |     +--- TStringList *ListReplaceStrList;    // list指僇�僅�で定�Z�Dされた�X��換えッFゃPト ListSrcList*N個の要�G�
+   332  |     +--- TStringList *ListDSrcStrList;       // listD指僇�僅�で定�Z�Dされた�X��換え元�A�数名リゃPト
+   333  |     +--- TStringList *ListDReplaceStrList;   // listD指僇�僅�で定�Z�Dされた�X��換えッFゃPト ListSrcList*N個の要�G�
+   334  |     +--- TList *GWV_ListList;                // GWV変換甃Bぃ�ッFゃPトへぃ�ッFゃPト
+   335  |     +--- TStringList *GWV_TargetStrList;     // targer指僇�僅�で定�Z�Dされた文字列ッFゃPト。最後の()を含む堃G合あり。
+   336  |     |                                                                                                                                             
+   337  |     +--- //
+   338  |     |    // Selectぃ�堃G合の见v析�I�果  
+   339  |     |    //                                     
+   340  |     |                                           
+   341  |     +--- int GetNextKanmaPos(int sPos);
+   342  |     +--- void ChackRefDoValF(int sPos,int ePos);
+   343  |     +--- void AddArgValListToATExecArgList();
+   344  |     +--- void SaveAndResetValBits(int sPos,int ePos);
+   345  |     +--- void RestoreValBits(int sPos,int ePos);
+   346  |     |    
+   347  |     +--- TTuneRegion(TPass4 *aPass4,int Pos);        // 生成
+   348  |     +--- ~TTuneRegion();         // 砃G棄
+   349  |     |                                       
+   350  |     +--- string GetInfo();   // 情堃Aを改行入り文字列ぃ@所得�V�デバッめ[甃B）
+   351  |     |                                                                                             
+   352  |     +--- void OutputSetParamCode_Fortran(FILE *fp,int TempLineNo,FILE *fpAdd);
+   353  |     +--- void OutputSetParamCode_C(FILE *fp,int TempLineNo);
+   354  |     +--- void OutputAutoExecCode_Fortran(FILE *fp);
+   355  |     +--- void OutputAutoExecCode_C(FILE *fp,FILE *fpOutHeader);
+   356  |     +--- void OutputExecCode_Fortran(FILE *fp);
+   357  |     +--- void OutputExecCode_C(FILE *fp,FILE *fpOutHeader);
+   358  |     +--- //  void TTuneRegion::OutputSrcCode(FILE *fp,AnsiString IndentStr,bool InCaseF);
+   359  |     +--- void OutputSrcCode(FILE *fp, string IndentStr, int OutMode,int Use_OAT_functuonNameF = 0);
+   360  |     +--- void OutputSelectCaseExecCode_Fortran(FILE *fp,int iusw1);
+   361  |     +--- void OutputSelectCaseExecCode_C(FILE *fp,int iusw1);
+   362  |     |    
+   363  |     +--- void OutputReplaceSrc(FILE *fp,void *TargetSubRegion,int iusw1,bool Skip_Pragma_ACCF);
+   364  |     |    
+   365  |     +--- //  int OutputUnroll_DoBlock_Fortran(FILE *fp,int TokPos,unsigned int UseDoRefValBits,int RefValIdx);
+   366  |     +--- int OutputUnroll_DoBlock_Fortran(FILE *fp, int TokPos,
+   367  |     |        unsigned int UsedDoRefValBits, int RefValIdx,string CommentStrBeforeDo = &quot;&quot;);  
+   368  |     +--- int OutputUnroll_DoBlock_C(FILE *fp,int TokPos,
+   369  |     |        unsigned int UseDoRefValBits,int RefValIdx,string CommentStrBeforeDo = &quot;&quot;);  
+   370  |     +--- int OutputUnroll_IfBlock_Fortran(FILE *fp,int TokPos,unsigned int UsedDoRefValBits,int RefValIdx);
+   371  |     +--- int OutputUnroll_IfBlock_C(FILE *fp,int TokPos,unsigned int UsedDoRefValBits,int RefValIdx);
+   372  |     +--- int OutputUnroll_Line_Fortran(FILE *fp,int TokPos,unsigned int UseDoRefValBits,int RefValIdx);
+   373  |     +--- int OutputUnroll_Line_C(FILE *fp,int TokPos,unsigned int UseDoRefValBits,int RefValIdx);
+   374  |     |    
+   375  |     +--- int CalNewRefValIdx(int RefValIdx,unsigned int UseDoRefValBits,
+   376  |     |            int AndRefValIdx,unsigned int AndUseDoRefValBits,int *UnrollCount);  
+   377  |     |    
+   378  |     +--- //    AnsiString TTuneRegion::GetPrePostSubregionStr(int Mode);
+   379  |     +--- string GetPrePostSubregionStr(int Mode,int InControlCode);
+   380  |     +--- string GetPrePostBPSetSubregionStr(int Mode);
+   381  |     +--- string Merge_Unroll_Line_C(string *BaseOutputStr,
+   382  |     |        string LastOutputStr,string *CurLineStr,int AddOprStrPos); 
+   383  |     |    
+   384  |     +--- //  void OutputSetParmSrcCode(FILE *fp,string IndentStr);
+   385  |     +--- void OutputSetParmSrcCode(FILE *fp, string IndentStr,int Use_OAT_functuonNameF = 0);
+   386  |     +--- string ChangePragmaStr(string OrgStr,int TokPos,int EndTokPos,
+   387  |     |            TStringList *NewValStrList);                           
+   388  |     |    
+   389  |     +--- bool IsATExecArg(void *ValData);
+   390  |     +--- void OutputFusionDo_Fortran(string FusionValName,FILE *fp,int DoNest,int FusionIdx);
+   391  |     +--- void OutputFusionDo_C(string FusionValName,FILE *fp,int DoNest,int FusionIdx);
+   392  |     |    
+        |   +-+---+ 
+   393  |   |  }; | 
+        |   +-----+ 
+   394  +--- //
+   395  |    // SubReguon Class                                                                                           
+   396  |    //                                                                                                           
+   397  |    /*----------------------------------------------------------------------------*/                             
+   398  |    //  1.旁E會�語名                                                                                         
+   399  |    //                                                                                                           
+   400  |    //  2.概胒�                                                                                                
+   401  |    //    ゃIブリッVゃNッ@ッEゃbッDゃP                                                                 
+   402  |    //    ゃPゃbッFプトぃ@定�Z�DされるサブリッVゃNッ@ッEぃ�デーゃ\が栃V納される。   
+   403  |    //    ゃPプリットぃ�堃G合にも�X�\甃Bされる。                                                 
+   404  |    //                                                                                                           
+   405  |    //  3.機能誃�明                                                                                          
+   406  |    //                                                                                                           
+   407  |    //  4.備考                                                                                                 
+   408  |    //                                                                                                           
+   409  |    /*----------------------------------------------------------------------------*/                             
+        |  +--------------------+ 
+   410  +--+ class TSubRegion{  | 
+        |  +--+-----------------+ 
+        |     +-----------+ 
+   411  |     |  public:  | 
+        |     +-----------+ 
+   412  |     +--- Enum_ScType ScType;                 // 稃�類 sub region start ぃ@ぃ�先頃�ゃ�ッVッbッVド
+   413  |     +--- int TokenStartPos;
+   414  |     +--- int TokenEndPos;
+   415  |     +--- string AccordingStr;            // Accordingぃ@指僇�された　敁[式
+   416  |     |                                                                               
+   417  |     +--- //
+   418  |     |    // varid (xx[,xx]) from X to Y ぃ�指僇�情堃A (varied指僇�時ぃH有効) 
+   419  |     |    //                                                                             
+   420  |     +--- int CaseCount;
+   421  |     |    
+   422  |     +--- int variedCount;
+   423  |     +--- string variedValName[32];       // 変数名 （�\�須�V�
+   424  |     +--- /**************************************************************************/
+   425  |     |    //                                                                           
+   426  |     |    //Kogakuin Irie                                                              
+   427  |     |    //実数寃Z応のためぃ�変更                                           
+   428  |     |    //旁u存コッVドはゃEチBッEトアゃ�ト                              
+   429  |     |    //                                                                           
+   430  |     |    //  int variedFromValue[32];            // 開�@�倁A                       
+   431  |     |    //  int variedToValue[32];              // 終�R�倁A                       
+   432  |     +--- float variedFromValue[32];          // 開�@�倁A
+   433  |     +--- float variedToValue[32];            // 終�R�倁A
+   434  |     +--- float variedStepValue[32];          // 増分（間隔�V�倁A
+   435  |     +--- //
+   436  |     |    //変更ここぃZぃ@                                                       
+   437  |     |    //                                                                           
+   438  |     |    /**************************************************************************/ 
+   439  |     +--- void *variedValData[32];        // 変数ぃNぃ�ポイッEゃ\
+   440  |     |                                                                     
+   441  |     +--- unsigned int SplitBitsOfFusionIdx[32];  // FusionIdxぃHよる Split有効焁B劃PBits
+   442  |     +--- // DoValぃB同じ七�ぃEぃ�BitsぃHぃFる。
+   443  |     |    // ２^Bits敁[が各FusionIdxぃHおけるSplit敁[ぃHぃFる。   
+   444  |     +--- int SplitCaseCountOfFusionIdx[32];      // FusionIdxぃHよる SplitCase敁[
+   445  |     |                                                                                 
+   446  |     +--- TSubRegion();
+   447  |     |    
+        |   +-+---+ 
+   448  |   |  }; | 
+        |   +-----+ 
+   449  |    
+   450  +--- #endif
+</pre>
+
+
+</body>
+</html>

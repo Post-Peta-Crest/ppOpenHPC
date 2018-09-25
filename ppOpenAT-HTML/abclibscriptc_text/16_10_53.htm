@@ -1,0 +1,208 @@
+
+<html>
+<head>
+<title>SaveAndResetValBits メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.53. SaveAndResetValBits メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>SaveAndResetValBits</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2130</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void SaveAndResetValBits ( int sPos , int ePos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Val関連の状態を、一時的に保存してリセットする。RestoreValBitsによって復帰<br>を行う。<br>この時、デバッグ情報として、参照変数の文字列も作成する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>sPos    開始位置<br>ePos    終了位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_26.htm">TTuneRegion::MakeLoopFusionSplitData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_26.htm">1313</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_28.htm">TTuneRegion::MakeSelectData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_28.htm">308</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_29.htm">TTuneRegion::MakeUnrollData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_29.htm">1001</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>67</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::RefValStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>194</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::ValBitsList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>210</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------+ 
+  2130  +--+ void TTuneRegion::SaveAndResetValBits(int sPos,int ePos) | 
+  2131     | {                                                        | 
+           +--+-------------------------------------------------------+ 
+  2132        +--- int i;
+  2133        +--- TToken *Token;
+  2134        +--- TValData *ValData;
+  2135        |    
+  2136        +--- RefValStr = &quot;&quot;;
+  2137        +--- ValBitsList-&gt;Clear();
+              |  +----------------------------------+ 
+  2138        +--+ for(i = sPos ; i &lt;= ePos ; i++){ | 
+              |  +--+-------------------------------+ 
+  2139        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +------------------------------+ 
+  2140        |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |  +--+---------------------------+ 
+  2141        |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+  2142        |     |     +--- ValBitsList-&gt;Add((void *)(long)ValData-&gt;DoValBits);
+  2143        |     |     +--- ValBitsList-&gt;Add((void *)(long)ValData-&gt;DoEndValBits);
+  2144        |     |     +--- ValBitsList-&gt;Add((void *)(long)ValData-&gt;RefDoValBits);
+              |     |   +-+---+ 
+  2145        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2146        |   |  }  | 
+              |   +-----+ 
+  2147        +--- //
+  2148        |    // Bitsをリセットする。  
+  2149        |    //                       
+              |  +----------------------------------+ 
+  2150        +--+ for(i = sPos ; i &lt;= ePos ; i++){ | 
+              |  +--+-------------------------------+ 
+  2151        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +------------------------------+ 
+  2152        |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |  +--+---------------------------+ 
+  2153        |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |  +----------------------------------+ 
+  2154        |     |     +--+ if(ValData-&gt;RefDoValBits != 0){  | 
+              |     |     |  +--+-------------------------------+ 
+  2155        |     |     |     +--- RefValStr += Token-&gt;Str + &quot;,&quot;;
+              |     |     |   +-+---+ 
+  2156        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2157        |     |     +--- ValData-&gt;DoValBits = 0;
+  2158        |     |     +--- ValData-&gt;DoEndValBits = 0;
+  2159        |     |     +--- ValData-&gt;RefDoValBits = 0;
+              |     |   +-+---+ 
+  2160        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2161        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  2162      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

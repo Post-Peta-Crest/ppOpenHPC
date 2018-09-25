@@ -1,0 +1,111 @@
+
+<html>
+<head>
+<title>GetDoValAddValue メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.11. GetDoValAddValue メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetDoValAddValue</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11455</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int GetDoValAddValue ( int RefValIdx , unsigned int UseValBits , int DoValIdx , int * Count )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Do変数に Unroll中の行での加算する値を計算して返す。<br><br> 外側のLoop で、UnRoll = 2<br>    中で　UnRoll = 2 の場合には、中側が先に変化する形の計算となる。<br>  kk = 0 : A(i+0,j+0);<br>  kk = 1 : A(i+0,j+1);<br>  kk = 2 : A(i+1,j+0);<br>  kk = 3 : A(i+1,j+1);</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>加算する値</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>RefValIdx   参照変数Ｉｄｘ<br>UseValBits  使用中Ｂｉｔｓ<br>DoValIdx    Ｄｏ変数Ｉｄｘ<br>Count   各変数のカウント配列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------------------------------------------------------+ 
+ 11455  +--+ int TTuneRegion::GetDoValAddValue(int RefValIdx,unsigned int UseValBits,int DoValIdx,int *Count) | 
+ 11456     | {                                                                                                | 
+           +--+-----------------------------------------------------------------------------------------------+ 
+ 11457        +--- int AddValue = 0;
+ 11458        +--- int i;
+ 11459        +--- int Idx[32];
+ 11460        |    
+ 11461        +--- // 各桁[Do変数ごと]のIdxを求める。
+              |  +--------------------------------------+ 
+ 11462        +--+ for(i = DoValIdx-1 ; i &gt;= 0 ; i--){  | 
+              |  +--+-----------------------------------+ 
+ 11463        |     +--- Idx[i] = RefValIdx % Count[i];
+ 11464        |     +--- RefValIdx /= Count[i];
+              |   +-+---+ 
+ 11465        |   |  }  | 
+              |   +-----+ 
+ 11466        +--- // UseValBitsの立っているIdxを加算して計算する。
+              |  +----------------------------------+ 
+ 11467        +--+ for(i = 0 ; i &lt; DoValIdx ; i++){ | 
+              |  +--+-------------------------------+ 
+              |     |  +------------------------------------+ 
+ 11468        |     +--+ if((UseValBits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+---------------------------------+ 
+ 11469        |     |     +--- AddValue *= Count[i];
+ 11470        |     |     +--- AddValue += Idx[i];
+              |     |   +-+---+ 
+ 11471        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11472        |   |  }  | 
+              |   +-----+ 
+              |  +------------------+ 
+ 11473        +--+ return AddValue; | 
+              |  +------------------+ 
+            +-+---+ 
+ 11474      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

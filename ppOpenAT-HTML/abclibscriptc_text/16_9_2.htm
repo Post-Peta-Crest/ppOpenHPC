@@ -1,0 +1,345 @@
+
+<html>
+<head>
+<title>TToken クラス関連図</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.9.2. TToken クラス関連図</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left">クラス名</th><td nowrap>TToken</td></tr>
+</table>
+
+<div align="right"><font size="2">＋…public　♯…protected　－…private</font></div>
+<pre>
+クラス関連図
+
+              +-----------------------------------+ 
+          +<--+ <a href="16_10_1.htm">TTuneRegion</a>                       | 
+          |   +-----------------------------------+ 
+          |   | +AccordingStr                     | 
+          |   | +ArgValList                       | 
+          |   | +BaseValList                      | 
+          |   | +CaseCount                        | 
+          |   | -CaseIdx                          | 
+          |   | -Comment                          | 
+          |   | +DoEndEPos                        | 
+          |   | +DoEndSPos                        | 
+          |   | +DoStartEPos                      | 
+          |   | +DoStartSPos                      | 
+          |   | +DoStepEPos                       | 
+          |   | +DoStepSPos                       | 
+          |   | +DoToken                          | 
+          |   | -DoTokPos                         | 
+          |   | -DoVal_i                          | 
+          |   | -DoVal_l                          | 
+          |   | -DoVal_m                          | 
+          |   | -DoValCount                       | 
+          |   | -DoValIdx                         | 
+          |   | -DoValName                        | 
+          |   | -DoValStr                         | 
+          |   | +DoValToken                       | 
+          |   | -EndDoTokPos                      | 
+          |   | +FittingDegree                    | 
+          |   | +FittingDspline                   | 
+          |   | +FittingDynamic                   | 
+          |   | +FittingType                      | 
+          |   | +FuncName                         | 
+          |   | +FusionCount                      | 
+          |   | +GPUOption                        | 
+          |   | +Name                             | 
+          |   | +Number                           | 
+          |   | +OffsetStr                        | 
+          |   | +ParamValList                     | 
+          |   | -Pass4                            | 
+          |   | +RefValStr                        | 
+          |   | +RotaionOrderList                 | 
+          |   | +SampledList                      | 
+          |   | +SplitPointCopyDef_EndPos         | 
+          |   | +SplitPointCopyDef_StartPos       | 
+          |   | +SubRegionList                    | 
+          |   | +TokenEndPos                      | 
+          |   | +TokenList                        | 
+          |   | +TokenStartPos                    | 
+          |   | +TuneGroup                        | 
+          |   | +TuneGroupName                    | 
+          |   | +TuneKind                         | 
+          |   | +UndefinedArgValList              | 
+          |   | -UnrollCount                      | 
+          |   | -UnRollDoRefValBits               | 
+          |   | +UseAccordingF                    | 
+          |   | +UsedDynPefThis                   | 
+          |   | +ValBitsList                      | 
+          |   | +ValDataList                      | 
+          |   | +variedCount                      | 
+          |   | +variedFromValue                  | 
+          |   | +variedStepValue                  | 
+          |   | +variedToValue                    | 
+          |   | +variedValData                    | 
+          |   | +variedValName                    | 
+          |   +-----------------------------------+ 
+          |   | <a href="16_10_3.htm">+AddArgValListToATExecArgList</a>     | 
+          |   | <a href="16_10_4.htm">+CalNewRefValIdx</a>                  | 
+          |   | <a href="16_10_5.htm">+ChackRefDoValF</a>                   | 
+          |   | <a href="16_10_6.htm">-ChangeFromOrgStr</a>                 | 
+          |   | <a href="16_10_7.htm">+ChangePragmaStr</a>                  | 
+          |   | <a href="16_10_8.htm">-FindEndDo2</a>                       | 
+          |   | <a href="16_10_9.htm">-FindEndIf</a>                        | 
+          |   | <a href="16_10_10.htm">-GetBitIdx</a>                        | 
+          |   | <a href="16_10_11.htm">-GetDoValAddValue</a>                 | 
+          |   | <a href="16_10_12.htm">+GetInfo</a>                          | 
+          |   | <a href="16_10_13.htm">-GetNewValName</a>                    | 
+          |   | <a href="16_10_14.htm">-GetNewValName</a>                    | 
+          |   | <a href="16_10_15.htm">-GetNewValNameForValData</a>          | 
+          |   | <a href="16_10_16.htm">+GetNextKanmaPos</a>                  | 
+          |   | <a href="16_10_17.htm">-GetNextSemikoronPos</a>              | 
+          |   | <a href="16_10_18.htm">+GetPrePostBPSetSubregionStr</a>      | 
+          |   | <a href="16_10_19.htm">-GetPrePostSubregionStr</a>           | 
+          |   | <a href="16_10_20.htm">+GetPrePostSubregionStr</a>           | 
+          |   | <a href="16_10_21.htm">-GetValAddValue</a>                   | 
+          |   | <a href="16_10_22.htm">-GetValAddValue2</a>                  | 
+          |   | <a href="16_10_23.htm">-GetValCountOfBit</a>                 | 
+          |   | <a href="16_10_24.htm">+IsATExecArg</a>                      | 
+          |   | <a href="16_10_25.htm">-MakeArgValList</a>                   | 
+          |   | <a href="16_10_26.htm">+MakeLoopFusionSplitData</a>          | 
+          |   | <a href="16_10_27.htm">+MakeRotaionOrderSrcTokenList</a>     | 
+          |   | <a href="16_10_28.htm">+MakeSelectData</a>                   | 
+          |   | <a href="16_10_29.htm">+MakeUnrollData</a>                   | 
+          |   | <a href="16_10_30.htm">+Merge_Unroll_Line_C</a>              | 
+          |   | <a href="16_10_31.htm">+OutputAutoExecCode_C</a>             | 
+          |   | <a href="16_10_32.htm">+OutputAutoExecCode_Fortran</a>       | 
+          |   | <a href="16_10_33.htm">+OutputExecCode_C</a>                 | 
+          |   | <a href="16_10_34.htm">+OutputExecCode_Fortran</a>           | 
+          |   | <a href="16_10_35.htm">+OutputFusionDo</a>                   | 
+          |   | <a href="16_10_36.htm">-OutputLoopFusionExecCode_Fortran</a> | 
+          |   | <a href="16_10_37.htm">+OutputReplaceSrc</a>                 | 
+          |   | <a href="16_10_38.htm">+OutputSelectCaseExecCode_C</a>       | 
+          |   | <a href="16_10_39.htm">+OutputSelectCaseExecCode_Fortran</a> | 
+          |   | <a href="16_10_40.htm">+OutputSetParamCode_C</a>             | 
+          |   | <a href="16_10_41.htm">+OutputSetParamCode_Fortran</a>       | 
+          |   | <a href="16_10_42.htm">+OutputSetParmSrcCode</a>             | 
+          |   | <a href="16_10_43.htm">+OutputSrcCode</a>                    | 
+          |   | <a href="16_10_44.htm">+OutputUnroll_DoBlock_C</a>           | 
+          |   | <a href="16_10_45.htm">+OutputUnroll_DoBlock_Fortran</a>     | 
+          |   | <a href="16_10_46.htm">+OutputUnroll_IfBlock_C</a>           | 
+          |   | <a href="16_10_47.htm">+OutputUnroll_IfBlock_Fortran</a>     | 
+          |   | <a href="16_10_48.htm">+OutputUnroll_Line_C</a>              | 
+          |   | <a href="16_10_49.htm">+OutputUnroll_Line_Fortran</a>        | 
+          |   | <a href="16_10_50.htm">-OutputUnrollExecCode_C</a>           | 
+          |   | <a href="16_10_51.htm">-OutputUnrollExecCode_Fortran</a>     | 
+          |   | <a href="16_10_52.htm">+RestoreValBits</a>                   | 
+          |   | <a href="16_10_53.htm">+SaveAndResetValBits</a>              | 
+          |   | <a href="16_10_54.htm">+TTuneRegion</a>                      | 
+          |   | <a href="16_10_55.htm">+~TTuneRegion</a>                     | 
+          |   +-----------------------------------+ 
+          |       +-----------------+ 
+          +------>+ <a href="16_9_1.htm">TToken</a>          | 
+                  +-----------------+ 
+                  | +BrNestLevel    | 
+                  | +ChangedTokList | 
+                  | +dData          | 
+                  | +Idx            | 
+                  | +Indent         | 
+                  | +LineEndF       | 
+                  | +LineNo         | 
+                  | +ModuleIdx      | 
+                  | +NestLevel      | 
+                  | +OrgStr         | 
+                  | +priority       | 
+                  | +RefType        | 
+                  | +Script         | 
+                  | +Str            | 
+                  | +TokId          | 
+                  | +ValData        | 
+                  +-----------------+ 
+                  | <a href="16_9_3.htm">+GetTokIdStr</a>    | 
+                  | <a href="16_9_4.htm">+TToken</a>         | 
+                  | <a href="16_9_5.htm">+~TToken</a>        | 
+                  +-+---------------+ 
+                    |   +-----------+ 
+                    +-->+ <a href="16_1_1.htm">TList</a>     | 
+                    |   +-----------+ 
+                    |   | +Count    | 
+                    |   | +Items    | 
+                    |   +-----------+ 
+                    |   | +Add      | 
+                    |   | +Clear    | 
+                    |   | +Delete   | 
+                    |   | +Exchange | 
+                    |   | +IndexOf  | 
+                    |   | +Insert   | 
+                    |   | +Remove   | 
+                    |   | +TList    | 
+                    |   +-----------+ 
+                    |   +---------------+ 
+                    +-->+ <a href="27_2.htm">Enum_RefType</a>  | 
+                    |   +---------------+ 
+                    |   | +vrf_def      | 
+                    |   | +vrf_ref      | 
+                    |   | +vrf_refset   | 
+                    |   | +vrf_set      | 
+                    |   +---------------+ 
+                    |   +-----------------------+ 
+                    +-->+ <a href="27_9.htm">TTokId</a>                | 
+                        +-----------------------+ 
+                        | +tid__Bool            | 
+                        | +tid__Complex         | 
+                        | +tid__Imaginary       | 
+                        | +tid_ALLOCATABLE      | 
+                        | +tid_ALLOCATE         | 
+                        | +tid_ASSOCIATED       | 
+                        | +tid_auto             | 
+                        | +tid_BACKSPACE        | 
+                        | +tid_break            | 
+                        | +tid_CALL             | 
+                        | +tid_case             | 
+                        | +tid_CASE             | 
+                        | +tid_char             | 
+                        | +tid_CHARACTER        | 
+                        | +tid_CLOSE            | 
+                        | +tid_Comment          | 
+                        | +tid_COMMON           | 
+                        | +tid_COMPLEX          | 
+                        | +tid_const            | 
+                        | +tid_ConstInt         | 
+                        | +tid_ConstNum         | 
+                        | +tid_ConstReal        | 
+                        | +tid_ConstStr         | 
+                        | +tid_CONTAINS         | 
+                        | +tid_continue         | 
+                        | +tid_CONTINUE         | 
+                        | +tid_ContinuedLineStr | 
+                        | +tid_CYCLE            | 
+                        | +tid_DaiKakko         | 
+                        | +tid_DaiKokka         | 
+                        | +tid_DATA             | 
+                        | +tid_DataType         | 
+                        | +tid_DEALLOCATE       | 
+                        | +tid_default          | 
+                        | +tid_DIMENSION        | 
+                        | +tid_do               | 
+                        | +tid_DO               | 
+                        | +tid_Dot              | 
+                        | +tid_double           | 
+                        | +tid_DOUBLEPRECISION  | 
+                        | +tid_DOWHILE          | 
+                        | +tid_else             | 
+                        | +tid_ELSE             | 
+                        | +tid_ELSEIF           | 
+                        | +tid_END              | 
+                        | +tid_END_STR          | 
+                        | +tid_ENDDO            | 
+                        | +tid_ENDFILE          | 
+                        | +tid_ENDIF            | 
+                        | +tid_enum             | 
+                        | +tid_EQUIVALENCE      | 
+                        | +tid_EXIT             | 
+                        | +tid_extern           | 
+                        | +tid_EXTERNAL         | 
+                        | +tid_float            | 
+                        | +tid_for              | 
+                        | +tid_FORMAT           | 
+                        | +tid_Func             | 
+                        | +tid_FUNCTION         | 
+                        | +tid_goto             | 
+                        | +tid_GOTO             | 
+                        | +tid_if               | 
+                        | +tid_IF               | 
+                        | +tid_IMPLICIT         | 
+                        | +tid_INCLUDE          | 
+                        | +tid_inline           | 
+                        | +tid_INQUIRE          | 
+                        | +tid_int              | 
+                        | +tid_INTEGER          | 
+                        | +tid_INTENT           | 
+                        | +tid_INTERFACE        | 
+                        | +tid_INTRINSIC        | 
+                        | +tid_KagiKakko        | 
+                        | +tid_KagiKokka        | 
+                        | +tid_Kakko            | 
+                        | +tid_Kannma           | 
+                        | +tid_KeyWordStart     | 
+                        | +tid_Kokka            | 
+                        | +tid_Koron            | 
+                        | +tid_KoronKoron       | 
+                        | +tid_Label            | 
+                        | +tid_LineEnd          | 
+                        | +tid_LOGICAL          | 
+                        | +tid_long             | 
+                        | +tid_MODULE           | 
+                        | +tid_NAMELIST         | 
+                        | +tid_null             | 
+                        | +tid_NULLIFY          | 
+                        | +tid_OPEN             | 
+                        | +tid_Opr              | 
+                        | +tid_OPTIONAL         | 
+                        | +tid_PARAMETER        | 
+                        | +tid_POINTER          | 
+                        | +tid_PRINT            | 
+                        | +tid_PRIVATE          | 
+                        | +tid_PROGRAM          | 
+                        | +tid_PUBLIC           | 
+                        | +tid_READ             | 
+                        | +tid_REAL             | 
+                        | +tid_register         | 
+                        | +tid_restrict         | 
+                        | +tid_return           | 
+                        | +tid_RETURN           | 
+                        | +tid_REWIND           | 
+                        | +tid_SAVE             | 
+                        | +tid_SELECT           | 
+                        | +tid_Semikoron        | 
+                        | +tid_Semikoron2       | 
+                        | +tid_Set              | 
+                        | +tid_Set2             | 
+                        | +tid_SharpDefine      | 
+                        | +tid_SharpElIf        | 
+                        | +tid_SharpElse        | 
+                        | +tid_SharpEnd         | 
+                        | +tid_SharpEndIf       | 
+                        | +tid_SharpIf          | 
+                        | +tid_SharpIfDef       | 
+                        | +tid_SharpIfnDef      | 
+                        | +tid_SharpInclude     | 
+                        | +tid_SharpPragma      | 
+                        | +tid_SharpStart       | 
+                        | +tid_SharpUnDef       | 
+                        | +tid_short            | 
+                        | +tid_signed           | 
+                        | +tid_sizeof           | 
+                        | +tid_static           | 
+                        | +tid_STOP             | 
+                        | +tid_struct           | 
+                        | +tid_SUBROUTINE       | 
+                        | +tid_switch           | 
+                        | +tid_TARGET           | 
+                        | +tid_THEN             | 
+                        | +tid_TYPE             | 
+                        | +tid_TYPE_REF         | 
+                        | +tid_typedef          | 
+                        | +tid_union            | 
+                        | +tid_unsigned         | 
+                        | +tid_USE              | 
+                        | +tid_Val              | 
+                        | +tid_void             | 
+                        | +tid_volatile         | 
+                        | +tid_WHERE            | 
+                        | +tid_while            | 
+                        | +tid_WRITE            | 
+                        +-----------------------+ 
+</pre>
+
+
+</body>
+</html>

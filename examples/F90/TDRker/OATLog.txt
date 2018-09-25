@@ -1,0 +1,57 @@
+--- ppOpenAT version 0.2.3 ---
+OAT_PATH = ""
+CommandLine = test.exe  c:/ppOpenAT/examples/F90/TDRker/TRDker.f 
+**** Start Code Generation ****
+SrcFile ="c:/ppOpenAT/examples/F90/TDRker/TRDker.f"
+Pass1 Start
+Pass2 Start
+------ Val List ---------
+0: (MIdx=0) Int iauto (RW=1,1) DefPos=13
+1: (MIdx=0) Int N=500.000000 (RW=6,0) DefPos=16
+2: (MIdx=0) Real*8 A(0)(0) (RW=1,0) DefPos=28
+3: (MIdx=0) Real*8 u_x(0) (RW=1,0) DefPos=42
+4: (MIdx=0) Real*8 u_y(0) (RW=1,0) DefPos=51
+5: (MIdx=0) Real*8 x_k(0) (RW=1,0) DefPos=63
+6: (MIdx=0) Real*8 y_k(0) (RW=1,0) DefPos=72
+7: (MIdx=0) Int ierr (RW=4,0) DefPos=-11
+8: (MIdx=0) Int MPI_COMM_WORLD (RW=2,0) DefPos=-11
+9: (MIdx=0) Int myid (RW=1,0) DefPos=-11
+10: (MIdx=0) Int nprocs (RW=1,0) DefPos=-11
+11: (MIdx=0) Int in (RW=4,1) DefPos=-11
+12: (MIdx=1) Real update (RW=0,0)(Arg) DefPos=-1
+13: (MIdx=1) Real*8 A(0)(0) (RW=1,1)(Arg) DefPos=299
+14: (MIdx=1) Real*8 u_x(0) (RW=1,0)(Arg) DefPos=317
+15: (MIdx=1) Real*8 mu (RW=1,0)(Arg) DefPos=359
+16: (MIdx=1) Real*8 u_y(0) (RW=1,0)(Arg) DefPos=326
+17: (MIdx=1) Real*8 y_k(0) (RW=1,0)(Arg) DefPos=347
+18: (MIdx=1) Real*8 x_k(0) (RW=1,0)(Arg) DefPos=338
+19: (MIdx=1) Int nx (RW=3,0)(Arg) DefPos=362
+20: (MIdx=1) Int ny (RW=3,0)(Arg) DefPos=364
+21: (MIdx=1) Int init_x (RW=2,0)(Arg) DefPos=366
+22: (MIdx=1) Int init_y (RW=2,0)(Arg) DefPos=368
+23: (MIdx=1) Int local_length_x (RW=1,0)(Arg) DefPos=371
+24: (MIdx=1) Int local_length_y (RW=1,0)(Arg) DefPos=373
+25: (MIdx=1) Real*8 tmpr1 (RW=1,1) DefPos=379
+26: (MIdx=1) Real*8 tmpu1 (RW=2,1) DefPos=384
+27: (MIdx=1) Int i (RW=4,1) DefPos=387
+28: (MIdx=1) Int j (RW=4,1) DefPos=389
+Pass3 Start
+Pass4 Start
+OAT variable:       OAT_NUMPROCS = 4
+OAT variable:       OAT_STARTTUNESIZE = 100
+OAT variable:       OAT_ENDTUNESIZE = 500
+OAT variable:       OAT_SAMPDIST = 100
+OAT variable:       OAT_DEBUG = 1
+Base Paramater (BPset): N
+------ Tuning Region -- Count = 1
+Tuning Region : 0
+Install Unroll MGSKernel
+OAT_InstallMGSKernel(,,,,local_length_y,u_x,mu,y_k,local_length_x,A,init_x,init_y,u_y,x_k,nx,ny) 
+    varied j (0,local_length_y-1,) from 1.000000 to 8.000000 step 1.000000
+    varied i (0,local_length_x-1,) from 1.000000 to 8.000000 step 1.000000
+  RefValStr = ( j,tmpu1,tmpr1,i, )
+  Case Count = 64
+
+Pass5 Start
+TuneRegion = 1/1
+**** End Code Generation **** OK !

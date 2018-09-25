@@ -1,0 +1,164 @@
+
+<html>
+<head>
+<title>GetNewValName メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.14. GetNewValName メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetNewValName</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11245</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string GetNewValName ( string BaseName , string AddStr , TStringList * ArgValList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>AddStrを追加した新しい名前を作成する。<br>ArgValList-&gt;Objects[] の ValDataに既にある名前と一致する場合は、<br>&quot;_&quot;を数値の後に必要なだけ挿入する</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>新しい変数名</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>BaseName    元の名前<br>AddStr  追加文字列<br>ArgValList  引数変数リスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------------------------+ 
+ 11245  +--+ string TTuneRegion::GetNewValName(string BaseName,string AddStr,TStringList *ArgValList) | 
+ 11246     | {                                                                                        | 
+           +--+---------------------------------------------------------------------------------------+ 
+ 11247        +--- int i,j;
+ 11248        +--- string s;
+ 11249        +--- TValData *ValData;
+ 11250        |    
+ 11251        +--- s = BaseName + AddStr;
+              |  +------------------------------+ 
+ 11252        +--+ for(j = 0 ; j &lt; 100 ; j++){  | 
+              |  +--+---------------------------+ 
+              |     |  +--------------------------------------------+ 
+ 11253        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+ 11254        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +------------------------+ 
+ 11255        |     |     +--+ if(ValData-&gt;Str == s){ | 
+              |     |     |  +--+---------------------+ 
+ 11256        |     |     |     +--- i = -1;
+              |     |     |     |  +--------+ 
+ 11257        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+ 11258        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11259        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+ 11260        |     +--+ if(i != -1){ | 
+              |     |  +--+-----------+ 
+              |     |     |  +--------+ 
+ 11261        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+ 11262        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 11262        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 11263        |     |     +--- s += &quot;_&quot;;
+              |     |   +-+---+ 
+ 11264        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11265        |   |  }  | 
+              |   +-----+ 
+              |  +------------+ 
+ 11266        +--+ return s;  | 
+              |  +------------+ 
+ 11267        |    
+            +-+---+ 
+ 11268      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

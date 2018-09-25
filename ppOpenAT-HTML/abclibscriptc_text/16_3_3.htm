@@ -1,0 +1,366 @@
+
+<html>
+<head>
+<title>Exec メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.3.3. Exec メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>Exec</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass4.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>138</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass4</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Exec ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>スクリプトを実行してチューニングリージョンを生成し、その解析を行う。<br>解析結果は、各TTuneRegionクラスのデータとして保持される。<br>スクリプトを実行するエンジンとしての位置づけとなる。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>スクリプトを実行してチューニングリージョンを生成し、その解析を行う。<br>解析結果は、各TTuneRegionクラスのデータとして保持される。<br>複数のTrueRegionに対応するために、RegionごとのクラスとしてTuneRegionを生成<br>する形を取る。<br>スクリプトの解析も、Pass4で済ませ、Pass5では、TuneRegionクラスを参照してソ<br>ースを生成する。</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_3.htm">TMainF::CodeGen</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::AddObject</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TList::Exchange</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TStringList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>atoi</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass4::OAT_ValList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass4::TokenList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>75</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass4::TuneRegionList</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap>78</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------+ 
+   138  +--+ void TPass4::Exec()  | 
+   139     | {                    | 
+           +--+-------------------+ 
+   140        +--- int i,j;
+   141        +--- TToken *Token;
+   142        +--- TScript *Script;
+   143        +--- string s;
+   144        +--- TTuneRegion *TuneRegion;
+   145        |    
+   146        +--- //
+   147        |    // トークンのLoop  
+   148        |    //                 
+              |  +------------------------------------------+ 
+   149        +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |  +--+---------------------------------------+ 
+   150        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------+ 
+   151        |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |  +--+-------------------------+ 
+   152        |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |  +------------------------------------+ 
+   153        |     |     +--+ if(Script-&gt;ScType == sct_command){ | 
+              |     |     |  +--+---------------------------------+ 
+   154        |     |     |     +--- //
+   155        |     |     |     |    // ABCScript のコマンドが出力される。                  
+   156        |     |     |     |    // ここで、OAT_xxx = の値の所得も行う。                
+   157        |     |     |     |    // 現状では、定数のみが使用可能。（変数や式はエラー）  
+   158        |     |     |     |    //                                                     
+   159        |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[0];
+              |     |     |     |  +----------------------------------+ 
+   160        |     |     |     +--+ if(s.find(&quot;=&quot;) != string::npos){ | 
+              |     |     |     |  +--+-------------------------------+ 
+   161        |     |     |     |     +--- string ValName,ConstStr;
+   162        |     |     |     |     +--- long Data;
+   163        |     |     |     |     |    
+   164        |     |     |     |     +--- ValName = Trim(s.substr(0,s.find(&quot;=&quot;)-1));
+   165        |     |     |     |     +--- ConstStr = Trim(s.substr(s.find(&quot;=&quot;)+1,s.length()));
+              |     |     |     |     |  +------+ 
+   166        |     |     |     |     +--+ try{ | 
+              |     |     |     |     |  +--+---+ 
+   167        |     |     |     |     |     +--- Data = atoi(ConstStr.c_str());
+              |     |     |     |     |   +-+---+ 
+   168        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------------+ 
+   168        |     |     |     |     +--+ catch(...){  | 
+              |     |     |     |     |  +--+-----------+ 
+   169        |     |     |     |     |     +--- //                      MainF-&gt;err(&quot;OAT変数に整数定数以外が設定されています。 [&quot;+s+&quot;]&quot;);
+   170        |     |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;OAT variable is not const int. [&quot;+s+&quot;]&quot;);
+              |     |     |     |     |     |  +----------+ 
+   171        |     |     |     |     |     +--+ return;  | 
+              |     |     |     |     |     |  +----------+ 
+              |     |     |     |     |   +-+---+ 
+   172        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+   173        |     |     |     |     +--- // 変数に追加 ２回設定もOKとした。2010/08/26
+              |     |     |     |     |  +------------------------------------------+ 
+   174        |     |     |     |     +--+ if(OAT_ValList-&gt;IndexOf(ValName) != -1){ | 
+              |     |     |     |     |  +--+---------------------------------------+ 
+   175        |     |     |     |     |     +--- //                      MainF-&gt;err(&quot;OAT変数が２度設定されています。 [&quot;+s+&quot;]&quot;);
+   176        |     |     |     |     |     |    //                      return;                                                
+              |     |     |     |     |   +-+---+ 
+   177        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+   177        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+   178        |     |     |     |     |     +--- OAT_ValList-&gt;AddObject(ValName,(void *)Data);
+   179        |     |     |     |     |     +--- MainF-&gt;print(&quot;OAT variable: &quot;+ s);
+              |     |     |     |     |   +-+---+ 
+   180        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+   181        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------------------------------+ 
+   182        |     |     |     +--+ for(int j = 0 ; j &lt; Token-&gt;Indent ; j++){  | 
+              |     |     |     |  +--+-----------------------------------------+ 
+   183        |     |     |     |     +--- s = &quot;  &quot;+s;
+              |     |     |     |   +-+---+ 
+   184        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+   185        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------------------+ 
+   185        |     |     |   |  else if(Script-&gt;ScRegion == scr_start){    // リージョン開始 | 
+              |     |     |   +-+-------------------------------------------------------------+ 
+   186        |     |     |     +--- TuneRegion = new TTuneRegion(this,i);   // リージョン生成
+   187        |     |     |     +--- Script-&gt;TuneRegion = TuneRegion;
+   188        |     |     |     +--- TuneRegionList-&gt;Add(TuneRegion);        // リストに追加
+   189        |     |     |     +--- // 基本パラメタ名表示を追加 2009/03/05
+   190        |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |  +------------------------------------------------------------+ 
+   191        |     |     |     +--+ for(int j = 0 ; j &lt; TuneRegion-&gt;BaseValList-&gt;Count ; j++){ | 
+              |     |     |     |  +--+---------------------------------------------------------+ 
+              |     |     |     |     |  +--------------+ 
+   192        |     |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------+ 
+   193        |     |     |     |     |     +--- s += &quot;,&quot;;
+              |     |     |     |     |   +-+---+ 
+   194        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+   195        |     |     |     |     +--- s += TuneRegion-&gt;BaseValList-&gt;Strings[j];
+   196        |     |     |     |     |    
+              |     |     |     |   +-+---+ 
+   197        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+   198        |     |     |     +--- MainF-&gt;print(&quot;Base Paramater (BPset): &quot;+ s);
+              |     |     |   +-+---+ 
+   199        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   200        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   201        |   |  }  | 
+              |   +-----+ 
+   202        +--- //
+   203        |    // TuneRegionListをTuneRegion-&gt;Number順に並べる。  
+   204        |    //                                                 
+              |  +------------------------------------------------+ 
+   205        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+              |     |  +--------------------------------------------------+ 
+   206        |     +--+ for(j = i+1 ; j &lt; TuneRegionList-&gt;Count ; j++){  | 
+              |     |  +--+-----------------------------------------------+ 
+              |     |     |  +--------------------------------------------------------------+ 
+   207        |     |     +--+ if(((TTuneRegion *)TuneRegionList-&gt;Items[i])-&gt;Number &gt;       | 
+   208        |     |     |  |         ((TTuneRegion *)TuneRegionList-&gt;Items[j])-&gt;Number){  | 
+              |     |     |  +--+-----------------------------------------------------------+ 
+   209        |     |     |     +--- TuneRegionList-&gt;Exchange(i,j);
+              |     |     |   +-+---+ 
+   210        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   211        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   212        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   213      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

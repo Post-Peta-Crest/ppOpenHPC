@@ -1,0 +1,233 @@
+
+<html>
+<head>
+<title>ChangePragmaStr メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.7. ChangePragmaStr メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>ChangePragmaStr</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>12850</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string ChangePragmaStr ( string OrgStr , int TokPos , int EndTokPos , TStringList * NewValStrList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>#pragmaの文字列を変更する。#pragme omp xxx () の ()内の変数を増やす。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>置き換え文字列。</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>string OrgStr 元の文字列<br>int TokPos,int EndTokPos トークン範囲<br>TStringList *NewValStrList 元と新規追加した変数名が交互に入ったリスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>#pragmaの文字列を変更する。#pragme omp xxx () の ()内の変数を増やす。<br>例えば、#pragma omp (temp)で tempが多重化された場合は<br>  #pragma omp (temp,temp2)に置き換えられる。</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TStringList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------------------------------------------------------------+ 
+ 12850  +--+ string TTuneRegion::ChangePragmaStr(string OrgStr,int TokPos,int EndTokPos,TStringList *NewValStrList) | 
+ 12851     | {                                                                                                      | 
+           +--+-----------------------------------------------------------------------------------------------------+ 
+ 12852        +--- int i,j,Idx;
+ 12853        +--- string s,ValName;
+ 12854        +--- TToken *Token;
+ 12855        +--- int BrNest = 0;
+ 12856        |    
+              |  +------------------------------+ 
+ 12857        +--+ if(TokPos+1 &gt;= TokenEndPos){ | 
+              |  +--+---------------------------+ 
+              |     |  +----------------+ 
+ 12858        |     +--+ return OrgStr; | 
+              |     |  +----------------+ 
+              |   +-+---+ 
+ 12859        |   |  }  | 
+              |   +-----+ 
+ 12860        +--- Token = (TToken *)TokenList-&gt;Items[TokPos+1];
+              |  +--------------------------------------+ 
+ 12861        +--+ if(LowerCase(Token-&gt;Str) != &quot;omp&quot;){  | 
+              |  +--+-----------------------------------+ 
+              |     |  +----------------------------------------------+ 
+ 12862        |     +--+ return OrgStr;  // #pragma omp 以外は対象外  | 
+              |     |  +----------------------------------------------+ 
+              |   +-+---+ 
+ 12863        |   |  }  | 
+              |   +-----+ 
+              |  +--------------------------------+ 
+ 12864        +--+ if(NewValStrList-&gt;Count == 0){ | 
+              |  +--+-----------------------------+ 
+              |     |  +----------------+ 
+ 12865        |     +--+ return OrgStr; | 
+              |     |  +----------------+ 
+              |   +-+---+ 
+ 12866        |   |  }  | 
+              |   +-----+ 
+ 12867        +--- s = &quot;&quot;;
+              |  +----------------------------------------+ 
+ 12868        +--+ for(j = TokPos ; j &lt; EndTokPos ; j++){ | 
+              |  +--+-------------------------------------+ 
+ 12869        |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+ 12870        |     +--- s += Token-&gt;OrgStr;
+              |     |  +------------------------+ 
+ 12871        |     +--+ if(Token-&gt;Str == &quot;(&quot;){ | 
+              |     |  +--+---------------------+ 
+ 12872        |     |     +--- BrNest++;
+              |     |   +-+---+ 
+ 12873        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------+ 
+ 12873        |     |   |  else if(Token-&gt;Str == &quot;)&quot;){  | 
+              |     |   +-+-----------------------------+ 
+ 12874        |     |     +--- BrNest--;
+              |     |   +-+---+ 
+ 12875        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------+ 
+ 12875        |     |   |  else if(Token-&gt;Str == &quot;,&quot;){  | 
+              |     |   +-+-----------------------------+ 
+ 12876        |     |     +--- ;
+              |     |   +-+---+ 
+ 12877        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------+ 
+ 12877        |     |   |  else if(BrNest &gt; 0){ // ()内。 | 
+              |     |   +-+-------------------------------+ 
+ 12878        |     |     +--- ValName = Token-&gt;Str;
+ 12879        |     |     +--- Idx = NewValStrList-&gt;IndexOf(ValName);
+              |     |     |  +----------------+ 
+ 12880        |     |     +--+ if(Idx != -1){ | 
+              |     |     |  +--+-------------+ 
+              |     |     |     |  +------------------------------------------------+ 
+ 12881        |     |     |     +--+ for(i = 0 ; i &lt; NewValStrList-&gt;Count ; i+=2){  | 
+              |     |     |     |  +--+---------------------------------------------+ 
+              |     |     |     |     |  +--------------------------------------------+ 
+ 12882        |     |     |     |     +--+ if(ValName == NewValStrList-&gt;Strings[i]){  | 
+              |     |     |     |     |  +--+-----------------------------------------+ 
+ 12883        |     |     |     |     |     +--- s += &quot;,&quot;+ NewValStrList-&gt;Strings[i+1]; // 変数多重化
+              |     |     |     |     |   +-+---+ 
+ 12884        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12885        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12886        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12887        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12888        |   |  }  | 
+              |   +-----+ 
+              |  +------------------+ 
+ 12889        +--+ return s + &quot;\n&quot;; | 
+              |  +------------------+ 
+            +-+---+ 
+ 12890      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

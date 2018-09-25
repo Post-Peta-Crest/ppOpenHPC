@@ -1,0 +1,175 @@
+
+<html>
+<head>
+<title>main.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.9. main.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *     
+     3  |     *   Software Name : ppOpen-AT                                         *     
+     4  |     *         Version : 0.1                                               *     
+     5  |     *                                                                     *     
+     6  |     *   License                                                           *     
+     7  |     *     This file is part of ppOpen-AT.                                 *     
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *     
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *     
+    10  |     *     for more details.                                               *     
+    11  |     *                                                                     *     
+    12  |     *   ppOpen-HPC project:                                               *     
+    13  |     *     Open Source Infrastructure for Development and Execution of     *     
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *     
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *     
+    16  |     *                                                                     *     
+    17  |     *   Organizations:                                                    *     
+    18  |     *     The University of Tokyo                                         *     
+    19  |     *       - Information Technology Center                               *     
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *     
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *     
+    22  |     *         /Earthquake Research Institute (ERI)                        *     
+    23  |     *       - Graduate School of Frontier Science                         *     
+    24  |     *     Kyoto University                                                *     
+    25  |     *       - Academic Center for Computing and Media Studies             *     
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *     
+    27  |     *                                                                     *     
+    28  |     *   Sponsorship:                                                      *     
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *     
+    30  |     *     Programs: CREST, Development of System Software Technologies    *     
+    31  |     *     for post-Peta Scale High Performance Computing.                 *     
+    32  |     *                                                                     *     
+    33  |     *   Copyright (c) 2012                                                *     
+    34  |     *      Information Technology Center, The University of Tokyo         *     
+    35  |     *                                                                     *     
+    36  |     *=====================================================================*/    
+    37  +--- #ifndef mainH
+    38  +--- #define mainH
+    39  |    
+    40  +--- #include &lt;stdio.h&gt;
+    41  +--- #include &lt;string.h&gt;
+    42  +--- #include &quot;VCL_Lib.h&quot;
+    43  |    
+    44  +--- #include &quot;pass1.h&quot;
+    45  +--- #include &quot;pass2.h&quot;
+    46  +--- #include &quot;pass3.h&quot;
+    47  +--- #include &quot;pass4.h&quot;
+    48  +--- #include &quot;pass5.h&quot;
+    49  |    
+    50  +--- /*----------------------------------------------------------------------------*/
+    51  |    //  1.旁E會�語名                                                                                                                     
+    52  |    //                                                                                                                                       
+    53  |    //  2.概胒�                                                                                                                            
+    54  |    //    チBめAッEフォッVムゃbッDゃP                                                                                              
+    55  |    //                                                                                                                                       
+    56  |    //  3.機能誃�明                                                                                                                      
+    57  |    //    プロめ[ッDムぃ�チBめAッE。ソッVゃPファめAッH名の所得やチBッセッVゃNぃ�衃B礃R、各パスぃ�呃VぃE 
+    58  |    //    凃Rしを行う。                                                                                                                
+    59  |    //                                                                                                                                       
+    60  |    //  4.備考                                                                                                                             
+    61  |    //                                                                                                                                       
+    62  |    /*----------------------------------------------------------------------------*/                                                         
+    63  |                                                                                                                                             
+        |  +--------------+ 
+    64  +--+ class TMainF | 
+    65  |  | {            | 
+        |  +--+-----------+ 
+        |     +-----------------------------------------+ 
+    66  |     |  private:    // ッ�ッVゃJッV宁v言 | 
+        |     +-----------------------------------------+ 
+    67  |     +--- bool IsF90SrcFile(string SrcFileName);
+        |     +-----------------------------------------+ 
+    68  |     |  public:     // ッ�ッVゃJッV宁v言 | 
+    69  |     |                                         | 
+        |     +-----------------------------------------+ 
+        |     |  +------------------------------------------------------------------------------------------+ 
+    70  |     +--+ enum TSrcCodeType {     // 寃Z豁BゃXッVゃPゃEッVド�B��類。全体で１つ。  | 
+        |     |  +--+---------------------------------------------------------------------------------------+ 
+    71  |     |     +--- sctNone = 0,
+    72  |     |     |    sctFortran77 = 1, // フォッVトラッE77盃N当�V�固定�B�)  
+    73  |     |     |    sctFortran90 = 2, // フォッVトラッE90                        
+    74  |     |     |    sctC = 3,       // C                                               
+        |     |   +-+---------------+ 
+    75  |     |   |  }SrcCodeType;  | 
+        |     |   +-----------------+ 
+    76  |     |    
+    77  |     +--- TStringList SrcFileNameList;        // 寃Z豁BゃXッVゃPファめAッH名リゃPト。
+    78  |     +--- TStringList InsertModulseHeadFileNameList;
+    79  |     +--- FILE *LogFp;    // ッ�め[凃R力用
+    80  |     |                                           
+    81  |     +--- int ErrCount;
+    82  |     +--- bool ErrF;
+    83  |     +--- bool NotSkipByErrF;                 // ゃBッDッVがあぁvぃ�も僇��B��J��J�
+    84  |     +--- bool CloseReqF;
+    85  |     +--- bool EndF;
+    86  |     +--- bool VisualF;                       // Viusalzationを�B�う（HTML+デーゃ\凃R力)
+    87  |     |                                        // かのフラめ[                                  
+    88  |     +--- bool DebugF;                        // Debug凃R力ON/OFF (OFF時は、コチBッEトに
+    89  |     |                                        // してSpeedUp)                                    
+    90  |     +--- bool NoMPIF;                        // -NoMPI指僇��V�MPI閁u送vぃ�ゃEッVドをSkip）
+    91  |     +--- bool MPIF;                          // -mpi指僇�
+    92  |     +--- bool OMP_OuterF;                    // -omp otr -omp_outer 指僇�
+    93  |     +--- bool OMP_InnerF;                    // -omp_inner 指僇�
+    94  |     +--- string TimeFunc;                    // -timeぃ@指僇�する時刃T閁u敁[
+    95  |     |                                        // MPI_Wtime() OAT_Wtime() MyTime()      
+    96  |     +--- string my_timer_start;              // -stime_and_etime ぃ@指僇�する�N��定関敁[名
+    97  |     +--- string my_timer_stop;               // -stime_and_etime ぃ@指僇�する�N��定関敁[名
+    98  |     |                                                                                                 
+    99  |     +--- bool EECntlF;                       // -eectrlぃ�フラめ[(ON時は、コッEトロッVッH郃B分を罃�き換え�V�
+   100  |     |                                                                                                                             
+   101  |     +--- string cc_option_str;               // -cc=ぃ@指僇�するコッEパイッHゃFプシッ@ッE
+   102  |     |                                                                                                     
+   103  |     +--- TScript *Call_SetParam_Script;      // #pragma call OAT_SetParam() ぃ�ゃPゃbッFプト
+   104  |     |                                        // 會F訃�定の堃G合はNULLぃBする。           
+   105  |     +--- TScript *Call_ATExec_Script;        // #pragma call OAT_ATexe() ぃ�ゃPゃbッFプト
+   106  |     |                                        // 會F訃�定の堃G合はNULLぃBする。       
+   107  |     +--- TStringList *Call_ATExec_ArgList;   // ATExec()呃VぃE凃Rし時ぃ�引数ッFゃPト
+   108  |     |                                        // ValName,ValDataぃ�ッFゃPト。自動�\�X加される。   
+   109  |     |                                                                                                         
+   110  |     +--- TList *TokenList;                   // トーゃbッEッFゃPト (Pass1ぃ@生成）
+   111  |     +--- TList *ValDataList;                 // 変数ッFゃPト(Pass2ぃ@生成）
+   112  |     +--- TList *TuneRegionList;              // チュッVニンめ[ッFッVゃNッ@ッEッFゃPト(Pass4ぃ@
+   113  |     |                                        // 生成)                                                       
+   114  |     +--- int CharMaxLen;                     // 栃V納文字列ぃ�最夃@镃Lさ(TRぃ�名前を全ぃ�允E
+   115  |     |                                        // れた镃Lさ�V�                                             
+   116  |     |                                                                                                         
+   117  |     +--- TStringList *TokStrList;
+   118  |     +--- bool IncludeCodeInContainsF;    // Include code in Contains
+   119  |     |                                                                 
+   120  |     +--- void *Pass5;
+   121  |     |    
+   122  |     +--- TMainF();
+   123  |     +--- ~TMainF();
+   124  |     +--- void GetCommandLineArg(int argc,char* argv[]);
+   125  |     +--- void CodeGen();
+   126  |     +--- void print(string s);
+   127  |     +--- void Err(string s);
+   128  |     +--- void ErrMessage(int Pos,string s);
+   129  |     +--- void DispTokenList();
+        |   +-+---+ 
+   130  |   |  }; | 
+        |   +-----+ 
+   131  |    
+   132  +--- extern TMainF *MainF;
+   133  |    
+   134  +--- void DP(string s);  // Debug甃B
+   135  |                                     
+   136  +--- #endif
+</pre>
+
+
+</body>
+</html>

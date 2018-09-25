@@ -1,0 +1,167 @@
+
+<html>
+<head>
+<title>DispTokenList メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.2.4. DispTokenList メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>DispTokenList</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>main.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>645</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TMainF</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void DispTokenList ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>デバッグ用のトークン出力</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>s   出力文字列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>デバッグ用にトークンを出力する。</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>GetTokIdStr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TMainF::TokenList</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap>109</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------+ 
+   645  +--+ void TMainF::DispTokenList() { | 
+           +--+-----------------------------+ 
+   646        +--- string s, ks;
+   647        |    
+              |  +----------------------------------------------+ 
+   648        +--+ for (int i = 0; i &lt; TokenList-&gt;Count; i++){  | 
+              |  +--+-------------------------------------------+ 
+   649        |     |    
+   650        |     +--- s = IntToStr(i) + &quot; [&quot; + ((TToken*)TokenList-&gt;Items[i])-&gt;Str + &quot;](&quot;
+   651        |     |    // + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;TokId)                
+   652        |     |    + ((TToken*)TokenList-&gt;Items[i])-&gt;GetTokIdStr()                      
+   653        |     |    // + IntToStr(((TToken *)TokenList-&gt;Items[i])-&gt;LineNo)               
+   654        |     |    + &quot;)[&quot; + ((TToken*)TokenList-&gt;Items[i])-&gt;OrgStr + &quot;]&quot;;               
+              |     |  +------------------------------------------------+ 
+   655        |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;LineEndF){ | 
+              |     |  +--+---------------------------------------------+ 
+   656        |     |     +--- s += &quot; [LineEnd] &quot;;
+              |     |   +-+---+ 
+   657        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------------------------------------+ 
+   658        |     +--+ if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Val){ | 
+              |     |  +--+-----------------------------------------------------+ 
+   659        |     |     +--- s += &quot;Val&quot;;
+              |     |   +-+---+ 
+   660        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------------------------+ 
+   661        |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Func){ | 
+              |     |   +-+-------------------------------------------------------------+ 
+   662        |     |     +--- s += &quot;Func&quot;;
+              |     |   +-+---+ 
+   663        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------------------------+ 
+   664        |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_Opr){  | 
+              |     |   +-+-------------------------------------------------------------+ 
+   665        |     |     +--- s += &quot;Opr&quot;;
+              |     |   +-+---+ 
+   666        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------------------------------------------+ 
+   667        |     |   |  else if (((TToken*)TokenList-&gt;Items[i])-&gt;TokId == tid_DataType){ | 
+              |     |   +-+-----------------------------------------------------------------+ 
+   668        |     |     +--- s += &quot;Type&quot;;
+              |     |   +-+---+ 
+   669        |     |   |  }  | 
+              |     |   +-----+ 
+   670        |     +--- print(s);
+              |   +-+---+ 
+   671        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   672      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

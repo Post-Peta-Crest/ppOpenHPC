@@ -1,0 +1,256 @@
+
+<html>
+<head>
+<title>TPass5 クラス説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.1. TPass5 クラス説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>クラス名</th>      <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.h</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>65</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>パス５クラス<br>解析結果からソースコードを生成する。TuneRegionクラスなどを参照して生成を行<br>う。</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+<pre>
+階層ツリー図
+
+        +---------+ 
+        | TPass5  | 
+        +---------+ 
+</pre>
+
+<div align="left"><font size="2">　　＋…public派生　♯…protected派生　－…private派生</font></div>
+<p></p>
+メンバ一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>アクセス指定子</th>
+<th nowrap>宣言形式</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>private</td>
+<td nowrap>string SrcFname</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>67</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>private</td>
+<td nowrap>TList * TokenList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>private</td>
+<td nowrap>TList * ValDataList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>70</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>private</td>
+<td nowrap>TList * TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>private</td>
+<td nowrap>TList fpOutList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>73</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutInstall</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>74</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutStatic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>75</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutDynamic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>76</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutControl</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpInOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>80</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>private</td>
+<td nowrap>FILE * fpOutOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>81</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>private</td>
+<td nowrap>bool FittingF</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>private</td>
+<td nowrap>char Comment</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>86</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap><a href="16_4_8.htm">private</a></td>
+<td nowrap><a href="16_4_8.htm">void MakeControlCode_Fortran ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap><a href="16_4_7.htm">private</a></td>
+<td nowrap><a href="16_4_7.htm">void MakeControlCode_C ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_7.htm">440</a></td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap><a href="16_4_10.htm">private</a></td>
+<td nowrap><a href="16_4_10.htm">void MakeFunctionCode_Fortran ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_10.htm">1837</a></td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap><a href="16_4_11.htm">private</a></td>
+<td nowrap><a href="16_4_11.htm">void MakeFunctionCode_Fortran77 ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_11.htm">2252</a></td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap><a href="16_4_9.htm">private</a></td>
+<td nowrap><a href="16_4_9.htm">void MakeFunctionCode_C ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_9.htm">1592</a></td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap><a href="16_4_3.htm">private</a></td>
+<td nowrap><a href="16_4_3.htm">int AddIncludePosList ( TList * InsertIncludePosList )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_3.htm">2500</a></td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap><a href="16_4_4.htm">private</a></td>
+<td nowrap><a href="16_4_4.htm">void AddUsePosList ( TList * InsertUsePosList )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_4.htm">2703</a></td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap><a href="16_4_12.htm">private</a></td>
+<td nowrap><a href="16_4_12.htm">void OutputModuleStart ( FILE * fp , string ModuleName )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_12.htm">3125</a></td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap><a href="16_4_5.htm">private</a></td>
+<td nowrap><a href="16_4_5.htm">void CheckAndDeleteLocalValDefine ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_5.htm">2833</a></td>
+</tr>
+<tr>
+<td nowrap>24</td>
+<td nowrap><a href="16_4_13.htm">public</a></td>
+<td nowrap><a href="16_4_13.htm">TPass5 ( TList * aTokenList , TList * aValDataList , TList * aTuneRegionList )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_13.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>25</td>
+<td nowrap><a href="16_4_14.htm">public</a></td>
+<td nowrap><a href="16_4_14.htm">~TPass5 ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_14.htm">220</a></td>
+</tr>
+<tr>
+<td nowrap>26</td>
+<td nowrap><a href="16_4_6.htm">public</a></td>
+<td nowrap><a href="16_4_6.htm">void Exec ( )</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+</table>
+
+
+</body>
+</html>

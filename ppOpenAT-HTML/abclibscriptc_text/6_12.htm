@@ -1,0 +1,337 @@
+
+<html>
+<head>
+<title>pass3.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.12. pass3.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *           
+     3  |     *   Software Name : ppOpen-AT                                         *           
+     4  |     *         Version : 0.1                                               *           
+     5  |     *                                                                     *           
+     6  |     *   License                                                           *           
+     7  |     *     This file is part of ppOpen-AT.                                 *           
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *           
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *           
+    10  |     *     for more details.                                               *           
+    11  |     *                                                                     *           
+    12  |     *   ppOpen-HPC project:                                               *           
+    13  |     *     Open Source Infrastructure for Development and Execution of     *           
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *           
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *           
+    16  |     *                                                                     *           
+    17  |     *   Organizations:                                                    *           
+    18  |     *     The University of Tokyo                                         *           
+    19  |     *       - Information Technology Center                               *           
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *           
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *           
+    22  |     *         /Earthquake Research Institute (ERI)                        *           
+    23  |     *       - Graduate School of Frontier Science                         *           
+    24  |     *     Kyoto University                                                *           
+    25  |     *       - Academic Center for Computing and Media Studies             *           
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *           
+    27  |     *                                                                     *           
+    28  |     *   Sponsorship:                                                      *           
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *           
+    30  |     *     Programs: CREST, Development of System Software Technologies    *           
+    31  |     *     for post-Peta Scale High Performance Computing.                 *           
+    32  |     *                                                                     *           
+    33  |     *   Copyright (c) 2012                                                *           
+    34  |     *      Information Technology Center, The University of Tokyo         *           
+    35  |     *                                                                     *           
+    36  |     *=====================================================================*/          
+    37  |     /*----------------------------------------------------------------------------*/  
+    38  |    //                                                                                 
+    39  |    //  概胒�                                                                        
+    40  |    //    パス３　ヘッダ                                                        
+    41  |    //                                                                                 
+    42  |    //  作成者                                                                      
+    43  |    //                                                                                 
+    44  |    /*----------------------------------------------------------------------------*/   
+    45  |                                                                                       
+    46  +--- #include &quot;main.h&quot;
+    47  |    
+    48  +--- #ifndef pass3H
+    49  +--- #define pass3H
+    50  |    
+    51  +--- /*----------------------------------------------------------------------------*/
+    52  |    //  1.旁E會�語名                                                             
+    53  |    //                                                                               
+    54  |    //  2.概胒�                                                                    
+    55  |    //    ゃPゃbッFプト稃�類                                                  
+    56  |    //                                                                               
+    57  |    //  3.機能誃�明                                                              
+    58  |    //                                                                               
+    59  |    //  4.備考                                                                     
+    60  |    //                                                                               
+    61  |    /*----------------------------------------------------------------------------*/ 
+    62  |                                                                                     
+    63  +--- void Pass3(TList *TokenList,TList *ValDataList);
+    64  +--- string SepLongStr(string s);
+    65  |    
+        |  +----------------------------------------------------------+ 
+    66  +--+ enum Enum_ScType  // 臃F動チチEッVニンめ[稃�類 | 
+    67  |  | {                                                        | 
+        |  +--+-------------------------------------------------------+ 
+    68  |     +--- sct_install,                        // めAッEゃPトーッH臃F動チチEッVニンめ[ぃ�指僇�
+    69  |     |    sct_static,                         // 実�B��T�道前自動チチEッVニンめ[ぃ�指僇�       
+    70  |     |    sct_dynamic,                        // 実�B�時臃F動チチEッVニンめ[ぃ�指僇�             
+    71  |     |    sct_command,                        // CやFORTRAN 90 ぃ�式�V�コマンド�V�                    
+    72  |     |                                        // そのぃZぃZ凃R力される。                             
+    73  |     |                                        // !ABCLib$ぃ�後の文僅�列をそぃ�ぃZぃZ凃R力         
+    74  |     |    // 補助指僇�僅�                                                                                 
+    75  |     |    sct_name,                                                                                            
+    76  |     |    sct_parameter,                                                                                       
+    77  |     |    sct_select,                                                                                          
+    78  |     |    sct_according,                                                                                       
+    79  |     |    sct_varied,                                                                                          
+    80  |     |    sct_fitting,                                                                                         
+    81  |     |    sct_prepro,                                                                                          
+    82  |     |    sct_postpro,                                                                                         
+    83  |     |                                                                                                         
+    84  |     |    sct_debug,                                                                                           
+    85  |     |    sct_DynPefThis, // Add 2004/09/15                                                                    
+    86  |     |    sct_Number,                                                                                          
+    87  |     |    sct_BPset,      // Add 2009/03/05                                                                    
+    88  |     |    sct_Allocate,   // Add 2010/12/28 GPU甃B allocate ()                                                
+    89  |     |    sct_pre_BPset,  // Add 2011/09/05 GPUベンチプッ�め[ッDム甃Bぃ@ぃ�仕�@��\�X加          
+    90  |     |    sct_post_BPset,                                                                                      
+    91  |     |                                                                                                         
+    92  |     |    sct_SetParm,    // call SerParam ぃ@ぃ�位�X��指僇�用。 Add 2012/02/28                        
+    93  |     |    sct_ATExec,     // call AtExec                                                                       
+    94  |     |    sct_None,       // 継�J��B�烅�で前のゃPゃbッFプトぃH迃X加した堃G合 Add 2012/02/28 
+    95  |     |                                                                                                         
+    96  |     |    // Split甃B Add 2012/03/05                                                                          
+    97  |     |    sct_SplitPoint,             //                                                                       
+    98  |     |    sct_SplitPointCopyDef,      // SplitPointCopyDef region start ... end                                
+    99  |     |    sct_SplitPointCopyInsert,   // SplitPointCopyInsert region start ... end                             
+   100  |     |                                                                                                         
+   101  |     |    // RotaionOrader 甃B Add 2013/03/10                                                                 
+   102  |     |    sct_RotationOrder,          // RotateionOrder sub region start ... end                               
+   103  |     |                                                                                                         
+   104  |     |    // Bind Add 2014/03/14                                                                               
+   105  |     |    sct_Bind,                   // !OAT$ bind ATexec arguments start                                     
+   106  |     |                                                                                                         
+   107  |     |    // 機能迃X加 Add 2016/02/26                                                                      
+   108  |     |    sct_List,                                                                                            
+   109  |     |    sct_VaiableD,                                                                                        
+   110  |     |    sct_ListD,                                                                                           
+   111  |     |    sct_Replace,                                                                                         
+   112  |     |    sct_Target,                                                                                          
+   113  |     |    sct_GWV,                                                                                             
+   114  |     |    sct_GWV_list,                                                                                        
+   115  |     |    sct_GWV_target,                                                                                      
+   116  |     |    sct_List_End,                                                                                        
+   117  |     |                                                                                                         
+   118  |     |    sct_Option,         // option Add 2016/02/29                                                         
+   119  |     |    sct_variedD,                                                                                         
+        |   +-+---+ 
+   120  |   |  }; | 
+        |   +-----+ 
+   121  |    
+   122  +--- /*----------------------------------------------------------------------------*/
+   123  |    //  1.旁E會�語名                                                             
+   124  |    //                                                                               
+   125  |    //  2.概胒�                                                                    
+   126  |    //    ゃPゃbッFプト機能、Install,Static,Dynamic ぃ�後に付く。      
+   127  |    //                                                                               
+   128  |    //  3.機能誃�明                                                              
+   129  |    //                                                                               
+   130  |    //  4.備考                                                                     
+   131  |    //                                                                               
+   132  |    /*----------------------------------------------------------------------------*/ 
+        |  +--------------------------------+ 
+   133  +--+ enum Enum_ScAction  // 機能  | 
+   134  |  | {                              | 
+        |  +--+-----------------------------+ 
+   135  |     +--- sca_none,
+   136  |     |    sca_define,                         // パラチBゃ\を�B��定する処理であるぃBいう指       
+   137  |     |                                        // 定                                                               
+   138  |     |    sca_variable,                       // 変動するパラチBゃ\ぃ@あるぃBいう指僇�             
+   139  |     |    sca_select,                         // 複数ぃ�手�J�きから遃N択する処理であるぃB        
+   140  |     |                                        // いう指僇�                                                     
+   141  |     |    sca_unroll,                         // 仁E下の凃�理をッHッVプアッEッ�ッVッFッEめ[する  
+   142  |     |                                        // ぃBいう指僇�                                                 
+   143  |     |                                                                                                             
+   144  |     |                                        // Fusion,Split甃B Add 2012/03/05                                   
+   145  |     |    sca_loopfusion,                     // 仁E下をッHッVプフめvッVゃNッ@ッEする。             
+   146  |     |    sca_loopsplit,                                                                                           
+   147  |     |    sca_loopfusionsplit,                                                                                     
+   148  |     |    sca_rotationorder,                                                                                       
+   149  |     |                                                                                                             
+   150  |     |    sca_bind_atexec_arg_start,          // bind めuゃbゃLッ@ッE定�Z�D開�@�                          
+   151  |     |    sca_bind_atexec_arg_end,            // bind めuゃbゃLッ@ッE定�Z�D終�R�                          
+   152  |     |                                                                                                             
+   153  |     |                                        // 2016/02/26                                                        
+   154  |     |    sca_list,                                                                                                
+   155  |     |    sca_variableD,                                                                                           
+   156  |     |    sca_listD,                                                                                               
+   157  |     |    sca_replace,                                                                                             
+   158  |     |    sca_target,                                                                                              
+   159  |     |    sca_GWV,                                                                                                 
+   160  |     |    sca_GWV_list,                                                                                            
+   161  |     |    sca_GWV_target,                                                                                          
+   162  |     |                                                                                                             
+        |   +-+---+ 
+   163  |   |  }; | 
+        |   +-----+ 
+   164  |    
+   165  +--- /*----------------------------------------------------------------------------*/
+   166  |    //  1.旁E會�語名                                                             
+   167  |    //                                                                               
+   168  |    //  2.概胒�                                                                    
+   169  |    //    ゃPゃbッFプトッFッVゃNッ@ッE指僇��B��類                      
+   170  |    //                                                                               
+   171  |    //  3.機能誃�明                                                              
+   172  |    //                                                                               
+   173  |    //  4.備考                                                                     
+   174  |    //                                                                               
+   175  |    /*----------------------------------------------------------------------------*/ 
+        |  +------------------------------------------+ 
+   176  +--+ enum Enum_ScRegion  // Region指僇�僅� | 
+   177  |  | {                                        | 
+        |  +--+---------------------------------------+ 
+   178  |     +--- scr_none,
+   179  |     |    scr_start,     
+   180  |     |    scr_end,       
+   181  |     |    scr_substart,  
+   182  |     |    scr_subend     
+        |   +-+---+ 
+   183  |   |  }; | 
+        |   +-----+ 
+   184  |    
+   185  +--- //
+   186  |    // ゃPゃbッFプトぃ@佃\甃Bされる�A�数                                
+   187  |    // Fortranぃ�変数ぃBぃb刁E。                                              
+   188  |    //                                                                               
+   189  |    /*----------------------------------------------------------------------------*/ 
+   190  |    //  1.旁E會�語名                                                             
+   191  |    //                                                                               
+   192  |    //  2.概胒�                                                                    
+   193  |    //    ゃPゃbッFプト変数ゃbッDゃP                                       
+   194  |    //                                                                               
+   195  |    //  3.機能誃�明                                                              
+   196  |    //                                                                               
+   197  |    //  4.備考                                                                     
+   198  |    //                                                                               
+   199  |    /*----------------------------------------------------------------------------*/ 
+        |  +--------------------+ 
+   200  +--+ class TScValData{  | 
+        |  +--+-----------------+ 
+        |     +-----------+ 
+   201  |     |  public:  | 
+        |     +-----------+ 
+   202  |     +--- int RefCount;                       // 参照ゃHゃ�ッEト
+   203  |     +--- string Str;                     // 変数名
+   204  |     +--- double dData;                       // 変数ぃ�倁A（�u�R定しぃ�いない堃G合もあり）
+   205  |     +--- double sData;                       // 範囲を持ぁvぃ�いる堃G合の開�@�・終�R�倁A
+   206  |     |                                        // varied () from 1 to 8 ぃFぃDぃ@上書きさ            
+   207  |     |                                        // れる。                                                 
+   208  |     +--- double eData;                       // 範囲を持ぁvぃ�いる堃G合の開�@�・終�R�倁A
+   209  |     |                                        // varied () from 1 to 8 ぃFぃDぃ@上書きさ            
+   210  |     |                                        // れる。                                                 
+   211  |     +--- // varied () from 1 to 8 ぃFぃDぃ@上書きされる。
+   212  |     |                                                               
+   213  |     +--- TScValData(string ValName);
+        |   +-+---+ 
+   214  |   |  }; | 
+        |   +-----+ 
+   215  |    
+   216  +--- //
+   217  |    // ゃPゃbッFプト単�X�で生成されるクッDゃP                                                                                
+   218  |    // 実際ぃ�実�B�時ぃb、スゃbッFプト実�B�エッEゃNッEが、�@�v釈を行いぃFがら実�B�する�X�uぃBする。    
+   219  |    // 例えぁ[ unroll (i) があぁvた堃G合に、僇��B�エッEゃNッEぃ�unroll Reqがセット                                     
+   220  |    // 内部犃J態を変更しながら実�B�する�X�uぃBぃFる。                                                                    
+   221  |    //                                                                                                                                       
+   222  |                                                                                                                                             
+   223  |    /*----------------------------------------------------------------------------*/                                                         
+   224  |    //  1.旁E會�語名                                                                                                                     
+   225  |    //                                                                                                                                       
+   226  |    //  2.概胒�                                                                                                                            
+   227  |    //    ゃPゃbッFプトゃbッDゃP                                                                                                     
+   228  |    //    １つぃ�ABCScript文に寃Z応したスゃbッFプトデーゃ\ぃ�ゃbッDゃP                                                  
+   229  |    //                                                                                                                                       
+   230  |    //  3.機能誃�明                                                                                                                      
+   231  |    //    ゃPゃbッFプトゃbッDゃPぃb、各ゃPゃbッFプトぃ�構文见v析した�I�果が入る。これにぃb、スゃbッF    
+   232  |    //    プトぃ�稃�類は寃Z豁B変数、�b�囲ぃ�敁[倁AぃFぃDが栃V納される。�V�文ぃ�ゃPゃbッFプトが�V�デッV  
+   233  |    //    ゃ\ぃH寃Z応し、TuneRegionゃbッDゃPがて複数ぃ�ゃPゃbッFプトゃbッDゃPも参煃@ぃHよっぃ�生成さ         
+   234  |    //    れる彁uぃBぃFる。                                                                                                           
+   235  |    //                                                                                                                                       
+   236  |    //  4.備考                                                                                                                             
+   237  |    //                                                                                                                                       
+   238  |    /*----------------------------------------------------------------------------*/                                                         
+        |  +----------------+ 
+   239  +--+ class TScript{ | 
+        |  +--+-------------+ 
+   240  |     |    
+        |     +-----------+ 
+   241  |     |  public:  | 
+        |     +-----------+ 
+   242  |     +--- string Str;                         // ゃPゃbッFプト臃F体の文僅�列
+   243  |     +--- int TokPos;                         // ゃPゃbッFプトが�X��かれぃ�いるToken位�X��
+   244  |     +--- int LineEndTokPos;                  // ゃPゃbッFプトぃ�最終(攃P行)トーゃbッE位�X��
+   245  |     +--- void *TuneRegion;
+   246  |     +--- TScript *PreviousScript;
+   247  |     +--- TScript *NextScript;
+   248  |     |    
+   249  |     +--- Enum_ScType ScType;                 // 臃F動チチEッVニンめ[稃�類 (static , instal
+   250  |     |                                        // l ,,,)                                                
+   251  |     +--- Enum_ScAction ScAction;             // 機能 (select , unroll,,,)
+   252  |     +--- Enum_ScRegion ScRegion;             // Region指僇� (region start...)
+   253  |     +--- TList *ScValDataList;               // 寃Z豁B変数ッFゃPト　ScValDataぃNぃ�ッFゃPト
+   254  |     |                                        // Fortranぃ�変数ぃBぃb刁Eぃ@ゃPゃbッFプト内でぃ� 
+   255  |     |                                        // 変数                                                        
+   256  |     |                                        // Region Start-Endぃ�間で有効ぃBぃFる。                
+   257  |     +--- TStringList *TokStrList;
+   258  |     |    
+   259  |     +--- TStringList *bindValNameList;       // bindぃ@ぃ�罃�換�A�数名リゃPト。NewぃBOldが�R�A互に允Eる。
+   260  |     |                                                                                                                         
+   261  |     +--- //
+   262  |     |    // Fitting閁u送vぃ�デーゃ\ 
+   263  |     |    //                               
+   264  |     |                                     
+   265  |     +--- //d-spline甃B迃X加郃B分
+   266  |     +--- int FittingDspline;
+   267  |     +--- int FittingDynamic;
+   268  |     +--- //d-spline甃B迃X加郃B分 ここぃZぃ@
+   269  |     |                                                 
+   270  |     +--- int FittingType;                    // Type = 0:ぃFし、1:least-square,2:user_
+   271  |     |                                        // defined                                   
+   272  |     +--- int FittingDegree;                  // 多項�V�の欁B敁[
+   273  |     +--- TList *SampledList;                 // intぃ�彁uぃ@ Sampledぃ�倁Aがセット
+   274  |     |                                                                                       
+   275  |     +--- TScript(TList *TokenList,int sPos,TScript *LastScript,TList *ValDataList); // 生成
+   276  |     +--- ~TScript(); // 砃G棄
+   277  |     +--- void GetFittingParam(int sPos);
+   278  |     +--- string GetATExecArgStr(bool DefineF,string ValName1,string ValName2,int SkipArgCount=0);
+   279  |     +--- int CheckBrBalance();
+   280  |     +--- bool IsATExecArg(void *ValData);
+   281  |     |    
+   282  |     +--- void GetBindArgument(TList *TokenList,int argumentEndPos);
+   283  |     +--- string ReplaseBindValName(string argStr);
+        |   +-+---+ 
+   284  |   |  }; | 
+        |   +-----+ 
+   285  |    
+   286  +--- #endif
+</pre>
+
+
+</body>
+</html>

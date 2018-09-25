@@ -1,0 +1,1194 @@
+
+<html>
+<head>
+<title>関数一覧</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">18. 関数一覧</font></td>
+</tr>
+</table>
+
+<p></p>
+関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>関数名</th>
+<th nowrap>種別</th>
+<th nowrap>概要</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::Add</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_3.htm">TTuneRegion::AddArgValListToATExecArgList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ArgValListをATExecの引数に一致すれば、一致する順に並べる。<br>ない場合は、MainF-&gt;Call_ATExec_ArgListとScript-&gt;TokListに追加する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_3.htm">2220</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="31_1.htm">AddDataDef_C</a></td>
+<td nowrap>関数</td>
+<td nowrap>intやdoubleなどのデータ宣言の処理を行ない、変数リストに変数と型を追加す<br>る。変数と関数の両方が対象となる。<br>定義の順番に沿った解析を行う。元の定義文字列を保持する。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_1.htm">1038</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="31_2.htm">AddDataDef_Fortran</a></td>
+<td nowrap>関数</td>
+<td nowrap>INTEGERやREALなどのデータ宣言の処理を行ない、変数リストに変数と型を追加す<br>る。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_2.htm">1469</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_4_3.htm">TPass5::AddIncludePosList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Includeを配置する位置を求めて返す。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_3.htm">2500</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TStringList::AddObject</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="31_3.htm">AddSubFuncDef_Fortran</a></td>
+<td nowrap>関数</td>
+<td nowrap>SUBROUTINE , FUNCTIONの文（行）の処理を行う。<br>引数のValDataを生成して、 ValDataに ArgF=trueをセットする。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_3.htm">959</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap><a href="16_4_4.htm">TPass5::AddUsePosList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>USE 文配置する位置を求めて返す。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_4.htm">2703</a></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TStringList::Assign</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>98</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap><a href="16_10_4.htm">TTuneRegion::CalNewRefValIdx</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>新たに分割が発生する場合のNewRefValIdxを求める。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_4.htm">11353</a></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap><a href="16_10_5.htm">TTuneRegion::ChackRefDoValF</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>各変数がDo変数からの依存かどうかをチェックする。<br>ValData-&gt;RefDoValがセットされる。<br>Do依存の変数は、UnRollの数だけ、別変数に置き換えられる。<br><br>DO i = 1,100 で da = b(i); の場合は、 daは、Do変数依存<br>a(i) = b(i) の場合は、 aに(Do変数 i)があるために依存でない。<br>da = b(i) で daがDo変数依存の場合に dc = 2*da での dcは、Do依存<br>da = b(i) で da = da + c(i) は、 daは Do依存だが、元々Do依存<br>Ｃ言語の場合は、DOでなく for(ValName=s;ValName&lt;e;ValName++)に<br>になるが、動作としてはFortranの場合と同じになる。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_5.htm">1968</a></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap><a href="16_10_6.htm">TTuneRegion::ChangeFromOrgStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OrgStrの改行やタブ、スペースなどは、そのままの形として、Strを追加した文字<br>列を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_6.htm">11408</a></td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap><a href="16_10_7.htm">TTuneRegion::ChangePragmaStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>#pragmaの文字列を変更する。#pragme omp xxx () の ()内の変数を増やす。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_7.htm">12850</a></td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap><a href="16_4_5.htm">TPass5::CheckAndDeleteLocalValDefine</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>モジュール内にリージョンを含んでいる場合に、リージョン内以外で使用されていない<br>変数定義を削除する</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_5.htm">2833</a></td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap><a href="16_5_3.htm">TScript::CheckBrBalance</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>スクリプト種類と()の対応をチェックして返す。<br>次の行が継続行かどうかの判定に使用する。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_3.htm">842</a></td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>TList::Clear</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>67</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>TStringList::Clear</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap><a href="16_2_3.htm">TMainF::CodeGen</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>コード生成をを行う。各パスを順次に呼び出す。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap><a href="16_12_3.htm">TVisualDM::CopyDataForHTML</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>HTML表示に必要なデータを複写する。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_3.htm">150</a></td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap>TList::Delete</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>65</td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap>TStringList::Delete</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>85</td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap><a href="16_2_4.htm">TMainF::DispTokenList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>デバッグ用のトークン出力</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_4.htm">645</a></td>
+</tr>
+<tr>
+<td nowrap>24</td>
+<td nowrap><a href="31_4.htm">DP</a></td>
+<td nowrap>関数</td>
+<td nowrap>デバッグ用出力関数</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="31_4.htm">694</a></td>
+</tr>
+<tr>
+<td nowrap>25</td>
+<td nowrap><a href="16_2_5.htm">TMainF::Err</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>エラーメッセージの表示とログファイルへの出力を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_5.htm">741</a></td>
+</tr>
+<tr>
+<td nowrap>26</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>エラーメッセージの表示とログファイルへの出力を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>27</td>
+<td nowrap><a href="31_5.htm">Eval</a></td>
+<td nowrap>関数</td>
+<td nowrap>sPosからePosの式の解析と評価を実行する。<br>使用したトークンの数を返す。<br>定数として評価出来た場合（Parameter,Const）は、EvalConstF=trueを設定 。<br>Paramater文の定数の計算に使用される。<br><br>対象トークンは、 tid_Oprと数値（整数、実数）、数値、一部の関数。<br>関数の引数部分の解析も行われる。<br> = を含む代入文に関しての処理は、呼び出し側で行う。（右辺のみが対象）</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_5.htm">2170</a></td>
+</tr>
+<tr>
+<td nowrap>28</td>
+<td nowrap>TList::Exchange</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>29</td>
+<td nowrap>TStringList::Exchange</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>95</td>
+</tr>
+<tr>
+<td nowrap>30</td>
+<td nowrap><a href="16_3_3.htm">TPass4::Exec</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>スクリプトを実行してチューニングリージョンを生成し、その解析を行う。<br>解析結果は、各TTuneRegionクラスのデータとして保持される。<br>スクリプトを実行するエンジンとしての位置づけとなる。</td>
+<td nowrap><a href="5_5.htm">pass4.cpp</a></td>
+<td nowrap><a href="16_3_3.htm">138</a></td>
+</tr>
+<tr>
+<td nowrap>31</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>パス５の実行<br>TureResionListを参照して、複数のチューニングリージョンに対応したソースコー<br>ドを出力する。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+<tr>
+<td nowrap>32</td>
+<td nowrap><a href="16_12_4.htm">TVisualDM::Exec</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ビジュアル化のためのファイルの生成を行う。これをメインとして、関数を呼び出<br>す。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_4.htm">63</a></td>
+</tr>
+<tr>
+<td nowrap>33</td>
+<td nowrap>TStringList::Find</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>90</td>
+</tr>
+<tr>
+<td nowrap>34</td>
+<td nowrap><a href="31_6.htm">FindBrace</a></td>
+<td nowrap>関数</td>
+<td nowrap>（に対応する )の Posを返す。ネストに関しても処理される。<br>見つからない場合は、-1を返す。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_6.htm">1915</a></td>
+</tr>
+<tr>
+<td nowrap>35</td>
+<td nowrap><a href="16_10_8.htm">TTuneRegion::FindEndDo2</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Cの場合は、forの後のネストが０の } か ; を探してその位置を返す。<br>Fortranの場合は、tid_endoのネストが０を探してその位置を返す。<br>見つからない場合は -1を返す行の先頭トークン位置で返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_8.htm">12637</a></td>
+</tr>
+<tr>
+<td nowrap>36</td>
+<td nowrap><a href="16_10_9.htm">TTuneRegion::FindEndIf</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>{ }を調べてネストが０の場合の位置を返す。<br>if()の後の{の位置からの検索に使用される。<br>ifの直後からの}の検索にはFindEndDo2を使用する。<br>見つからない場合は -1を返す行の先頭トークン位置で返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_9.htm">12702</a></td>
+</tr>
+<tr>
+<td nowrap>37</td>
+<td nowrap>TStringList::FindIC</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>91</td>
+</tr>
+<tr>
+<td nowrap>38</td>
+<td nowrap><a href="16_5_4.htm">TScript::GetATExecArgStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ATExec()のスクリプトの引数を返す。定義入りの場合は先頭の２引数は対象外とする。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_4.htm">663</a></td>
+</tr>
+<tr>
+<td nowrap>39</td>
+<td nowrap><a href="16_10_10.htm">TTuneRegion::GetBitIdx</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>最初に１になっているBitの位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_10.htm">11287</a></td>
+</tr>
+<tr>
+<td nowrap>40</td>
+<td nowrap><a href="16_2_7.htm">TMainF::GetCommandLineArg</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>コマンドラインの解析と実行を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_7.htm">296</a></td>
+</tr>
+<tr>
+<td nowrap>41</td>
+<td nowrap><a href="16_11_3.htm">TValData::GetDefStr_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>変数の定義文字列を返す。C言語用</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_3.htm">2618</a></td>
+</tr>
+<tr>
+<td nowrap>42</td>
+<td nowrap><a href="16_11_4.htm">TValData::GetDefStr_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>変数の定義文字列を返す。Fortran言語用</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_4.htm">2536</a></td>
+</tr>
+<tr>
+<td nowrap>43</td>
+<td nowrap><a href="16_10_11.htm">TTuneRegion::GetDoValAddValue</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Do変数に Unroll中の行での加算する値を計算して返す。<br><br> 外側のLoop で、UnRoll = 2<br>    中で　UnRoll = 2 の場合には、中側が先に変化する形の計算となる。<br>  kk = 0 : A(i+0,j+0);<br>  kk = 1 : A(i+0,j+1);<br>  kk = 2 : A(i+1,j+0);<br>  kk = 3 : A(i+1,j+1);</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_11.htm">11455</a></td>
+</tr>
+<tr>
+<td nowrap>44</td>
+<td nowrap><a href="16_5_5.htm">TScript::GetFittingParam</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>fitting Scriptを解析してScriptデータに入れる。<br>SampledList-&gt;Count = 0 の場合は、デフォルトの値を設定する。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_5.htm">494</a></td>
+</tr>
+<tr>
+<td nowrap>45</td>
+<td nowrap><a href="16_10_12.htm">TTuneRegion::GetInfo</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>チューニングリージョン情報を改行入り文字列で所得（デバッグ用）</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_12.htm">1762</a></td>
+</tr>
+<tr>
+<td nowrap>46</td>
+<td nowrap><a href="16_10_13.htm">TTuneRegion::GetNewValName</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Idx番目の新しい名前を作成する。語尾の数字を取った名前＋Idxの名前とするが、<br>ArgValList-&gt;Objects[] の ValDataに既に数字を取って同じ名前がある場合には、<br>元の変数名＋&quot;_&quot;＋数値とする。さらに一致する場合は、&quot;_&quot;を増やして対応する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_13.htm">11089</a></td>
+</tr>
+<tr>
+<td nowrap>47</td>
+<td nowrap><a href="16_10_14.htm">TTuneRegion::GetNewValName</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>AddStrを追加した新しい名前を作成する。<br>ArgValList-&gt;Objects[] の ValDataに既にある名前と一致する場合は、<br>&quot;_&quot;を数値の後に必要なだけ挿入する</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_14.htm">11245</a></td>
+</tr>
+<tr>
+<td nowrap>48</td>
+<td nowrap><a href="16_10_15.htm">TTuneRegion::GetNewValNameForValData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Idx番目の新しい名前を作成する。<br>ArgValList-&gt;Objects[] の ValDataに既にある名前と一致する場合は、<br>&quot;_&quot;を数値の後に必要なだけ挿入する</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_15.htm">11171</a></td>
+</tr>
+<tr>
+<td nowrap>49</td>
+<td nowrap><a href="16_10_16.htm">TTuneRegion::GetNextKanmaPos</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>同レベルでの次のカンマまたは、行末を探して、その位置を返す。<br>カンマがない場合は、行の最後を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_16.htm">1879</a></td>
+</tr>
+<tr>
+<td nowrap>50</td>
+<td nowrap><a href="16_10_17.htm">TTuneRegion::GetNextSemikoronPos</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>次のセミコロンカンマまたは、)を探しして、その位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_17.htm">1917</a></td>
+</tr>
+<tr>
+<td nowrap>51</td>
+<td nowrap><a href="16_10_18.htm">TTuneRegion::GetPrePostBPSetSubregionStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>TuneRegion内の Pre BPset RegionとPost BPSet Righonの文字列を所得する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_18.htm">12522</a></td>
+</tr>
+<tr>
+<td nowrap>52</td>
+<td nowrap><a href="16_10_20.htm">TTuneRegion::GetPrePostSubregionStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>TuneRegion内の PrePro Sub RegionとPostPro Sub Righonの文字列を所得する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_20.htm">12413</a></td>
+</tr>
+<tr>
+<td nowrap>53</td>
+<td nowrap><a href="16_10_19.htm">TTuneRegion::GetPrePostSubregionStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>TuneRegion内の PriPro Sub RegionとPostPro Sub Righonの文字列を所得する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_19.htm">12747</a></td>
+</tr>
+<tr>
+<td nowrap>54</td>
+<td nowrap><a href="31_7.htm">GetScValData</a></td>
+<td nowrap>関数</td>
+<td nowrap>ValNameと同じ名前のスクリプト変数を探して、なければ、新規に作成する。<br>検索は、TokListのScriptを順番に検索する。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_7.htm">606</a></td>
+</tr>
+<tr>
+<td nowrap>55</td>
+<td nowrap><a href="16_9_3.htm">TToken::GetTokIdStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>トークン種類を文字列で返す。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="16_9_3.htm">1143</a></td>
+</tr>
+<tr>
+<td nowrap>56</td>
+<td nowrap><a href="16_10_21.htm">TTuneRegion::GetValAddValue</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>通常変数に、Unroll中の行で加算する値（Ｉｄｘ）を計算して返す。<br>どのDo変数に依存しているかによって決定される。<br><br> ・有効なDoが何かは、DoValIdxとUseDoValBitsで決定されている。<br>      UseDoValBitsは、kkの繰り返し回数（複数行数）の決定に使用される<br> ・変数がどのDo変数に対して束縛（複数化）されているかは、UseValBits。<br> ・もし、束縛を受けていない変数のDoが有効中の場合は、<br>         その部分の増加はSkip(繰り返し参照)対象となる<br><br>複数行数の計算に使用されながら、束縛には、有効でない変数Ｂｉｔ部分の変化が<br>マスクされる形になるが、<br>Bitが詰まったデータなので、計算する必要あり。<br>各bitでのどのIdxを示すかを求めてから、該当UseValBitsでのIdxを求める。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_21.htm">11508</a></td>
+</tr>
+<tr>
+<td nowrap>57</td>
+<td nowrap><a href="16_10_22.htm">TTuneRegion::GetValAddValue2</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>通常変数に、Unroll中の行で加算する値（Ｉｄｘ）を計算して返す。<br>どのDo変数に依存しているかによって決定される。<br>UnRoll中の多重化のBitによってのRefValIdxが変数のRefDoValBitsに<br>合わせて調整される。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_22.htm">11560</a></td>
+</tr>
+<tr>
+<td nowrap>58</td>
+<td nowrap><a href="16_10_23.htm">TTuneRegion::GetValCountOfBit</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Bitsが１部分の配列のCountを掛けた値を返す。<br>変数がUnroll中に、何個必要かを計算する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_23.htm">11318</a></td>
+</tr>
+<tr>
+<td nowrap>59</td>
+<td nowrap><a href="31_8.htm">GetValIdx</a></td>
+<td nowrap>関数</td>
+<td nowrap>名前とモジュールIdxに一致する変数番号を返す。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_8.htm">2086</a></td>
+</tr>
+<tr>
+<td nowrap>60</td>
+<td nowrap><a href="31_9.htm">IMPLICIT</a></td>
+<td nowrap>関数</td>
+<td nowrap>暗黙の型宣言の変更<br>暗黙の型宣言の変更に伴って、暗黙の型宣言テーブルの内容を変更する。<br><br>   IMPLICIT NONE、<br>   IMPLICIT 型指定子(x1,x2-x3,…)</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_9.htm">2466</a></td>
+</tr>
+<tr>
+<td nowrap>61</td>
+<td nowrap>TList::IndexOf</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>68</td>
+</tr>
+<tr>
+<td nowrap>62</td>
+<td nowrap>TStringList::IndexOf</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+<tr>
+<td nowrap>63</td>
+<td nowrap>TStringList::IndexOfObject</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>89</td>
+</tr>
+<tr>
+<td nowrap>64</td>
+<td nowrap>TList::Insert</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>70</td>
+</tr>
+<tr>
+<td nowrap>65</td>
+<td nowrap>TStringList::Insert</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>96</td>
+</tr>
+<tr>
+<td nowrap>66</td>
+<td nowrap>TStringList::InsertObject</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>97</td>
+</tr>
+<tr>
+<td nowrap>67</td>
+<td nowrap>TScript::IsATExecArg</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>248</td>
+</tr>
+<tr>
+<td nowrap>68</td>
+<td nowrap><a href="16_10_24.htm">TTuneRegion::IsATExecArg</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ValDataがATExec()のスクリプトの引数に含まれているかを調べれる。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_24.htm">12909</a></td>
+</tr>
+<tr>
+<td nowrap>69</td>
+<td nowrap><a href="16_2_8.htm">TMainF::IsF90SrcFile</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ソースファイル名から、f90のファイルかどうかを返す。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_8.htm">454</a></td>
+</tr>
+<tr>
+<td nowrap>70</td>
+<td nowrap>TStringList::LoadFromFile</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>93</td>
+</tr>
+<tr>
+<td nowrap>71</td>
+<td nowrap><a href="31_10.htm">main</a></td>
+<td nowrap>関数</td>
+<td nowrap>生成時に呼ばれ、コマンドラインの解析とMainF作成とコード生成を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="31_10.htm">75</a></td>
+</tr>
+<tr>
+<td nowrap>72</td>
+<td nowrap><a href="16_10_25.htm">TTuneRegion::MakeArgValList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>チューニングリージョンのサブルーチンに渡す引数リストを生成する。<br>チューニングリージョン外との連携が必要な変数の一覧を作成する。<br>チューニングリージョン内で最初に参照、チューニングリージョン外で後で参照(S<br>UBROTIONの引数を含む）をチェックする。<br><br>TokenEndPosの後までチェック（tid_end)して、参照があるかチェックする。<br><br>DefPosS == -1 の外部定義（グローバル）変数は引数に追加しない形とした。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_25.htm">726</a></td>
+</tr>
+<tr>
+<td nowrap>73</td>
+<td nowrap><a href="16_4_7.htm">TPass5::MakeControlCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT/OAT_ControlRoutines.c を作成する。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_7.htm">440</a></td>
+</tr>
+<tr>
+<td nowrap>74</td>
+<td nowrap><a href="16_4_8.htm">TPass5::MakeControlCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT/OAT_ControlRoutines.f を作成する。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+<tr>
+<td nowrap>75</td>
+<td nowrap><a href="16_4_9.htm">TPass5::MakeFunctionCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_(元のソースファイル名).c を作成する。<br><br>Region（一番外側）を SetParam() call Sub() に置き換える。<br>また、NestしたRegion内は、コメントとして、 TokenEndPosまでSkipする。<br>NestRegion内の sct_Commandも、Nest先のRegionでの処理となる。<br><br> ・sct_command の変換<br> ・sct_install ... のブロックをコメントアウト（コメントを残す）</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_9.htm">1592</a></td>
+</tr>
+<tr>
+<td nowrap>76</td>
+<td nowrap><a href="16_4_10.htm">TPass5::MakeFunctionCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_(元のソースファイル名).f90 を作成する。<br><br>Region（一番外側）を SetParam() call Sub() に置き換える。<br>また、NestしたRegion内は、コメントとして、 TokenEndPosまでSkipする。<br>NestRegion内の sct_Commandも、Nest先のRegionでの処理となる。<br><br> ・sct_command の変換<br> ・sct_install ... のブロックをコメントアウト（コメントを残す）</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_10.htm">1837</a></td>
+</tr>
+<tr>
+<td nowrap>77</td>
+<td nowrap><a href="16_4_11.htm">TPass5::MakeFunctionCode_Fortran77</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_(元のソースファイル名).f を作成する。<br><br>Region（一番外側）を SetParam() call Sub() に置き換える。<br>また、NestしたRegion内は、コメントとして、 TokenEndPosまでSkipする。<br>NestRegion内の sct_Commandも、Nest先のRegionでの処理となる。<br>Fortran77用<br><br> ・sct_command の変換<br> ・sct_install ... のブロックをコメントアウト（コメントを残す）</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_11.htm">2252</a></td>
+</tr>
+<tr>
+<td nowrap>78</td>
+<td nowrap><a href="16_12_5.htm">TVisualDM::MakeIndexHTML</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_Index.htmlを作成する。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_5.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>79</td>
+<td nowrap><a href="16_10_26.htm">TTuneRegion::MakeLoopFusionSplitData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>LoopFusionの解析を行う。<br>Type,Name,Do LoopEnd 式,iusw の変数の作成が行われる。<br>現状では、Fortranのみに対応している。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_26.htm">1313</a></td>
+</tr>
+<tr>
+<td nowrap>80</td>
+<td nowrap><a href="16_12_6.htm">TVisualDM::MakeResultHTML</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>各TuneRegionごとの結果ページを作成する。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_6.htm">428</a></td>
+</tr>
+<tr>
+<td nowrap>81</td>
+<td nowrap><a href="16_10_27.htm">TTuneRegion::MakeRotaionOrderSrcTokenList</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>RotaionOrder sub regionに合わせて順番を変えたTokenListを作成して返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_27.htm">8515</a></td>
+</tr>
+<tr>
+<td nowrap>82</td>
+<td nowrap><a href="16_10_28.htm">TTuneRegion::MakeSelectData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Selectの解析を行う</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_28.htm">308</a></td>
+</tr>
+<tr>
+<td nowrap>83</td>
+<td nowrap><a href="31_11.htm">MakeTokStrTbl_C</a></td>
+<td nowrap>関数</td>
+<td nowrap>C用のトークン名と、TokIdの対応テーブルを作成する。<br>作成したテーブルは、字句解析で使用される。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_11.htm">943</a></td>
+</tr>
+<tr>
+<td nowrap>84</td>
+<td nowrap><a href="31_12.htm">MakeTokStrTbl_Fortran</a></td>
+<td nowrap>関数</td>
+<td nowrap>Fortran用トークン名と、TokIdの対応テーブルを作成する。<br>作成したテーブルは、字句解析で使用される。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_12.htm">802</a></td>
+</tr>
+<tr>
+<td nowrap>85</td>
+<td nowrap><a href="16_10_29.htm">TTuneRegion::MakeUnrollData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>UnRollの解析を行う。<br>Type,Name,Do LoopEnd 式,iusw の変数の作成が行われる。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_29.htm">1001</a></td>
+</tr>
+<tr>
+<td nowrap>86</td>
+<td nowrap><a href="16_10_30.htm">TTuneRegion::Merge_Unroll_Line_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Unrollでの加算の複数回の式を１つにマージする。<br>式の先頭が Val[xx] = Val[xx] + (or - ）かどうかを調べて、合計型ならば<br>1回目と2回目以降を合わせた１式に変更する。 1回目は最後の　; をカット<br>2回目以降は先頭のVal[xx] = Val[xx]と最後の ; をカット<br>最後は先頭のVal[xx] = Val[xx]をカットして、最後の ;  は残す。<br>途中で カンマやセミコロンが2回ある場合や変数の前に(がある場合は対象外。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_30.htm">9662</a></td>
+</tr>
+<tr>
+<td nowrap>87</td>
+<td nowrap><a href="16_10_31.htm">TTuneRegion::OutputAutoExecCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>時間計測を行うための ATexec サブルーチンのコードの生成を行う。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_31.htm">5082</a></td>
+</tr>
+<tr>
+<td nowrap>88</td>
+<td nowrap><a href="16_10_32.htm">TTuneRegion::OutputAutoExecCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>時間計測を行うための ATexec サブルーチンのコードの生成を行う。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_32.htm">2878</a></td>
+</tr>
+<tr>
+<td nowrap>89</td>
+<td nowrap><a href="16_10_33.htm">TTuneRegion::OutputExecCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_GGGFFF(...) のswich()付きの実行コードを生成する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_33.htm">7683</a></td>
+</tr>
+<tr>
+<td nowrap>90</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_GGGFFF(...) のswich()付きの実行コードを生成する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+<tr>
+<td nowrap>91</td>
+<td nowrap><a href="16_10_35.htm">TTuneRegion::OutputFusionDo</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>LoopFusionに対応したDo出力を行う。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_35.htm">12936</a></td>
+</tr>
+<tr>
+<td nowrap>92</td>
+<td nowrap><a href="16_10_36.htm">TTuneRegion::OutputLoopFusionExecCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>LoopFusionSplitサブルーチンを出力する</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_36.htm">8004</a></td>
+</tr>
+<tr>
+<td nowrap>93</td>
+<td nowrap><a href="16_4_12.htm">TPass5::OutputModuleStart</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Install , static , dynamic　のモジュールの先頭部分を出力する。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_12.htm">3125</a></td>
+</tr>
+<tr>
+<td nowrap>94</td>
+<td nowrap><a href="16_10_37.htm">TTuneRegion::OutputReplaceSrc</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>ソースの指定範囲を出力（コメントにはしない、Scriptは出力しない）<br>NestしたScriptの置換も行う<br>UnRoll以外でのvarid指定も、変換対象となる。<br>また、TragetSubRegionと一致しないSubRegionは、Ｓｋｉｐする。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_37.htm">12094</a></td>
+</tr>
+<tr>
+<td nowrap>95</td>
+<td nowrap><a href="16_10_38.htm">TTuneRegion::OutputSelectCaseExecCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>SelectのCase()内に入るコードを出力する<br>Case()内のコード生成要求時に呼ばれる。<br>複数のsub regionから選択か、varidの数値から計算される。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_38.htm">7933</a></td>
+</tr>
+<tr>
+<td nowrap>96</td>
+<td nowrap><a href="16_10_39.htm">TTuneRegion::OutputSelectCaseExecCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>SelectのCase()内に入るコードを出力する<br>Case()内のコード生成要求時に呼ばれる。<br>複数のsub regionから選択か、varidの数値から計算される。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_39.htm">7860</a></td>
+</tr>
+<tr>
+<td nowrap>97</td>
+<td nowrap><a href="16_10_40.htm">TTuneRegion::OutputSetParamCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_Coontrol.f の ABCLob_SetParam()のコードを出力する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_40.htm">2668</a></td>
+</tr>
+<tr>
+<td nowrap>98</td>
+<td nowrap><a href="16_10_41.htm">TTuneRegion::OutputSetParamCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>OAT_Coontrol.f の ABCLob_SetParam()のコードを出力する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_41.htm">2358</a></td>
+</tr>
+<tr>
+<td nowrap>99</td>
+<td nowrap><a href="16_10_42.htm">TTuneRegion::OutputSetParmSrcCode</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>SetParmコードを出力</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_42.htm">11609</a></td>
+</tr>
+<tr>
+<td nowrap>100</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>置き換えコードを出力<br>Call SetParam()<br>Call xxxx()<br>コメントに置き換える。<br><br>Modeの設定で、出力対象（範囲）を変える。 Add 2004/09/14<br><br>OutMode=0 : SetParam + Call Func() + Comment<br>OutMode=1 : SetParam + Call Func()<br>OutMode=2 : SetParam<br>OutMode=3 : Call Func() + Comment</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>101</td>
+<td nowrap><a href="16_10_44.htm">TTuneRegion::OutputUnroll_DoBlock_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したDO_Blockを出力する。<br>RefValIdxは、Countに対しての番号となる。（呼び出し側から指定される）<br>最後のトークン（通常はtid_LineEnd)の位置を返す。<br>多重化に合わせた変数の置換も行われる。<br><br>UseDoRefValBitsは、このブロックで分割対象となっているDoRefValのbitを示す。<br>RefValIdxは、UseDoRefValBitsで1になっているBitのCount総和における番号を示<br>す。<br>呼び出し時のUseDoRefValBitsから新たに1になるBitsだけが繰り返し対象となる。<br>その場合のRefValIdxは、新たなUseDoRefValBitsでのIdxに再計算され先に渡され<br>る。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_44.htm">10311</a></td>
+</tr>
+<tr>
+<td nowrap>102</td>
+<td nowrap><a href="16_10_45.htm">TTuneRegion::OutputUnroll_DoBlock_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したDO_Blockを出力する。<br>RefValIdxは、Countに対しての番号となる。（呼び出し側から指定される）<br>最後のトークン（通常はtid_LineEnd)の位置を返す。<br>多重化に合わせた変数の置換も行われる。<br><br>UseDoRefValBitsは、このブロックで分割対象となっているDoRefValのbitを示す。<br>RefValIdxは、UseDoRefValBitsで1になっているBitのCount総和における番号を示<br>す。<br>呼び出し時のUseDoRefValBitsから新たに1になるBitsだけが繰り返し対象となる。<br>その場合のRefValIdxは、新たなUseDoRefValBitsでのIdxに再計算され先に渡され<br>る。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>103</td>
+<td nowrap><a href="16_10_46.htm">TTuneRegion::OutputUnroll_IfBlock_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したIf_Blockを出力する。<br>最後のトークン（通常はtid_LineEnd)の位置を返す。<br>多重化に合わせた変数の置換も行われる。<br><br>１）ifの構造 EndPos,CondSPpos,CondEPos,BlockSPos,BlockEPos,ElseSPos,ElseEP<br>osを求める<br>２）条件式がDO依存ならば、ブロック多重化、そうでなければ行単位での多重化を<br>行う<br>３）終了トークン位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_46.htm">10955</a></td>
+</tr>
+<tr>
+<td nowrap>104</td>
+<td nowrap><a href="16_10_47.htm">TTuneRegion::OutputUnroll_IfBlock_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したIf_Blockを出力する。<br>最後のトークン（通常はtid_LineEnd)の位置を返す。<br>多重化に合わせた変数の置換も行われる。<br><br>１）ifの構造 EndPos,CondSPpos,CondEPos,BlockSPos,BlockEPos,ElseSPos,ElseEP<br>osを求める<br>２）条件式がDO依存ならば、ブロック多重化、そうでなければ行単位での多重化を<br>行う<br>３）終了トークン位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_47.htm">10802</a></td>
+</tr>
+<tr>
+<td nowrap>105</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したコードを１行出力する。<br>UseDoRefValBitsとRefValIdxによるDo参照変数部分の置換を行った行を出力する。<br>RefValIdxは、Countに対しての番号となる。（呼び出し側から指定される）<br>ここから、別の解析を呼ぶことはない。<br>最後のトークン（通常はtid_LineEnd)の位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>106</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>多重化したコードを１行出力する。<br>UseDoRefValBitsとRefValIdxによるDo参照変数部分の置換を行った行を出力する。<br>RefValIdxは、Countに対しての番号となる。（呼び出し側から指定される）<br>ここから、別の解析を呼ぶことはない。<br>最後のトークン（通常はtid_LineEnd)の位置を返す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>107</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Unrollのサブルーチンを出力する</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>108</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Unrollのサブルーチンを出力する</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+<tr>
+<td nowrap>109</td>
+<td nowrap><a href="31_13.htm">Pass1</a></td>
+<td nowrap>関数</td>
+<td nowrap>ソース文字列をスキャンし区切り文字列で分割したトークンリストを生成する。<br>生成したトークンは、TokenListに追加される。<br>CとFortranの両方で使用する。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_13.htm">79</a></td>
+</tr>
+<tr>
+<td nowrap>110</td>
+<td nowrap><a href="31_14.htm">Pass1_2</a></td>
+<td nowrap>関数</td>
+<td nowrap>TokData-&gt;Strの文字列から、TokIdをセットする。<br>また、複数トークンを１つにまとめる。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_14.htm">566</a></td>
+</tr>
+<tr>
+<td nowrap>111</td>
+<td nowrap><a href="31_15.htm">Pass1_3_Fortran</a></td>
+<td nowrap>関数</td>
+<td nowrap>フォートランの構文に合わせて、Token-&gt;TokIdをtid_val(変数）に変更する。<br>変数名としての end や if を有効とするために構文に合わせて一部を変更。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_15.htm">723</a></td>
+</tr>
+<tr>
+<td nowrap>112</td>
+<td nowrap><a href="31_16.htm">Pass2</a></td>
+<td nowrap>関数</td>
+<td nowrap>構文解析と変数リストを作成し、変数の型などを設定する。<br><br>  １）モジュール構造識別（ModukeIdxを割り振って、異なるモジュールの区別)<br>  ２）｛｝のネストをNestLevelにセットする。<br>  ３）for , if の終了先をセットする<br>  ４）変数定義 (int , double ) などの情報から、変数一覧(ValDataList)を作成し<br>      リンクを設定する。（モジュールが異なる変数は、別物とする）<br>      変数の型、バイトサイズも保持すること。（一時変数作成の場合に必要）</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_16.htm">87</a></td>
+</tr>
+<tr>
+<td nowrap>113</td>
+<td nowrap><a href="31_17.htm">Pass2_C</a></td>
+<td nowrap>関数</td>
+<td nowrap>構文解析を１文ごとに行う<br>主な目的は、変数についての参照関係を含めた情報収集。<br>sPosからのトークンを処理し、使用したトークン数を返す。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_17.htm">657</a></td>
+</tr>
+<tr>
+<td nowrap>114</td>
+<td nowrap><a href="31_18.htm">Pass2_Fortran</a></td>
+<td nowrap>関数</td>
+<td nowrap>構文解析を１行ごとに行う<br>sPosからePosのトークンを全て処理すること。(ePosは、LineEndを示す)<br>いくつかのまとまった処理は、サブルーチンとすること。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_18.htm">292</a></td>
+</tr>
+<tr>
+<td nowrap>115</td>
+<td nowrap><a href="31_19.htm">Pass3</a></td>
+<td nowrap>関数</td>
+<td nowrap>スクリプトの解析を行ない、Token-&gt;Scriptにデータをセットする。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_19.htm">69</a></td>
+</tr>
+<tr>
+<td nowrap>116</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>メッセージの表示とログファイルへの出力を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>117</td>
+<td nowrap>TList::Remove</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>66</td>
+</tr>
+<tr>
+<td nowrap>118</td>
+<td nowrap>TStringList::Remove</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>86</td>
+</tr>
+<tr>
+<td nowrap>119</td>
+<td nowrap><a href="16_12_7.htm">TVisualDM::ResetLogDataFile</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>参照するLogデータをクリアする。<br>各TuneRegionに対してのダミーのヘッダを持ったファイルが作成される。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_7.htm">104</a></td>
+</tr>
+<tr>
+<td nowrap>120</td>
+<td nowrap><a href="31_20.htm">ResetModule</a></td>
+<td nowrap>関数</td>
+<td nowrap>Fortran 各モジュールでの定義をリセットする。<br>最初のモジュールと、ＥＮＤの後で呼ばれる。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_20.htm">2127</a></td>
+</tr>
+<tr>
+<td nowrap>121</td>
+<td nowrap><a href="16_10_52.htm">TTuneRegion::RestoreValBits</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>SaveAndResetValBitsで保存しておいた ValBits(ValData-&gt;xxxBits)を戻す。<br>新たな対象の解析の開始前に呼び出す。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_52.htm">2182</a></td>
+</tr>
+<tr>
+<td nowrap>122</td>
+<td nowrap><a href="16_10_53.htm">TTuneRegion::SaveAndResetValBits</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>Val関連の状態を、一時的に保存してリセットする。RestoreValBitsによって復帰<br>を行う。<br>この時、デバッグ情報として、参照変数の文字列も作成する。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_53.htm">2130</a></td>
+</tr>
+<tr>
+<td nowrap>123</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap>関数</td>
+<td nowrap>長い文字列を72桁で分割して、&amp;をセットする。<br>Ｃ言語の場合は、不要。現在は元の文字列をそのまま戻している。<br>Fortran90の場合もコメント等をそのままにしたいため分割しない。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>124</td>
+<td nowrap>TStringList::Sort</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>94</td>
+</tr>
+<tr>
+<td nowrap>125</td>
+<td nowrap><a href="16_12_8.htm">TVisualDM::StrToHTMLStr</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>文字列の空白や特殊文字を HTML形式で表示可能な文字列に変換する。</td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_8.htm">727</a></td>
+</tr>
+<tr>
+<td nowrap>126</td>
+<td nowrap>TList::TList</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>63</td>
+</tr>
+<tr>
+<td nowrap>127</td>
+<td nowrap><a href="16_2_10.htm">TMainF::TMainF</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>生成時に呼ばれ変数の初期化を行う。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_10.htm">208</a></td>
+</tr>
+<tr>
+<td nowrap>128</td>
+<td nowrap><a href="16_2_11.htm">TMainF::~TMainF</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>破棄時に呼ばれ、変数を開放する。</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_11.htm">250</a></td>
+</tr>
+<tr>
+<td nowrap>129</td>
+<td nowrap><a href="16_11_5.htm">TValData::ToString</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>変数の情報を文字列で所得する。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_5.htm">2006</a></td>
+</tr>
+<tr>
+<td nowrap>130</td>
+<td nowrap><a href="16_3_4.htm">TPass4::TPass4</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>パス４クラス生成。変数の初期化と、引数データの複写を行う。</td>
+<td nowrap><a href="5_5.htm">pass4.cpp</a></td>
+<td nowrap><a href="16_3_4.htm">70</a></td>
+</tr>
+<tr>
+<td nowrap>131</td>
+<td nowrap><a href="16_3_5.htm">TPass4::~TPass4</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>パス４クラス破棄</td>
+<td nowrap><a href="5_5.htm">pass4.cpp</a></td>
+<td nowrap><a href="16_3_5.htm">109</a></td>
+</tr>
+<tr>
+<td nowrap>132</td>
+<td nowrap><a href="16_4_13.htm">TPass5::TPass5</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>パス５クラス生成<br>変数の初期化と出力ファイルのオープンを行う。</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_13.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>133</td>
+<td nowrap><a href="16_4_14.htm">TPass5::~TPass5</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>パス５クラスの破棄<br>ファイルのクローズ処理を行う</td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_14.htm">220</a></td>
+</tr>
+<tr>
+<td nowrap>134</td>
+<td nowrap><a href="16_5_6.htm">TScript::TScript</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>スクリプトデータを生成する。スクリプトの種類に応じた処理が行われる。<br>必要な場合は、スクリプト変数生成も行われる。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_6.htm">135</a></td>
+</tr>
+<tr>
+<td nowrap>135</td>
+<td nowrap><a href="16_5_7.htm">TScript::~TScript</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>スクリプトデータ破棄<br>ScValDataList内のデータの破棄。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_7.htm">883</a></td>
+</tr>
+<tr>
+<td nowrap>136</td>
+<td nowrap><a href="16_6_3.htm">TScValData::TScValData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>スクリプト変数の生成<br>Fortranの変数と別途にスクリプト内での変数として生成される。<br>また、データの初期化も行われる。</td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_6_3.htm">922</a></td>
+</tr>
+<tr>
+<td nowrap>137</td>
+<td nowrap>TStringList::TStringList</td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>82</td>
+</tr>
+<tr>
+<td nowrap>138</td>
+<td nowrap><a href="16_8_3.htm">TSubRegion::TSubRegion</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>サブリージョンクラスの生成<br>スクリプトで定義されるサブリージョンのデータが格納される。</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_8_3.htm">12610</a></td>
+</tr>
+<tr>
+<td nowrap>139</td>
+<td nowrap><a href="16_9_4.htm">TToken::TToken</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>トークンを生成する。<br>文字列とＩＤを持つトークンが生成され、それ以外のデータが初期化される。他の<br>データはトークン生成後に呼び出し元から設定される。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="16_9_4.htm">1078</a></td>
+</tr>
+<tr>
+<td nowrap>140</td>
+<td nowrap><a href="16_9_5.htm">TToken::~TToken</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>トークンクラス破棄。作成したトークンを破棄する。</td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="16_9_5.htm">1114</a></td>
+</tr>
+<tr>
+<td nowrap>141</td>
+<td nowrap><a href="16_10_54.htm">TTuneRegion::TTuneRegion</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>TRuneReginクラスの生成</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_54.htm">67</a></td>
+</tr>
+<tr>
+<td nowrap>142</td>
+<td nowrap><a href="16_10_55.htm">TTuneRegion::~TTuneRegion</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>TRuneReginクラスの破棄</td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_55.htm">276</a></td>
+</tr>
+<tr>
+<td nowrap>143</td>
+<td nowrap><a href="16_11_6.htm">TValData::TValData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>変数データ生成。</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_6.htm">1951</a></td>
+</tr>
+<tr>
+<td nowrap>144</td>
+<td nowrap><a href="16_11_7.htm">TValData::~TValData</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap>変数データ破棄</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_7.htm">1986</a></td>
+</tr>
+<tr>
+<td nowrap>145</td>
+<td nowrap><a href="16_12_9.htm">TVisualDM::TVisualDM</a></td>
+<td nowrap>メンバ関数</td>
+<td nowrap><br></td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_9.htm">42</a></td>
+</tr>
+</table>
+
+
+</body>
+</html>

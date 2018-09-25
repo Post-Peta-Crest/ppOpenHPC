@@ -1,0 +1,274 @@
+
+<html>
+<head>
+<title>GetNewValName メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.13. GetNewValName メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetNewValName</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11089</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string GetNewValName ( string BaseName , int Idx , TStringList * ArgValList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Idx番目の新しい名前を作成する。語尾の数字を取った名前＋Idxの名前とするが、<br>ArgValList-&gt;Objects[] の ValDataに既に数字を取って同じ名前がある場合には、<br>元の変数名＋&quot;_&quot;＋数値とする。さらに一致する場合は、&quot;_&quot;を増やして対応する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>新しい変数名</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>BaseName    基本名<br>Idx インデックス<br>ArgValList  引数変数リスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------------------+ 
+ 11089  +--+ string TTuneRegion::GetNewValName(string BaseName,int Idx,TStringList *ArgValList) | 
+ 11090     | {                                                                                  | 
+           +--+---------------------------------------------------------------------------------+ 
+ 11091        +--- int i,j,k;
+ 11092        +--- string s,s2,BaseName2,BaseName3;
+ 11093        +--- TValData *ValData;
+ 11094        |    
+              |  +----------------------------------------------+ 
+ 11095        +--+ for(i = BaseName.length()-1 ; i &gt;= 0 ; i--){ | 
+              |  +--+-------------------------------------------+ 
+              |     |  +--------------------------------------------------+ 
+ 11096        |     +--+ if((BaseName[i] &gt;= '0')&amp;&amp;(BaseName[i] &lt;= '9')){  | 
+              |     |  +--+-----------------------------------------------+ 
+              |     |     |  +------------+ 
+ 11097        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 11098        |     |   |  }  | 
+              |     |   +-----+ 
+ 11099        |     +--- BaseName2 = BaseName.substr(0,i+1);
+              |     |  +--------+ 
+ 11100        |     +--+ break; | 
+              |     |  +--------+ 
+              |   +-+---+ 
+ 11101        |   |  }  | 
+              |   +-----+ 
+ 11102        +--- s = BaseName2 + IntToStr(Idx);
+              |  +------------------------------+ 
+ 11103        +--+ for(j = 0 ; j &lt; 100 ; j++){  | 
+              |  +--+---------------------------+ 
+              |     |  +--------------------------------------------+ 
+ 11104        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+ 11105        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+ 11106        |     |     +--- BaseName3 = ValData-&gt;Str;
+              |     |     |  +------------------------------------------------+ 
+ 11107        |     |     +--+ for(k = BaseName3.length()-1 ; k &gt;= 0 ; k--){  | 
+              |     |     |  +--+---------------------------------------------+ 
+              |     |     |     |  +----------------------------------------------------+ 
+ 11108        |     |     |     +--+ if((BaseName3[k] &gt;= '0')&amp;&amp;(BaseName3[k] &lt;= '9')){  | 
+              |     |     |     |  +--+-------------------------------------------------+ 
+              |     |     |     |     |  +------------+ 
+ 11109        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 11110        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 11111        |     |     |     +--- BaseName3 = BaseName3.substr(0,k+1);
+              |     |     |     |  +--------+ 
+ 11112        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+ 11113        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------+ 
+ 11114        |     |     +--+ if(BaseName3 == BaseName2){  | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +--------------------------------------------------+ 
+ 11115        |     |     |     +--+ if(BaseName != ValData-&gt;Str){ // 完全一致は別。  | 
+              |     |     |     |  +--+-----------------------------------------------+ 
+ 11116        |     |     |     |     +--- i = -1;
+              |     |     |     |     |  +--------+ 
+ 11117        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+ 11118        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 11119        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11120        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+ 11121        |     +--+ if(i != -1){ | 
+              |     |  +--+-----------+ 
+              |     |     |  +------------+ 
+ 11122        |     |     +--+ return s;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 11123        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11124        |   |  }  | 
+              |   +-----+ 
+ 11125        +--- //
+ 11126        |    // BaseNameが同じ変数がある場合は元の変数名_Idxとする・                        
+ 11127        |    // 以前は元の変数名の番号を変えた変数名_ としていたが                          
+ 11128        |    // 元の変数名の番号を変えた変数名も多重化する場合に問題があったので修正した。  
+ 11129        |    //                                                                             
+ 11130        +--- s2 = &quot;_&quot;;
+              |  +------------------------------+ 
+ 11131        +--+ for(j = 0 ; j &lt; 100 ; j++){  | 
+              |  +--+---------------------------+ 
+ 11132        |     +--- s = BaseName + s2+IntToStr(Idx);
+              |     |  +--------------------------------------------+ 
+ 11133        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+ 11134        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +------------------------+ 
+ 11135        |     |     +--+ if(ValData-&gt;Str == s){ | 
+              |     |     |  +--+---------------------+ 
+ 11136        |     |     |     +--- i = -1;
+              |     |     |     |  +--------+ 
+ 11137        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+ 11138        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11139        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+ 11140        |     +--+ if(i != -1){ | 
+              |     |  +--+-----------+ 
+              |     |     |  +------------+ 
+ 11141        |     |     +--+ return s;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 11142        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 11142        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 11143        |     |     +--- s2 += &quot;_&quot;;
+              |     |   +-+---+ 
+ 11144        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11145        |   |  }  | 
+              |   +-----+ 
+              |  +------------+ 
+ 11146        +--+ return s;  | 
+              |  +------------+ 
+            +-+---+ 
+ 11147      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

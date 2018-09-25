@@ -1,0 +1,63 @@
+--- ppOpenAT version 0.2.3 ---
+OAT_PATH = ""
+CommandLine = test.exe  c:/ppOpenAT/examples/F90/Test_Select_3/param1.f 
+**** Start Code Generation ****
+SrcFile ="c:/ppOpenAT/examples/F90/Test_Select_3/param1.f"
+Pass1 Start
+Pass2 Start
+------ Val List ---------
+0: (MIdx=0) Int iauto (RW=1,1) DefPos=13
+1: (MIdx=0) Int N=500.000000 (RW=6,0) DefPos=16
+2: (MIdx=0) Real*8 A(500)(500) (RW=1,0) DefPos=28
+3: (MIdx=0) Real*8 B(500)(500) (RW=1,0) DefPos=35
+4: (MIdx=0) Real*8 C(500)(500) (RW=1,0) DefPos=42
+5: (MIdx=0) Int ierr (RW=4,0) DefPos=-11
+6: (MIdx=0) Int MPI_COMM_WORLD (RW=2,0) DefPos=-11
+7: (MIdx=0) Int myid (RW=1,0) DefPos=-11
+8: (MIdx=0) Int nprocs (RW=1,0) DefPos=-11
+9: (MIdx=0) Int in (RW=1,1) DefPos=-11
+10: (MIdx=1) Real SelectMatMul (RW=0,0)(Arg) DefPos=-1
+11: (MIdx=1) Real*8 A(0)(0) (RW=1,1)(Arg) DefPos=235
+12: (MIdx=1) Real*8 B(0)(0) (RW=1,1)(Arg) DefPos=242
+13: (MIdx=1) Real*8 C(0)(0) (RW=1,1)(Arg) DefPos=249
+14: (MIdx=1) Int N (RW=11,0)(Arg) DefPos=230
+15: (MIdx=1) Real*8 da1 (RW=0,0) DefPos=264
+16: (MIdx=1) Real*8 da2 (RW=0,0) DefPos=266
+17: (MIdx=1) Real*8 dc (RW=0,0) DefPos=271
+18: (MIdx=1) Int i (RW=5,2) DefPos=-11
+19: (MIdx=1) Int j (RW=5,2) DefPos=-11
+20: (MIdx=1) RealFunc dble (RW=2,0) DefPos=-11
+21: (MIdx=1) Int ib (RW=1,1) DefPos=-11
+22: (MIdx=1) Int MB (RW=1,0) DefPos=-11
+23: (MIdx=2) Real BlkMat (RW=0,0)(Arg) DefPos=-1
+24: (MIdx=2) Real*8 A(0)(0) (RW=1,1)(Arg) DefPos=441
+25: (MIdx=2) Real*8 B(0)(0) (RW=1,0)(Arg) DefPos=448
+26: (MIdx=2) Real*8 C(0)(0) (RW=1,0)(Arg) DefPos=455
+27: (MIdx=2) Int N (RW=9,0)(Arg) DefPos=434
+28: (MIdx=2) Int ib (RW=4,0)(Arg) DefPos=436
+29: (MIdx=2) Real*8 da(64) (RW=2,2) DefPos=466
+30: (MIdx=2) Real*8 dc (RW=1,1) DefPos=474
+31: (MIdx=2) Int i (RW=3,1) DefPos=-11
+32: (MIdx=2) Int j (RW=3,1) DefPos=-11
+33: (MIdx=2) Int jj (RW=7,3) DefPos=-11
+34: (MIdx=2) Int k (RW=2,1) DefPos=-11
+Pass3 Start
+Pass4 Start
+OAT variable:       OAT_DEBUG = 1
+OAT variable:       OAT_NUMPROCS = 4
+OAT variable:       OAT_STARTTUNESIZE = 100
+OAT variable:       OAT_ENDTUNESIZE = 500
+OAT variable:       OAT_SAMPDIST = 100
+Base Paramater (BPset): N
+------ Tuning Region -- Count = 1
+Tuning Region : 0
+Static Select BlkMatVec
+OAT_StaticBlkMatVec(A,B,C,N) 
+Undefined Val ( use module ) = (ib MB ) 
+    varied MB (,,) from 1.000000 to 16.000000 step 1.000000
+  RefValStr = (  )
+  Case Count = 16
+
+Pass5 Start
+TuneRegion = 1/1
+**** End Code Generation **** OK !

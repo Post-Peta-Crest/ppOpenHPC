@@ -1,0 +1,1015 @@
+
+<html>
+<head>
+<title>TScript メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.5.6. TScript メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>TScript</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass3.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>135</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TScript</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>TScript ( TList * TokenList , int sPos , TScript * LastScript , TList * ValDataList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>スクリプトデータを生成する。スクリプトの種類に応じた処理が行われる。<br>必要な場合は、スクリプト変数生成も行われる。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList   トークンリスト<br>sPos    トークンリスト開始位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="31_1.htm">AddDataDef_C</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_1.htm">1038</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TStringList::AddObject</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_5_3.htm">TScript::CheckBrBalance</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_3.htm">842</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TStringList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_5_5.htm">TScript::GetFittingParam</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_5.htm">494</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="31_7.htm">GetScValData</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_7.htm">606</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TScript::FittingDegree</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>240</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TScript::FittingDspline</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>234</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TScript::FittingDynamic</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TScript::FittingType</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>238</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TScript::LineEndTokPos</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>214</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TScript::NextScript</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>217</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TScript::PreviousScript</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>216</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TScript::SampledList</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>241</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TScript::ScAction</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>221</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TScript::ScRegion</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>222</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TScript::ScType</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>219</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TScript::ScValDataList</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>223</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TScript::Str</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>212</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TScript::TokPos</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>213</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>TScript::TokStrList</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>227</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>TScript::TuneRegion</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>215</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------------------+ 
+   135  +--+ TScript::TScript(TList *TokenList,int sPos,TScript *LastScript,TList *ValDataList) | 
+   136     | {                                                                                  | 
+           +--+---------------------------------------------------------------------------------+ 
+   137        +--- string s,s1,s2;
+   138        +--- int i;
+   139        +--- TToken *Token;
+   140        +--- TokStrList = new TStringList;
+   141        |    
+   142        +--- PreviousScript = LastScript;
+              |  +--------------------------+ 
+   143        +--+ if(LastScript != NULL){  | 
+              |  +--+-----------------------+ 
+   144        |     +--- LastScript-&gt;NextScript = this;
+   145        |     +--- /*
+   146        |     |            //  １つ前のスクリプトの継続かどうかをチェックする。           
+   147        |     |            if(LastScript-&gt;LineEndTokPos != sPos-2){ // LineEnd + #Pragma  
+   148        |     |                LastScript = NULL; // 継続ではない。                       
+   149        |     |            }                                                              
+   150        |     |    */                                                                     
+              |   +-+---+ 
+   151        |   |  }  | 
+              |   +-----+ 
+   152        +--- /*
+   153        |        if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran){    // Fortranの場合はコメント１行 
+   154        |            i = sPos;                                                                  
+   155        |            Token = (TToken *)TokenList-&gt;Items[i];                                     
+   156        |            Str = Token-&gt;Str;                                                          
+   157        |            LineEndTokPos = i;  // スクリプトの改行トークン位置                        
+   158        |        }else{                                                                         
+   159        |    if(sPos == 1056){                                                                  
+   160        |        DP(&quot;**&quot;);                                                                      
+   161        |    }                                                                                  
+   162        |    */                                                                                 
+   163        +--- TokPos = sPos;
+   164        +--- Str = &quot;&quot;; // １行の文字列
+              |  +----------------------------------------------+ 
+   165        +--+ for(i = sPos ; i &lt; TokenList-&gt;Count ; i++){  | 
+              |  +--+-------------------------------------------+ 
+   166        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------------+ 
+   167        |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |  +--+-------------------------------+ 
+              |     |     |  +--------+ 
+   168        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+   169        |     |   |  }  | 
+              |     |   +-----+ 
+   170        |     +--- // スクリプト内のトークンは、コメント扱いとする。
+   171        |     |    // OAT以外でのコメントは、Pass1ですでにコメント扱い。  
+   172        |     +--- Token-&gt;TokId = tid_Comment;
+   173        |     +--- Str += Token-&gt;OrgStr;
+              |   +-+---+ 
+   174        |   |  }  | 
+              |   +-----+ 
+   175        +--- LineEndTokPos = i;  // スクリプトの改行トークン位置
+   176        +--- //  }
+   177        +--- Token = (TToken *)TokenList-&gt;Items[sPos];
+   178        |    
+   179        +--- ScValDataList = NULL;
+   180        +--- TuneRegion = NULL;
+   181        +--- ScType = sct_install;
+   182        +--- ScAction = sca_none;
+   183        +--- ScRegion = scr_none;
+   184        |    
+   185        +--- // Fitting関連のデータ
+   186        +--- FittingType = 0;
+   187        +--- FittingDegree = 0;      // 多項式の次数
+   188        +--- SampledList = NULL;     // intの形で Sampledの値がセット
+   189        |                                                             
+   190        +--- //d-spline用追加部分
+   191        +--- FittingDspline = 0;
+   192        +--- FittingDynamic = 0;
+   193        +--- //d-spline用追加部分ここまで
+   194        |                                 
+   195        +--- //
+   196        |    // トークンに分解する。                                    
+   197        |    // Scriptでのセパレータは、通常より少ない。                
+   198        |    // これは、least-squares などを１トークンとして扱うため。  
+   199        |    //                                                         
+   200        +--- s1 = &quot;&quot;;
+   201        +--- s = Str;
+              |  +------------------------------------------+ 
+   202        +--+ for(i = 1 ; i &lt;= (int)s.length() ; i++){ | 
+              |  +--+---------------------------------------+ 
+              |     |  +------------------------------------------------------------------+ 
+   203        |     +--+ if((s[i] == ' ')||(s[i] == '(')||(s[i] == ')')||(s[i] == ',')){  | 
+              |     |  +--+---------------------------------------------------------------+ 
+   204        |     |     +--- s1 = Trim(s1);
+              |     |     |  +----------------+ 
+   205        |     |     +--+ if(s1 != &quot;&quot;){  | 
+              |     |     |  +--+-------------+ 
+   206        |     |     |     +--- TokStrList-&gt;Add(s1);
+              |     |     |   +-+---+ 
+   207        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   208        |     |     +--- s1 = s[i];
+              |     |     |  +----------------+ 
+   209        |     |     +--+ if(s1 != &quot; &quot;){ | 
+              |     |     |  +--+-------------+ 
+   210        |     |     |     +--- TokStrList-&gt;Add(s1);
+              |     |     |   +-+---+ 
+   211        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   212        |     |     +--- s1 = &quot;&quot;;
+              |     |   +-+---+ 
+   213        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   213        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   214        |     |     +--- s1 += s[i];
+              |     |   +-+---+ 
+   215        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   216        |   |  }  | 
+              |   +-----+ 
+   217        +--- s1 = Trim(s1);
+              |  +----------------+ 
+   218        +--+ if(s1 != &quot;&quot;){  | 
+              |  +--+-------------+ 
+   219        |     +--- TokStrList-&gt;Add(s1);
+              |   +-+---+ 
+   220        |   |  }  | 
+              |   +-----+ 
+   221        +--- /*
+   222        |        for(i = 0 ; i &lt; TokStrList-&gt;Count ; i++){  
+   223        |            MainF-&gt;print(TokStrList-&gt;Strings[i]);  
+   224        |        }                                          
+   225        |                                                   
+   226        |    */                                             
+   227        +--- // スクリプトトークン解析
+   228        +--- i = 0;
+   229        +--- i++; // Skip &quot;!OAT$&quot; or &quot;OAT&quot;
+              |  +------------------------------+ 
+   230        +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |  +--+---------------------------+ 
+              |     |  +----------+ 
+   231        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   232        |   |  }  | 
+              |   +-----+ 
+   233        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |  +----------------------------+ 
+   234        +--+ if(i &gt; TokStrList-&gt;Count){ | 
+              |  +--+-------------------------+ 
+   235        |     +--- ScType = sct_None;
+   236        |     +--- //      TokStrList-&gt;Clear();
+              |     |  +----------+ 
+   237        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   238        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------+ 
+   239        +--+ if(i == TokStrList-&gt;Count){  | 
+              |  +--+---------------------------+ 
+   240        |     +--- i--; // もし最後の場合は、１つ戻して参照エラーを回避する。
+              |   +-+---+ 
+   241        |   |  }  | 
+              |   +-----+ 
+              |  +------------------+ 
+   242        +--+ if(s == &quot;call&quot;){ | 
+              |  +--+---------------+ 
+   243        |     +--- //
+   244        |     |    // #pragma ABCLib call ABCLib_BPset(&quot;i&quot;) を              
+   245        |     |    // #pragma ABCLib BPset(&quot;i&quot;) に変更する。 Mod 2011/09/05 
+   246        |     |    //  非均質計算機対応（平成23/7/20）の対応                
+   247        |     |    //                                                       
+   248        |     +--- s2 = LowerCase(TokStrList-&gt;Strings[i]);
+              |     |  +------------------------+ 
+   249        |     +--+ if(s2 == &quot;oat_bpset&quot;){ | 
+              |     |  +--+---------------------+ 
+   250        |     |     +--- s = &quot;bpset&quot;;
+   251        |     |     +--- i+=1;
+              |     |   +-+---+ 
+   252        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------+ 
+   252        |     |   |  else if(s2 == &quot;oat_setparm&quot;){  | 
+              |     |   +-+-------------------------------+ 
+   253        |     |     +--- s = &quot;setparm&quot;;
+   254        |     |     +--- i+=1;
+              |     |   +-+---+ 
+   255        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------------------------------------+ 
+   255        |     |   |  else if(s2 == &quot;oat_atexec&quot;){   // call OAT_ATexec() 引数がセットされる。 | 
+              |     |   +-+-------------------------------------------------------------------------+ 
+   256        |     |     +--- s = &quot;atexec&quot;;
+   257        |     |     +--- i+=1;
+              |     |   +-+---+ 
+   258        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   259        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------+ 
+   260        +--+ if(s == &quot;install&quot;){  | 
+              |  +--+-------------------+ 
+   261        |     +--- ScType = sct_install;   // 自動チューニング種類
+              |   +-+---+ 
+   262        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   262        |   |  else if(s == &quot;static&quot;){  | 
+              |   +-+-------------------------+ 
+   263        |     +--- ScType = sct_static;    // 自動チューニング種類
+              |   +-+---+ 
+   264        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   264        |   |  else if(s == &quot;dynamic&quot;){ | 
+              |   +-+-------------------------+ 
+   265        |     +--- ScType = sct_dynamic;   // 自動チューニング種類
+   266        |     |                                                     
+              |   +-+---+ 
+   267        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------+ 
+   267        |   |  else if(s == &quot;name&quot;){  | 
+              |   +-+-----------------------+ 
+   268        |     +--- ScType = sct_name;      // 自動チューニング種類
+              |   +-+---+ 
+   269        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   269        |   |  else if(s == &quot;parameter&quot;){ | 
+              |   +-+---------------------------+ 
+   270        |     +--- ScType = sct_parameter;
+              |   +-+---+ 
+   271        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   271        |   |  else if(s == &quot;select&quot;){  | 
+              |   +-+-------------------------+ 
+   272        |     +--- ScType = sct_select;
+              |   +-+---+ 
+   273        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   273        |   |  else if(s == &quot;according&quot;){ | 
+              |   +-+---------------------------+ 
+   274        |     +--- ScType = sct_according;
+              |   +-+---+ 
+   275        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   275        |   |  else if(s == &quot;varied&quot;){  | 
+              |   +-+-------------------------+ 
+   276        |     +--- ScType = sct_varied;
+              |   +-+---+ 
+   277        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   277        |   |  else if(s == &quot;fitting&quot;){ | 
+              |   +-+-------------------------+ 
+   278        |     +--- ScType = sct_fitting;
+              |   +-+---+ 
+   279        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------------------+ 
+   279        |   |  else if(s == &quot;pripro&quot;){    // Mod 2011/08/03 | 
+              |   +-+---------------------------------------------+ 
+   280        |     +--- ScType = sct_prepro;
+              |   +-+---+ 
+   281        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   281        |   |  else if(s == &quot;prepro&quot;){  | 
+              |   +-+-------------------------+ 
+   282        |     +--- ScType = sct_prepro;
+              |   +-+---+ 
+   283        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   283        |   |  else if(s == &quot;postpro&quot;){ | 
+              |   +-+-------------------------+ 
+   284        |     +--- ScType = sct_postpro;
+              |   +-+---+ 
+   285        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------+ 
+   285        |   |  else if(s == &quot;debug&quot;){ | 
+              |   +-+-----------------------+ 
+   286        |     +--- ScType = sct_debug;
+              |   +-+---+ 
+   287        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------+ 
+   287        |   |  else if(s == &quot;oat_dynpefthis&quot;){  | 
+              |   +-+---------------------------------+ 
+   288        |     +--- ScType = sct_DynPefThis;
+              |   +-+---+ 
+   289        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   289        |   |  else if(s == &quot;number&quot;){  | 
+              |   +-+-------------------------+ 
+   290        |     +--- ScType = sct_Number;
+              |   +-+---+ 
+   291        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------+ 
+   291        |   |  else if(s == &quot;bpset&quot;){ | 
+              |   +-+-----------------------+ 
+   292        |     +--- ScType = sct_BPset;
+              |   +-+---+ 
+   293        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   293        |   |  else if(s == &quot;allocate&quot;){  | 
+              |   +-+---------------------------+ 
+   294        |     +--- ScType = sct_Allocate;
+              |   +-+---+ 
+   295        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------+ 
+   295        |   |  else if(s == &quot;pre&quot;){ | 
+              |   +-+---------------------+ 
+   296        |     +--- s2 = LowerCase(TokStrList-&gt;Strings[i]);
+              |     |  +--------------------+ 
+   297        |     +--+ if(s2 == &quot;bpset&quot;){ | 
+              |     |  +--+-----------------+ 
+   298        |     |     +--- ScType = sct_pre_BPset;
+   299        |     |     +--- i++;
+              |     |   +-+---+ 
+   300        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   301        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------+ 
+   301        |   |  else if(s == &quot;post&quot;){  | 
+              |   +-+-----------------------+ 
+   302        |     +--- s2 = LowerCase(TokStrList-&gt;Strings[i]);
+              |     |  +--------------------+ 
+   303        |     +--+ if(s2 == &quot;bpset&quot;){ | 
+              |     |  +--+-----------------+ 
+   304        |     |     +--- ScType = sct_post_BPset;
+   305        |     |     +--- i++;
+              |     |   +-+---+ 
+   306        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   307        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   307        |   |  else if(s == &quot;setparm&quot;){ | 
+              |   +-+-------------------------+ 
+   308        |     +--- ScType = sct_SetParm;
+              |     |  +------------------------------------------+ 
+   309        |     +--+ if(MainF-&gt;Call_SetParam_Script == NULL){ | 
+              |     |  +--+---------------------------------------+ 
+   310        |     |     +--- MainF-&gt;Call_SetParam_Script = this;
+              |     |   +-+---+ 
+   311        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   312        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------+ 
+   312        |   |  else if(s == &quot;splitpoint&quot;){  | 
+              |   +-+-----------------------------+ 
+   313        |     +--- ScType = sct_SplitPoint;
+              |   +-+---+ 
+   314        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------------+ 
+   314        |   |  else if(s == &quot;splitpointcopydef&quot;){ | 
+              |   +-+-----------------------------------+ 
+   315        |     +--- ScType = sct_SplitPointCopyDef;
+              |   +-+---+ 
+   316        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------------+ 
+   316        |   |  else if(s == &quot;splitpointcopyinsert&quot;){  | 
+              |   +-+---------------------------------------+ 
+   317        |     +--- ScType = sct_SplitPointCopyInsert;
+              |   +-+---+ 
+   318        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------------+ 
+   318        |   |  else if(s == &quot;rotationorder&quot;){ | 
+              |   +-+-------------------------------+ 
+   319        |     +--- ScType = sct_RotationOrder;
+   320        |     |    
+              |   +-+---+ 
+   321        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   321        |   |  else if(s == &quot;atexec&quot;){  | 
+              |   +-+-------------------------+ 
+              |     |  +----------------------------------------+ 
+   322        |     +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |     |  +--+-------------------------------------+ 
+   323        |     |     +--- MainF-&gt;Call_ATExec_Script = this;
+              |     |   +-+---+ 
+   324        |     |   |  }  | 
+              |     |   +-----+ 
+   325        |     +--- ScType = sct_ATExec;
+   326        |     +--- TokStrList-&gt;Clear();
+   327        |     +--- // ATExec()については、引数リスト参照があるので、ValData参照可能なトークンを使用する。
+              |     |  +------------------------------------------------+ 
+   328        |     +--+ for(int j = sPos+1 ; j &lt; LineEndTokPos ; j++){ | 
+              |     |  +--+---------------------------------------------+ 
+   329        |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+   330        |     |     +--- TokStrList-&gt;AddObject(Token-&gt;OrgStr,Token);
+              |     |   +-+---+ 
+   331        |     |   |  }  | 
+              |     |   +-----+ 
+   332        |     +--- //
+   333        |     |    //  atexec内のデータについては、変数名を探してValDataを設定する。  
+   334        |     |    //                                                                 
+   335        |     +--- AddDataDef_C(MainF-&gt;TokenList,sPos+1,LineEndTokPos,ValDataList);
+   336        |     +--- //  }else if((LastScript != NULL)&amp;&amp;(LastScript-&gt;ScType == sct_ATExec)){ // 継続
+              |   +-+---+ 
+   337        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------------------------------------------------------+ 
+   337        |   |  else if((LastScript != NULL)&amp;&amp;(LastScript-&gt;CheckBrBalance() != 0)){ // 継続  | 
+              |   +-+-----------------------------------------------------------------------------+ 
+   338        |     +--- // １つ前のスクリプトがATExecで今回が指定なしの場合は、前のトークンに追加する。
+   339        |     +--- Token = (TToken *)TokenList-&gt;Items[LastScript-&gt;LineEndTokPos];
+   340        |     +--- LastScript-&gt;TokStrList-&gt;AddObject(Token-&gt;OrgStr,Token);
+   341        |     +--- //          MainF-&gt;print(&quot;[&quot;+Token-&gt;Str+&quot;]&quot;);
+              |     |  +------------------------------------------------+ 
+   342        |     +--+ for(int j = sPos+1 ; j &lt; LineEndTokPos ; j++){ | 
+              |     |  +--+---------------------------------------------+ 
+   343        |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+   344        |     |     +--- //          MainF-&gt;print(&quot;[&quot;+Token-&gt;Str+&quot;]&quot;);
+   345        |     |     +--- LastScript-&gt;TokStrList-&gt;AddObject(Token-&gt;OrgStr,Token);
+              |     |   +-+---+ 
+   346        |     |   |  }  | 
+              |     |   +-----+ 
+   347        |     +--- AddDataDef_C(MainF-&gt;TokenList,sPos+1,LineEndTokPos,ValDataList);
+   348        |     +--- ScType = sct_None;
+   349        |     +--- TokStrList-&gt;Clear();
+              |   +-+---+ 
+   350        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------+ 
+   350        |   |  else{ // 式  | 
+              |   +-+-------------+ 
+   351        |     +--- ScType = sct_command;   // 自動チューニング種類
+   352        |     +--- //
+   353        |     |    // コマンドの場合は、TokStrListを１つだけに修正する。  
+   354        |     |    // インテントを有効にするために OrgStr側を参照。       
+   355        |     |    //                                                     
+   356        |     +--- s = &quot;&quot;;
+              |     |  +----------------------------------------------+ 
+   357        |     +--+ for(i = TokPos+1 ; i &lt; LineEndTokPos ; i++){ | 
+              |     |  +--+-------------------------------------------+ 
+   358        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+   359        |     |     +--- s += Token-&gt;OrgStr;
+              |     |   +-+---+ 
+   360        |     |   |  }  | 
+              |     |   +-----+ 
+   361        |     +--- TokStrList-&gt;Clear();
+   362        |     +--- s = &quot;     &quot;+s; // Fortanと合わせて、空白を前に入れる。
+   363        |     +--- TokStrList-&gt;Add(s);
+              |     |  +----------+ 
+   364        |     +--+ return;  | 
+              |     |  +----------+ 
+   365        |     +--- /*
+   366        |     |            s = Str;                                                       
+   367        |     |            if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){                         
+   368        |     |                s.erase(0,6);   // Delete &quot;!OAT$ &quot;                         
+   369        |     |            }else{                                                         
+   370        |     |                s.erase(0,4);   // Delete &quot;OAT &quot;                           
+   371        |     |            }                                                              
+   372        |     |            s = &quot;      &quot;+Trim(s); // Fortanと合わせて、空白を前に入れる。  
+   373        |     |    */                                                                     
+              |   +-+---+ 
+   374        |   |  }  | 
+              |   +-----+ 
+   375        +--- // 機能をチェック
+              |  +------------------------------+ 
+   376        +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |  +--+---------------------------+ 
+              |     |  +----------+ 
+   377        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   378        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------------+ 
+   379        +--+ if(ScType == sct_fitting){ | 
+              |  +--+-------------------------+ 
+   380        |     +--- GetFittingParam(i);
+              |     |  +----------+ 
+   381        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   382        |   |  }  | 
+              |   +-----+ 
+   383        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |  +--------------------+ 
+   384        +--+ if(s == &quot;define&quot;){ | 
+              |  +--+-----------------+ 
+   385        |     +--- ScAction = sca_define;
+              |   +-+---+ 
+   386        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   386        |   |  else if(s == &quot;variable&quot;){  | 
+              |   +-+---------------------------+ 
+   387        |     +--- ScAction = sca_variable;
+              |   +-+---+ 
+   388        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   388        |   |  else if(s == &quot;select&quot;){  | 
+              |   +-+-------------------------+ 
+   389        |     +--- ScAction = sca_select;
+              |   +-+---+ 
+   390        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------+ 
+   390        |   |  else if(s == &quot;unroll&quot;){  | 
+              |   +-+-------------------------+ 
+   391        |     +--- ScAction = sca_unroll;
+              |   +-+---+ 
+   392        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------+ 
+   392        |   |  else if(s == &quot;loopfusion&quot;){  | 
+              |   +-+-----------------------------+ 
+   393        |     +--- ScAction = sca_loopfusion;
+              |   +-+---+ 
+   394        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   394        |   |  else if(s == &quot;loopsplit&quot;){ | 
+              |   +-+---------------------------+ 
+   395        |     +--- ScAction = sca_loopsplit;
+              |   +-+---+ 
+   396        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------+ 
+   396        |   |  else if(s == &quot;loopfusionsplit&quot;){ | 
+              |   +-+---------------------------------+ 
+   397        |     +--- ScAction = sca_loopfusionsplit;
+              |   +-+---+ 
+   398        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------------------------------+ 
+   398        |   |  else if(s == &quot;rotationorder&quot;){ | 
+              |   +-+-------------------------------+ 
+   399        |     +--- ScAction = sca_rotationorder;
+              |   +-+---+ 
+   400        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   400        |   |  else{  | 
+              |   +-+-------+ 
+   401        |     +--- ScAction = sca_none;
+   402        |     +--- i--; // 該当なしの場合は、１つ戻す。
+              |   +-+---+ 
+   403        |   |  }  | 
+              |   +-----+ 
+   404        +--- //
+   405        |    //　対象変数リストを作成する。 () 内の場合 
+   406        |    //                                         
+   407        +--- TScValData *ScValData;
+              |  +------------------------------+ 
+   408        +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |  +--+---------------------------+ 
+              |     |  +----------+ 
+   409        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   410        |   |  }  | 
+              |   +-----+ 
+   411        +--- s = TokStrList-&gt;Strings[i++];
+              |  +----------------+ 
+   412        +--+ if(s == &quot;(&quot;){  | 
+              |  +--+-------------+ 
+              |     |  +--------------------------------------+ 
+   413        |     +--+ for(; i &lt; TokStrList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------+ 
+   414        |     |     +--- s = TokStrList-&gt;Strings[i];
+              |     |     |  +----------------+ 
+   415        |     |     +--+ if(s == &quot;)&quot;){  | 
+              |     |     |  +--+-------------+ 
+   416        |     |     |     +--- i++;
+              |     |     |     |  +--------+ 
+   417        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   418        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   419        |     |     +--- s = TokStrList-&gt;Strings[i];
+              |     |     |  +----------------+ 
+   420        |     |     +--+ if(s == &quot;,&quot;){  | 
+              |     |     |  +--+-------------+ 
+              |     |     |     |  +------------+ 
+   421        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+   422        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   423        |     |     +--- // 変数を追加する。（同名の変数があれば、共有する)
+   424        |     |     +--- ScValData = GetScValData(TokenList,s);
+   425        |     |     +--- ScValData-&gt;RefCount++;
+              |     |     |  +----------------------------+ 
+   426        |     |     +--+ if(ScValDataList == NULL){ | 
+              |     |     |  +--+-------------------------+ 
+   427        |     |     |     +--- ScValDataList = new TList;
+              |     |     |   +-+---+ 
+   428        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   429        |     |     +--- ScValDataList-&gt;Add((void *)ScValData);
+              |     |   +-+---+ 
+   430        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   431        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   431        |   |  else{  | 
+              |   +-+-------+ 
+   432        |     +--- i--;
+              |   +-+---+ 
+   433        |   |  }  | 
+              |   +-----+ 
+   434        +--- //
+   435        |    // 変数の後の region start , region end をチェックして ScRegionにセット  
+   436        |    // sub region start , sub region end も対象となる。                      
+   437        |    //                                                                       
+              |  +------------------------------+ 
+   438        +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |  +--+---------------------------+ 
+              |     |  +----------+ 
+   439        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   440        |   |  }  | 
+              |   +-----+ 
+   441        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |  +--------------------+ 
+   442        +--+ if(s == &quot;region&quot;){ | 
+              |  +--+-----------------+ 
+              |     |  +------------------------------+ 
+   443        |     +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |     |  +--+---------------------------+ 
+              |     |     |  +----------+ 
+   444        |     |     +--+ return;  | 
+              |     |     |  +----------+ 
+              |     |   +-+---+ 
+   445        |     |   |  }  | 
+              |     |   +-----+ 
+   446        |     +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |     |  +--------------------+ 
+   447        |     +--+ if(s == &quot;start&quot;){  | 
+              |     |  +--+-----------------+ 
+   448        |     |     +--- ScRegion = scr_start;
+              |     |     |  +------------------------------------------------------------+ 
+   449        |     |     +--+ if((ScType == sct_pre_BPset)||(ScType == sct_post_BPset)|| | 
+   450        |     |     |  |     (ScType == sct_SplitPointCopyDef)){                    | 
+              |     |     |  +--+---------------------------------------------------------+ 
+   451        |     |     |     +--- ScRegion = scr_substart;
+              |     |     |   +-+---+ 
+   452        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   453        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------+ 
+   453        |     |   |  else if(s == &quot;end&quot;){ | 
+              |     |   +-+---------------------+ 
+   454        |     |     +--- ScRegion = scr_end;
+              |     |     |  +------------------------------------------------------------+ 
+   455        |     |     +--+ if((ScType == sct_pre_BPset)||(ScType == sct_post_BPset)|| | 
+   456        |     |     |  |     (ScType == sct_SplitPointCopyDef)){                    | 
+              |     |     |  +--+---------------------------------------------------------+ 
+   457        |     |     |     +--- ScRegion = scr_subend;
+              |     |     |   +-+---+ 
+   458        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   459        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   460        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------+ 
+   460        |   |  else if(s == &quot;sub&quot;){ | 
+              |   +-+---------------------+ 
+   461        |     +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |     |  +--------------------+ 
+   462        |     +--+ if(s == &quot;region&quot;){ | 
+              |     |  +--+-----------------+ 
+              |     |     |  +------------------------------+ 
+   463        |     |     +--+ if(i &gt;= TokStrList-&gt;Count){  | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +----------+ 
+   464        |     |     |     +--+ return;  | 
+              |     |     |     |  +----------+ 
+              |     |     |   +-+---+ 
+   465        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   466        |     |     +--- s = TokStrList-&gt;Strings[i++];
+              |     |     |  +--------------------+ 
+   467        |     |     +--+ if(s == &quot;start&quot;){  | 
+              |     |     |  +--+-----------------+ 
+   468        |     |     |     +--- ScRegion = scr_substart;
+              |     |     |   +-+---+ 
+   469        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------+ 
+   469        |     |     |   |  else if(s == &quot;end&quot;){ | 
+              |     |     |   +-+---------------------+ 
+   470        |     |     |     +--- ScRegion = scr_subend;
+              |     |     |   +-+---+ 
+   471        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   472        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   473        |   |  }  | 
+              |   +-----+ 
+   474        |    
+            +-+---+ 
+   475      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

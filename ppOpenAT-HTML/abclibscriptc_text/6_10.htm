@@ -1,0 +1,380 @@
+
+<html>
+<head>
+<title>pass1.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.10. pass1.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *           
+     3  |     *   Software Name : ppOpen-AT                                         *           
+     4  |     *         Version : 0.1                                               *           
+     5  |     *                                                                     *           
+     6  |     *   License                                                           *           
+     7  |     *     This file is part of ppOpen-AT.                                 *           
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *           
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *           
+    10  |     *     for more details.                                               *           
+    11  |     *                                                                     *           
+    12  |     *   ppOpen-HPC project:                                               *           
+    13  |     *     Open Source Infrastructure for Development and Execution of     *           
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *           
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *           
+    16  |     *                                                                     *           
+    17  |     *   Organizations:                                                    *           
+    18  |     *     The University of Tokyo                                         *           
+    19  |     *       - Information Technology Center                               *           
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *           
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *           
+    22  |     *         /Earthquake Research Institute (ERI)                        *           
+    23  |     *       - Graduate School of Frontier Science                         *           
+    24  |     *     Kyoto University                                                *           
+    25  |     *       - Academic Center for Computing and Media Studies             *           
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *           
+    27  |     *                                                                     *           
+    28  |     *   Sponsorship:                                                      *           
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *           
+    30  |     *     Programs: CREST, Development of System Software Technologies    *           
+    31  |     *     for post-Peta Scale High Performance Computing.                 *           
+    32  |     *                                                                     *           
+    33  |     *   Copyright (c) 2012                                                *           
+    34  |     *      Information Technology Center, The University of Tokyo         *           
+    35  |     *                                                                     *           
+    36  |     *=====================================================================*/          
+    37  |     /*----------------------------------------------------------------------------*/  
+    38  |    //                                                                                 
+    39  |    //  概胒�                                                                        
+    40  |    //    パス１　ヘッダ                                                        
+    41  |    //                                                                                 
+    42  |    //  作成者                                                                      
+    43  |    //                                                                                 
+    44  |    /*----------------------------------------------------------------------------*/   
+    45  |                                                                                       
+    46  +--- #include &quot;main.h&quot;
+    47  |    
+    48  +--- #ifndef pass1H
+    49  +--- #define pass1H
+    50  |    
+    51  +--- void Pass1(string SrcFileName,TList *TokenList);
+    52  |    
+    53  +--- /*----------------------------------------------------------------------------*/
+    54  |    //  1.旁E會�語名                                                             
+    55  |    //                                                                               
+    56  |    //  2.概胒�                                                                    
+    57  |    //    トーゃbッE稃�類                                                      
+    58  |    //                                                                               
+    59  |    //  3.機能誃�明                                                              
+    60  |    //                                                                               
+    61  |    //  4.備考                                                                     
+    62  |    //                                                                               
+    63  |    /*----------------------------------------------------------------------------*/ 
+        |  +--------------+ 
+    64  +--+ enum TTokId{ | 
+        |  +--+-----------+ 
+    65  |     |    
+    66  |     +---     tid_null,
+    67  |     |        tid_LineEnd,            // 行の終わり                                                                 
+    68  |     |                                                                                                                   
+    69  |     |        tid_Comment,            // ゃEチBッEト　/* //                                                         
+    70  |     |    //                                                                                                             
+    71  |     |    //  プリプロゃTッサ                                                                                     
+    72  |     |    //                                                                                                             
+    73  |     |        tid_SharpStart,                                                                                            
+    74  |     |        tid_SharpInclude,                                                                                          
+    75  |     |        tid_SharpDefine,                                                                                           
+    76  |     |        tid_SharpUnDef,                                                                                            
+    77  |     |        tid_SharpIf,                                                                                               
+    78  |     |        tid_SharpElse,                                                                                             
+    79  |     |        tid_SharpElIf,                                                                                             
+    80  |     |        tid_SharpEndIf,                                                                                            
+    81  |     |        tid_SharpIfDef,                                                                                            
+    82  |     |        tid_SharpIfnDef,                                                                                           
+    83  |     |        tid_SharpPragma,                                                                                           
+    84  |     |        tid_SharpEnd,                                                                                              
+    85  |     |                                                                                                                   
+    86  |     |    //                                                                                                             
+    87  |     |    //  ゃ�ッVッbッVド                                                                                        
+    88  |     |    //                                                                                                             
+    89  |     |        tid_KeyWordStart,   //  ゃ�ッVッbッVド開始                                                          
+    90  |     |        tid_auto,                                                                                                  
+    91  |     |        tid_break,                                                                                                 
+    92  |     |        tid_case,                                                                                                  
+    93  |     |        tid_char,                                                                                                  
+    94  |     |        tid_const,                                                                                                 
+    95  |     |        tid_continue,                                                                                              
+    96  |     |        tid_default,                                                                                               
+    97  |     |        tid_do,                                                                                                    
+    98  |     |        tid_double,                                                                                                
+    99  |     |        tid_else,                                                                                                  
+   100  |     |        tid_enum,                                                                                                  
+   101  |     |        tid_extern,                                                                                                
+   102  |     |        tid_float,                                                                                                 
+   103  |     |        tid_for,                                                                                                   
+   104  |     |        tid_goto,                                                                                                  
+   105  |     |        tid_if,                                                                                                    
+   106  |     |        tid_inline,                                                                                                
+   107  |     |        tid_int,                                                                                                   
+   108  |     |        tid_long,                                                                                                  
+   109  |     |        tid_register,                                                                                              
+   110  |     |        tid_restrict,                                                                                              
+   111  |     |        tid_return,                                                                                                
+   112  |     |        tid_short,                                                                                                 
+   113  |     |        tid_signed,                                                                                                
+   114  |     |        tid_sizeof,                                                                                                
+   115  |     |        tid_static,                                                                                                
+   116  |     |        tid_struct,                                                                                                
+   117  |     |        tid_switch,                                                                                                
+   118  |     |        tid_typedef,                                                                                               
+   119  |     |        tid_union,                                                                                                 
+   120  |     |        tid_unsigned,                                                                                              
+   121  |     |        tid_void,                                                                                                  
+   122  |     |        tid_volatile,                                                                                              
+   123  |     |        tid_while,                                                                                                 
+   124  |     |        tid__Bool,                                                                                                 
+   125  |     |        tid__Complex,                                                                                              
+   126  |     |        tid__Imaginary,                                                                                            
+   127  |     |                                                                                                                   
+   128  |     |        // ゃ�ッVッbッVド�V�文字�V�                                                                       
+   129  |     |        tid_Kannma,                                                                                                
+   130  |     |        tid_Semikoron,                                                                                             
+   131  |     |        tid_Semikoron2, // for(;;) 甃B                                                                            
+   132  |     |        tid_Koron,                                                                                                 
+   133  |     |                                                                                                                   
+   134  |     |        //                                                                                                         
+   135  |     |        // 演烇�僅� 见v析を行うぃFらば、区刁EぃB演烇�優先順�X�が必胒�。                   
+   136  |     |        // 最初は単�F�区切りぃ@ tid_OprぃBする。                                                      
+   137  |     |        //                                                                                                         
+   138  |     |        tid_Set,                                                                                                   
+   139  |     |        tid_Kakko,                                                                                                 
+   140  |     |        tid_Kokka,                                                                                                 
+   141  |     |        tid_KagiKakko,                                                                                             
+   142  |     |        tid_KagiKokka,                                                                                             
+   143  |     |        tid_DaiKakko,                                                                                              
+   144  |     |        tid_DaiKokka,                                                                                              
+   145  |     |        tid_Dot,                                                                                                   
+   146  |     |        tid_Set2,   // += 等                                                                                      
+   147  |     |                                                                                                                   
+   148  |     |        // 演烇�僅�                                                                                             
+   149  |     |        tid_KoronKoron,                     // ::                                                                  
+   150  |     |                                                                                                                   
+   151  |     |        tid_Opr,                            // 演烇�僅� （単項、�V�項、ロゃNックぃFぃD元Bぃ�）  
+   152  |     |        tid_Val,                            // 変数名                                                           
+   153  |     |        tid_Func,                           // 閁u敁[名  Func(xxx) ぃ�彁uぃBぃFる。                       
+   154  |     |                                                                                                                   
+   155  |     |        tid_DataType,                       // int,double等�T�E外の型指定                                   
+   156  |     |                                                                                                                   
+   157  |     |        //                                                                                                         
+   158  |     |        //  この下は、�N�TぃHFortran甃B                                                                    
+   159  |     |        //                                                                                                         
+   160  |     |        tid_ConstNum,                       // 敁[倁A定数                                                      
+   161  |     |                                                                                                                   
+   162  |     |        //                                                                                                         
+   163  |     |        // 字句见v析�I�果からぃ�トーゃbッE稃�刁E                                                    
+   164  |     |        // 一郃Bぃ�文僅�列ぃb、関敁[ぃBしてぃZぃBめて扃Aわれる。                             
+   165  |     |        //                                                                                                         
+   166  |     |        tid_ConstStr,                       // 文僅�列定数                                                    
+   167  |     |        tid_ConstInt,                       // 敃G敁[定数                                                      
+   168  |     |        tid_ConstReal,                      // 実数定数                                                        
+   169  |     |        tid_Label,                          // 文番參L、またはッDベル                                    
+   170  |     |                                                                                                                   
+   171  |     |        tid_ContinuedLineStr,               // 継�J��B�用 &amp;\n    &amp;                                             
+   172  |     |                                                                                                                   
+   173  |     |        //                                                                                                         
+   174  |     |        // Pass1_5()ぃ@生成                                                                                     
+   175  |     |        //                                                                                                         
+   176  |     |                                                                                                                   
+   177  |     |        // Program閁u送v                                                                                         
+   178  |     |        tid_PROGRAM,                        // PROGRAM                                                             
+   179  |     |        tid_SUBROUTINE,                     // SUBROUTINE                                                          
+   180  |     |        tid_FUNCTION,                       // FUNCTION                                                            
+   181  |     |        tid_MODULE,                         // MODULE                                                              
+   182  |     |        tid_INTERFACE,                      // INTERFACE                                                           
+   183  |     |        tid_CONTAINS,                       // CONTAINS                                                            
+   184  |     |        tid_USE,                            // USE                                                                 
+   185  |     |        tid_INCLUDE,                        // INCLUDE                                                             
+   186  |     |                                                                                                                   
+   187  |     |        // デーゃ\宁v言                                                                                       
+   188  |     |        tid_COMMON,                                                                                                
+   189  |     |        tid_INTEGER,                                                                                               
+   190  |     |        tid_REAL,                                                                                                  
+   191  |     |        tid_DOUBLEPRECISION,                                                                                       
+   192  |     |        tid_CHARACTER,                                                                                             
+   193  |     |        tid_LOGICAL,                                                                                               
+   194  |     |        tid_COMPLEX,                                                                                               
+   195  |     |        tid_IMPLICIT,                                                                                              
+   196  |     |        tid_TYPE,                                                                                                  
+   197  |     |        tid_TYPE_REF,                                                                                              
+   198  |     |        tid_NAMELIST,                                                                                              
+   199  |     |        tid_ALLOCATABLE,                                                                                           
+   200  |     |        tid_POINTER,                                                                                               
+   201  |     |        tid_TARGET,                                                                                                
+   202  |     |        tid_SAVE,                                                                                                  
+   203  |     |        tid_PRIVATE,                                                                                               
+   204  |     |        tid_PUBLIC,                                                                                                
+   205  |     |        tid_EXTERNAL,                                                                                              
+   206  |     |        tid_INTRINSIC,                                                                                             
+   207  |     |        tid_INTENT,                                                                                                
+   208  |     |        tid_OPTIONAL,                                                                                              
+   209  |     |        tid_WHERE,                                                                                                 
+   210  |     |        tid_EQUIVALENCE,                    // EQUIVALENCE                                                         
+   211  |     |                                                                                                                   
+   212  |     |        //動的記憶剃C付け                                                                                   
+   213  |     |        tid_ALLOCATE,                                                                                              
+   214  |     |        tid_DEALLOCATE,                                                                                            
+   215  |     |        tid_NULLIFY,                                                                                               
+   216  |     |                                                                                                                   
+   217  |     |        // 刃J征B文                                                                                             
+   218  |     |        tid_IF,                                                                                                    
+   219  |     |        tid_THEN,                                                                                                  
+   220  |     |        tid_ELSE,                                                                                                  
+   221  |     |        tid_ELSEIF,                                                                                                
+   222  |     |        tid_ENDIF,                                                                                                 
+   223  |     |        tid_DO,                                                                                                    
+   224  |     |        tid_ENDDO,                                                                                                 
+   225  |     |        tid_SELECT,                                                                                                
+   226  |     |        tid_CASE,                                                                                                  
+   227  |     |        tid_GOTO,                                                                                                  
+   228  |     |        tid_DOWHILE,                                                                                               
+   229  |     |        tid_CALL,                                                                                                  
+   230  |     |        tid_RETURN,                                                                                                
+   231  |     |        tid_STOP,                                                                                                  
+   232  |     |        tid_END,                                                                                                   
+   233  |     |        tid_END_STR,    // ゃEチBッEト内ぃ�END resion end 等                                                
+   234  |     |                                                                                                                   
+   235  |     |        // 允E凃R力                                                                                             
+   236  |     |        tid_READ,                                                                                                  
+   237  |     |        tid_WRITE,                                                                                                 
+   238  |     |        tid_PRINT,                                                                                                 
+   239  |     |        tid_BACKSPACE,                                                                                             
+   240  |     |        tid_INQUIRE,                                                                                               
+   241  |     |        tid_REWIND,                                                                                                
+   242  |     |        tid_CLOSE,                                                                                                 
+   243  |     |        tid_OPEN,                                                                                                  
+   244  |     |        tid_ENDFILE,                                                                                               
+   245  |     |        tid_FORMAT,                                                                                                
+   246  |     |                                                                                                                   
+   247  |     |        // その他                                                                                               
+   248  |     |        tid_ASSOCIATED,                                                                                            
+   249  |     |        tid_CONTINUE,                                                                                              
+   250  |     |        tid_CYCLE,                                                                                                 
+   251  |     |        tid_DATA,                                                                                                  
+   252  |     |        tid_DIMENSION,                                                                                             
+   253  |     |        tid_EXIT,                                                                                                  
+   254  |     |        tid_PARAMETER,                                                                                             
+   255  |     |                                                                                                                   
+        |   +-+---+ 
+   256  |   |  }; | 
+        |   +-----+ 
+   257  |    
+   258  +--- /*----------------------------------------------------------------------------*/
+   259  |    //                                                                               
+   260  |    //  1.旁E會�語名                                                             
+   261  |    //   トーゃbッE位�X��ぃ@ぃ�変数参照ゃ\めAプ                       
+   262  |    //                                                                               
+   263  |    //  2.概胒�                                                                    
+   264  |    //    変数ぃ�参照犃J態                                                    
+   265  |    //                                                                               
+   266  |    //  3.機能誃�明                                                              
+   267  |    //                                                                               
+   268  |    //  4.備考                                                                     
+   269  |    //                                                                               
+   270  |    /*----------------------------------------------------------------------------*/ 
+        |  +--------------------+ 
+   271  +--+ enum Enum_RefType  | 
+   272  |  | {                  | 
+        |  +--+-----------------+ 
+   273  |     +--- vrf_def,                            // 定�Z�D
+   274  |     |    vrf_ref,                            // 参照                                        
+   275  |     |    vrf_set,                            // 訃�定                                       
+   276  |     |    vrf_refset,                         // a = a+ 1 ぃFぃDぃ�訃�定時ぃb、同時  
+        |   +-+---+ 
+   277  |   |  }; | 
+        |   +-----+ 
+   278  |    
+   279  +--- /*----------------------------------------------------------------------------*/
+   280  |    //                                                                                                                                           
+   281  |    //  1.旁E會�語名                                                                                                                         
+   282  |    //    トーゃbッEデーゃ\                                                                                                               
+   283  |    //                                                                                                                                           
+   284  |    //  2.概胒�                                                                                                                                
+   285  |    //    トーゃbッEゃbッDゃP                                                                                                             
+   286  |    //    字句见v析�Z�のトーゃbッE単�X�のゃbッDゃP。トッVゃbッEゃbッDゃPぃHぃb、�A�数ぃBしてぃ�倁Aや�A�怃@  
+   287  |    //    ぃFぃDも栃V納される。                                                                                                         
+   288  |    //                                                                                                                                           
+   289  |    //  3.機能誃�明                                                                                                                          
+   290  |    //                                                                                                                                           
+   291  |    //  4.備考                                                                                                                                 
+   292  |    //                                                                                                                                           
+   293  |    /*----------------------------------------------------------------------------*/                                                             
+        |  +----------------+ 
+   294  +--+ class TToken{  | 
+        |  +--+-------------+ 
+   295  |     |    
+        |     +-----------+ 
+   296  |     |  public:  | 
+        |     +-----------+ 
+   297  |     +--- string Str;                 // トーゃbッE文僅�列
+   298  |     +--- TTokId TokId;               // トーゃbッE稃�刁E畃F參L
+   299  |     |                                                                   
+   300  |     +--- string OrgStr;              // ゃ\ブやゃPペーゃPも含めた文僅�列
+   301  |     +--- int Idx;                    // TokenList上でぃ� Idx位�X�� Pass1_5 終�R�
+   302  |     |                                // 後に有効                                    
+   303  |     +--- int LineNo;                 // ゃXッVゃPゃEッVドでぃ�行番參L
+   304  |     |                                                                             
+   305  |     +--- int ModuleIdx;              // 何番盃�ぃ�チuゃNチEッVッHかを礃Rす。
+   306  |     +--- int NestLevel;              // Endぃ@-- SUBRUTINE ぃFぃDぃ@++ されるブッ�
+   307  |     |                                // ック淃Aさ                                       
+   308  |     +--- int BrNestLevel;            // {} ぃB ()ぃ�丁B斃Pぃ�NestLevel
+   309  |     +--- int Indent;                 // if -- endif , do -- endif ぃ�ネスト�X��X��
+   310  |     |                                //                                                   
+   311  |     +--- int priority;               // 演烇�僅� 儃F先順�X��V��V�烇�僅�の堃G合のぃ\有効）
+   312  |     +--- //  int JmpTokenPos;            // DO-&gt;EndDo+1 ぃFぃDぃ�ぃBぃE先
+   313  |     |                                                                           
+   314  |     +--- void *ValData;              // 変数トーゃbッEぃ�堃G合の変数 (変数仁E外の
+   315  |     |                                // 堃G合はNULL)                                             
+   316  |     +--- void *Script;
+   317  |     +--- Enum_RefType RefType;       // 変数ぃ�参照か、�T�v允Eかを礃Rす。
+   318  |     |                                // ゃIブルッVチンCallぃFぃDぃb、IN,OUT,INOUTぃ�指僇�が凃R杁Eるのぃ@ 
+   319  |     |                                // vrf_refsetが�B��定される。                                                   
+   320  |     |                                                                                                                       
+   321  |     +--- double dData;               // 敁[倁Aデーゃ\
+   322  |     |                                // 敁[倁A定数トーゃbッEおよぃE、               
+   323  |     |                                // 変数トーゃbッE(vrf_set)ぃ@定数仁v允E時 (a=  
+   324  |     |                                // 3ぃFぃD)ぃ�ぃ\有効                                
+   325  |     |                                                                                           
+   326  |     +--- TList *ChangedTokList;      // Pass5ぃ@ぃ�ゃEッVド生成時ぃH罃�換されたTokenList
+   327  |     |                                // 罃�換したリゃPトは、ValData=NULL,Scrip=                
+   328  |     |                                // NULLぃ@                                                        
+   329  |     |                                // 佃\甃Bぃ�ぃ\ぃBすること。                             
+   330  |     |                                                                                                   
+   331  |     +--- bool LineEndF;  // 行の終わり
+   332  |     |                                       
+   333  |     +--- TToken(string aStr,int Id);
+   334  |     +--- ~TToken();  // 砃G棄
+   335  |     +--- string GetTokIdStr();
+   336  |     |    
+        |   +-+---+ 
+   337  |   |  }; | 
+        |   +-----+ 
+   338  |    
+   339  +--- #endif
+</pre>
+
+
+</body>
+</html>

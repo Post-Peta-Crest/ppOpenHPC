@@ -1,0 +1,147 @@
+
+<html>
+<head>
+<title>pass5.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.14. pass5.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *           
+     3  |     *   Software Name : ppOpen-AT                                         *           
+     4  |     *         Version : 0.1                                               *           
+     5  |     *                                                                     *           
+     6  |     *   License                                                           *           
+     7  |     *     This file is part of ppOpen-AT.                                 *           
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *           
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *           
+    10  |     *     for more details.                                               *           
+    11  |     *                                                                     *           
+    12  |     *   ppOpen-HPC project:                                               *           
+    13  |     *     Open Source Infrastructure for Development and Execution of     *           
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *           
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *           
+    16  |     *                                                                     *           
+    17  |     *   Organizations:                                                    *           
+    18  |     *     The University of Tokyo                                         *           
+    19  |     *       - Information Technology Center                               *           
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *           
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *           
+    22  |     *         /Earthquake Research Institute (ERI)                        *           
+    23  |     *       - Graduate School of Frontier Science                         *           
+    24  |     *     Kyoto University                                                *           
+    25  |     *       - Academic Center for Computing and Media Studies             *           
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *           
+    27  |     *                                                                     *           
+    28  |     *   Sponsorship:                                                      *           
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *           
+    30  |     *     Programs: CREST, Development of System Software Technologies    *           
+    31  |     *     for post-Peta Scale High Performance Computing.                 *           
+    32  |     *                                                                     *           
+    33  |     *   Copyright (c) 2012                                                *           
+    34  |     *      Information Technology Center, The University of Tokyo         *           
+    35  |     *                                                                     *           
+    36  |     *=====================================================================*/          
+    37  |     /*----------------------------------------------------------------------------*/  
+    38  |    //                                                                                 
+    39  |    //  概胒�                                                                        
+    40  |    //    パス５　ヘッダ                                                        
+    41  |    //                                                                                 
+    42  |    //  作成者                                                                      
+    43  |    //                                                                                 
+    44  |    /*----------------------------------------------------------------------------*/   
+    45  |                                                                                       
+    46  +--- #ifndef pass5H
+    47  +--- #define pass5H
+    48  +--- /*----------------------------------------------------------------------------*/
+    49  |    //  1.旁E會�語名                                                                                                             
+    50  |    //                                                                                                                               
+    51  |    //  2.概胒�                                                                                                                    
+    52  |    //    パス５クッDゃP                                                                                                       
+    53  |    //    见v析�I�果からゃXッVゃPゃEッVドを生成する。TuneRegionゃbッDゃPぃFぃDを参煃@して生成を�B�   
+    54  |    //    う。                                                                                                                     
+    55  |    //                                                                                                                               
+    56  |    //  3.機能誃�明                                                                                                              
+    57  |    //                                                                                                                               
+    58  |    //                                                                                                                               
+    59  |    //  4.備考                                                                                                                     
+    60  |    //                                                                                                                               
+    61  |    /*----------------------------------------------------------------------------*/                                                 
+    62  |                                                                                                                                     
+    63  +--- #include &quot;main.h&quot;
+    64  |    
+        |  +----------------+ 
+    65  +--+ class TPass5{  | 
+        |  +--+-------------+ 
+        |     +-----------+ 
+    66  |     |  private: | 
+        |     +-----------+ 
+    67  |     +--- string SrcFname;
+    68  |     |    
+    69  |     +--- TList *TokenList;
+    70  |     +--- TList *ValDataList;
+    71  |     |    
+    72  |     +--- TList fpOutList;                    // 凃R力フめBめAッHッFゃPト�V��A�数ぃH寃Z応)
+    73  |     +--- FILE *fpOutInstall;                 // めAッEゃPトーッH時用凃R力フめBめAッH
+    74  |     +--- FILE *fpOutStatic;                  // 実�B�前時用凃R力フめBめAッH
+    75  |     +--- FILE *fpOutDynamic;                 // 実�B�時甃B凃R力フめBめAッH
+    76  |     +--- FILE *fpOutControl;                 // ゃEッEトロッVッH甃B凃R力フめBめAッH
+    77  |     +--- FILE *fpOutHeader;                  // 閁u敁[プロトタめAプヘッダ甃B凃R力フめBめAッH
+    78  |     |                                                                                                           
+    79  |     +--- FILE *fpInOATHeader;                // ヘッダ元フめBめAッH（OAT_base.h）入力用
+    80  |     +--- FILE *fpOutOATHeader;               // ヘッダ(OAT.h)凃R力用
+    81  |     |                                                                       
+    82  |     +--- bool FittingF;                      // Fittingが�X�\甃Bされぃ�いるかどうか？
+    83  |     |                                        // 必胒�な変数定�Z�DぃFぃDが�\�X加される.(SetPa 
+    84  |     |                                        // ram()ぃFぃD）                                            
+    85  |     +--- char Comment;
+    86  |     +--- // Fortranぃ@ッFッVゃNッ@ッE内にcallがある堃G合に迃X加
+    87  |     |    // ゃIブルッVチンが�A�写され、_OATぃ�名前ぃ@佃\われる。   
+    88  |     |                                                                                   
+    89  |     +--- void MakeControlCode_Fortran(FILE *fpAdd = NULL);
+    90  |     +--- void MakeControlCode_C();
+    91  |     +--- void MakeSrcCode_Fortran(FILE *fpAdd = NULL,int tokSPos = -1,int tokEPos = -1);
+    92  |     +--- void MakeSrcCode_Fortran77();
+    93  |     +--- void MakeSrcCode_C();
+    94  |     +--- int AddIncludePosList(TList *InsertIncludePosList);
+    95  |     +--- void AddUsePosList(TList *InsertUsePosList);
+    96  |     +--- void OutputModuleStart(FILE *fp);
+    97  |     +--- void CheckAndDeleteLocalValDefine();
+    98  |     +--- void Make_Call_SubroutineNameInRegionList();
+    99  |     +--- void Output_Call_SubroutineNameInRegionList();
+   100  |     |    
+        |     +-----------+ 
+   101  |     |  public:  | 
+        |     +-----------+ 
+   102  |     +--- TList *TuneRegionList;
+   103  |     +--- TStringList *Call_SubroutineNameInRegionList;
+   104  |     |    
+   105  |     +--- TPass5(TList *aTokenList,TList *aValDataList,TList *aTureRegionList);
+   106  |     +--- ~TPass5();
+   107  |     |    
+   108  |     +--- void Exec();
+   109  |     |    
+        |   +-+---+ 
+   110  |   |  }; | 
+        |   +-----+ 
+   111  |    
+   112  +--- #endif
+</pre>
+
+
+</body>
+</html>

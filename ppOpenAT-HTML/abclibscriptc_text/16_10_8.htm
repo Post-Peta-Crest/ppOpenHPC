@@ -1,0 +1,241 @@
+
+<html>
+<head>
+<title>FindEndDo2 メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.8. FindEndDo2 メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>FindEndDo2</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>12637</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int FindEndDo2 ( TList * TokenList , int sPos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Cの場合は、forの後のネストが０の } か ; を探してその位置を返す。<br>Fortranの場合は、tid_endoのネストが０を探してその位置を返す。<br>見つからない場合は -1を返す行の先頭トークン位置で返す。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>forに対応する }の位置。見つからない場合は 開始位置sPosを返す。</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList   トークンリスト<br>sPos    開始位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_36.htm">TTuneRegion::OutputLoopFusionExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_36.htm">8004</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_44.htm">TTuneRegion::OutputUnroll_DoBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_44.htm">10311</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_50.htm">TTuneRegion::OutputUnrollExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------------+ 
+ 12637  +--+ int TTuneRegion::FindEndDo2(TList *TokenList,int sPos) | 
+ 12638     | {                                                      | 
+           +--+-----------------------------------------------------+ 
+ 12639        +--- int i;
+ 12640        +--- TToken *Token;
+ 12641        +--- int Nest;
+ 12642        |    
+ 12643        +--- Nest = 0;
+              |  +----------------------------------------+ 
+ 12644        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |  +--+-------------------------------------+ 
+              |     |  +----------------------------------------------+ 
+ 12645        |     +--+ for(i = sPos ; i &lt; TokenList-&gt;Count ; i++){  | 
+              |     |  +--+-------------------------------------------+ 
+ 12646        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +--------------------------------+ 
+ 12647        |     |     +--+ if(Token-&gt;TokId == tid_Kakko){ | 
+              |     |     |  +--+-----------------------------+ 
+ 12648        |     |     |     +--- Nest++;
+              |     |     |   +-+---+ 
+ 12649        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------+ 
+ 12649        |     |     |   |  else if(Token-&gt;TokId == tid_Kokka){  | 
+              |     |     |   +-+-------------------------------------+ 
+ 12650        |     |     |     +--- Nest--;
+              |     |     |   +-+---+ 
+ 12651        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+ 12651        |     |     |   |  else if(Token-&gt;TokId == tid_DaiKakko){ | 
+              |     |     |   +-+---------------------------------------+ 
+ 12652        |     |     |     +--- Nest++;
+              |     |     |   +-+---+ 
+ 12653        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+ 12653        |     |     |   |  else if(Token-&gt;TokId == tid_DaiKokka){ | 
+              |     |     |   +-+---------------------------------------+ 
+ 12654        |     |     |     +--- Nest--;
+              |     |     |     |  +----------------+ 
+ 12655        |     |     |     +--+ if(Nest &lt;= 0){ | 
+              |     |     |     |  +--+-------------+ 
+              |     |     |     |     |  +------------+ 
+ 12656        |     |     |     |     +--+ return i;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 12657        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12658        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------+ 
+ 12658        |     |     |   |  else if(Token-&gt;TokId == tid_Semikoron){  | 
+              |     |     |   +-+-----------------------------------------+ 
+              |     |     |     |  +----------------+ 
+ 12659        |     |     |     +--+ if(Nest &lt;= 0){ | 
+              |     |     |     |  +--+-------------+ 
+              |     |     |     |     |  +------------+ 
+ 12660        |     |     |     |     +--+ return i;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 12661        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12662        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12663        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12664        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+ 12664        |   |  else{  | 
+              |   +-+-------+ 
+              |     |  +----------------------------------------------+ 
+ 12665        |     +--+ for(i = sPos ; i &lt; TokenList-&gt;Count ; i++){  | 
+              |     |  +--+-------------------------------------------+ 
+ 12666        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------------+ 
+ 12667        |     |     +--+ if(Token-&gt;TokId == tid_DO){  | 
+              |     |     |  +--+---------------------------+ 
+ 12668        |     |     |     +--- Nest++;
+              |     |     |   +-+---+ 
+ 12669        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------+ 
+ 12669        |     |     |   |  else if(Token-&gt;TokId == tid_ENDDO){  | 
+              |     |     |   +-+-------------------------------------+ 
+ 12670        |     |     |     +--- Nest--;
+              |     |     |     |  +----------------+ 
+ 12671        |     |     |     +--+ if(Nest &lt;= 0){ | 
+              |     |     |     |  +--+-------------+ 
+              |     |     |     |     |  +------------+ 
+ 12672        |     |     |     |     +--+ return i;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 12673        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12674        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12675        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12676        |   |  }  | 
+              |   +-----+ 
+ 12677        +--- //  return -1;
+              |  +--------------+ 
+ 12678        +--+ return sPos; | 
+              |  +--------------+ 
+            +-+---+ 
+ 12679      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,1357 @@
+
+<html>
+<head>
+<title>OutputLoopFusionExecCode_Fortran メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.36. OutputLoopFusionExecCode_Fortran メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputLoopFusionExecCode_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>8004</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputLoopFusionExecCode_Fortran ( FILE * fp )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>LoopFusionSplitサブルーチンを出力する</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap>LoopFusionSplitサブルーチンは順番に出力と必要な部分の置換や挿入で行う</td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_8.htm">TTuneRegion::FindEndDo2</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_8.htm">12637</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_4.htm">TValData::GetDefStr_Fortran</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_4.htm">2536</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>68</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_27.htm">TTuneRegion::MakeRotaionOrderSrcTokenList</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_27.htm">8515</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_35.htm">TTuneRegion::OutputFusionDo</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_35.htm">12936</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>sprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::CaseIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>148</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::DoToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>278</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::DoTokPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>152</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::DoValCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>160</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::DoValIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>159</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::DoValName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>158</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::DoValStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>154</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::DoValToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>279</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TTuneRegion::EndDoTokPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>153</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TTuneRegion::RotaionOrderList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>295</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TTuneRegion::SplitPointCopyDef_EndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>266</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>TTuneRegion::SplitPointCopyDef_StartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>265</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>TTuneRegion::SubRegionList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>211</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap>TTuneRegion::TuneKind</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>197</td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_8_1.htm">TSubRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_8_1.htm">375</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------------------+ 
+  8004  +--+ void TTuneRegion::OutputLoopFusionExecCode_Fortran(FILE *fp) | 
+  8005     | {                                                            | 
+           +--+-----------------------------------------------------------+ 
+  8006        +--- int TokPos;
+  8007        +--- int i,j,k,DefPosS;
+  8008        +--- TValData *ValData;
+  8009        +--- string s,s2,ValDefStr;
+  8010        +--- TToken *Token;
+  8011        +--- char cs[1024];
+  8012        +--- int FusionIdx,SplitIdx,SplitIdxTbl[32]; // Fusionと各サブリージョンのSplitのIndex
+  8013        +--- int SplitSubRegionIdx;
+  8014        +--- string FusionValName;
+  8015        +--- unsigned int FusionDoValBits;
+  8016        +--- int DoNest;
+  8017        +--- TScript *Script;
+  8018        +--- int RotationOrderIdx;
+  8019        +--- int RotationOrderCount;
+  8020        +--- int FusionCaseIdx,FusionCaseCount;
+  8021        +--- TList *SrcTokenList;
+  8022        |    
+  8023        +--- DoValCount = variedCount;
+  8024        +--- //
+  8025        |    // Doで使用する変数名を作成する。  
+  8026        |    //                                 
+              |  +----------------------------------------------------------+ 
+  8027        +--+ for(DoValIdx = 0 ; DoValIdx &lt; DoValCount ; DoValIdx++){  | 
+              |  +--+-------------------------------------------------------+ 
+  8028        |     +--- TValData *DoValData = (TValData *)DoValToken[DoValIdx]-&gt;ValData;
+  8029        |     |    
+  8030        |     +--- DoTokPos[DoValIdx] = TokenList-&gt;IndexOf(DoToken[DoValIdx]);
+  8031        |     +--- EndDoTokPos[DoValIdx] = FindEndDo2(TokenList,DoTokPos[DoValIdx]);
+  8032        |     +--- DoValName[DoValIdx] = DoValData-&gt;Str;
+  8033        |     +--- DoValStr[DoValIdx] = DoValData-&gt;Str;
+              |   +-+---+ 
+  8034        |   |  }  | 
+              |   +-----+ 
+  8035        +--- //
+  8036        |    // 指定種類だけのアンロールを行ったサブルーチンを作成する。      
+  8037        |    // Sub名 . 引数 , 使用変数 , [コード] がセットされる。           
+  8038        |    // コードによって、一時変数が必要となるので、それも追加される。  
+  8039        |    //                                                               
+  8040        +--- RotationOrderCount = 1;
+              |  +------------------------------------+ 
+  8041        +--+ if(RotaionOrderList-&gt;Count != 0){  | 
+              |  +--+---------------------------------+ 
+  8042        |     +--- RotationOrderCount = 2; // ソースコードの順番を変えた２種類が作成される。
+              |   +-+---+ 
+  8043        |   |  }  | 
+              |   +-----+ 
+  8044        +--- FusionCaseCount = CaseCount / RotationOrderCount;
+  8045        |    
+              |  +------------------------------------------------------------------------------------------+ 
+  8046        +--+ for(RotationOrderIdx = 0 ; RotationOrderIdx &lt; RotationOrderCount ; RotationOrderIdx++){  | 
+              |  +--+---------------------------------------------------------------------------------------+ 
+  8047        |     +--- FusionIdx = 0;
+  8048        |     +--- SplitIdx = -1;
+  8049        |     +--- SrcTokenList = TokenList;
+              |     |  +----------------------------+ 
+  8050        |     +--+ if(RotationOrderIdx != 0){ | 
+              |     |  +--+-------------------------+ 
+  8051        |     |     +--- SrcTokenList = MakeRotaionOrderSrcTokenList();
+              |     |   +-+---+ 
+  8052        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------------------------------------------------------+ 
+  8053        |     +--+ for(FusionCaseIdx = 1 ; FusionCaseIdx &lt;= FusionCaseCount ; FusionCaseIdx++){ | 
+              |     |  +--+---------------------------------------------------------------------------+ 
+  8054        |     |     +--- CaseIdx = RotationOrderIdx * FusionCaseCount + FusionCaseIdx;
+              |     |     |  +--------------------------+ 
+  8055        |     |     +--+ if((CaseIdx % 10) == 0){ | 
+              |     |     |  +--+-----------------------+ 
+              |     |     |     |  +------------------------+ 
+  8056        |     |     |     +--+ if(MainF-&gt;CloseReqF){  | 
+              |     |     |     |  +--+---------------------+ 
+              |     |     |     |     |  +----------+ 
+  8057        |     |     |     |     +--+ return;  | 
+              |     |     |     |     |  +----------+ 
+              |     |     |     |   +-+---+ 
+  8058        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8059        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8060        |     |     +--- //
+  8061        |     |     |    //  FusionIdx,SplitIdx[]を設定 
+  8062        |     |     |    //                             
+  8063        |     |     +--- int wIdx;
+  8064        |     |     +--- TSubRegion *SubRegion;
+  8065        |     |     |    
+  8066        |     |     +--- wIdx = ++SplitIdx;
+              |     |     |  +----------------------+ 
+  8067        |     |     +--+ if(FusionIdx == 0){  | 
+              |     |     |  +--+-------------------+ 
+              |     |     |     |  +----------------------------------------------+ 
+  8068        |     |     |     +--+ for(k = 0 ; k &lt; SubRegionList-&gt;Count ; k++){ | 
+              |     |     |     |  +--+-------------------------------------------+ 
+  8069        |     |     |     |     +--- SubRegion = (TSubRegion *)SubRegionList-&gt;Items[k];
+              |     |     |     |     |  +------------------------------------------------------------+ 
+  8070        |     |     |     |     +--+ if(SubRegion-&gt;SplitCaseCountOfFusionIdx[FusionIdx] == 0){  | 
+              |     |     |     |     |  +--+---------------------------------------------------------+ 
+  8071        |     |     |     |     |     +--- SplitIdxTbl[k] = 0;
+              |     |     |     |     |   +-+---+ 
+  8072        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8072        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8073        |     |     |     |     |     +--- SplitIdxTbl[k] = wIdx % SubRegion-&gt;SplitCaseCountOfFusionIdx[FusionIdx];
+  8074        |     |     |     |     |     +--- wIdx = wIdx / SubRegion-&gt;SplitCaseCountOfFusionIdx[FusionIdx];
+              |     |     |     |     |   +-+---+ 
+  8075        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8076        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------------------------------------------+ 
+  8077        |     |     |     +--+ if(wIdx != 0){ // １FusionIdxが終わった。（FusionなしでのSplit） | 
+              |     |     |     |  +--+---------------------------------------------------------------+ 
+  8078        |     |     |     |     +--- FusionIdx++;
+  8079        |     |     |     |     +--- SplitIdx = 0;
+              |     |     |     |   +-+---+ 
+  8080        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8081        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------+ 
+  8082        |     |     +--+ if(FusionIdx != 0){  | 
+              |     |     |  +--+-------------------+ 
+  8083        |     |     |     +--- //
+  8084        |     |     |     |    //  Fusion中は、Splitなしとありの２種類をFusionを含めた外側LoopでSplitしている。 
+  8085        |     |     |     |    //  2013/08/07                                                                   
+  8086        |     |     |     |    //                                                                               
+              |     |     |     |  +------------------------------------------------------------------+ 
+  8087        |     |     |     +--+ if((TuneKind == tkLoopFusionSplit)||(TuneKind == tkLoopSplit)){  | 
+              |     |     |     |  +--+---------------------------------------------------------------+ 
+              |     |     |     |     |  +--------------------+ 
+  8088        |     |     |     |     +--+ if(SplitIdx &gt;= 2){ | 
+              |     |     |     |     |  +--+-----------------+ 
+  8089        |     |     |     |     |     +--- FusionIdx++;
+  8090        |     |     |     |     |     +--- SplitIdx = 0;
+              |     |     |     |     |   +-+---+ 
+  8091        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------------------+ 
+  8092        |     |     |     |     +--+ if(SplitIdx != 1){ | 
+              |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |  +----------------------------------------------+ 
+  8093        |     |     |     |     |     +--+ for(k = 0 ; k &lt; SubRegionList-&gt;Count ; k++){ | 
+              |     |     |     |     |     |  +--+-------------------------------------------+ 
+  8094        |     |     |     |     |     |     +--- SplitIdxTbl[k] = 0;
+              |     |     |     |     |     |   +-+---+ 
+  8095        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8096        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8096        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+              |     |     |     |     |     |  +----------------------------------------------+ 
+  8097        |     |     |     |     |     +--+ for(k = 0 ; k &lt; SubRegionList-&gt;Count ; k++){ | 
+              |     |     |     |     |     |  +--+-------------------------------------------+ 
+  8098        |     |     |     |     |     |     +--- SubRegion = (TSubRegion *)SubRegionList-&gt;Items[k];
+  8099        |     |     |     |     |     |     +--- SplitIdxTbl[k] = 1;
+              |     |     |     |     |     |   +-+---+ 
+  8100        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8101        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8102        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  8102        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+              |     |     |     |     |  +--------------------+ 
+  8103        |     |     |     |     +--+ if(SplitIdx &gt;= 1){ | 
+              |     |     |     |     |  +--+-----------------+ 
+  8104        |     |     |     |     |     +--- FusionIdx++;
+  8105        |     |     |     |     |     +--- SplitIdx = 0;
+              |     |     |     |     |   +-+---+ 
+  8106        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------------+ 
+  8107        |     |     |     |     +--+ for(k = 0 ; k &lt; SubRegionList-&gt;Count ; k++){ | 
+              |     |     |     |     |  +--+-------------------------------------------+ 
+  8108        |     |     |     |     |     +--- SplitIdxTbl[k] = 0;
+              |     |     |     |     |   +-+---+ 
+  8109        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8110        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8111        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8112        |     |     +--- //
+  8113        |     |     |    // Fusion（Loop融合）ありの場合は、Loop変数を融合した変数定義を作成する。  
+  8114        |     |     |    // DoVal1_OoVal2_DoVal3 等の名前とする。                                   
+  8115        |     |     |    //                                                                         
+  8116        |     |     +--- FusionValName = &quot;&quot;;
+  8117        |     |     +--- FusionDoValBits = 0; // Fusion対象の DoValBits （外側がLSB)
+              |     |     |  +----------------------+ 
+  8118        |     |     +--+ if(FusionIdx != 0){  | 
+              |     |     |  +--+-------------------+ 
+  8119        |     |     |     +--- //              for(DoValIdx = DoValCount-FusionIdx-1 ; DoValIdx &lt; DoValCount ; DoValIdx++){
+              |     |     |     |  +----------------------------------------------------------+ 
+  8120        |     |     |     +--+ for(DoValIdx = 0 ; DoValIdx &lt;= FusionIdx ; DoValIdx++){  | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+  8121        |     |     |     |     +--- TValData *DoValData = (TValData *)DoValToken[DoValIdx]-&gt;ValData;
+              |     |     |     |     |  +--------------------------+ 
+  8122        |     |     |     |     +--+ if(FusionValName == &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------------------+ 
+  8123        |     |     |     |     |     +--- FusionValName = DoValData-&gt;Str;
+              |     |     |     |     |   +-+---+ 
+  8124        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8124        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8125        |     |     |     |     |     +--- FusionValName += &quot;_&quot;+DoValData-&gt;Str;
+              |     |     |     |     |   +-+---+ 
+  8126        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8127        |     |     |     |     +--- //                  FusionDoValBits |= (3 &lt;&lt; DoValIdx); // Fusion対象の DoValBits （外側がLSB)
+  8128        |     |     |     |     +--- FusionDoValBits |= (1 &lt;&lt; DoValIdx); // Fusion対象の DoValBits （外側がLSB)
+              |     |     |     |   +-+---+ 
+  8129        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8130        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8131        |     |     +--- //
+  8132        |     |     |    // 宣言部分  
+  8133        |     |     |    //           
+  8134        |     |     +--- s = &quot;&quot;;
+              |     |     |  +--------------------------------------------+ 
+  8135        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |  +------------------------------------+ 
+  8136        |     |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |  +------------+ 
+  8137        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8138        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------+ 
+  8139        |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8140        |     |     |     |     +--- s += &quot;, &quot;;
+              |     |     |     |   +-+---+ 
+  8141        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8142        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  8143        |     |     |     +--- s += ValData-&gt;Str;
+              |     |     |   +-+---+ 
+  8144        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8145        |     |     +--- sprintf(cs,&quot;      subroutine %s_%d(%s)&quot;,FuncName.c_str(),CaseIdx,s.c_str());
+  8146        |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(cs).c_str());
+  8147        |     |     |    
+  8148        |     |     +--- //
+  8149        |     |     |    // 使用される引数の定義を出力する。          
+  8150        |     |     |    // DefPosS,E,ArrayDefPosS,Eを使用する。      
+  8151        |     |     |    // DefPosSが同じ変数は、１つにまとめること。 
+  8152        |     |     |    //                                           
+  8153        |     |     +--- DefPosS = -1;
+  8154        |     |     +--- s = &quot;&quot;;
+              |     |     |  +--------------------------------------------+ 
+  8155        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |  +------------------------------------+ 
+  8156        |     |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |  +------------+ 
+  8157        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8158        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8159        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  8160        |     |     |     +--+ if((DefPosS == -1)||(ValData-&gt;DefPosS != DefPosS)){ // 違う定義行  | 
+              |     |     |     |  +--+-----------------------------------------------------------------+ 
+              |     |     |     |     |  +--------------+ 
+  8161        |     |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------+ 
+  8162        |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8163        |     |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |   +-+---+ 
+  8164        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8165        |     |     |     |     +--- s = ValData-&gt;GetDefStr_Fortran();
+              |     |     |     |     |  +--------------+ 
+  8166        |     |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------+ 
+              |     |     |     |     |     |  +------------+ 
+  8167        |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |   +-+---+ 
+  8168        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8169        |     |     |     |     +--- DefPosS = ValData-&gt;DefPosS;
+              |     |     |     |   +-+---+ 
+  8170        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  8170        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  8171        |     |     |     |     +--- s += &quot;,&quot;;
+              |     |     |     |   +-+---+ 
+  8172        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8173        |     |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  8174        |     |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |     |  +--+-----------------------------------------------------------------+ 
+  8175        |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8176        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  8177        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8178        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------+ 
+  8179        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  8180        |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8181        |     |     |     +--- s = &quot;&quot;;
+              |     |     |   +-+---+ 
+  8182        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8183        |     |     +--- //
+  8184        |     |     |    // 引数以外の変数の変数宣言を追加する。                    
+  8185        |     |     |    // DO変数は対象外。DO依存変数は、名前を変えて複数にする。  
+  8186        |     |     |    //                                                         
+  8187        |     |     +--- DefPosS = -1;
+  8188        |     |     +--- s = &quot;&quot;;
+  8189        |     |     +--- ValDefStr = &quot;&quot;;
+  8190        |     |     +--- DoNest = 0; // LoopFusion内のDoの数。
+  8191        |     |     +--- SplitSubRegionIdx = 0; // 出現SplitPoint （サブリージョンの数と一致する）
+              |     |     |  +--------------------------------------------+ 
+  8192        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+  8193        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |     |  +----------------------------------------------------------+ 
+  8194        |     |     |     +--+ if(ArgValList-&gt;Strings[i] != &quot;&quot;){ // 引数の変数は対象外  | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+              |     |     |     |     |  +------------+ 
+  8195        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8196        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------------------+ 
+  8197        |     |     |     +--+ if(ValData-&gt;DefPosS == -1){ // 定義なし  | 
+              |     |     |     |  +--+---------------------------------------+ 
+              |     |     |     |     |  +------------+ 
+  8198        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8199        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +----------------------------------------------------+ 
+  8200        |     |     |     +--+ if(ValData-&gt;DefPosS != DefPosS){    // 違う定義行  | 
+              |     |     |     |  +--+-------------------------------------------------+ 
+              |     |     |     |     |  +--------------+ 
+  8201        |     |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------+ 
+  8202        |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8203        |     |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |   +-+---+ 
+  8204        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------------------------+ 
+  8205        |     |     |     |     +--+ for(j = ValData-&gt;DefPosS ; j &lt; ValData-&gt;DefPosE ; j++){  | 
+              |     |     |     |     |  +--+-------------------------------------------------------+ 
+  8206        |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8207        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |   +-+---+ 
+  8208        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8209        |     |     |     |     +--- DefPosS = ValData-&gt;DefPosS;
+  8210        |     |     |     |     +--- ValDefStr = s;
+              |     |     |     |   +-+---+ 
+  8211        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  8211        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+              |     |     |     |     |  +--------------+ 
+  8212        |     |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |     |  +--+-----------+ 
+  8213        |     |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |     |   +-+---+ 
+  8214        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8214        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8215        |     |     |     |     |     +--- s += &quot;,&quot;;
+              |     |     |     |     |   +-+---+ 
+  8216        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8217        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------+ 
+  8218        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8219        |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |   +-+---+ 
+  8220        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8221        |     |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  8222        |     |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |     |  +--+-----------------------------------------------------------------+ 
+  8223        |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8224        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  8225        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8226        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------+ 
+  8227        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  8228        |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8229        |     |     |     +--- s = &quot;&quot;;
+              |     |     |   +-+---+ 
+  8230        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------------------------------+ 
+  8231        |     |     +--+ if(FusionValName != &quot;&quot;){    // フィージョン用の変数  | 
+              |     |     |  +--+---------------------------------------------------+ 
+  8232        |     |     |     +--- fprintf(fp,&quot;      integer %s\n&quot;,FusionValName.c_str());
+              |     |     |   +-+---+ 
+  8233        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8234        |     |     +--- fprintf(fp,&quot;\n&quot;);
+  8235        |     |     |    
+  8236        |     |     +--- //
+  8237        |     |     |    // コードを出力する。基本的に範囲をトークンでスキャンして動く。  
+  8238        |     |     |    // 必要に応じて文字列の置き換えや、必要コードのセットを行う。    
+  8239        |     |     |    //                                                               
+              |     |     |  +----------------------------------------------------------------+ 
+  8240        |     |     +--+ for(TokPos = TokenStartPos ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |     |     |  +--+-------------------------------------------------------------+ 
+  8241        |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[TokPos];
+  8242        |     |     |     +--- s = Token-&gt;OrgStr;
+              |     |     |     |  +----------------------------+ 
+  8243        |     |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |     |  +--+-------------------------+ 
+  8244        |     |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+  8245        |     |     |     |     +--- // スクリプトは、Skip。スクリプトの後の改行もスキップ。
+              |     |     |     |     |  +--------------------------------+ 
+  8246        |     |     |     |     +--+ while(TokPos+1 &lt; TokenEndPos){ | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  8247        |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[TokPos+1];
+              |     |     |     |     |     |  +----------------------------------+ 
+  8248        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  8249        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  8250        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8251        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+  8252        |     |     |     |     |     +--- TokPos++;
+              |     |     |     |     |   +-+---+ 
+  8253        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------+ 
+  8254        |     |     |     |     +--+ if(Script-&gt;ScType == sct_SplitPoint){  | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  8255        |     |     |     |     |     +--- unsigned int SplitBits;
+  8256        |     |     |     |     |     +--- int SplitBitsIdx,SplitDoValIdx,BitsCount;
+  8257        |     |     |     |     |     |    
+              |     |     |     |     |     |  +------------------------------------------------+ 
+  8258        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8259        |     |     |     |     |     |     +--- fprintf(fp,&quot;c%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8260        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8260        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8261        |     |     |     |     |     |     +--- fprintf(fp,&quot;!%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8262        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8263        |     |     |     |     |     +--- //
+  8264        |     |     |     |     |     |    //  有効なSplitか調べる。また、どのDoValIdx(DoNestと同等）を 
+  8265        |     |     |     |     |     |    //  切断するかを求める。                                     
+  8266        |     |     |     |     |     |    //                                                           
+  8267        |     |     |     |     |     +--- SubRegion = (TSubRegion *)SubRegionList-&gt;Items[SplitSubRegionIdx];
+  8268        |     |     |     |     |     +--- SplitBits = SubRegion-&gt;SplitBitsOfFusionIdx[FusionIdx];
+  8269        |     |     |     |     |     +--- SplitBitsIdx = SplitIdxTbl[SplitSubRegionIdx];
+  8270        |     |     |     |     |     |    
+              |     |     |     |     |     |  +------------------------+ 
+  8271        |     |     |     |     |     +--+ if(SplitBitsIdx == 0){ | 
+              |     |     |     |     |     |  +--+---------------------+ 
+  8272        |     |     |     |     |     |     +--- SplitDoValIdx = -1;
+              |     |     |     |     |     |   +-+---+ 
+  8273        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8273        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8274        |     |     |     |     |     |     +--- BitsCount = 0;
+              |     |     |     |     |     |     |  +------------------------------------------------------------------------+ 
+  8275        |     |     |     |     |     |     +--+ for(SplitDoValIdx = 0; SplitDoValIdx &lt; DoValCount ; SplitDoValIdx++){  | 
+              |     |     |     |     |     |     |  +--+---------------------------------------------------------------------+ 
+              |     |     |     |     |     |     |     |  +----------------------------------------------+ 
+  8276        |     |     |     |     |     |     |     +--+ if((SplitBits &amp; (1 &lt;&lt;SplitDoValIdx)) != 0){  | 
+              |     |     |     |     |     |     |     |  +--+-------------------------------------------+ 
+  8277        |     |     |     |     |     |     |     |     +--- BitsCount++;
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8278        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |  +--------------------------------+ 
+  8279        |     |     |     |     |     |     |     +--+ if(BitsCount &gt;= SplitBitsIdx){ | 
+              |     |     |     |     |     |     |     |  +--+-----------------------------+ 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+  8280        |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8281        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8282        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  8283        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------------------------------------------+ 
+  8284        |     |     |     |     |     +--+ if(SplitDoValIdx != -1){    // Splitコードを出力する。 | 
+              |     |     |     |     |     |  +--+-----------------------------------------------------+ 
+  8285        |     |     |     |     |     |     +--- //
+  8286        |     |     |     |     |     |     |    // SplitDoValIdxからDoNestだけの END DO を出力する。   
+  8287        |     |     |     |     |     |     |    // 対象DOのEND DOを対象として、インデントを合わせる。  
+  8288        |     |     |     |     |     |     |    //                                                     
+              |     |     |     |     |     |     |  +--------------------------------------------------------------------+ 
+  8289        |     |     |     |     |     |     +--+ for(DoValIdx = DoNest-1 ; DoValIdx &gt;= SplitDoValIdx ; DoValIdx--){ | 
+              |     |     |     |     |     |     |  +--+-----------------------------------------------------------------+ 
+              |     |     |     |     |     |     |     |  +--------------------------------------------------------------+ 
+  8290        |     |     |     |     |     |     |     +--+ if(DoValIdx == DoValCount-FusionIdx-1){ // 外側のFusionDoVal | 
+  8291        |     |     |     |     |     |     |     |  |                                                              | 
+              |     |     |     |     |     |     |     |  +--+-----------------------------------------------------------+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8292        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |     |   +-+---------------------------------------------------+ 
+  8292        |     |     |     |     |     |     |     |   |  else if((FusionDoValBits &amp; (1 &lt;&lt; DoValIdx)) != 0){ | 
+              |     |     |     |     |     |     |     |   +-+---------------------------------------------------+ 
+              |     |     |     |     |     |     |     |     |  +------------+ 
+  8293        |     |     |     |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8294        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+  8295        |     |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[EndDoTokPos[DoValIdx]];
+  8296        |     |     |     |     |     |     |     +--- s = Token-&gt;OrgStr;
+  8297        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  8298        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+  8299        |     |     |     |     |     |     +--- //                          fprintf(fp,&quot;\n&quot;);
+  8300        |     |     |     |     |     |     +--- //
+  8301        |     |     |     |     |     |     |    // ここでリージョン内での最後のenddoの後のコメント行を入れてから、 
+  8302        |     |     |     |     |     |     |    // 最初のdoの前のコメント行を入れる。!omp 等の行が入る形になる。   
+  8303        |     |     |     |     |     |     |    // ただし、Doの内部でのSplitの場合は入れない。                     
+  8304        |     |     |     |     |     |     |    //                                                                 
+              |     |     |     |     |     |     |  +--------------------------+ 
+  8305        |     |     |     |     |     |     +--+ if(SplitDoValIdx == 0){  | 
+              |     |     |     |     |     |     |  +--+-----------------------+ 
+  8306        |     |     |     |     |     |     |     +--- int j;
+  8307        |     |     |     |     |     |     |     +--- TToken *Token2;
+  8308        |     |     |     |     |     |     |     |    
+              |     |     |     |     |     |     |     |  +--------------------------------------------------+ 
+  8309        |     |     |     |     |     |     |     +--+ for(j = EndDoTokPos[0]; j &lt; TokenEndPos ; j++){  | 
+              |     |     |     |     |     |     |     |  +--+-----------------------------------------------+ 
+  8310        |     |     |     |     |     |     |     |     +--- Token2 = (TToken *)SrcTokenList-&gt;Items[j];
+              |     |     |     |     |     |     |     |     |  +------------------------------+ 
+  8311        |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;Script != NULL){  | 
+              |     |     |     |     |     |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |     |     |     |     |     |  +--------------------------------+ 
+  8312        |     |     |     |     |     |     |     |     |     +--+ for(; j &lt; TokenEndPos ; j++){  | 
+              |     |     |     |     |     |     |     |     |     |  +--+-----------------------------+ 
+  8313        |     |     |     |     |     |     |     |     |     |     +--- Token2 = (TToken *)SrcTokenList-&gt;Items[j];
+              |     |     |     |     |     |     |     |     |     |     |  +------------------------------------+ 
+  8314        |     |     |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;TokId == tid_LineEnd){  | 
+              |     |     |     |     |     |     |     |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+  8315        |     |     |     |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |     |     |     |   +-+---+ 
+  8316        |     |     |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |     |   +-+---+ 
+  8317        |     |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  8318        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |  +------------------------------------+ 
+  8319        |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;TokId == tid_Comment){  | 
+              |     |     |     |     |     |     |     |     |  +--+---------------------------------+ 
+  8320        |     |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,Token2-&gt;OrgStr.c_str()); // コメント
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  8321        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8322        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+  8323        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;\n&quot;);
+              |     |     |     |     |     |     |     |  +------------------------------------------------+ 
+  8324        |     |     |     |     |     |     |     +--+ for(j = TokenStartPos ; j &lt; DoTokPos[0]; j++){ | 
+              |     |     |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8325        |     |     |     |     |     |     |     |     +--- Token2 = (TToken *)SrcTokenList-&gt;Items[j];
+              |     |     |     |     |     |     |     |     |  +------------------------------+ 
+  8326        |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;Script != NULL){  | 
+              |     |     |     |     |     |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |     |     |     |     |     |  +--------------------------------+ 
+  8327        |     |     |     |     |     |     |     |     |     +--+ for(; j &lt; TokenEndPos ; j++){  | 
+              |     |     |     |     |     |     |     |     |     |  +--+-----------------------------+ 
+  8328        |     |     |     |     |     |     |     |     |     |     +--- Token2 = (TToken *)SrcTokenList-&gt;Items[j];
+              |     |     |     |     |     |     |     |     |     |     |  +------------------------------------+ 
+  8329        |     |     |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;TokId == tid_LineEnd){  | 
+              |     |     |     |     |     |     |     |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+  8330        |     |     |     |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |     |     |     |   +-+---+ 
+  8331        |     |     |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |     |   +-+---+ 
+  8332        |     |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  8333        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |  +------------------------------------+ 
+  8334        |     |     |     |     |     |     |     |     +--+ if(Token2-&gt;TokId == tid_Comment){  | 
+              |     |     |     |     |     |     |     |     |  +--+---------------------------------+ 
+  8335        |     |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,Token2-&gt;OrgStr.c_str()); // コメント
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  8336        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8337        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8338        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+  8339        |     |     |     |     |     |     +--- //
+  8340        |     |     |     |     |     |     |    // SplitDoValIdxからDoNestだけの DOを再度出力する。          
+  8341        |     |     |     |     |     |     |    // Fusionも有効なので、Fusion中のDOはFusionでの出力となる。  
+  8342        |     |     |     |     |     |     |    // Fusionの内部のDOに関してのSplitはCaseから除外済。         
+  8343        |     |     |     |     |     |     |    //                                                           
+              |     |     |     |     |     |     |  +------------------------------------------------------------------+ 
+  8344        |     |     |     |     |     |     +--+ for(DoValIdx = SplitDoValIdx ; DoValIdx &lt; DoNest ; DoValIdx++){  | 
+              |     |     |     |     |     |     |  +--+---------------------------------------------------------------+ 
+              |     |     |     |     |     |     |     |  +------------------------------------------------+ 
+  8345        |     |     |     |     |     |     |     +--+ if((FusionDoValBits &amp; (1 &lt;&lt; DoValIdx)) != 0){  | 
+              |     |     |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8346        |     |     |     |     |     |     |     |     +--- //                                  OutputFusionDo(FusionValName,fp,DoValIdx-1,FusionIdx);
+  8347        |     |     |     |     |     |     |     |     +--- OutputFusionDo(FusionValName,fp,DoValIdx,FusionIdx);
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8348        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |     |   +-+-------------------------------------------+ 
+  8348        |     |     |     |     |     |     |     |   |  else{// Fusion対象外であれば、そのまま出力 | 
+              |     |     |     |     |     |     |     |   +-+-------------------------------------------+ 
+  8349        |     |     |     |     |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |     |     |     |     |  +------------------------------------------------------+ 
+  8350        |     |     |     |     |     |     |     |     +--+ for(j =DoTokPos[DoValIdx] ; j &lt; TokenEndPos ; j++){  | 
+              |     |     |     |     |     |     |     |     |  +--+---------------------------------------------------+ 
+  8351        |     |     |     |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8352        |     |     |     |     |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |     |     |     |     |  +----------------------------------+ 
+  8353        |     |     |     |     |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+  8354        |     |     |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |     |     |   +-+---+ 
+  8355        |     |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  8356        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+  8357        |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |     |     |   +-+---+ 
+  8358        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8359        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  8360        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8361        |     |     |     |     |     +--- SplitSubRegionIdx++; // 出現SplitPoint （サブリージョンの数と一致する）
+              |     |     |     |     |   +-+---+ 
+  8362        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-----------------------------------------------------+ 
+  8362        |     |     |     |     |   |  else if(Script-&gt;ScType == sct_SplitPointCopyInsert){ | 
+              |     |     |     |     |   +-+-----------------------------------------------------+ 
+  8363        |     |     |     |     |     +--- //
+  8364        |     |     |     |     |     |    //  SplitPointCopyDefのリージョン内をCOPYして配置する。  
+  8365        |     |     |     |     |     |    //                                                       
+              |     |     |     |     |     |  +------------------------------------------------+ 
+  8366        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8367        |     |     |     |     |     |     +--- fprintf(fp,&quot;c%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8368        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8368        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8369        |     |     |     |     |     |     +--- fprintf(fp,&quot;!%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8370        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------+ 
+  8371        |     |     |     |     |     +--+ if(SplitIdx != 0){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +----------------------------------------------------------------------------+ 
+  8372        |     |     |     |     |     |     +--+ for(k = SplitPointCopyDef_StartPos ; k &lt; SplitPointCopyDef_EndPos ; k++){  | 
+              |     |     |     |     |     |     |  +--+-------------------------------------------------------------------------+ 
+  8373        |     |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[k];
+  8374        |     |     |     |     |     |     |     +--- s = Token-&gt;OrgStr;
+  8375        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  8376        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  8377        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8378        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8378        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8379        |     |     |     |     |     +--- // スクリプトは、Skip。スクリプトの後の改行もスキップ。
+              |     |     |     |     |     |  +--------------------------------+ 
+  8380        |     |     |     |     |     +--+ while(TokPos+1 &lt; TokenEndPos){ | 
+              |     |     |     |     |     |  +--+-----------------------------+ 
+  8381        |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[TokPos+1];
+              |     |     |     |     |     |     |  +----------------------------------+ 
+  8382        |     |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+  8383        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8384        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+  8385        |     |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+  8386        |     |     |     |     |     |     +--- TokPos++;
+              |     |     |     |     |     |   +-+---+ 
+  8387        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +------------------------------------------------+ 
+  8388        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8389        |     |     |     |     |     |     +--- fprintf(fp,&quot;c%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8390        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8390        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8391        |     |     |     |     |     |     +--- fprintf(fp,&quot;!%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8392        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8393        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +------------+ 
+  8394        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8395        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------+ 
+  8395        |     |     |     |   |  else if(Token-&gt;TokId == tid_Comment){  | 
+              |     |     |     |   +-+---------------------------------------+ 
+  8396        |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // コメントは、そのまま
+              |     |     |     |     |  +------------+ 
+  8397        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8398        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------+ 
+  8398        |     |     |     |   |  else if(Token-&gt;TokId == tid_LineEnd){  | 
+              |     |     |     |   +-+---------------------------------------+ 
+  8399        |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // 改行も、そのまま
+              |     |     |     |     |  +------------+ 
+  8400        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8401        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-----------------------------+ 
+  8401        |     |     |     |   |  else if(FusionCaseIdx == 1){ | 
+              |     |     |     |   +-+-----------------------------+ 
+  8402        |     |     |     |     +--- // Fusion CaseIdx == 1 の場合は、そのまま出力
+  8403        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +------------------------------------------+ 
+  8404        |     |     |     |     +--+ for( ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |     |     |     |     |  +--+---------------------------------------+ 
+  8405        |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[TokPos];
+  8406        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |  +----------------------------------+ 
+  8407        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  8408        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  8409        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8410        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8411        |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |  +------------+ 
+  8412        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8413        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +----------------------------------------------------------+ 
+  8414        |     |     |     +--+ if((Token-&gt;TokId == tid_DO)||(Token-&gt;TokId == tid_for)){ | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+  8415        |     |     |     |     +--- //
+  8416        |     |     |     |     |    //                                                               
+  8417        |     |     |     |     |    // Fusion対象DOかをチェックする。                                
+  8418        |     |     |     |     |    // 外側FusionDoValBitsは、Fusion用変数を使ったDoと変数設定。     
+  8419        |     |     |     |     |    // それ以外のFusion対象はコメントにする。EndDoも同様に処理する。 
+  8420        |     |     |     |     |    //                                                               
+  8421        |     |     |     |     |    //         K = (KK-1)/(NY*NX) + 1                                
+  8422        |     |     |     |     |    //         J = mod((KK-1)/NX,NY) + 1                             
+  8423        |     |     |     |     |    //         I = mod(KK-1,NX) + 1                                  
+  8424        |     |     |     |     |    //                                                               
+  8425        |     |     |     |     |    //                                                               
+              |     |     |     |     |  +----------------------------------------------+ 
+  8426        |     |     |     |     +--+ if((FusionDoValBits &amp; (1 &lt;&lt; DoNest)) != 0){  | 
+              |     |     |     |     |  +--+-------------------------------------------+ 
+  8427        |     |     |     |     |     +--- OutputFusionDo(FusionValName,fp,DoNest,FusionIdx);
+              |     |     |     |     |     |  +------------------------------------------------+ 
+  8428        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8429        |     |     |     |     |     |     +--- s = &quot;c&quot;;
+              |     |     |     |     |     |   +-+---+ 
+  8430        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8430        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8431        |     |     |     |     |     |     +--- s = &quot;!&quot;;
+              |     |     |     |     |     |   +-+---+ 
+  8432        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +------------------------------------------+ 
+  8433        |     |     |     |     |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |     |     |     |     |  +--+---------------------------------------+ 
+  8434        |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8435        |     |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |     |  +----------------------------------+ 
+  8436        |     |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+  8437        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8438        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  8439        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8440        |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+  8441        |     |     |     |     |     +--- TokPos = j;
+              |     |     |     |     |   +-+---+ 
+  8442        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------------------------------------------+ 
+  8442        |     |     |     |     |   |  else{// Fusion対象外であれば、そのまま出力 | 
+              |     |     |     |     |   +-+-------------------------------------------+ 
+  8443        |     |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |     |  +------------------------------------------+ 
+  8444        |     |     |     |     |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |     |     |     |     |  +--+---------------------------------------+ 
+  8445        |     |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8446        |     |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |     |  +----------------------------------+ 
+  8447        |     |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+  8448        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  8449        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  8450        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8451        |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+  8452        |     |     |     |     |     +--- TokPos = j;
+              |     |     |     |     |   +-+---+ 
+  8453        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8454        |     |     |     |     +--- DoNest++;
+  8455        |     |     |     |     |    
+              |     |     |     |   +-+---+ 
+  8456        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------+ 
+  8456        |     |     |     |   |  else if(Token-&gt;TokId == tid_ENDDO){  | 
+              |     |     |     |   +-+-------------------------------------+ 
+              |     |     |     |     |  +----------------------------------------------------------+ 
+  8457        |     |     |     |     +--+ if(DoNest &gt; DoValCount-FusionIdx){  // 内側のFusionDoVal | 
+              |     |     |     |     |  +--+-------------------------------------------------------+ 
+              |     |     |     |     |     |  +------------------------------------------------+ 
+  8458        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+  8459        |     |     |     |     |     |     +--- fprintf(fp,&quot;c%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8460        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8460        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  8461        |     |     |     |     |     |     +--- fprintf(fp,&quot;!%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  8462        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8463        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8463        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8464        |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |   +-+---+ 
+  8465        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8466        |     |     |     |     +--- DoNest--;
+              |     |     |     |   +-+---+ 
+  8467        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  8467        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  8468        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +------------------------------------------+ 
+  8469        |     |     |     |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |     |     |     |  +--+---------------------------------------+ 
+  8470        |     |     |     |     |     +--- Token = (TToken *)SrcTokenList-&gt;Items[j];
+  8471        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |  +----------------------------------+ 
+  8472        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+  8473        |     |     |     |     |     |     +--- TokPos = j;
+              |     |     |     |     |     |     |  +--------+ 
+  8474        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  8475        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  8476        |     |     |     |     |     |    
+              |     |     |     |     |   +-+---+ 
+  8477        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8478        |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |   +-+---+ 
+  8479        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8480        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8481        |     |     +--- //          fprintf(fp,&quot;\n&quot;);
+  8482        |     |     +--- fprintf(fp,&quot;      return\n&quot;);
+              |     |     |  +------------------------------------------------+ 
+  8483        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |     |  +--+---------------------------------------------+ 
+  8484        |     |     |     +--- fprintf(fp,&quot;      end subroutine %s_%d\n&quot;,FuncName.c_str(),CaseIdx);
+              |     |     |   +-+---+ 
+  8485        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  8485        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  8486        |     |     |     +--- fprintf(fp,&quot;      end\n&quot;);
+              |     |     |   +-+---+ 
+  8487        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8488        |     |     +--- fprintf(fp,&quot;\n&quot;);
+  8489        |     |     +--- // サブルーチン終了（Case回繰り返される）
+              |     |   +-+---+ 
+  8490        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------------+ 
+  8491        |     +--+ if(SrcTokenList != TokenList){ | 
+              |     |  +--+-----------------------------+ 
+  8492        |     |     +--- delete SrcTokenList;
+  8493        |     |     +--- SrcTokenList = NULL;
+              |     |   +-+---+ 
+  8494        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  8495        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  8496      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

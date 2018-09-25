@@ -1,0 +1,869 @@
+
+<html>
+<head>
+<title>MakeUnrollData メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.29. MakeUnrollData メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>MakeUnrollData</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>1001</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void MakeUnrollData ( int sPos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>UnRollの解析を行う。<br>Type,Name,Do LoopEnd 式,iusw の変数の作成が行われる。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>sPos    開始位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_54.htm">TTuneRegion::TTuneRegion</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_54.htm">67</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_3.htm">TTuneRegion::AddArgValListToATExecArgList</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_3.htm">2220</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_5.htm">TTuneRegion::ChackRefDoValF</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_5.htm">1968</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TStringList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_16.htm">TTuneRegion::GetNextKanmaPos</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_16.htm">1879</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_10_17.htm">TTuneRegion::GetNextSemikoronPos</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_17.htm">1917</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_10_25.htm">TTuneRegion::MakeArgValList</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_25.htm">726</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_10_53.htm">TTuneRegion::SaveAndResetValBits</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_53.htm">2130</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>atof</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>atoi</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::DoEndEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>283</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::DoEndSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>282</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::DoStartEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>281</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::DoStartSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>280</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::DoStepEPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>285</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::DoStepSPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>284</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::DoToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>278</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::DoValToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>279</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TTuneRegion::FittingDegree</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>253</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TTuneRegion::FittingDspline</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>248</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TTuneRegion::FittingDynamic</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>249</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TTuneRegion::FittingType</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>251</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>TTuneRegion::Name</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>192</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>TTuneRegion::Number</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>205</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>TTuneRegion::SampledList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>254</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap>TTuneRegion::TuneGroup</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>195</td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+<tr>
+<td nowrap>24</td>
+<td nowrap>TTuneRegion::variedFromValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>25</td>
+<td nowrap>TTuneRegion::variedStepValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>237</td>
+</tr>
+<tr>
+<td nowrap>26</td>
+<td nowrap>TTuneRegion::variedToValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>236</td>
+</tr>
+<tr>
+<td nowrap>27</td>
+<td nowrap>TTuneRegion::variedValData</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>242</td>
+</tr>
+<tr>
+<td nowrap>28</td>
+<td nowrap>TTuneRegion::variedValName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>226</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------+ 
+  1001  +--+ void TTuneRegion::MakeUnrollData(int sPos) | 
+  1002     | {                                          | 
+           +--+-----------------------------------------+ 
+  1003        +--- int i,j,k;
+  1004        +--- TToken *Token;
+  1005        +--- TScript *Script;
+  1006        +--- string s;
+  1007        +--- TScValData *ScValData;
+  1008        +--- string ScValName;
+  1009        +--- int Nest;
+  1010        +--- int StepS,StepE;
+  1011        |    
+  1012        +--- Token = (TToken *)TokenList-&gt;Items[sPos];
+  1013        |    
+  1014        +--- //
+  1015        |    // UnRollの対象変数名を所得  
+  1016        |    //                           
+  1017        +--- ScValData = NULL;
+  1018        +--- ScValName = &quot;&quot;;
+  1019        |    
+  1020        +--- //
+  1021        |    // 名前、参照変数（Setが先の場合は、不要）、DO変数、DOの終わり値を求める 
+  1022        |    // とりあえず、一番外側のunrollのみ。複数は出力サンプルが必要。          
+  1023        |    //                                                                       
+  1024        |    // OAT_SetParam()                                                        
+  1025        |    // OAT_InsetallXXX() の呼び出しを追加する。                              
+  1026        |    //                                                                       
+  1027        |    // この２つで、メイン側の呼び出しは終わり。                              
+  1028        |    //                                                                       
+  1029        +--- TValData *ValData;
+  1030        |    
+  1031        +--- // Name指定なし時の対策 Add 2004/08/26
+  1032        +--- Name = IntToStr(MainF-&gt;TuneRegionList-&gt;Count+1);
+              |  +------------------------------+ 
+  1033        +--+ if(TuneGroup == tgInstall){  | 
+              |  +--+---------------------------+ 
+  1034        |     +--- FuncName = &quot;OAT_Install&quot;+Name;
+              |   +-+---+ 
+  1035        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------+ 
+  1035        |   |  else if(TuneGroup == tgStatic){  | 
+              |   +-+---------------------------------+ 
+  1036        |     +--- FuncName = &quot;OAT_Static&quot;+Name;
+              |   +-+---+ 
+  1037        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------------+ 
+  1037        |   |  else if(TuneGroup == tgDynamic){ | 
+              |   +-+---------------------------------+ 
+  1038        |     +--- FuncName = &quot;OAT_Dynamic&quot;+Name;
+              |   +-+---+ 
+  1039        |   |  }  | 
+              |   +-----+ 
+  1040        +--- Nest = 0;
+  1041        +--- ArgValList-&gt;Clear();
+              |  +------------------------------------------+ 
+  1042        +--+ for(i = sPos ; i &lt;= TokenEndPos ; i++){  | 
+              |  +--+---------------------------------------+ 
+  1043        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------+ 
+  1044        |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |  +--+-------------------------+ 
+  1045        |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |  +----------------------------------------------------------+ 
+  1046        |     |     +--+ if(Script-&gt;ScRegion == scr_start){      // region Start  | 
+              |     |     |  +--+-------------------------------------------------------+ 
+  1047        |     |     |     +--- Nest++;     // TR ネスト部分の処理
+              |     |     |     |  +----------------+ 
+  1048        |     |     |     +--+ if(Nest &gt; 1){  | 
+              |     |     |     |  +--+-------------+ 
+  1049        |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;Unroll内のRegionネストは、サポートしていません。&quot;);
+              |     |     |     |   +-+---+ 
+  1050        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------+ 
+  1051        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  1052        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------------+ 
+  1052        |     |     |   |  else if(Script-&gt;ScType == sct_name){   // name | 
+              |     |     |   +-+-----------------------------------------------+ 
+  1053        |     |     |     +--- Name = Script-&gt;TokStrList-&gt;Strings[2];
+              |     |     |     |  +------------------------------+ 
+  1054        |     |     |     +--+ if(TuneGroup == tgInstall){  | 
+              |     |     |     |  +--+---------------------------+ 
+  1055        |     |     |     |     +--- FuncName = &quot;OAT_Install&quot;+Name;
+              |     |     |     |   +-+---+ 
+  1056        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------+ 
+  1056        |     |     |     |   |  else if(TuneGroup == tgStatic){  | 
+              |     |     |     |   +-+---------------------------------+ 
+  1057        |     |     |     |     +--- FuncName = &quot;OAT_Static&quot;+Name;
+              |     |     |     |   +-+---+ 
+  1058        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------+ 
+  1058        |     |     |     |   |  else if(TuneGroup == tgDynamic){ | 
+              |     |     |     |   +-+---------------------------------+ 
+  1059        |     |     |     |     +--- FuncName = &quot;OAT_Dynamic&quot;+Name;
+              |     |     |     |   +-+---+ 
+  1060        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1061        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------+ 
+  1061        |     |     |   |  else if(Script-&gt;ScType == sct_Number){ // number | 
+              |     |     |   +-+-------------------------------------------------+ 
+  1062        |     |     |     +--- Number = atoi(Script-&gt;TokStrList-&gt;Strings[2].c_str());
+              |     |     |   +-+---+ 
+  1063        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+  1063        |     |     |   |  else if(Script-&gt;ScType == sct_varied){ | 
+              |     |     |   +-+---------------------------------------+ 
+  1064        |     |     |     +--- //
+  1065        |     |     |     |    // varried処理を行う。 
+  1066        |     |     |     |    //                     
+              |     |     |     |  +----------------------------------------+ 
+  1067        |     |     |     +--+ if(Script-&gt;ScValDataList-&gt;Count == 0){ | 
+              |     |     |     |  +--+-------------------------------------+ 
+  1068        |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;varied の変数指定が見つかりません。&quot;);
+              |     |     |     |     |  +----------+ 
+  1069        |     |     |     |     +--+ return;  | 
+              |     |     |     |     |  +----------+ 
+              |     |     |     |   +-+---+ 
+  1070        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------------------------------+ 
+  1071        |     |     |     +--+ for(k = 0 ; k &lt; Script-&gt;ScValDataList-&gt;Count ; k++){ | 
+              |     |     |     |  +--+---------------------------------------------------+ 
+  1072        |     |     |     |     +--- ScValData = (TScValData *)Script-&gt;ScValDataList-&gt;Items[k];
+  1073        |     |     |     |     +--- variedValName[variedCount] = ScValData-&gt;Str;
+  1074        |     |     |     |     +--- variedValData[variedCount] = ScValData;
+  1075        |     |     |     |     +--- DoToken[variedCount] = NULL;
+              |     |     |     |     |  +------------------------------------------------------+ 
+  1076        |     |     |     |     +--+ for(j = 0 ; j &lt; Script-&gt;TokStrList-&gt;Count-1 ; j++){  | 
+              |     |     |     |     |  +--+---------------------------------------------------+ 
+  1077        |     |     |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[j];
+              |     |     |     |     |     |  +------------------+ 
+  1078        |     |     |     |     |     +--+ if(s ==&quot;from&quot;){  | 
+              |     |     |     |     |     |  +--+---------------+ 
+  1079        |     |     |     |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[j+1];
+  1080        |     |     |     |     |     |     +--- /***************************************************************************/
+  1081        |     |     |     |     |     |     |    //                                                                             
+  1082        |     |     |     |     |     |     |    //Kogakuin Irie                                                                
+  1083        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応                                                   
+  1084        |     |     |     |     |     |     |    //既存コードはコメントアウト                                                   
+  1085        |     |     |     |     |     |     |    //                                                                             
+  1086        |     |     |     |     |     |     |    //variedFromValue[variedCount] = atoi(s.c_str());                              
+  1087        |     |     |     |     |     |     +--- variedFromValue[variedCount] = (float)atof(s.c_str());
+  1088        |     |     |     |     |     |     +--- //
+  1089        |     |     |     |     |     |     |    //ここまで                                                                     
+  1090        |     |     |     |     |     |     |    //                                                                             
+  1091        |     |     |     |     |     |     |    /***************************************************************************/  
+              |     |     |     |     |     |   +-+---+ 
+  1092        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+---------------------+ 
+  1092        |     |     |     |     |     |   |  else if(s == &quot;to&quot;){  | 
+              |     |     |     |     |     |   +-+---------------------+ 
+  1093        |     |     |     |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[j+1];
+  1094        |     |     |     |     |     |     +--- /***************************************************************************/
+  1095        |     |     |     |     |     |     |    //                                                                             
+  1096        |     |     |     |     |     |     |    //Kogakuin Irie                                                                
+  1097        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応                                                   
+  1098        |     |     |     |     |     |     |    //既存コードはコメントアウト                                                   
+  1099        |     |     |     |     |     |     |    //                                                                             
+  1100        |     |     |     |     |     |     |    //variedToValue[variedCount] = atoi(s.c_str());                                
+  1101        |     |     |     |     |     |     +--- variedToValue[variedCount] = (float)atof(s.c_str());
+  1102        |     |     |     |     |     |     +--- //
+  1103        |     |     |     |     |     |     |    //ここまで                                                                     
+  1104        |     |     |     |     |     |     |    //                                                                             
+  1105        |     |     |     |     |     |     |    /***************************************************************************/  
+  1106        |     |     |     |     |     |     |                                                                                   
+  1107        |     |     |     |     |     |     |    /*****************************************/                                    
+  1108        |     |     |     |     |     |     |    //                                                                             
+  1109        |     |     |     |     |     |     |    //Kogakuin Irie                                                                
+  1110        |     |     |     |     |     |     |    //step（増分値の任意設定）対応のための処理                                     
+  1111        |     |     |     |     |     |     |    //                                                                             
+  1112        |     |     |     |     |     |     +--- variedStepValue[variedCount] = 1;
+  1113        |     |     |     |     |     |     +--- //
+  1114        |     |     |     |     |     |     |    //ここまで                                   
+  1115        |     |     |     |     |     |     |    //                                           
+  1116        |     |     |     |     |     |     |    /*****************************************/  
+              |     |     |     |     |     |   +-+---+ 
+  1117        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  1118        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1119        |     |     |     |     +--- variedCount++;
+              |     |     |     |   +-+---+ 
+  1120        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1121        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------+ 
+  1121        |     |     |   |  else if(Script-&gt;ScType == sct_fitting){  | 
+              |     |     |   +-+-----------------------------------------+ 
+  1122        |     |     |     +--- //
+  1123        |     |     |     |    // Fitting指定子の処理を行う。（TuneRegionへデータ複写のみ)  
+  1124        |     |     |     |    //                                                           
+  1125        |     |     |     |                                                                 
+  1126        |     |     |     +--- //d-spline用追加部分
+  1127        |     |     |     +--- FittingDspline = Script-&gt;FittingDspline;
+  1128        |     |     |     +--- FittingDynamic = Script-&gt;FittingDynamic;
+  1129        |     |     |     +--- //d-spline用追加部分　ここまで
+  1130        |     |     |     |                                   
+  1131        |     |     |     +--- FittingType = Script-&gt;FittingType;
+  1132        |     |     |     +--- FittingDegree = Script-&gt;FittingDegree;
+  1133        |     |     |     +--- SampledList = Script-&gt;SampledList;
+              |     |     |   +-+---+ 
+  1134        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1135        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------+ 
+  1135        |     |   |  else if(Token-&gt;TokId == tid_DO){ | 
+              |     |   +-+---------------------------------+ 
+  1136        |     |     +--- //
+  1137        |     |     |    // DOの終わりの式を求める。Fortran用                               
+  1138        |     |     |    // DOの終わりの式は カンマとカンマの間（関数がある可能性があるので 
+  1139        |     |     |    // ()のレベルチェックは行うこと！（関数作成）                      
+  1140        |     |     |    //                                                                 
+  1141        |     |     +--- TToken *Token1,*Token2;
+  1142        |     |     +--- int kk,DoSPos;
+  1143        |     |     |    
+  1144        |     |     +--- Token1 = Token; // DOのトークン
+  1145        |     |     +--- DoSPos = i + 1;
+              |     |     |  +--------------------------------+ 
+  1146        |     |     +--+ for(kk = 0 ; kk &lt; 100 ; kk++){ | 
+              |     |     |  +--+-----------------------------+ 
+  1147        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[DoSPos++];
+              |     |     |     |  +------------------------------+ 
+  1148        |     |     |     +--+ if(Token-&gt;TokId == tid_Set){ | 
+              |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |  +--------+ 
+  1149        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1150        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1151        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1152        |     |     +--- //
+  1153        |     |     |    // スクリプトの変数名と一致するかを調べる。  
+  1154        |     |     |    //                                           
+  1155        |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[DoSPos-2];
+              |     |     |  +----------------------------------------+ 
+  1156        |     |     +--+ for(kk = 0 ; kk &lt; variedCount ; kk++){ | 
+              |     |     |  +--+-------------------------------------+ 
+              |     |     |     |  +--------------------------------------------------------------+ 
+  1157        |     |     |     +--+ if(LowerCase(Token2-&gt;Str) == LowerCase(variedValName[kk])){  | 
+              |     |     |     |  +--+-----------------------------------------------------------+ 
+  1158        |     |     |     |     +--- DoToken[kk] = Token1;
+  1159        |     |     |     |     +--- DoValToken[kk] = Token2;
+  1160        |     |     |     |     +--- ValData = (TValData *)Token2-&gt;ValData;
+  1161        |     |     |     |     +--- ValData-&gt;DoValBits = (1 &lt;&lt; kk); // 変数Bitsをセットする。
+  1162        |     |     |     |     +--- ValData-&gt;RefDoValBits = (1 &lt;&lt; kk); // 変数Bitsをセットする。
+  1163        |     |     |     |     +--- DoStartSPos[kk] = DoSPos;
+  1164        |     |     |     |     +--- DoStartEPos[kk] = GetNextKanmaPos(i);
+  1165        |     |     |     |     +--- DoEndSPos[kk] = GetNextKanmaPos(i) + 1;
+  1166        |     |     |     |     +--- DoEndEPos[kk] = GetNextKanmaPos(DoEndSPos[kk]);
+  1167        |     |     |     |     |    
+              |     |     |     |     |  +------------------------------------------------------------------------+ 
+  1168        |     |     |     |     +--+ if(((TToken *)TokenList-&gt;Items[DoEndEPos[kk]])-&gt;TokId == tid_Kannma){  | 
+              |     |     |     |     |  +--+---------------------------------------------------------------------+ 
+  1169        |     |     |     |     |     +--- DoStepSPos[kk] = GetNextKanmaPos(DoEndEPos[kk]) + 1;
+  1170        |     |     |     |     |     +--- DoStepEPos[kk] = GetNextKanmaPos(DoStepSPos[kk]);
+              |     |     |     |     |   +-+---+ 
+  1171        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  1171        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  1172        |     |     |     |     |     +--- DoStepSPos[kk] = -1;
+  1173        |     |     |     |     |     +--- DoStepEPos[kk] = -1;
+              |     |     |     |     |   +-+---+ 
+  1174        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------+ 
+  1175        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1176        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1177        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1178        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------------+ 
+  1178        |     |   |  else if(Token-&gt;TokId == tid_for){  | 
+              |     |   +-+-----------------------------------+ 
+  1179        |     |     +--- //
+  1180        |     |     |    // Forの終りの式を求める。C言語用                    
+  1181        |     |     |    // forの終わりの式は １つめのセミコロンと２つめの間  
+  1182        |     |     |    // ()のレベルチェックは行うこと！（関数作成）        
+  1183        |     |     |    //                                                   
+  1184        |     |     +--- TToken *Token1,*Token2;
+  1185        |     |     +--- int kk,DoSPos;
+  1186        |     |     |    
+  1187        |     |     +--- Token1 = Token; // Forのトークン
+  1188        |     |     +--- DoSPos = i + 1;
+              |     |     |  +--------------------------------+ 
+  1189        |     |     +--+ for(kk = 0 ; kk &lt; 100 ; kk++){ | 
+              |     |     |  +--+-----------------------------+ 
+  1190        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[DoSPos++];
+              |     |     |     |  +------------------------------+ 
+  1191        |     |     |     +--+ if(Token-&gt;TokId == tid_Set){ | 
+              |     |     |     |  +--+---------------------------+ 
+              |     |     |     |     |  +--------+ 
+  1192        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1193        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1194        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1195        |     |     +--- //
+  1196        |     |     |    // スクリプトの変数名と一致するかを調べる。  
+  1197        |     |     |    //                                           
+  1198        |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[DoSPos-2];
+              |     |     |  +----------------------------------------+ 
+  1199        |     |     +--+ for(kk = 0 ; kk &lt; variedCount ; kk++){ | 
+              |     |     |  +--+-------------------------------------+ 
+              |     |     |     |  +----------------------------------------+ 
+  1200        |     |     |     +--+ if(Token2-&gt;Str == variedValName[kk]){  | 
+              |     |     |     |  +--+-------------------------------------+ 
+  1201        |     |     |     |     +--- DoToken[kk] = Token1;
+  1202        |     |     |     |     +--- DoValToken[kk] = Token2;
+  1203        |     |     |     |     +--- ValData = (TValData *)Token2-&gt;ValData;
+  1204        |     |     |     |     +--- ValData-&gt;DoValBits = (1 &lt;&lt; kk); // 変数Bitsをセットする。
+  1205        |     |     |     |     +--- ValData-&gt;RefDoValBits = (1 &lt;&lt; kk); // 変数Bitsをセットする。
+  1206        |     |     |     |     +--- DoStartSPos[kk] = DoSPos;
+  1207        |     |     |     |     +--- //                  DoStartEPos[kk] = GetNextSemikoronPos(i);
+  1208        |     |     |     |     |    //                  DoEndSPos[kk] = GetNextSemikoronPos(i) + 1;  
+  1209        |     |     |     |     +--- DoStartEPos[kk] = GetNextSemikoronPos(DoStartSPos[kk]);
+  1210        |     |     |     |     +--- DoEndSPos[kk] = DoStartEPos[kk]+1;
+  1211        |     |     |     |     +--- DoEndEPos[kk] = GetNextSemikoronPos(DoEndSPos[kk]);
+  1212        |     |     |     |     |    
+              |     |     |     |     |  +----------------------------------------------------------------------+ 
+  1213        |     |     |     |     +--+ if((((TToken *)TokenList-&gt;Items[DoEndSPos[kk]])-&gt;TokId != tid_Val)|| | 
+  1214        |     |     |     |     |  |     (((TToken *)TokenList-&gt;Items[DoEndSPos[kk]+1])-&gt;Str != &quot;&lt;&quot;)){    | 
+              |     |     |     |     |  +--+-------------------------------------------------------------------+ 
+  1215        |     |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;forのC for文の継続条件式には、変数&lt;式 以外は使えません。&quot;);
+              |     |     |     |     |     |  +--------+ 
+  1216        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1217        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1218        |     |     |     |     +--- //                  StepS = GetNextSemikoronPos(DoEndEPos[kk]) + 1;
+  1219        |     |     |     |     +--- StepS = DoEndEPos[kk] + 1;
+  1220        |     |     |     |     +--- StepE = GetNextSemikoronPos(StepS);
+  1221        |     |     |     |     +--- //                  if(StepE != StepS+3){
+              |     |     |     |     |  +------------------------+ 
+  1222        |     |     |     |     +--+ if(StepE != StepS+2){  | 
+              |     |     |     |     |  +--+---------------------+ 
+  1223        |     |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;forの増分には、変数++ 以外は使えません。&quot;);
+              |     |     |     |     |     |  +--------+ 
+  1224        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1225        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------------------------------+ 
+  1226        |     |     |     |     +--+ if(ValData-&gt;Str != ((TToken *)TokenList-&gt;Items[StepS])-&gt;Str){  | 
+              |     |     |     |     |  +--+-------------------------------------------------------------+ 
+  1227        |     |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;forの増分には、変数++ 以外は使えません。&quot;);
+              |     |     |     |     |     |  +--------+ 
+  1228        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1229        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1230        |     |     |     |     +--- //                  if((((TToken *)TokenList-&gt;Items[StepS+1])-&gt;Str != &quot;+&quot;)||
+  1231        |     |     |     |     |    //                      (((TToken *)TokenList-&gt;Items[StepS+2])-&gt;Str != &quot;+&quot;)){  
+              |     |     |     |     |  +----------------------------------------------------------+ 
+  1232        |     |     |     |     +--+ if(((TToken *)TokenList-&gt;Items[StepS+1])-&gt;Str != &quot;++&quot;){  | 
+              |     |     |     |     |  +--+-------------------------------------------------------+ 
+  1233        |     |     |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;forの増分には、変数++ 以外は使えません。&quot;);
+              |     |     |     |     |     |  +--------+ 
+  1234        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1235        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1236        |     |     |     |     +--- DoStepSPos[kk] = -1;
+  1237        |     |     |     |     +--- DoStepEPos[kk] = -1;
+              |     |     |     |     |  +--------+ 
+  1238        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1239        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1240        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1241        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1242        |   |  }  | 
+              |   +-----+ 
+  1243        +--- MakeArgValList();   // TRのサブルーチンに渡す引数リストを生成する。
+  1244        +--- //
+  1245        |    // 全アンロールのCase数を計算する。  
+  1246        |    //                                   
+  1247        +--- CaseCount = 1;
+              |  +--------------------------------------+ 
+  1248        +--+ for(k = 0 ; k &lt; variedCount ; k++){  | 
+              |  +--+-----------------------------------+ 
+  1249        |     +--- /*******************************************************************************************************/
+  1250        |     |    //                                                                                                         
+  1251        |     |    //Kogakuin Irie                                                                                            
+  1252        |     |    //PPの実数対応とstep対応のための処理                                                                       
+  1253        |     |    //既存コードはコメントアウト                                                                               
+  1254        |     |    //                                                                                                         
+  1255        |     +--- //      CaseCount *= (variedToValue[k] - variedFromValue[k] + 1);
+  1256        |     +--- CaseCount *= (int)((variedToValue[k] - variedFromValue[k]) / variedStepValue[k] + 1);   //step追加に対応
+  1257        |     +--- //
+  1258        |     |    //ここまで                                                                                                 
+  1259        |     |    //                                                                                                         
+  1260        |     |    /*******************************************************************************************************/  
+              |   +-+---+ 
+  1261        |   |  }  | 
+              |   +-----+ 
+  1262        +--- //
+              |  +--------------------------------------+ 
+  1263        +--+ for(k = 0 ; k &lt; variedCount ; k++){  | 
+              |  +--+-----------------------------------+ 
+  1264        |     +--- //
+  1265        |     |    // 修正 8/26: Doの終わり値を式でもＯＫな形に修正。 
+  1266        |     |    //                                                 
+              |     |  +--------------------------------------------------------+ 
+  1267        |     +--+ for(int k2 = DoEndSPos[k] ; k2 &lt; DoEndEPos[k] ; k2++){ | 
+              |     |  +--+-----------------------------------------------------+ 
+  1268        |     |     +--- Token = (TToken *)TokenList-&gt;Items[k2];
+  1269        |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |  +----------------------+ 
+  1270        |     |     +--+ if(ValData != NULL){ | 
+              |     |     |  +--+-------------------+ 
+  1271        |     |     |     +--- ValData-&gt;DoEndValBits |= (1 &lt;&lt; k);  // Doの終わり値を示す変数を確定
+              |     |     |   +-+---+ 
+  1272        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1273        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1274        |   |  }  | 
+              |   +-----+ 
+  1275        +--- //
+  1276        |    // ArgValListを追加 &quot;&quot;(最初に代入で使用)も、必要なので、削除はしないこと 
+  1277        |    //                                                                       
+  1278        +--- AddArgValListToATExecArgList();
+  1279        |    
+  1280        +--- //
+  1281        |    // 各変数がDo変数からの依存かどうかをチェックする。                  
+  1282        |    // Do依存の変数は、UnRollの数だけ、別変数に置き換えられる。          
+  1283        |    //                                                                   
+  1284        |    //  DO i = 1,100 で da = b(i); の場合は、 daは、Do変数依存           
+  1285        |    //  a(i) = b(i) の場合は、 aに(Do変数 i)があるために依存でない。     
+  1286        |    //  da = b(i) で daがDo変数依存の場合に dc = 2*da での dcは、Do依存  
+  1287        |    //  da = b(i) で da = da + c(i) は、 daは Do依存だが、元々Do依存     
+  1288        |    //                                                                   
+  1289        |    //                                                                   
+  1290        +--- ChackRefDoValF(TokenStartPos,TokenEndPos);
+  1291        +--- SaveAndResetValBits(TokenStartPos,TokenEndPos);  // DoVal関連の識別を、保存してリセット
+  1292        +--- // 使用時は、RestoreValBitsを行うこと。
+            +-+---+ 
+  1293      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

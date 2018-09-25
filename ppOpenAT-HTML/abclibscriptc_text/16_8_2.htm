@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title>TSubRegion クラス関連図</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.8.2. TSubRegion クラス関連図</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left">クラス名</th><td nowrap>TSubRegion</td></tr>
+</table>
+
+<div align="right"><font size="2">＋…public　♯…protected　－…private</font></div>
+<pre>
+クラス関連図
+
+        +-----------------------------+ 
+        | <a href="16_8_1.htm">TSubRegion</a>                  | 
+        +-----------------------------+ 
+        | +AccordingStr               | 
+        | +CaseCount                  | 
+        | +ScType                     | 
+        | +SplitBitsOfFusionIdx       | 
+        | +SplitCaseCountOfFusionIdx  | 
+        | +TokenEndPos                | 
+        | +TokenStartPos              | 
+        | +variedCount                | 
+        | +variedFromValue            | 
+        | +variedStepValue            | 
+        | +variedToValue              | 
+        | +variedValData              | 
+        | +variedValName              | 
+        +-----------------------------+ 
+        | <a href="16_8_3.htm">+TSubRegion</a>                 | 
+        +-+---------------------------+ 
+          |   +---------------------------+ 
+          +-->+ <a href="27_5.htm">Enum_ScType</a>               | 
+              +---------------------------+ 
+              | +sct_according            | 
+              | +sct_Allocate             | 
+              | +sct_ATExec               | 
+              | +sct_BPset                | 
+              | +sct_command              | 
+              | +sct_debug                | 
+              | +sct_dynamic              | 
+              | +sct_DynPefThis           | 
+              | +sct_fitting              | 
+              | +sct_install              | 
+              | +sct_name                 | 
+              | +sct_None                 | 
+              | +sct_Number               | 
+              | +sct_parameter            | 
+              | +sct_post_BPset           | 
+              | +sct_postpro              | 
+              | +sct_pre_BPset            | 
+              | +sct_prepro               | 
+              | +sct_RotationOrder        | 
+              | +sct_select               | 
+              | +sct_SetParm              | 
+              | +sct_SplitPoint           | 
+              | +sct_SplitPointCopyDef    | 
+              | +sct_SplitPointCopyInsert | 
+              | +sct_static               | 
+              | +sct_varied               | 
+              +---------------------------+ 
+</pre>
+
+
+</body>
+</html>

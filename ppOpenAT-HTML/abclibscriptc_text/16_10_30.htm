@@ -1,0 +1,157 @@
+
+<html>
+<head>
+<title>Merge_Unroll_Line_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.30. Merge_Unroll_Line_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>Merge_Unroll_Line_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>9662</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string Merge_Unroll_Line_C ( string * BaseOutputStr , string LastOutputStr , string * CurLineStr , int AddOprStrPos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Unrollでの加算の複数回の式を１つにマージする。<br>式の先頭が Val[xx] = Val[xx] + (or - ）かどうかを調べて、合計型ならば<br>1回目と2回目以降を合わせた１式に変更する。 1回目は最後の　; をカット<br>2回目以降は先頭のVal[xx] = Val[xx]と最後の ; をカット<br>最後は先頭のVal[xx] = Val[xx]をカットして、最後の ;  は残す。<br>途中で カンマやセミコロンが2回ある場合や変数の前に(がある場合は対象外。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>BaseOutputStr  基準になる元の式<br>LastOutputStr  最後に出力された式<br>CurLineStr  今回出力する式<br>AddOprStrPos 最初に+が出現した位置。この手前までがカットされる。</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------+ 
+  9662  +--+ string TTuneRegion::Merge_Unroll_Line_C(string *BaseOutputStr, | 
+  9663     |     string LastOutputStr,string *CurLineStr,int AddOprStrPos)  | 
+  9664     | {                                                              | 
+           +--+-------------------------------------------------------------+ 
+  9665        +--- int i;
+  9666        +--- string BaseStr = *BaseOutputStr;
+  9667        +--- string CurStr = *CurLineStr;
+  9668        |    
+  9669        +--- // 元の式と今回の式が文字列として規定の位置まで一致しているかを調べる。
+              |  +------------------------------------------------+ 
+  9670        +--+ for(i = 0 ; i &lt; (int)BaseStr.length() ; i++){  | 
+              |  +--+---------------------------------------------+ 
+              |     |  +--------------------------------+ 
+  9671        |     +--+ if(i &gt;= (int)CurStr.length()){ | 
+              |     |  +--+-----------------------------+ 
+              |     |     |  +--------+ 
+  9672        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+  9673        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------+ 
+  9674        |     +--+ if(BaseStr[i] != CurStr[i]){ | 
+              |     |  +--+---------------------------+ 
+              |     |     |  +--------+ 
+  9675        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+  9676        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  9677        |   |  }  | 
+              |   +-----+ 
+  9678        +--- //
+  9679        |    //  最初の加算の前まで一致していれば、合計の計算としてマージする。 
+  9680        |    //                                                                 
+              |  +------------------------+ 
+  9681        +--+ if(i &gt; AddOprStrPos){  | 
+              |  +--+---------------------+ 
+  9682        |     +--- // CurLieneStrの先頭部分をスペースにする。
+              |     |  +--------------------------------------+ 
+  9683        |     +--+ for(i = 0 ; i &lt; AddOprStrPos ; i++){ | 
+              |     |  +--+-----------------------------------+ 
+  9684        |     |     +--- CurStr[i] = ' ';
+              |     |   +-+---+ 
+  9685        |     |   |  }  | 
+              |     |   +-----+ 
+  9686        |     +--- *CurLineStr = CurStr;
+  9687        |     +--- // 最後の ; をスペースにする。
+              |     |  +----------------------------------------------------+ 
+  9688        |     +--+ for(i = LastOutputStr.length()-1 ; i &gt;= 0 ; i--){  | 
+              |     |  +--+-------------------------------------------------+ 
+              |     |     |  +------------------------------+ 
+  9689        |     |     +--+ if(LastOutputStr[i] == ';'){ | 
+              |     |     |  +--+---------------------------+ 
+  9690        |     |     |     +--- LastOutputStr[i] = ' ';
+              |     |     |     |  +--------+ 
+  9691        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+  9692        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  9693        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  9694        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------+ 
+  9695        +--+ return LastOutputStr;  | 
+              |  +------------------------+ 
+            +-+---+ 
+  9696      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

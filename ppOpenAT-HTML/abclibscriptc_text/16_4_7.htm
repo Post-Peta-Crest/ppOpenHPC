@@ -1,0 +1,705 @@
+
+<html>
+<head>
+<title>MakeControlCode_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.7. MakeControlCode_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>MakeControlCode_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>440</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void MakeControlCode_C ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT/OAT_ControlRoutines.c を作成する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_5_4.htm">TScript::GetATExecArgStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_4.htm">663</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_31.htm">TTuneRegion::OutputAutoExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_31.htm">5082</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_40.htm">TTuneRegion::OutputSetParamCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_40.htm">2668</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_41.htm">TTuneRegion::OutputSetParamCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_41.htm">2358</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>fclose</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>fgets</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>fopen</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::FittingF</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::fpOutControl</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass5::fpOutHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TPass5::TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TPass5::ValDataList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>70</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------+ 
+   440  +--+ void TPass5::MakeControlCode_C() | 
+   441     | {                                | 
+           +--+-------------------------------+ 
+   442        +--- FILE *fp = fpOutControl;
+   443        +--- string s,s1,s2,s3;
+   444        +--- int i;
+   445        +--- TTuneRegion *TuneRegion;
+   446        +--- int TempLineNo;
+   447        +--- string ArgStr = &quot;&quot;;
+   448        |    
+   449        +--- fprintf(fp,&quot;#include &lt;time.h&gt;\n&quot;);
+   450        +--- fprintf(fp,&quot;double OAT_Wtime()\n&quot;);
+   451        +--- fprintf(fp,&quot;{\n&quot;);
+   452        +--- fprintf(fp,&quot;\treturn (double)clock()/CLOCKS_PER_SEC;\n&quot;);
+   453        +--- fprintf(fp,&quot;}\n&quot;);
+   454        |    
+   455        +--- //
+   456        |    // ==== OAT_ATset(Type,Routines) 
+   457        |    //                               
+   458        |                                     
+   459        +--- s = s1 = s2 = s3 = &quot;&quot;;
+              |  +------------------------------------------------+ 
+   460        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   461        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +--------------+ 
+   462        |     +--+ if(s != &quot;&quot;){ | 
+              |     |  +--+-----------+ 
+   462        |     |     +--- s += &quot;,&quot;;
+              |     |   +-+---+ 
+   462        |     |   |  }  | 
+              |     |   +-----+ 
+   463        |     +--- s += TuneRegion-&gt;Name;
+              |     |  +------------------------------------------+ 
+   464        |     +--+ if(TuneRegion-&gt;TuneGroup == tgInstall){  | 
+              |     |  +--+---------------------------------------+ 
+              |     |     |  +----------------+ 
+   465        |     |     +--+ if(s1 != &quot;&quot;){  | 
+              |     |     |  +--+-------------+ 
+   465        |     |     |     +--- s1 += &quot;,&quot;;
+              |     |     |   +-+---+ 
+   465        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   466        |     |     +--- s1 += TuneRegion-&gt;Name;
+              |     |   +-+---+ 
+   467        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+   467        |     |   |  else if(TuneRegion-&gt;TuneGroup == tgStatic){  | 
+              |     |   +-+---------------------------------------------+ 
+              |     |     |  +----------------+ 
+   468        |     |     +--+ if(s2 != &quot;&quot;){  | 
+              |     |     |  +--+-------------+ 
+   468        |     |     |     +--- s2 += &quot;,&quot;;
+              |     |     |   +-+---+ 
+   468        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   469        |     |     +--- s2 += TuneRegion-&gt;Name;
+              |     |   +-+---+ 
+   470        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+   470        |     |   |  else if(TuneRegion-&gt;TuneGroup == tgDynamic){ | 
+              |     |   +-+---------------------------------------------+ 
+              |     |     |  +----------------+ 
+   471        |     |     +--+ if(s3 != &quot;&quot;){  | 
+              |     |     |  +--+-------------+ 
+   471        |     |     |     +--- s3 += &quot;,&quot;;
+              |     |     |   +-+---+ 
+   471        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   472        |     |     +--- s3 += TuneRegion-&gt;Name;
+              |     |   +-+---+ 
+   473        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   474        |   |  }  | 
+              |   +-----+ 
+   475        +--- fprintf(fpOutHeader,&quot;int OAT_ATset(int OAT_TYPE, char *OAT_Routines);\n&quot;);
+   476        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   477        +--- fprintf(fp,&quot;//=== OAT_ATset\n&quot;);
+   478        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   479        +--- fprintf(fp,&quot;int OAT_ATset(int OAT_TYPE, char *OAT_Routines)\n&quot;);
+   480        +--- fprintf(fp,&quot;{\n&quot;);
+   481        +--- fprintf(fp,&quot;//==== All routines\n&quot;);
+   482        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 0){\n&quot;);
+   483        +--- fprintf(fp,&quot;\t\tstrcpy(OAT_Routines,\&quot;%s\&quot;);\n&quot;,s.c_str());
+   484        +--- fprintf(fp,&quot;\t}\n&quot;);
+   485        +--- fprintf(fp,&quot;//==== Install Optimization\n&quot;);
+   486        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 1){\n&quot;);
+   487        +--- s = s1;
+   488        +--- fprintf(fp,&quot;\t\tstrcpy(OAT_Routines,\&quot;%s\&quot;);\n&quot;,s.c_str());
+   489        +--- fprintf(fp,&quot;\t}\n&quot;);
+   490        +--- fprintf(fp,&quot;//==== Before Execution-invocation Optimization Routines\n&quot;);
+   491        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 2){\n&quot;);
+   492        +--- s = s2;
+   493        +--- fprintf(fp,&quot;\t\tstrcpy(OAT_Routines,\&quot;%s\&quot;);\n&quot;,s.c_str());
+   494        +--- fprintf(fp,&quot;\t}\n&quot;);
+   495        +--- fprintf(fp,&quot;//==== Run-time Optimization Routines\n&quot;);
+   496        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 3){\n&quot;);
+   497        +--- fprintf(fp,&quot;\t\tOAT_DYNAMICTUNE = 0;\n&quot;);
+   498        +--- s = s3;
+   499        +--- fprintf(fp,&quot;\t\tstrcpy(OAT_Routines,\&quot;%s\&quot;);\n&quot;,s.c_str());
+   500        +--- fprintf(fp,&quot;\t}\n&quot;);
+   501        +--- fprintf(fp,&quot;\treturn 0;\n&quot;);
+   502        +--- fprintf(fp,&quot;}\n&quot;);
+   503        +--- fprintf(fp,&quot;\n&quot;);
+   504        |    
+   505        +--- //
+   506        |    //  OAT_SetParam(Type,Routine,n,*isw)                                                          
+   507        |    //  isw パラメータを所得する。 複数のTR(名前で識別)に対応する。                                
+   508        |    //                                                                                             
+   509        |    //  fprintf(fpOutHeader,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int n,int *isw);\n&quot;); 
+              |  +----------------------------------------+ 
+   510        +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |  +--+-------------------------------------+ 
+   511        |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+   512        |     +--- ArgStr = Script-&gt;GetATExecArgStr(true,&quot;&quot;,&quot;&quot;);
+   513        |     +--- delete Script;
+              |   +-+---+ 
+   514        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   514        |   |  else{  | 
+              |   +-+-------+ 
+   515        |     +--- ArgStr = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(true,&quot;&quot;,&quot;&quot;);
+              |   +-+---+ 
+   516        |   |  }  | 
+              |   +-----+ 
+   517        +--- #if 1
+   518        +--- //  fprintf(fpOutHeader,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int n_bpset ,int *isw%s);\n&quot;,ArgStr.c_str());
+   519        +--- fprintf(fpOutHeader,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int *isw%s);\n&quot;,ArgStr.c_str());
+   520        +--- #else
+   521        +--- fprintf(fpOutHeader,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int n,int *isw);\n&quot;);
+   522        +--- #endif
+   523        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   524        +--- fprintf(fp,&quot;//=== OAT_SetParm\n&quot;);
+   525        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   526        +--- #if 1
+   527        +--- //  fprintf(fp,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int n_bpset , int *isw%s)\n&quot;,ArgStr.c_str());
+   528        +--- fprintf(fp,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines , int *isw%s)\n&quot;,ArgStr.c_str());
+   529        +--- #else
+   530        +--- fprintf(fp,&quot;int OAT_SetParm(int OAT_TYPE,char *OAT_Routines,int n,int *isw)\n&quot;);
+   531        +--- #endif
+   532        |    
+   533        +--- fprintf(fp,&quot;{\n&quot;);
+   534        |    
+              |  +----------------------------------+ 
+   535        +--+ if(FittingF){   // Fitting用配列 | 
+              |  +--+-------------------------------+ 
+   536        |     +--- fprintf(fp,&quot;//!!!!!! fitting用配列\n&quot;);
+   537        |     +--- fprintf(fp,&quot;// === for target coefficients\n&quot;);
+   538        |     +--- //      fprintf(fp,&quot;      real*8  a_lsm(0:OATLSM_MAX_M, 0:OATLSM_MAX_NPARM-1)\n&quot;);
+   539        |     |    //      fprintf(fp,&quot;      real*8  dtemp\n&quot;);                                       
+   540        |     +--- fprintf(fp,&quot;\tdouble a_lsm[OATLSM_MAX_M][OATLSM_MAX_NPARM-1];\n&quot;);
+   541        |     +--- fprintf(fp,&quot;\tdouble dtemp;\n&quot;);
+   542        |     +--- fprintf(fp,&quot;\n&quot;);
+   543        |     +--- fprintf(fp,&quot;\tint nparm,nsamp;\n&quot;);
+   544        |     +--- fprintf(fp,&quot;\tint m_lsm,iii;\n&quot;);
+              |   +-+---+ 
+   545        |   |  }  | 
+              |   +-----+ 
+   546        +--- //  fprintf(fp,&quot;\n&quot;);
+   547        +--- fprintf(fp,&quot;\tint ibsw;\n&quot;);
+   548        +--- //  fprintf(fp,&quot;\tchar cbuf[100];\n&quot;);
+   549        +--- fprintf(fp,&quot;\tchar cbuf[500];\n&quot;);
+   550        +--- fprintf(fp,&quot;\tchar digit[20];\n&quot;);
+   551        +--- fprintf(fp,&quot;\tFILE *fp;\n&quot;);
+   552        +--- fprintf(fp,&quot;\tint i,j,inum;\n&quot;);
+   553        +--- fprintf(fp,&quot;\n&quot;);
+   554        |    
+   555        +--- TempLineNo = 100;
+   556        +--- fprintf(fp,&quot;// ==== Install Optimization\n&quot;);
+   557        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 1){\n&quot;);
+   558        |    
+              |  +------------------------------------------------+ 
+   559        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   560        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   561        |     +--+ if(TuneRegion-&gt;TuneGroup == tgInstall){  | 
+              |     |  +--+---------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+   562        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+   563        |     |     |     +--- TuneRegion-&gt;OutputSetParamCode_Fortran(fp,TempLineNo);
+              |     |     |   +-+---+ 
+   564        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   564        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   565        |     |     |     +--- TuneRegion-&gt;OutputSetParamCode_C(fp,TempLineNo);
+              |     |     |   +-+---+ 
+   566        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   567        |     |     +--- TempLineNo += 10;
+              |     |   +-+---+ 
+   568        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   569        |   |  }  | 
+              |   +-----+ 
+   570        +--- fprintf(fp,&quot;\t}\n&quot;);
+   571        +--- fprintf(fp,&quot;//=== end of OAT_Install\n&quot;);
+   572        +--- fprintf(fp,&quot;//-----------------------------------------------\n&quot;);
+   573        |    
+   574        +--- fprintf(fp,&quot;\n&quot;);
+   575        +--- fprintf(fp,&quot;//==== Before Execution-invocation Optimization\n&quot;);
+   576        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 2){\n&quot;);
+              |  +------------------------------------------------+ 
+   577        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   578        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +----------------------------------------+ 
+   579        |     +--+ if(TuneRegion-&gt;TuneGroup == tgStatic){ | 
+              |     |  +--+-------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+   580        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+   581        |     |     |     +--- TuneRegion-&gt;OutputSetParamCode_Fortran(fp,TempLineNo);
+              |     |     |   +-+---+ 
+   582        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   582        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   583        |     |     |     +--- TuneRegion-&gt;OutputSetParamCode_C(fp,TempLineNo);
+              |     |     |   +-+---+ 
+   584        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   585        |     |     +--- TempLineNo += 10;
+              |     |   +-+---+ 
+   586        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   587        |   |  }  | 
+              |   +-----+ 
+   588        +--- fprintf(fp,&quot;\t}\n&quot;);
+   589        +--- fprintf(fp,&quot;//=== end of OAT_Static\n&quot;);
+   590        +--- fprintf(fp,&quot;//-----------------------------------------------\n&quot;);
+   591        |    
+   592        +--- fprintf(fp,&quot;\n&quot;);
+   593        +--- fprintf(fp,&quot;//==== Run-time Optimization\n&quot;);
+   594        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 3){\n&quot;);
+   595        +--- fprintf(fp,&quot;\t\tif(OAT_DYNAMICTUNE){\n&quot;);
+              |  +------------------------------------------------+ 
+   596        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   597        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   598        |     +--+ if(TuneRegion-&gt;TuneGroup == tgDynamic){  | 
+              |     |  +--+---------------------------------------+ 
+   599        |     |     +--- // Dynamicは、SetParamで、ファイルから読込みしない。
+              |     |     |  +----------------------------------------+ 
+   600        |     |     +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |     |     |  +--+-------------------------------------+ 
+   601        |     |     |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+   602        |     |     |     +--- string ArgStr = Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   603        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecDynamic%s(OAT_Routines,isw%s);\n&quot;,
+   604        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());                  
+   605        |     |     |     +--- delete Script;
+              |     |     |   +-+---+ 
+   606        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   606        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   607        |     |     |     +--- string ArgStr = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   608        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecDynamic%s(OAT_Routines,isw%s);\n&quot;,
+   609        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());                  
+              |     |     |   +-+---+ 
+   610        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   611        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   612        |   |  }  | 
+              |   +-----+ 
+   613        +--- fprintf(fp,&quot;\t\t}else{\n&quot;);
+   614        +--- fprintf(fp,&quot;\t\t\t*isw = 1;\n&quot;);
+   615        +--- fprintf(fp,&quot;\t\t}\n&quot;);
+   616        +--- fprintf(fp,&quot;\t}\n&quot;);
+   617        +--- fprintf(fp,&quot;//=== end of OAT_Dynamic\n&quot;);
+   618        +--- fprintf(fp,&quot;// -----------------------------------------------\n&quot;);
+   619        +--- fprintf(fp,&quot;\n&quot;);
+   620        +--- fprintf(fp,&quot;\treturn 0;\n&quot;);
+   621        +--- fprintf(fp,&quot;}\n&quot;);
+   622        +--- fprintf(fp,&quot;\n&quot;);
+   623        +--- fprintf(fp,&quot;\n&quot;);
+   624        |    
+   625        +--- //
+   626        |    // OAT_ATexec(Type,Routines) 
+   627        |    //                           
+   628        |    //                           
+   629        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   630        +--- fprintf(fp,&quot;//=== OAT_ATexec\n&quot;);
+   631        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+              |  +----------------------------------------+ 
+   632        +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |  +--+-------------------------------------+ 
+   633        |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+   634        |     +--- string ArgStr = Script-&gt;GetATExecArgStr(true,&quot;&quot;,&quot;&quot;);
+   635        |     +--- fprintf(fp,&quot;int OAT_ATexec(int OAT_TYPE,char *OAT_Routines%s)\n&quot;,ArgStr.c_str());
+   636        |     +--- fprintf(fpOutHeader,&quot;int OAT_ATexec(int OAT_TYPE,char *OAT_Routines%s);\n&quot;,ArgStr.c_str());
+   637        |     +--- delete Script;
+              |   +-+---+ 
+   638        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   638        |   |  else{  | 
+              |   +-+-------+ 
+   639        |     +--- string ArgStr = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(true,&quot;&quot;,&quot;&quot;);
+   640        |     +--- fprintf(fp,&quot;int OAT_ATexec(int OAT_TYPE,char *OAT_Routines%s)\n&quot;,ArgStr.c_str());
+   641        |     +--- fprintf(fpOutHeader,&quot;int OAT_ATexec(int OAT_TYPE,char *OAT_Routines%s);\n&quot;,ArgStr.c_str());
+              |   +-+---+ 
+   642        |   |  }  | 
+              |   +-----+ 
+   643        +--- //  fprintf(fp,&quot;OAT_ATexec(int OAT_TYPE,char *OAT_Routines)\n&quot;);
+   644        +--- fprintf(fp,&quot;{\n&quot;);
+   645        |    
+   646        +--- fprintf(fp,&quot;\tif(getenv(\&quot;OAT_EXEC\&quot;) != 0){\n&quot;);
+   647        +--- fprintf(fp,&quot;\t\tif(atoi(getenv(\&quot;OAT_EXEC\&quot;)) != 1){\n&quot;);
+   648        +--- fprintf(fp,&quot;\t\t\treturn 0;\n&quot;);
+   649        +--- fprintf(fp,&quot;\t\t}\n&quot;);
+   650        +--- fprintf(fp,&quot;\t}else if(getenv(\&quot;OAT_ATEXEC\&quot;) != 0){\n&quot;);
+   651        +--- fprintf(fp,&quot;\t\tif(atoi(getenv(\&quot;OAT_ATEXEC\&quot;)) != 1){\n&quot;);
+   652        +--- fprintf(fp,&quot;\t\t\treturn 0;\n&quot;);
+   653        +--- fprintf(fp,&quot;\t\t}\n&quot;);
+   654        +--- fprintf(fp,&quot;\t}\n&quot;);
+   655        +--- fprintf(fp,&quot;//==== Install Optimization\n&quot;);
+   656        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 1){\n&quot;);
+              |  +------------------------------------------------+ 
+   657        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   658        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   659        |     +--+ if(TuneRegion-&gt;TuneGroup == tgInstall){  | 
+              |     |  +--+---------------------------------------+ 
+   660        |     |     +--- fprintf(fp,&quot;\t\tif(strstr(OAT_Routines,\&quot;%s\&quot;) != 0){\n&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |  +----------------------------------------+ 
+   661        |     |     +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |     |     |  +--+-------------------------------------+ 
+   662        |     |     |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+   663        |     |     |     +--- string ArgStr = Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   664        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecInstall%s(OAT_Routines%s);\n&quot;,
+   665        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());              
+   666        |     |     |     +--- delete Script;
+              |     |     |   +-+---+ 
+   667        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   667        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   668        |     |     |     +--- string ArgStr = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   669        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecInstall%s(OAT_Routines%s);\n&quot;,
+   670        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());              
+              |     |     |   +-+---+ 
+   671        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   672        |     |     +--- //          fprintf(fp,&quot;\t\t\tOAT_ATexecInstall%s(OAT_Routines);\n&quot;,TuneRegion-&gt;Name.c_str());
+   673        |     |     +--- fprintf(fp,&quot;\t\t}\n&quot;);
+              |     |   +-+---+ 
+   674        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   675        |   |  }  | 
+              |   +-----+ 
+   676        +--- fprintf(fp,&quot;\t}\n&quot;);
+   677        +--- fprintf(fp,&quot;\n&quot;);
+   678        +--- fprintf(fp,&quot;//==== Before Execution-invocation Optimization\n&quot;);
+   679        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 2){\n&quot;);
+              |  +------------------------------------------------+ 
+   680        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   681        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +----------------------------------------+ 
+   682        |     +--+ if(TuneRegion-&gt;TuneGroup == tgStatic){ | 
+              |     |  +--+-------------------------------------+ 
+   683        |     |     +--- fprintf(fp,&quot;\t\tif(strstr(OAT_Routines,\&quot;%s\&quot;) != 0){\n&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |  +----------------------------------------+ 
+   684        |     |     +--+ if(MainF-&gt;Call_ATExec_Script == NULL){ | 
+              |     |     |  +--+-------------------------------------+ 
+   685        |     |     |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+   686        |     |     |     +--- string ArgStr = Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   687        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecStatic%s(OAT_Routines%s);\n&quot;,
+   688        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());              
+   689        |     |     |     +--- delete Script;
+              |     |     |   +-+---+ 
+   690        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   690        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   691        |     |     |     +--- string ArgStr = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+   692        |     |     |     +--- fprintf(fp,&quot;\t\t\tOAT_ATexecStatic%s(OAT_Routines%s);\n&quot;,
+   693        |     |     |     |        TuneRegion-&gt;Name.c_str(),ArgStr.c_str());              
+              |     |     |   +-+---+ 
+   694        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   695        |     |     +--- fprintf(fp,&quot;\t\t}\n&quot;);
+              |     |   +-+---+ 
+   696        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   697        |   |  }  | 
+              |   +-----+ 
+   698        +--- fprintf(fp,&quot;\t}\n&quot;);
+   699        +--- fprintf(fp,&quot;\n&quot;);
+   700        +--- fprintf(fp,&quot;//==== Run-time Optimization\n&quot;);
+   701        +--- fprintf(fp,&quot;\tif(OAT_TYPE == 3){\n&quot;);
+              |  +------------------------------------------------+ 
+   702        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   703        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   704        |     +--+ if(TuneRegion-&gt;TuneGroup == tgDynamic){  | 
+              |     |  +--+---------------------------------------+ 
+   705        |     |     +--- fprintf(fp,&quot;\t\tOAT_DYNAMICTUNE = 1;\n&quot;);
+              |     |   +-+---+ 
+   706        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   707        |   |  }  | 
+              |   +-----+ 
+   708        +--- fprintf(fp,&quot;\t}\n&quot;);
+   709        +--- fprintf(fp,&quot;\n&quot;);
+   710        +--- fprintf(fp,&quot;\treturn 0;\n&quot;);
+   711        +--- fprintf(fp,&quot;}\n&quot;);
+   712        +--- fprintf(fp,&quot;//============================================================\n&quot;);
+   713        +--- fprintf(fp,&quot;\n&quot;);
+   714        |    
+   715        |     
+   716        +--- //
+   717        |    // OAT_ATexecGGGFFF サブルーチンのコードの生成 (時間計測-&gt;ファイル)  
+   718        |    //                                                                   
+   719        +--- //    for(i = TuneRegionList-&gt;Count-1 ; i &gt;= 0 ; i--){
+              |  +------------------------------------------------+ 
+   720        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   721        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+   722        |     +--- TuneRegion-&gt;OutputAutoExecCode_C(fp,fpOutHeader);
+              |   +-+---+ 
+   723        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------------------------+ 
+   724        +--+ if(FittingF){   // Fitting用サブルーチンを追加 | 
+              |  +--+---------------------------------------------+ 
+   725        |     +--- FILE *fpSrc;
+   726        |     +--- char cBuff[1024];
+   727        |     +--- string fname;
+   728        |     +--- string DirName;
+   729        |     |    
+   730        |     +--- #if 0
+   731        |     +--- fname = MainF-&gt;SrcFileNameList.Strings[0];
+   732        |     +--- DirName = fname.substr(0, fname.rfind(&quot;/&quot;));
+   733        |     +--- fname = DirName + &quot;/OAT_DataControlSubrutions.c&quot;;
+   734        |     +--- #else
+   735        |     +--- fname = &quot;./OAT_DataControlSubrutions.c&quot;;
+   736        |     +--- #endif
+   737        |     +--- fpSrc = fopen(fname.c_str(),&quot;rb&quot;);      // 出力ファイル
+              |     |  +--------------------+ 
+   738        |     +--+ if(fpSrc == NULL){ | 
+              |     |  +--+-----------------+ 
+   739        |     |     +--- MainF-&gt;ErrMessage(-1,&quot;File &quot; + fname + &quot; open error&quot;);
+              |     |   +-+---+ 
+   740        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   740        |     |   |  else{  | 
+              |     |   +-+-------+ 
+              |     |     |  +--------------------------------------------------+ 
+   741        |     |     +--+ while(fgets(cBuff,sizeof(cBuff),fpSrc) != NULL){ | 
+              |     |     |  +--+-----------------------------------------------+ 
+   742        |     |     |     +--- fprintf(fp,&quot;%s&quot;,cBuff);
+              |     |     |   +-+---+ 
+   743        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   744        |     |     +--- fclose(fpSrc);
+              |     |   +-+---+ 
+   745        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   746        |   |  }  | 
+              |   +-----+ 
+   747        +--- //
+            +-+---+ 
+   748      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+
+<html>
+<head>
+<title>GetNewValNameForValData メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.15. GetNewValNameForValData メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetNewValNameForValData</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11171</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string GetNewValNameForValData ( TValData * ValData , unsigned int UnRollDoRefValBits , int Idx , TStringList * ArgValList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Idx番目の新しい名前を作成する。<br>ArgValList-&gt;Objects[] の ValDataに既にある名前と一致する場合は、<br>&quot;_&quot;を数値の後に必要なだけ挿入する</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>新しい変数名</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>ValData  変数データ<br>UnRollDoRefValBits 現在までにUnroll中のValBit<br>Idx インデックス<br>ArgValList  引数変数リスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::UnrollCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>151</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------------+ 
+ 11171  +--+ string TTuneRegion::GetNewValNameForValData(TValData *ValData,       | 
+ 11172     |     unsigned int UnRollDoRefValBits,int Idx,TStringList *ArgValList) | 
+ 11173     | {                                                                    | 
+           +--+-------------------------------------------------------------------+ 
+ 11174        +--- int i,j;
+ 11175        +--- string s;
+ 11176        +--- TValData *ValData2;
+ 11177        +--- string BaseName;
+ 11178        +--- int Idx3;
+ 11179        |    
+ 11180        +--- //
+ 11181        |    //  IdxをDo束縛ビット(ValData-&gt;DoRefValBits)で調整する。                           
+ 11182        |    //  UnRollDoRefValBitsの１部分に対してIdxが変化しているので、                      
+ 11183        |    //  もし、ValData-&gt;DoRefValBits[]が０部分があれば、その部分のUnRollCount[]で割る。 
+ 11184        |    //                                                                                 
+ 11185        +--- Idx3 = Idx;
+ 11186        +--- Idx--;
+              |  +------------------------------+ 
+ 11187        +--+ for(i = 0 ; i &lt; 32 ; i ++){  | 
+              |  +--+---------------------------+ 
+              |     |  +--------------------------------------------+ 
+ 11188        |     +--+ if((UnRollDoRefValBits &amp; (2 &lt;&lt; i)) != 0){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +----------------------------------------------+ 
+ 11189        |     |     +--+ if((ValData-&gt;RefDoValBits &amp; (2 &lt;&lt; i)) == 0){ | 
+              |     |     |  +--+-------------------------------------------+ 
+ 11190        |     |     |     +--- Idx /= UnrollCount[i];
+              |     |     |   +-+---+ 
+ 11191        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11192        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11193        |   |  }  | 
+              |   +-----+ 
+ 11194        +--- Idx++;
+ 11195        |    
+ 11196        +--- BaseName = ValData-&gt;Str;
+              |  +----------------------------------------------+ 
+ 11197        +--+ for(i = BaseName.length()-1 ; i &gt;= 0 ; i--){ | 
+              |  +--+-------------------------------------------+ 
+              |     |  +--------------------------------------------------+ 
+ 11198        |     +--+ if((BaseName[i] &gt;= '0')&amp;&amp;(BaseName[i] &lt;= '9')){  | 
+              |     |  +--+-----------------------------------------------+ 
+              |     |     |  +------------+ 
+ 11199        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 11200        |     |   |  }  | 
+              |     |   +-----+ 
+ 11201        |     +--- BaseName = BaseName.substr(1,i);
+              |     |  +--------+ 
+ 11202        |     +--+ break; | 
+              |     |  +--------+ 
+              |   +-+---+ 
+ 11203        |   |  }  | 
+              |   +-----+ 
+ 11204        +--- s = BaseName + IntToStr(Idx);
+              |  +------------------------------+ 
+ 11205        +--+ for(j = 0 ; j &lt; 100 ; j++){  | 
+              |  +--+---------------------------+ 
+              |     |  +--------------------------------------------+ 
+ 11206        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+ 11207        |     |     +--- ValData2 = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +--------------------------+ 
+ 11208        |     |     +--+ if(ValData2-&gt;Str == s){  | 
+              |     |     |  +--+-----------------------+ 
+ 11209        |     |     |     +--- i = -1;
+              |     |     |     |  +--------+ 
+ 11210        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+ 11211        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11212        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+ 11213        |     +--+ if(i != -1){ | 
+              |     |  +--+-----------+ 
+              |     |     |  +--------+ 
+ 11214        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+ 11215        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 11215        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 11216        |     |     +--- s += &quot;_&quot;;
+              |     |   +-+---+ 
+ 11217        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11218        |   |  }  | 
+              |   +-----+ 
+ 11219        +--- s += &quot;(&quot;+IntToStr((int)Idx3)+&quot;,&quot;;
+ 11220        +--- s += &quot;&quot;+IntToStr((int)UnRollDoRefValBits)+&quot;)&quot;;
+              |  +------------+ 
+ 11221        +--+ return s;  | 
+              |  +------------+ 
+            +-+---+ 
+ 11222      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

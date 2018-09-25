@@ -1,0 +1,389 @@
+
+<html>
+<head>
+<title>AddArgValListToATExecArgList メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.3. AddArgValListToATExecArgList メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>AddArgValListToATExecArgList</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2220</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void AddArgValListToATExecArgList ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>ArgValListをATExecの引数に一致すれば、一致する順に並べる。<br>ない場合は、MainF-&gt;Call_ATExec_ArgListとScript-&gt;TokListに追加する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_26.htm">TTuneRegion::MakeLoopFusionSplitData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_26.htm">1313</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_28.htm">TTuneRegion::MakeSelectData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_28.htm">308</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_29.htm">TTuneRegion::MakeUnrollData</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_29.htm">1001</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TStringList::AddObject</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TStringList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>88</td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------+ 
+  2220  +--+ void TTuneRegion::AddArgValListToATExecArgList() | 
+  2221     | {                                                | 
+           +--+-----------------------------------------------+ 
+  2222        +--- int i,j;
+  2223        +--- TValData *ValData,*ValData2;
+  2224        +--- string MinStr;
+  2225        +--- TScript *Script;
+  2226        +--- int ArgCount;
+  2227        +--- TToken *Token;
+  2228        +--- TStringList StrList;
+  2229        +--- TStringList NewArgValList;
+  2230        +--- TStringList *ATExec_ArgValList; // ATExec()の３個目からの引数リスト（全体で１つ）
+  2231        +--- string ValName;
+  2232        +--- int idx;
+  2233        |    
+  2234        +--- //
+  2235        |    //  最初に、ATExec_Scriptの引数があれば追加する。  
+  2236        |    //                                                 
+              |  +------------------------------------------------------------------------------------+ 
+  2237        +--+ if((MainF-&gt;Call_ATExec_Script != NULL)&amp;&amp;(MainF-&gt;Call_ATExec_ArgList-&gt;Count == 0)){ | 
+              |  +--+---------------------------------------------------------------------------------+ 
+  2238        |     +--- ArgCount = 0;
+  2239        |     +--- Script = MainF-&gt;Call_ATExec_Script;
+  2240        |     +--- // 名前の一致する変数名が ArgValListにあるかを調べる。
+              |     |  +----------------------------------------------------+ 
+  2241        |     +--+ for(j = 0 ; j &lt; Script-&gt;TokStrList-&gt;Count ; j++){  | 
+              |     |  +--+-------------------------------------------------+ 
+  2242        |     |     +--- Token = (TToken *)Script-&gt;TokStrList-&gt;Objects[j];
+  2243        |     |     +--- //          if(Token-&gt;TokId == tid_Kannma){
+              |     |     |  +------------------------+ 
+  2244        |     |     +--+ if(Token-&gt;Str == &quot;,&quot;){ | 
+              |     |     |  +--+---------------------+ 
+  2245        |     |     |     +--- ArgCount++;
+              |     |     |   +-+---+ 
+  2246        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------------+ 
+  2247        |     |     +--+ if(ArgCount &lt; 2){  | 
+              |     |     |  +--+-----------------+ 
+              |     |     |     |  +------------------------------------+ 
+  2248        |     |     |     +--+ continue;   // 先頭の２つはSkip。  | 
+              |     |     |     |  +------------------------------------+ 
+              |     |     |   +-+---+ 
+  2249        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2250        |     |     +--- idx = ArgValList-&gt;IndexOf(Token-&gt;Str);
+              |     |     |  +----------------+ 
+  2251        |     |     +--+ if(idx != -1){ | 
+              |     |     |  +--+-------------+ 
+  2252        |     |     |     +--- ValData2 = (TValData *)ArgValList-&gt;Objects[idx];
+  2253        |     |     |     +--- MainF-&gt;Call_ATExec_ArgList-&gt;AddObject(ValData2-&gt;Str,ValData2);
+              |     |     |   +-+---+ 
+  2254        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2255        |     |     +--- //          if(Token-&gt;ValData == NULL){
+  2256        |     |     |    //              continue;                                                  
+  2257        |     |     |    //          }                                                              
+  2258        |     |     |    //          ValData2 = (TValData *)Token-&gt;ValData;                         
+  2259        |     |     |    //          MainF-&gt;Call_ATExec_ArgList-&gt;AddObject(ValData2-&gt;Str,ValData2); 
+              |     |   +-+---+ 
+  2260        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2261        |   |  }  | 
+              |   +-----+ 
+  2262        +--- ATExec_ArgValList = MainF-&gt;Call_ATExec_ArgList;
+  2263        +--- #if 0
+  2264        +--- //
+  2265        |    // ABC順に並べる。call ATExec() 指定なしの場合の対応。 
+  2266        |    // また、変数名をリストに追加する。                    
+  2267        |    //                                                     
+              |  +--------------------------------------------+ 
+  2268        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+              |     |  +------------------------------------+ 
+  2269        |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |  +--+---------------------------------+ 
+              |     |     |  +------------+ 
+  2270        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  2271        |     |   |  }  | 
+              |     |   +-----+ 
+  2272        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  2273        |     +--- StrList.Add(ValData-&gt;Str);
+  2274        |     +--- MinStr = &quot;&quot;;
+  2275        |     +--- MinIdx = -1;
+              |     |  +----------------------------------------------+ 
+  2276        |     +--+ for(j = i+1 ; j &lt; ArgValList-&gt;Count ; j++){  | 
+              |     |  +--+-------------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+  2277        |     |     +--+ if(ArgValList-&gt;Strings[j] == &quot;&quot;){  | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +------------+ 
+  2278        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  2279        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  2280        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[j];
+              |     |     |  +--------------------+ 
+  2281        |     |     +--+ if(MinIdx == -1){  | 
+              |     |     |  +--+-----------------+ 
+  2282        |     |     |     +--- MinStr = ValData-&gt;Str;
+  2283        |     |     |     +--- MinIdx = j;
+              |     |     |   +-+---+ 
+  2284        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------+ 
+  2285        |     |     +--+ if(ValData-&gt;Str &lt; MinStr){ | 
+              |     |     |  +--+-------------------------+ 
+  2286        |     |     |     +--- MinStr = ValData-&gt;Str;
+  2287        |     |     |     +--- MinIdx = j;
+              |     |     |   +-+---+ 
+  2288        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  2289        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------+ 
+  2290        |     +--+ if(MinIdx != -1){  | 
+              |     |  +--+-----------------+ 
+  2291        |     |     +--- ArgValList-&gt;Exchange(i,MinIdx);
+              |     |   +-+---+ 
+  2292        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2293        |   |  }  | 
+              |   +-----+ 
+  2294        +--- #endif
+  2295        +--- //
+  2296        |    // 名前の一致する変数名が ATExec_ArgValListにあるかを調べる。  
+  2297        |    // 並びもATExec_ArgValListと同じ順番にする。                   
+  2298        |    //                                                             
+              |  +--------------------------------------------+ 
+  2299        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+  2300        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  2301        |     +--- ValName = ArgValList-&gt;Strings[i];
+              |     |  +--------------------+ 
+  2302        |     +--+ if(ValName == &quot;&quot;){ | 
+              |     |  +--+-----------------+ 
+  2303        |     |     +--- NewArgValList.AddObject(&quot;&quot;,ValData);
+              |     |     |  +------------+ 
+  2304        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  2305        |     |   |  }  | 
+              |     |   +-----+ 
+  2306        |     +--- // 名前の一致する変数名が ArgValListにあるかを調べる。
+              |     |  +--------------------------------------------------+ 
+  2307        |     +--+ for(j = 0 ; j &lt; ATExec_ArgValList-&gt;Count ; j++){ | 
+              |     |  +--+-----------------------------------------------+ 
+  2308        |     |     +--- ValData2 = (TValData *)ATExec_ArgValList-&gt;Objects[j];
+              |     |     |  +--------------------------------+ 
+  2309        |     |     +--+ if(ValData2-&gt;Str == ValName){  | 
+              |     |     |  +--+-----------------------------+ 
+  2310        |     |     |     +--- NewArgValList.AddObject(ValData2-&gt;Str,ValData2);
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  2311        |     |     |     +--+ break;  // 名前の一致する変数名が Call_ATExec_Scriptに見つかった。 | 
+              |     |     |     |  +--------------------------------------------------------------------+ 
+              |     |     |   +-+---+ 
+  2312        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  2313        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2314        |   |  }  | 
+              |   +-----+ 
+  2315        +--- // 見つからない場合は、自動で追加する。
+              |  +--------------------------------------------+ 
+  2316        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+  2317        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  2318        |     +--- ValName = ArgValList-&gt;Strings[i];
+              |     |  +--------------------+ 
+  2319        |     +--+ if(ValName == &quot;&quot;){ | 
+              |     |  +--+-----------------+ 
+              |     |     |  +------------+ 
+  2320        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  2321        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------------------------+ 
+  2322        |     +--+ if(NewArgValList.IndexOf(ValName) == -1){  | 
+              |     |  +--+-----------------------------------------+ 
+  2323        |     |     +--- ATExec_ArgValList-&gt;AddObject(ValData-&gt;Str,ValData);
+  2324        |     |     +--- NewArgValList.AddObject(ValData-&gt;Str,ValData);
+              |     |   +-+---+ 
+  2325        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2326        |   |  }  | 
+              |   +-----+ 
+  2327        +--- ArgValList-&gt;Clear();
+              |  +----------------------------------------------+ 
+  2328        +--+ for(i = 0 ; i &lt; NewArgValList.Count ; i++){  | 
+              |  +--+-------------------------------------------+ 
+  2329        |     +--- ArgValList-&gt;AddObject(NewArgValList.Strings[i],NewArgValList.Objects[i]);
+              |   +-+---+ 
+  2330        |   |  }  | 
+              |   +-----+ 
+  2331        +--- /*
+  2332        |        MainF-&gt;print(&quot;ArgValList-&gt;Strings #2 &quot;);                           
+  2333        |        for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){                          
+  2334        |            ValData = (TValData *)ArgValList-&gt;Objects[i];                  
+  2335        |            MainF-&gt;print(ArgValList-&gt;Strings[i] + &quot;,[&quot;+ ValData-&gt;Str+&quot;]&quot;); 
+  2336        |        }                                                                  
+  2337        |    */                                                                     
+            +-+---+ 
+  2338      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

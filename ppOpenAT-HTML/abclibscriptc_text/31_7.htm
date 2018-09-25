@@ -1,0 +1,198 @@
+
+<html>
+<head>
+<title>GetScValData 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.7. GetScValData 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>GetScValData</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass3.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>606</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>TScValData * GetScValData ( TList * TokenList , string ValName )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>ValNameと同じ名前のスクリプト変数を探して、なければ、新規に作成する。<br>検索は、TokListのScriptを順番に検索する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>ValNameと同じ名前のスクリプト変数のscValDataを返す。なければ、新規に作成し<br>てそのscValkDataを返す。</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList   トークンリスト<br>ValName スクリプト変数名</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_6.htm">TScript::TScript</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_6.htm">135</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>erase</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------+ 
+   606  +--+ TScValData *GetScValData(TList *TokenList,string ValName)  | 
+   607     | {                                                          | 
+           +--+---------------------------------------------------------+ 
+   608        +--- int i,j;
+   609        +--- TToken *Token;
+   610        +--- TScValData *ScValData;
+   611        +--- TScript *Script;
+   612        +--- int cp;
+   613        |    
+   614        +--- // &quot;&quot;で囲まれて呼ばれた場合は&quot;&quot;を変数名から削除する。
+   615        +--- cp = ValName.find(&quot;\&quot;&quot;);
+              |  +--------------+ 
+   616        +--+ if(cp &gt;= 0){ | 
+              |  +--+-----------+ 
+   617        |     +--- ValName.erase(cp,1);
+              |   +-+---+ 
+   618        |   |  }  | 
+              |   +-----+ 
+   619        +--- cp = ValName.find(&quot;\&quot;&quot;);
+              |  +--------------+ 
+   620        +--+ if(cp &gt;= 0){ | 
+              |  +--+-----------+ 
+   621        |     +--- ValName.erase(cp,1);
+              |   +-+---+ 
+   622        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------------------+ 
+   623        +--+ for(i = 0 ;i &lt; TokenList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------+ 
+   624        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------+ 
+   625        |     +--+ if(Token-&gt;Script == NULL){ | 
+              |     |  +--+-------------------------+ 
+              |     |     |  +------------+ 
+   626        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+   627        |     |   |  }  | 
+              |     |   +-----+ 
+   628        |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |  +------------------------------------+ 
+   629        |     +--+ if(Script-&gt;ScValDataList == NULL){ | 
+              |     |  +--+---------------------------------+ 
+              |     |     |  +------------+ 
+   630        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+   631        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------------------------------+ 
+   632        |     +--+ for(j = 0 ; j &lt; Script-&gt;ScValDataList-&gt;Count ; j++){ | 
+              |     |  +--+---------------------------------------------------+ 
+   633        |     |     +--- ScValData = (TScValData *)Script-&gt;ScValDataList-&gt;Items[j];
+              |     |     |  +--------------------------------+ 
+   634        |     |     +--+ if(ScValData-&gt;Str == ValName){ | 
+              |     |     |  +--+-----------------------------+ 
+              |     |     |     |  +--------------------+ 
+   635        |     |     |     +--+ return ScValData;  | 
+              |     |     |     |  +--------------------+ 
+              |     |     |   +-+---+ 
+   636        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   637        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   638        |   |  }  | 
+              |   +-----+ 
+   639        +--- ScValData = new TScValData(ValName);
+              |  +--------------------+ 
+   640        +--+ return ScValData;  | 
+              |  +--------------------+ 
+            +-+---+ 
+   641      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

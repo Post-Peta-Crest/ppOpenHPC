@@ -1,0 +1,205 @@
+
+<html>
+<head>
+<title>pass2.h �_���`���[�g</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC �v���W�F�N�g</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">5.11. pass2.h �_���`���[�g</font></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+�t�@�C���_���`���[�g
+
+     1  +--- ﻃ\/*=====================================================================*
+     2  |     *                                                                     *           
+     3  |     *   Software Name : ppOpen-AT                                         *           
+     4  |     *         Version : 0.1                                               *           
+     5  |     *                                                                     *           
+     6  |     *   License                                                           *           
+     7  |     *     This file is part of ppOpen-AT.                                 *           
+     8  |     *     ppOpen-AT is a free software, you can use it under the terms    *           
+     9  |     *     of The MIT License (MIT). See LICENSE file and User's guide     *           
+    10  |     *     for more details.                                               *           
+    11  |     *                                                                     *           
+    12  |     *   ppOpen-HPC project:                                               *           
+    13  |     *     Open Source Infrastructure for Development and Execution of     *           
+    14  |     *     Large-Scale Scientific Applications on Post-Peta-Scale          *           
+    15  |     *     Supercomputers with Automatic Tuning (AT).                      *           
+    16  |     *                                                                     *           
+    17  |     *   Organizations:                                                    *           
+    18  |     *     The University of Tokyo                                         *           
+    19  |     *       - Information Technology Center                               *           
+    20  |     *       - Atmosphere and Ocean Research Institute (AORI)              *           
+    21  |     *       - Graduate School of Interdisciplinary Information Studies    *           
+    22  |     *         /Earthquake Research Institute (ERI)                        *           
+    23  |     *       - Graduate School of Frontier Science                         *           
+    24  |     *     Kyoto University                                                *           
+    25  |     *       - Academic Center for Computing and Media Studies             *           
+    26  |     *     Japan Agency for Marine-Earth Science and Technology (JAMSTEC)  *           
+    27  |     *                                                                     *           
+    28  |     *   Sponsorship:                                                      *           
+    29  |     *     Japan Science and Technology Agency (JST), Basic Research       *           
+    30  |     *     Programs: CREST, Development of System Software Technologies    *           
+    31  |     *     for post-Peta Scale High Performance Computing.                 *           
+    32  |     *                                                                     *           
+    33  |     *   Copyright (c) 2012                                                *           
+    34  |     *      Information Technology Center, The University of Tokyo         *           
+    35  |     *                                                                     *           
+    36  |     *=====================================================================*/          
+    37  |     /*----------------------------------------------------------------------------*/  
+    38  |    //                                                                                 
+    39  |    //  概胒�                                                                        
+    40  |    //    パス２　ヘッダ                                                        
+    41  |    //                                                                                 
+    42  |    //  作成者                                                                      
+    43  |    //                                                                                 
+    44  |    /*----------------------------------------------------------------------------*/   
+    45  |                                                                                       
+    46  +--- #ifndef pass2H
+    47  +--- #define pass2H
+    48  +--- //---------------------------------------------------------------------------
+    49  |                                                                                   
+    50  +--- #include &quot;pass1.h&quot;
+    51  |    
+    52  +--- void Pass2(TList *TokenList,TList *ValDataList);
+    53  +--- int Pass2_Fortran(TList *TokenList,int sPos,TList *ValDataList);
+    54  +--- int GetValIdx(TList *ValDataLlst,string ValName,int ModuleIdx);
+    55  |    
+    56  +--- void AddDataDef_Fortran(TList *TokenList,int sPos,int ePos,TList *ValDataList);
+    57  +--- void AddDataDef_C(TList *TokenList,int sPos,int ePos,TList *ValDataList);
+    58  |    
+    59  +--- #define ARRAY_MAX   8   // 最夃@８惃�B元まぃ@ぃ�配列ぃH寃Z応する。
+    60  |                                                                                       
+    61  +--- //
+    62  |    // 変数デーゃ\稃�類                                                       
+    63  |    //                                                                               
+    64  |    /*----------------------------------------------------------------------------*/ 
+    65  |    //  1.旁E會�語名                                                             
+    66  |    //                                                                               
+    67  |    //  2.概胒�                                                                    
+    68  |    //    変数ぃ�デーゃ\稃�類                                                
+    69  |    //                                                                               
+    70  |    //  3.機能誃�明                                                              
+    71  |    //                                                                               
+    72  |    //  4.備考                                                                     
+    73  |    //                                                                               
+    74  |    /*----------------------------------------------------------------------------*/ 
+        |  +----------------------+ 
+    75  +--+ enum Enum_DataType{  | 
+        |  +--+-------------------+ 
+    76  |     +--- dt_Int,
+    77  |     |    dt_Real,                           
+    78  |     |    dt_Char,                           
+    79  |     |    dt_Logic,                          
+    80  |     |    dt_Complex,                        
+    81  |     |    dt_Float,   // Add 2011/07/27      
+    82  |     |    dt_Void,    // Add 2012/02/23      
+    83  |     |                                       
+    84  |     |    dt_IntFunc,                        
+    85  |     |    dt_RealFunc,                       
+    86  |     |    dt_CharFunc,                       
+    87  |     |    dt_LogicFunc,                      
+    88  |     |    dt_ComplexFunc,                    
+    89  |     |    dt_FloatFunc,   // Add 2011/07/27  
+    90  |     |    dt_VoidFunc,    // Add 2012/02/23  
+        |   +-+---+ 
+    91  |   |  }; | 
+        |   +-----+ 
+    92  +--- /*----------------------------------------------------------------------------*/
+    93  |    //  1.旁E會�語名                                                                                                             
+    94  |    //                                                                                                                               
+    95  |    //  2.概胒�                                                                                                                    
+    96  |    //    Fortran変数ゃbッDゃP                                                                                                  
+    97  |    //    斁[しい変数がソッVゃP内に見つかるごと作成される。同じモゃNチEッVッHぃ�同じ変数ぃb同   
+    98  |    //    じ扱いとぃFる。                                                                                                     
+    99  |    //    変数デーゃ\内にぃb、�V�A＃b変数かどうかや、参煃@回数ぃFぃDぃ�情堃Aも栃V納される。       
+   100  |    //                                                                                                                               
+   101  |    //  3.機能誃�明                                                                                                              
+   102  |    //                                                                                                                               
+   103  |    //  4.備考                                                                                                                     
+   104  |    //                                                                                                                               
+   105  |    /*----------------------------------------------------------------------------*/                                                 
+        |  +------------------+ 
+   106  +--+ class TValData{  | 
+        |  +--+---------------+ 
+   107  |     |    
+        |     +-----------+ 
+   108  |     |  public:  | 
+        |     +-----------+ 
+   109  |     +--- string Str;                     // 変数名
+   110  |     |                                                 
+   111  |     +--- bool ParamValF;                 // 定数 PARAMETER ぃ�定�Z�D変数ぃ@あることを
+   112  |     |                                    // 礃Rす。                                              
+   113  |     |                                    // ただし、int,real 仁E外は、僇�数ぃBしてぃb 
+   114  |     |                                    // 扃AわれぃFい。                                    
+   115  |     |                                                                                               
+   116  |     +--- bool ArrayOrFuncF;              // 変数名の盃G後に（があった堃G合にゃTット
+   117  |     |                                    // される。                                              
+   118  |     +--- bool ArgF;                      // SUBRUTION,FUNCTIONぃ�引数ぃBして佃\甃Bさ
+   119  |     |                                    // れている。                                   
+   120  |     |                                                                                         
+   121  |     +--- int ModuleIdx;                  // チuゃNチEッVッH＃Dｄ�X� (endぃ@++)　ゃPゃEッVプ
+   122  |     |                                    // 範囲                                                        
+   123  |     +--- int BrNestLevel;                // {} () ぃ�ッ�ベルめ[ッ�ッVバルかどうかぃ�刁A定に佃\甃B。
+   124  |     |                                                                                                                   
+   125  |     +--- Enum_DataType DataType;         // int,realぃFぃDぃ�デーゃ\稃�刁E
+   126  |     +--- int DataLength;                 // real*8 ぃFぃDぃ�デーゃ\镃Lを�A�Rす。別定�Z�D時
+   127  |     |                                    // ぃH必胒�                                                   
+   128  |     |                                                                                                     
+   129  |     +--- string DefStr1;                 // &quot;double **&quot; 等の double 定�Z�D郃B分の文僅�列。
+   130  |     +--- string DefStr2;                 // &quot;double **&quot; 等の ** 定�Z�D郃B分の文僅�列。
+   131  |     |                                                                                             
+   132  |     +--- int DefPosS;                    // real*8 ぃFぃDぃ� 定�Z�D郃B分のTokenPosぃFぃD
+   133  |     |                                    // ぃ�範囲                                              
+   134  |     +--- int DefPosE;                    // real*8 ぃFぃDぃ� 定�Z�D郃B分のTokenPosぃFぃD
+   135  |     |                                    // ぃ�範囲                                              
+   136  |     |                                                                                               
+   137  |     +--- int DefPos;                     // 最初に定�Z�Dぃ@凃R珃ZしたPos
+   138  |     +--- int ArrayDefPosS;               // Array定�Z�D時のTokenPos (N,N) ぃFぃDぃ�範
+   139  |     |                                    // 囃C                                              
+   140  |     +--- int ArrayDefPosE;               // Array定�Z�D時のTokenPos (N,N) ぃFぃDぃ�範
+   141  |     |                                    // 囃C                                              
+   142  |     +--- int RefCount;                   // 変数参照Count
+   143  |     +--- int SetCount;                   // 変数訃�定Count
+   144  |     |                                                           
+   145  |     +--- double dData;                   // 定数ぃ�堃G合の倁A
+   146  |     +--- int ArrayLevel ;                // 配列欁B元数
+   147  |     |                                                         
+   148  |     +--- int ArrayStart[ARRAY_MAX];      // 配列要�G�開�@�番參LッFゃPト -1ぃb會F定
+   149  |     +--- int ArrayCount[ARRAY_MAX];      // 配列要�G�敁[ッFゃPト -1ぃb會F定
+   150  |     |                                                                                   
+   151  |     +--- // UnRoll時に一時的ぃH佃\甃Bされる。
+   152  |     |    // 複数ぃ�Do(DoValCount)ぃH寃Z応するために、bitぃH促�歁v 2004/3/13  
+   153  |     |    // RefDoValBitsぃb、�A�数ぃ�Bitが�V�にぃFる堃G合もある。           
+   154  |     |    //                                                                                 
+   155  |     +--- unsigned int DoValBits;         // Do変数臃F躃Hかどうか。
+   156  |     +--- unsigned int RefDoValBits;      // Do変数依僅�かぃDうか。
+   157  |     +--- unsigned int DoEndValBits;      // UnRollぃ�Doぃ�終わり倁Aぃ�変数（�V�は＃�＃@）
+   158  |     |                                                                                                     
+   159  |     +--- TValData(string aStr);          // 生成
+   160  |     +--- ~TValData();                    // 砃G棄
+   161  |     |                                               
+   162  |     +--- string ToString();              // 文僅�列ぃ@情堃Aを所得
+   163  |     +--- string GetDefStr_C();
+   164  |     +--- string GetDefStr_Fortran();
+   165  |     |    
+        |   +-+---+ 
+   166  |   |  }; | 
+        |   +-----+ 
+   167  |    
+   168  +--- #endif
+</pre>
+
+
+</body>
+</html>

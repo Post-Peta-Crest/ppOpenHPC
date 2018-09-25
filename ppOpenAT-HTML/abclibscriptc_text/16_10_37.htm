@@ -1,0 +1,726 @@
+
+<html>
+<head>
+<title>OutputReplaceSrc メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.37. OutputReplaceSrc メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputReplaceSrc</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>12094</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputReplaceSrc ( FILE * fp , void * TargetSubRegion , int iusw1 , bool Skip_Pragma_ACCF )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>ソースの指定範囲を出力（コメントにはしない、Scriptは出力しない）<br>NestしたScriptの置換も行う<br>UnRoll以外でのvarid指定も、変換対象となる。<br>また、TragetSubRegionと一致しないSubRegionは、Ｓｋｉｐする。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>TargetSubRegion 対象サブリージョン<br>iusw1   対象iusw1<br>Skip_Pragma_ACCF pragma_accのスキップをおこなうかどうか</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_38.htm">TTuneRegion::OutputSelectCaseExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_38.htm">7933</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_39.htm">TTuneRegion::OutputSelectCaseExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_39.htm">7860</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>FloatToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>108</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>find_first_of</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>replace</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>size</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::SubRegionList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>211</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::TuneKind</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>197</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::variedFromValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::variedStepValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>237</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::variedToValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>236</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::variedValName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>226</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_8_1.htm">TSubRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_8_1.htm">375</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------------------------------------------+ 
+ 12094  +--+ void TTuneRegion::OutputReplaceSrc(FILE *fp,void *TargetSubRegion,int iusw1,bool Skip_Pragma_ACCF) | 
+ 12095     | {                                                                                                  | 
+           +--+-------------------------------------------------------------------------------------------------+ 
+ 12096        +--- int i,j,k;
+ 12097        +--- TToken *Token;
+ 12098        +--- string s,IndentStr;
+ 12099        +--- TScript *Script;
+ 12100        +--- int SubRegionIdx;
+ 12101        +--- TSubRegion *SubRegion;
+ 12102        +--- //
+ 12103        |    // 対象ブロックを置換して出力する。  
+ 12104        |    //                                   
+ 12105        +--- s = &quot;&quot;;
+ 12106        +--- IndentStr = &quot;    &quot;;
+ 12107        +--- SubRegionIdx = 0;
+              |  +--------------------------------------------------+ 
+ 12108        +--+ for(i = TokenStartPos ; i &lt;= TokenEndPos ; i++){ | 
+              |  +--+-----------------------------------------------+ 
+ 12109        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------+ 
+ 12110        |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |  +--+-------------------------+ 
+ 12111        |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |  +------------------------------------------------------------+ 
+ 12112        |     |     +--+ if((Script-&gt;ScRegion == scr_start)&amp;&amp;(i != TokenStartPos)){ | 
+              |     |     |  +--+---------------------------------------------------------+ 
+ 12113        |     |     |     +--- // NestしたTuneRegionあり
+ 12114        |     |     |     +--- TTuneRegion *TuneRegion;
+ 12115        |     |     |     |    
+ 12116        |     |     |     +--- TuneRegion = (TTuneRegion *)Script-&gt;TuneRegion;
+ 12117        |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fp,&quot;    &quot;,1);
+ 12118        |     |     |     +--- i = TuneRegion-&gt;TokenEndPos;
+ 12119        |     |     |     +--- //          }else if(Script-&gt;ScRegion == scr_substart){
+              |     |     |   +-+---+ 
+ 12120        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------------------------+ 
+ 12120        |     |     |   |  else if((Script-&gt;ScRegion == scr_substart)                         | 
+ 12121        |     |     |   |         &amp;&amp;(Script-&gt;ScType == sct_select)){      // Sub region Start | 
+              |     |     |   +-+-------------------------------------------------------------------+ 
+ 12122        |     |     |     +--- // SubRegion開始
+ 12123        |     |     |     |    // もし、TargetSubRegionでなければ、sub region endまで 
+ 12124        |     |     |     |    // skipする。TargetSubRegionの場合は、そのまま次へ     
+ 12125        |     |     |     |    //                                                     
+              |     |     |     |  +------------------------------------------+ 
+ 12126        |     |     |     +--+ if(SubRegionIdx &lt; SubRegionList-&gt;Count){ | 
+              |     |     |     |  +--+---------------------------------------+ 
+ 12127        |     |     |     |     +--- SubRegion = (TSubRegion *)SubRegionList-&gt;Items[SubRegionIdx++];
+              |     |     |     |     |  +------------------------------------+ 
+ 12128        |     |     |     |     +--+ if(SubRegion != TargetSubRegion){  | 
+              |     |     |     |     |  +--+---------------------------------+ 
+ 12129        |     |     |     |     |     +--- i = SubRegion-&gt;TokenEndPos; // Skip To End of SubRegion
+              |     |     |     |     |   +-+---+ 
+ 12130        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12131        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12132        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------+ 
+ 12132        |     |     |   |  else if(Script-&gt;ScRegion == scr_substart){ | 
+              |     |     |   +-+-------------------------------------------+ 
+ 12133        |     |     |     +--- //
+ 12134        |     |     |     |    // Pre,PostのサブリージョンのＳｋｉｐ  
+ 12135        |     |     |     |    // End_SubReguinまでSkipする。         
+ 12136        |     |     |     |    //                                     
+ 12137        |     |     |     +--- int Nest = 0;
+              |     |     |     |  +--------------------------------+ 
+ 12138        |     |     |     +--+ for(; i &lt;= TokenEndPos ; i++){ | 
+              |     |     |     |  +--+-----------------------------+ 
+ 12139        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |  +----------------------------+ 
+ 12140        |     |     |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |     |     |  +--+-------------------------+ 
+ 12141        |     |     |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |     |     |     |  +----------------------------------------+ 
+ 12142        |     |     |     |     |     +--+ if(Script-&gt;ScRegion == scr_substart){  | 
+              |     |     |     |     |     |  +--+-------------------------------------+ 
+ 12143        |     |     |     |     |     |     +--- Nest++;
+              |     |     |     |     |     |   +-+---+ 
+ 12144        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-----------------------------------------+ 
+ 12144        |     |     |     |     |     |   |  else if(Script-&gt;ScRegion == scr_subend){ | 
+              |     |     |     |     |     |   +-+-----------------------------------------+ 
+ 12145        |     |     |     |     |     |     +--- Nest--;
+              |     |     |     |     |     |     |  +----------------+ 
+ 12146        |     |     |     |     |     |     +--+ if(Nest == 0){ | 
+              |     |     |     |     |     |     |  +--+-------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+ 12147        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+ 12148        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+ 12149        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12150        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12151        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12152        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------+ 
+ 12153        |     |     +--+ for( ; i &lt;= TokenEndPos ; i++){  | 
+              |     |     |  +--+-------------------------------+ 
+ 12154        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |  +----------------------------------+ 
+ 12155        |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |  +--------+ 
+ 12156        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+ 12157        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12158        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12159        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------------------------------+ 
+ 12159        |     |   |  else if((TuneKind != tkUnroll)&amp;&amp;                     | 
+ 12160        |     |   |   ((Token-&gt;TokId == tid_Val)||(Token-&gt;TokId == -1))){ | 
+              |     |   +-+-----------------------------------------------------+ 
+ 12161        |     |     +--- //
+ 12162        |     |     |    // variedによる変数の置換（Unrollのvariedは対象外) 
+ 12163        |     |     |    //                                                 
+ 12164        |     |     +--- s = Token-&gt;OrgStr;
+ 12165        |     |     +--- //checkPoint
+              |     |     |  +------------------------------+ 
+ 12166        |     |     +--+ if(TargetSubRegion == NULL){ | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +--------------------------------------+ 
+ 12167        |     |     |     +--+ for(j = 0 ; j &lt; variedCount ; j++){  | 
+              |     |     |     |  +--+-----------------------------------+ 
+              |     |     |     |     |  +--------------------------------------+ 
+ 12168        |     |     |     |     +--+ if(Token-&gt;Str == variedValName[j]){  | 
+              |     |     |     |     |  +--+-----------------------------------+ 
+ 12169        |     |     |     |     |     +--- /***************************/
+ 12170        |     |     |     |     |     |    //                             
+ 12171        |     |     |     |     |     |    //Kogakuin Irie                
+ 12172        |     |     |     |     |     |    //PPの変動範囲を実数にも対応   
+ 12173        |     |     |     |     |     |    //既存コードはコメントアウト   
+ 12174        |     |     |     |     |     |    //                             
+ 12175        |     |     |     |     |     |    // 定数に置換する。            
+ 12176        |     |     |     |     |     +--- //                      int Idx,Value;
+ 12177        |     |     |     |     |     +--- int Idx;
+ 12178        |     |     |     |     |     +--- float Value;    //実数に対応
+ 12179        |     |     |     |     |     +--- //
+ 12180        |     |     |     |     |     |    //ここまで                     
+ 12181        |     |     |     |     |     |    //                             
+ 12182        |     |     |     |     |     |    /***************************/  
+ 12183        |     |     |     |     |     |                                   
+ 12184        |     |     |     |     |     +--- Idx = iusw1;
+              |     |     |     |     |     |  +----------------------------------------+ 
+ 12185        |     |     |     |     |     +--+ for(k = j+1 ; k &lt; variedCount ; k++){  | 
+              |     |     |     |     |     |  +--+-------------------------------------+ 
+ 12186        |     |     |     |     |     |     +--- /*****************************************************************************/
+ 12187        |     |     |     |     |     |     |    //                                                                               
+ 12188        |     |     |     |     |     |     |    //Kogakuin Irie                                                                  
+ 12189        |     |     |     |     |     |     |    //PPの実数対応とstep対応のための処理                                             
+ 12190        |     |     |     |     |     |     |    //既存コードはコメントアウト                                                     
+ 12191        |     |     |     |     |     |     |    //                                                                               
+ 12192        |     |     |     |     |     |     +--- //                          Idx /= (variedToValue[k] - variedFromValue[k]+1);
+ 12193        |     |     |     |     |     |     +--- Idx /= (int)((variedToValue[k] - variedFromValue[k]) / variedStepValue[k]+1);
+ 12194        |     |     |     |     |     |     +--- //
+ 12195        |     |     |     |     |     |     |    //ここまで                                                                       
+ 12196        |     |     |     |     |     |     |    //                                                                               
+ 12197        |     |     |     |     |     |     |    /*****************************************************************************/  
+              |     |     |     |     |     |   +-+---+ 
+ 12198        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+ 12199        |     |     |     |     |     +--- /*****************************************************************************************/
+ 12200        |     |     |     |     |     |    //                                                                                           
+ 12201        |     |     |     |     |     |    //Kogakuin Irie                                                                              
+ 12202        |     |     |     |     |     |    //PPの実数対応とstep対応のための処理                                                         
+ 12203        |     |     |     |     |     |    //既存コードはコメントアウト                                                                 
+ 12204        |     |     |     |     |     |    //                                                                                           
+ 12205        |     |     |     |     |     +--- //                      Idx = Idx % (variedToValue[j] - variedFromValue[j]+1); // 余り
+ 12206        |     |     |     |     |     +--- Idx = Idx % (int)((variedToValue[j] - variedFromValue[j]) / variedStepValue[j]+1); // 余り
+ 12207        |     |     |     |     |     +--- //                      Value = variedFromValue[j] + Idx;
+ 12208        |     |     |     |     |     +--- Value = variedFromValue[j] + Idx * variedStepValue[j];
+ 12209        |     |     |     |     |     +--- //
+ 12210        |     |     |     |     |     |    //ここまで                                                                                   
+ 12211        |     |     |     |     |     |    //                                                                                           
+ 12212        |     |     |     |     |     |    /*****************************************************************************************/  
+              |     |     |     |     |     |  +----------------------+ 
+ 12213        |     |     |     |     |     +--+ if(s == Token-&gt;Str){ | 
+              |     |     |     |     |     |  +--+-------------------+ 
+ 12214        |     |     |     |     |     |     +--- /***************************/
+ 12215        |     |     |     |     |     |     |    //                             
+ 12216        |     |     |     |     |     |     |    //Kogakuin Irie                
+ 12217        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応   
+ 12218        |     |     |     |     |     |     |    //既存コードはコメントアウト   
+ 12219        |     |     |     |     |     |     |    //                             
+ 12220        |     |     |     |     |     |     +--- //                          s = IntToStr(Value);
+ 12221        |     |     |     |     |     |     +--- s = FloatToStr(Value);
+ 12222        |     |     |     |     |     |     +--- //
+ 12223        |     |     |     |     |     |     |    //ここまで                     
+ 12224        |     |     |     |     |     |     |    //                             
+ 12225        |     |     |     |     |     |     |    /***************************/  
+              |     |     |     |     |     |   +-+---+ 
+ 12226        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 12226        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 12227        |     |     |     |     |     |     +--- /**************************/
+ 12228        |     |     |     |     |     |     |    //                           
+ 12229        |     |     |     |     |     |     |    //Kogakuin Irie              
+ 12230        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応 
+ 12231        |     |     |     |     |     |     |    //既存コードはコメントアウト 
+ 12232        |     |     |     |     |     |     |    //                           
+ 12233        |     |     |     |     |     |     +--- //                          s = &quot; &quot;+IntToStr(Value);
+ 12234        |     |     |     |     |     |     +--- s = &quot; &quot;+FloatToStr(Value);
+ 12235        |     |     |     |     |     |     +--- //
+ 12236        |     |     |     |     |     |     |    //ここまで                   
+ 12237        |     |     |     |     |     |     |    //                           
+ 12238        |     |     |     |     |     |     |    /**************************/ 
+              |     |     |     |     |     |   +-+---+ 
+ 12239        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------+ 
+ 12240        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12241        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12242        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12243        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12243        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 12244        |     |     |     +--- //
+ 12245        |     |     |     |    // SubRegionありの場合の varidの置換                         
+ 12246        |     |     |     |    // SubRegionごとの varidCountを使用する。                    
+ 12247        |     |     |     |    // iusw1も、SubRegion単位でのIdxで呼ばれている。（上位から） 
+ 12248        |     |     |     |    //                                                           
+ 12249        |     |     |     +--- SubRegion = (TSubRegion *)TargetSubRegion;
+              |     |     |     |  +------------------------------------------------+ 
+ 12250        |     |     |     +--+ for(j = 0 ; j &lt; SubRegion-&gt;variedCount ; j++){ | 
+              |     |     |     |  +--+---------------------------------------------+ 
+              |     |     |     |     |  +------------------------------------------------+ 
+ 12251        |     |     |     |     +--+ if(Token-&gt;Str == SubRegion-&gt;variedValName[j]){ | 
+              |     |     |     |     |  +--+---------------------------------------------+ 
+ 12252        |     |     |     |     |     +--- /****************************/
+ 12253        |     |     |     |     |     |    //                             
+ 12254        |     |     |     |     |     |    //Kogakuin Irie                
+ 12255        |     |     |     |     |     |    //PPの変動範囲を実数にも対応   
+ 12256        |     |     |     |     |     |    //既存コードはコメントアウト   
+ 12257        |     |     |     |     |     |    //                             
+ 12258        |     |     |     |     |     |    // 定数に置換する。            
+ 12259        |     |     |     |     |     +--- //                      int Idx,Value;
+ 12260        |     |     |     |     |     +--- int Idx;
+ 12261        |     |     |     |     |     +--- float Value;
+ 12262        |     |     |     |     |     +--- //
+ 12263        |     |     |     |     |     |    //ここまで                     
+ 12264        |     |     |     |     |     |    //                             
+ 12265        |     |     |     |     |     |    /****************************/ 
+ 12266        |     |     |     |     |     |                                   
+ 12267        |     |     |     |     |     +--- Idx = iusw1;
+              |     |     |     |     |     |  +--------------------------------------------------+ 
+ 12268        |     |     |     |     |     +--+ for(k = j+1 ; k &lt; SubRegion-&gt;variedCount ; k++){ | 
+              |     |     |     |     |     |  +--+-----------------------------------------------+ 
+ 12269        |     |     |     |     |     |     +--- /***************************************************************************/
+ 12270        |     |     |     |     |     |     |    //                                                                             
+ 12271        |     |     |     |     |     |     |    //Kogakuin Irie                                                                
+ 12272        |     |     |     |     |     |     |    //PPの実数対応とstep対応のための処理                                           
+ 12273        |     |     |     |     |     |     |    //既存コードはコメントアウト                                                   
+ 12274        |     |     |     |     |     |     |    //                                                                             
+ 12275        |     |     |     |     |     |     +--- //                          Idx /= (SubRegion-&gt;variedToValue[k]
+ 12276        |     |     |     |     |     |     |    //                              - SubRegion-&gt;variedFromValue[k]+1);  
+ 12277        |     |     |     |     |     |     +--- Idx /= (int)((SubRegion-&gt;variedToValue[k]
+ 12278        |     |     |     |     |     |     |        - SubRegion-&gt;variedFromValue[k]) / SubRegion-&gt;variedStepValue[k]+1); 
+ 12279        |     |     |     |     |     |     +--- //
+ 12280        |     |     |     |     |     |     |    //ここまで                                                                     
+ 12281        |     |     |     |     |     |     |    //                                                                             
+ 12282        |     |     |     |     |     |     |    /***************************************************************************/  
+              |     |     |     |     |     |   +-+---+ 
+ 12283        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+ 12284        |     |     |     |     |     +--- /************************************************************************************/
+ 12285        |     |     |     |     |     |    //                                                                                     
+ 12286        |     |     |     |     |     |    //Kogakuin Irie                                                                        
+ 12287        |     |     |     |     |     |    //PPの実数対応とstep対応のための処理                                                   
+ 12288        |     |     |     |     |     |    //既存コードはコメントアウト                                                           
+ 12289        |     |     |     |     |     |    //                                                                                     
+ 12290        |     |     |     |     |     +--- //                      Idx = Idx % (SubRegion-&gt;variedToValue[j]
+ 12291        |     |     |     |     |     |    //                           - SubRegion-&gt;variedFromValue[j]+1); // 余り 
+ 12292        |     |     |     |     |     +--- Idx = Idx % (int)((SubRegion-&gt;variedToValue[j]
+ 12293        |     |     |     |     |     |         - SubRegion-&gt;variedFromValue[j]) / SubRegion-&gt;variedStepValue[j]+1); // 余り  
+ 12294        |     |     |     |     |     +--- //                      Value = SubRegion-&gt;variedFromValue[j] + Idx;
+ 12295        |     |     |     |     |     +--- Value = SubRegion-&gt;variedFromValue[j] + Idx * SubRegion-&gt;variedStepValue[j];
+ 12296        |     |     |     |     |     +--- //
+ 12297        |     |     |     |     |     |    //ここまで                                                                             
+ 12298        |     |     |     |     |     |    //                                                                                     
+ 12299        |     |     |     |     |     |    /************************************************************************************/ 
+              |     |     |     |     |     |  +----------------------+ 
+ 12300        |     |     |     |     |     +--+ if(s == Token-&gt;Str){ | 
+              |     |     |     |     |     |  +--+-------------------+ 
+ 12301        |     |     |     |     |     |     +--- /***************************/
+ 12302        |     |     |     |     |     |     |    //                             
+ 12303        |     |     |     |     |     |     |    //Kogakuin Irie                
+ 12304        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応   
+ 12305        |     |     |     |     |     |     |    //既存コードはコメントアウト   
+ 12306        |     |     |     |     |     |     |    //                             
+ 12307        |     |     |     |     |     |     +--- //                          s = IntToStr(Value);
+ 12308        |     |     |     |     |     |     +--- s = FloatToStr(Value);
+ 12309        |     |     |     |     |     |     +--- //
+ 12310        |     |     |     |     |     |     |    //ここまで                     
+ 12311        |     |     |     |     |     |     |    //                             
+ 12312        |     |     |     |     |     |     |    /***************************/  
+              |     |     |     |     |     |   +-+---+ 
+ 12313        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 12313        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 12314        |     |     |     |     |     |     +--- /***************************/
+ 12315        |     |     |     |     |     |     |    //                             
+ 12316        |     |     |     |     |     |     |    //Kogakuin Irie                
+ 12317        |     |     |     |     |     |     |    //PPの変動範囲を実数にも対応   
+ 12318        |     |     |     |     |     |     |    //既存コードはコメントアウト   
+ 12319        |     |     |     |     |     |     |    //                             
+ 12320        |     |     |     |     |     |     +--- //                          s = &quot; &quot;+IntToStr(Value);
+ 12321        |     |     |     |     |     |     +--- s = &quot; &quot;+FloatToStr(Value);
+ 12322        |     |     |     |     |     |     +--- //
+ 12323        |     |     |     |     |     |     |    //ここまで                     
+ 12324        |     |     |     |     |     |     |    //                             
+ 12325        |     |     |     |     |     |     |    /***************************/  
+              |     |     |     |     |     |   +-+---+ 
+ 12326        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------+ 
+ 12327        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12328        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12329        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12330        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12331        |     |     +--- /******************************************************************/
+ 12332        |     |     |    //                                                                   
+ 12333        |     |     |    //Kogakuin Irie                                                      
+ 12334        |     |     |    //実数対応用追加部分                                                 
+ 12335        |     |     |    //変動範囲の内，整数で表現できる値は整数で表現させる                 
+ 12336        |     |     |    //                                                                   
+ 12337        |     |     +--- int index, strSize;
+ 12338        |     |     +--- index = s.find_first_of(&quot;.&quot;);
+ 12339        |     |     |    
+              |     |     |  +------------------------------+ 
+ 12340        |     |     +--+ if( index != string::npos ){ | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +--------------------------------------------------------------------------------------+ 
+ 12341        |     |     |     +--+ if( s.find_first_of(&quot;123456789&quot;,index+1) == string::npos &amp;&amp; index != s.size() - 1 ){ | 
+              |     |     |     |  +--+-----------------------------------------------------------------------------------+ 
+ 12342        |     |     |     |     +--- strSize = s.size();
+ 12343        |     |     |     |     |    
+              |     |     |     |     |  +----------------------------------------+ 
+ 12344        |     |     |     |     +--+ for( j = index ; j &lt; strSize ; j++ ){  | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+ 12345        |     |     |     |     |     +--- s.replace(index,1,&quot;&quot;);
+              |     |     |     |     |   +-+---+ 
+ 12346        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12347        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12348        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12349        |     |     +--- //
+ 12350        |     |     |    //実数対応用追加成分　ここまで                                       
+ 12351        |     |     |    //                                                                   
+ 12352        |     |     |    /******************************************************************/ 
+ 12353        |     |     +--- fprintf(fp,&quot;%s%s&quot;,IndentStr.c_str(),s.c_str());
+ 12354        |     |     +--- IndentStr = &quot;&quot;;
+              |     |   +-+---+ 
+ 12355        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------+ 
+ 12355        |     |   |  else if(Token-&gt;TokId == tid_Comment){  | 
+              |     |   +-+---------------------------------------+ 
+ 12356        |     |     +--- // コメントは、インデントなしで出力
+ 12357        |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str());
+ 12358        |     |     +--- IndentStr = &quot;    &quot;;
+              |     |   +-+---+ 
+ 12359        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------+ 
+ 12359        |     |   |  else if(Token-&gt;TokId == tid_LineEnd){  | 
+              |     |   +-+---------------------------------------+ 
+ 12360        |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // 改行も、そのまま
+              |     |     |  +------------+ 
+ 12361        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 12362        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------+ 
+ 12362        |     |   |  else if(Token-&gt;TokId == tid_SharpPragma){  | 
+              |     |   +-+-------------------------------------------+ 
+ 12363        |     |     +--- // #Pragmaは、インデントなしで出力する。
+              |     |     |  +------------------------+ 
+ 12364        |     |     +--+ if(Skip_Pragma_ACCF){  | 
+              |     |     |  +--+---------------------+ 
+ 12365        |     |     |     +--- TToken *Token2;
+ 12366        |     |     |     |    
+              |     |     |     |  +----------------------+ 
+ 12367        |     |     |     +--+ if(i &lt; TokenEndPos){ | 
+              |     |     |     |  +--+-------------------+ 
+ 12368        |     |     |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[i+1];
+ 12369        |     |     |     |     |    
+              |     |     |     |     |  +------------------------------------------------+ 
+ 12370        |     |     |     |     +--+ if(LowerCase(Trim(Token2-&gt;OrgStr)) == &quot;acc&quot;){  | 
+              |     |     |     |     |  +--+---------------------------------------------+ 
+              |     |     |     |     |     |  +----------------------------------+ 
+ 12371        |     |     |     |     |     +--+ for(i=i+1;i &lt; TokenEndPos;i++){  | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+ 12372        |     |     |     |     |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |     |     |  +------------------------+ 
+ 12373        |     |     |     |     |     |     +--+ if(Token2-&gt;LineEndF){  | 
+              |     |     |     |     |     |     |  +--+---------------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+ 12374        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+ 12375        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+ 12376        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +------------+ 
+ 12377        |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |   +-+---+ 
+ 12378        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12379        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12380        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12381        |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str());
+ 12382        |     |     +--- IndentStr = &quot;&quot;;
+              |     |     |  +------------+ 
+ 12383        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 12384        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 12384        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 12385        |     |     +--- fprintf(fp,&quot;%s%s&quot;,IndentStr.c_str(),Token-&gt;OrgStr.c_str());
+ 12386        |     |     +--- IndentStr = &quot;&quot;;
+              |     |   +-+---+ 
+ 12387        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------+ 
+ 12388        |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |  +--+-------------------+ 
+ 12389        |     |     +--- IndentStr = &quot;    &quot;;
+              |     |   +-+---+ 
+ 12390        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12391        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+ 12392      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+
+<html>
+<head>
+<title>~TPass5 メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.14. ~TPass5 メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>~TPass5</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>220</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>~TPass5 ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>パス５クラスの破棄<br>ファイルのクローズ処理を行う</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>67</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>fclose</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::fpInOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>80</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::fpOutControl</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>77</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass5::fpOutDynamic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>76</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TPass5::fpOutHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TPass5::fpOutInstall</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>74</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TPass5::fpOutList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>73</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TPass5::fpOutOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>81</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TPass5::fpOutStatic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>75</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------+ 
+   220  +--+ TPass5::~TPass5()  | 
+   221     | {                  | 
+           +--+-----------------+ 
+   222        +--- int i;
+   223        +--- FILE *fpOut;
+   224        |    
+              |  +------------------------------------------+ 
+   225        +--+ for(i = 0 ; i &lt; fpOutList.Count ; i++){  | 
+              |  +--+---------------------------------------+ 
+   226        |     +--- fpOut = (FILE *)fpOutList.Items[i];
+              |     |  +--------------------+ 
+   227        |     +--+ if(fpOut != NULL){ | 
+              |     |  +--+-----------------+ 
+   228        |     |     +--- fclose(fpOut);
+              |     |   +-+---+ 
+   229        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   230        |   |  }  | 
+              |   +-----+ 
+   231        +--- fpOutList.Clear();
+   232        +--- fclose(fpOutControl);
+   233        +--- fclose(fpOutInstall);
+   234        +--- fclose(fpOutStatic);
+   235        +--- fclose(fpOutDynamic);
+              |  +--------------------------+ 
+   236        +--+ if(fpOutHeader != NULL){ | 
+              |  +--+-----------------------+ 
+   237        |     +--- fclose(fpOutHeader);
+              |   +-+---+ 
+   238        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------------+ 
+   239        +--+ if(fpInOATHeader != NULL){ | 
+              |  +--+-------------------------+ 
+   240        |     +--- fclose(fpInOATHeader);
+              |   +-+---+ 
+   241        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------+ 
+   242        +--+ if(fpOutOATHeader != NULL){  | 
+              |  +--+---------------------------+ 
+   243        |     +--- fclose(fpOutOATHeader);
+              |   +-+---+ 
+   244        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   245      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

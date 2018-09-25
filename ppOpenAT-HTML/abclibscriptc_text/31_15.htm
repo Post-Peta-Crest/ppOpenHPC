@@ -1,0 +1,229 @@
+
+<html>
+<head>
+<title>Pass1_3_Fortran 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.15. Pass1_3_Fortran 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>Pass1_3_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass1.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>723</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Pass1_3_Fortran ( TList * TokenList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>フォートランの構文に合わせて、Token-&gt;TokIdをtid_val(変数）に変更する。<br>変数名としての end や if を有効とするために構文に合わせて一部を変更。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList 対象トークンリスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="31_13.htm">Pass1</a></td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_13.htm">79</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------+ 
+   723  +--+ void Pass1_3_Fortran(TList *TokenList) | 
+   724     | {                                      | 
+           +--+-------------------------------------+ 
+   725        +--- int brLevel = 0;
+   726        +--- int LineEndF = true;
+   727        +--- int i;
+   728        +--- int TokId;
+   729        +--- TToken *Token;
+   730        |    
+   731        +--- //
+   732        |    // 行の先頭に来るべきキーワードが途中にある場合に変数扱いとする。              
+   733        |    // 本来は構文解析した結果で判断すべきだが、現状は行の先頭かどうかのみを判定。  
+   734        |    //                                                                             
+              |  +------------------------------------------+ 
+   735        +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |  +--+---------------------------------------+ 
+   736        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +--------------------+ 
+   737        |     +--+ if(Token == NULL){ | 
+              |     |  +--+-----------------+ 
+              |     |     |  +--------------------------+ 
+   738        |     |     +--+ continue;   // 既に確定  | 
+              |     |     |  +--------------------------+ 
+              |     |   +-+---+ 
+   739        |     |   |  }  | 
+              |     |   +-----+ 
+   740        |     +--- TokId = Token-&gt;TokId;
+              |     |  +----------------+ 
+   741        |     +--+ switch(TokId){ | 
+              |     |  +--+-------------+ 
+              |     |     +-----------------+ 
+   742        |     |     |  case tid_null: | 
+              |     |     +-----------------+ 
+              |     |     +-----------------------------------+ 
+   743        |     |     |  case tid_Comment:   // コメント  | 
+              |     |     +-----------------------------------+ 
+              |     |     |  +--------+ 
+   744        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------+ 
+   745        |     |     |  case tid_LineEnd:  | 
+              |     |     +---------------------+ 
+              |     |     +-----------------------+ 
+   746        |     |     |  case tid_Semikoron:  | 
+              |     |     +-----------------------+ 
+   747        |     |     +--- LineEndF = true;
+   748        |     |     +--- brLevel = 0;
+              |     |     |  +--------+ 
+   749        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------------+ 
+   750        |     |     |  case tid_Kakko:  | 
+              |     |     +-------------------+ 
+   751        |     |     +--- brLevel++;
+              |     |     |  +--------+ 
+   752        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------------+ 
+   753        |     |     |  case tid_Kokka:  | 
+              |     |     +-------------------+ 
+   754        |     |     +--- brLevel--;
+              |     |     |  +--------+ 
+   755        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------------------------------------------------+ 
+   756        |     |     |  case tid_ConstInt: // 行番号やラベルの場合は行の先頭状態を保持 | 
+              |     |     +-----------------------------------------------------------------+ 
+              |     |     +-----------------+ 
+   757        |     |     |  case tid_Val:  | 
+              |     |     +-----------------+ 
+              |     |     +-------------------+ 
+   758        |     |     |  case tid_Koron:  | 
+              |     |     +-------------------+ 
+              |     |     |  +--------+ 
+   759        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------------------------------------------------+ 
+   760        |     |     |  case tid_END:   // 行の先頭でない場合は変数に変更。  | 
+              |     |     +-------------------------------------------------------+ 
+              |     |     +---------------+ 
+   761        |     |     |  case tid_IF: | 
+              |     |     +---------------+ 
+              |     |     +-----------------+ 
+   762        |     |     |  case tid_ELSE: | 
+              |     |     +-----------------+ 
+              |     |     +-------------------+ 
+   763        |     |     |  case tid_ELSEIF: | 
+              |     |     +-------------------+ 
+              |     |     +-------------------+ 
+   764        |     |     |  case tid_ENDIF:  | 
+              |     |     +-------------------+ 
+              |     |     +---------------+ 
+   765        |     |     |  case tid_DO: | 
+              |     |     +---------------+ 
+              |     |     +-------------------+ 
+   766        |     |     |  case tid_ENDDO:  | 
+              |     |     +-------------------+ 
+              |     |     +-------------------+ 
+   767        |     |     |  case tid_SELECT: | 
+              |     |     +-------------------+ 
+              |     |     +-----------------+ 
+   768        |     |     |  case tid_CASE: | 
+              |     |     +-----------------+ 
+              |     |     +-----------------+ 
+   769        |     |     |  case tid_GOTO: | 
+              |     |     +-----------------+ 
+              |     |     +---------------------+ 
+   770        |     |     |  case tid_DOWHILE:  | 
+              |     |     +---------------------+ 
+              |     |     +-----------------+ 
+   771        |     |     |  case tid_CALL: | 
+              |     |     +-----------------+ 
+              |     |     +-------------------+ 
+   772        |     |     |  case tid_RETURN: | 
+              |     |     +-------------------+ 
+              |     |     +-----------------+ 
+   773        |     |     |  case tid_STOP: | 
+              |     |     +-----------------+ 
+              |     |     |  +------------------------+ 
+   774        |     |     +--+ if(LineEndF == false){ | 
+              |     |     |  +--+---------------------+ 
+   775        |     |     |     +--- Token-&gt;TokId = tid_Val;
+              |     |     |   +-+---+ 
+   776        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+   777        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------+ 
+   778        |     |     |  default: | 
+              |     |     +-----------+ 
+   779        |     |     +--- LineEndF = false;
+              |     |   +-+---+ 
+   780        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   781        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   782      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

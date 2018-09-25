@@ -1,0 +1,79 @@
+--- ppOpenAT version 0.2.3 ---
+OAT_PATH = ""
+CommandLine = test.exe  -free c:/ppOpenAT/examples/F90/Test_Select_2/select2.f 
+**** Start Code Generation ****
+SrcFile ="c:/ppOpenAT/examples/F90/Test_Select_2/select2.f"
+Pass1 Start
+Pass2 Start
+------ Val List ---------
+0: (MIdx=0) Int iauto (RW=1,1) DefPos=13
+1: (MIdx=0) Int N=500.000000 (RW=6,0) DefPos=16
+2: (MIdx=0) Real*8 A(500)(500) (RW=1,0) DefPos=28
+3: (MIdx=0) Real*8 B(500)(500) (RW=1,0) DefPos=35
+4: (MIdx=0) Real*8 C(500)(500) (RW=1,7) DefPos=42
+5: (MIdx=0) Int MPI (RW=2,0) DefPos=-11
+6: (MIdx=0) Int Init (RW=1,0) DefPos=-11
+7: (MIdx=0) Int ierr (RW=4,0) DefPos=-11
+8: (MIdx=0) Int MPI_COMM_WORLD (RW=2,0) DefPos=-11
+9: (MIdx=0) Int myid (RW=1,0) DefPos=-11
+10: (MIdx=0) Int nprocs (RW=1,0) DefPos=-11
+11: (MIdx=0) Real for (RW=1,0) DefPos=-11
+12: (MIdx=0) Real chacking (RW=1,0) DefPos=-11
+13: (MIdx=0) Real debug (RW=1,0) DefPos=-11
+14: (MIdx=0) Int mode (RW=1,0) DefPos=-11
+15: (MIdx=0) Int in (RW=1,1) DefPos=-11
+16: (MIdx=0) Real finazize (RW=1,0) DefPos=-11
+17: (MIdx=1) Real SelectMatMul (RW=0,0)(Arg) DefPos=-1
+18: (MIdx=1) Real*8 A(0)(0) (RW=2,1)(Arg) DefPos=359
+19: (MIdx=1) Real*8 B(0)(0) (RW=2,1)(Arg) DefPos=366
+20: (MIdx=1) Real*8 C(0)(0) (RW=2,1)(Arg) DefPos=373
+21: (MIdx=1) Int N (RW=12,0)(Arg) DefPos=354
+22: (MIdx=1) Real*8 da1 (RW=0,0) DefPos=388
+23: (MIdx=1) Real*8 da2 (RW=0,0) DefPos=390
+24: (MIdx=1) Real*8 dc (RW=0,0) DefPos=395
+25: (MIdx=1) Int i (RW=5,2) DefPos=-11
+26: (MIdx=1) Int j (RW=5,2) DefPos=-11
+27: (MIdx=1) RealFunc dble (RW=2,0) DefPos=-11
+28: (MIdx=2) Real Select1 (RW=0,0)(Arg) DefPos=-1
+29: (MIdx=2) Real*8 A(0)(0) (RW=1,1)(Arg) DefPos=583
+30: (MIdx=2) Real*8 B(0)(0) (RW=1,0)(Arg) DefPos=590
+31: (MIdx=2) Real*8 C(0)(0) (RW=1,0)(Arg) DefPos=597
+32: (MIdx=2) Int N (RW=9,0)(Arg) DefPos=578
+33: (MIdx=2) Real*8 da1 (RW=2,2) DefPos=608
+34: (MIdx=2) Real*8 da2 (RW=0,0) DefPos=610
+35: (MIdx=2) Real*8 dc (RW=1,1) DefPos=615
+36: (MIdx=2) Int i (RW=3,1) DefPos=-11
+37: (MIdx=2) Int j (RW=3,1) DefPos=-11
+38: (MIdx=2) Int k (RW=2,1) DefPos=-11
+39: (MIdx=3) Real Select2 (RW=0,0)(Arg) DefPos=-1
+40: (MIdx=3) Real*8 A(0)(0) (RW=1,1)(Arg) DefPos=710
+41: (MIdx=3) Real*8 B(0)(0) (RW=1,0)(Arg) DefPos=717
+42: (MIdx=3) Real*8 C(0)(0) (RW=1,0)(Arg) DefPos=724
+43: (MIdx=3) Int N (RW=8,0)(Arg) DefPos=705
+44: (MIdx=3) Real*8 da1 (RW=2,2) DefPos=735
+45: (MIdx=3) Real*8 da2 (RW=0,0) DefPos=737
+46: (MIdx=3) Real*8 dc (RW=1,1) DefPos=742
+47: (MIdx=3) Int i (RW=3,1) DefPos=-11
+48: (MIdx=3) Int j (RW=3,1) DefPos=-11
+49: (MIdx=3) Int k (RW=2,1) DefPos=-11
+Pass3 Start
+Pass4 Start
+OAT variable:       OAT_DEBUG = 1
+OAT variable:       OAT_NUMPROCS = 4
+OAT variable:       OAT_STARTTUNESIZE = 100
+OAT variable:       OAT_ENDTUNESIZE = 500
+OAT variable:       OAT_SAMPDIST = 100
+Base Paramater (BPset): N
+------ Tuning Region -- Count = 1
+Tuning Region : 0
+Static Select SelectMatMul2
+OAT_StaticSelectMatMul2(N,A,B,C) 
+  RefValStr = (  )
+  Case Count = 2
+    Select    AccordingStr(0) = !OAT$ according estimated N
+    Select    AccordingStr(1) = !OAT$ according estimated N*N
+
+Pass5 Start
+TuneRegion = 1/1
+Output "include OAT_Routins" to OAT_select2.f.
+**** End Code Generation **** OK !

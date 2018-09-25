@@ -1,0 +1,907 @@
+
+<html>
+<head>
+<title>OutputExecCode_Fortran メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.34. OutputExecCode_Fortran メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputExecCode_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>7321</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputExecCode_Fortran ( FILE * fp )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_GGGFFF(...) のswich()付きの実行コードを生成する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_4.htm">TScript::GetATExecArgStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_4.htm">663</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_4.htm">TValData::GetDefStr_Fortran</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_4.htm">2536</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_36.htm">TTuneRegion::OutputLoopFusionExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_36.htm">8004</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_39.htm">TTuneRegion::OutputSelectCaseExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_39.htm">7860</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_51.htm">TTuneRegion::OutputUnrollExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_10_52.htm">TTuneRegion::RestoreValBits</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_52.htm">2182</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>sprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::TuneKind</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>197</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::ValDataList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>188</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::variedValName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>226</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------+ 
+  7321  +--+ void TTuneRegion::OutputExecCode_Fortran(FILE *fp) | 
+  7322     | {                                                  | 
+           +--+-------------------------------------------------+ 
+  7323        +--- string s,s2;
+  7324        +--- int i,j;
+  7325        +--- TValData *ValData;
+  7326        +--- TToken *Token;
+  7327        +--- int DefPosS;
+  7328        +--- char cs[1024];
+  7329        +--- string ValDefStr;
+  7330        |    
+  7331        +--- RestoreValBits(TokenStartPos,TokenEndPos);
+  7332        +--- s = &quot;      subroutine &quot;+FuncName + &quot;(&quot;;
+              |  +--------------------------------------------+ 
+  7333        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+              |     |  +------------------------------------+ 
+  7334        |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |  +--+---------------------------------+ 
+              |     |     |  +------------+ 
+  7335        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  7336        |     |   |  }  | 
+              |     |   +-----+ 
+  7337        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  7338        |     +--- s2 = s + ValData-&gt;Str + &quot;, &quot;;
+              |     |  +------------------------+ 
+  7339        |     +--+ if(s2.length() &gt; 72){  | 
+              |     |  +--+---------------------+ 
+              |     |     |  +------------------------------------------------+ 
+  7340        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |  +--+---------------------------------------------+ 
+  7341        |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |   +-+---+ 
+  7342        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  7342        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  7343        |     |     |     +--- fprintf(fp,&quot;%s &amp;\n&quot;,SepLongStr(s).c_str());
+              |     |     |   +-+---+ 
+  7344        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7345        |     |     +--- s = &quot;     &amp;&quot;+ValData-&gt;Str + &quot;, &quot;;
+              |     |   +-+---+ 
+  7346        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  7346        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  7347        |     |     +--- s = s2;
+              |     |   +-+---+ 
+  7348        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7349        |   |  }  | 
+              |   +-----+ 
+  7350        +--- s += &quot;iusw1)&quot;;
+  7351        +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+  7352        +--- fprintf(fp,&quot;\n&quot;);
+  7353        +--- //
+  7354        |    // 使用される引数の定義を出力する。          
+  7355        |    // DefPosS,E,ArrayDefPosS,Eを使用する。      
+  7356        |    // DefPosSが同じ変数は、１つにまとめること。 
+  7357        |    //                                           
+  7358        +--- DefPosS = -1;
+  7359        +--- s = &quot;&quot;;
+              |  +--------------------------------------------+ 
+  7360        +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |  +--+-----------------------------------------+ 
+              |     |  +------------------------------------+ 
+  7361        |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |  +--+---------------------------------+ 
+              |     |     |  +------------+ 
+  7362        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+  7363        |     |   |  }  | 
+              |     |   +-----+ 
+  7364        |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |  +--------------------------------------------------------------------+ 
+  7365        |     +--+ if((DefPosS == -1)||(ValData-&gt;DefPosS != DefPosS)){ // 違う定義行  | 
+              |     |  +--+-----------------------------------------------------------------+ 
+              |     |     |  +--------------+ 
+  7366        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  7367        |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+  7368        |     |     |     +--- s = &quot;&quot;;
+              |     |     |   +-+---+ 
+  7369        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7370        |     |     +--- s = ValData-&gt;GetDefStr_Fortran();
+              |     |     |  +--------------+ 
+  7371        |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+              |     |     |     |  +------------+ 
+  7372        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7373        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7374        |     |     +--- DefPosS = ValData-&gt;DefPosS;
+              |     |   +-+---+ 
+  7375        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  7375        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  7376        |     |     +--- s += &quot;,&quot;;
+              |     |   +-+---+ 
+  7377        |     |   |  }  | 
+              |     |   +-----+ 
+  7378        |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |  +--------------------------------------------------------------------+ 
+  7379        |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |  +--+-----------------------------------------------------------------+ 
+  7380        |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7381        |     |     +--- s += Token-&gt;OrgStr;
+              |     |   +-+---+ 
+  7382        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7383        |   |  }  | 
+              |   +-----+ 
+              |  +--------------+ 
+  7384        +--+ if(s != &quot;&quot;){ | 
+              |  +--+-----------+ 
+  7385        |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+  7386        |     +--- s = &quot;&quot;;
+              |   +-+---+ 
+  7387        |   |  }  | 
+              |   +-----+ 
+  7388        +--- fprintf(fp,&quot;      integer iusw1\n&quot;);
+  7389        |    
+  7390        +--- /********************************************************************************************************************************************************************/
+  7391        |    //                                                                                                                                                                     
+  7392        |    //Kogakuin Irie                                                                                                                                                        
+  7393        |    //チューニング領域内で使用されている変数で，自動宣言されない変数を自動宣言させる処理                                                                                   
+  7394        |    //character型の変数に自動宣言されない傾向が見られる                                                                                                                    
+  7395        |    //しかし，上記の可能性は低いと思われるので，不要になったら以下はコメントアウトにする                                                                                   
+  7396        |    //ppOpen-AT内のコードを引用                                                                                                                                            
+  7397        |    //                                                                                                                                                                     
+  7398        +--- TToken *Token2;
+  7399        +--- int k, l, tokPoint;
+  7400        +--- int p, strPoint;
+  7401        +--- bool paraDef, paraDef2, display;
+  7402        +--- char c;
+  7403        |    
+  7404        +--- //以下のfor文はregion start から region end までの範囲のトークンを取得
+              |  +----------------------------------------------------+ 
+  7405        +--+ for( i = TokenStartPos ; i &lt;= TokenEndPos ; i++ )  | 
+  7406        |  | {                                                  | 
+              |  +--+-------------------------------------------------+ 
+  7407        |     +--- Token2 = (TToken *)TokenList-&gt;Items[i];
+  7408        |     |    
+  7409        |     +--- //以下のfor文はプログラムの先頭からregion startまでの範囲のトークンを取得
+  7410        |     |    //Tokenに入れたいトークンは，変数宣言部分のトークン                        
+              |     |  +----------------------------------------+ 
+  7411        |     +--+ for( j = 0 ; j &lt; TokenStartPos ; j++ ) | 
+  7412        |     |  | {                                      | 
+              |     |  +--+-------------------------------------+ 
+  7413        |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7414        |     |     |    
+  7415        |     |     +--- //2つのトークン名が一致し，それがtid_Valならば実行
+  7416        |     |     |    //このif文でしたいことは，チューニング対象内の変数の型を，プログラムの宣言部から見つけること 
+  7417        |     |     |    //                                                                                           
+  7418        |     |     |    /*************************************注意*************************************/             
+  7419        |     |     |    //このif文を通り抜けるトークンは「変数名」と「関数名」と「サブルーチン名」の3つ              
+  7420        |     |     |    //そのため，「変数名」のトークンだけを取得する処理が必要                                     
+  7421        |     |     |    /*************************************注意*************************************/             
+  7422        |     |     |    //すでに自動宣言されている変数もあるため，二重宣言を回避する必要がある                       
+  7423        |     |     |    /*************************************注意*************************************/             
+  7424        |     |     |    //varied で指定されている変数も，if文を通り抜ける（対処が必要）                              
+              |     |     |  +--------------------------------------------------------------------+ 
+  7425        |     |     +--+ if( Token-&gt;OrgStr == Token2-&gt;OrgStr &amp;&amp; Token-&gt;TokId == tid_Val ){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+  7426        |     |     |     |    
+  7427        |     |     |     +--- tokPoint = j;
+  7428        |     |     |     +--- strPoint = 0;
+  7429        |     |     |     +--- paraDef = false;
+  7430        |     |     |     +--- paraDef2 = false;
+  7431        |     |     |     +--- display = false;
+  7432        |     |     |     |    
+  7433        |     |     |     +--- /*-------------------------------------------*/
+  7434        |     |     |     |    //variedの変数名との比較を行う                   
+  7435        |     |     |     |    //一致したら「paraDef」を「true」に              
+              |     |     |     |  +----------------------------------------+ 
+  7436        |     |     |     +--+ for( k = 0 ; k &lt; variedCount ; k++ ){  | 
+              |     |     |     |  +--+-------------------------------------+ 
+              |     |     |     |     |  +----------------------------------------+ 
+  7437        |     |     |     |     +--+ if( variedValName[k] == Token-&gt;Str ){  | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  7438        |     |     |     |     |     +--- k = variedCount;
+  7439        |     |     |     |     |     +--- paraDef = true;
+              |     |     |     |     |   +-+---+ 
+  7440        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  7441        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7442        |     |     |     +--- /*-------------------------------------------*/
+  7443        |     |     |     |                                                                                                       
+  7444        |     |     |     |    /*---------------------------------------------------------------------------------------------*/  
+  7445        |     |     |     |    //自動宣言されている変数名との比較を行う                                                           
+  7446        |     |     |     |    //一致したら「paraDef2」を「true」に                                                               
+  7447        |     |     |     |                                                                                                       
+  7448        |     |     |     |    //引数の変数との比較                                                                               
+              |     |     |     |  +------------------------------------------+ 
+  7449        |     |     |     +--+ if( MainF-&gt;Call_ATExec_Script != NULL ){ | 
+              |     |     |     |  +--+---------------------------------------+ 
+  7450        |     |     |     |     +--- s = MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+              |     |     |     |   +-+---+ 
+  7451        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  7452        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  7453        |     |     |     |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+  7454        |     |     |     |     +--- s = Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+  7455        |     |     |     |     +--- delete Script;
+              |     |     |     |   +-+---+ 
+  7456        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7457        |     |     |     |    
+              |     |     |     |  +--------------------------------------------------------------------------------------------------+ 
+  7458        |     |     |     +--+ for( p = 1 ; p &lt; s.length() ; p++ ){    //s[0]には&quot;,&quot;が入っているため，ループ変数は1からスタート | 
+  7459        |     |     |     |  |                                                                                                  | 
+              |     |     |     |  +--+-----------------------------------------------------------------------------------------------+ 
+  7460        |     |     |     |     +--- c = s[p];
+              |     |     |     |     |  +------------------+ 
+  7461        |     |     |     |     +--+ if( c == ',' ){  | 
+              |     |     |     |     |  +--+---------------+ 
+  7462        |     |     |     |     |     +--- //1つ前の','の後の文字から，次の','の前の文字までを抜き出す
+  7463        |     |     |     |     |     +--- s2 = s.substr(strPoint+1,p-strPoint-1);
+  7464        |     |     |     |     |     |    
+              |     |     |     |     |     |  +--------------------------+ 
+  7465        |     |     |     |     |     +--+ if( s2 == Token-&gt;Str ){  | 
+              |     |     |     |     |     |  +--+-----------------------+ 
+  7466        |     |     |     |     |     |     +--- paraDef2 = true;
+              |     |     |     |     |     |   +-+---+ 
+  7467        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  7468        |     |     |     |     |     |    
+  7469        |     |     |     |     |     +--- strPoint = p;
+              |     |     |     |     |   +-+---+ 
+  7470        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+---------------------------------+ 
+  7471        |     |     |     |     |   |  else if( p == s.length() - 1 ){  | 
+              |     |     |     |     |   +-+---------------------------------+ 
+  7472        |     |     |     |     |     +--- //1つ前の','の後の文字から，最後の文字までを抜き出す
+  7473        |     |     |     |     |     +--- s2 = s.substr(strPoint+1);
+  7474        |     |     |     |     |     |    
+              |     |     |     |     |     |  +--------------------------+ 
+  7475        |     |     |     |     |     +--+ if( s2 == Token-&gt;Str ){  | 
+              |     |     |     |     |     |  +--+-----------------------+ 
+  7476        |     |     |     |     |     |     +--- paraDef2 = true;
+              |     |     |     |     |     |   +-+---+ 
+  7477        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  7478        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  7479        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7480        |     |     |     +--- //引数の変数との比較　ここまで
+  7481        |     |     |     |                                   
+  7482        |     |     |     |    //引数以外の変数との比較       
+              |     |     |     |  +----------------------------------------------+ 
+  7483        |     |     |     +--+ for( k = 0 ; k &lt; ArgValList-&gt;Count ; k++ ){  | 
+              |     |     |     |  +--+-------------------------------------------+ 
+              |     |     |     |     |  +--------------------------------------+ 
+  7484        |     |     |     |     +--+ if( ArgValList-&gt;Strings[k] != &quot;&quot; ){  | 
+              |     |     |     |     |  +--+-----------------------------------+ 
+              |     |     |     |     |     |  +------------+ 
+  7485        |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |   +-+---+ 
+  7486        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  7487        |     |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[k];
+  7488        |     |     |     |     |    
+              |     |     |     |     |  +------------------------------------+ 
+  7489        |     |     |     |     +--+ if( ValData-&gt;Str == Token-&gt;Str ){  | 
+              |     |     |     |     |  +--+---------------------------------+ 
+  7490        |     |     |     |     |     +--- k = ArgValList-&gt;Count;
+  7491        |     |     |     |     |     +--- paraDef2 = true;
+              |     |     |     |     |   +-+---+ 
+  7492        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  7493        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7494        |     |     |     +--- //引数以外の変数との比較　ここまで
+  7495        |     |     |     |    /*---------------------------------------------------------------------------------------------*/  
+  7496        |     |     |     |                                                                                                       
+  7497        |     |     |     |    //このif文の中で自動宣言を行う                                                                     
+              |     |     |     |  +------------------------------+ 
+  7498        |     |     |     +--+ if( !paraDef &amp;&amp; !paraDef2 ){ | 
+              |     |     |     |  +--+---------------------------+ 
+  7499        |     |     |     |     +--- //現在のトークンの前にある改行を探すため，デクリメントしていく
+  7500        |     |     |     |     |    //k &gt; 0 という終了条件だが，&quot;\n&quot;が見つかったらループを抜ける   
+              |     |     |     |     |  +--------------------------------+ 
+  7501        |     |     |     |     +--+ for( k = j - 1 ; k &gt; 0 ; k-- ) | 
+  7502        |     |     |     |     |  | {                              | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  7503        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[k];
+  7504        |     |     |     |     |     |    
+              |     |     |     |     |     |  +------------------------------+ 
+  7505        |     |     |     |     |     +--+ if( Token-&gt;OrgStr == &quot;\n&quot; ){ | 
+              |     |     |     |     |     |  +--+---------------------------+ 
+  7506        |     |     |     |     |     |     +--- s = &quot;&quot;;
+  7507        |     |     |     |     |     |     |    
+  7508        |     |     |     |     |     |     +--- //改行が見つかったら，改行後のトークンからTokenまでのトークンを
+  7509        |     |     |     |     |     |     |    //取得して1つの文字列とする（型の宣言から取得したいため）        
+              |     |     |     |     |     |     |  +----------------------------------------+ 
+  7510        |     |     |     |     |     |     +--+ for( l = k + 1 ; l &lt;= tokPoint ; l++ ) | 
+  7511        |     |     |     |     |     |     |  | {                                      | 
+              |     |     |     |     |     |     |  +--+-------------------------------------+ 
+  7512        |     |     |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[l];
+  7513        |     |     |     |     |     |     |     |    
+  7514        |     |     |     |     |     |     |     +--- //「変数名」以外のトークンを除去
+  7515        |     |     |     |     |     |     |     |    //「変数名」のトークンは，最初に型宣言があるため，型のトークンかどうかで判断                                         
+  7516        |     |     |     |     |     |     |     |    //if( Token-&gt;Str == &quot;integer&quot; || Token-&gt;Str == &quot;real&quot; || Token-&gt;Str == &quot;double&quot; || Token-&gt;Str == &quot;doubleprecision&quot;   
+  7517        |     |     |     |     |     |     |     |    //      || Token-&gt;Str == &quot;character&quot; || Token-&gt;Str == &quot;logical&quot; || Token-&gt;Str == &quot;complex&quot; ){                        
+              |     |     |     |     |     |     |     |  +------------------------------------------------------------------------------------------------------------+ 
+  7518        |     |     |     |     |     |     |     +--+ if( Token-&gt;TokId == tid_INTEGER || Token-&gt;TokId == tid_REAL || Token-&gt;TokId == tid_DOUBLEPRECISION         | 
+  7519        |     |     |     |     |     |     |     |  |         || Token-&gt;TokId == tid_CHARACTER || Token-&gt;TokId == tid_LOGICAL || Token-&gt;TokId == tid_COMPLEX ){  | 
+              |     |     |     |     |     |     |     |  +--+---------------------------------------------------------------------------------------------------------+ 
+  7520        |     |     |     |     |     |     |     |     +--- display = true;
+              |     |     |     |     |     |     |     |   +-+---+ 
+  7521        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |  +----------------+ 
+  7522        |     |     |     |     |     |     |     +--+ if( display ){ | 
+              |     |     |     |     |     |     |     |  +--+-------------+ 
+              |     |     |     |     |     |     |     |     |  +--------------------+ 
+  7523        |     |     |     |     |     |     |     |     +--+ if( l == k + 1 ){  | 
+              |     |     |     |     |     |     |     |     |  +--+-----------------+ 
+  7524        |     |     |     |     |     |     |     |     |     +--- s += Token-&gt;Str;
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  7525        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |     |     |   +-+-------+ 
+  7526        |     |     |     |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |     |     |     |   +-+-------+ 
+  7527        |     |     |     |     |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |     |     |     |   +-+---+ 
+  7528        |     |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+  7529        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  7530        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+  7531        |     |     |     |     |     |     |    
+  7532        |     |     |     |     |     |     +--- //Tokenの次に','がある場合,変数が続くことがわかる
+  7533        |     |     |     |     |     |     |    //その変数もまとめて宣言させるため,このタイミングでは宣言させない  
+  7534        |     |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[l];
+              |     |     |     |     |     |     |  +--------------------------+ 
+  7535        |     |     |     |     |     |     +--+ if( Token-&gt;Str == &quot;,&quot; )  | 
+              |     |     |     |     |     |     |  +--+-----------------------+ 
+              |     |     |     |     |     |     |     |  +--------+ 
+  7535        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |        +--------+ 
+  7536        |     |     |     |     |     |     |    
+              |     |     |     |     |     |     |  +----------------+ 
+  7537        |     |     |     |     |     |     +--+ if( display ){ | 
+              |     |     |     |     |     |     |  +--+-------------+ 
+  7538        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;      %s\n&quot;, s.c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  7539        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |  +--------+ 
+  7540        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  7541        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  7542        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  7543        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7544        |     |     |     |    
+  7545        |     |     |     +--- //TokenとToken2の比較が終了したため，次のToken2を取得する
+  7546        |     |     |     |    //そのため，jのforループを強制的に終わらせる               
+  7547        |     |     |     +--- j = TokenStartPos;
+              |     |     |   +-+---+ 
+  7548        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  7549        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7550        |   |  }  | 
+              |   +-----+ 
+  7551        +--- //
+  7552        |    //ここまで                                                                                                                                                             
+  7553        |    //                                                                                                                                                                     
+  7554        |    /********************************************************************************************************************************************************************/ 
+  7555        |                                                                                                                                                                           
+  7556        |    //                                                                                                                                                                     
+  7557        |    // 引数以外の変数の変数宣言を追加する。 Selectの場合のみ有効 Add 2013/03/10                                                                                            
+  7558        |    // DO変数は対象外。DO依存変数は、名前を変えて複数にする。                                                                                                              
+  7559        |    //                                                                                                                                                                     
+  7560        |    //if(TuneKind == tkSelect){ // Select                                                                                                                                  
+              |  +----------------------------------------------------------------+ 
+  7561        +--+ if(TuneKind == tkSelect || TuneKind == tkVariable){ // Select  | 
+              |  +--+-------------------------------------------------------------+ 
+  7562        |     +--- fprintf(fp,&quot;\n&quot;);
+  7563        |     +--- DefPosS = -1;
+  7564        |     +--- s = &quot;&quot;;
+  7565        |     +--- ValDefStr = &quot;&quot;;
+  7566        |     |    
+              |     |  +--------------------------------------------+ 
+  7567        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +----------------------------------------------------------+ 
+  7568        |     |     +--+ if(ArgValList-&gt;Strings[i] != &quot;&quot;){ // 引数の変数は対象外  | 
+              |     |     |  +--+-------------------------------------------------------+ 
+              |     |     |     |  +------------+ 
+  7569        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7570        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7571        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +------------------------------------------+ 
+  7572        |     |     +--+ if(ValData-&gt;DefPosS == -1){ // 定義なし  | 
+              |     |     |  +--+---------------------------------------+ 
+              |     |     |     |  +------------+ 
+  7573        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7574        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------------------------+ 
+  7575        |     |     +--+ if(ValData-&gt;DefPosS != DefPosS){    // 違う定義行  | 
+              |     |     |  +--+-------------------------------------------------+ 
+              |     |     |     |  +--------------+ 
+  7576        |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  7577        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  7578        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |   +-+---+ 
+  7579        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +----------------------------------------------------------+ 
+  7580        |     |     |     +--+ for(j = ValData-&gt;DefPosS ; j &lt; ValData-&gt;DefPosE ; j++){  | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+  7581        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7582        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  7583        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  7584        |     |     |     +--- DefPosS = ValData-&gt;DefPosS;
+  7585        |     |     |     +--- ValDefStr = s;
+              |     |     |   +-+---+ 
+  7586        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  7586        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+              |     |     |     |  +--------------+ 
+  7587        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  7588        |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |   +-+---+ 
+  7589        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  7589        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  7590        |     |     |     |     +--- s += &quot;,&quot;;
+              |     |     |     |   +-+---+ 
+  7591        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  7592        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------+ 
+  7593        |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  7594        |     |     |     +--- s = ValDefStr;
+              |     |     |   +-+---+ 
+  7595        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7596        |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |  +--------------------------------------------------------------------+ 
+  7597        |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+  7598        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  7599        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |   +-+---+ 
+  7600        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  7601        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+  7602        |     +--+ if(s != &quot;&quot;){ | 
+              |     |  +--+-----------+ 
+  7603        |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  7604        |     |     +--- s = &quot;&quot;;
+              |     |   +-+---+ 
+  7605        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7606        |   |  }  | 
+              |   +-----+ 
+  7607        +--- fprintf(fp,&quot;\n&quot;);
+  7608        +--- fprintf(fp,&quot;      select case(iusw1)\n&quot;);
+  7609        |    
+              |  +------------------------------------+ 
+  7610        +--+ for(i = 1 ; i &lt;= CaseCount ; i++){ | 
+              |  +--+---------------------------------+ 
+              |     |  +--------------------+ 
+  7611        |     +--+ if((i % 10) == 0){ | 
+              |     |  +--+-----------------+ 
+  7612        |     |     +--- //          MainF-&gt;print(&quot;Output Code &quot;+IntToStr(i)+&quot; / &quot;+IntToStr(CaseCount));
+              |     |     |  +------------------------+ 
+  7613        |     |     +--+ if(MainF-&gt;CloseReqF){  | 
+              |     |     |  +--+---------------------+ 
+              |     |     |     |  +----------+ 
+  7614        |     |     |     +--+ return;  | 
+              |     |     |     |  +----------+ 
+              |     |     |   +-+---+ 
+  7615        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  7616        |     |   |  }  | 
+              |     |   +-----+ 
+  7617        |     +--- fprintf(fp,&quot;        case(%d)\n&quot;,i);
+  7618        |     +--- s = &quot;&quot;;
+              |     |  +--------------------------------------------+ 
+  7619        |     +--+ for(j = 0 ; j &lt; ArgValList-&gt;Count ; j++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+  7620        |     |     +--+ if(ArgValList-&gt;Strings[j] == &quot;&quot;){  | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +------------+ 
+  7621        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  7622        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7623        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[j];
+              |     |     |  +--------------+ 
+  7624        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  7625        |     |     |     +--- s += &quot;, &quot;;
+              |     |     |   +-+---+ 
+  7626        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  7627        |     |     +--- s += ValData-&gt;Str;
+              |     |   +-+---+ 
+  7628        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------------------+ 
+  7629        |     +--+ if(TuneKind == tkSelect){ // Select  | 
+              |     |  +--+-----------------------------------+ 
+  7630        |     |     +--- // Select時は、ソースコード（NestしたRegionがあれば置換する）
+  7631        |     |     |    // さらに、先に別のネストがある可能性もあるので注意            
+  7632        |     |     +--- OutputSelectCaseExecCode_Fortran(fp,i);
+              |     |   +-+---+ 
+  7633        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------------------------------------------------------------------+ 
+  7633        |     |   |  else{  // それ以外のUnRollやフィージョン等は、サブルーチン集となる | 
+              |     |   +-+-------------------------------------------------------------------+ 
+  7634        |     |     +--- sprintf(cs,&quot;           call %s_%d(&quot;,FuncName.c_str(),i);
+  7635        |     |     +--- s = cs + s + &quot;)&quot;;
+  7636        |     |     +--- s = SepLongStr(s);
+  7637        |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+              |     |   +-+---+ 
+  7638        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  7639        |   |  }  | 
+              |   +-----+ 
+  7640        +--- fprintf(fp,&quot;      end select\n&quot;);
+  7641        +--- fprintf(fp,&quot;\n&quot;);
+  7642        +--- fprintf(fp,&quot;      return\n&quot;);
+              |  +------------------------------------------------+ 
+  7643        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+  7644        |     +--- fprintf(fp,&quot;      end subroutine %s\n&quot;,FuncName.c_str());
+              |   +-+---+ 
+  7645        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+  7645        |   |  else{  | 
+              |   +-+-------+ 
+  7646        |     +--- fprintf(fp,&quot;      end\n&quot;); // Change 2013/06/20
+              |   +-+---+ 
+  7647        |   |  }  | 
+              |   +-----+ 
+  7648        +--- fprintf(fp,&quot;\n&quot;);
+  7649        +--- fprintf(fp,&quot;\n&quot;);
+  7650        |    
+              |  +--------------------+ 
+  7651        +--+ switch(TuneKind){  | 
+              |  +--+-----------------+ 
+              |     +-----------------------------------------------------+ 
+  7652        |     |  case tkUnroll: // UnRoll時は、サブルーチン集となる | 
+              |     +-----------------------------------------------------+ 
+  7653        |     +--- OutputUnrollExecCode_Fortran(fp);
+              |     |  +--------+ 
+  7654        |     +--+ break; | 
+              |     |  +--------+ 
+              |     +-------------------------------------------------+ 
+  7655        |     |  case tkLoopFusionSplit:     // LoopFusionSplit | 
+              |     +-------------------------------------------------+ 
+              |     +---------------------+ 
+  7656        |     |  case tkLoopFusion: | 
+              |     +---------------------+ 
+              |     +---------------------+ 
+  7657        |     |  case tkLoopSplit:  | 
+              |     +---------------------+ 
+              |     +-------------------------+ 
+  7658        |     |  case tkRotationOrder:  | 
+              |     +-------------------------+ 
+  7659        |     +--- OutputLoopFusionExecCode_Fortran(fp);
+              |     |  +--------+ 
+  7660        |     +--+ break; | 
+              |     |  +--------+ 
+              |     +-----------+ 
+  7661        |     |  default: | 
+              |     +-----------+ 
+              |     |  +--------+ 
+  7662        |     +--+ break; | 
+              |     |  +--------+ 
+              |   +-+---+ 
+  7663        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  7664      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

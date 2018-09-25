@@ -1,0 +1,142 @@
+
+<html>
+<head>
+<title>ChangeFromOrgStr メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.6. ChangeFromOrgStr メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>ChangeFromOrgStr</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11408</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string ChangeFromOrgStr ( string OrgStr , string Str )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OrgStrの改行やタブ、スペースなどは、そのままの形として、Strを追加した文字<br>列を返す。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>OrgStr<br>Str</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_44.htm">TTuneRegion::OutputUnroll_DoBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_44.htm">10311</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_45.htm">TTuneRegion::OutputUnroll_DoBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------+ 
+ 11408  +--+ string TTuneRegion::ChangeFromOrgStr(string OrgStr,string Str) | 
+ 11409     | {                                                              | 
+           +--+-------------------------------------------------------------+ 
+ 11410        +--- int i;
+ 11411        +--- string s;
+ 11412        |    
+ 11413        +--- s = &quot;&quot;;
+              |  +----------------------------------------------+ 
+ 11414        +--+ for(i = 0 ; i &lt; (int)OrgStr.length() ; i++){ | 
+              |  +--+-------------------------------------------+ 
+              |     |  +------------------------+ 
+ 11415        |     +--+ if(OrgStr[i] &lt;= ' '){  | 
+              |     |  +--+---------------------+ 
+ 11416        |     |     +--- s += OrgStr[i];
+              |     |   +-+---+ 
+ 11417        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------+ 
+ 11417        |     |   |  else if(Str != &quot;&quot;){  | 
+              |     |   +-+---------------------+ 
+ 11418        |     |     +--- s += Str;
+ 11419        |     |     +--- Str = &quot;&quot;;
+              |     |   +-+---+ 
+ 11420        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11421        |   |  }  | 
+              |   +-----+ 
+              |  +----------------+ 
+ 11422        +--+ if(Str != &quot;&quot;){ | 
+              |  +--+-------------+ 
+ 11423        |     +--- s += Str;
+              |   +-+---+ 
+ 11424        |   |  }  | 
+              |   +-----+ 
+              |  +------------+ 
+ 11425        +--+ return s;  | 
+              |  +------------+ 
+            +-+---+ 
+ 11426      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

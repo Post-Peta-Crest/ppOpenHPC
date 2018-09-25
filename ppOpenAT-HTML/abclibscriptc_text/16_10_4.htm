@@ -1,0 +1,150 @@
+
+<html>
+<head>
+<title>CalNewRefValIdx メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.4. CalNewRefValIdx メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>CalNewRefValIdx</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11353</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int CalNewRefValIdx ( int RefValIdx , unsigned int UseDoRefValBits , int AndRefValIdx , unsigned int AndUseDoRefValBits , int * Count )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>新たに分割が発生する場合のNewRefValIdxを求める。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>新たに求めた RefValIdx</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>RefValIdx　現在の変数Idx<br>UseDoRefValBits ＤＯのUnRoll対象となっているかのBits<br>AndRefValIdx    今回変化させるＩｄｘ<br>AndUseDoRefValBits  今回変化させ変数の対象Bits<br>Count   各変数のカウント数の配列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_44.htm">TTuneRegion::OutputUnroll_DoBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_44.htm">10311</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_45.htm">TTuneRegion::OutputUnroll_DoBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_46.htm">TTuneRegion::OutputUnroll_IfBlock_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_46.htm">10955</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_47.htm">TTuneRegion::OutputUnroll_IfBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_47.htm">10802</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------------+ 
+ 11353  +--+ int TTuneRegion::CalNewRefValIdx(int RefValIdx,unsigned int UseDoRefValBits, | 
+ 11354     |             int AndRefValIdx,unsigned int AndUseDoRefValBits,int *Count)     | 
+ 11355     | {                                                                            | 
+           +--+---------------------------------------------------------------------------+ 
+ 11356        +--- int i,Total,NewRefValIdx;
+ 11357        +--- int cc[32];
+ 11358        +--- unsigned int Bits;
+ 11359        |    
+ 11360        +--- // RefValIdxでの各変数Idxの計算
+ 11361        +--- Bits = UseDoRefValBits;
+              |  +------------------------------+ 
+ 11362        +--+ for(i = 31 ; i &gt;= 0 ; i--){  | 
+              |  +--+---------------------------+ 
+              |     |  +------------------------------+ 
+ 11363        |     +--+ if((Bits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+---------------------------+ 
+ 11364        |     |     +--- cc[i] = RefValIdx % Count[i];
+ 11365        |     |     +--- RefValIdx /= Count[i];
+              |     |   +-+---+ 
+ 11366        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11367        |   |  }  | 
+              |   +-----+ 
+ 11368        +--- // AndRefValIdxでの各変数Idxの計算
+ 11369        +--- Bits = AndUseDoRefValBits;
+              |  +------------------------------+ 
+ 11370        +--+ for(i = 31 ; i &gt;= 0 ; i--){  | 
+              |  +--+---------------------------+ 
+              |     |  +------------------------------+ 
+ 11371        |     +--+ if((Bits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+---------------------------+ 
+ 11372        |     |     +--- cc[i] = AndRefValIdx % Count[i];
+ 11373        |     |     +--- AndRefValIdx /= Count[i];
+              |     |   +-+---+ 
+ 11374        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11375        |   |  }  | 
+              |   +-----+ 
+ 11376        +--- // NewRefValIdxの生成
+ 11377        +--- Bits = UseDoRefValBits | AndUseDoRefValBits;
+ 11378        +--- Total = 1;
+ 11379        +--- NewRefValIdx = 0;
+              |  +------------------------------+ 
+ 11380        +--+ for(i = 31 ; i &gt;= 0 ; i--){  | 
+              |  +--+---------------------------+ 
+              |     |  +------------------------------+ 
+ 11381        |     +--+ if((Bits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+---------------------------+ 
+ 11382        |     |     +--- NewRefValIdx += cc[i] * Total;
+ 11383        |     |     +--- Total *= Count[i];
+              |     |   +-+---+ 
+ 11384        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11385        |   |  }  | 
+              |   +-----+ 
+              |  +----------------------+ 
+ 11386        +--+ return NewRefValIdx; | 
+              |  +----------------------+ 
+            +-+---+ 
+ 11387      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

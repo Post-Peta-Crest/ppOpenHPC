@@ -1,0 +1,657 @@
+
+<html>
+<head>
+<title>MakeFunctionCode_Fortran77 メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.11. MakeFunctionCode_Fortran77 メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>MakeFunctionCode_Fortran77</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2252</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void MakeFunctionCode_Fortran77 ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_(元のソースファイル名).f を作成する。<br><br>Region（一番外側）を SetParam() call Sub() に置き換える。<br>また、NestしたRegion内は、コメントとして、 TokenEndPosまでSkipする。<br>NestRegion内の sct_Commandも、Nest先のRegionでの処理となる。<br>Fortran77用<br><br> ・sct_command の変換<br> ・sct_install ... のブロックをコメントアウト（コメントを残す）</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_4.htm">TScript::GetATExecArgStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_4.htm">663</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>erase</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::fpOutList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>73</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::TokenList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass5::TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TPass5::ValDataList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>70</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------+ 
+  2252  +--+ void TPass5::MakeFunctionCode_Fortran77()  | 
+  2253     | {                                          | 
+           +--+-----------------------------------------+ 
+  2254        +--- int i;
+  2255        +--- TToken *Token;
+  2256        +--- TScript *Script;
+  2257        +--- string s;
+  2258        +--- string LineStr;
+  2259        +--- TTuneRegion *TuneRegion;
+  2260        +--- bool IncludeReqF = true;
+  2261        +--- int LastLineNo = -1;
+  2262        +--- FILE *fpOut;
+  2263        +--- int SrcFileIdx;
+  2264        |    
+              |  +----------------------------------------------------------------------------------+ 
+  2265        +--+ for(SrcFileIdx = 0 ; SrcFileIdx &lt; MainF-&gt;SrcFileNameList.Count ; SrcFileIdx++){  | 
+              |  +--+-------------------------------------------------------------------------------+ 
+  2266        |     +--- fpOut = (FILE *)fpOutList.Items[SrcFileIdx];
+  2267        |     +--- LineStr = &quot;&quot;;
+              |     |  +------------------------------------------+ 
+  2268        |     +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |     |  +--+---------------------------------------+ 
+  2269        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +----------------------------------+ 
+  2270        |     |     +--+ if(Token-&gt;LineNo != LastLineNo){ | 
+              |     |     |  +--+-------------------------------+ 
+  2271        |     |     |     +--- LastLineNo = Token-&gt;LineNo;
+              |     |     |     |  +--------------------+ 
+  2272        |     |     |     +--+ if(LineStr != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------------+ 
+  2273        |     |     |     |     +--- s = SepLongStr(LineStr);
+  2274        |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  2275        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  2276        |     |     |     +--- LineStr = &quot;&quot;;
+              |     |     |   +-+---+ 
+  2277        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------+ 
+  2278        |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |  +--+-------------------------+ 
+  2279        |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |     |  +------------------------------------+ 
+  2280        |     |     |     +--+ if(Script-&gt;ScRegion == scr_start){ | 
+              |     |     |     |  +--+---------------------------------+ 
+  2281        |     |     |     |     +--- // Codeの置き換え
+  2282        |     |     |     |     +--- TuneRegion = (TTuneRegion *)Script-&gt;TuneRegion;
+              |     |     |     |     |  +----------------------------------+ 
+  2283        |     |     |     |     +--+ if(TuneRegion-&gt;TokenEndPos &gt; i){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +----------------------------------+ 
+  2284        |     |     |     |     |     +--+ if(!TuneRegion-&gt;UsedDynPefThis){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+  2285        |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,0); // 置き換えコードを出力
+              |     |     |     |     |     |   +-+---+ 
+  2286        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  2286        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  2287        |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,3); // 置き換えコードを出力
+              |     |     |     |     |     |   +-+---+ 
+  2288        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2289        |     |     |     |     |     +--- i = TuneRegion-&gt;TokenEndPos;    // Top Regionの中をスキップする。
+              |     |     |     |     |     |  +------------+ 
+  2290        |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |   +-+---+ 
+  2291        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  2292        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------------+ 
+  2292        |     |     |     |   |  else if(Script-&gt;ScType == sct_DynPefThis){ | 
+              |     |     |     |   +-+-------------------------------------------+ 
+  2293        |     |     |     |     +--- //
+  2294        |     |     |     |     |    // Dynamicの実行 SetParam() を指定 
+  2295        |     |     |     |     |    //                                 
+  2296        |     |     |     |     +--- TScValData *ScValData = NULL;
+  2297        |     |     |     |     +--- int kk;
+  2298        |     |     |     |     |    
+              |     |     |     |     |  +----------------------------------------+ 
+  2299        |     |     |     |     +--+ if(Script-&gt;ScValDataList-&gt;Count &gt; 0){  | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  2300        |     |     |     |     |     +--- ScValData = (TScValData *)Script-&gt;ScValDataList-&gt;Items[0];
+  2301        |     |     |     |     |     +--- s = ScValData-&gt;Str; // ＴＲ名 &quot;&quot;付き
+              |     |     |     |     |     |  +--------------------------------------+ 
+  2302        |     |     |     |     |     +--+ while(s.find(&quot;\&quot;&quot;) != string::npos){ | 
+              |     |     |     |     |     |  +--+-----------------------------------+ 
+  2302        |     |     |     |     |     |     +--- s.erase(s.find(&quot;\&quot;&quot;),1);
+              |     |     |     |     |     |   +-+---+ 
+  2302        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2302        |     |     |     |     |     +--- ;
+              |     |     |     |     |     |  +--------------------------------------+ 
+  2303        |     |     |     |     |     +--+ while(s.find(&quot;\'&quot;) != string::npos){ | 
+              |     |     |     |     |     |  +--+-----------------------------------+ 
+  2303        |     |     |     |     |     |     +--- s.erase(s.find(&quot;\'&quot;),1);
+              |     |     |     |     |     |   +-+---+ 
+  2303        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2303        |     |     |     |     |     +--- ;
+              |     |     |     |     |     |  +--------------------------------------------------+ 
+  2304        |     |     |     |     |     +--+ for(kk = 0 ; kk &lt; TuneRegionList-&gt;Count ; kk++){ | 
+              |     |     |     |     |     |  +--+-----------------------------------------------+ 
+  2305        |     |     |     |     |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[kk];
+              |     |     |     |     |     |     |  +--------------------------------------------------+ 
+  2306        |     |     |     |     |     |     +--+ if(LowerCase(s) == LowerCase(TuneRegion-&gt;Name)){ | 
+              |     |     |     |     |     |     |  +--+-----------------------------------------------+ 
+  2307        |     |     |     |     |     |     |     +--- //                          if(CompareText(s,TuneRegion-&gt;Name) == 0){
+  2308        |     |     |     |     |     |     |     +--- TuneRegion-&gt;UsedDynPefThis = true;
+  2309        |     |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,2); // 置き換えコードを出力
+              |     |     |     |     |     |     |   +-+---+ 
+  2310        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  2311        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  2312        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  2313        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------------------+ 
+  2313        |     |     |     |   |  else if(Script-&gt;ScType == sct_ATExec){ // ATExec() | 
+              |     |     |     |   +-+---------------------------------------------------+ 
+  2314        |     |     |     |     +--- /********************************************************/
+  2315        |     |     |     |     |    //                                                         
+  2316        |     |     |     |     |    //Kogakuin Irie                                            
+  2317        |     |     |     |     |    //Fortran90と同じように対応させる（引数の自動追加）        
+  2318        |     |     |     |     |    //追加コードはFortran90の引用                              
+  2319        |     |     |     |     |    //既存コードはコメントアウト                               
+  2320        |     |     |     |     |    //                                                         
+  2321        |     |     |     |     +--- //                  s = &quot;      call &quot;;
+  2322        |     |     |     |     |    //                  for(int j = 1 ; j &lt; Script-&gt;TokStrList-&gt;Count ; j++){  
+  2323        |     |     |     |     |    //                      Token = (TToken *)Script-&gt;TokStrList-&gt;Objects[j];  
+  2324        |     |     |     |     |    //                      s += Trim(Token-&gt;OrgStr);                          
+  2325        |     |     |     |     |    //                  }                                                      
+  2326        |     |     |     |     |    //                  s = SepLongStr(s);                                     
+  2327        |     |     |     |     |    //                  fprintf(fpOut,&quot;%s\n&quot;,s.c_str());                       
+  2328        |     |     |     |     +--- // Script ATExec()部分は、引数追加に置き換える。
+  2329        |     |     |     |     |    // 引数を自動で追加。先頭２つの引数の後は、ArfStrの引数を追加する。  
+  2330        |     |     |     |     +--- string TokStr;
+  2331        |     |     |     |     +--- int ArgCount = 0;
+  2332        |     |     |     |     +--- int BrLevel = 0;
+  2333        |     |     |     |     |    
+  2334        |     |     |     |     +--- s = &quot;      call &quot;;
+              |     |     |     |     |  +--------------------------------------------------------+ 
+  2335        |     |     |     |     +--+ for(int j = 1 ; j &lt; Script-&gt;TokStrList-&gt;Count ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------------------+ 
+  2336        |     |     |     |     |     +--- Token = (TToken *)Script-&gt;TokStrList-&gt;Objects[j];
+              |     |     |     |     |     |  +--------------------+ 
+  2337        |     |     |     |     |     +--+ if(Token == NULL){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +------------+ 
+  2338        |     |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |     |   +-+---+ 
+  2339        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2340        |     |     |     |     |     +--- TokStr = Token-&gt;Str;
+              |     |     |     |     |     |  +--------------------+ 
+  2341        |     |     |     |     |     +--+ if(TokStr == &quot;,&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +--------------------+ 
+  2342        |     |     |     |     |     |     +--+ if(BrLevel == 1){  | 
+              |     |     |     |     |     |     |  +--+-----------------+ 
+  2343        |     |     |     |     |     |     |     +--- ArgCount++;
+              |     |     |     |     |     |     |   +-+---+ 
+  2344        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  2345        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------+ 
+  2346        |     |     |     |     |     +--+ if(TokStr == &quot;(&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+  2347        |     |     |     |     |     |     +--- BrLevel++;
+              |     |     |     |     |     |   +-+---+ 
+  2348        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------+ 
+  2349        |     |     |     |     |     +--+ if(TokStr == &quot;)&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+  2350        |     |     |     |     |     |     +--- BrLevel--;
+              |     |     |     |     |     |     |  +--------------------+ 
+  2351        |     |     |     |     |     |     +--+ if(BrLevel == 0){  | 
+              |     |     |     |     |     |     |  +--+-----------------+ 
+  2352        |     |     |     |     |     |     |     +--- ArgCount++;
+              |     |     |     |     |     |     |     |  +--------+ 
+  2353        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  2354        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  2355        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2356        |     |     |     |     |     +--- s += Trim(Token-&gt;OrgStr);
+              |     |     |     |     |   +-+---+ 
+  2357        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------+ 
+  2358        |     |     |     |     +--+ if(MainF-&gt;Call_ATExec_Script != NULL){ | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  2359        |     |     |     |     |     +--- s += MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;,ArgCount-2);
+              |     |     |     |     |   +-+---+ 
+  2360        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  2361        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  2362        |     |     |     |     |     +--- TScript *Script = new TScript(MainF-&gt;TokenList,0,NULL,ValDataList);
+  2363        |     |     |     |     |     +--- s += Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;,ArgCount-2);
+  2364        |     |     |     |     |     +--- delete Script;
+              |     |     |     |     |   +-+---+ 
+  2365        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  2366        |     |     |     |     +--- s += &quot;)&quot;;
+  2367        |     |     |     |     +--- s = SepLongStr(s);
+  2368        |     |     |     |     +--- fprintf(fpOut,&quot;%s\n&quot;,s.c_str());
+  2369        |     |     |     |     +--- //
+  2370        |     |     |     |     |    //ここまで                                                 
+  2371        |     |     |     |     |    //                                                         
+  2372        |     |     |     |     |    /********************************************************/ 
+              |     |     |     |   +-+---+ 
+  2373        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------+ 
+  2373        |     |     |     |   |  else if(Script-&gt;ScType == sct_None){ | 
+              |     |     |     |   +-+-------------------------------------+ 
+  2374        |     |     |     |     |    
+              |     |     |     |   +-+---+ 
+  2375        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-----------------------------------------+ 
+  2375        |     |     |     |   |  else if(Script-&gt;ScType == sct_command){  | 
+              |     |     |     |   +-+-----------------------------------------+ 
+  2376        |     |     |     |     +--- //
+  2377        |     |     |     |     |    // FORTRAN 90 の式（コマンド）そのまま出力される。     
+  2378        |     |     |     |     |    //                                                     
+  2379        |     |     |     |     |    // ここで、OAT_xxx = の値の所得も行う。                
+  2380        |     |     |     |     |    // 現状では、定数のみが使用可能。（変数や式はエラー）  
+  2381        |     |     |     |     |    //                                                     
+  2382        |     |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[0];
+              |     |     |     |     |  +--------------------------------------------+ 
+  2383        |     |     |     |     +--+ for(int j = 0 ; j &lt; Token-&gt;Indent ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------+ 
+  2384        |     |     |     |     |     +--- s = &quot;  &quot;+s;
+              |     |     |     |     |   +-+---+ 
+  2385        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  2386        |     |     |     |     +--- s = SepLongStr(s);
+  2387        |     |     |     |     +--- fprintf(fpOut,&quot;%s\n&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  2388        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  2388        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  2389        |     |     |     |     +--- s = SepLongStr(Token-&gt;OrgStr);
+  2390        |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  2391        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  2392        |     |     |     +--- //
+  2393        |     |     |     |    //  スクリプトの最後までＳＫＩＰ 
+  2394        |     |     |     |    //                               
+              |     |     |     |  +--------------------------------------+ 
+  2395        |     |     |     +--+ for( ; i &lt; TokenList-&gt;Count ; i++){  | 
+              |     |     |     |  +--+-----------------------------------+ 
+  2396        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |  +----------------------------------+ 
+  2397        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  2398        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  2399        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  2400        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2401        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------------+ 
+  2401        |     |     |   |  else if((Token-&gt;TokId == tid_CALL)&amp;&amp;(MainF-&gt;NoMPIF)){  | 
+              |     |     |   +-+-------------------------------------------------------+ 
+  2402        |     |     |     +--- //
+  2403        |     |     |     |    //  MPI未使用の場合は、 Callの次が　MPIxxx　であれば 
+  2404        |     |     |     |    //  tid_LineEndまでコメントにする。 2009/03/10       
+  2405        |     |     |     |    //                                                   
+  2406        |     |     |     +--- int cc = 0;
+  2407        |     |     |     +--- bool NewLineF = true;
+  2408        |     |     |     +--- string FuncName,s,s1,s2;
+  2409        |     |     |     |    
+              |     |     |     |  +------------------------------+ 
+  2410        |     |     |     +--+ if(i &lt; TokenList-&gt;Count-1){  | 
+              |     |     |     |  +--+---------------------------+ 
+  2411        |     |     |     |     +--- FuncName = LowerCase(Trim(((TToken *)TokenList-&gt;Items[i+1])-&gt;OrgStr));
+  2412        |     |     |     |     +--- cc = FuncName.find(&quot;mpi&quot;);
+              |     |     |     |   +-+---+ 
+  2413        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------+ 
+  2414        |     |     |     +--+ if(cc == 1){ | 
+              |     |     |     |  +--+-----------+ 
+              |     |     |     |     |  +----------------------------------+ 
+  2415        |     |     |     |     +--+ for(;i &lt; TokenList-&gt;Count;i++){  | 
+              |     |     |     |     |  +--+-------------------------------+ 
+  2416        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |     |  +----------------+ 
+  2417        |     |     |     |     |     +--+ if(NewLineF){  | 
+              |     |     |     |     |     |  +--+-------------+ 
+  2418        |     |     |     |     |     |     +--- NewLineF = false;
+  2419        |     |     |     |     |     |     +--- s = &quot;c&quot;+Token-&gt;OrgStr;
+              |     |     |     |     |     |   +-+---+ 
+  2420        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  2420        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  2421        |     |     |     |     |     |     +--- s = Token-&gt;OrgStr;
+              |     |     |     |     |     |   +-+---+ 
+  2422        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  2423        |     |     |     |     |     +--- cc = s.find(&quot;\n&quot;);
+              |     |     |     |     |     |  +--------------+ 
+  2424        |     |     |     |     |     +--+ if(cc &lt; 0){  | 
+              |     |     |     |     |     |  +--+-----------+ 
+  2425        |     |     |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |   +-+---+ 
+  2426        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  2426        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  2427        |     |     |     |     |     |     +--- s1 = s.substr(0,cc);
+  2428        |     |     |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,SepLongStr(s1).c_str());
+  2429        |     |     |     |     |     |     +--- s2 = s.substr(cc,s.length());
+              |     |     |     |     |     |     |  +----------------+ 
+  2430        |     |     |     |     |     |     +--+ if(s2 != &quot;&quot;){  | 
+              |     |     |     |     |     |     |  +--+-------------+ 
+  2431        |     |     |     |     |     |     |     +--- fprintf(fpOut,&quot;c%s&quot;,SepLongStr(s2).c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  2432        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  2433        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +----------------------------------+ 
+  2434        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  2435        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  2436        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  2437        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  2438        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  2438        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  2439        |     |     |     |     +--- s = SepLongStr(Token-&gt;OrgStr);
+  2440        |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  2441        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2442        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  2442        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  2443        |     |     |     +--- LineStr += Token-&gt;OrgStr;
+  2444        |     |     |     +--- //              s = SepLongStr(Token-&gt;OrgStr);
+  2445        |     |     |     |    //              fprintf(fpOut,&quot;%s&quot;,s.c_str()); 
+              |     |     |   +-+---+ 
+  2446        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------------------------------------------+ 
+  2447        |     |     +--+ if(Token-&gt;TokId == tid_END){ // 最初のEndの後でInclude （元と同じ）  | 
+              |     |     |  +--+-------------------------------------------------------------------+ 
+              |     |     |     |  +--------------------+ 
+  2448        |     |     |     +--+ if(LineStr != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------------+ 
+  2449        |     |     |     |     +--- s = SepLongStr(LineStr);
+  2450        |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  2451        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  2452        |     |     |     +--- LineStr = &quot;&quot;;
+              |     |     |     |  +------------------+ 
+  2453        |     |     |     +--+ if(IncludeReqF){ | 
+              |     |     |     |  +--+---------------+ 
+  2454        |     |     |     |     +--- IncludeReqF = false;
+  2455        |     |     |     |     +--- fprintf(fpOut,&quot;\n&quot;);
+  2456        |     |     |     |     +--- fprintf(fpOut,&quot;\n&quot;);
+  2457        |     |     |     |     +--- fprintf(fpOut,&quot;      include 'OAT_ControlRoutines.f'\n&quot;);
+  2458        |     |     |     |     +--- fprintf(fpOut,&quot;      include 'OAT_DynamicRoutines.f'\n&quot;);
+  2459        |     |     |     |     +--- fprintf(fpOut,&quot;      include 'OAT_InstallRoutines.f'\n&quot;);
+  2460        |     |     |     |     +--- fprintf(fpOut,&quot;      include 'OAT_StaticRoutines.f'\n&quot;);
+              |     |     |     |   +-+---+ 
+  2461        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  2462        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  2463        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2464        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  2465      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

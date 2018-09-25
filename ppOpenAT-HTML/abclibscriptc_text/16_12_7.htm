@@ -1,0 +1,220 @@
+
+<html>
+<head>
+<title>ResetLogDataFile メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.12.7. ResetLogDataFile メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>ResetLogDataFile</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>Visual.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>104</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TVisualDM</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void ResetLogDataFile ( TTuneRegion * TuneRegion )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>参照するLogデータをクリアする。<br>各TuneRegionに対してのダミーのヘッダを持ったファイルが作成される。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TuneRegion</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_12_4.htm">TVisualDM::Exec</a></td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_4.htm">63</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>fclose</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>fopen</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TVisualDM::DirName</td>
+<td nowrap><a href="5_17.htm">Visual.h</a></td>
+<td nowrap>58</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TVisualDM::TuneRegionList</td>
+<td nowrap><a href="5_17.htm">Visual.h</a></td>
+<td nowrap>59</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------+ 
+   104  +--+ void TVisualDM::ResetLogDataFile(TTuneRegion *TuneRegion)  | 
+   105     | {                                                          | 
+           +--+---------------------------------------------------------+ 
+   106        +--- int i;
+   107        +--- string DestFileName;
+   108        +--- FILE *fp;
+   109        |    
+              |  +--------------------------+ 
+   110        +--+ if(TuneRegion == NULL){  | 
+              |  +--+-----------------------+ 
+   111        |     +--- DestFileName = DirName + &quot;/OAT/OATLog.dat&quot;;
+              |   +-+---+ 
+   112        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   112        |   |  else{  | 
+              |   +-+-------+ 
+   113        |     +--- DestFileName = DirName + &quot;/OAT/OATLog_&quot;+TuneRegion-&gt;Name+&quot;.dat&quot;;
+              |   +-+---+ 
+   114        |   |  }  | 
+              |   +-----+ 
+   115        +--- fp = fopen(DestFileName.c_str(),&quot;wt&quot;);
+              |  +------------------+ 
+   116        +--+ if(fp == NULL){  | 
+              |  +--+---------------+ 
+   117        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Create Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   118        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   119        |   |  }  | 
+              |   +-----+ 
+              |  +--------------------------+ 
+   120        +--+ if(TuneRegion == NULL){  | 
+              |  +--+-----------------------+ 
+              |     |  +------------------------------------------------+ 
+   121        |     +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |     |  +--+---------------------------------------------+ 
+   122        |     |     +--- fprintf(fp,&quot;0\n&quot;);
+              |     |   +-+---+ 
+   123        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   124        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   124        |   |  else{  | 
+              |   +-+-------+ 
+   125        |     +--- fprintf(fp,&quot;1,NumProces (DummyData)\n&quot;);
+   126        |     +--- fprintf(fp,&quot;100,StartTuneSize (DummyData)\n&quot;);
+   127        |     +--- fprintf(fp,&quot;100,EndTuneSize (DummyData)\n&quot;);
+   128        |     +--- fprintf(fp,&quot;100,SampDist (DummyData)\n&quot;);
+   129        |     +--- fprintf(fp,&quot;-1,EndOfHeader\n&quot;);
+              |   +-+---+ 
+   130        |   |  }  | 
+              |   +-----+ 
+   131        +--- fclose(fp);
+            +-+---+ 
+   132      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

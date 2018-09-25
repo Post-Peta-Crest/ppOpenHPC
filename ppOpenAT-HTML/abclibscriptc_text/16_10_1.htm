@@ -1,0 +1,914 @@
+
+<html>
+<head>
+<title>TTuneRegion クラス説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.1. TTuneRegion クラス説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>クラス名</th>      <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.h</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>143</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>チューニングリージョンクラス<br>各チューニングリージョンごとに生成され、解析に応じてデータが設定される。<br>ソース生成時には、このクラスをアクセスして出力コードが生成される。</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+<pre>
+階層ツリー図
+
+        +-------------+ 
+        | TTuneRegion | 
+        +-------------+ 
+</pre>
+
+<div align="left"><font size="2">　　＋…public派生　♯…protected派生　－…private派生</font></div>
+<p></p>
+メンバ一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>アクセス指定子</th>
+<th nowrap>宣言形式</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>private</td>
+<td nowrap>TPass4 * Pass4</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>145</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>private</td>
+<td nowrap>int CaseIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>148</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>private</td>
+<td nowrap>unsigned int UnRollDoRefValBits</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>149</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>private</td>
+<td nowrap>int UnrollCount [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>151</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>private</td>
+<td nowrap>int DoTokPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>152</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>private</td>
+<td nowrap>int EndDoTokPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>153</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>private</td>
+<td nowrap>string DoValStr [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>154</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>private</td>
+<td nowrap>string DoVal_m [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>155</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>private</td>
+<td nowrap>string DoVal_i [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>156</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>private</td>
+<td nowrap>string DoVal_l [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>157</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>private</td>
+<td nowrap>string DoValName [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>158</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>private</td>
+<td nowrap>int DoValIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>159</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>private</td>
+<td nowrap>int DoValCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>160</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>private</td>
+<td nowrap>char Comment</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>161</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap><a href="16_10_36.htm">private</a></td>
+<td nowrap><a href="16_10_36.htm">void OutputLoopFusionExecCode_Fortran ( FILE * fp )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_36.htm">8004</a></td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap><a href="16_10_51.htm">private</a></td>
+<td nowrap><a href="16_10_51.htm">void OutputUnrollExecCode_Fortran ( FILE * fp )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_51.htm">8599</a></td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap><a href="16_10_50.htm">private</a></td>
+<td nowrap><a href="16_10_50.htm">void OutputUnrollExecCode_C ( FILE * fp , FILE * fpOutHeader )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_50.htm">8945</a></td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap><a href="16_10_13.htm">private</a></td>
+<td nowrap><a href="16_10_13.htm">string GetNewValName ( string BaseName , int Idx , TStringList * ArgValList )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_13.htm">11089</a></td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap><a href="16_10_14.htm">private</a></td>
+<td nowrap><a href="16_10_14.htm">string GetNewValName ( string BaseName , string AddStr , TStringList * ArgValList )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_14.htm">11245</a></td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap><a href="16_10_15.htm">private</a></td>
+<td nowrap><a href="16_10_15.htm">string GetNewValNameForValData ( TValData * ValData , unsigned int UnRollDoRefValBits , int Idx , TStringList * ArgValList )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_15.htm">11171</a></td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap><a href="16_10_10.htm">private</a></td>
+<td nowrap><a href="16_10_10.htm">int GetBitIdx ( unsigned int Bits )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_10.htm">11287</a></td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap><a href="16_10_23.htm">private</a></td>
+<td nowrap><a href="16_10_23.htm">int GetValCountOfBit ( unsigned int Bits , int * Count )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_23.htm">11318</a></td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap><a href="16_10_6.htm">private</a></td>
+<td nowrap><a href="16_10_6.htm">string ChangeFromOrgStr ( string OrgStr , string Str )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_6.htm">11408</a></td>
+</tr>
+<tr>
+<td nowrap>24</td>
+<td nowrap><a href="16_10_11.htm">private</a></td>
+<td nowrap><a href="16_10_11.htm">int GetDoValAddValue ( int RefValIdx , unsigned int UseValBits , int DoValIdx , int * Count )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_11.htm">11455</a></td>
+</tr>
+<tr>
+<td nowrap>25</td>
+<td nowrap><a href="16_10_21.htm">private</a></td>
+<td nowrap><a href="16_10_21.htm">int GetValAddValue ( int RefValIdx , unsigned int UseDoValBits , int DoValIdx , int * Count )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_21.htm">11508</a></td>
+</tr>
+<tr>
+<td nowrap>26</td>
+<td nowrap><a href="16_10_22.htm">private</a></td>
+<td nowrap><a href="16_10_22.htm">int GetValAddValue2 ( int RefValIdx , unsigned int RefDoValBits , unsigned int UnRollDoRefValBits , int DoValIdx , int * Count )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_22.htm">11560</a></td>
+</tr>
+<tr>
+<td nowrap>27</td>
+<td nowrap><a href="16_10_25.htm">private</a></td>
+<td nowrap><a href="16_10_25.htm">void MakeArgValList ( )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_25.htm">726</a></td>
+</tr>
+<tr>
+<td nowrap>28</td>
+<td nowrap><a href="16_10_17.htm">private</a></td>
+<td nowrap><a href="16_10_17.htm">int GetNextSemikoronPos ( int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_17.htm">1917</a></td>
+</tr>
+<tr>
+<td nowrap>29</td>
+<td nowrap><a href="16_10_8.htm">private</a></td>
+<td nowrap><a href="16_10_8.htm">int FindEndDo2 ( TList * TokenList , int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_8.htm">12637</a></td>
+</tr>
+<tr>
+<td nowrap>30</td>
+<td nowrap><a href="16_10_9.htm">private</a></td>
+<td nowrap><a href="16_10_9.htm">int FindEndIf ( TList * TokenList , int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_9.htm">12702</a></td>
+</tr>
+<tr>
+<td nowrap>31</td>
+<td nowrap><a href="16_10_19.htm">private</a></td>
+<td nowrap><a href="16_10_19.htm">string GetPrePostSubregionStr ( int Mode )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_19.htm">12747</a></td>
+</tr>
+<tr>
+<td nowrap>32</td>
+<td nowrap>public</td>
+<td nowrap>TList * TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>33</td>
+<td nowrap>public</td>
+<td nowrap>TList * ValDataList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>188</td>
+</tr>
+<tr>
+<td nowrap>34</td>
+<td nowrap>public</td>
+<td nowrap>int TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>35</td>
+<td nowrap>public</td>
+<td nowrap>int TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>36</td>
+<td nowrap>public</td>
+<td nowrap>string Name</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>192</td>
+</tr>
+<tr>
+<td nowrap>37</td>
+<td nowrap>public</td>
+<td nowrap>string FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>38</td>
+<td nowrap>public</td>
+<td nowrap>string RefValStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>194</td>
+</tr>
+<tr>
+<td nowrap>39</td>
+<td nowrap>public</td>
+<td nowrap>TTuneGroup TuneGroup</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>195</td>
+</tr>
+<tr>
+<td nowrap>40</td>
+<td nowrap>public</td>
+<td nowrap>string TuneGroupName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>196</td>
+</tr>
+<tr>
+<td nowrap>41</td>
+<td nowrap>public</td>
+<td nowrap>TTuneKind TuneKind</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>197</td>
+</tr>
+<tr>
+<td nowrap>42</td>
+<td nowrap>public</td>
+<td nowrap>bool UseAccordingF</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>199</td>
+</tr>
+<tr>
+<td nowrap>43</td>
+<td nowrap>public</td>
+<td nowrap>string AccordingStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>201</td>
+</tr>
+<tr>
+<td nowrap>44</td>
+<td nowrap>public</td>
+<td nowrap>bool UsedDynPefThis</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>202</td>
+</tr>
+<tr>
+<td nowrap>45</td>
+<td nowrap>public</td>
+<td nowrap>int Number</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>205</td>
+</tr>
+<tr>
+<td nowrap>46</td>
+<td nowrap>public</td>
+<td nowrap>TStringList * ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>47</td>
+<td nowrap>public</td>
+<td nowrap>TList * UndefinedArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>208</td>
+</tr>
+<tr>
+<td nowrap>48</td>
+<td nowrap>public</td>
+<td nowrap>int CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>49</td>
+<td nowrap>public</td>
+<td nowrap>TList * ValBitsList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>210</td>
+</tr>
+<tr>
+<td nowrap>50</td>
+<td nowrap>public</td>
+<td nowrap>TList * SubRegionList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>211</td>
+</tr>
+<tr>
+<td nowrap>51</td>
+<td nowrap>public</td>
+<td nowrap>string OffsetStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>214</td>
+</tr>
+<tr>
+<td nowrap>52</td>
+<td nowrap>public</td>
+<td nowrap>TStringList * BaseValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>216</td>
+</tr>
+<tr>
+<td nowrap>53</td>
+<td nowrap>public</td>
+<td nowrap>TStringList * ParamValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>220</td>
+</tr>
+<tr>
+<td nowrap>54</td>
+<td nowrap>public</td>
+<td nowrap>int variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+<tr>
+<td nowrap>55</td>
+<td nowrap>public</td>
+<td nowrap>string variedValName [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>226</td>
+</tr>
+<tr>
+<td nowrap>56</td>
+<td nowrap>public</td>
+<td nowrap>float variedFromValue [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>57</td>
+<td nowrap>public</td>
+<td nowrap>float variedToValue [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>236</td>
+</tr>
+<tr>
+<td nowrap>58</td>
+<td nowrap>public</td>
+<td nowrap>float variedStepValue [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>237</td>
+</tr>
+<tr>
+<td nowrap>59</td>
+<td nowrap>public</td>
+<td nowrap>void * variedValData [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>242</td>
+</tr>
+<tr>
+<td nowrap>60</td>
+<td nowrap>public</td>
+<td nowrap>int FittingDspline</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>248</td>
+</tr>
+<tr>
+<td nowrap>61</td>
+<td nowrap>public</td>
+<td nowrap>int FittingDynamic</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>249</td>
+</tr>
+<tr>
+<td nowrap>62</td>
+<td nowrap>public</td>
+<td nowrap>int FittingType</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>251</td>
+</tr>
+<tr>
+<td nowrap>63</td>
+<td nowrap>public</td>
+<td nowrap>int FittingDegree</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>253</td>
+</tr>
+<tr>
+<td nowrap>64</td>
+<td nowrap>public</td>
+<td nowrap>TList * SampledList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>254</td>
+</tr>
+<tr>
+<td nowrap>65</td>
+<td nowrap>public</td>
+<td nowrap>TGPUOption GPUOption</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>260</td>
+</tr>
+<tr>
+<td nowrap>66</td>
+<td nowrap>public</td>
+<td nowrap>int SplitPointCopyDef_StartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>265</td>
+</tr>
+<tr>
+<td nowrap>67</td>
+<td nowrap>public</td>
+<td nowrap>int SplitPointCopyDef_EndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>266</td>
+</tr>
+<tr>
+<td nowrap>68</td>
+<td nowrap><a href="16_10_28.htm">public</a></td>
+<td nowrap><a href="16_10_28.htm">void MakeSelectData ( int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_28.htm">308</a></td>
+</tr>
+<tr>
+<td nowrap>69</td>
+<td nowrap><a href="16_10_29.htm">public</a></td>
+<td nowrap><a href="16_10_29.htm">void MakeUnrollData ( int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_29.htm">1001</a></td>
+</tr>
+<tr>
+<td nowrap>70</td>
+<td nowrap>public</td>
+<td nowrap>TToken * DoToken [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>278</td>
+</tr>
+<tr>
+<td nowrap>71</td>
+<td nowrap>public</td>
+<td nowrap>TToken * DoValToken [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>279</td>
+</tr>
+<tr>
+<td nowrap>72</td>
+<td nowrap>public</td>
+<td nowrap>int DoStartSPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>280</td>
+</tr>
+<tr>
+<td nowrap>73</td>
+<td nowrap>public</td>
+<td nowrap>int DoStartEPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>281</td>
+</tr>
+<tr>
+<td nowrap>74</td>
+<td nowrap>public</td>
+<td nowrap>int DoEndSPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>282</td>
+</tr>
+<tr>
+<td nowrap>75</td>
+<td nowrap>public</td>
+<td nowrap>int DoEndEPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>283</td>
+</tr>
+<tr>
+<td nowrap>76</td>
+<td nowrap>public</td>
+<td nowrap>int DoStepSPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>284</td>
+</tr>
+<tr>
+<td nowrap>77</td>
+<td nowrap>public</td>
+<td nowrap>int DoStepEPos [ 32 ]</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>285</td>
+</tr>
+<tr>
+<td nowrap>78</td>
+<td nowrap>public</td>
+<td nowrap>int FusionCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>290</td>
+</tr>
+<tr>
+<td nowrap>79</td>
+<td nowrap><a href="16_10_26.htm">public</a></td>
+<td nowrap><a href="16_10_26.htm">void MakeLoopFusionSplitData ( int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_26.htm">1313</a></td>
+</tr>
+<tr>
+<td nowrap>80</td>
+<td nowrap><a href="16_10_27.htm">public</a></td>
+<td nowrap><a href="16_10_27.htm">TList * MakeRotaionOrderSrcTokenList ( )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_27.htm">8515</a></td>
+</tr>
+<tr>
+<td nowrap>81</td>
+<td nowrap>public</td>
+<td nowrap>TList * RotaionOrderList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>295</td>
+</tr>
+<tr>
+<td nowrap>82</td>
+<td nowrap><a href="16_10_16.htm">public</a></td>
+<td nowrap><a href="16_10_16.htm">int GetNextKanmaPos ( int sPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_16.htm">1879</a></td>
+</tr>
+<tr>
+<td nowrap>83</td>
+<td nowrap><a href="16_10_5.htm">public</a></td>
+<td nowrap><a href="16_10_5.htm">void ChackRefDoValF ( int sPos , int ePos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_5.htm">1968</a></td>
+</tr>
+<tr>
+<td nowrap>84</td>
+<td nowrap><a href="16_10_3.htm">public</a></td>
+<td nowrap><a href="16_10_3.htm">void AddArgValListToATExecArgList ( )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_3.htm">2220</a></td>
+</tr>
+<tr>
+<td nowrap>85</td>
+<td nowrap><a href="16_10_53.htm">public</a></td>
+<td nowrap><a href="16_10_53.htm">void SaveAndResetValBits ( int sPos , int ePos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_53.htm">2130</a></td>
+</tr>
+<tr>
+<td nowrap>86</td>
+<td nowrap><a href="16_10_52.htm">public</a></td>
+<td nowrap><a href="16_10_52.htm">void RestoreValBits ( int sPos , int ePos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_52.htm">2182</a></td>
+</tr>
+<tr>
+<td nowrap>87</td>
+<td nowrap><a href="16_10_54.htm">public</a></td>
+<td nowrap><a href="16_10_54.htm">TTuneRegion ( TPass4 * aPass4 , int Pos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_54.htm">67</a></td>
+</tr>
+<tr>
+<td nowrap>88</td>
+<td nowrap><a href="16_10_55.htm">public</a></td>
+<td nowrap><a href="16_10_55.htm">~TTuneRegion ( )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_55.htm">276</a></td>
+</tr>
+<tr>
+<td nowrap>89</td>
+<td nowrap><a href="16_10_12.htm">public</a></td>
+<td nowrap><a href="16_10_12.htm">string GetInfo ( )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_12.htm">1762</a></td>
+</tr>
+<tr>
+<td nowrap>90</td>
+<td nowrap><a href="16_10_41.htm">public</a></td>
+<td nowrap><a href="16_10_41.htm">void OutputSetParamCode_Fortran ( FILE * fp , int TempLineNo )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_41.htm">2358</a></td>
+</tr>
+<tr>
+<td nowrap>91</td>
+<td nowrap><a href="16_10_40.htm">public</a></td>
+<td nowrap><a href="16_10_40.htm">void OutputSetParamCode_C ( FILE * fp , int TempLineNo )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_40.htm">2668</a></td>
+</tr>
+<tr>
+<td nowrap>92</td>
+<td nowrap><a href="16_10_32.htm">public</a></td>
+<td nowrap><a href="16_10_32.htm">void OutputAutoExecCode_Fortran ( FILE * fp )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_32.htm">2878</a></td>
+</tr>
+<tr>
+<td nowrap>93</td>
+<td nowrap><a href="16_10_31.htm">public</a></td>
+<td nowrap><a href="16_10_31.htm">void OutputAutoExecCode_C ( FILE * fp , FILE * fpOutHeader )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_31.htm">5082</a></td>
+</tr>
+<tr>
+<td nowrap>94</td>
+<td nowrap><a href="16_10_34.htm">public</a></td>
+<td nowrap><a href="16_10_34.htm">void OutputExecCode_Fortran ( FILE * fp )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+<tr>
+<td nowrap>95</td>
+<td nowrap><a href="16_10_33.htm">public</a></td>
+<td nowrap><a href="16_10_33.htm">void OutputExecCode_C ( FILE * fp , FILE * fpOutHeader )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_33.htm">7683</a></td>
+</tr>
+<tr>
+<td nowrap>96</td>
+<td nowrap><a href="16_10_43.htm">public</a></td>
+<td nowrap><a href="16_10_43.htm">void OutputSrcCode ( FILE * fp , string IndentStr , int OutMode )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>97</td>
+<td nowrap><a href="16_10_39.htm">public</a></td>
+<td nowrap><a href="16_10_39.htm">void OutputSelectCaseExecCode_Fortran ( FILE * fp , int iusw1 )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_39.htm">7860</a></td>
+</tr>
+<tr>
+<td nowrap>98</td>
+<td nowrap><a href="16_10_38.htm">public</a></td>
+<td nowrap><a href="16_10_38.htm">void OutputSelectCaseExecCode_C ( FILE * fp , int iusw1 )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_38.htm">7933</a></td>
+</tr>
+<tr>
+<td nowrap>99</td>
+<td nowrap><a href="16_10_37.htm">public</a></td>
+<td nowrap><a href="16_10_37.htm">void OutputReplaceSrc ( FILE * fp , void * TargetSubRegion , int iusw1 , bool Skip_Pragma_ACCF )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_37.htm">12094</a></td>
+</tr>
+<tr>
+<td nowrap>100</td>
+<td nowrap><a href="16_10_45.htm">public</a></td>
+<td nowrap><a href="16_10_45.htm">int OutputUnroll_DoBlock_Fortran ( FILE * fp , int TokPos , unsigned int UsedDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>101</td>
+<td nowrap><a href="16_10_44.htm">public</a></td>
+<td nowrap><a href="16_10_44.htm">int OutputUnroll_DoBlock_C ( FILE * fp , int TokPos , unsigned int UsedDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_44.htm">10311</a></td>
+</tr>
+<tr>
+<td nowrap>102</td>
+<td nowrap><a href="16_10_47.htm">public</a></td>
+<td nowrap><a href="16_10_47.htm">int OutputUnroll_IfBlock_Fortran ( FILE * fp , int TokPos , unsigned int UsedDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_47.htm">10802</a></td>
+</tr>
+<tr>
+<td nowrap>103</td>
+<td nowrap><a href="16_10_46.htm">public</a></td>
+<td nowrap><a href="16_10_46.htm">int OutputUnroll_IfBlock_C ( FILE * fp , int TokPos , unsigned int UsedDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_46.htm">10955</a></td>
+</tr>
+<tr>
+<td nowrap>104</td>
+<td nowrap><a href="16_10_49.htm">public</a></td>
+<td nowrap><a href="16_10_49.htm">int OutputUnroll_Line_Fortran ( FILE * fp , int TokPos , unsigned int UseDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>105</td>
+<td nowrap><a href="16_10_48.htm">public</a></td>
+<td nowrap><a href="16_10_48.htm">int OutputUnroll_Line_C ( FILE * fp , int TokPos , unsigned int UseDoRefValBits , int RefValIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+<tr>
+<td nowrap>106</td>
+<td nowrap><a href="16_10_4.htm">public</a></td>
+<td nowrap><a href="16_10_4.htm">int CalNewRefValIdx ( int RefValIdx , unsigned int UseDoRefValBits , int AndRefValIdx , unsigned int AndUseDoRefValBits , int * Count )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_4.htm">11353</a></td>
+</tr>
+<tr>
+<td nowrap>107</td>
+<td nowrap><a href="16_10_20.htm">public</a></td>
+<td nowrap><a href="16_10_20.htm">string GetPrePostSubregionStr ( int Mode , int InControlCode )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_20.htm">12413</a></td>
+</tr>
+<tr>
+<td nowrap>108</td>
+<td nowrap><a href="16_10_18.htm">public</a></td>
+<td nowrap><a href="16_10_18.htm">string GetPrePostBPSetSubregionStr ( int Mode )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_18.htm">12522</a></td>
+</tr>
+<tr>
+<td nowrap>109</td>
+<td nowrap><a href="16_10_30.htm">public</a></td>
+<td nowrap><a href="16_10_30.htm">string Merge_Unroll_Line_C ( string * BaseOutputStr , string LastOutputStr , string * CurLineStr , int AddOprStrPos )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_30.htm">9662</a></td>
+</tr>
+<tr>
+<td nowrap>110</td>
+<td nowrap><a href="16_10_42.htm">public</a></td>
+<td nowrap><a href="16_10_42.htm">void OutputSetParmSrcCode ( FILE * fp , string IndentStr )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_42.htm">11609</a></td>
+</tr>
+<tr>
+<td nowrap>111</td>
+<td nowrap><a href="16_10_7.htm">public</a></td>
+<td nowrap><a href="16_10_7.htm">string ChangePragmaStr ( string OrgStr , int TokPos , int EndTokPos , TStringList * NewValStrList )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_7.htm">12850</a></td>
+</tr>
+<tr>
+<td nowrap>112</td>
+<td nowrap><a href="16_10_24.htm">public</a></td>
+<td nowrap><a href="16_10_24.htm">bool IsATExecArg ( void * ValData )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_24.htm">12909</a></td>
+</tr>
+<tr>
+<td nowrap>113</td>
+<td nowrap><a href="16_10_35.htm">public</a></td>
+<td nowrap><a href="16_10_35.htm">void OutputFusionDo ( string FusionValName , FILE * fp , int DoNest , int FusionIdx )</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_35.htm">12936</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="27_6.htm">TGPUOption</a></td>
+<td nowrap>列挙型</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="27_6.htm">124</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_3_1.htm">TPass4</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_13.htm">pass4.h</a></td>
+<td nowrap><a href="16_3_1.htm">64</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="27_10.htm">TTuneGroup</a></td>
+<td nowrap>列挙型</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="27_10.htm">70</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="27_11.htm">TTuneKind</a></td>
+<td nowrap>列挙型</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="27_11.htm">87</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+
+</body>
+</html>

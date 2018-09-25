@@ -1,0 +1,20 @@
+/*
+	仕様書工房のHTMLレイアウトファイル用スタイルシート
+	
+	背景色などのデフォルトの設定値が定義されています。
+	デフォルトを変更したい場合は、設定値を変更してください。
+*/
+
+/* 背景色 */
+body             { background-color: #FFFFFF }  /* 全てのページ */
+.FrmIndexBGColor { background-color: #B0E0E6 }  /* 分割表示の目次ページ */
+.TitleBGColor    { background-color: #B0E0E6 }  /* 各ページのタイトル */
+th               { background-color: #B0E0E6 }  /* 表のタイトル */
+
+/* フォント */
+.TitleFont { font-size: 12pt; font-weight: 900; font-family: normal } /* 各ページのタイトル */
+
+/* リンク (文字の色) */
+A:link    { color: #000080 } /* たどっていないリンク */
+A:active  { color: #FF0000 } /* 選択したときのリンク */
+A:visited { color: #000080 } /* 既にたどったリンク */

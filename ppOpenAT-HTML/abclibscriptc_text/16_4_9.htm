@@ -1,0 +1,653 @@
+
+<html>
+<head>
+<title>MakeFunctionCode_C メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.9. MakeFunctionCode_C メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>MakeFunctionCode_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>1592</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void MakeFunctionCode_C ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_(元のソースファイル名).c を作成する。<br><br>Region（一番外側）を SetParam() call Sub() に置き換える。<br>また、NestしたRegion内は、コメントとして、 TokenEndPosまでSkipする。<br>NestRegion内の sct_Commandも、Nest先のRegionでの処理となる。<br><br> ・sct_command の変換<br> ・sct_install ... のブロックをコメントアウト（コメントを残す）</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_6.htm">TPass5::Exec</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_6.htm">264</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_4.htm">TScript::GetATExecArgStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_4.htm">663</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_42.htm">TTuneRegion::OutputSetParmSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_42.htm">11609</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>erase</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>strlen</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::fpOutList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>73</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::TokenList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>69</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass5::TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------+ 
+  1592  +--+ void TPass5::MakeFunctionCode_C()  | 
+  1593     | {                                  | 
+           +--+---------------------------------+ 
+  1594        +--- int i;
+  1595        +--- TToken *Token;
+  1596        +--- TScript *Script;
+  1597        +--- string s;
+  1598        +--- TTuneRegion *TuneRegion;
+  1599        +--- int SetDefinePos = 0;
+  1600        +--- bool IncludeReqF = true;
+  1601        +--- int cp;
+  1602        +--- int SrcFileIdx;
+  1603        +--- string SrcFileName;
+  1604        +--- int StartTokenPos,EndTokenPos;
+  1605        +--- FILE *fpOut;
+  1606        |    
+              |  +----------------------------------------------------------------------------------+ 
+  1607        +--+ for(SrcFileIdx = 0 ; SrcFileIdx &lt; MainF-&gt;SrcFileNameList.Count ; SrcFileIdx++){  | 
+              |  +--+-------------------------------------------------------------------------------+ 
+  1608        |     +--- fpOut = (FILE *)fpOutList.Items[SrcFileIdx];
+  1609        |     +--- SrcFileName = MainF-&gt;SrcFileNameList.Strings[SrcFileIdx];
+  1610        |     +--- StartTokenPos = (long)MainF-&gt;SrcFileNameList.Objects[SrcFileIdx];
+              |     |  +--------------------------------------------------+ 
+  1611        |     +--+ if(SrcFileIdx+1 &lt; MainF-&gt;SrcFileNameList.Count){ | 
+              |     |  +--+-----------------------------------------------+ 
+  1612        |     |     +--- EndTokenPos = (long)MainF-&gt;SrcFileNameList.Objects[SrcFileIdx+1];
+              |     |   +-+---+ 
+  1613        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  1613        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  1614        |     |     +--- EndTokenPos = TokenList-&gt;Count;
+              |     |   +-+---+ 
+  1615        |     |   |  }  | 
+              |     |   +-----+ 
+  1616        |     +--- //
+  1617        |     |    // 最初のモジュールの前にグローバル定義を挿入する。  
+  1618        |     |    // #とコメント以外の直前に挿入する。                 
+  1619        |     |    //                                                   
+              |     |  +--------------------------------------------------+ 
+  1620        |     +--+ for(i = StartTokenPos ; i &lt; EndTokenPos ; i++){  | 
+              |     |  +--+-----------------------------------------------+ 
+  1621        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------------------------------------------------------+ 
+  1622        |     |     +--+ if((Token-&gt;TokId &gt;= tid_SharpStart)&amp;&amp;(Token-&gt;TokId &lt;= tid_SharpEnd)){  | 
+              |     |     |  +--+---------------------------------------------------------------------+ 
+              |     |     |     |  +--------------------------------------+ 
+  1623        |     |     |     +--+ for( ; i &lt; TokenList-&gt;Count ; i++){  | 
+              |     |     |     |  +--+-----------------------------------+ 
+  1624        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |  +----------------------------------+ 
+  1625        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  1626        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1627        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1628        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1629        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------------+ 
+  1630        |     |     +--+ if(Token-&gt;TokId &gt;= tid_KeyWordStart){  | 
+              |     |     |  +--+-------------------------------------+ 
+  1631        |     |     |     +--- SetDefinePos = i;
+              |     |     |     |  +--------+ 
+  1632        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+  1633        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1634        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------------------------------+ 
+  1635        |     +--+ for(i = StartTokenPos ; i &lt; EndTokenPos ; i++){  | 
+              |     |  +--+-----------------------------------------------+ 
+  1636        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +------------------------+ 
+  1637        |     |     +--+ if(i == SetDefinePos){ | 
+              |     |     |  +--+---------------------+ 
+  1638        |     |     |     +--- fprintf(fpOut,&quot;#include \&quot;OAT_Routines.h\&quot;\n&quot;);
+              |     |     |     |  +------------------------------------------------------+ 
+  1639        |     |     |     +--+ for(int kk = 0 ; kk &lt; TuneRegionList-&gt;Count ; kk++){ | 
+              |     |     |     |  +--+---------------------------------------------------+ 
+  1640        |     |     |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[kk];
+  1641        |     |     |     |     +--- /******************************************/
+  1642        |     |     |     |     |    //                                           
+  1643        |     |     |     |     |    //Kogakuin Irie                              
+  1644        |     |     |     |     |    //変数の二重宣言を回避するため修正           
+  1645        |     |     |     |     |    //既存コードはコメントアウト                 
+  1646        |     |     |     |     |    //                                           
+  1647        |     |     |     |     +--- //                  s += &quot;int OAT_iusw1_&quot;+TuneRegion-&gt;Name+&quot;;&quot;;
+  1648        |     |     |     |     +--- s = &quot;int OAT_iusw1_&quot;+TuneRegion-&gt;Name+&quot;;&quot;;
+  1649        |     |     |     |     +--- //
+  1650        |     |     |     |     |    //ここまで                                   
+  1651        |     |     |     |     |    //                                           
+  1652        |     |     |     |     |    /******************************************/ 
+  1653        |     |     |     |     +--- fprintf(fpOut,&quot;%s\n&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  1654        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1655        |     |     |     +--- fprintf(fpOut,&quot;\n&quot;);
+              |     |     |   +-+---+ 
+  1656        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------+ 
+  1657        |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |  +--+-------------------------+ 
+  1658        |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |     |  +------------------------------------+ 
+  1659        |     |     |     +--+ if(Script-&gt;ScRegion == scr_start){ | 
+              |     |     |     |  +--+---------------------------------+ 
+  1660        |     |     |     |     +--- // Codeの置き換え
+  1661        |     |     |     |     +--- TuneRegion = (TTuneRegion *)Script-&gt;TuneRegion;
+              |     |     |     |     |  +----------------------------------+ 
+  1662        |     |     |     |     +--+ if(TuneRegion-&gt;TokenEndPos &gt; i){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +----------------------------------+ 
+  1663        |     |     |     |     |     +--+ if(!TuneRegion-&gt;UsedDynPefThis){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+  1664        |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,0); // 置き換えコードを出力
+              |     |     |     |     |     |   +-+---+ 
+  1665        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  1665        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  1666        |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,3); // 置き換えコードを出力
+              |     |     |     |     |     |   +-+---+ 
+  1667        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1668        |     |     |     |     |     +--- i = TuneRegion-&gt;TokenEndPos-1;    // Top Regionの中をスキップする。
+              |     |     |     |     |     |  +------------+ 
+  1669        |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |   +-+---+ 
+  1670        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1671        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------------+ 
+  1671        |     |     |     |   |  else if(Script-&gt;ScType == sct_DynPefThis){ | 
+              |     |     |     |   +-+-------------------------------------------+ 
+  1672        |     |     |     |     +--- //
+  1673        |     |     |     |     |    // Dynamicの実行 SetParam() を指定 
+  1674        |     |     |     |     |    //                                 
+  1675        |     |     |     |     +--- TScValData *ScValData = NULL;
+  1676        |     |     |     |     +--- int kk;
+  1677        |     |     |     |     |    
+              |     |     |     |     |  +----------------------------------------+ 
+  1678        |     |     |     |     +--+ if(Script-&gt;ScValDataList-&gt;Count &gt; 0){  | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  1679        |     |     |     |     |     +--- ScValData = (TScValData *)Script-&gt;ScValDataList-&gt;Items[0];
+  1680        |     |     |     |     |     +--- s = ScValData-&gt;Str; // ＴＲ名 &quot;&quot;付き
+              |     |     |     |     |     |  +--------------------------------------+ 
+  1681        |     |     |     |     |     +--+ while(s.find(&quot;\&quot;&quot;) != string::npos){ | 
+              |     |     |     |     |     |  +--+-----------------------------------+ 
+  1681        |     |     |     |     |     |     +--- s.erase(s.find(&quot;\&quot;&quot;),1);
+              |     |     |     |     |     |   +-+---+ 
+  1681        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1681        |     |     |     |     |     +--- ;
+              |     |     |     |     |     |  +--------------------------------------+ 
+  1682        |     |     |     |     |     +--+ while(s.find(&quot;\'&quot;) != string::npos){ | 
+              |     |     |     |     |     |  +--+-----------------------------------+ 
+  1682        |     |     |     |     |     |     +--- s.erase(s.find(&quot;\'&quot;),1);
+              |     |     |     |     |     |   +-+---+ 
+  1682        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1682        |     |     |     |     |     +--- ;
+              |     |     |     |     |     |  +--------------------------------------------------+ 
+  1683        |     |     |     |     |     +--+ for(kk = 0 ; kk &lt; TuneRegionList-&gt;Count ; kk++){ | 
+              |     |     |     |     |     |  +--+-----------------------------------------------+ 
+  1684        |     |     |     |     |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[kk];
+              |     |     |     |     |     |     |  +----------------------------+ 
+  1685        |     |     |     |     |     |     +--+ if(s == TuneRegion-&gt;Name){ | 
+              |     |     |     |     |     |     |  +--+-------------------------+ 
+  1686        |     |     |     |     |     |     |     +--- TuneRegion-&gt;UsedDynPefThis = true;
+  1687        |     |     |     |     |     |     |     +--- TuneRegion-&gt;OutputSrcCode(fpOut,&quot;&quot;,2); // 置き換えコードを出力
+              |     |     |     |     |     |     |   +-+---+ 
+  1688        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  1689        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  1690        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1691        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-----------------------------------------+ 
+  1691        |     |     |     |   |  else if(Script-&gt;ScType == sct_SetParm){  | 
+              |     |     |     |   +-+-----------------------------------------+ 
+  1692        |     |     |     |     +--- //
+  1693        |     |     |     |     |    //  call SetParm 指定があれば、そこに 各TuneRegionのSetParmを展開する。  
+  1694        |     |     |     |     |    //                                                                       
+              |     |     |     |     |  +------------------------------------------------------+ 
+  1695        |     |     |     |     +--+ for(int kk = 0 ; kk &lt; TuneRegionList-&gt;Count ; kk++){ | 
+              |     |     |     |     |  +--+---------------------------------------------------+ 
+  1696        |     |     |     |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[kk];
+  1697        |     |     |     |     |     +--- TuneRegion-&gt;OutputSetParmSrcCode(fpOut,&quot;&quot;);
+              |     |     |     |     |   +-+---+ 
+  1698        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1699        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------------------------------------+ 
+  1699        |     |     |     |   |  else if(Script-&gt;ScType == sct_ATExec){ // ATExec() | 
+              |     |     |     |   +-+---------------------------------------------------+ 
+  1700        |     |     |     |     +--- // Script ATExec()部分は、引数追加に置き換える。
+  1701        |     |     |     |     |    // 引数を自動で追加。先頭２つの引数の後は、ArfStrの引数を追加する。  
+  1702        |     |     |     |     +--- #if 1
+  1703        |     |     |     |     +--- string TokStr;
+  1704        |     |     |     |     +--- int ArgCount = 0;
+  1705        |     |     |     |     +--- int BrLevel = 0;
+  1706        |     |     |     |     |    
+  1707        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +--------------------------------------------------------+ 
+  1708        |     |     |     |     +--+ for(int j = 1 ; j &lt; Script-&gt;TokStrList-&gt;Count ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------------------+ 
+  1709        |     |     |     |     |     +--- Token = (TToken *)Script-&gt;TokStrList-&gt;Objects[j];
+              |     |     |     |     |     |  +--------------------+ 
+  1710        |     |     |     |     |     +--+ if(Token == NULL){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +------------+ 
+  1711        |     |     |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |     |     |  +------------+ 
+              |     |     |     |     |     |   +-+---+ 
+  1712        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1713        |     |     |     |     |     +--- TokStr = Token-&gt;Str;
+              |     |     |     |     |     |  +--------------------+ 
+  1714        |     |     |     |     |     +--+ if(TokStr == &quot;,&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +--------------------+ 
+  1715        |     |     |     |     |     |     +--+ if(BrLevel == 1){  | 
+              |     |     |     |     |     |     |  +--+-----------------+ 
+  1716        |     |     |     |     |     |     |     +--- ArgCount++;
+              |     |     |     |     |     |     |   +-+---+ 
+  1717        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  1718        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------+ 
+  1719        |     |     |     |     |     +--+ if(TokStr == &quot;(&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+  1720        |     |     |     |     |     |     +--- BrLevel++;
+              |     |     |     |     |     |   +-+---+ 
+  1721        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------------------+ 
+  1722        |     |     |     |     |     +--+ if(TokStr == &quot;)&quot;){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+  1723        |     |     |     |     |     |     +--- BrLevel--;
+              |     |     |     |     |     |     |  +--------------------+ 
+  1724        |     |     |     |     |     |     +--+ if(BrLevel == 0){  | 
+              |     |     |     |     |     |     |  +--+-----------------+ 
+  1725        |     |     |     |     |     |     |     +--- ArgCount++;
+              |     |     |     |     |     |     |     |  +--------+ 
+  1726        |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |   +-+---+ 
+  1727        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+  1728        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1729        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |   +-+---+ 
+  1730        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +----------------------------------------+ 
+  1731        |     |     |     |     +--+ if(MainF-&gt;Call_ATExec_Script != NULL){ | 
+              |     |     |     |     |  +--+-------------------------------------+ 
+  1732        |     |     |     |     |     +--- // ArgStrから残りの数の引数を追加する。すでに必要数だけセット済の場合はそのまま。
+  1733        |     |     |     |     |     +--- //                      s += MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;);
+  1734        |     |     |     |     |     +--- s += MainF-&gt;Call_ATExec_Script-&gt;GetATExecArgStr(false,&quot;&quot;,&quot;&quot;,ArgCount-2);
+              |     |     |     |     |   +-+---+ 
+  1735        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1736        |     |     |     |     +--- s += &quot;)&quot;;
+  1737        |     |     |     |     +--- fprintf(fpOut,&quot;\t%s;\n&quot;,s.c_str());
+  1738        |     |     |     |     +--- #else
+  1739        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +--------------------------------------------------------+ 
+  1740        |     |     |     |     +--+ for(int j = 1 ; j &lt; Script-&gt;TokStrList-&gt;Count ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------------------+ 
+  1741        |     |     |     |     |     +--- Token = (TToken *)Script-&gt;TokStrList-&gt;Objects[j];
+  1742        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |   +-+---+ 
+  1743        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1744        |     |     |     |     +--- fprintf(fpOut,&quot;\t%s;\n&quot;,s.c_str());
+  1745        |     |     |     |     +--- #endif
+              |     |     |     |   +-+---+ 
+  1746        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------------------------------------+ 
+  1746        |     |     |     |   |  else if(Script-&gt;ScType == sct_None){ | 
+              |     |     |     |   +-+-------------------------------------+ 
+  1747        |     |     |     |     |    
+              |     |     |     |   +-+---+ 
+  1748        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-----------------------------------------+ 
+  1748        |     |     |     |   |  else if(Script-&gt;ScType == sct_command){  | 
+              |     |     |     |   +-+-----------------------------------------+ 
+  1749        |     |     |     |     +--- //
+  1750        |     |     |     |     |    // コマンドを出力する。                                
+  1751        |     |     |     |     |    // ここで、OAT_xxx = の値の所得も行う。                
+  1752        |     |     |     |     |    // 現状では、定数のみが使用可能。（変数や式はエラー）  
+  1753        |     |     |     |     |    // callが含まれている場合は、その部分はＣＵＴする。    
+  1754        |     |     |     |     |    // Fortranとの互換性のため。本来は不要。               
+  1755        |     |     |     |     |    //                                                     
+  1756        |     |     |     |     |                                                           
+  1757        |     |     |     |     +--- s = Script-&gt;TokStrList-&gt;Strings[0];
+  1758        |     |     |     |     +--- cp = s.find(&quot;call &quot;);
+              |     |     |     |     |  +--------------+ 
+  1759        |     |     |     |     +--+ if(cp &gt;= 0){ | 
+              |     |     |     |     |  +--+-----------+ 
+  1760        |     |     |     |     |     +--- s.erase(cp,strlen(&quot;call &quot;));
+              |     |     |     |     |   +-+---+ 
+  1761        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------------------------------------------+ 
+  1762        |     |     |     |     +--+ for(int j = 0 ; j &lt; Token-&gt;Indent ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------+ 
+  1763        |     |     |     |     |     +--- s = &quot;  &quot;+s;
+              |     |     |     |     |   +-+---+ 
+  1764        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1765        |     |     |     |     +--- // 最後が カンマの場合は、次があるとしてセミコロンなし。2012/02/28
+              |     |     |     |     |  +------------------------------+ 
+  1766        |     |     |     |     +--+ if(s[s.length()-1] == ','){  | 
+              |     |     |     |     |  +--+---------------------------+ 
+  1767        |     |     |     |     |     +--- fprintf(fpOut,&quot;%s\n&quot;,s.c_str());
+              |     |     |     |     |   +-+---+ 
+  1768        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  1768        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  1769        |     |     |     |     |     +--- fprintf(fpOut,&quot;%s;\n&quot;,s.c_str());
+              |     |     |     |     |   +-+---+ 
+  1770        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1771        |     |     |     |     |    
+              |     |     |     |   +-+---+ 
+  1772        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  1772        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  1773        |     |     |     |     +--- //
+  1774        |     |     |     |     |    // その他の#Pragma 
+  1775        |     |     |     |     |    //                 
+  1776        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |     |  +--------------------------------+ 
+  1777        |     |     |     |     +--+ for( ; i &lt; EndTokenPos ; i++){ | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  1778        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1779        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |     |  +----------------------------------+ 
+  1780        |     |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  1781        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  1782        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  1783        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1784        |     |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,s.c_str());
+              |     |     |     |   +-+---+ 
+  1785        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1786        |     |     |     +--- //
+  1787        |     |     |     |    //  スクリプトの最後までＳＫＩＰ 
+  1788        |     |     |     |    //                               
+              |     |     |     |  +--------------------------------+ 
+  1789        |     |     |     +--+ for( ; i &lt; EndTokenPos ; i++){ | 
+              |     |     |     |  +--+-----------------------------+ 
+  1790        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |  +----------------------------------+ 
+  1791        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  1792        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1793        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1794        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1795        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  1795        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  1796        |     |     |     +--- fprintf(fpOut,&quot;%s&quot;,Token-&gt;OrgStr.c_str());
+              |     |     |   +-+---+ 
+  1797        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1798        |     |   |  }  | 
+              |     |   +-----+ 
+  1799        |     +--- //
+  1800        |     |    //  グローバル変数定義の関係で #includeを最後に移動。 2011/09/08 
+  1801        |     |    //                                                               
+              |     |  +------------------+ 
+  1802        |     +--+ if(IncludeReqF){ | 
+              |     |  +--+---------------+ 
+  1803        |     |     +--- IncludeReqF = false;
+  1804        |     |     +--- fprintf(fpOut,&quot;\n&quot;);
+  1805        |     |     +--- fprintf(fpOut,&quot;#include \&quot;OAT_ControlRoutines.c\&quot;\n&quot;);
+  1806        |     |     +--- fprintf(fpOut,&quot;#include \&quot;OAT_DynamicRoutines.c\&quot;\n&quot;);
+  1807        |     |     +--- fprintf(fpOut,&quot;#include \&quot;OAT_InstallRoutines.c\&quot;\n&quot;);
+  1808        |     |     +--- fprintf(fpOut,&quot;#include \&quot;OAT_StaticRoutines.c\&quot;\n&quot;);
+  1809        |     |     +--- fprintf(fpOut,&quot;\n&quot;);
+              |     |   +-+---+ 
+  1810        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1811        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  1812      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

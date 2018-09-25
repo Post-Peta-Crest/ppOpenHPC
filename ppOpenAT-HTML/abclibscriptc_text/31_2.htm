@@ -1,0 +1,944 @@
+
+<html>
+<head>
+<title>AddDataDef_Fortran 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.2. AddDataDef_Fortran 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>AddDataDef_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass2.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>1469</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void AddDataDef_Fortran ( TList * TokenList , int sPos , int ePos , TList * ValDataList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>INTEGERやREALなどのデータ宣言の処理を行ない、変数リストに変数と型を追加す<br>る。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList   処理するトークンリスト<br>sPos    TokenList上での開始位置<br>ePos    TokenList上での終了位置<br>ValDataList 変数データリスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap>INTEGERやREALなどのデータ宣言の処理を行ない、変数リストに変数と型を追加す<br>る。<br>ValDataには、どのモジュールでの宣言かが、ModuleIdxから設定される。<br>PARAMETERを含む宣言の場合には、値の計算も行う。<br>変数には、ModuleIdxも保持して、ModuleIdxが異なる場合は別変数とする。<br>パラメータ以外の定数での代入文などは、変数として扱う。（分岐,COMMONなどが<br>ある）</td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="31_18.htm">Pass2_Fortran</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_18.htm">292</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="31_5.htm">Eval</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="31_5.htm">2170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>memcpy</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>EvalConstF</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap>60</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>ImplType</td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap>59</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------------------------------------+ 
+  1469  +--+ void AddDataDef_Fortran(TList *TokenList,int sPos,int ePos,TList *ValDataList) | 
+  1470     | {                                                                              | 
+           +--+-----------------------------------------------------------------------------+ 
+  1471        +--- int i,j;
+  1472        +--- TToken *Token;
+  1473        +--- int TokId;
+  1474        +--- string TokStr;
+  1475        +--- bool IntF = false;
+  1476        +--- bool RealF = false;
+  1477        +--- bool CharF = false;
+  1478        +--- bool LogicF = false;
+  1479        +--- bool ComplexF = false;
+  1480        +--- bool ParamaterF = false;
+  1481        +--- bool DimensionF = false;
+  1482        +--- int UseTokLen;
+  1483        +--- double dData;
+  1484        +--- int ArrayLevel = 0;
+  1485        +--- int ArrayCount[100];
+  1486        +--- int ArrayStart[100];
+  1487        +--- int DimAttr_ArrayLevel = 0;     // Dimension属性でのArrayLevel(DimensionF=true)
+  1488        +--- int DimAttr_ArrayCount[100];
+  1489        +--- int DimAttr_ArrayStart[100];
+  1490        +--- int DataLength = 0;
+  1491        +--- bool ParamValF;
+  1492        +--- double ParamData = 0;
+  1493        +--- string ValName;
+  1494        +--- int DefPos;
+  1495        +--- int DefPosS,DefPosE;
+  1496        +--- int ArrayDefPosS,ArrayDefPosE;
+  1497        |    
+  1498        +--- ArrayDefPosS = ArrayDefPosE = -1;
+  1499        |    
+  1500        +--- //
+  1501        |    // 宣言部分の処理  
+  1502        |    //                 
+  1503        +--- DefPosS = -1;
+  1504        +--- //  for(i = sPos ; i &lt;= ePos ; i++){
+              |  +----------------------------------+ 
+  1505        +--+ for(i = sPos ; i &lt; ePos ; i++){  | 
+              |  +--+-------------------------------+ 
+  1506        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1507        |     +--- TokId = Token-&gt;TokId;
+  1508        |     +--- TokStr = Token-&gt;Str;
+  1509        |     |    
+              |     |  +------------------------------+ 
+  1510        |     +--+ switch(TokId){  // 定義開始  | 
+              |     |  +--+---------------------------+ 
+              |     |     +---------------------+ 
+  1511        |     |     |  case tid_INTEGER:  | 
+              |     |     +---------------------+ 
+              |     |     +-----------------+ 
+  1512        |     |     |  case tid_REAL: | 
+              |     |     +-----------------+ 
+              |     |     +-----------------------------+ 
+  1513        |     |     |  case tid_DOUBLEPRECISION:  | 
+              |     |     +-----------------------------+ 
+              |     |     +-----------------------+ 
+  1514        |     |     |  case tid_CHARACTER:  | 
+              |     |     +-----------------------+ 
+              |     |     +---------------------+ 
+  1515        |     |     |  case tid_LOGICAL:  | 
+              |     |     +---------------------+ 
+              |     |     +---------------------+ 
+  1516        |     |     |  case tid_COMPLEX:  | 
+              |     |     +---------------------+ 
+              |     |     |  +--------------------+ 
+  1517        |     |     +--+ if(DefPosS == -1){ | 
+              |     |     |  +--+-----------------+ 
+  1518        |     |     |     +--- DefPosS = sPos;
+              |     |     |   +-+---+ 
+  1519        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+  1520        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------+ 
+  1521        |     |     |  case tid_DIMENSION:  | 
+              |     |     +-----------------------+ 
+              |     |     |  +--------------------+ 
+  1522        |     |     +--+ if(DefPosS == -1){ | 
+              |     |     |  +--+-----------------+ 
+  1523        |     |     |     +--- DefPosS = sPos;
+              |     |     |   +-+---+ 
+  1524        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+  1525        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+  1526        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------+ 
+  1527        |     +--+ switch(TokId){ | 
+              |     |  +--+-------------+ 
+              |     |     +---------------------+ 
+  1528        |     |     |  case tid_INTEGER:  | 
+              |     |     +---------------------+ 
+  1529        |     |     +--- IntF = true;
+              |     |     |  +--------+ 
+  1530        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------+ 
+  1531        |     |     |  case tid_REAL: | 
+              |     |     +-----------------+ 
+  1532        |     |     +--- RealF = true;
+              |     |     |  +--------+ 
+  1533        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------------+ 
+  1534        |     |     |  case tid_DOUBLEPRECISION:  | 
+              |     |     +-----------------------------+ 
+  1535        |     |     +--- RealF = true;
+              |     |     |  +--------+ 
+  1536        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------+ 
+  1537        |     |     |  case tid_CHARACTER:  | 
+              |     |     +-----------------------+ 
+  1538        |     |     +--- CharF = true;
+              |     |     |  +--------+ 
+  1539        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------+ 
+  1540        |     |     |  case tid_LOGICAL:  | 
+              |     |     +---------------------+ 
+  1541        |     |     +--- LogicF = true;
+              |     |     |  +--------+ 
+  1542        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------+ 
+  1543        |     |     |  case tid_COMPLEX:  | 
+              |     |     +---------------------+ 
+  1544        |     |     +--- ComplexF = true;
+              |     |     |  +--------+ 
+  1545        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------+ 
+  1546        |     |     |  case tid_DIMENSION:  | 
+              |     |     +-----------------------+ 
+  1547        |     |     +--- //
+  1548        |     |     |    //  F90に対応するため、次が(の場合には、Dimension属性として扱う。  
+  1549        |     |     |    //  (でない場合は、DIMENSION文となる。  2007/1/19                  
+  1550        |     |     |    //  また、定数でない場合もOK（デフォルトの値）とする。             
+  1551        |     |     |    //                                                                 
+              |     |     |  +------------------------------------------------------------------+ 
+  1552        |     |     +--+ if((i+1 &lt; TokenList-&gt;Count)                                      | 
+  1553        |     |     |  |     &amp;&amp;(((TToken *)TokenList-&gt;Items[i+1])-&gt;TokId == tid_Kakko)){  | 
+              |     |     |  +--+---------------------------------------------------------------+ 
+  1554        |     |     |     +--- int TokId2;
+  1555        |     |     |     +--- string TokStr2;
+  1556        |     |     |     |    
+  1557        |     |     |     +--- DimensionF = true;
+  1558        |     |     |     +--- i+=2;
+  1559        |     |     |     +--- //
+  1560        |     |     |     |    // )までを対象となり、Dim_ArrayLevelを求める。 
+  1561        |     |     |     |    //                                             
+  1562        |     |     |     |    //  Exp: DIMENSION(1:3,2) 等                   
+  1563        |     |     |     |    //                                             
+              |     |     |     |  +----------------------------------------------------------------------------+ 
+  1564        |     |     |     +--+ while((i &lt; ePos)&amp;&amp;(((TToken *)TokenList-&gt;Items[i])-&gt;TokId != tid_Kokka)){  | 
+              |     |     |     |  +--+-------------------------------------------------------------------------+ 
+  1565        |     |     |     |     +--- TokId2 = ((TToken *)TokenList-&gt;Items[i])-&gt;TokId;
+  1566        |     |     |     |     +--- TokStr2 = ((TToken *)TokenList-&gt;Items[i])-&gt;Str;
+              |     |     |     |     |  +----------------------------------------------------+ 
+  1567        |     |     |     |     +--+ if(TokId2 == tid_Koron){    // 先頭なし　Exp. (:3) | 
+              |     |     |     |     |  +--+-------------------------------------------------+ 
+  1568        |     |     |     |     |     +--- i++;
+              |     |     |     |     |   +-+---+ 
+  1569        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1570        |     |     |     |     +--- // 数値の処理
+  1571        |     |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |     |  +------------------+ 
+  1572        |     |     |     |     +--+ if(!EvalConstF){ | 
+              |     |     |     |     |  +--+---------------+ 
+  1573        |     |     |     |     |     +--- //                      ErrMsg(TokenList,i,&quot;宣言部エラー&quot;);
+  1574        |     |     |     |     |     +--- dData = 0;
+              |     |     |     |     |   +-+---+ 
+  1575        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1576        |     |     |     |     +--- i += UseTokLen;
+  1577        |     |     |     |     +--- TokId2 = ((TToken *)TokenList-&gt;Items[i])-&gt;TokId;
+  1578        |     |     |     |     +--- TokStr2 = ((TToken *)TokenList-&gt;Items[i])-&gt;Str;
+              |     |     |     |     |  +----------------------------------------------------+ 
+  1579        |     |     |     |     +--+ if(TokId2 == tid_Koron){    // 先頭あり Exp (1:3)  | 
+              |     |     |     |     |  +--+-------------------------------------------------+ 
+  1580        |     |     |     |     |     +--- DimAttr_ArrayStart[DimAttr_ArrayLevel] = (int)dData;
+  1581        |     |     |     |     |     +--- i++;
+  1582        |     |     |     |     |     +--- TokId2 = ((TToken *)TokenList-&gt;Items[i])-&gt;TokId;
+  1583        |     |     |     |     |     +--- TokStr2 = ((TToken *)TokenList-&gt;Items[i])-&gt;Str;
+  1584        |     |     |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |     |     |  +------------------+ 
+  1585        |     |     |     |     |     +--+ if(!EvalConstF){ | 
+              |     |     |     |     |     |  +--+---------------+ 
+  1586        |     |     |     |     |     |     +--- //                          ErrMsg(TokenList,i,&quot;宣言部エラー&quot;);
+  1587        |     |     |     |     |     |     +--- dData = 0;
+              |     |     |     |     |     |   +-+---+ 
+  1588        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+  1589        |     |     |     |     |     +--- i += UseTokLen;
+  1590        |     |     |     |     |     +--- DimAttr_ArrayCount[DimAttr_ArrayLevel] = (int)dData-
+  1591        |     |     |     |     |     |        DimAttr_ArrayStart[DimAttr_ArrayLevel] + 1;      
+              |     |     |     |     |   +-+---+ 
+  1592        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  1592        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  1593        |     |     |     |     |     +--- DimAttr_ArrayStart[DimAttr_ArrayLevel] = 1;
+  1594        |     |     |     |     |     +--- DimAttr_ArrayCount[DimAttr_ArrayLevel] = (int)dData;
+              |     |     |     |     |   +-+---+ 
+  1595        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1596        |     |     |     |     +--- TokId2 = ((TToken *)TokenList-&gt;Items[i])-&gt;TokId;
+  1597        |     |     |     |     +--- TokStr2 = ((TToken *)TokenList-&gt;Items[i])-&gt;Str;
+              |     |     |     |     |  +----------------------------+ 
+  1598        |     |     |     |     +--+ if(TokId2 == tid_Kannma){  | 
+              |     |     |     |     |  +--+-------------------------+ 
+  1599        |     |     |     |     |     +--- DimAttr_ArrayLevel++;
+              |     |     |     |     |   +-+---+ 
+  1600        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------------------------------+ 
+  1600        |     |     |     |     |   |  else if(TokId2 == tid_Kokka){  | 
+              |     |     |     |     |   +-+-------------------------------+ 
+  1601        |     |     |     |     |     +--- DimAttr_ArrayLevel++;
+              |     |     |     |     |     |  +--------+ 
+  1602        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1603        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  1604        |     |     |     |     +--- i++;
+              |     |     |     |   +-+---+ 
+  1605        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1606        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+  1607        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------+ 
+  1608        |     |     |  case tid_PARAMETER:  | 
+              |     |     +-----------------------+ 
+  1609        |     |     +--- ParamaterF = true;
+              |     |     |  +--------+ 
+  1610        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------------------------------------------------------------------+ 
+  1611        |     |     |  case tid_INTENT: // ()をスキップする。 INTENT (OUT) で OUTを変数扱いしないため | 
+              |     |     +---------------------------------------------------------------------------------+ 
+              |     |     |  +------------------------+ 
+  1612        |     |     +--+ for(; i &lt; ePos ; i++){ | 
+              |     |     |  +--+---------------------+ 
+  1613        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |  +--------------------------------------------------------+ 
+  1614        |     |     |     +--+ if(Token-&gt;TokId == tid_Kokka){ // 次の ) まで進める。  | 
+              |     |     |     |  +--+-----------------------------------------------------+ 
+              |     |     |     |     |  +--------+ 
+  1615        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1616        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1617        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+  1618        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------------------------------------+ 
+  1619        |     |     |  case tid_ALLOCATABLE:   // その他の定義  | 
+              |     |     +-------------------------------------------+ 
+              |     |     +---------------------+ 
+  1620        |     |     |  case tid_POINTER:  | 
+              |     |     +---------------------+ 
+              |     |     +-------------------+ 
+  1621        |     |     |  case tid_TARGET: | 
+              |     |     +-------------------+ 
+              |     |     +-----------------+ 
+  1622        |     |     |  case tid_SAVE: | 
+              |     |     +-----------------+ 
+              |     |     +---------------------+ 
+  1623        |     |     |  case tid_PRIVATE:  | 
+              |     |     +---------------------+ 
+              |     |     +-------------------+ 
+  1624        |     |     |  case tid_PUBLIC: | 
+              |     |     +-------------------+ 
+              |     |     +---------------------+ 
+  1625        |     |     |  case tid_EXTERNAL: | 
+              |     |     +---------------------+ 
+              |     |     +-----------------------+ 
+  1626        |     |     |  case tid_INTRINSIC:  | 
+              |     |     +-----------------------+ 
+  1627        |     |     +--- //      case tid_INTENT:
+              |     |     +---------------------+ 
+  1628        |     |     |  case tid_OPTIONAL: | 
+              |     |     +---------------------+ 
+              |     |     |  +--------+ 
+  1629        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------------+ 
+  1630        |     |     |  case tid_Kannma:    // , | 
+              |     |     +---------------------------+ 
+  1631        |     |     +--- // ,は、ArrayLevelを Upする。
+  1632        |     |     +--- ArrayLevel++;
+              |     |     |  +--------+ 
+  1633        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +---------------------------------+ 
+  1634        |     |     |  case tid_KoronKoron:    // ::  | 
+              |     |     +---------------------------------+ 
+  1635        |     |     +--- // 宣言部分終了
+  1636        |     |     +--- sPos = i+1;
+  1637        |     |     +--- i = ePos+1;
+              |     |     |  +--------+ 
+  1638        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------------------+ 
+  1639        |     |     |  case tid_Kakko: // ( | 
+              |     |     +-----------------------+ 
+  1640        |     |     +--- //
+  1641        |     |     |    // (Len=xx) や (xx,xx)で配列要素数を指定　')'までの処理を行う。  
+  1642        |     |     |    // ただし、PARAMETERの直後は、()はパラメータの設定になる。       
+  1643        |     |     |    //                                                               
+              |     |     |  +----------------------------------------------------------------+ 
+  1644        |     |     +--+ if(((TToken *)TokenList-&gt;Items[i-1])-&gt;TokId == tid_PARAMETER){ | 
+              |     |     |  +--+-------------------------------------------------------------+ 
+  1645        |     |     |     +--- // 宣言部分終了
+  1646        |     |     |     +--- sPos = i+1;
+  1647        |     |     |     +--- i = ePos+1;
+              |     |     |   +-+---+ 
+  1648        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  1648        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  1649        |     |     |     +--- // (Len=xx)か (xx,xx) 注:xxは、PARAMETERでの値も可能
+  1650        |     |     |     +--- i++;
+  1651        |     |     |     +--- //              if((AnsiCompareText(((TToken *)TokenList-&gt;Items[i])-&gt;Str,&quot;LEN&quot;) == 0)
+              |     |     |     |  +----------------------------------------------------------------+ 
+  1652        |     |     |     +--+ if((LowerCase(((TToken *)TokenList-&gt;Items[i])-&gt;Str) == &quot;len&quot;)  | 
+  1653        |     |     |     |  |     &amp;&amp;(((TToken *)TokenList-&gt;Items[i+1])-&gt;TokId == tid_Set)){  | 
+              |     |     |     |  +--+-------------------------------------------------------------+ 
+  1654        |     |     |     |     +--- // Len = の処理
+  1655        |     |     |     |     +--- i++;
+              |     |     |     |   +-+---+ 
+  1656        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1657        |     |     |     +--- //              if((AnsiCompareText(((TToken *)TokenList-&gt;Items[i])-&gt;Str,&quot;KIND&quot;) == 0)
+              |     |     |     |  +----------------------------------------------------------------+ 
+  1658        |     |     |     +--+ if((LowerCase(((TToken *)TokenList-&gt;Items[i])-&gt;Str) == &quot;kind&quot;) | 
+  1659        |     |     |     |  |     &amp;&amp;(((TToken *)TokenList-&gt;Items[i+1])-&gt;TokId == tid_Set)){  | 
+              |     |     |     |  +--+-------------------------------------------------------------+ 
+  1660        |     |     |     |     +--- // KIND = の処理
+  1661        |     |     |     |     +--- i++;
+              |     |     |     |   +-+---+ 
+  1662        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1663        |     |     |     +--- // 数値の処理
+  1664        |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |  +------------------+ 
+  1665        |     |     |     +--+ if(!EvalConstF){ | 
+              |     |     |     |  +--+---------------+ 
+  1666        |     |     |     |     +--- //                  ErrMsg(TokenList,i,&quot;宣言部エラー&quot;);
+  1667        |     |     |     |     +--- dData = 0;
+              |     |     |     |   +-+---+ 
+  1668        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1669        |     |     |     +--- i += UseTokLen;
+  1670        |     |     |     +--- DataLength = (int)dData; // 文字列長さは、DataLength
+              |     |     |   +-+---+ 
+  1671        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------+ 
+  1672        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------+ 
+  1673        |     |     |  default: | 
+              |     |     +-----------+ 
+              |     |     |  +--------------------+ 
+  1674        |     |     +--+ if(TokStr == &quot;*&quot;){ | 
+              |     |     |  +--+-----------------+ 
+  1675        |     |     |     +--- // REAL*8 や INTEGER*4 などの処理
+  1676        |     |     |     +--- i++;
+  1677        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |  +------------------------------------+ 
+  1678        |     |     |     +--+ if(Token-&gt;TokId == tid_ConstInt){  | 
+              |     |     |     |  +--+---------------------------------+ 
+  1679        |     |     |     |     +--- DataLength = (int)Token-&gt;dData; // 文字列長さは、DataLength
+              |     |     |     |   +-+---+ 
+  1680        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1681        |     |     |     |    
+              |     |     |   +-+---+ 
+  1682        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  1682        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  1683        |     |     |     +--- // 宣言部分終了
+  1684        |     |     |     +--- sPos = i;
+  1685        |     |     |     +--- i = ePos+1;
+              |     |     |   +-+---+ 
+  1686        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1687        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------+ 
+  1688        |     +--+ switch(TokId){  // 定義開始  | 
+              |     |  +--+---------------------------+ 
+              |     |     +---------------------+ 
+  1689        |     |     |  case tid_INTEGER:  | 
+              |     |     +---------------------+ 
+              |     |     +-----------------+ 
+  1690        |     |     |  case tid_REAL: | 
+              |     |     +-----------------+ 
+              |     |     +-----------------------------+ 
+  1691        |     |     |  case tid_DOUBLEPRECISION:  | 
+              |     |     +-----------------------------+ 
+              |     |     +-----------------------+ 
+  1692        |     |     |  case tid_CHARACTER:  | 
+              |     |     +-----------------------+ 
+              |     |     +---------------------+ 
+  1693        |     |     |  case tid_LOGICAL:  | 
+              |     |     +---------------------+ 
+              |     |     +---------------------+ 
+  1694        |     |     |  case tid_COMPLEX:  | 
+              |     |     +---------------------+ 
+  1695        |     |     +--- // 宣言の次が ( の場合は、 )までは 種別(KIND)なのでスキップする。
+              |     |     |  +----------------------------------------------------------------------------+ 
+  1696        |     |     +--+ if((i+1&lt; ePos)&amp;&amp;(((TToken *)TokenList-&gt;Items[i+1])-&gt;TokId == tid_Kakko)){  | 
+              |     |     |  +--+-------------------------------------------------------------------------+ 
+  1697        |     |     |     +--- int brLevel = 0;
+              |     |     |     |  +------------------------+ 
+  1698        |     |     |     +--+ for(; i &lt; ePos ; i++){ | 
+              |     |     |     |  +--+---------------------+ 
+  1699        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |     |     |  +--------------------------------+ 
+  1700        |     |     |     |     +--+ if(Token-&gt;TokId == tid_Kakko){ | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  1701        |     |     |     |     |     +--- brLevel++;
+              |     |     |     |     |   +-+---+ 
+  1702        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------------------------------+ 
+  1703        |     |     |     |     +--+ if(Token-&gt;TokId == tid_Kokka){ | 
+              |     |     |     |     |  +--+-----------------------------+ 
+  1704        |     |     |     |     |     +--- brLevel--;
+              |     |     |     |     |     |  +--------------------+ 
+  1705        |     |     |     |     |     +--+ if(brLevel == 0){  | 
+              |     |     |     |     |     |  +--+-----------------+ 
+              |     |     |     |     |     |     |  +--------+ 
+  1706        |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |   +-+---+ 
+  1707        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  1708        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1709        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1710        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1711        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1712        |   |  }  | 
+              |   +-----+ 
+  1713        +--- DefPosE = sPos;
+  1714        +--- //
+  1715        |    // 変数部分の処理                                                    
+  1716        |    // 変数の定義を追加する。宣言（PARAMETERを含む）のみが対象。         
+  1717        |    //  もし、変数名のみで、DimensonF=treu(Dimension属性あり）の場合は、 
+  1718        |    //  Dim_ArrayLevel等を使用する。 Add 2007/01/18                      
+  1719        |    //                                                                   
+  1720        +--- //  for(i = sPos ; i &lt;= ePos ; i++){
+              |  +----------------------------------+ 
+  1721        +--+ for(i = sPos ; i &lt; ePos ; i++){  | 
+              |  +--+-------------------------------+ 
+  1722        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1723        |     +--- TokId = Token-&gt;TokId;
+  1724        |     +--- TokStr = Token-&gt;Str;
+  1725        |     |    
+  1726        |     +--- //      if(TokId != -1){
+              |     |  +----------------------------------------------------+ 
+  1727        |     +--+ if(TokId != tid_Val){   // 変数トークンのみが対象  | 
+              |     |  +--+-------------------------------------------------+ 
+              |     |     |  +--------+ 
+  1728        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+  1729        |     |   |  }  | 
+              |     |   +-----+ 
+  1730        |     +--- DefPos = i;
+  1731        |     +--- ValName = TokStr;
+  1732        |     +--- i++;
+  1733        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1734        |     +--- TokId = Token-&gt;TokId;
+  1735        |     +--- TokStr = Token-&gt;Str;
+  1736        |     +--- ArrayLevel = 0;
+              |     |  +--------------------+ 
+  1737        |     +--+ if(TokStr == &quot;(&quot;){ | 
+              |     |  +--+-----------------+ 
+  1738        |     |     +--- //
+  1739        |     |     |    // 配列宣言の添え字の処理  
+  1740        |     |     |    // REAL D(3,4)             
+  1741        |     |     |    //                         
+  1742        |     |     +--- ArrayDefPosS = i;
+  1743        |     |     +--- i++;
+              |     |     |  +--------------+ 
+  1744        |     |     +--+ while(true){ | 
+              |     |     |  +--+-----------+ 
+  1745        |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |  +------------------+ 
+  1746        |     |     |     +--+ if(!EvalConstF){ | 
+              |     |     |     |  +--+---------------+ 
+  1747        |     |     |     |     +--- i += UseTokLen;
+  1748        |     |     |     |     +--- ArrayStart[ArrayLevel] = 1;
+  1749        |     |     |     |     +--- ArrayCount[ArrayLevel] = 0;
+              |     |     |     |   +-+---+ 
+  1750        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  1750        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  1751        |     |     |     |     +--- i += UseTokLen;
+  1752        |     |     |     |     +--- ArrayCount[ArrayLevel] = (int)dData;
+  1753        |     |     |     |     +--- ArrayStart[ArrayLevel] = 1;
+  1754        |     |     |     |     +--- //                  if(((TToken *)TokenList-&gt;Items[i+1])-&gt;TokId == tid_Koron){
+              |     |     |     |     |  +----------------------------------------------------------+ 
+  1755        |     |     |     |     +--+ if(((TToken *)TokenList-&gt;Items[i])-&gt;TokId == tid_Koron){ | 
+              |     |     |     |     |  +--+-------------------------------------------------------+ 
+  1756        |     |     |     |     |     +--- // : を含んだ宣言の処理
+  1757        |     |     |     |     |     +--- i++;
+  1758        |     |     |     |     |     +--- ArrayStart[ArrayLevel] = ArrayCount[ArrayLevel];
+  1759        |     |     |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |     |     |  +------------------+ 
+  1760        |     |     |     |     |     +--+ if(!EvalConstF){ | 
+              |     |     |     |     |     |  +--+---------------+ 
+  1761        |     |     |     |     |     |     +--- i += UseTokLen;
+  1762        |     |     |     |     |     |     +--- ArrayCount[ArrayLevel] = 0;
+              |     |     |     |     |     |   +-+---+ 
+  1763        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  1763        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+  1764        |     |     |     |     |     |     +--- i += UseTokLen;
+  1765        |     |     |     |     |     |     +--- ArrayCount[ArrayLevel] = (int)dData - ArrayStart[ArrayLevel]+1;
+              |     |     |     |     |     |   +-+---+ 
+  1766        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  1767        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1768        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1769        |     |     |     +--- ArrayLevel++;
+  1770        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1771        |     |     |     +--- TokId = Token-&gt;TokId;
+  1772        |     |     |     +--- TokStr = Token-&gt;Str;
+              |     |     |     |  +--------------------------+ 
+  1773        |     |     |     +--+ if(TokId != tid_Kannma){ | 
+              |     |     |     |  +--+-----------------------+ 
+              |     |     |     |     |  +--------+ 
+  1774        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+  1775        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1776        |     |     |     +--- i++;
+              |     |     |   +-+---+ 
+  1777        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1778        |     |     +--- ArrayDefPosE = i+1;
+              |     |   +-+---+ 
+  1779        |     |   |  }  | 
+              |     |   +-----+ 
+  1780        |     +--- //
+  1781        |     |    //  もし、配列宣言なしの変数名のみで、Dimension属性ありの場合は、  
+  1782        |     |    //  Dimension属性をセットする。                                    
+  1783        |     |    //  Add 2007/01/19                                                 
+  1784        |     |    //                                                                 
+              |     |  +--------------------------------------+ 
+  1785        |     +--+ if((ArrayLevel == 0)&amp;&amp;(DimensionF)){ | 
+              |     |  +--+-----------------------------------+ 
+  1786        |     |     +--- ArrayLevel = DimAttr_ArrayLevel;
+  1787        |     |     +--- memcpy(ArrayStart,DimAttr_ArrayStart,sizeof(ArrayStart));
+  1788        |     |     +--- memcpy(ArrayCount,DimAttr_ArrayCount,sizeof(ArrayCount));
+              |     |   +-+---+ 
+  1789        |     |   |  }  | 
+              |     |   +-----+ 
+  1790        |     +--- //
+  1791        |     |    // パラメータ文の場合は、　xxx = xxx での値を所得する。              
+  1792        |     |    // もしパラメータ文でない場合は、初期値なのでカンマまで読み飛ばす。  
+  1793        |     |    //                                                                   
+  1794        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1795        |     +--- TokId = Token-&gt;TokId;
+  1796        |     +--- ParamValF = false;
+              |     |  +------------------------+ 
+  1797        |     +--+ if(TokId == tid_Set){  | 
+              |     |  +--+---------------------+ 
+  1798        |     |     +--- UseTokLen = 0;
+              |     |     |  +------------------+ 
+  1799        |     |     +--+ if(ParamaterF){  | 
+              |     |     |  +--+---------------+ 
+  1800        |     |     |     +--- i++;
+  1801        |     |     |     +--- UseTokLen = Eval(TokenList,i,ePos,ValDataList,&amp;dData);
+              |     |     |     |  +------------------+ 
+  1802        |     |     |     +--+ if(EvalConstF){  | 
+              |     |     |     |  +--+---------------+ 
+  1803        |     |     |     |     +--- ParamValF = true;
+  1804        |     |     |     |     +--- ParamData = dData;
+              |     |     |     |   +-+---+ 
+  1805        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  1806        |     |     |     +--- i += UseTokLen;
+              |     |     |   +-+---+ 
+  1807        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------+ 
+  1808        |     |     +--+ if(UseTokLen &lt;= 0){  | 
+              |     |     |  +--+-------------------+ 
+  1809        |     |     |     +--- //              for( ; i &lt;= ePos ; i++){
+              |     |     |     |  +--------------------------+ 
+  1810        |     |     |     +--+ for( ; i &lt; ePos ; i++){  | 
+              |     |     |     |  +--+-----------------------+ 
+              |     |     |     |     |  +------------------------------------------------------------+ 
+  1811        |     |     |     |     +--+ if(((TToken *)TokenList-&gt;Items[i])-&gt;TokId == tid_Kannma){  | 
+              |     |     |     |     |  +--+---------------------------------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  1812        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  1813        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  1814        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1815        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1816        |     |   |  }  | 
+              |     |   +-----+ 
+  1817        |     +--- //
+  1818        |     |    // すでに、同じMoudelIdxで、宣言されている同名変数があるかを調べる。   
+  1819        |     |    // あれば、追加しない。（型の一致かどうかの判定は、コンパイラまかせ）  
+  1820        |     |    //                                                                     
+  1821        |     +--- TValData *ValData;
+  1822        |     +--- bool NewValDataF = true;
+  1823        |     |    
+              |     |  +--------------------------------------------+ 
+  1824        |     +--+ for(j = 0 ; j &lt; ValDataList-&gt;Count ; j++){ | 
+              |     |  +--+-----------------------------------------+ 
+  1825        |     |     +--- ValData = (TValData *)ValDataList-&gt;Items[j];
+  1826        |     |     +--- //          if((AnsiCompareText(ValData-&gt;Str,ValName) == 0)&amp;&amp;
+              |     |     |  +------------------------------------------------------+ 
+  1827        |     |     +--+ if((LowerCase(ValData-&gt;Str) == LowerCase(ValName))&amp;&amp; | 
+  1828        |     |     |  |     (ValData-&gt;ModuleIdx == Token-&gt;ModuleIdx)){       | 
+              |     |     |  +--+---------------------------------------------------+ 
+  1829        |     |     |     +--- NewValDataF = false;
+              |     |     |     |  +--------+ 
+  1830        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+  1831        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1832        |     |   |  }  | 
+              |     |   +-----+ 
+  1833        |     +--- //
+  1834        |     |    // 変数リストに追加する。                    
+  1835        |     |    // SUBRuntineなどで、先に出現した場合も行う  
+  1836        |     |    //                                           
+              |     |  +----------------------------------------------+ 
+  1837        |     +--+ if(NewValDataF || (ValData-&gt;DefPos == -1)){  | 
+              |     |  +--+-------------------------------------------+ 
+              |     |     |  +------------------+ 
+  1838        |     |     +--+ if(NewValDataF){ | 
+              |     |     |  +--+---------------+ 
+  1839        |     |     |     +--- ValData = new TValData(ValName);
+  1840        |     |     |     +--- ValDataList-&gt;Add((void *)ValData);
+  1841        |     |     |     +--- ValData-&gt;ModuleIdx = Token-&gt;ModuleIdx;
+              |     |     |   +-+---+ 
+  1842        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1843        |     |     +--- ValData-&gt;DataType = ImplType[(int)ValName[0]]; // 暗黙の宣言
+  1844        |     |     +--- ValData-&gt;DefPos = DefPos;
+  1845        |     |     +--- ValData-&gt;DefPosS = DefPosS;
+  1846        |     |     +--- ValData-&gt;DefPosE = DefPosE;
+  1847        |     |     +--- ValData-&gt;ArrayDefPosS = ArrayDefPosS;
+  1848        |     |     +--- ValData-&gt;ArrayDefPosE = ArrayDefPosE;
+              |     |     |  +------------+ 
+  1849        |     |     +--+ if(RealF){ | 
+              |     |     |  +--+---------+ 
+  1850        |     |     |     +--- ValData-&gt;DataType = dt_Real;
+              |     |     |   +-+---+ 
+  1851        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------+ 
+  1852        |     |     +--+ if(IntF){  | 
+              |     |     |  +--+---------+ 
+  1853        |     |     |     +--- ValData-&gt;DataType = dt_Int;
+              |     |     |   +-+---+ 
+  1854        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------+ 
+  1855        |     |     +--+ if(CharF){ | 
+              |     |     |  +--+---------+ 
+  1856        |     |     |     +--- ValData-&gt;DataType = dt_Char;
+              |     |     |   +-+---+ 
+  1857        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------+ 
+  1858        |     |     +--+ if(LogicF){  | 
+              |     |     |  +--+-----------+ 
+  1859        |     |     |     +--- ValData-&gt;DataType = dt_Logic;
+              |     |     |   +-+---+ 
+  1860        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------+ 
+  1861        |     |     +--+ if(ComplexF){  | 
+              |     |     |  +--+-------------+ 
+  1862        |     |     |     +--- ValData-&gt;DataType = dt_Complex;
+              |     |     |   +-+---+ 
+  1863        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  1864        |     |     +--- ValData-&gt;DataLength = DataLength;
+  1865        |     |     +--- ValData-&gt;ArrayLevel = ArrayLevel;
+              |     |     |  +----------------------+ 
+  1866        |     |     +--+ if(ArrayLevel != 0){ | 
+              |     |     |  +--+-------------------+ 
+  1867        |     |     |     +--- ValData-&gt;ArrayOrFuncF = true;
+  1868        |     |     |     +--- //              ValData-&gt;ArrayStart = new int[ArrayLevel];
+  1869        |     |     |     |    //              ValData-&gt;ArrayCount = new int[ArrayLevel]; 
+              |     |     |     |  +----------------------------------------+ 
+  1870        |     |     |     +--+ for(int k = 0 ; k &lt; ArrayLevel ; k++){ | 
+              |     |     |     |  +--+-------------------------------------+ 
+  1871        |     |     |     |     +--- ValData-&gt;ArrayStart[k] = ArrayStart[k];
+  1872        |     |     |     |     +--- ValData-&gt;ArrayCount[k] = ArrayCount[k];
+              |     |     |     |   +-+---+ 
+  1873        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  1874        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  1875        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------+ 
+  1876        |     +--+ if(ParamValF){ | 
+              |     |  +--+-------------+ 
+  1877        |     |     +--- ValData-&gt;ParamValF = ParamValF;
+  1878        |     |     +--- ValData-&gt;dData = ParamData;
+              |     |   +-+---+ 
+  1879        |     |   |  }  | 
+              |     |   +-----+ 
+  1880        |     +--- //
+  1881        |     |    // 次の変数へ  
+  1882        |     |    //             
+  1883        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1884        |     +--- TokId = Token-&gt;TokId;
+              |     |  +--------------------------+ 
+  1885        |     +--+ if(TokId == tid_Kokka){  | 
+              |     |  +--+-----------------------+ 
+  1886        |     |     +--- i++;
+              |     |   +-+---+ 
+  1887        |     |   |  }  | 
+              |     |   +-----+ 
+  1888        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+  1889        |     +--- TokId = Token-&gt;TokId;
+              |     |  +--------------------------+ 
+  1890        |     +--+ if(TokId != tid_Kannma){ | 
+              |     |  +--+-----------------------+ 
+              |     |     |  +--------+ 
+  1891        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |   +-+---+ 
+  1892        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  1893        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  1894      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

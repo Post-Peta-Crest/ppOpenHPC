@@ -1,0 +1,380 @@
+
+<html>
+<head>
+<title>GetPrePostSubregionStr メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.20. GetPrePostSubregionStr メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetPrePostSubregionStr</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>12413</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string GetPrePostSubregionStr ( int Mode , int InControlCode )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>TuneRegion内の PrePro Sub RegionとPostPro Sub Righonの文字列を所得する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>PrePro Sub RegionとPostPro Sub Righonの文字列を返す。この文字列は先頭と最<br>後にコメントを含んだ複数行の文字列となる。</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>Mode　0:Prepro部分、1:PostPro部分を対象とする。<br>InControlCode　0:SrcoCode部分 、1:ControlCode部分が作成象とする。</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_31.htm">TTuneRegion::OutputAutoExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_31.htm">5082</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_43.htm">TTuneRegion::OutputSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_43.htm">11776</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------+ 
+ 12413  +--+ string TTuneRegion::GetPrePostSubregionStr(int Mode,int InControlCode) | 
+ 12414     | {                                                                      | 
+           +--+---------------------------------------------------------------------+ 
+ 12415        +--- int i,j;
+ 12416        +--- TToken *Token;
+ 12417        +--- TScript *Script;
+ 12418        +--- //  AnsiString rStr = &quot;&quot;;
+ 12419        +--- string rStr = &quot;&quot;;
+ 12420        +--- bool InRegionF;
+ 12421        +--- string s;
+ 12422        |    
+              |  +--------------------------------------------------+ 
+ 12423        +--+ for(i = TokenStartPos ; i &lt; TokenEndPos ; i++){  | 
+              |  +--+-----------------------------------------------+ 
+ 12424        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 12425        |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |  +----------------------+ 
+ 12426        |     +--+ if(Script == NULL){  | 
+              |     |  +--+-------------------+ 
+              |     |     |  +------------+ 
+ 12427        |     |     +--+ continue;  | 
+              |     |     |  +------------+ 
+              |     |   +-+---+ 
+ 12428        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +----------------------------------------+ 
+ 12429        |     +--+ if(Script-&gt;ScRegion == scr_substart){  | 
+              |     |  +--+-------------------------------------+ 
+              |     |     |  +--------------------------------------------------------------------------+ 
+ 12430        |     |     +--+ if((Mode == 0)&amp;&amp;(Script-&gt;ScType == sct_prepro)){    // Sub region Start  | 
+              |     |     |  +--+-----------------------------------------------------------------------+ 
+ 12431        |     |     |     +--- i = Script-&gt;LineEndTokPos;
+ 12432        |     |     |     +--- InRegionF = true;
+              |     |     |   +-+---+ 
+ 12433        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------------------------------------+ 
+ 12433        |     |     |   |  else if((Mode == 1)&amp;&amp;(Script-&gt;ScType == sct_postpro)){     // Sub region Start | 
+              |     |     |   +-+-------------------------------------------------------------------------------+ 
+ 12434        |     |     |     +--- i = Script-&gt;LineEndTokPos;
+ 12435        |     |     |     +--- InRegionF = true;
+              |     |     |   +-+---+ 
+ 12436        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12436        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 12437        |     |     |     +--- InRegionF = false;
+              |     |     |   +-+---+ 
+ 12438        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12439        |     |     +--- // SubRegion Endまで検索する。
+              |     |     |  +--------------------------------------+ 
+ 12440        |     |     +--+ for(j = i ; j &lt;= TokenEndPos ; j++){ | 
+              |     |     |  +--+-----------------------------------+ 
+ 12441        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+              |     |     |     |  +----------------------------+ 
+ 12442        |     |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |     |  +--+-------------------------+ 
+ 12443        |     |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |     |     |  +------------------------------------+ 
+ 12444        |     |     |     |     +--+ if(Script-&gt;ScRegion == scr_start){ | 
+              |     |     |     |     |  +--+---------------------------------+ 
+ 12445        |     |     |     |     |     +--- // Nestしている場合は、region end まで Skipする。
+              |     |     |     |     |     |  +----------------------------------+ 
+ 12446        |     |     |     |     |     +--+ for( ; j &lt;= TokenEndPos ; j++){  | 
+              |     |     |     |     |     |  +--+-------------------------------+ 
+ 12447        |     |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+              |     |     |     |     |     |     |  +----------------------------+ 
+ 12448        |     |     |     |     |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |     |     |     |     |  +--+-------------------------+ 
+ 12449        |     |     |     |     |     |     |     +--- Script = (TScript *)Token-&gt;Script;
+              |     |     |     |     |     |     |     |  +----------------------------------+ 
+ 12450        |     |     |     |     |     |     |     +--+ if(Script-&gt;ScRegion == scr_end){ | 
+              |     |     |     |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+ 12451        |     |     |     |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |     |     |     |   +-+---+ 
+ 12452        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+ 12453        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+ 12454        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12455        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-----------------------------------------+ 
+ 12455        |     |     |     |     |   |  else if(Script-&gt;ScRegion == scr_subend){ | 
+              |     |     |     |     |   +-+-----------------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+ 12456        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12457        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+ 12457        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+              |     |     |     |     |     |  +--------------------+ 
+ 12458        |     |     |     |     |     +--+ if(InControlCode){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+ 12459        |     |     |     |     |     |     +--- j = j + 1; // #pragma OAT の部分のみ取り除いて配置する。
+              |     |     |     |     |     |   +-+---+ 
+ 12460        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+---------------------+ 
+ 12460        |     |     |     |     |     |   |  else if(InRegionF){  | 
+              |     |     |     |     |     |   +-+---------------------+ 
+ 12461        |     |     |     |     |     |     +--- rStr += Token-&gt;OrgStr;
+              |     |     |     |     |     |   +-+---+ 
+ 12462        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12463        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12464        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+---------------------+ 
+ 12464        |     |     |     |   |  else if(InRegionF){  | 
+              |     |     |     |   +-+---------------------+ 
+ 12465        |     |     |     |     +--- rStr += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+ 12466        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12467        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------+ 
+ 12468        |     |     +--+ if(j &gt;= TokenEndPos){  | 
+              |     |     |  +--+---------------------+ 
+ 12469        |     |     |     +--- MainF-&gt;ErrMessage(i,&quot;sub region endが見つかりません。&quot;);
+              |     |     |   +-+---+ 
+ 12470        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12471        |     |     +--- i = j; // iをSubRegion End位置まで移動
+              |     |   +-+---+ 
+ 12472        |     |   |  }  | 
+              |     |   +-----+ 
+ 12473        |     |    
+              |   +-+---+ 
+ 12474        |   |  }  | 
+              |   +-----+ 
+              |  +------------------+ 
+ 12475        +--+ if(rStr != &quot;&quot;){  | 
+              |  +--+---------------+ 
+              |     |  +----------------------------------------+ 
+ 12476        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |  +--+-------------------------------------+ 
+              |     |     |  +----------------+ 
+ 12477        |     |     +--+ if(Mode == 0){ | 
+              |     |     |  +--+-------------+ 
+ 12478        |     |     |     +--- rStr = &quot;// OAT prepro sub region start\n&quot;+rStr;
+ 12479        |     |     |     +--- rStr += &quot;// OAT prepro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12480        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12480        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 12481        |     |     |     +--- rStr = &quot;// OAT postpro sub region start\n&quot;+rStr;
+ 12482        |     |     |     +--- rStr += &quot;// OAT postpro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12483        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12484        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------------------------------+ 
+ 12484        |     |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){  | 
+              |     |   +-+-----------------------------------------------------+ 
+              |     |     |  +----------------+ 
+ 12485        |     |     +--+ if(Mode == 0){ | 
+              |     |     |  +--+-------------+ 
+ 12486        |     |     |     +--- rStr = &quot;c OAT prepro sub region start\n&quot;+rStr;
+ 12487        |     |     |     +--- rStr += &quot;c OAT prepro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12488        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12488        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 12489        |     |     |     +--- rStr = &quot;c OAT postpro sub region start\n&quot;+rStr;
+ 12490        |     |     |     +--- rStr += &quot;c OAT postpro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12491        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12492        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 12492        |     |   |  else{  | 
+              |     |   +-+-------+ 
+              |     |     |  +----------------+ 
+ 12493        |     |     +--+ if(Mode == 0){ | 
+              |     |     |  +--+-------------+ 
+ 12494        |     |     |     +--- rStr = &quot;! OAT prepro sub region start\n&quot;+rStr;
+ 12495        |     |     |     +--- rStr += &quot;! OAT prepro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12496        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12496        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 12497        |     |     |     +--- rStr = &quot;! OAT postpro sub region start\n&quot;+rStr;
+ 12498        |     |     |     +--- rStr += &quot;! OAT postpro sub region end\n&quot;;
+              |     |     |   +-+---+ 
+ 12499        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 12500        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12501        |   |  }  | 
+              |   +-----+ 
+              |  +--------------+ 
+ 12502        +--+ return rStr; | 
+              |  +--------------+ 
+            +-+---+ 
+ 12503      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

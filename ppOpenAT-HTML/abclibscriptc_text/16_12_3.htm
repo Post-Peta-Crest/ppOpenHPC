@@ -1,0 +1,218 @@
+
+<html>
+<head>
+<title>CopyDataForHTML メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.12.3. CopyDataForHTML メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>CopyDataForHTML</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>Visual.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>150</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TVisualDM</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void CopyDataForHTML ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>HTML表示に必要なデータを複写する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_12_4.htm">TVisualDM::Exec</a></td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_4.htm">63</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>CopyFile</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>111</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>mkdir</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>rfind</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TVisualDM::DirName</td>
+<td nowrap><a href="5_17.htm">Visual.h</a></td>
+<td nowrap>58</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------+ 
+   150  +--+ void TVisualDM::CopyDataForHTML()  | 
+   151     | {                                  | 
+           +--+---------------------------------+ 
+   152        +--- string SrcFileName,DestFileName;
+   153        +--- string SrcPath;
+   154        |    
+   155        +--- SrcPath = &quot;./OAT_data/&quot;;
+   156        |    
+   157        +--- DestFileName = DirName + &quot;/OAT/vlapplet.jar&quot;;
+   158        +--- //  SrcFileName = SrcPath + ExtractFileName(DestFileName);
+   159        +--- SrcFileName = SrcPath + DestFileName.substr(DestFileName.rfind(&quot;/&quot;)+1);
+              |  +--------------------------------------------------------------+ 
+   160        +--+ if(CopyFile(SrcFileName.c_str(),DestFileName.c_str()) == 0){ | 
+              |  +--+-----------------------------------------------------------+ 
+   161        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Copy Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   162        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   163        |   |  }  | 
+              |   +-----+ 
+   164        +--- DestFileName = DirName + &quot;/OAT/bar0-&quot;;
+   165        +--- //  if(!ForceDirectories(DestFileName)){
+   166        |                                             
+              |  +----------------------------------------------------------------------------------------------+ 
+   167        +--+ if(!mkdir(DestFileName.c_str(),S_IROTH | S_IRUSR | S_IRGRP | S_IWOTH | S_IWUSR | S_IWGRP )){ | 
+              |  +--+-------------------------------------------------------------------------------------------+ 
+   168        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Create Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   169        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   170        |   |  }  | 
+              |   +-----+ 
+   171        +--- DestFileName = DirName + &quot;/OAT/bar0-/00.bin&quot;;
+   172        +--- //  SrcFileName = SrcPath + &quot;bar0-/&quot;+ ExtractFileName(DestFileName);
+   173        +--- SrcFileName = SrcPath + &quot;bar0-/&quot;+ DestFileName.substr(DestFileName.rfind(&quot;/&quot;)+1);
+              |  +--------------------------------------------------------------+ 
+   174        +--+ if(CopyFile(SrcFileName.c_str(),DestFileName.c_str()) == 0){ | 
+              |  +--+-----------------------------------------------------------+ 
+   175        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Copy Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   176        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   177        |   |  }  | 
+              |   +-----+ 
+   178        |    
+   179        +--- DestFileName = DirName + &quot;/OAT/gtable-&quot;;
+              |  +----------------------------------------------------------------------------------------------+ 
+   180        +--+ if(!mkdir(DestFileName.c_str(),S_IROTH | S_IRUSR | S_IRGRP | S_IWOTH | S_IWUSR | S_IWGRP)){  | 
+              |  +--+-------------------------------------------------------------------------------------------+ 
+   181        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Create Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   182        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   183        |   |  }  | 
+              |   +-----+ 
+   184        +--- DestFileName = DirName + &quot;/OAT/gtable-/00.bin&quot;;
+   185        +--- SrcFileName = SrcPath + &quot;bar0-/&quot;+ DestFileName.substr(DestFileName.rfind(&quot;/&quot;)+1);
+              |  +--------------------------------------------------------------+ 
+   186        +--+ if(CopyFile(SrcFileName.c_str(),DestFileName.c_str()) == 0){ | 
+              |  +--+-----------------------------------------------------------+ 
+   187        |     +--- MainF-&gt;ErrMessage(-1,&quot;File Copy Err &quot;+ DestFileName);
+              |     |  +----------+ 
+   188        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+   189        |   |  }  | 
+              |   +-----+ 
+   190        |    
+            +-+---+ 
+   191      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

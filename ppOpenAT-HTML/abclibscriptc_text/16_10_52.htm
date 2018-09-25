@@ -1,0 +1,153 @@
+
+<html>
+<head>
+<title>RestoreValBits メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.52. RestoreValBits メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>RestoreValBits</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2182</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void RestoreValBits ( int sPos , int ePos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>SaveAndResetValBitsで保存しておいた ValBits(ValData-&gt;xxxBits)を戻す。<br>新たな対象の解析の開始前に呼び出す。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>sPos    開始位置<br>ePos    終了位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_33.htm">TTuneRegion::OutputExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_33.htm">7683</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::ValBitsList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>210</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------+ 
+  2182  +--+ void TTuneRegion::RestoreValBits(int sPos,int ePos)  | 
+  2183     | {                                                    | 
+           +--+---------------------------------------------------+ 
+  2184        +--- int i;
+  2185        +--- TToken *Token;
+  2186        +--- TValData *ValData;
+  2187        +--- int idx = 0;
+  2188        |    
+              |  +----------------------------------+ 
+  2189        +--+ for(i = sPos ; i &lt;= ePos ; i++){ | 
+              |  +--+-------------------------------+ 
+  2190        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +------------------------------+ 
+  2191        |     +--+ if(Token-&gt;ValData != NULL){  | 
+              |     |  +--+---------------------------+ 
+  2192        |     |     +--- ValData = (TValData *)Token-&gt;ValData;
+              |     |     |  +--------------------------------+ 
+  2193        |     |     +--+ if(idx &lt; ValBitsList-&gt;Count){  | 
+              |     |     |  +--+-----------------------------+ 
+  2194        |     |     |     +--- ValData-&gt;DoValBits = (long)ValBitsList-&gt;Items[idx++];
+  2195        |     |     |     +--- ValData-&gt;DoEndValBits = (long)ValBitsList-&gt;Items[idx++];
+  2196        |     |     |     +--- ValData-&gt;RefDoValBits = (long)ValBitsList-&gt;Items[idx++];
+              |     |     |   +-+---+ 
+  2197        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  2198        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+  2199        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  2200      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

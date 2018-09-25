@@ -1,0 +1,306 @@
+
+<html>
+<head>
+<title>main 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.10. main 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>main</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>main.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>75</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int main ( int argc , char * argv [ ] )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>生成時に呼ばれ、コマンドラインの解析とMainF作成とコード生成を行う。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>int argc コマンドライン引数の数<br>char *argc[] コマンドライン引数</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_3.htm">TMainF::CodeGen</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_2_7.htm">TMainF::GetCommandLineArg</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_7.htm">296</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>_fgetc</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>fopen</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>getenv</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>rfind</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_1.htm">TMainF</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_9.htm">main.h</a></td>
+<td nowrap><a href="16_2_1.htm">64</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------+ 
+    75  +--+ int main(int argc, char* argv[]) { | 
+           +--+---------------------------------+ 
+    76        +--- string s;
+    77        +--- string OatPath_EnvStr;
+    78        +--- string SrcFileName,DirName;
+    79        +--- char *EnvStr;
+    80        +--- int i;
+    81        |    
+    82        +--- EnvStr = getenv(&quot;OAT_PATH&quot;);
+              |  +----------------------+ 
+    83        +--+ if (EnvStr != NULL){ | 
+              |  +--+-------------------+ 
+    84        |     +--- OatPath_EnvStr = EnvStr;
+              |   +-+---+ 
+    85        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+    86        |   |  else{  | 
+              |   +-+-------+ 
+    87        |     +--- OatPath_EnvStr = &quot;&quot;;
+              |   +-+---+ 
+    88        |   |  }  | 
+              |   +-----+ 
+    89        +--- #if 0 // TEST 用
+    90        |                     
+    91        +--- #define BASE_DIR &quot;c:/MinGW/msys/1.0/home/sakamoto/ppOpen-AT/&quot;
+    92        |    
+    93        +--- // exsampes_0.1.0 Fortran
+    94        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Dynamic_Set1/dynamic1.f&quot;};                                       
+    95        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Dynamic_Set2/dynamic2.f&quot;};                                       
+    96        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Fit_Sample1/matmal_fit.f&quot;};                                      
+    97        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Fit_Sample2/matmal_fit2.f&quot;};                                     
+    98        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/MGSker/MGSker.f&quot;};                                               
+    99        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/SetDebug/debg_num.f&quot;};                                           
+   100        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/SetNum/number.f&quot;};                                               
+   101        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/TDRker/TRDker.f&quot;};                                               
+   102        |                                                                                                                                         
+   103        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_i_1_to64/matmul1.f&quot;};                                       
+   104        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_ijk_1_to_4/matmul1.f&quot;};                                     
+   105        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_j_1_to64/matmul1.f&quot;};                                       
+   106        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_k_1_to64/matmul1.f&quot;};                                       
+   107        |                                                                                                                                         
+   108        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_Select_1/select1.f&quot;};                                       
+   109        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_Select_1/select1.f&quot;};                                       
+   110        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_Select_2/select2.f&quot;};                                       
+   111        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/Test_Select_3/param1.f&quot;};                                        
+   112        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/F90/TrdMatVec/TrdMatVec.f&quot;};                                         
+   113        |                                                                                                                                         
+   114        |    // exsampes_0.1.0 C                                                                                                                  
+   115        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/C/matunroll/matunroll.c&quot;};                                           
+   116        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/C/matunrolldyn/matunrolldyn.c&quot;};                                     
+   117        |    //  char* test_argv[] = {&quot;test.exe &quot; , BASE_DIR &quot;examples_0.1.0/C/Test_i_1_to64/matmul.c&quot;};                                          
+   118        |                                                                                                                                         
+   119        |                                                                                                                                         
+   120        |    // TEST                                                                                                                              
+   121        |    //  char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; ,&quot;-omp_inner&quot; , BASE_DIR &quot;F90examples/test/test.f90&quot;};                                   
+   122        |    //  char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; ,&quot;-omp_inner&quot; , BASE_DIR &quot;F90examples/ppOhBEM_0.1.0targetAT/bem-bb-fw-dense-0.1.0.f90&quot;}; 
+   123        +--- #if 1
+   124        +--- char* test_argv[] = {&quot;oat.exe&quot; , &quot;-mpi&quot; , BASE_DIR &quot;F90examples/seismic_3D/seism3d3n.f90&quot;
+   125        |                                            , BASE_DIR &quot;F90examples/seismic_3D/m_stress.f90&quot;     
+   126        |                                            , BASE_DIR &quot;F90examples/seismic_3D/m_velocity.f90&quot;}; 
+   127        +--- #endif
+   128        |    
+   129        +--- argc = sizeof(test_argv) / sizeof(test_argv[0]);
+   130        +--- // argc = 2;
+   131        +--- argv = test_argv;
+   132        |    
+   133        +--- #endif
+   134        +--- MainF = new TMainF;
+   135        +--- MainF-&gt;GetCommandLineArg(argc, argv);
+              |  +----------------------------+ 
+   136        +--+ if (MainF-&gt;LogFp == NULL){ | 
+              |  +--+-------------------------+ 
+              |     |  +----------------------------------------+ 
+   137        |     +--+ if(MainF-&gt;SrcFileNameList.Count != 0){ | 
+              |     |  +--+-------------------------------------+ 
+   138        |     |     +--- SrcFileName = MainF-&gt;SrcFileNameList.Strings[0];
+   139        |     |     +--- DirName = SrcFileName.substr(0, SrcFileName.rfind(&quot;/&quot;) + 1);
+              |     |   +-+---+ 
+   140        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+   140        |     |   |  else{  | 
+              |     |   +-+-------+ 
+   141        |     |     +--- DirName = &quot;./&quot;;
+              |     |   +-+---+ 
+   142        |     |   |  }  | 
+              |     |   +-----+ 
+   143        |     +--- s = DirName + &quot;OATLog.txt&quot;;
+   144        |     +--- MainF-&gt;LogFp = fopen(s.c_str(), &quot;wt&quot;);
+              |     |  +----------------------------+ 
+   145        |     +--+ if (MainF-&gt;LogFp == NULL){ | 
+              |     |  +--+-------------------------+ 
+   146        |     |     +--- MainF-&gt;ErrMessage(-1, &quot;LogFile &quot; + s + &quot; Open error.&quot;);
+              |     |   +-+---+ 
+   147        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   148        |   |  }  | 
+              |   +-----+ 
+   149        +--- // printf(&quot;--- ppOpenAT version 1.0.0 ---\n&quot;);  // Version String
+   150        |    // printf(&quot;--- ppOpenAT version 1.0.1 ---\n&quot;);  // Version String                              
+   151        |    // printf(&quot;--- ppOpenAT version 1.0.2 ---\n&quot;);  // Version String                              
+   152        |    // printf(&quot;--- ppOpenAT version 1.0.3 ---\n&quot;);  // Version String 2012/05/17                   
+   153        |    // MainF-&gt;print(&quot;--- ppOpenAT version 1.0.4 ---&quot;); // Version String 2012/09/27                
+   154        |    // MainF-&gt;print(&quot;--- ppOpenAT version 1.0.5 ---&quot;); // Version String 2013/03/21 Fortran90対応  
+   155        |    //  MainF-&gt;print(&quot;--- ppOpenAT version 1.0.6 ---&quot;); // Version String 2013/07/24 Update        
+   156        |    // MainF-&gt;print(&quot;--- ppOpenAT version 0.2.0 ---&quot;); // Version String 2013/08/11 Update         
+   157        +--- MainF-&gt;print(&quot;--- ppOpenAT version 0.2.2 ---&quot;); // Version String 2015/03/01 Update
+   158        +--- MainF-&gt;print(&quot;OAT_PATH = \&quot;&quot;+OatPath_EnvStr+&quot;\&quot;&quot;);
+   159        +--- s = &quot;&quot;;
+              |  +----------------------------------+ 
+   160        +--+ for (int i = 0; i &lt; argc; i++){  | 
+              |  +--+-------------------------------+ 
+   161        |     +--- s += argv[i] + (string)&quot; &quot;;
+              |   +-+---+ 
+   162        |   |  }  | 
+              |   +-----+ 
+   163        +--- MainF-&gt;print(&quot;CommandLine = &quot;+s);
+   164        +--- MainF-&gt;CodeGen();
+   165        |    
+   166        +--- delete MainF;
+   167        +--- MainF = NULL;
+   168        |    
+   169        +--- //
+   170        |    // 環境変数指定があれば、そちらのパスに対しても実行する。  
+   171        |    //                                                         
+              |  +----------------------------+ 
+   172        +--+ if (OatPath_EnvStr != &quot;&quot;){ | 
+              |  +--+-------------------------+ 
+   173        |     +--- MainF = new TMainF;
+   174        |     +--- MainF-&gt;GetCommandLineArg(argc, argv);
+              |     |  +------------------------------------------------------+ 
+   175        |     +--+ for (i = 0; i &lt; MainF-&gt;SrcFileNameList.Count; i++){  | 
+              |     |  +--+---------------------------------------------------+ 
+   176        |     |     +--- SrcFileName = MainF-&gt;SrcFileNameList.Strings[i];
+   177        |     |     +--- s = SrcFileName.substr(SrcFileName.rfind(&quot;/&quot;) + 1);
+   178        |     |     +--- MainF-&gt;SrcFileNameList.Strings[i] = OatPath_EnvStr + &quot;/&quot; + s;
+              |     |   +-+---+ 
+   179        |     |   |  }  | 
+              |     |   +-----+ 
+   180        |     +--- MainF-&gt;CodeGen();
+   181        |     +--- delete MainF;
+   182        |     +--- MainF = NULL;
+              |   +-+---+ 
+   183        |   |  }  | 
+              |   +-----+ 
+   184        +--- #ifdef _DEBUG
+   185        +--- getchar();
+   186        +--- #endif
+              |  +------------+ 
+   187        +--+ return 0;  | 
+              |  +------------+ 
+            +-+---+ 
+   188      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+<html>
+<head>
+<title>StrToHTMLStr メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.12.8. StrToHTMLStr メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>StrToHTMLStr</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>Visual.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>727</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TVisualDM</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>string StrToHTMLStr ( string s )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>文字列の空白や特殊文字を HTML形式で表示可能な文字列に変換する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>変換後文字列</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>s   元文字列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_12_5.htm">TVisualDM::MakeIndexHTML</a></td>
+<td nowrap><a href="5_8.htm">Visual.cpp</a></td>
+<td nowrap><a href="16_12_5.htm">209</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------+ 
+   727  +--+ string TVisualDM::StrToHTMLStr(string s) | 
+   728     | {                                        | 
+           +--+---------------------------------------+ 
+   729        +--- int i;
+   730        +--- char c;
+   731        +--- string rStr = &quot;&quot;;
+   732        |    
+              |  +------------------------------------------+ 
+   733        +--+ for(i = 1 ; i &lt;= (int)s.length() ; i++){ | 
+              |  +--+---------------------------------------+ 
+   734        |     +--- c = s[i];
+              |     |  +------------+ 
+   735        |     +--+ switch(c){ | 
+              |     |  +--+---------+ 
+              |     |     +-------------+ 
+   736        |     |     |  case '\n': | 
+              |     |     +-------------+ 
+   737        |     |     +--- //          rStr += &quot;&lt;br&gt;&quot;;
+              |     |     |  +--------+ 
+   738        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------+ 
+   739        |     |     |  case '\r': | 
+              |     |     +-------------+ 
+              |     |     |  +--------+ 
+   740        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------+ 
+   741        |     |     |  case ' ':  | 
+              |     |     +-------------+ 
+   742        |     |     +--- rStr += &quot;&amp;nbsp;&quot;;
+              |     |     |  +--------+ 
+   743        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------+ 
+   744        |     |     |  case '&lt;':  | 
+              |     |     +-------------+ 
+   745        |     |     +--- rStr += &quot;&amp;lt;&quot;;
+              |     |     |  +--------+ 
+   746        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------+ 
+   747        |     |     |  case '&gt;':  | 
+              |     |     +-------------+ 
+   748        |     |     +--- rStr += &quot;&amp;gt;&quot;;
+              |     |     |  +--------+ 
+   749        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-------------+ 
+   750        |     |     |  case '&quot;':  | 
+              |     |     +-------------+ 
+   751        |     |     +--- rStr += &quot;&amp;quot;&quot;;
+              |     |     |  +--------+ 
+   752        |     |     +--+ break; | 
+              |     |     |  +--------+ 
+              |     |     +-----------+ 
+   753        |     |     |  default: | 
+              |     |     +-----------+ 
+   754        |     |     +--- rStr += c;
+              |     |   +-+---+ 
+   755        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   756        |   |  }  | 
+              |   +-----+ 
+              |  +--------------+ 
+   757        +--+ return rStr; | 
+              |  +--------------+ 
+            +-+---+ 
+   758      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

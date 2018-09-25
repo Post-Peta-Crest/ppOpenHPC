@@ -1,0 +1,859 @@
+
+<html>
+<head>
+<title>OutputSrcCode メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.43. OutputSrcCode メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputSrcCode</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11776</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputSrcCode ( FILE * fp , string IndentStr , int OutMode )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>置き換えコードを出力<br>Call SetParam()<br>Call xxxx()<br>コメントに置き換える。<br><br>Modeの設定で、出力対象（範囲）を変える。 Add 2004/09/14<br><br>OutMode=0 : SetParam + Call Func() + Comment<br>OutMode=1 : SetParam + Call Func()<br>OutMode=2 : SetParam<br>OutMode=3 : Call Func() + Comment</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>IndentStr   インデント文字列<br>OutMode 出力モード</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_9.htm">TPass5::MakeFunctionCode_C</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_9.htm">1592</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_4_10.htm">TPass5::MakeFunctionCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_10.htm">1837</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_4_11.htm">TPass5::MakeFunctionCode_Fortran77</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_11.htm">2252</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_37.htm">TTuneRegion::OutputReplaceSrc</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_37.htm">12094</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_20.htm">TTuneRegion::GetPrePostSubregionStr</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_20.htm">12413</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_10_42.htm">TTuneRegion::OutputSetParmSrcCode</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_42.htm">11609</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>insert</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::BaseValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>216</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::FittingDspline</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>248</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::Name</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>192</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::TuneGroup</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>195</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TTuneRegion::TuneGroupName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>196</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TTuneRegion::variedFromValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TTuneRegion::variedStepValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>237</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TTuneRegion::variedToValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>236</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_6_1.htm">TScValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_6_1.htm">170</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------+ 
+ 11776  +--+ void TTuneRegion::OutputSrcCode(FILE *fp,string IndentStr,int OutMode) | 
+ 11777     | {                                                                      | 
+           +--+---------------------------------------------------------------------+ 
+ 11778        +--- int i;
+ 11779        +--- TToken *Token;
+ 11780        +--- TValData *ValData;
+ 11781        +--- string s,s2;
+ 11782        +--- TScript *Script;
+ 11783        +--- string BaseValName;
+ 11784        |    
+ 11785        +--- BaseValName = BaseValList-&gt;Strings[0];
+ 11786        +--- // Param OAT_INSTALL = 1  が ABCScript.h　にあるが、
+ 11787        |    // モジュールが異なるため、参照できてないので、値自体をセットしている  
+ 11788        |    // 2004/05/28                                                          
+              |  +--------------------+ 
+ 11789        +--+ if(OutMode != 3){  | 
+              |  +--+-----------------+ 
+              |     |  +--------------------------------------------------------------------+ 
+ 11790        |     +--+ if(MainF-&gt;Call_SetParam_Script == NULL){    // 指定なしの場合のみ  | 
+              |     |  +--+-----------------------------------------------------------------+ 
+ 11791        |     |     +--- OutputSetParmSrcCode(fp,IndentStr);
+              |     |   +-+---+ 
+ 11792        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11793        |   |  }  | 
+              |   +-----+ 
+              |  +--------------------+ 
+ 11794        +--+ if(OutMode != 2){  | 
+              |  +--+-----------------+ 
+ 11795        |     +--- s = GetPrePostSubregionStr(0,0);
+ 11796        |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+ 11797        |     |    
+ 11798        |     +--- //      if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){
+              |     |  +------------------------------------------------+ 
+ 11799        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+ 11800        |     |     +--- s = &quot;      call &quot; + FuncName + &quot;(&quot;;
+              |     |     |  +--------------------------------------------+ 
+ 11801        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |  +------------------------------------+ 
+ 11802        |     |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |  +------------+ 
+ 11803        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 11804        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 11805        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+ 11806        |     |     |     +--- s += ValData-&gt;Str + &quot;,&quot;;
+              |     |     |   +-+---+ 
+ 11807        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 11808        |     |     +--- s += &quot;iusw1_&quot;+Name+&quot;)\n&quot;;   // 当面は１変数だけの unrollとなる。
+              |     |   +-+---+ 
+ 11809        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-----------------------------------------------------+ 
+ 11809        |     |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){  | 
+              |     |   +-+-----------------------------------------------------+ 
+ 11810        |     |     +--- s = &quot;      call &quot; + FuncName + &quot;(&quot;;
+              |     |     |  +--------------------------------------------+ 
+ 11811        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |  +------------------------------------+ 
+ 11812        |     |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |  +------------+ 
+ 11813        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 11814        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 11815        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+ 11816        |     |     |     +--- s += ValData-&gt;Str + &quot;,&quot;;
+              |     |     |   +-+---+ 
+ 11817        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 11818        |     |     +--- s += &quot;iusw1_&quot;+Name+&quot;);\n&quot;;  // 当面は１変数だけの unrollとなる。
+              |     |   +-+---+ 
+ 11819        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 11819        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 11820        |     |     +--- s = IndentStr+&quot;\t&quot; + FuncName + &quot;(&quot;;
+              |     |     |  +--------------------------------------------+ 
+ 11821        |     |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |  +------------------------------------+ 
+ 11822        |     |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |  +------------+ 
+ 11823        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+ 11824        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 11825        |     |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+ 11826        |     |     |     +--- s += ValData-&gt;Str + &quot;,&quot;;
+              |     |     |   +-+---+ 
+ 11827        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 11828        |     |     +--- s += &quot;OAT_iusw1_&quot;+Name+&quot;);\n&quot;;  // 当面は１変数だけの unrollとなる。
+ 11829        |     |     |                                                                         
+              |     |   +-+---+ 
+ 11830        |     |   |  }  | 
+              |     |   +-----+ 
+ 11831        |     +--- s = SepLongStr(s);
+ 11832        |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+ 11833        |     +--- s = GetPrePostSubregionStr(1,0);
+ 11834        |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+              |   +-+---+ 
+ 11835        |   |  }  | 
+              |   +-----+ 
+ 11836        +--- //
+ 11837        |    // 対象ブロックをコメントにして出力する。    
+ 11838        |    // case()内の場合,SetParamだけの場合は、Skip 
+ 11839        |    //                                           
+ 11840        +--- //d-spline用追加部分
+ 11841        |                         
+ 11842        +--- int CaseArrayCount;
+ 11843        +--- CaseArrayCount = CaseCount;
+ 11844        |    
+ 11845        +--- /********************************************************************************************************************************/
+ 11846        |    //                                                                                                                                 
+ 11847        |    //Kogakuin Irie                                                                                                                    
+ 11848        |    //Fortran90用のd-Spline用追加部分，および2次元用追加部分                                                                           
+ 11849        |    //既存のコードはコメントアウト                                                                                                     
+ 11850        +--- /*  if(FittingDynamic == 1){
+ 11851        |            fprintf(fp,&quot;\tt2 = OAT_Wtime();\n&quot;);                           
+ 11852        |            fprintf(fp,&quot;\tdynamicDspline(%d,&amp;OAT_iusw1_&quot;,CaseArrayCount);  
+ 11853        |                                                                           
+ 11854        |            s = Name;                                                      
+ 11855        |            fprintf(fp,&quot;%s,2,t2-t1);\n&quot;,s.c_str() );                       
+ 11856        |                                                                           
+ 11857        |                                                                           
+ 11858        |        }                                                                  
+ 11859        |    //d-spline用追加部分ここまで                                           
+ 11860        |    */                                                                     
+              |  +------------------------------+ 
+ 11861        +--+ if(TuneGroup == tgDynamic){  | 
+              |  +--+---------------------------+ 
+              |     |  +--------------------------+ 
+ 11862        |     +--+ if(FittingDspline == 1){ | 
+              |     |  +--+-----------------------+ 
+              |     |     |  +----------------------------------------+ 
+ 11863        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+ 11864        |     |     |     +--- fprintf(fp,&quot;\tt2 = OAT_Wtime();\n&quot;);
+ 11865        |     |     |     +--- fprintf(fp,&quot;\tdynamicDspline%s%s(%d,&amp;OAT_iusw1_&quot;,TuneGroupName.c_str(),Name.c_str(),CaseArrayCount);
+ 11866        |     |     |     |    
+ 11867        |     |     |     +--- s = Name;
+ 11868        |     |     |     +--- fprintf(fp,&quot;%s,2,t2-t1);\n&quot;,s.c_str() );
+              |     |     |   +-+---+ 
+ 11869        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11870        |     |     |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){  | 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11871        |     |     |     +--- fprintf(fp,&quot;      t2 = omp_get_wtime()\n&quot;);
+ 11872        |     |     |     +--- fprintf(fp,&quot;      call dynamicDspline%s%s(%d,iusw1_&quot;,TuneGroupName.c_str(),Name.c_str(),CaseArrayCount);
+ 11873        |     |     |     |    
+ 11874        |     |     |     +--- s = Name;
+ 11875        |     |     |     +--- fprintf(fp,&quot;%s,2,t2-t1)\n&quot;,s.c_str() );
+              |     |     |   +-+---+ 
+ 11876        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11877        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------------------+ 
+ 11878        |     +--+ if(FittingDspline == 2){ | 
+              |     |  +--+-----------------------+ 
+ 11879        |     |     +--- int CaseArrayCount2[2];
+ 11880        |     |     +--- CaseArrayCount2[0] = (int)( (variedToValue[0] - variedFromValue[0]) / variedStepValue[0] + 1 );
+ 11881        |     |     +--- CaseArrayCount2[1] = (int)( (variedToValue[1] - variedFromValue[1]) / variedStepValue[1] + 1 );
+ 11882        |     |     |    
+              |     |     |  +----------------------------------------+ 
+ 11883        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+ 11884        |     |     |     +--- fprintf(fp,&quot;\tt2 = OAT_Wtime();\n&quot;);
+ 11885        |     |     |     |    
+ 11886        |     |     |     +--- fprintf(fp, &quot;\tdynamicDspline2%s%s(%d,%d,%d,&amp;OAT_iusw1_&quot;,TuneGroupName.c_str(),
+ 11887        |     |     |     |            Name.c_str(),CaseArrayCount,CaseArrayCount2[0],CaseArrayCount2[1]);      
+ 11888        |     |     |     |    
+ 11889        |     |     |     +--- s = Name;
+ 11890        |     |     |     +--- fprintf(fp,&quot;%s,2,t2-t1);\n&quot;,s.c_str() );
+              |     |     |   +-+---+ 
+ 11891        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11892        |     |     |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){  | 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11893        |     |     |     +--- fprintf(fp,&quot;      t2 = omp_get_wtime();\n&quot;);
+ 11894        |     |     |     |    
+ 11895        |     |     |     +--- fprintf(fp, &quot;      call dynamicDspline2%s%s(%d,%d,%d,iusw1_&quot;,TuneGroupName.c_str(),
+ 11896        |     |     |     |            Name.c_str(),CaseArrayCount,CaseArrayCount2[0],CaseArrayCount2[1]);          
+ 11897        |     |     |     |    
+ 11898        |     |     |     +--- s = Name;
+ 11899        |     |     |     +--- fprintf(fp,&quot;%s,2,t2-t1);\n&quot;,s.c_str() );
+              |     |     |   +-+---+ 
+ 11900        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+ 11901        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11902        |   |  }  | 
+              |   +-----+ 
+ 11903        +--- //
+ 11904        |    //ここまで                                                                                                                         
+ 11905        |    //                                                                                                                                 
+ 11906        |    /********************************************************************************************************************************/ 
+ 11907        |                                                                                                                                       
+              |  +--------------------------------------+ 
+ 11908        +--+ if((OutMode != 0)&amp;&amp;(OutMode != 3)){  | 
+              |  +--+-----------------------------------+ 
+              |     |  +----------+ 
+ 11909        |     +--+ return;  | 
+              |     |  +----------+ 
+              |   +-+---+ 
+ 11910        |   |  }  | 
+              |   +-----+ 
+ 11911        +--- s = &quot;&quot;;
+              |  +--------------------------------------------------+ 
+ 11912        +--+ for(i = TokenStartPos ; i &lt;= TokenEndPos ; i++){ | 
+              |  +--+-----------------------------------------------+ 
+ 11913        |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |  +----------------------------+ 
+ 11914        |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |  +--+-------------------------+ 
+ 11915        |     |     +--- Script = (TScript *)Token-&gt;Script;
+ 11916        |     |     +--- s = Token-&gt;OrgStr;
+ 11917        |     |     +--- i++;
+              |     |     |  +--------------------------------+ 
+ 11918        |     |     +--+ for( ; i &lt; TokenEndPos ; i++){ | 
+              |     |     |  +--+-----------------------------+ 
+ 11919        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 11920        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |  +----------------------+ 
+ 11921        |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |  +--------+ 
+ 11922        |     |     |     |     +--+ break; | 
+              |     |     |     |     |  +--------+ 
+              |     |     |     |   +-+---+ 
+ 11923        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 11924        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------------+ 
+ 11925        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+ 11926        |     |     |     +--- fprintf(fp,&quot;//%s&quot;,s.c_str());
+              |     |     |   +-+---+ 
+ 11927        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11927        |     |     |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){  | 
+              |     |     |   +-+-----------------------------------------------------+ 
+ 11928        |     |     |     +--- fprintf(fp,&quot;c%s&quot;,s.c_str());
+              |     |     |   +-+---+ 
+ 11929        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 11929        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+ 11930        |     |     |     +--- fprintf(fp,&quot;!%s&quot;,s.c_str());
+              |     |     |   +-+---+ 
+ 11931        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 11932        |     |     |    
+ 11933        |     |     +--- //
+ 11934        |     |     |    // !OAT$ debug()　スクリプトの処理 
+ 11935        |     |     |    //                                 
+              |     |     |  +------------------------------------------------+ 
+ 11936        |     |     +--+ if(Script-&gt;ScType == sct_debug){    // number  | 
+              |     |     |  +--+---------------------------------------------+ 
+ 11937        |     |     |     +--- string cs;
+ 11938        |     |     |     |    
+              |     |     |     |  +----------------------------------------+ 
+ 11939        |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |     |     |  +--+-------------------------------------+ 
+              |     |     |     |     |  +--------------------+ 
+ 11940        |     |     |     |     +--+ if(MainF-&gt;DebugF){ | 
+              |     |     |     |     |  +--+-----------------+ 
+ 11941        |     |     |     |     |     +--- s = IndentStr+&quot;\t&quot;;
+ 11942        |     |     |     |     |     +--- cs = &quot;&quot;;
+              |     |     |     |     |   +-+---+ 
+ 11943        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+ 11943        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+ 11944        |     |     |     |     |     +--- s = &quot;//&quot; + IndentStr+&quot;\t&quot;;
+ 11945        |     |     |     |     |     +--- cs = &quot;//&quot;;
+              |     |     |     |     |   +-+---+ 
+ 11946        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+ 11947        |     |     |     |     +--- s2 = s+&quot;if(OAT_DEBUG &gt;= 1){&quot;;
+ 11948        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+ 11949        |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;myid: %d\\n\&quot;,myid);&quot;;
+ 11950        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+ 11951        |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;&quot;+TuneGroupName+&quot; Routine: &quot;+Name+&quot;\\n\&quot;);&quot;;
+ 11952        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+ 11953        |     |     |     |     |    
+              |     |     |     |     |  +------------------------------------+ 
+ 11954        |     |     |     |     +--+ if(Script-&gt;ScValDataList != NULL){ | 
+              |     |     |     |     |  +--+---------------------------------+ 
+              |     |     |     |     |     |  +----------------------------------------------------------+ 
+ 11955        |     |     |     |     |     +--+ for(int k = 0 ; k &lt; Script-&gt;ScValDataList-&gt;Count ; k++){ | 
+              |     |     |     |     |     |  +--+-------------------------------------------------------+ 
+ 11956        |     |     |     |     |     |     +--- TScValData *ScValData;
+ 11957        |     |     |     |     |     |     +--- ScValData = (TScValData *)Script-&gt;ScValDataList-&gt;Items[k];
+              |     |     |     |     |     |     |  +------------------------------+ 
+ 11958        |     |     |     |     |     |     +--+ if(ScValData-&gt;Str == &quot;bp&quot;){  | 
+              |     |     |     |     |     |     |  +--+---------------------------+ 
+ 11959        |     |     |     |     |     |     |     +--- s2 = s+ &quot;\tprintf(\&quot;OAT_STARTTUNESIZE: %d\\n\&quot;,OAT_STARTTUNESIZE);&quot;;
+ 11960        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+ 11961        |     |     |     |     |     |     |     +--- s2 = s+ &quot;\tprintf(\&quot;OAT_ENDTUNESIZE: %d\\n\&quot;,OAT_ENDTUNESIZE);&quot;;
+ 11962        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+ 11963        |     |     |     |     |     |     |     +--- s2 = s+ &quot;\tprintf(\&quot;OAT_SAMPDIST: %d\\n\&quot;,OAT_SAMPDIST);&quot;;
+ 11964        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+ 11965        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |   +-+---------------------------------+ 
+ 11965        |     |     |     |     |     |     |   |  else if(ScValData-&gt;Str == &quot;pp&quot;){ | 
+              |     |     |     |     |     |     |   +-+---------------------------------+ 
+ 11966        |     |     |     |     |     |     |     +--- //
+ 11967        |     |     |     |     |     |     |     |    // Change iusw1 to iusw1_+Name 2005/02/28                                
+ 11968        |     |     |     |     |     |     |     |    //                          s2 = s+&quot;  print *, \&quot;iusw1: \&quot;,iusw1&quot;;       
+ 11969        |     |     |     |     |     |     |     |                                                                             
+ 11970        |     |     |     |     |     |     |     |    //                          s2 = s+&quot;  print *, \&quot;iusw1: \&quot;,iusw1_&quot;+Name; 
+ 11971        |     |     |     |     |     |     |     +--- s2 = s+&quot;  print *, \&quot;iusw1: \&quot;,OAT_iusw1_&quot;+Name;
+ 11972        |     |     |     |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;iusw1: %d\\n\&quot;,OAT_iusw1_&quot;+Name+&quot;);&quot;;
+ 11973        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+ 11974        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |   +-+-------+ 
+ 11974        |     |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |     |   +-+-------+ 
+              |     |     |     |     |     |     |     |  +--------------------------------------------------+ 
+ 11975        |     |     |     |     |     |     |     +--+ if(ScValData-&gt;Str.find(&quot;OAT&quot;) != string::npos){  | 
+              |     |     |     |     |     |     |     |  +--+-----------------------------------------------+ 
+ 11976        |     |     |     |     |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;&quot;+ScValData-&gt;Str+&quot;: %d\\n\&quot;,&quot;
+ 11977        |     |     |     |     |     |     |     |     |        +ScValData-&gt;Str+&quot;);&quot;;                        
+ 11978        |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;, s2.c_str());
+              |     |     |     |     |     |     |     |   +-+---+ 
+ 11979        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |     |   +-+-------+ 
+ 11979        |     |     |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |     |     |   +-+-------+ 
+ 11980        |     |     |     |     |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;Error! : &quot;+ScValData-&gt;Str + &quot; \&quot;);&quot;;
+ 11981        |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;, s2.c_str());
+ 11982        |     |     |     |     |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;You can only specify the system parameters\&quot;);&quot;;
+ 11983        |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;, s2.c_str());
+ 11984        |     |     |     |     |     |     |     |     +--- s2 = s+&quot;\tprintf(\&quot;   in the co-operator of debug. \&quot;);&quot;;
+ 11985        |     |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;, s2.c_str());
+              |     |     |     |     |     |     |     |   +-+---+ 
+ 11986        |     |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |     |   +-+---+ 
+ 11987        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |   +-+---+ 
+ 11988        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+ 11989        |     |     |     |     |     +--- s2 = s+&quot;}&quot;;
+ 11990        |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s2.c_str());
+              |     |     |     |     |   +-+---+ 
+ 11991        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 11992        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+ 11992        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+              |     |     |     |     |  +------------------------------------------------+ 
+ 11993        |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |     |     |     |  +--+---------------------------------------------+ 
+              |     |     |     |     |     |  +--------------------+ 
+ 11994        |     |     |     |     |     +--+ if(MainF-&gt;DebugF){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+ 11995        |     |     |     |     |     |     +--- fprintf(fp,&quot;        if (OAT_DEBUG .ge. 2)then\n&quot;);
+ 11996        |     |     |     |     |     |     +--- fprintf(fp,&quot;          print *, \'oat_myid: \',oat_myid\n&quot;);
+ 11997        |     |     |     |     |     |     +--- s = &quot;          print *, \'&quot;+TuneGroupName+&quot; Routine: &quot;+Name+&quot;=\',iusw1_&quot;+Name;
+ 11998        |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+ 11999        |     |     |     |     |     |     +--- fprintf(fp,&quot;        endif\n&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12000        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 12000        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 12001        |     |     |     |     |     |     +--- fprintf(fp,&quot;!        if (OAT_DEBUG .ge. 2)then\n&quot;);
+ 12002        |     |     |     |     |     |     +--- fprintf(fp,&quot;!          print *, \'oat_myid: \',oat_myid\n&quot;);
+ 12003        |     |     |     |     |     |     +--- s = &quot;!          print *, \'&quot;+TuneGroupName+&quot; Routine: &quot;+Name+&quot;=\',iusw1_&quot;+Name;
+ 12004        |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+ 12005        |     |     |     |     |     |     +--- fprintf(fp,&quot;!        endif\n&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12006        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12007        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+ 12007        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+              |     |     |     |     |     |  +--------------------+ 
+ 12008        |     |     |     |     |     +--+ if(MainF-&gt;DebugF){ | 
+              |     |     |     |     |     |  +--+-----------------+ 
+ 12009        |     |     |     |     |     |     +--- fprintf(fp,&quot;        if (OAT_DEBUG .ge. 1)then\n&quot;);
+ 12010        |     |     |     |     |     |     +--- fprintf(fp,&quot;          print *, \'myid: \',myid\n&quot;);
+ 12011        |     |     |     |     |     |     +--- s = &quot;          print *, \'&quot;+TuneGroupName+&quot; Routine: &quot;+Name+&quot;\'&quot;;
+ 12012        |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+ 12013        |     |     |     |     |     |     +--- fprintf(fp,&quot;        endif\n&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12014        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 12014        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 12015        |     |     |     |     |     |     +--- fprintf(fp,&quot;c        if (OAT_DEBUG .ge. 1)then\n&quot;);
+ 12016        |     |     |     |     |     |     +--- fprintf(fp,&quot;c          print *, \'myid: \',myid\n&quot;);
+ 12017        |     |     |     |     |     |     +--- s = &quot;c          print *, \'&quot;+TuneGroupName+&quot; Routine: &quot;+Name+&quot;\'&quot;;
+ 12018        |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,s.c_str());
+ 12019        |     |     |     |     |     |     +--- fprintf(fp,&quot;c        endif\n&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12020        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12021        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12022        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12023        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12024        |     |     +--- s = &quot;\n&quot;;
+              |     |   +-+---+ 
+ 12025        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------+ 
+ 12025        |     |   |  else{  // not Script | 
+              |     |   +-+---------------------+ 
+              |     |     |  +----------------------------------------+ 
+ 12026        |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+ 12027        |     |     |     +--- s = &quot;//&quot;;
+              |     |     |     |  +--------------------------------+ 
+ 12028        |     |     |     +--+ for( ; i &lt; TokenEndPos ; i++){ | 
+              |     |     |     |  +--+-----------------------------+ 
+ 12029        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 12030        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |  +----------------------+ 
+ 12031        |     |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |  +--------+ 
+ 12032        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12033        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +------------------------------------+ 
+ 12034        |     |     |     |     +--+ if(s.find('\n') != string::npos){  | 
+              |     |     |     |     |  +--+---------------------------------+ 
+ 12035        |     |     |     |     |     +--- // 改行が文字列の最後でなければ、改行の後に//を入れる。
+              |     |     |     |     |     |  +----------------------------------------------+ 
+ 12036        |     |     |     |     |     +--+ if((int)s.find('\n') != (int)s.length()-1){  | 
+              |     |     |     |     |     |  +--+-------------------------------------------+ 
+ 12037        |     |     |     |     |     |     +--- s.insert(s.find('\n')+1,&quot;//&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12038        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |     |  +--------+ 
+ 12039        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12040        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12041        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12042        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+ 12042        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+              |     |     |     |  +------------------------------------------------+ 
+ 12043        |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |  +--+---------------------------------------------+ 
+ 12044        |     |     |     |     +--- s = &quot;c&quot;;
+              |     |     |     |   +-+---+ 
+ 12045        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+ 12045        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+ 12046        |     |     |     |     +--- s = &quot;!&quot;;
+              |     |     |     |   +-+---+ 
+ 12047        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------------------+ 
+ 12048        |     |     |     +--+ for( ; i &lt; TokenEndPos ; i++){ | 
+              |     |     |     |  +--+-----------------------------+ 
+ 12049        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+ 12050        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |  +----------------------+ 
+ 12051        |     |     |     |     +--+ if(Token-&gt;LineEndF){ | 
+              |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |  +--------+ 
+ 12052        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+ 12053        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12054        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+ 12055        |     |     |     +--- s = SepLongStr(s);
+              |     |     |     |  +--------------------------------------------+ 
+ 12056        |     |     |     +--+ for(int j = s.length()-2 ; j &gt;= 0 ; j--){  | 
+              |     |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |     |  +--------------------+ 
+ 12057        |     |     |     |     +--+ if(s[j] == '\n'){  | 
+              |     |     |     |     |  +--+-----------------+ 
+ 12058        |     |     |     |     |     +--- // 改行が文字列の最後でなければ、改行の後にcまたは!を入れる。
+              |     |     |     |     |     |  +------------------------------------------------+ 
+ 12059        |     |     |     |     |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){ | 
+              |     |     |     |     |     |  +--+---------------------------------------------+ 
+ 12060        |     |     |     |     |     |     +--- s.insert(j+1,&quot;c&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12061        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+ 12061        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+ 12062        |     |     |     |     |     |     +--- s.insert(j+1,&quot;!&quot;);
+              |     |     |     |     |     |   +-+---+ 
+ 12063        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+ 12064        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+ 12065        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+ 12066        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+ 12067        |     |     +--- fprintf(fp,&quot;%s&quot;,s.c_str());
+              |     |   +-+---+ 
+ 12068        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 12069        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+ 12070      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

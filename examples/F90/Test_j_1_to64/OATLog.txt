@@ -1,0 +1,50 @@
+--- ppOpenAT version 0.2.3 ---
+OAT_PATH = ""
+CommandLine = test.exe  c:/ppOpenAT/examples/F90/Test_j_1_to64/matmul1.f 
+**** Start Code Generation ****
+SrcFile ="c:/ppOpenAT/examples/F90/Test_j_1_to64/matmul1.f"
+Pass1 Start
+Pass2 Start
+------ Val List ---------
+0: (MIdx=0) Int iauto (RW=1,1) DefPos=13
+1: (MIdx=0) Int N=500.000000 (RW=6,0) DefPos=16
+2: (MIdx=0) Real*8 A(500)(500) (RW=1,0) DefPos=28
+3: (MIdx=0) Real*8 B(500)(500) (RW=1,0) DefPos=35
+4: (MIdx=0) Real*8 C(500)(500) (RW=1,0) DefPos=42
+5: (MIdx=0) Int ierr (RW=4,0) DefPos=-11
+6: (MIdx=0) Int MPI_COMM_WORLD (RW=2,0) DefPos=-11
+7: (MIdx=0) Int myid (RW=1,0) DefPos=-11
+8: (MIdx=0) Int nprocs (RW=1,0) DefPos=-11
+9: (MIdx=0) Int in (RW=1,1) DefPos=-11
+10: (MIdx=1) Int MatMul (RW=0,0)(Arg) DefPos=-1
+11: (MIdx=1) Real*8 A(0)(0) (RW=1,2)(Arg) DefPos=233
+12: (MIdx=1) Real*8 B(0)(0) (RW=1,1)(Arg) DefPos=240
+13: (MIdx=1) Real*8 C(0)(0) (RW=1,1)(Arg) DefPos=247
+14: (MIdx=1) Int N (RW=13,0)(Arg) DefPos=228
+15: (MIdx=1) Real*8 da1 (RW=2,2) DefPos=262
+16: (MIdx=1) Real*8 da2 (RW=0,0) DefPos=264
+17: (MIdx=1) Real*8 dc (RW=1,1) DefPos=269
+18: (MIdx=1) Int i (RW=8,3) DefPos=-11
+19: (MIdx=1) Int j (RW=8,3) DefPos=-11
+20: (MIdx=1) RealFunc dble (RW=2,0) DefPos=-11
+21: (MIdx=1) Int k (RW=2,1) DefPos=-11
+Pass3 Start
+Pass4 Start
+OAT variable:       OAT_DEBUG = 1
+OAT variable:       OAT_NUMPROCS = 4
+OAT variable:       OAT_STARTTUNESIZE = 100
+OAT variable:       OAT_ENDTUNESIZE = 500
+OAT variable:       OAT_SAMPDIST = 100
+Base Paramater (BPset): N
+------ Tuning Region -- Count = 1
+Tuning Region : 0
+Install Unroll MyMatMul
+OAT_InstallMyMatMul(,,N,A,C,B) 
+Undefined Val ( use module ) = (i j k ) 
+    varied j (1,N,) from 1.000000 to 64.000000 step 1.000000
+  RefValStr = ( j,da1,dc, )
+  Case Count = 64
+
+Pass5 Start
+TuneRegion = 1/1
+**** End Code Generation **** OK !

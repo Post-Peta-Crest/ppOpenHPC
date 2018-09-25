@@ -1,0 +1,242 @@
+
+<html>
+<head>
+<title>Pass3 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.19. Pass3 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>Pass3</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass3.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>69</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Pass3 ( TList * TokenList , TList * ValDataList )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>スクリプトの解析を行ない、Token-&gt;Scriptにデータをセットする。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokenList   トークンリスト<br>ValDataList 変数リスト</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_3.htm">TMainF::CodeGen</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_5_1.htm">TScript</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap><a href="16_5_1.htm">209</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +--------------------------------------------------+ 
+    69  +--+ void Pass3(TList *TokenList,TList *ValDataList)  | 
+    70     | {                                                | 
+           +--+-----------------------------------------------+ 
+    71        +--- int i;
+    72        +--- TToken *Token;
+    73        +--- TToken *Token2;
+    74        +--- TScript *Script = NULL;
+    75        +--- TScript *LastScript = NULL;
+    76        +--- string s,s1;
+    77        +--- int pos;
+    78        |    
+              |  +----------------------------------------+ 
+    79        +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |  +--+-------------------------------------+ 
+              |     |  +------------------------------------------+ 
+    80        |     +--+ for(i = 0 ; i &lt; TokenList-&gt;Count ; i++){ | 
+              |     |  +--+---------------------------------------+ 
+    81        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +----------------------------------------------+ 
+    82        |     |     +--+ if(Token-&gt;TokId == tid_Comment){ // Fortran  | 
+              |     |     |  +--+-------------------------------------------+ 
+    83        |     |     |     +--- s = Trim(Token-&gt;Str);
+    84        |     |     |     +--- pos = s.find(' ');
+              |     |     |     |  +----------------+ 
+    85        |     |     |     +--+ if(pos &gt;= 0){  | 
+              |     |     |     |  +--+-------------+ 
+    86        |     |     |     |     +--- s = Trim(s.substr(0,pos));
+              |     |     |     |   +-+---+ 
+    87        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------------------------+ 
+    88        |     |     |     +--+ if(LowerCase(s) == &quot;!oat$&quot;){ | 
+              |     |     |     |  +--+---------------------------+ 
+    89        |     |     |     |     +--- Script = new TScript(TokenList,i,LastScript,ValDataList);
+              |     |     |     |     |  +----------------------------------+ 
+    90        |     |     |     |     +--+ if(Script-&gt;ScType != sct_None){  | 
+              |     |     |     |     |  +--+-------------------------------+ 
+    91        |     |     |     |     |     +--- LastScript = Script;
+              |     |     |     |     |   +-+---+ 
+    92        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+    93        |     |     |     |     +--- Token-&gt;Script = Script;
+              |     |     |     |   +-+---+ 
+    94        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+    95        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+    95        |     |     |   |  else if(Token-&gt;TokId != tid_LineEnd){  | 
+              |     |     |   +-+---------------------------------------+ 
+    96        |     |     |     +--- LastScript = NULL;
+              |     |     |   +-+---+ 
+    97        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+    98        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+    99        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------+ 
+    99        |   |  else{ // C | 
+              |   +-+-----------+ 
+              |     |  +--------------------------------------------+ 
+   100        |     +--+ for(i = 0 ; i &lt; TokenList-&gt;Count-1 ; i++){ | 
+              |     |  +--+-----------------------------------------+ 
+   101        |     |     +--- Token = (TToken *)TokenList-&gt;Items[i];
+              |     |     |  +--------------------------------------+ 
+   102        |     |     +--+ if(Token-&gt;TokId == tid_SharpPragma){ | 
+              |     |     |  +--+-----------------------------------+ 
+   103        |     |     |     +--- Token2 = (TToken *)TokenList-&gt;Items[i+1];
+              |     |     |     |  +--------------------------------------+ 
+   104        |     |     |     +--+ if(LowerCase(Token2-&gt;Str) == &quot;oat&quot;){ | 
+              |     |     |     |  +--+-----------------------------------+ 
+   105        |     |     |     |     +--- Script = new TScript(TokenList,i+1,LastScript,ValDataList);
+              |     |     |     |     |  +----------------------------------+ 
+   106        |     |     |     |     +--+ if(Script-&gt;ScType != sct_None){  | 
+              |     |     |     |     |  +--+-------------------------------+ 
+   107        |     |     |     |     |     +--- LastScript = Script;
+              |     |     |     |     |   +-+---+ 
+   108        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+   109        |     |     |     |     +--- Token-&gt;Script = Script;
+              |     |     |     |   +-+---+ 
+   110        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+   111        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   112        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   113        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   114      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

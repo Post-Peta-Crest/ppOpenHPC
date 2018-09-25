@@ -1,0 +1,972 @@
+
+<html>
+<head>
+<title>OutputUnrollExecCode_Fortran メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.51. OutputUnrollExecCode_Fortran メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputUnrollExecCode_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>8599</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputUnrollExecCode_Fortran ( FILE * fp )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>Unrollのサブルーチンを出力する</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_8.htm">TTuneRegion::FindEndDo2</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_8.htm">12637</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_4.htm">TValData::GetDefStr_Fortran</a></td>
+<td nowrap><a href="5_3.htm">pass2.cpp</a></td>
+<td nowrap><a href="16_11_4.htm">2536</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_10_13.htm">TTuneRegion::GetNewValName</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_13.htm">11089</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_10_14.htm">TTuneRegion::GetNewValName</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_14.htm">11245</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_10_23.htm">TTuneRegion::GetValCountOfBit</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_23.htm">11318</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>68</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_10_45.htm">TTuneRegion::OutputUnroll_DoBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_45.htm">9728</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_10_47.htm">TTuneRegion::OutputUnroll_IfBlock_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_47.htm">10802</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap><a href="16_10_49.htm">TTuneRegion::OutputUnroll_Line_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_49.htm">9354</a></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap><a href="31_21.htm">SepLongStr</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="31_21.htm">950</a></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>sprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::ArgValList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>207</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::CaseCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>209</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::CaseIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>148</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::DoToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>278</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TTuneRegion::DoTokPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>152</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TTuneRegion::DoVal_i</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>156</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TTuneRegion::DoVal_l</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>157</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TTuneRegion::DoVal_m</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>155</td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>TTuneRegion::DoValCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>160</td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>TTuneRegion::DoValIdx</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>159</td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>TTuneRegion::DoValName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>158</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>TTuneRegion::DoValStr</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>154</td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>TTuneRegion::DoValToken</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>279</td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>TTuneRegion::EndDoTokPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>153</td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>TTuneRegion::FuncName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>193</td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>TTuneRegion::TokenEndPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>190</td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>TTuneRegion::TokenList</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>187</td>
+</tr>
+<tr>
+<td nowrap>18</td>
+<td nowrap>TTuneRegion::TokenStartPos</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>189</td>
+</tr>
+<tr>
+<td nowrap>19</td>
+<td nowrap>TTuneRegion::UnrollCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>151</td>
+</tr>
+<tr>
+<td nowrap>20</td>
+<td nowrap>TTuneRegion::UnRollDoRefValBits</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>149</td>
+</tr>
+<tr>
+<td nowrap>21</td>
+<td nowrap>TTuneRegion::variedCount</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>225</td>
+</tr>
+<tr>
+<td nowrap>22</td>
+<td nowrap>TTuneRegion::variedFromValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>23</td>
+<td nowrap>TTuneRegion::variedToValue</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>236</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_9_1.htm">TToken</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_10.htm">pass1.h</a></td>
+<td nowrap><a href="16_9_1.htm">294</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_11_1.htm">TValData</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_11.htm">pass2.h</a></td>
+<td nowrap><a href="16_11_1.htm">106</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------+ 
+  8599  +--+ void TTuneRegion::OutputUnrollExecCode_Fortran(FILE *fp) | 
+  8600     | {                                                        | 
+           +--+-------------------------------------------------------+ 
+  8601        +--- int TokPos;
+  8602        +--- int i,j,DefPosS;
+  8603        +--- TValData *ValData;
+  8604        +--- string s,s2,ValDefStr;
+  8605        +--- TToken *Token;
+  8606        +--- int iusw;
+  8607        +--- int RollCount;
+  8608        +--- int EndTokPos;
+  8609        +--- char cs[1024];
+  8610        |    
+  8611        +--- DoValCount = variedCount;
+  8612        +--- //
+  8613        |    // Doで使用する変数名を作成する。  
+  8614        |    //                                 
+              |  +----------------------------------------------------------+ 
+  8615        +--+ for(DoValIdx = 0 ; DoValIdx &lt; DoValCount ; DoValIdx++){  | 
+              |  +--+-------------------------------------------------------+ 
+  8616        |     +--- TValData *DoValData = (TValData *)DoValToken[DoValIdx]-&gt;ValData;
+  8617        |     |    
+  8618        |     +--- DoTokPos[DoValIdx] = TokenList-&gt;IndexOf(DoToken[DoValIdx]);
+  8619        |     +--- EndDoTokPos[DoValIdx] = FindEndDo2(TokenList,DoTokPos[DoValIdx]);
+  8620        |     +--- DoValName[DoValIdx] = DoValData-&gt;Str;
+  8621        |     +--- DoValStr[DoValIdx] = DoValData-&gt;Str;
+  8622        |     +--- DoVal_m[DoValIdx] = GetNewValName(DoValData-&gt;Str,&quot;m&quot;,ArgValList);
+  8623        |     +--- DoVal_i[DoValIdx] = GetNewValName(DoValData-&gt;Str,&quot;i&quot;,ArgValList);
+  8624        |     +--- DoVal_l[DoValIdx] = GetNewValName(DoValData-&gt;Str,&quot;l&quot;,ArgValList);
+              |   +-+---+ 
+  8625        |   |  }  | 
+              |   +-----+ 
+  8626        +--- //
+  8627        |    // 指定種類だけのアンロールを行ったサブルーチンを作成する。      
+  8628        |    // Sub名 . 引数 , 使用変数 , [コード] がセットされる。           
+  8629        |    // コードによって、一時変数が必要となるので、それも追加される。  
+  8630        |    //                                                               
+              |  +------------------------------------------------------+ 
+  8631        +--+ for(CaseIdx = 1 ; CaseIdx &lt;= CaseCount ; CaseIdx++){ | 
+              |  +--+---------------------------------------------------+ 
+  8632        |     +--- //
+  8633        |     |    // DoValCountに合わせた、UnRoll数を求める。                          
+  8634        |     |    // 現状では、 ２段にLoopは対応していない。（RefBitsのクリアが必要）  
+  8635        |     |    // また、DoValになる変数のUnrollDoRefValBitsを求める。               
+  8636        |     |    //                                                                   
+  8637        |     +--- int idx2,c;
+  8638        |     |    
+              |     |  +--------------------------+ 
+  8639        |     +--+ if((CaseIdx % 10) == 0){ | 
+              |     |  +--+-----------------------+ 
+  8640        |     |     +--- //          MainF-&gt;print(&quot;Output Code &quot;+IntToStr(CaseIdx)+&quot; / &quot;+IntToStr(CaseCount));
+              |     |     |  +------------------------+ 
+  8641        |     |     +--+ if(MainF-&gt;CloseReqF){  | 
+              |     |     |  +--+---------------------+ 
+              |     |     |     |  +----------+ 
+  8642        |     |     |     +--+ return;  | 
+              |     |     |     |  +----------+ 
+              |     |     |   +-+---+ 
+  8643        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  8644        |     |   |  }  | 
+              |     |   +-----+ 
+  8645        |     +--- UnRollDoRefValBits = 0;
+  8646        |     +--- idx2 = CaseIdx-1;
+              |     |  +----------------------------------------------+ 
+  8647        |     +--+ for(int kk = DoValCount-1 ; kk &gt;= 0 ; kk--){ | 
+              |     |  +--+-------------------------------------------+ 
+  8648        |     |     +--- /******************************************************/
+  8649        |     |     |    //                                                       
+  8650        |     |     |    //Kogakuin Irie                                          
+  8651        |     |     |    //PPの変動範囲を実数にも対応                             
+  8652        |     |     |    //既存コードはコメントアウト                             
+  8653        |     |     |    //                                                       
+  8654        |     |     +--- //          c = (variedToValue[kk] - variedFromValue[kk] + 1);
+  8655        |     |     +--- c = (int)(variedToValue[kk] - variedFromValue[kk] + 1);
+  8656        |     |     +--- //
+  8657        |     |     |    //ここまで                                               
+  8658        |     |     |    //                                                       
+  8659        |     |     |    /******************************************************/ 
+  8660        |     |     |                                                             
+  8661        |     |     +--- //          UnrollCount[kk] = (idx2 % c)+1;
+  8662        |     |     |                                                 
+  8663        |     |     +--- /******************************************************/
+  8664        |     |     |    //                                                       
+  8665        |     |     |    //Kogakuin Irie                                          
+  8666        |     |     |    //PPの変動範囲を実数にも対応                             
+  8667        |     |     |    //既存コードはコメントアウト                             
+  8668        |     |     |    //                                                       
+  8669        |     |     +--- //          UnrollCount[kk] = (idx2 % c)+variedFromValue[kk];   // 2012/05/17
+  8670        |     |     +--- UnrollCount[kk] = (int)((idx2 % c)+variedFromValue[kk]);
+  8671        |     |     +--- //
+  8672        |     |     |    //ここまで                                               
+  8673        |     |     |    //                                                       
+  8674        |     |     |    /******************************************************/ 
+  8675        |     |     |                                                             
+              |     |     |  +--------------------------+ 
+  8676        |     |     +--+ if(UnrollCount[kk] &gt; 1){ | 
+              |     |     |  +--+-----------------------+ 
+  8677        |     |     |     +--- UnRollDoRefValBits |= (1 &lt;&lt; kk); // UnRollされるDoのBits
+              |     |     |   +-+---+ 
+  8678        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8679        |     |     +--- idx2 /= c;
+              |     |   +-+---+ 
+  8680        |     |   |  }  | 
+              |     |   +-----+ 
+  8681        |     +--- //
+  8682        |     |    // 宣言部分  
+  8683        |     |    //           
+  8684        |     +--- s = &quot;&quot;;
+              |     |  +--------------------------------------------+ 
+  8685        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+  8686        |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +------------+ 
+  8687        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8688        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +--------------+ 
+  8689        |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |  +--+-----------+ 
+  8690        |     |     |     +--- s += &quot;, &quot;;
+              |     |     |   +-+---+ 
+  8691        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8692        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+  8693        |     |     +--- s += ValData-&gt;Str;
+              |     |   +-+---+ 
+  8694        |     |   |  }  | 
+              |     |   +-----+ 
+  8695        |     +--- sprintf(cs,&quot;      subroutine %s_%d(%s)&quot;,FuncName.c_str(),CaseIdx,s.c_str());
+  8696        |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(cs).c_str());
+  8697        |     |    
+  8698        |     +--- //
+  8699        |     |    // 使用される引数の定義を出力する。          
+  8700        |     |    // DefPosS,E,ArrayDefPosS,Eを使用する。      
+  8701        |     |    // DefPosSが同じ変数は、１つにまとめること。 
+  8702        |     |    //                                           
+  8703        |     +--- DefPosS = -1;
+  8704        |     +--- s = &quot;&quot;;
+              |     |  +--------------------------------------------+ 
+  8705        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+  8706        |     |     +--+ if(ArgValList-&gt;Strings[i] == &quot;&quot;){  | 
+              |     |     |  +--+---------------------------------+ 
+              |     |     |     |  +------------+ 
+  8707        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8708        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8709        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +--------------------------------------------------------------------+ 
+  8710        |     |     +--+ if((DefPosS == -1)||(ValData-&gt;DefPosS != DefPosS)){ // 違う定義行  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+              |     |     |     |  +--------------+ 
+  8711        |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8712        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8713        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |   +-+---+ 
+  8714        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8715        |     |     |     +--- s = ValData-&gt;GetDefStr_Fortran();
+              |     |     |     |  +--------------+ 
+  8716        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+              |     |     |     |     |  +------------+ 
+  8717        |     |     |     |     +--+ continue;  | 
+              |     |     |     |     |  +------------+ 
+              |     |     |     |   +-+---+ 
+  8718        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8719        |     |     |     +--- DefPosS = ValData-&gt;DefPosS;
+              |     |     |   +-+---+ 
+  8720        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  8720        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  8721        |     |     |     +--- s += &quot;,&quot;;
+              |     |     |   +-+---+ 
+  8722        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8723        |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |  +--------------------------------------------------------------------+ 
+  8724        |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |  +--+-----------------------------------------------------------------+ 
+  8725        |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8726        |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |   +-+---+ 
+  8727        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  8728        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+  8729        |     +--+ if(s != &quot;&quot;){ | 
+              |     |  +--+-----------+ 
+  8730        |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8731        |     |     +--- s = &quot;&quot;;
+              |     |   +-+---+ 
+  8732        |     |   |  }  | 
+              |     |   +-----+ 
+  8733        |     +--- //
+  8734        |     |    // 引数以外の変数の変数宣言を追加する。                    
+  8735        |     |    // DO変数は対象外。DO依存変数は、名前を変えて複数にする。  
+  8736        |     |    //                                                         
+  8737        |     +--- DefPosS = -1;
+  8738        |     +--- s = &quot;&quot;;
+  8739        |     +--- ValDefStr = &quot;&quot;;
+              |     |  +--------------------------------------------+ 
+  8740        |     +--+ for(i = 0 ; i &lt; ArgValList-&gt;Count ; i++){  | 
+              |     |  +--+-----------------------------------------+ 
+              |     |     |  +----------------------------------------------------------+ 
+  8741        |     |     +--+ if(ArgValList-&gt;Strings[i] != &quot;&quot;){ // 引数の変数は対象外  | 
+              |     |     |  +--+-------------------------------------------------------+ 
+              |     |     |     |  +------------+ 
+  8742        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8743        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8744        |     |     +--- ValData = (TValData *)ArgValList-&gt;Objects[i];
+              |     |     |  +------------------------------------------+ 
+  8745        |     |     +--+ if(ValData-&gt;DefPosS == -1){ // 定義なし  | 
+              |     |     |  +--+---------------------------------------+ 
+              |     |     |     |  +------------+ 
+  8746        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8747        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------------------------+ 
+  8748        |     |     +--+ if(ValData-&gt;DefPosS != DefPosS){    // 違う定義行  | 
+              |     |     |  +--+-------------------------------------------------+ 
+              |     |     |     |  +--------------+ 
+  8749        |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8750        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8751        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |   +-+---+ 
+  8752        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +----------------------------------------------------------+ 
+  8753        |     |     |     +--+ for(j = ValData-&gt;DefPosS ; j &lt; ValData-&gt;DefPosE ; j++){  | 
+              |     |     |     |  +--+-------------------------------------------------------+ 
+  8754        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8755        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  8756        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8757        |     |     |     +--- DefPosS = ValData-&gt;DefPosS;
+  8758        |     |     |     +--- ValDefStr = s;
+              |     |     |   +-+---+ 
+  8759        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  8759        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+              |     |     |     |  +--------------+ 
+  8760        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8761        |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |   +-+---+ 
+  8762        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+  8762        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+  8763        |     |     |     |     +--- s += &quot;,&quot;;
+              |     |     |     |   +-+---+ 
+  8764        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8765        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +------------------------------------------------------------------------------+ 
+  8766        |     |     +--+ if((ValData-&gt;DoValBits != 0)&amp;&amp;(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90)){  | 
+              |     |     |  +--+---------------------------------------------------------------------------+ 
+  8767        |     |     |     +--- //          if(ValData-&gt;DoValBits != 0){
+  8768        |     |     |     +--- // Do変数
+              |     |     |     |  +--------------+ 
+  8769        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8770        |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |   +-+---+ 
+  8771        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8772        |     |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  8773        |     |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |     |  +--+-----------------------------------------------------------------+ 
+  8774        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8775        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  8776        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8777        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------------------------------------------------+ 
+  8777        |     |     |   |  else if((ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits) == 0){  | 
+              |     |     |   +-+-------------------------------------------------------------+ 
+  8778        |     |     |     +--- // UnrollするDo変数の束縛を受けない変数。
+              |     |     |     |  +--------------+ 
+  8779        |     |     |     +--+ if(s == &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8780        |     |     |     |     +--- s = ValDefStr;
+              |     |     |     |   +-+---+ 
+  8781        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8782        |     |     |     +--- s += &quot; &quot; + ValData-&gt;Str;
+              |     |     |     |  +--------------------------------------------------------------------+ 
+  8783        |     |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |     |  +--+-----------------------------------------------------------------+ 
+  8784        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8785        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |   +-+---+ 
+  8786        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8787        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  8787        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  8788        |     |     |     +--- //
+  8789        |     |     |     |    // Do依存変数は、Ｎ個に多重化する。                      
+  8790        |     |     |     |    // これは、どのDo変数に依存しているかによってUnroll数が  
+  8791        |     |     |     |    // 変化するので、それに合わせての形となる。              
+  8792        |     |     |     |    // 束縛されているDo変数における、もっとも大きい数？      
+  8793        |     |     |     |    //                                                       
+  8794        |     |     |     +--- RollCount = GetValCountOfBit(ValData-&gt;RefDoValBits &amp; UnRollDoRefValBits,UnrollCount);
+              |     |     |     |  +--------------------------------------------+ 
+  8795        |     |     |     +--+ for(iusw = 1; iusw &lt;= RollCount ; iusw++){ | 
+              |     |     |     |  +--+-----------------------------------------+ 
+              |     |     |     |     |  +----------------------+ 
+  8796        |     |     |     |     +--+ if((iusw % 4) == 1){ | 
+              |     |     |     |     |  +--+-------------------+ 
+              |     |     |     |     |     |  +------------------------------------------+ 
+  8797        |     |     |     |     |     +--+ if(iusw == 1){ // ４変数ごとに改行する。 | 
+              |     |     |     |     |     |  +--+---------------------------------------+ 
+  8798        |     |     |     |     |     |     +--- s = ValDefStr + &quot; &quot; + ValData-&gt;Str;
+              |     |     |     |     |     |   +-+---+ 
+  8799        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |   +-+-------+ 
+  8799        |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |   +-+-------+ 
+              |     |     |     |     |     |     |  +--------------------------------------------+ 
+  8800        |     |     |     |     |     |     +--+ if(ValDefStr.find('\n') != string::npos){  | 
+              |     |     |     |     |     |     |  +--+-----------------------------------------+ 
+  8801        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  8802        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-+---+ 
+              |     |     |     |     |     |     |   +-+-------+ 
+  8802        |     |     |     |     |     |     |   |  else{  | 
+              |     |     |     |     |     |     |   +-+-------+ 
+  8803        |     |     |     |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |     |     |     |   +-+---+ 
+  8804        |     |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |     |   +-----+ 
+  8805        |     |     |     |     |     |     +--- s = ValDefStr + &quot; &quot; + GetNewValName(ValData-&gt;Str,iusw,ArgValList);
+              |     |     |     |     |     |   +-+---+ 
+  8806        |     |     |     |     |     |   |  }  | 
+              |     |     |     |     |     |   +-----+ 
+              |     |     |     |     |   +-+---+ 
+  8807        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+  8807        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+  8808        |     |     |     |     |     +--- s += &quot;, &quot; + GetNewValName(ValData-&gt;Str,iusw,ArgValList);
+              |     |     |     |     |   +-+---+ 
+  8809        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |     |  +--------------------------------------------------------------------+ 
+  8810        |     |     |     |     +--+ for(j = ValData-&gt;ArrayDefPosS ; j &lt; ValData-&gt;ArrayDefPosE ; j++){  | 
+              |     |     |     |     |  +--+-----------------------------------------------------------------+ 
+  8811        |     |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8812        |     |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |   +-+---+ 
+  8813        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8814        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------+ 
+  8815        |     |     |     +--+ if(s != &quot;&quot;){ | 
+              |     |     |     |  +--+-----------+ 
+  8816        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8817        |     |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |   +-+---+ 
+  8818        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8819        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  8820        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +--------------+ 
+  8821        |     +--+ if(s != &quot;&quot;){ | 
+              |     |  +--+-----------+ 
+  8822        |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+  8823        |     |     +--- s = &quot;&quot;;
+              |     |   +-+---+ 
+  8824        |     |   |  }  | 
+              |     |   +-----+ 
+  8825        |     +--- //
+  8826        |     |    // Unrollで使う変数定義を行う。DoValCount全てでなく、Unrollが有効な変数のみ。  
+  8827        |     |    //                                                                             
+              |     |  +------------------------------------------------+ 
+  8828        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+  8829        |     |     +--+ for(int j = 0 ; j &lt; DoValCount ; j++){ | 
+              |     |     |  +--+-------------------------------------+ 
+              |     |     |     |  +--------------------------+ 
+  8830        |     |     |     +--+ if(UnrollCount[j] != 1){ | 
+              |     |     |     |  +--+-----------------------+ 
+  8831        |     |     |     |     +--- s = &quot;      integer &quot;+DoVal_m[j]+&quot;,&quot;+DoVal_i[j]+&quot;,&quot;+DoVal_l[j];
+  8832        |     |     |     |     +--- fprintf(fp,&quot;%s\n&quot;,SepLongStr(s).c_str());
+              |     |     |     |   +-+---+ 
+  8833        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+  8834        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+  8835        |     |   |  }  | 
+              |     |   +-----+ 
+  8836        |     +--- //
+  8837        |     |    // コードを出力する。基本的に範囲をトークンでスキャンして動く。      
+  8838        |     |    // 必要に応じて文字列の置き換えや、必要コードのセットを行う。        
+  8839        |     |    // 行単位で処理する。                                                
+  8840        |     |    // 複数のＤＯに対応するために、スクリプトでの処理となる。            
+  8841        |     |    // Doの出現順は、順番（ネスト）になっている（コンパイルエラーなし）  
+  8842        |     |    // よって、DoValIdx = 0,1... 1, 0 の順に処理される。                 
+  8843        |     |    //                                                                   
+  8844        |     +--- DoValIdx = 0;
+  8845        |     +--- // 共有変数 UnRollDoRefValBitsは、UnRollの深さごとにSet/Reset
+  8846        |     +--- UnRollDoRefValBits = 0;
+              |     |  +----------------------------------------------------------------+ 
+  8847        |     +--+ for(TokPos = TokenStartPos ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |     |  +--+-------------------------------------------------------------+ 
+  8848        |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+  8849        |     |     +--- s = Token-&gt;OrgStr;
+              |     |     |  +----------------------------+ 
+  8850        |     |     +--+ if(Token-&gt;Script != NULL){ | 
+              |     |     |  +--+-------------------------+ 
+  8851        |     |     |     +--- // スクリプトは、Skip。スクリプトの後の改行もスキップ。
+              |     |     |     |  +--------------------------------+ 
+  8852        |     |     |     +--+ while(TokPos+1 &lt; TokenEndPos){ | 
+              |     |     |     |  +--+-----------------------------+ 
+  8853        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos+1];
+              |     |     |     |     |  +----------------------------------+ 
+  8854        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  8855        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  8856        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+  8857        |     |     |     |     +--- TokPos++;
+              |     |     |     |   +-+---+ 
+  8858        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +------------+ 
+  8859        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8860        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+  8860        |     |     |   |  else if(Token-&gt;TokId == tid_Comment){  | 
+              |     |     |   +-+---------------------------------------+ 
+  8861        |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // コメントは、そのまま
+              |     |     |     |  +------------+ 
+  8862        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+  8863        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------------+ 
+  8863        |     |     |   |  else if(Token-&gt;TokId == tid_LineEnd){  | 
+              |     |     |   +-+---------------------------------------+ 
+  8864        |     |     |     +--- fprintf(fp,&quot;%s&quot;,Token-&gt;OrgStr.c_str()); // 改行
+              |     |     |     |  +------------+ 
+  8865        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+  8866        |     |     |     +--- #if 0 // from 対応 2012/05/17
+              |     |     |   +-+---+ 
+  8867        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-----------------------+ 
+  8867        |     |     |   |  else if(CaseIdx == 1){ | 
+              |     |     |   +-+-----------------------+ 
+  8868        |     |     |     +--- // UnRollなしの場合は、そのまま出力
+  8869        |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |  +------------------------------------------+ 
+  8870        |     |     |     +--+ for( ; TokPos &lt; TokenEndPos ; TokPos++){ | 
+              |     |     |     |  +--+---------------------------------------+ 
+  8871        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[TokPos];
+  8872        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |  +----------------------------------+ 
+  8873        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  8874        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  8875        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8876        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8877        |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+              |     |     |     |  +------------+ 
+  8878        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+  8879        |     |     |     +--- #endif
+              |     |     |   +-+---+ 
+  8880        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8881        |     |     +--- //
+  8882        |     |     |    // UnRool対象のDo変数を含む式およびDOブロックの多重化コードを出力する。  
+  8883        |     |     |    // ブロックの場合は、ブロック終了まで解析をＳｋｉｐする。                
+  8884        |     |     |    // かなりの、引数を渡すことになるので、クラスで共有する形とする。        
+  8885        |     |     |    // DoRefValBitsは、多重化対象をクリアした形で渡され、内部でさらに        
+  8886        |     |     |    // OR が行われる形で使用されることになる。                               
+  8887        |     |     |    // 多重化数(cc)の回数のブロックまたは行に多重化する。                    
+  8888        |     |     |    // RollCount = 1の場合もあるが、そのままのブロック・行となる。           
+  8889        |     |     |    //                                                                       
+              |     |     |  +------------------------------+ 
+  8890        |     |     +--+ if(Token-&gt;TokId == tid_DO){  | 
+              |     |     |  +--+---------------------------+ 
+  8891        |     |     |     +--- // DOのブロックを出力(END_DO,Moduloの処理まで行う)
+  8892        |     |     |     |    // ここで行った多重化をマスクした DoRefValBitsを渡す。 
+  8893        |     |     |     +--- EndTokPos = OutputUnroll_DoBlock_Fortran(fp,TokPos,0,0);
+              |     |     |   +-+---+ 
+  8894        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------+ 
+  8894        |     |     |   |  else if(Token-&gt;TokId == tid_IF){ | 
+              |     |     |   +-+---------------------------------+ 
+  8895        |     |     |     +--- // IFのブロックを出力 if .. endifが対象
+  8896        |     |     |     +--- EndTokPos = OutputUnroll_IfBlock_Fortran(fp,TokPos,0,0);
+              |     |     |   +-+---+ 
+  8897        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+---------------------------------+ 
+  8897        |     |     |   |  else if(Token-&gt;ValData != NULL){ | 
+              |     |     |   +-+---------------------------------+ 
+  8898        |     |     |     +--- // １行を出力
+  8899        |     |     |     +--- EndTokPos = OutputUnroll_Line_Fortran(fp,TokPos,0,0);
+              |     |     |   +-+---+ 
+  8900        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+  8900        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+  8901        |     |     |     +--- // DO,IF,代入文以外
+  8902        |     |     |     +--- int j;
+  8903        |     |     |     +--- s = &quot;&quot;;
+              |     |     |     |  +------------------------------------------+ 
+  8904        |     |     |     +--+ for(j = TokPos ; j &lt; TokenEndPos ; j++){ | 
+              |     |     |     |  +--+---------------------------------------+ 
+  8905        |     |     |     |     +--- Token = (TToken *)TokenList-&gt;Items[j];
+  8906        |     |     |     |     +--- s += Token-&gt;OrgStr;
+              |     |     |     |     |  +----------------------------------+ 
+  8907        |     |     |     |     +--+ if(Token-&gt;TokId == tid_LineEnd){ | 
+              |     |     |     |     |  +--+-------------------------------+ 
+              |     |     |     |     |     |  +--------+ 
+  8908        |     |     |     |     |     +--+ break; | 
+              |     |     |     |     |     |  +--------+ 
+              |     |     |     |     |   +-+---+ 
+  8909        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+  8910        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+  8911        |     |     |     +--- //              fprintf(fp,&quot;%s&quot;,s.c_str());
+  8912        |     |     |     +--- fprintf(fp,&quot;%s&quot;,SepLongStr(s).c_str());
+  8913        |     |     |     +--- EndTokPos = j;
+              |     |     |   +-+---+ 
+  8914        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+  8915        |     |     +--- TokPos = EndTokPos;
+              |     |   +-+---+ 
+  8916        |     |   |  }  | 
+              |     |   +-----+ 
+  8917        |     +--- //      fprintf(fp,&quot;\n&quot;);
+  8918        |     +--- fprintf(fp,&quot;      return\n&quot;);
+              |     |  +------------------------------------------------+ 
+  8919        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  8920        |     |     +--- fprintf(fp,&quot;      end subroutine %s_%d\n&quot;,FuncName.c_str(),CaseIdx);
+              |     |   +-+---+ 
+  8921        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  8921        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  8922        |     |     +--- fprintf(fp,&quot;      end\n&quot;);
+              |     |   +-+---+ 
+  8923        |     |   |  }  | 
+              |     |   +-----+ 
+  8924        |     +--- fprintf(fp,&quot;\n&quot;);
+  8925        |     +--- // サブルーチン終了（Case回繰り返される）
+              |   +-+---+ 
+  8926        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+  8927      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

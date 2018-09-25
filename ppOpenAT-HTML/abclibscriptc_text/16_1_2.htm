@@ -1,0 +1,321 @@
+
+<html>
+<head>
+<title>TList クラス関連図</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.1.2. TList クラス関連図</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left">クラス名</th><td nowrap>TList</td></tr>
+</table>
+
+<div align="right"><font size="2">＋…public　♯…protected　－…private</font></div>
+<pre>
+クラス関連図
+
+              +-------------------------+ 
+          +<--+ <a href="16_2_1.htm">TMainF</a>                  | 
+          |   +-------------------------+ 
+          |   | +Call_ATExec_ArgList    | 
+          |   | +Call_ATExec_Script     | 
+          |   | +Call_SetParam_Script   | 
+          |   | +cc_option_str          | 
+          |   | +CharMaxLen             | 
+          |   | +CloseReqF              | 
+          |   | +DebugF                 | 
+          |   | +EECntlF                | 
+          |   | +EndF                   | 
+          |   | +ErrCount               | 
+          |   | +ErrF                   | 
+          |   | +IncludeCodeInContainsF | 
+          |   | +LogFp                  | 
+          |   | +MPIF                   | 
+          |   | +my_timer_start         | 
+          |   | +my_timer_stop          | 
+          |   | +NoMPIF                 | 
+          |   | +NotSkipByErrF          | 
+          |   | +OMP_InnerF             | 
+          |   | +OMP_OuterF             | 
+          |   | +SrcCodeType            | 
+          |   | +SrcFileNameList        | 
+          |   | +TimeFunc               | 
+          |   | +TokenList              | 
+          |   | +TokStrList             | 
+          |   | +TuneRegionList         | 
+          |   | +ValDataList            | 
+          |   | +VisualF                | 
+          |   +-------------------------+ 
+          |   | <a href="16_2_3.htm">+CodeGen</a>                | 
+          |   | <a href="16_2_4.htm">+DispTokenList</a>          | 
+          |   | <a href="16_2_5.htm">+Err</a>                    | 
+          |   | <a href="16_2_6.htm">+ErrMessage</a>             | 
+          |   | <a href="16_2_7.htm">+GetCommandLineArg</a>      | 
+          |   | <a href="16_2_8.htm">+IsF90SrcFile</a>           | 
+          |   | <a href="16_2_9.htm">+print</a>                  | 
+          |   | <a href="16_2_10.htm">+TMainF</a>                 | 
+          |   | <a href="16_2_11.htm">+~TMainF</a>                | 
+          |   +-------------------------+ 
+          |   +-----------------+ 
+          +<--+ <a href="16_3_1.htm">TPass4</a>          | 
+          |   +-----------------+ 
+          |   | -fpOut          | 
+          |   | -fpOutControl   | 
+          |   | -fpOutDynamic   | 
+          |   | -fpOutInstall   | 
+          |   | -fpOutStatic    | 
+          |   | +OAT_ValList    | 
+          |   | +TokenList      | 
+          |   | +TuneRegionList | 
+          |   | +ValDataList    | 
+          |   +-----------------+ 
+          |   | <a href="16_3_3.htm">+Exec</a>           | 
+          |   | <a href="16_3_4.htm">+TPass4</a>         | 
+          |   | <a href="16_3_5.htm">+~TPass4</a>        | 
+          |   +-----------------+ 
+          |   +-------------------------------+ 
+          +<--+ <a href="16_4_1.htm">TPass5</a>                        | 
+          |   +-------------------------------+ 
+          |   | -Comment                      | 
+          |   | -FittingF                     | 
+          |   | -fpInOATHeader                | 
+          |   | -fpOutControl                 | 
+          |   | -fpOutDynamic                 | 
+          |   | -fpOutHeader                  | 
+          |   | -fpOutInstall                 | 
+          |   | -fpOutList                    | 
+          |   | -fpOutOATHeader               | 
+          |   | -fpOutStatic                  | 
+          |   | -SrcFname                     | 
+          |   | -TokenList                    | 
+          |   | -TuneRegionList               | 
+          |   | -ValDataList                  | 
+          |   +-------------------------------+ 
+          |   | <a href="16_4_3.htm">-AddIncludePosList</a>            | 
+          |   | <a href="16_4_4.htm">-AddUsePosList</a>                | 
+          |   | <a href="16_4_5.htm">-CheckAndDeleteLocalValDefine</a> | 
+          |   | <a href="16_4_6.htm">+Exec</a>                         | 
+          |   | <a href="16_4_7.htm">-MakeControlCode_C</a>            | 
+          |   | <a href="16_4_8.htm">-MakeControlCode_Fortran</a>      | 
+          |   | <a href="16_4_9.htm">-MakeFunctionCode_C</a>           | 
+          |   | <a href="16_4_10.htm">-MakeFunctionCode_Fortran</a>     | 
+          |   | <a href="16_4_11.htm">-MakeFunctionCode_Fortran77</a>   | 
+          |   | <a href="16_4_12.htm">-OutputModuleStart</a>            | 
+          |   | <a href="16_4_13.htm">+TPass5</a>                       | 
+          |   | <a href="16_4_14.htm">+~TPass5</a>                      | 
+          |   +-------------------------------+ 
+          |   +-------------------+ 
+          +<--+ <a href="16_5_1.htm">TScript</a>           | 
+          |   +-------------------+ 
+          |   | +FittingDegree    | 
+          |   | +FittingDspline   | 
+          |   | +FittingDynamic   | 
+          |   | +FittingType      | 
+          |   | +LineEndTokPos    | 
+          |   | +NextScript       | 
+          |   | +PreviousScript   | 
+          |   | +SampledList      | 
+          |   | +ScAction         | 
+          |   | +ScRegion         | 
+          |   | +ScType           | 
+          |   | +ScValDataList    | 
+          |   | +Str              | 
+          |   | +TokPos           | 
+          |   | +TokStrList       | 
+          |   | +TuneRegion       | 
+          |   +-------------------+ 
+          |   | <a href="16_5_3.htm">+CheckBrBalance</a>   | 
+          |   | <a href="16_5_4.htm">+GetATExecArgStr</a>  | 
+          |   | <a href="16_5_5.htm">+GetFittingParam</a>  | 
+          |   | +IsATExecArg      | 
+          |   | <a href="16_5_6.htm">+TScript</a>          | 
+          |   | <a href="16_5_7.htm">+~TScript</a>         | 
+          |   +-------------------+ 
+          |   +-----------------+ 
+          +<--+ <a href="16_9_1.htm">TToken</a>          | 
+          |   +-----------------+ 
+          |   | +BrNestLevel    | 
+          |   | +ChangedTokList | 
+          |   | +dData          | 
+          |   | +Idx            | 
+          |   | +Indent         | 
+          |   | +LineEndF       | 
+          |   | +LineNo         | 
+          |   | +ModuleIdx      | 
+          |   | +NestLevel      | 
+          |   | +OrgStr         | 
+          |   | +priority       | 
+          |   | +RefType        | 
+          |   | +Script         | 
+          |   | +Str            | 
+          |   | +TokId          | 
+          |   | +ValData        | 
+          |   +-----------------+ 
+          |   | <a href="16_9_3.htm">+GetTokIdStr</a>    | 
+          |   | <a href="16_9_4.htm">+TToken</a>         | 
+          |   | <a href="16_9_5.htm">+~TToken</a>        | 
+          |   +-----------------+ 
+          |   +-----------------------------------+ 
+          +<--+ <a href="16_10_1.htm">TTuneRegion</a>                       | 
+          |   +-----------------------------------+ 
+          |   | +AccordingStr                     | 
+          |   | +ArgValList                       | 
+          |   | +BaseValList                      | 
+          |   | +CaseCount                        | 
+          |   | -CaseIdx                          | 
+          |   | -Comment                          | 
+          |   | +DoEndEPos                        | 
+          |   | +DoEndSPos                        | 
+          |   | +DoStartEPos                      | 
+          |   | +DoStartSPos                      | 
+          |   | +DoStepEPos                       | 
+          |   | +DoStepSPos                       | 
+          |   | +DoToken                          | 
+          |   | -DoTokPos                         | 
+          |   | -DoVal_i                          | 
+          |   | -DoVal_l                          | 
+          |   | -DoVal_m                          | 
+          |   | -DoValCount                       | 
+          |   | -DoValIdx                         | 
+          |   | -DoValName                        | 
+          |   | -DoValStr                         | 
+          |   | +DoValToken                       | 
+          |   | -EndDoTokPos                      | 
+          |   | +FittingDegree                    | 
+          |   | +FittingDspline                   | 
+          |   | +FittingDynamic                   | 
+          |   | +FittingType                      | 
+          |   | +FuncName                         | 
+          |   | +FusionCount                      | 
+          |   | +GPUOption                        | 
+          |   | +Name                             | 
+          |   | +Number                           | 
+          |   | +OffsetStr                        | 
+          |   | +ParamValList                     | 
+          |   | -Pass4                            | 
+          |   | +RefValStr                        | 
+          |   | +RotaionOrderList                 | 
+          |   | +SampledList                      | 
+          |   | +SplitPointCopyDef_EndPos         | 
+          |   | +SplitPointCopyDef_StartPos       | 
+          |   | +SubRegionList                    | 
+          |   | +TokenEndPos                      | 
+          |   | +TokenList                        | 
+          |   | +TokenStartPos                    | 
+          |   | +TuneGroup                        | 
+          |   | +TuneGroupName                    | 
+          |   | +TuneKind                         | 
+          |   | +UndefinedArgValList              | 
+          |   | -UnrollCount                      | 
+          |   | -UnRollDoRefValBits               | 
+          |   | +UseAccordingF                    | 
+          |   | +UsedDynPefThis                   | 
+          |   | +ValBitsList                      | 
+          |   | +ValDataList                      | 
+          |   | +variedCount                      | 
+          |   | +variedFromValue                  | 
+          |   | +variedStepValue                  | 
+          |   | +variedToValue                    | 
+          |   | +variedValData                    | 
+          |   | +variedValName                    | 
+          |   +-----------------------------------+ 
+          |   | <a href="16_10_3.htm">+AddArgValListToATExecArgList</a>     | 
+          |   | <a href="16_10_4.htm">+CalNewRefValIdx</a>                  | 
+          |   | <a href="16_10_5.htm">+ChackRefDoValF</a>                   | 
+          |   | <a href="16_10_6.htm">-ChangeFromOrgStr</a>                 | 
+          |   | <a href="16_10_7.htm">+ChangePragmaStr</a>                  | 
+          |   | <a href="16_10_8.htm">-FindEndDo2</a>                       | 
+          |   | <a href="16_10_9.htm">-FindEndIf</a>                        | 
+          |   | <a href="16_10_10.htm">-GetBitIdx</a>                        | 
+          |   | <a href="16_10_11.htm">-GetDoValAddValue</a>                 | 
+          |   | <a href="16_10_12.htm">+GetInfo</a>                          | 
+          |   | <a href="16_10_13.htm">-GetNewValName</a>                    | 
+          |   | <a href="16_10_14.htm">-GetNewValName</a>                    | 
+          |   | <a href="16_10_15.htm">-GetNewValNameForValData</a>          | 
+          |   | <a href="16_10_16.htm">+GetNextKanmaPos</a>                  | 
+          |   | <a href="16_10_17.htm">-GetNextSemikoronPos</a>              | 
+          |   | <a href="16_10_18.htm">+GetPrePostBPSetSubregionStr</a>      | 
+          |   | <a href="16_10_19.htm">-GetPrePostSubregionStr</a>           | 
+          |   | <a href="16_10_20.htm">+GetPrePostSubregionStr</a>           | 
+          |   | <a href="16_10_21.htm">-GetValAddValue</a>                   | 
+          |   | <a href="16_10_22.htm">-GetValAddValue2</a>                  | 
+          |   | <a href="16_10_23.htm">-GetValCountOfBit</a>                 | 
+          |   | <a href="16_10_24.htm">+IsATExecArg</a>                      | 
+          |   | <a href="16_10_25.htm">-MakeArgValList</a>                   | 
+          |   | <a href="16_10_26.htm">+MakeLoopFusionSplitData</a>          | 
+          |   | <a href="16_10_27.htm">+MakeRotaionOrderSrcTokenList</a>     | 
+          |   | <a href="16_10_28.htm">+MakeSelectData</a>                   | 
+          |   | <a href="16_10_29.htm">+MakeUnrollData</a>                   | 
+          |   | <a href="16_10_30.htm">+Merge_Unroll_Line_C</a>              | 
+          |   | <a href="16_10_31.htm">+OutputAutoExecCode_C</a>             | 
+          |   | <a href="16_10_32.htm">+OutputAutoExecCode_Fortran</a>       | 
+          |   | <a href="16_10_33.htm">+OutputExecCode_C</a>                 | 
+          |   | <a href="16_10_34.htm">+OutputExecCode_Fortran</a>           | 
+          |   | <a href="16_10_35.htm">+OutputFusionDo</a>                   | 
+          |   | <a href="16_10_36.htm">-OutputLoopFusionExecCode_Fortran</a> | 
+          |   | <a href="16_10_37.htm">+OutputReplaceSrc</a>                 | 
+          |   | <a href="16_10_38.htm">+OutputSelectCaseExecCode_C</a>       | 
+          |   | <a href="16_10_39.htm">+OutputSelectCaseExecCode_Fortran</a> | 
+          |   | <a href="16_10_40.htm">+OutputSetParamCode_C</a>             | 
+          |   | <a href="16_10_41.htm">+OutputSetParamCode_Fortran</a>       | 
+          |   | <a href="16_10_42.htm">+OutputSetParmSrcCode</a>             | 
+          |   | <a href="16_10_43.htm">+OutputSrcCode</a>                    | 
+          |   | <a href="16_10_44.htm">+OutputUnroll_DoBlock_C</a>           | 
+          |   | <a href="16_10_45.htm">+OutputUnroll_DoBlock_Fortran</a>     | 
+          |   | <a href="16_10_46.htm">+OutputUnroll_IfBlock_C</a>           | 
+          |   | <a href="16_10_47.htm">+OutputUnroll_IfBlock_Fortran</a>     | 
+          |   | <a href="16_10_48.htm">+OutputUnroll_Line_C</a>              | 
+          |   | <a href="16_10_49.htm">+OutputUnroll_Line_Fortran</a>        | 
+          |   | <a href="16_10_50.htm">-OutputUnrollExecCode_C</a>           | 
+          |   | <a href="16_10_51.htm">-OutputUnrollExecCode_Fortran</a>     | 
+          |   | <a href="16_10_52.htm">+RestoreValBits</a>                   | 
+          |   | <a href="16_10_53.htm">+SaveAndResetValBits</a>              | 
+          |   | <a href="16_10_54.htm">+TTuneRegion</a>                      | 
+          |   | <a href="16_10_55.htm">+~TTuneRegion</a>                     | 
+          |   +-----------------------------------+ 
+          |   +-------------------+ 
+          +<--+ <a href="16_12_1.htm">TVisualDM</a>         | 
+          |   +-------------------+ 
+          |   | -DirName          | 
+          |   | -RegionIndent     | 
+          |   | -TuneRegionList   | 
+          |   +-------------------+ 
+          |   | <a href="16_12_3.htm">-CopyDataForHTML</a>  | 
+          |   | <a href="16_12_4.htm">+Exec</a>             | 
+          |   | <a href="16_12_5.htm">-MakeIndexHTML</a>    | 
+          |   | <a href="16_12_6.htm">-MakeResultHTML</a>   | 
+          |   | <a href="16_12_7.htm">-ResetLogDataFile</a> | 
+          |   | <a href="16_12_8.htm">-StrToHTMLStr</a>     | 
+          |   | <a href="16_12_9.htm">+TVisualDM</a>        | 
+          |   +-------------------+ 
+          |       +-----------+ 
+          +------>+ <a href="16_1_1.htm">TList</a>     | 
+                  +-----------+ 
+                  | +Count    | 
+                  | +Items    | 
+                  +-----------+ 
+                  | +Add      | 
+                  | +Clear    | 
+                  | +Delete   | 
+                  | +Exchange | 
+                  | +IndexOf  | 
+                  | +Insert   | 
+                  | +Remove   | 
+                  | +TList    | 
+                  +-----------+ 
+</pre>
+
+
+</body>
+</html>

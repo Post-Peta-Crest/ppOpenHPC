@@ -1,0 +1,225 @@
+
+<html>
+<head>
+<title>MakeTokStrTbl_C 関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">21.11. MakeTokStrTbl_C 関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>関数名</th>        <td nowrap>MakeTokStrTbl_C</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass1.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>943</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void MakeTokStrTbl_C ( TStringList * TokStrTbl )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>C用のトークン名と、TokIdの対応テーブルを作成する。<br>作成したテーブルは、字句解析で使用される。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>なし</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>TokStrTbl   作成するトクーン名とTokIdの対応テーブル格納先。</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="31_14.htm">Pass1_2</a></td>
+<td nowrap><a href="5_2.htm">pass1.cpp</a></td>
+<td nowrap><a href="31_14.htm">566</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TStringList::AddObject</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>84</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TStringList::Clear</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>87</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TStringList::Sort</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>94</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_7_1.htm">TStringList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_7_1.htm">74</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------+ 
+   943  +--+ void MakeTokStrTbl_C(TStringList *TokStrTbl) | 
+   944     | {                                            | 
+           +--+-------------------------------------------+ 
+   945        +--- TokStrTbl-&gt;Clear();
+   946        +--- //
+   947        |    //  プリプロセッサ 
+   948        |    //                 
+   949        +--- TokStrTbl-&gt;AddObject(&quot;#include&quot;,(void *)tid_SharpInclude);
+   950        +--- TokStrTbl-&gt;AddObject(&quot;#define&quot;,(void *)tid_SharpDefine);
+   951        +--- TokStrTbl-&gt;AddObject(&quot;#undef&quot;,(void *)tid_SharpUnDef);
+   952        +--- TokStrTbl-&gt;AddObject(&quot;#if&quot;,(void *)tid_SharpIf);
+   953        +--- TokStrTbl-&gt;AddObject(&quot;#else&quot;,(void *)tid_SharpElse);
+   954        +--- TokStrTbl-&gt;AddObject(&quot;#elif&quot;,(void *)tid_SharpElIf);
+   955        +--- TokStrTbl-&gt;AddObject(&quot;#endif&quot;,(void *)tid_SharpEndIf);
+   956        +--- TokStrTbl-&gt;AddObject(&quot;#ifdef&quot;,(void *)tid_SharpIfDef);
+   957        +--- TokStrTbl-&gt;AddObject(&quot;#ifndef&quot;,(void *)tid_SharpIfnDef);
+   958        +--- TokStrTbl-&gt;AddObject(&quot;#pragma&quot;,(void *)tid_SharpPragma);
+   959        +--- //
+   960        |    // キーワード（ABC順)  
+   961        |    //                     
+   962        +--- TokStrTbl-&gt;AddObject(&quot;auto&quot;,(void *)tid_auto);
+   963        +--- TokStrTbl-&gt;AddObject(&quot;break&quot;,(void *)tid_break);
+   964        +--- TokStrTbl-&gt;AddObject(&quot;case&quot;,(void *)tid_case);
+   965        +--- TokStrTbl-&gt;AddObject(&quot;char&quot;,(void *)tid_char);
+   966        +--- TokStrTbl-&gt;AddObject(&quot;const&quot;,(void *)tid_const);
+   967        +--- TokStrTbl-&gt;AddObject(&quot;continue&quot;,(void *)tid_continue);
+   968        +--- TokStrTbl-&gt;AddObject(&quot;default&quot;,(void *)tid_default);
+   969        +--- TokStrTbl-&gt;AddObject(&quot;do&quot;,(void *)tid_do);
+   970        +--- TokStrTbl-&gt;AddObject(&quot;double&quot;,(void *)tid_double);
+   971        +--- TokStrTbl-&gt;AddObject(&quot;else&quot;,(void *)tid_else);
+   972        +--- TokStrTbl-&gt;AddObject(&quot;enum&quot;,(void *)tid_enum);
+   973        +--- TokStrTbl-&gt;AddObject(&quot;extern&quot;,(void *)tid_extern);
+   974        +--- TokStrTbl-&gt;AddObject(&quot;float&quot;,(void *)tid_float);
+   975        +--- TokStrTbl-&gt;AddObject(&quot;for&quot;,(void *)tid_for);
+   976        +--- TokStrTbl-&gt;AddObject(&quot;goto&quot;,(void *)tid_goto);
+   977        +--- TokStrTbl-&gt;AddObject(&quot;if&quot;,(void *)tid_if);
+   978        +--- TokStrTbl-&gt;AddObject(&quot;incline&quot;,(void *)tid_inline);
+   979        +--- TokStrTbl-&gt;AddObject(&quot;int&quot;,(void *)tid_int);
+   980        +--- TokStrTbl-&gt;AddObject(&quot;long&quot;,(void *)tid_long);
+   981        +--- TokStrTbl-&gt;AddObject(&quot;register&quot;,(void *)tid_register);
+   982        +--- TokStrTbl-&gt;AddObject(&quot;restrict&quot;,(void *)tid_restrict);
+   983        +--- TokStrTbl-&gt;AddObject(&quot;return&quot;,(void *)tid_return);
+   984        +--- TokStrTbl-&gt;AddObject(&quot;short&quot;,(void *)tid_short);
+   985        +--- TokStrTbl-&gt;AddObject(&quot;signed&quot;,(void *)tid_signed);
+   986        +--- TokStrTbl-&gt;AddObject(&quot;sizeof&quot;,(void *)tid_sizeof);
+   987        +--- TokStrTbl-&gt;AddObject(&quot;static&quot;,(void *)tid_static);
+   988        +--- TokStrTbl-&gt;AddObject(&quot;struct&quot;,(void *)tid_struct);
+   989        +--- TokStrTbl-&gt;AddObject(&quot;switch&quot;,(void *)tid_switch);
+   990        +--- TokStrTbl-&gt;AddObject(&quot;typedef&quot;,(void *)tid_typedef);
+   991        +--- TokStrTbl-&gt;AddObject(&quot;union&quot;,(void *)tid_union);
+   992        +--- TokStrTbl-&gt;AddObject(&quot;unsigned&quot;,(void *)tid_unsigned);
+   993        +--- TokStrTbl-&gt;AddObject(&quot;void&quot;,(void *)tid_void);
+   994        +--- TokStrTbl-&gt;AddObject(&quot;volatile&quot;,(void *)tid_volatile);
+   995        +--- TokStrTbl-&gt;AddObject(&quot;while&quot;,(void *)tid_while);
+   996        +--- TokStrTbl-&gt;AddObject(&quot;_Bool&quot;,(void *)tid__Bool);
+   997        +--- TokStrTbl-&gt;AddObject(&quot;_Complex&quot;,(void *)tid__Complex);
+   998        +--- TokStrTbl-&gt;AddObject(&quot;_Imaginary&quot;,(void *)tid__Imaginary);
+   999        |    
+  1000        +--- // キーワード（文字）
+  1001        +--- TokStrTbl-&gt;AddObject(&quot;,&quot;,(void *)tid_Kannma);
+  1002        +--- TokStrTbl-&gt;AddObject(&quot;;&quot;,(void *)tid_Semikoron);
+  1003        +--- TokStrTbl-&gt;AddObject(&quot;:&quot;,(void *)tid_Koron);
+  1004        +--- TokStrTbl-&gt;AddObject(&quot;#&quot;,(void *)tid_SharpStart);
+  1005        |    
+  1006        +--- // 演算子
+  1007        +--- TokStrTbl-&gt;AddObject(&quot;=&quot;,(void *)tid_Set);
+  1008        +--- TokStrTbl-&gt;AddObject(&quot;(&quot;,(void *)tid_Kakko);
+  1009        +--- TokStrTbl-&gt;AddObject(&quot;)&quot;,(void *)tid_Kokka);
+  1010        +--- TokStrTbl-&gt;AddObject(&quot;[&quot;,(void *)tid_KagiKakko);
+  1011        +--- TokStrTbl-&gt;AddObject(&quot;]&quot;,(void *)tid_KagiKokka);
+  1012        +--- TokStrTbl-&gt;AddObject(&quot;{&quot;,(void *)tid_DaiKakko);
+  1013        +--- TokStrTbl-&gt;AddObject(&quot;}&quot;,(void *)tid_DaiKokka);
+  1014        +--- TokStrTbl-&gt;AddObject(&quot;.&quot;,(void *)tid_Dot);
+  1015        +--- TokStrTbl-&gt;AddObject(&quot;-&gt;&quot;,(void *)tid_Opr);
+  1016        +--- TokStrTbl-&gt;AddObject(&quot;++&quot;,(void *)tid_Opr);
+  1017        +--- TokStrTbl-&gt;AddObject(&quot;--&quot;,(void *)tid_Opr);
+  1018        +--- TokStrTbl-&gt;AddObject(&quot;&amp;&quot;,(void *)tid_Opr);
+  1019        +--- TokStrTbl-&gt;AddObject(&quot;*&quot;,(void *)tid_Opr);
+  1020        +--- TokStrTbl-&gt;AddObject(&quot;+&quot;,(void *)tid_Opr);
+  1021        +--- TokStrTbl-&gt;AddObject(&quot;-&quot;,(void *)tid_Opr);
+  1022        +--- TokStrTbl-&gt;AddObject(&quot;~&quot;,(void *)tid_Opr);
+  1023        +--- TokStrTbl-&gt;AddObject(&quot;!&quot;,(void *)tid_Opr);
+  1024        +--- TokStrTbl-&gt;AddObject(&quot;/&quot;,(void *)tid_Opr);
+  1025        +--- TokStrTbl-&gt;AddObject(&quot;%&quot;,(void *)tid_Opr);
+  1026        |    
+  1027        +--- TokStrTbl-&gt;AddObject(&quot;&lt;&lt;.&quot;,(void *)tid_Opr);
+  1028        +--- TokStrTbl-&gt;AddObject(&quot;&gt;&gt;.&quot;,(void *)tid_Opr);
+  1029        +--- TokStrTbl-&gt;AddObject(&quot;&lt;&quot;,(void *)tid_Opr);
+  1030        +--- TokStrTbl-&gt;AddObject(&quot;&lt;=&quot;,(void *)tid_Opr);
+  1031        +--- TokStrTbl-&gt;AddObject(&quot;&gt;&quot;,(void *)tid_Opr);
+  1032        +--- TokStrTbl-&gt;AddObject(&quot;&gt;=&quot;,(void *)tid_Opr);
+  1033        +--- TokStrTbl-&gt;AddObject(&quot;==&quot;,(void *)tid_Opr);
+  1034        +--- TokStrTbl-&gt;AddObject(&quot;!=&quot;,(void *)tid_Opr);
+  1035        |    
+  1036        +--- TokStrTbl-&gt;AddObject(&quot;^&quot;,(void *)tid_Opr);
+  1037        +--- TokStrTbl-&gt;AddObject(&quot;|&quot;,(void *)tid_Opr);
+  1038        +--- TokStrTbl-&gt;AddObject(&quot;&amp;&amp;&quot;,(void *)tid_Opr);
+  1039        +--- TokStrTbl-&gt;AddObject(&quot;||&quot;,(void *)tid_Opr);
+  1040        |    
+  1041        +--- TokStrTbl-&gt;AddObject(&quot;?&quot;,(void *)tid_Opr);
+  1042        +--- TokStrTbl-&gt;AddObject(&quot;,&quot;,(void *)tid_Opr);
+  1043        |    
+  1044        +--- TokStrTbl-&gt;AddObject(&quot;+=&quot;,(void *)tid_Set2);
+  1045        +--- TokStrTbl-&gt;AddObject(&quot;-=&quot;,(void *)tid_Set2);
+  1046        +--- TokStrTbl-&gt;AddObject(&quot;*=&quot;,(void *)tid_Set2);
+  1047        +--- TokStrTbl-&gt;AddObject(&quot;/=&quot;,(void *)tid_Set2);
+  1048        +--- TokStrTbl-&gt;AddObject(&quot;%=&quot;,(void *)tid_Set2);
+  1049        +--- TokStrTbl-&gt;AddObject(&quot;&lt;&lt;=&quot;,(void *)tid_Set2);
+  1050        +--- TokStrTbl-&gt;AddObject(&quot;&gt;&gt;=&quot;,(void *)tid_Set2);
+  1051        +--- TokStrTbl-&gt;AddObject(&quot;&amp;=&quot;,(void *)tid_Set2);
+  1052        +--- TokStrTbl-&gt;AddObject(&quot;^=&quot;,(void *)tid_Set2);
+  1053        +--- TokStrTbl-&gt;AddObject(&quot;|=&quot;,(void *)tid_Set2);
+  1054        |    
+  1055        +--- TokStrTbl-&gt;Sort(false); // 大文字・小文字の区別ありで比較を行う。
+            +-+---+ 
+  1056      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+
+<html>
+<head>
+<title>GetFittingParam メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.5.5. GetFittingParam メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetFittingParam</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass3.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>494</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TScript</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void GetFittingParam ( int sPos )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>fitting Scriptを解析してScriptデータに入れる。<br>SampledList-&gt;Count = 0 の場合は、デフォルトの値を設定する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>sPos    トークンリスト開始位置</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_5_6.htm">TScript::TScript</a></td>
+<td nowrap><a href="5_4.htm">pass3.cpp</a></td>
+<td nowrap><a href="16_5_6.htm">135</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TList::Add</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>64</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TList::IndexOf</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>68</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>LowerCase</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>109</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>Trim</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>105</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>atoi</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap>printf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap>substr</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TScript::FittingDegree</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>240</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TScript::FittingDspline</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>234</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TScript::FittingDynamic</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>235</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TScript::FittingType</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>238</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TScript::SampledList</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>241</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TScript::TokStrList</td>
+<td nowrap><a href="5_12.htm">pass3.h</a></td>
+<td nowrap>227</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_1_1.htm">TList</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap><a href="16_1_1.htm">57</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------+ 
+   494  +--+ void TScript::GetFittingParam(int sPos)  | 
+   495     | {                                        | 
+           +--+---------------------------------------+ 
+   496        +--- int i = sPos;
+   497        +--- string s;
+   498        +--- int sIdx,eIdx,mIdx;
+   499        |    
+   500        +--- FittingType = 0;
+   501        +--- SampledList = new TList;
+   502        +--- //d-spline用追加部分
+   503        +--- FittingDspline = 0;
+   504        +--- FittingDynamic = 0;
+   505        +--- //d-spline用追加部分　ここまで
+   506        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |  +----------------------------+ 
+   507        +--+ if(s == &quot;least-squares&quot;){  | 
+              |  +--+-------------------------+ 
+   508        |     +--- FittingType = 1;
+              |   +-+---+ 
+   509        |   |  }  | 
+              |   +-----+ 
+   510        +--- //d-spline用追加部分
+   511        |                         
+   512        +--- /***********************************************************/
+   513        |    //                                                             
+   514        |    //Kogakuin Irie                                                
+   515        |    //pragma指示文の変更，および2次元への対応                      
+   516        |    //実行時とその他によるd-Splineの区別は，                       
+   517        |    //region start 文に記述したチューニングタイミングにより判断    
+   518        |    //                                                             
+   519        |    //既存コードはコメントアウト                                   
+   520        |    //                                                             
+   521        |    //if(                                                          
+   522        +--- //  //s = LowerCase(TokStrList-&gt;Strings[i++]);
+   523        |    //  else if(s == &quot;dspline&quot;){                             
+   524        |    //      FittingDspline = 1;                              
+   525        |    //      printf(&quot;fittingdspline ON%d\n&quot;,FittingDspline);  
+   526        |    //      goto DSP1;                                       
+   527        |    //  }                                                    
+   528        |    //                                                       
+   529        |    //  else if(s == &quot;dynamicdspline&quot;){                      
+   530        |    //      FittingDynamic = 1;                              
+   531        |    //      printf(&quot;fittingdynamic ON%d\n&quot;,FittingDynamic);  
+   532        |    //      goto DSP1;                                       
+   533        |    //  }                                                    
+   534        +--- //s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |   +-+-------------------------+ 
+   535        |   |  else if(s == &quot;dspline&quot;){ | 
+              |   +-+-------------------------+ 
+   536        |     +--- FittingDspline = 1;
+   537        |     +--- printf(&quot;fittingdspline ON%d\n&quot;,FittingDspline);
+              |     |  +------------+ 
+   538        |     +--+ goto DSP1; | 
+              |     |  +------------+ 
+              |   +-+---+ 
+   539        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+   540        |   |  else if(s == &quot;dspline2&quot;){  | 
+              |   +-+---------------------------+ 
+   541        |     +--- FittingDspline = 2;
+   542        |     +--- printf(&quot;fittingdspline2 ON%d\n&quot;,FittingDspline);
+              |     |  +------------+ 
+   543        |     +--+ goto DSP1; | 
+              |     |  +------------+ 
+              |   +-+---+ 
+   544        |   |  }  | 
+              |   +-----+ 
+   545        +--- //
+   546        |    //ここまで                                                     
+   547        |    //                                                             
+   548        |    /***********************************************************/  
+   549        +--- //d-spline用追加部分　ここまで
+   550        |                                   
+   551        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+   552        +--- FittingDegree = atoi(s.c_str());        // 多項式の次数
+   553        +--- s = LowerCase(TokStrList-&gt;Strings[i++]);
+              |  +----------------------+ 
+   554        +--+ if(s == &quot;sampled&quot;){  | 
+              |  +--+-------------------+ 
+              |     |  +------------------------------------+ 
+   555        |     +--+ for(;i &lt;= TokStrList-&gt;Count;i++){  | 
+              |     |  +--+---------------------------------+ 
+   556        |     |     +--- s = TokStrList-&gt;Strings[i];
+   557        |     |     +--- s = Trim(s);
+              |     |     |  +------------------------------+ 
+   558        |     |     +--+ if((s == &quot;(&quot;)||(s == &quot;,&quot;)){  | 
+              |     |     |  +--+---------------------------+ 
+              |     |     |     |  +------------+ 
+   559        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+   560        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------------------+ 
+   560        |     |     |   |  else if(s == &quot;)&quot;){ | 
+              |     |     |   +-+-------------------+ 
+              |     |     |     |  +--------+ 
+   561        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   562        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   562        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   563        |     |     |     +--- mIdx = s.find(&quot;-&quot;);
+              |     |     |     |  +----------------+ 
+   564        |     |     |     +--+ if(mIdx &gt;= 0){ | 
+              |     |     |     |  +--+-------------+ 
+              |     |     |     |     |  +----------------+ 
+   565        |     |     |     |     +--+ if(mIdx == 0){ | 
+              |     |     |     |     |  +--+-------------+ 
+   566        |     |     |     |     |     +--- sIdx = 1;
+              |     |     |     |     |   +-+---+ 
+   567        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-+---+ 
+              |     |     |     |     |   +-+-------+ 
+   567        |     |     |     |     |   |  else{  | 
+              |     |     |     |     |   +-+-------+ 
+   568        |     |     |     |     |     +--- sIdx = atoi(s.c_str());
+   569        |     |     |     |     |     +--- s = s.substr(mIdx+1,s.length());
+              |     |     |     |     |   +-+---+ 
+   570        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+   571        |     |     |     |     +--- eIdx = atoi(s.c_str());
+              |     |     |     |   +-+---+ 
+   572        |     |     |     |   |  }  | 
+              |     |     |     |   +-+---+ 
+              |     |     |     |   +-+-------+ 
+   572        |     |     |     |   |  else{  | 
+              |     |     |     |   +-+-------+ 
+   573        |     |     |     |     +--- sIdx = eIdx = atoi(s.c_str());
+              |     |     |     |   +-+---+ 
+   574        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |     |  +--------------------------------------+ 
+   575        |     |     |     +--+ for(int i = sIdx ; i &lt;= eIdx ; i++){ | 
+              |     |     |     |  +--+-----------------------------------+ 
+              |     |     |     |     |  +--------------------------------------------------+ 
+   576        |     |     |     |     +--+ if(SampledList-&gt;IndexOf((void *)(long)i) == -1){ | 
+              |     |     |     |     |  +--+-----------------------------------------------+ 
+   577        |     |     |     |     |     +--- SampledList-&gt;Add((void *)(long)i);
+              |     |     |     |     |   +-+---+ 
+   578        |     |     |     |     |   |  }  | 
+              |     |     |     |     |   +-----+ 
+              |     |     |     |   +-+---+ 
+   579        |     |     |     |   |  }  | 
+              |     |     |     |   +-----+ 
+              |     |     |   +-+---+ 
+   580        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   581        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   582        |   |  }  | 
+              |   +-----+ 
+              +---------+ 
+   583        |  DSP1:  | 
+              +---------+ 
+   583        +--- ;//d-spline用追加部分
+            +-+---+ 
+   584      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

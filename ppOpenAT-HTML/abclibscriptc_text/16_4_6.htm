@@ -1,0 +1,616 @@
+
+<html>
+<head>
+<title>Exec メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.4.6. Exec メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>Exec</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>pass5.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>264</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TPass5</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void Exec ( )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>パス５の実行<br>TureResionListを参照して、複数のチューニングリージョンに対応したソースコー<br>ドを出力する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap></td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_3.htm">TMainF::CodeGen</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_3.htm">493</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_2_6.htm">TMainF::ErrMessage</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_6.htm">767</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_4_7.htm">TPass5::MakeControlCode_C</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_7.htm">440</a></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap><a href="16_4_8.htm">TPass5::MakeControlCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap><a href="16_4_9.htm">TPass5::MakeFunctionCode_C</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_9.htm">1592</a></td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap><a href="16_4_10.htm">TPass5::MakeFunctionCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_10.htm">1837</a></td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap><a href="16_4_11.htm">TPass5::MakeFunctionCode_Fortran77</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_11.htm">2252</a></td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap><a href="16_10_33.htm">TTuneRegion::OutputExecCode_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_33.htm">7683</a></td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap><a href="16_10_34.htm">TTuneRegion::OutputExecCode_Fortran</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_34.htm">7321</a></td>
+</tr>
+<tr>
+<td nowrap>9</td>
+<td nowrap><a href="16_4_12.htm">TPass5::OutputModuleStart</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_12.htm">3125</a></td>
+</tr>
+<tr>
+<td nowrap>10</td>
+<td nowrap><a href="16_2_9.htm">TMainF::print</a></td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap><a href="16_2_9.htm">716</a></td>
+</tr>
+<tr>
+<td nowrap>11</td>
+<td nowrap>IntToStr</td>
+<td nowrap><a href="5_16.htm">VCL_Lib.h</a></td>
+<td nowrap>107</td>
+</tr>
+<tr>
+<td nowrap>12</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>13</td>
+<td nowrap>fgetc</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>14</td>
+<td nowrap>find</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>15</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>16</td>
+<td nowrap>fputc</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>17</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TPass5::FittingF</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>83</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TPass5::fpInOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>80</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TPass5::fpOutDynamic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>76</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TPass5::fpOutHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>78</td>
+</tr>
+<tr>
+<td nowrap>5</td>
+<td nowrap>TPass5::fpOutInstall</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>74</td>
+</tr>
+<tr>
+<td nowrap>6</td>
+<td nowrap>TPass5::fpOutOATHeader</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>81</td>
+</tr>
+<tr>
+<td nowrap>7</td>
+<td nowrap>TPass5::fpOutStatic</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>75</td>
+</tr>
+<tr>
+<td nowrap>8</td>
+<td nowrap>TPass5::TuneRegionList</td>
+<td nowrap><a href="5_14.htm">pass5.h</a></td>
+<td nowrap>71</td>
+</tr>
+</table>
+
+<p></p>
+参照先一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>種別</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_1.htm">TTuneRegion</a></td>
+<td nowrap>クラス</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap><a href="16_10_1.htm">143</a></td>
+</tr>
+</table>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------+ 
+   264  +--+ void TPass5::Exec()  | 
+   265     | {                    | 
+           +--+-------------------+ 
+   266        +--- int i,j;
+   267        +--- TTuneRegion *TuneRegion;
+   268        +--- string s,s1,s2;
+   269        |    
+   270        +--- FittingF = false;   // Fittingありの場合の変数定義追加用
+              |  +------------------------------------------------+ 
+   271        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   272        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   273        |     +--+ if(TuneRegion-&gt;TuneGroup == tgInstall){  | 
+              |     |  +--+---------------------------------------+ 
+              |     |     |  +------------------------------------+ 
+   274        |     |     +--+ if(TuneRegion-&gt;FittingType != 0){  | 
+              |     |     |  +--+---------------------------------+ 
+   275        |     |     |     +--- FittingF = true;    // Fittingありの場合の変数定義追加用
+              |     |     |   +-+---+ 
+   276        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   277        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   278        |   |  }  | 
+              |   +-----+ 
+   279        +--- //
+   280        |    // TRの名前の重複をチェックする。                                                      
+   281        |    // 例えば、ABC2 と ABC は、あいまいとなる。(index関数で検索しているため）              
+   282        |    // 昇順であれば問題なし。 ABC と ABC2。(index関数は先に見つかった文字列が有効なため）  
+   283        |    //                                                                                     
+              |  +------------------------------------------------+ 
+   284        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   285        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+   286        |     +--- s1 = TuneRegion-&gt;Name;  // TRの名前
+              |     |  +--------------------------------------------------+ 
+   287        |     +--+ for(j = i+1 ; j &lt; TuneRegionList-&gt;Count ; j++){  | 
+              |     |  +--+-----------------------------------------------+ 
+              |     |     |  +--------------+ 
+   288        |     |     +--+ if(j == i){  | 
+              |     |     |  +--+-----------+ 
+              |     |     |     |  +------------+ 
+   289        |     |     |     +--+ continue;  | 
+              |     |     |     |  +------------+ 
+              |     |     |   +-+---+ 
+   290        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   291        |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[j];
+   292        |     |     +--- s2 = TuneRegion-&gt;Name;
+              |     |     |  +------------------------------------------------------------+ 
+   293        |     |     +--+ if(s1.find(s2) != string::npos){    // 重複する文字列あり  | 
+              |     |     |  +--+---------------------------------------------------------+ 
+   294        |     |     |     +--- s = &quot;名前の一部が重複しています。( &quot;+ s1+&quot; , &quot;+s2+&quot; )&quot;;
+   295        |     |     |     +--- MainF-&gt;ErrMessage(-1,s);
+              |     |     |     |  +--------+ 
+   296        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   297        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   298        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   299        |   |  }  | 
+              |   +-----+ 
+   300        +--- // 文字列の長さを決定する。（全てのTRの名前＋,の長さとする）
+              |  +------------------------------------------------+ 
+   301        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   302        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+   303        |     +--- s += TuneRegion-&gt;Name + &quot;,&quot;;
+              |   +-+---+ 
+   304        |   |  }  | 
+              |   +-----+ 
+   305        +--- MainF-&gt;CharMaxLen = s.length()-1;
+   306        |    
+   307        +--- //
+   308        |    //  各モジュールについての宣言を追加する。 
+   309        |    //                                         
+              |  +------------------------------------------------+ 
+   310        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+   311        |     +--- OutputModuleStart(fpOutInstall,&quot;ppohAT_InstallRoutines&quot;);
+   312        |     +--- OutputModuleStart(fpOutDynamic,&quot;ppohAT_DynamicRoutines&quot;);
+   313        |     +--- OutputModuleStart(fpOutStatic,&quot;ppohAT_StaticRoutines&quot;);
+              |   +-+---+ 
+   314        |   |  }  | 
+              |   +-----+ 
+   315        |    
+              |  +------------------------------------------------+ 
+   316        +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |  +--+---------------------------------------------+ 
+   317        |     +--- MainF-&gt;print(&quot;TuneRegion = &quot;+IntToStr(i+1)+&quot;/&quot;+IntToStr(TuneRegionList-&gt;Count));
+   318        |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |  +------------------------------------------+ 
+   319        |     +--+ if(TuneRegion-&gt;TuneGroup == tgInstall){  | 
+              |     |  +--+---------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+   320        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+   321        |     |     |     +--- TuneRegion-&gt;OutputExecCode_Fortran(fpOutInstall);
+              |     |     |   +-+---+ 
+   322        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   322        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   323        |     |     |     +--- TuneRegion-&gt;OutputExecCode_C(fpOutInstall,fpOutHeader);
+              |     |     |   +-+---+ 
+   324        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   325        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+   325        |     |   |  else if(TuneRegion-&gt;TuneGroup == tgStatic){  | 
+              |     |   +-+---------------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+   326        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+   327        |     |     |     +--- TuneRegion-&gt;OutputExecCode_Fortran(fpOutStatic);
+              |     |     |   +-+---+ 
+   328        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   328        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   329        |     |     |     +--- TuneRegion-&gt;OutputExecCode_C(fpOutStatic,fpOutHeader);
+              |     |     |   +-+---+ 
+   330        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   331        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+---------------------------------------------+ 
+   331        |     |   |  else if(TuneRegion-&gt;TuneGroup == tgDynamic){ | 
+              |     |   +-+---------------------------------------------+ 
+              |     |     |  +----------------------------------------+ 
+   332        |     |     +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |     |     |  +--+-------------------------------------+ 
+   333        |     |     |     +--- TuneRegion-&gt;OutputExecCode_Fortran(fpOutDynamic);
+              |     |     |   +-+---+ 
+   334        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   334        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   335        |     |     |     +--- TuneRegion-&gt;OutputExecCode_C(fpOutDynamic,fpOutHeader);
+              |     |     |   +-+---+ 
+   336        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   337        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------+ 
+   338        |     +--+ if(MainF-&gt;CloseReqF){  | 
+              |     |  +--+---------------------+ 
+              |     |     |  +----------+ 
+   339        |     |     +--+ return;  | 
+              |     |     |  +----------+ 
+              |     |   +-+---+ 
+   340        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+   341        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------------------------+ 
+   342        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+   343        |     +--- fprintf(fpOutInstall,&quot;      end module ppohAT_InstallRoutines\n&quot;);
+   344        |     +--- fprintf(fpOutDynamic,&quot;      end module ppohAT_DynamicRoutines\n&quot;);
+   345        |     +--- fprintf(fpOutStatic,&quot;      end module ppohAT_StaticRoutines\n&quot;);
+              |   +-+---+ 
+   346        |   |  }  | 
+              |   +-----+ 
+   347        +--- // 元ソースを変更したファイルを生成。
+              |  +------------------------------------------------+ 
+   348        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+   349        |     +--- MakeFunctionCode_Fortran(); // OAT/OAT_(元のソースファイル名).f 作成
+              |   +-+---+ 
+   350        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-----------------------------------------------------+ 
+   350        |   |  else if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran77){  | 
+              |   +-+-----------------------------------------------------+ 
+   351        |     +--- MakeFunctionCode_Fortran77();   // OAT/OAT_(元のソースファイル名).f 作成
+              |   +-+---+ 
+   352        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   352        |   |  else{  | 
+              |   +-+-------+ 
+   353        |     +--- MakeFunctionCode_C();   // OAT/OAT_(元のソースファイル名).c 作成
+              |   +-+---+ 
+   354        |   |  }  | 
+              |   +-----+ 
+   355        +--- // コントロールコードを生成
+              |  +----------------------------------------+ 
+   356        +--+ if(MainF-&gt;SrcCodeType != MainF-&gt;sctC){ | 
+              |  +--+-------------------------------------+ 
+   357        |     +--- MakeControlCode_Fortran();  // OAT/OAT_ControlRoutines.f 作成
+              |   +-+---+ 
+   358        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+   358        |   |  else{  | 
+              |   +-+-------+ 
+   359        |     +--- MakeControlCode_C();    // OAT/OAT_ControlRoutines.c 作成
+              |   +-+---+ 
+   360        |   |  }  | 
+              |   +-----+ 
+   361        +--- // OAT.h ヘッダファイルを OAT_base.h ファイルを元にして作成する。
+              |  +--------------------------------------------------------+ 
+   362        +--+ if((fpInOATHeader != NULL)&amp;&amp;(fpInOATHeader != NULL)){  | 
+              |  +--+-----------------------------------------------------+ 
+   363        |     +--- // OAT_base.h の内容を複写する。
+   364        |     +--- int ch;
+              |     |  +--------------+ 
+   365        |     +--+ while(true){ | 
+              |     |  +--+-----------+ 
+   366        |     |     +--- ch = fgetc(fpInOATHeader);
+              |     |     |  +----------------+ 
+   367        |     |     +--+ if(ch == EOF){ | 
+              |     |     |  +--+-------------+ 
+              |     |     |     |  +--------+ 
+   368        |     |     |     +--+ break; | 
+              |     |     |     |  +--------+ 
+              |     |     |   +-+---+ 
+   369        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+   370        |     |     +--- fputc(ch,fpOutOATHeader);
+              |     |   +-+---+ 
+   371        |     |   |  }  | 
+              |     |   +-----+ 
+   372        |     +--- fprintf(fpOutOATHeader,&quot;!       === AT region variables\n&quot;);
+              |     |  +------------------------+ 
+   373        |     +--+ if(MainF-&gt;OMP_InnerF){ | 
+              |     |  +--+---------------------+ 
+   374        |     |     +--- fprintf(fpOutOATHeader,&quot;      integer  oat_mythread_num\n&quot;);
+   375        |     |     +--- fprintf(fpOutOATHeader,&quot;      common  /OAT_OMPval/oat_mythread_num\n&quot;);
+   376        |     |     +--- fprintf(fpOutOATHeader,&quot;!$omp threadprivate(/OAT_OMPval/)\n&quot;);
+   377        |     |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |   +-+---+ 
+   378        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------------------------+ 
+   379        |     +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |     |  +--+---------------------------------------------+ 
+   380        |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+   381        |     |     +--- fprintf(fpOutOATHeader,&quot;      integer iusw1_%s\n&quot;,TuneRegion-&gt;Name.c_str());
+              |     |   +-+---+ 
+   382        |     |   |  }  | 
+              |     |   +-----+ 
+   383        |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |  +------------------------------------------------+ 
+   384        |     +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |     |  +--+---------------------------------------------+ 
+   385        |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |     |  +--------------+ 
+   386        |     |     +--+ if(i == 0){  | 
+              |     |     |  +--+-----------+ 
+   387        |     |     |     +--- fprintf(fpOutOATHeader,&quot;      common /OAT_ATswitches/iusw1_%s&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |   +-+---+ 
+   388        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   388        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   389        |     |     |     +--- fprintf(fpOutOATHeader,&quot;     &amp;                       iusw1_%s&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |   +-+---+ 
+   390        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------+ 
+   391        |     |     +--+ if(i &lt; TuneRegionList-&gt;Count-1){ | 
+              |     |     |  +--+-------------------------------+ 
+   392        |     |     |     +--- //              fprintf(fpOutOATHeader,&quot;,              &amp;\n&quot;); // 2015/02/28
+   393        |     |     |     +--- fprintf(fpOutOATHeader,&quot;,\n&quot;);
+              |     |     |   +-+---+ 
+   394        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   394        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   395        |     |     |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |     |   +-+---+ 
+   396        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   397        |     |   |  }  | 
+              |     |   +-----+ 
+   398        |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |  +------------------------------------------------+ 
+   399        |     +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |     |  +--+---------------------------------------------+ 
+   400        |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+   401        |     |     +--- fprintf(fpOutOATHeader,&quot;      integer iusw1_%s_flag\n&quot;,TuneRegion-&gt;Name.c_str());
+              |     |   +-+---+ 
+   402        |     |   |  }  | 
+              |     |   +-----+ 
+   403        |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |  +------------------------------------------------+ 
+   404        |     +--+ for(i = 0 ; i &lt; TuneRegionList-&gt;Count ; i++){  | 
+              |     |  +--+---------------------------------------------+ 
+   405        |     |     +--- TuneRegion = (TTuneRegion *)TuneRegionList-&gt;Items[i];
+              |     |     |  +--------------+ 
+   406        |     |     +--+ if(i == 0){  | 
+              |     |     |  +--+-----------+ 
+   407        |     |     |     +--- fprintf(fpOutOATHeader,&quot;      common /OAT_ATswitchFlags/iusw1_%s_flag&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |   +-+---+ 
+   408        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   408        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   409        |     |     |     +--- fprintf(fpOutOATHeader,&quot;     &amp;                       iusw1_%s_flag&quot;,TuneRegion-&gt;Name.c_str());
+              |     |     |   +-+---+ 
+   410        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |     |  +----------------------------------+ 
+   411        |     |     +--+ if(i &lt; TuneRegionList-&gt;Count-1){ | 
+              |     |     |  +--+-------------------------------+ 
+   412        |     |     |     +--- //              fprintf(fpOutOATHeader,&quot;,      &amp;\n&quot;);   // 2015/02/28
+   413        |     |     |     +--- fprintf(fpOutOATHeader,&quot;,\n&quot;);
+              |     |     |   +-+---+ 
+   414        |     |     |   |  }  | 
+              |     |     |   +-+---+ 
+              |     |     |   +-+-------+ 
+   414        |     |     |   |  else{  | 
+              |     |     |   +-+-------+ 
+   415        |     |     |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |     |     |   +-+---+ 
+   416        |     |     |   |  }  | 
+              |     |     |   +-----+ 
+              |     |   +-+---+ 
+   417        |     |   |  }  | 
+              |     |   +-----+ 
+   418        |     +--- fprintf(fpOutOATHeader,&quot;\n&quot;);
+              |   +-+---+ 
+   419        |   |  }  | 
+              |   +-----+ 
+            +-+---+ 
+   420      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

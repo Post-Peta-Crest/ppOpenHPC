@@ -1,0 +1,124 @@
+
+<html>
+<head>
+<title>GetValAddValue2 メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.22. GetValAddValue2 メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>GetValAddValue2</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>11560</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>private</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>int GetValAddValue2 ( int RefValIdx , unsigned int RefDoValBits , unsigned int UnRollDoRefValBits , int DoValIdx , int * Count )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>通常変数に、Unroll中の行で加算する値（Ｉｄｘ）を計算して返す。<br>どのDo変数に依存しているかによって決定される。<br>UnRoll中の多重化のBitによってのRefValIdxが変数のRefDoValBitsに<br>合わせて調整される。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap>変数名に追加される番号</td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>RefValIdx   参照変数インデックス<br>RefDoValBits    変数が参照しているＤＯ変数Ｂｉｔｓ<br>UnRollDoRefValBits   UnRollに使用しているＤＯ変数Ｂｉｔｓ<br>DoValIdx    ＤＯ変数インデックス<br>Count   各変数のカウント配列</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_10_48.htm">TTuneRegion::OutputUnroll_Line_C</a></td>
+<td nowrap><a href="5_7.htm">TuneRegion.cpp</a></td>
+<td nowrap><a href="16_10_48.htm">9474</a></td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +----------------------------------------------------------------------------+ 
+ 11560  +--+ int TTuneRegion::GetValAddValue2(int RefValIdx,unsigned int RefDoValBits,  | 
+ 11561     |     unsigned int UnRollDoRefValBits,int DoValIdx,int *Count)               | 
+ 11562     | {                                                                          | 
+           +--+-------------------------------------------------------------------------+ 
+ 11563        +--- int AddValue = 0;
+ 11564        +--- int i,Total;
+ 11565        +--- int IdxTbl[32];
+ 11566        |    
+ 11567        +--- //
+ 11568        |    // kk が　各Ｂｉｔに対して、どのＩｄｘを持つかを計算する。 
+ 11569        |    //                                                         
+ 11570        +--- Total = RefValIdx;
+              |  +------------------------------------+ 
+ 11571        +--+ for(i = DoValIdx ; i &gt;= 0 ; i--){  | 
+              |  +--+---------------------------------+ 
+              |     |  +--------------------------------------------+ 
+ 11572        |     +--+ if((UnRollDoRefValBits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+-----------------------------------------+ 
+ 11573        |     |     +--- IdxTbl[i] = Total % Count[i];
+ 11574        |     |     +--- Total /= Count[i];
+              |     |   +-+---+ 
+ 11575        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+ 11575        |     |   |  else{  | 
+              |     |   +-+-------+ 
+ 11576        |     |     +--- IdxTbl[i] = 0;
+              |     |   +-+---+ 
+ 11577        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11578        |   |  }  | 
+              |   +-----+ 
+ 11579        +--- //
+ 11580        |    // 有効BitのIdxだけを集めた Idx(from kk) を再構築  
+ 11581        |    //                                                 
+              |  +----------------------------------+ 
+ 11582        +--+ for(i = 0 ; i &lt; DoValIdx ; i++){ | 
+              |  +--+-------------------------------+ 
+              |     |  +--------------------------------------+ 
+ 11583        |     +--+ if((RefDoValBits &amp; (1 &lt;&lt; i)) != 0){  | 
+              |     |  +--+-----------------------------------+ 
+ 11584        |     |     +--- AddValue *= Count[i];
+ 11585        |     |     +--- AddValue += IdxTbl[i];
+              |     |   +-+---+ 
+ 11586        |     |   |  }  | 
+              |     |   +-----+ 
+              |   +-+---+ 
+ 11587        |   |  }  | 
+              |   +-----+ 
+              |  +------------------+ 
+ 11588        +--+ return AddValue; | 
+              |  +------------------+ 
+            +-+---+ 
+ 11589      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>

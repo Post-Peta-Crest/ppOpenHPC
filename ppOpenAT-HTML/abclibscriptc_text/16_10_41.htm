@@ -1,0 +1,558 @@
+
+<html>
+<head>
+<title>OutputSetParamCode_Fortran メンバ関数説明</title><base target="main">
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+</head>
+
+<body bgcolor="#ffffff">
+
+<div align="right"><font size="2">ABCLibScriptC プロジェクト</font></div>
+
+<table width=100% bgcolor="#e6e6fa" class="titlebgcolor" border="1" cellpadding="7" cellspacing="0">
+<tr>
+    <td><font class="titlefont">14.10.41. OutputSetParamCode_Fortran メンバ関数説明</font></td>
+</tr>
+</table>
+
+<p></p>
+<table border="1">
+<tr><th align="left" nowrap>メンバ関数名</th>  <td nowrap>OutputSetParamCode_Fortran</td></tr>
+<tr><th align="left" nowrap>定義ファイル名</th><td nowrap>TuneRegion.cpp</td></tr>
+<tr><th align="left" nowrap>定義行</th>        <td nowrap>2358</td></tr>
+<tr><th align="left" nowrap>所属名</th>        <td nowrap>TTuneRegion</td></tr>
+<tr><th align="left" nowrap>アクセス属性</th>  <td nowrap>public</td></tr>
+<tr><th align="left" nowrap>宣言形式</th>      <td nowrap>void OutputSetParamCode_Fortran ( FILE * fp , int TempLineNo )</td></tr>
+<tr><th align="left" nowrap>概要</th>          <td nowrap>OAT_Coontrol.f の ABCLob_SetParam()のコードを出力する。</td></tr>
+<tr><th align="left" nowrap>戻り値</th>        <td nowrap></td></tr>
+<tr><th align="left" nowrap>パラメタ説明</th>  <td nowrap>fp  出力先ファイルポインタ<br>TempLineNo  作成する行番号のベース</td></tr>
+<tr><th align="left" nowrap>機能説明</th>      <td nowrap></td></tr>
+<tr><th align="left" nowrap>備考</th>          <td nowrap></td></tr>
+</table>
+
+<p></p>
+呼出し元関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap><a href="16_4_7.htm">TPass5::MakeControlCode_C</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_7.htm">440</a></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap><a href="16_4_8.htm">TPass5::MakeControlCode_Fortran</a></td>
+<td nowrap><a href="5_6.htm">pass5.cpp</a></td>
+<td nowrap><a href="16_4_8.htm">765</a></td>
+</tr>
+</table>
+
+<p></p>
+呼出し先関数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>c_str</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>fprintf</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>length</td>
+<td nowrap><br></td>
+<td nowrap><br></td>
+</tr>
+</table>
+
+<p></p>
+参照外部変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>MainF</td>
+<td nowrap><a href="5_1.htm">main.cpp</a></td>
+<td nowrap>53</td>
+</tr>
+</table>
+
+<p></p>
+参照メンバ変数一覧表
+<table border="1">
+<tr>
+<th nowrap>№</th>
+<th nowrap>名称</th>
+<th nowrap>定義ファイル名</th>
+<th nowrap>定義行</th>
+</tr>
+<tr>
+<td nowrap>1</td>
+<td nowrap>TTuneRegion::Comment</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>161</td>
+</tr>
+<tr>
+<td nowrap>2</td>
+<td nowrap>TTuneRegion::FittingType</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>251</td>
+</tr>
+<tr>
+<td nowrap>3</td>
+<td nowrap>TTuneRegion::Name</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>192</td>
+</tr>
+<tr>
+<td nowrap>4</td>
+<td nowrap>TTuneRegion::TuneGroupName</td>
+<td nowrap><a href="5_15.htm">TuneRegion.h</a></td>
+<td nowrap>196</td>
+</tr>
+</table>
+
+<p></p>
+
+<p></p>
+<pre>
+関数論理チャート
+
+        |  +------------------------------------------------------------------------+ 
+  2358  +--+ void TTuneRegion::OutputSetParamCode_Fortran(FILE *fp,int TempLineNo)  | 
+  2359     | {                                                                      | 
+           +--+---------------------------------------------------------------------+ 
+  2360        +--- const char *F90Char;
+  2361        |    
+              |  +------------------------------------------------+ 
+  2362        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+  2363        |     +--- F90Char = &quot; &amp;&quot;;
+              |   +-+---+ 
+  2364        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+  2364        |   |  else{  | 
+              |   +-+-------+ 
+  2365        |     +--- F90Char = &quot;&quot;;
+              |   +-+---+ 
+  2366        |   |  }  | 
+              |   +-----+ 
+  2367        |    
+  2368        +--- fprintf(fp,&quot;\n&quot;);
+  2369        +--- fprintf(fp,&quot;\n&quot;);
+  2370        +--- fprintf(fp,&quot;        if (index(OAT_Routine,'%s') .ne. 0) then\n&quot;,Name.c_str());
+              |  +------------------------------------------------+ 
+  2371        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+  2372        |     +--- fprintf(fp,&quot;\n&quot;);
+  2373        |     +--- fprintf(fp,&quot;        if (iusw1_%s_flag .eq. 0) then\n&quot;,Name.c_str());
+  2374        |     +--- fprintf(fp,&quot;\n&quot;);
+  2375        |     +--- fprintf(fp,&quot;          iusw1_%s_flag = 1\n&quot;,Name.c_str());
+              |   +-+---+ 
+  2376        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------+ 
+  2377        +--+ if(MainF-&gt;OMP_InnerF){ | 
+              |  +--+---------------------+ 
+  2378        |     +--- fprintf(fp,&quot;!$omp flush(iusw1_%s_flag)\n&quot;,Name.c_str());
+              |   +-+---+ 
+  2379        |   |  }  | 
+              |   +-----+ 
+  2380        +--- fprintf(fp,&quot;\n&quot;);
+  2381        |    
+              |  +----------------------------------------------+ 
+  2382        +--+ if(FittingType == 0){   // Fittingでない場合 | 
+              |  +--+-------------------------------------------+ 
+              |     |  +------------------------------------------------+ 
+  2383        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2384        |     |     +--- fprintf(fp,&quot;          isw = 1\n&quot;);
+              |     |   +-+---+ 
+  2385        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2385        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2386        |     |     +--- fprintf(fp,&quot;          isw = -1\n&quot;);
+              |     |   +-+---+ 
+  2387        |     |   |  }  | 
+              |     |   +-----+ 
+  2388        |     +--- fprintf(fp,&quot;          ibsw = 1\n&quot;);
+  2389        |     +--- fprintf(fp,&quot;%c         ---- file create\n&quot;,Comment);
+  2390        |     +--- fprintf(fp,&quot;%c         -----------------------------------------\n&quot;,Comment);
+              |     |  +------------------------------------------------+ 
+  2391        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2392        |     |     +--- fprintf(fp,&quot;          if (oat_myid .eq. 0) then\n&quot;);
+              |     |   +-+---+ 
+  2393        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2393        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2394        |     |     +--- fprintf(fp,&quot;          if (myid .eq. 0) then\n&quot;);
+              |     |   +-+---+ 
+  2395        |     |   |  }  | 
+              |     |   +-----+ 
+              |     |  +------------------------------------------------+ 
+  2396        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2397        |     |     +--- fprintf(fp,&quot;!            print *, \&quot;open OAT_Install%sParam.dat\&quot;\n&quot;,Name.c_str());
+              |     |   +-+---+ 
+  2398        |     |   |  }  | 
+              |     |   +-----+ 
+  2399        |     +--- fprintf(fp,&quot;            open(21, status = 'old',%s\n&quot;,F90Char);
+  2400        |     +--- fprintf(fp,&quot;     &amp;         file = 'OAT_%s%sParam.dat',%s\n&quot;,TuneGroupName.c_str(),Name.c_str(),F90Char);
+  2401        |     +--- fprintf(fp,&quot;     &amp;         action = 'read', pad= 'yes', err =%d)\n&quot;,TempLineNo+2);
+  2402        |     +--- fprintf(fp,&quot;\n&quot;);
+  2403        |     +--- fprintf(fp,&quot;%c           --- Seek object file\n&quot;,Comment);
+  2404        |     +--- fprintf(fp,&quot;            read(21, *) cbuf\n&quot;);
+  2405        |     +--- fprintf(fp,&quot;            do while (index(cbuf,'%s') .eq. 0)\n&quot;,Name.c_str());
+  2406        |     +--- fprintf(fp,&quot;              read(21, *) cbuf\n&quot;);
+  2407        |     +--- fprintf(fp,&quot;            enddo\n&quot;);
+  2408        |     +--- fprintf(fp,&quot;\n&quot;);
+  2409        |     +--- fprintf(fp,&quot;            do\n&quot;);
+  2410        |     +--- fprintf(fp,&quot;%c             --- Find problemsize\n&quot;,Comment);
+  2411        |     +--- //
+  2412        |     |    //  コンパイル時のワーニング回避のために、 FMT='A A'を FMT='(A A)' に修正した。              
+  2413        |     |    //  g95 コンパイラでのワーニング                                                             
+  2414        |     |    //  2007/1/18                                                                                
+  2415        |     |    //                                                                                           
+  2416        |     |    //          fprintf(fp,&quot;              read(UNIT=21, FMT='A A', END=%d) cbuf\n&quot;,TempLineNo);  
+  2417        |     +--- /********************************************************************************/
+  2418        |     |    //                                                                                 
+  2419        |     |    //Kogakuin Irie                                                                    
+  2420        |     |    //書式識別子の書き方を変更（コンパイルエラーが起きたため）                         
+  2421        |     |    //既存コードはコメントアウト                                                       
+  2422        |     |    //                                                                                 
+  2423        |     +--- //      fprintf(fp,&quot;              read(UNIT=21, FMT='(A A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2424        |     +--- fprintf(fp,&quot;              read(UNIT=21, FMT='(A,A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2425        |     +--- //
+  2426        |     |    //ここまで                                                                         
+  2427        |     |    //                                                                                 
+  2428        |     |    /********************************************************************************/ 
+  2429        |     +--- fprintf(fp,&quot;              do while (index(cbuf,'OAT_PROBSIZE') .eq. 0)\n&quot;);
+  2430        |     +--- //      fprintf(fp,&quot;                read(UNIT=21, FMT='A A', END=%d) cbuf\n&quot;,TempLineNo);
+  2431        |     +--- /********************************************************************************/
+  2432        |     |    //                                                                                 
+  2433        |     |    //Kogakuin Irie                                                                    
+  2434        |     |    //書式識別子の書き方を変更（コンパイルエラーが起きたため）                         
+  2435        |     |    //既存コードはコメントアウト                                                       
+  2436        |     |    //                                                                                 
+  2437        |     +--- //      fprintf(fp,&quot;                read(UNIT=21, FMT='(A A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2438        |     +--- fprintf(fp,&quot;                read(UNIT=21, FMT='(A,A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2439        |     +--- //
+  2440        |     |    //ここまで                                                                         
+  2441        |     |    //                                                                                 
+  2442        |     |    /********************************************************************************/ 
+  2443        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2444        |     +--- fprintf(fp,&quot;%c             -------------------------------------------\n&quot;,Comment);
+  2445        |     +--- fprintf(fp,&quot;\n&quot;);
+  2446        |     +--- fprintf(fp,&quot;\n&quot;);
+  2447        |     +--- fprintf(fp,&quot;%c             ---- find space\n&quot;,Comment);
+  2448        |     +--- fprintf(fp,&quot;              i = index(cbuf,'OAT_PROBSIZE')+len('OAT_PROBSIZE')\n&quot;);
+  2449        |     +--- fprintf(fp,&quot;              do while(cbuf(i:i) .eq. ' ')\n&quot;);
+  2450        |     +--- fprintf(fp,&quot;                i = i + 1\n&quot;);
+  2451        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2452        |     +--- fprintf(fp,&quot;%c             ---------------------------------\n&quot;,Comment);
+  2453        |     +--- fprintf(fp,&quot;\n&quot;);
+  2454        |     +--- fprintf(fp,&quot;%c             ---- store digit and change it to integer\n&quot;,Comment);
+  2455        |     +--- fprintf(fp,&quot;              j = 1\n&quot;);
+  2456        |     +--- fprintf(fp,&quot;              do while(cbuf(i:i) .ne. ' ')\n&quot;);
+  2457        |     +--- fprintf(fp,&quot;                digit(j:j) = cbuf(i:i)\n&quot;);
+  2458        |     +--- fprintf(fp,&quot;                i = i + 1\n&quot;);
+  2459        |     +--- fprintf(fp,&quot;                j = j + 1\n&quot;);
+  2460        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2461        |     +--- fprintf(fp,&quot;%c             ---------------------------------\n&quot;,Comment);
+  2462        |     +--- fprintf(fp,&quot;              digit(j:j) = ' '\n&quot;);
+  2463        |     +--- fprintf(fp,&quot;              call OATCharToNum(digit, inum)\n&quot;);
+  2464        |     +--- fprintf(fp,&quot;%c             -----------------------------------------\n&quot;,Comment);
+  2465        |     +--- fprintf(fp,&quot;\n&quot;);
+  2466        |     +--- fprintf(fp,&quot;%c             --- Find parameter\n&quot;,Comment);
+  2467        |     +--- //      fprintf(fp,&quot;              read(UNIT=21, FMT='A A', END=%d) cbuf\n&quot;,TempLineNo);
+  2468        |     +--- /********************************************************************************/
+  2469        |     |    //                                                                                 
+  2470        |     |    //Kogakuin Irie                                                                    
+  2471        |     |    //書式識別子の書き方を変更（コンパイルエラーが起きたため）                         
+  2472        |     |    //既存コードはコメントアウト                                                       
+  2473        |     |    //                                                                                 
+  2474        |     +--- //      fprintf(fp,&quot;              read(UNIT=21, FMT='(A A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2475        |     +--- fprintf(fp,&quot;              read(UNIT=21, FMT='(A,A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2476        |     +--- //
+  2477        |     |    //ここまで                                                                         
+  2478        |     |    //                                                                                 
+  2479        |     |    /********************************************************************************/ 
+  2480        |     +--- fprintf(fp,&quot;              do while (index(cbuf, '%s_I') .eq. 0)\n&quot;,Name.c_str());
+  2481        |     +--- //      fprintf(fp,&quot;                 read(UNIT=21, FMT='A A', END=%d) cbuf\n&quot;,TempLineNo);
+  2482        |     +--- /********************************************************************************/
+  2483        |     |    //                                                                                 
+  2484        |     |    //Kogakuin Irie                                                                    
+  2485        |     |    //書式識別子の書き方を変更（コンパイルエラーが起きたため）                         
+  2486        |     |    //既存コードはコメントアウト                                                       
+  2487        |     |    //                                                                                 
+  2488        |     +--- //      fprintf(fp,&quot;                 read(UNIT=21, FMT='(A A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2489        |     +--- fprintf(fp,&quot;                 read(UNIT=21, FMT='(A,A)', END=%d) cbuf\n&quot;,TempLineNo);
+  2490        |     +--- //
+  2491        |     |    //ここまで                                                                         
+  2492        |     |    //                                                                                 
+  2493        |     |    /********************************************************************************/ 
+  2494        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2495        |     +--- fprintf(fp,&quot;%c             -------------------------------------------\n&quot;,Comment);
+  2496        |     +--- fprintf(fp,&quot;\n&quot;);
+  2497        |     +--- fprintf(fp,&quot;\n&quot;);
+  2498        |     +--- fprintf(fp,&quot;%c             ---- find space\n&quot;,Comment);
+  2499        |     +--- fprintf(fp,&quot;              i = index(cbuf, '%s_I')+%d\n&quot;,Name.c_str(),(int)Name.length()+2);
+  2500        |     +--- fprintf(fp,&quot;              do while(cbuf(i:i) .eq. ' ')\n&quot;);
+  2501        |     +--- fprintf(fp,&quot;                i = i + 1\n&quot;);
+  2502        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2503        |     +--- fprintf(fp,&quot;%c             ---------------------------------\n&quot;,Comment);
+  2504        |     +--- fprintf(fp,&quot;\n&quot;);
+  2505        |     +--- fprintf(fp,&quot;%c             ---- store digit and change it to integer\n&quot;,Comment);
+  2506        |     +--- fprintf(fp,&quot;              j = 1\n&quot;);
+  2507        |     +--- fprintf(fp,&quot;              do while(cbuf(i:i) .ne. ' ')\n&quot;);
+  2508        |     +--- fprintf(fp,&quot;                digit(j:j) = cbuf(i:i)\n&quot;);
+  2509        |     +--- fprintf(fp,&quot;                i = i + 1\n&quot;);
+  2510        |     +--- fprintf(fp,&quot;                j = j + 1\n&quot;);
+  2511        |     +--- fprintf(fp,&quot;              enddo\n&quot;);
+  2512        |     +--- fprintf(fp,&quot;%c             ---------------------------------\n&quot;,Comment);
+  2513        |     +--- fprintf(fp,&quot;              digit(j:j) = ' '\n&quot;);
+  2514        |     +--- fprintf(fp,&quot;              call OATCharToNum(digit, ibsw)\n&quot;);
+  2515        |     +--- fprintf(fp,&quot;\n&quot;);
+  2516        |     +--- /*
+  2517        |     |            if(BaseValList-&gt;Count &gt; 0){                                                                                  
+  2518        |     |                fprintf(fp,-&quot;%c             --- inputed %s is less than filed num?\n&quot;,BaseValList-&gt;Strings[0].c_str());  
+  2519        |     |                fprintf(fp,&quot;              if (%s .le. inum) then\n&quot;,BaseValList-&gt;Strings[0].c_str());                    
+  2520        |     |            }else{                                                                                                       
+  2521        |     |                fprintf(fp,-&quot;%c             --- inputed n is less than filed num?\n&quot;);                                   
+  2522        |     |                fprintf(fp,&quot;              if (n .le. inum) then\n&quot;);                                                     
+  2523        |     |            }                                                                                                            
+  2524        |     |    */                                                                                                                   
+  2525        |     |    //      fprintf(fp,&quot;%c             --- inputed n is less than filed num?\n&quot;,Comment);                                
+  2526        |     |    //      fprintf(fp,&quot;              if (n .le. inum) then\n&quot;);                                                         
+  2527        |     |                                                                                                                         
+              |     |  +------------------------------------------------+ 
+  2528        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2529        |     |     +--- fprintf(fp,&quot;%c             --- inputed n_bpset is less than filed num?\n&quot;,Comment);
+  2530        |     |     +--- fprintf(fp,&quot;              if (n_bpset .le. inum) then\n&quot;);
+              |     |   +-+---+ 
+  2531        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2531        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2532        |     |     +--- fprintf(fp,&quot;c             --- inputed n is less than filed num?\n&quot;);
+  2533        |     |     +--- fprintf(fp,&quot;              if (n .le. inum) then\n&quot;);
+              |     |   +-+---+ 
+  2534        |     |   |  }  | 
+              |     |   +-----+ 
+  2535        |     +--- fprintf(fp,&quot;                isw = ibsw\n&quot;);
+  2536        |     +--- fprintf(fp,&quot;                goto %d\n&quot;,TempLineNo);
+  2537        |     +--- fprintf(fp,&quot;              endif\n&quot;);
+  2538        |     +--- fprintf(fp,&quot;            enddo\n&quot;);
+  2539        |     +--- fprintf(fp,&quot;%c           === end of seeking loop for n\n&quot;,Comment);
+  2540        |     +--- fprintf(fp,&quot; %-6d     continue\n&quot;,TempLineNo);
+  2541        |     +--- fprintf(fp,&quot;\n&quot;);
+  2542        |     +--- fprintf(fp,&quot;%c           --- File close\n&quot;,Comment);
+  2543        |     +--- fprintf(fp,&quot;            close(21, status = 'keep')\n&quot;);
+  2544        |     +--- fprintf(fp,&quot;\n&quot;);
+  2545        |     +--- fprintf(fp,&quot;%c           --- This is last parameter\n&quot;,Comment);
+  2546        |     +--- fprintf(fp,&quot; %-6d     if (isw .eq. -1) then\n&quot;,TempLineNo+2);
+  2547        |     +--- fprintf(fp,&quot;              isw = ibsw\n&quot;);
+  2548        |     +--- fprintf(fp,&quot;            endif\n&quot;);
+  2549        |     +--- fprintf(fp,&quot;\n&quot;);
+  2550        |     +--- fprintf(fp,&quot;          endif\n&quot;);
+              |     |  +------------------------------------------------+ 
+  2551        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2552        |     |     +--- fprintf(fp,&quot;%c         === end of oat_myid == 1\n&quot;,Comment);
+              |     |   +-+---+ 
+  2553        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2553        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2554        |     |     +--- fprintf(fp,&quot;%c         === end of myid == 1\n&quot;,Comment);
+              |     |   +-+---+ 
+  2555        |     |   |  }  | 
+              |     |   +-----+ 
+  2556        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  2557        |   |  }  | 
+              |   +-+---+ 
+              |   +-+---------------------------+ 
+  2557        |   |  else{  // Fitting用の出力  | 
+  2558        |   |                             | 
+              |   +-+---------------------------+ 
+  2559        |     +--- fprintf(fp,&quot;%c         !!!!!fitting用処理\n&quot;,Comment);
+  2560        |     +--- fprintf(fp,&quot;%c         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n&quot;,Comment);
+  2561        |     +--- fprintf(fp,&quot;\n&quot;);
+              |     |  +------------------------------------------------+ 
+  2562        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2563        |     |     +--- fprintf(fp,&quot;          if (oat_myid .eq. 0) then\n&quot;);
+              |     |   +-+---+ 
+  2564        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2564        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2565        |     |     +--- fprintf(fp,&quot;          if (myid .eq. 0) then\n&quot;);
+              |     |   +-+---+ 
+  2566        |     |   |  }  | 
+              |     |   +-----+ 
+  2567        |     +--- fprintf(fp,&quot;\n&quot;);
+  2568        |     +--- fprintf(fp,&quot;%c           === file open for LSM\n&quot;,Comment);
+  2569        |     +--- //      fprintf(fp,&quot;            open(21, status = 'old', file = 'MyMM_I_LSM.dat',\n&quot;);
+  2570        |     +--- fprintf(fp,&quot;            open(21, status = 'old', file = '%s_%c_LSM.dat',%s\n&quot;,Name.c_str(),TuneGroupName[0],F90Char);
+  2571        |     +--- fprintf(fp,&quot;     &amp;           action = 'read', pad= 'yes')\n&quot;);
+  2572        |     +--- fprintf(fp,&quot;\n&quot;);
+  2573        |     +--- fprintf(fp,&quot;%c           !!! varidから分かるパラメタの総数\n&quot;,Comment);
+  2574        |     +--- fprintf(fp,&quot;            nparm = 8\n&quot;);
+  2575        |     +--- fprintf(fp,&quot;\n&quot;);
+  2576        |     +--- fprintf(fp,&quot;%c           !!! polynolial x の値\n&quot;,Comment);
+  2577        |     +--- fprintf(fp,&quot;            m_lsm = 3\n&quot;);
+  2578        |     +--- fprintf(fp,&quot;\n&quot;);
+  2579        |     +--- fprintf(fp,&quot;            do isw=1, nparm\n&quot;);
+  2580        |     +--- fprintf(fp,&quot;              read (21, %d) dtemp,%s\n&quot;,TempLineNo,F90Char);
+  2581        |     +--- fprintf(fp,&quot;     &amp;            (a_lsm(iii, isw-1), iii=0, m_lsm)\n&quot;);
+  2582        |     +--- fprintf(fp,&quot; %-6d       format(D20.10, 20D20.10)\n&quot;,TempLineNo);
+  2583        |     +--- fprintf(fp,&quot;            enddo\n&quot;);
+  2584        |     +--- fprintf(fp,&quot;\n&quot;);
+  2585        |     +--- fprintf(fp,&quot;            close(21, status = 'keep')\n&quot;);
+  2586        |     +--- fprintf(fp,&quot;\n&quot;);
+  2587        |     +--- fprintf(fp,&quot;%c           do i=1, nparm\n&quot;,Comment);
+  2588        |     +--- fprintf(fp,&quot;%c              write (*, %d) dble(i),\n&quot;,Comment,TempLineNo);
+  2589        |     +--- fprintf(fp,&quot;%c     &amp;              (a_lsm(iii, i-1), iii=0, m_lsm)\n&quot;,Comment);
+  2590        |     +--- fprintf(fp,&quot;%c           enddo\n&quot;,Comment);
+  2591        |     +--- fprintf(fp,&quot;\n&quot;);
+  2592        |     +--- fprintf(fp,&quot;          endif\n&quot;);
+  2593        |     +--- fprintf(fp,&quot;\n&quot;);
+  2594        |     +--- fprintf(fp,&quot;\n&quot;);
+  2595        |     |    
+              |     |  +------------------+ 
+  2596        |     +--+ if(MainF-&gt;MPIF){ | 
+              |     |  +--+---------------+ 
+  2597        |     |     +--- fprintf(fp,&quot;          call MPI_BCAST(a_lsm,%s\n&quot;,F90Char);
+  2598        |     |     +--- fprintf(fp,&quot;     &amp;         (OATLSM_MAX_M+1)*OATLSM_MAX_NPARM,%s\n&quot;,F90Char);
+  2599        |     |     +--- fprintf(fp,&quot;     &amp;          MPI_DOUBLE_PRECISION,0,%s\n&quot;,F90Char);
+  2600        |     |     +--- fprintf(fp,&quot;     &amp;          MPI_COMM_WORLD,ierr)\n&quot;);
+              |     |   +-+---+ 
+  2601        |     |   |  }  | 
+              |     |   +-----+ 
+  2602        |     +--- fprintf(fp,&quot;\n&quot;);
+  2603        |     +--- fprintf(fp,&quot;\n&quot;);
+  2604        |     +--- fprintf(fp,&quot;%c          ==== Tuned Parameters do not exist.\n&quot;,Comment);
+              |     |  +------------------------------------------------+ 
+  2605        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2606        |     |     +--- fprintf(fp,&quot;%c           if (oat_myid .eq. 0) then\n&quot;,Comment);
+              |     |   +-+---+ 
+  2607        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2607        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2608        |     |     +--- fprintf(fp,&quot;%c           if (myid .eq. 0) then\n&quot;,Comment);
+              |     |   +-+---+ 
+  2609        |     |   |  }  | 
+              |     |   +-----+ 
+  2610        |     +--- fprintf(fp,&quot;%c              print *, \&quot;I estimate parameters by LSM.\&quot;\n&quot;,Comment);
+  2611        |     +--- fprintf(fp,&quot;%c           endif\n&quot;,Comment);
+  2612        |     +--- fprintf(fp,&quot;\n&quot;);
+              |     |  +------------------------------------------------+ 
+  2613        |     +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |     |  +--+---------------------------------------------+ 
+  2614        |     |     +--- fprintf(fp,&quot;%c           if (oat_myid .eq. 0) then\n&quot;,Comment);
+              |     |   +-+---+ 
+  2615        |     |   |  }  | 
+              |     |   +-+---+ 
+              |     |   +-+-------+ 
+  2615        |     |   |  else{  | 
+              |     |   +-+-------+ 
+  2616        |     |     +--- fprintf(fp,&quot;%c           if (myid .eq. 0) then\n&quot;,Comment);
+              |     |   +-+---+ 
+  2617        |     |   |  }  | 
+              |     |   +-----+ 
+  2618        |     +--- fprintf(fp,&quot;%c             do i=1, nparm\n&quot;,Comment);
+  2619        |     +--- fprintf(fp,&quot;%c                write (*, %d) dble(i),\n&quot;,Comment,TempLineNo+1);
+  2620        |     +--- fprintf(fp,&quot;%c     &amp;              (a_lsm_TrdUd(iii, i-1), iii=0, OATLSM_MAX_M)\n&quot;,Comment);
+  2621        |     +--- fprintf(fp,&quot;%c             enddo\n&quot;,Comment);
+  2622        |     +--- fprintf(fp,&quot;%c             print *, \&quot;\&quot;\n&quot;,Comment);
+  2623        |     +--- fprintf(fp,&quot;%c %-6d      format(D20.10, 20D20.10)\n&quot;,Comment,TempLineNo+1);
+  2624        |     +--- fprintf(fp,&quot;%c           endif\n&quot;,Comment);
+  2625        |     +--- fprintf(fp,&quot;\n&quot;);
+  2626        |     +--- fprintf(fp,&quot;          call OATLSM_Est_Param(n, nparm, m_lsm,%s\n&quot;,F90Char);
+  2627        |     +--- fprintf(fp,&quot;     &amp;               a_lsm, isw)\n&quot;);
+  2628        |     +--- fprintf(fp,&quot;\n&quot;);
+  2629        |     +--- fprintf(fp,&quot;%c          print *, \&quot;isw=\&quot;,isw\n&quot;,Comment);
+  2630        |     +--- fprintf(fp,&quot;\n&quot;);
+  2631        |     +--- fprintf(fp,&quot;%c         !!!!!fitting用処理 の終り\n&quot;,Comment);
+  2632        |     +--- fprintf(fp,&quot;%c         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n&quot;,Comment);
+  2633        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  2634        |   |  }  | 
+              |   +-----+ 
+  2635        +--- fprintf(fp,&quot;%c         === braodcast best param\n&quot;,Comment);
+              |  +------------------+ 
+  2636        +--+ if(MainF-&gt;MPIF){ | 
+              |  +--+---------------+ 
+  2637        |     +--- fprintf(fp,&quot;          call MPI_BCAST(isw,1,MPI_INTEGER,0,MPI_COMM_WORLD,ierr)\n&quot;);
+              |   +-+---+ 
+  2638        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------+ 
+  2639        +--+ if(MainF-&gt;OMP_InnerF){ | 
+              |  +--+---------------------+ 
+  2640        |     +--- fprintf(fp,&quot;!$omp flush(isw)\n&quot;);
+              |   +-+---+ 
+  2641        |   |  }  | 
+              |   +-+---+ 
+              |   +-+-------+ 
+  2641        |   |  else{  | 
+              |   +-+-------+ 
+  2642        |     +--- fprintf(fp,&quot;\n&quot;);
+              |   +-+---+ 
+  2643        |   |  }  | 
+              |   +-----+ 
+              |  +------------------------------------------------+ 
+  2644        +--+ if(MainF-&gt;SrcCodeType == MainF-&gt;sctFortran90){ | 
+              |  +--+---------------------------------------------+ 
+  2645        |     +--- fprintf(fp,&quot;        endif\n&quot;);
+              |   +-+---+ 
+  2646        |   |  }  | 
+              |   +-----+ 
+  2647        +--- fprintf(fp,&quot;        endif\n&quot;);
+  2648        +--- fprintf(fp,&quot;%c       === end of %s\n&quot;,Comment,Name.c_str());
+            +-+---+ 
+  2649      |  }  | 
+            +-----+ 
+</pre>
+
+
+</body>
+</html>
