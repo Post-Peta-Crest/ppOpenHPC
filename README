@@ -1,0 +1,341 @@
+This is a README for ppohMATHMP - ppOpen-MATH/MP library.
+
+Copyright (c) 2015 RIST
+
+(This file is in "Markdown" format).
+
+
+Preface
+=======
+
+This file is a part of ppohMATHMP.
+
+ppohMATHMP is a free software, you can use it under the terms of The
+MIT License (MIT). See LICENSE file and User's guide for more details.
+                                                              
+This software is one of the results of the project "ppOpen-HPC: Open
+Source Infrastructure for Development and Execution of Large-Scale
+Scientific Applications on Post-Peta-Scale Supercomputers with Automatic
+Tuning (AT)."
+
+See also the project web site:                  
+http://ppopenhpc.cc.u-tokyo.ac.jp/
+
+
+What is this ?
+==============
+
+PpohMATHMP ia a coupling library that enables weak coupling on various 
+simulation models, such as an atmospheric model and an ocean model, 
+a seismic model and a structure model. For getting very wide applicability, 
+ppohMATHMP is designed so as that it is independent from grid structure. 
+Instead of grid structure, PpohMATHMP requires a data set called “mapping 
+table”. Mapping table is composed of a correspondence table of grid 
+indexes between a send model and a receive model and interpolation 
+coefficients. A subroutine for making a mapping table file is provided by 
+ppohMATHMP API.
+
+Current version of ppohMATHMP is ver.1.0 which targets scalar data exchange. 
+An exchange code of vector data which requires rotation calculation is under 
+development and will be released the next version.
+
+Directories
+===========
+
+Once you have untar-ed the archive file, following directories are in
+top-level:
+
+    doc/         User's manual, references, etc.
+    test/    sample program and data files for using this library.
+    include/     header files for external usage.
+    lib/         created lib files for external usage.
+    src/         source files of ppohMATHMP-PP.
+
+Since this ppohMATHMP is not an application but __a library__, and
+no tools are provided, bin/ and tools/ don't exist.
+
+
+System requirements
+===================
+
+  - Fortran2003 standard (or later) compatible compiler.
+
+Following systems are already checked.
+
+  - Fujitsu FX10 with Fujitsu Fortran compiler.
+  - Intel compiler on usual Linux distribution.
+  - GNU Fortran compiler on usual Linux distribution. 
+
+
+INSTALL
+=======
+
+1. Modify Makefile file
+--------------------------
+
+Changing the compilers that ppohMATHMP uses to build itself.  The
+meanings of each environment variables are as follows:
+
+     FC          - Fortran compiler to use
+     FFLAGS      - Compile flags to pass to the Fortran compiler
+
+
+2. Build the library (archive)
+------------------------------
+
+Now you just enter `make` at the /src directory of the archive, then the
+library file will be created under the lib directory. You may also use
+following make options:
+
+    all       - build the entire software package
+    clean     - clean out the build tree
+
+
+EXAMPLES
+========
+
+You can check the status of the built library using sample program
+and data. The procedure is following;
+
+1. change directory to `test/src`
+2. `% make ` to compile sample program.
+3. change directory to `test/run`
+4. execute shell `mpich2_go`
+
+
+How to use
+==========
+
+1 Making a mapping table
+------------------------
+
+PpohMATHMP requires grid index correspondence and interpolation coefficients 
+as an input data. Therefore, user must prepare the data set referred as a 
+mapping table.
+User can generate the mapping table by using of an API subroutine provided by 
+ppohMATHMP as a table below. Subroutine ppoh_MATHMP_write_mapping_text generates 
+a text format file and ppoh_MATHMP_write_mapping_binary generates a binary 
+format file. The argument send_grid(:) is indexes of send model and recv_grid(:) 
+is indexes of receive model. Coef(:) is interpolation coefficient. The array size 
+of these three arguments must be same.
+
+ppoh_MATHMP_write_mapping_text
+        character(len=*) file_name    ! table file name
+        integer         send_grid(:)  ! send model grid index
+        integer         recv_grid(:)  ! recv model grid index
+        real(kind=8)    coef(:)       ! coefficient
+
+ppoh_MATHMP_write_mapping_binary
+        character(len=*) file_name    ! table file name
+        integer         send_grid(:)  ! send model grid index
+        integer         recv_grid(:)  ! recv model grid index
+        real(kind=8)    coef(:)       ! coefficient
+
+2 Making a configuration file
+-----------------------------
+
+PpohMATHMP reads a configuration file. Format of the file is as follows. "run_mode"
+is an execution mode of the coupler. User must select "NORMAL" or "DEBUG". 
+When nun_mode = "DEBUG", ppohMATHMP outputs coupling log file.
+“send_comp" and "recv_comp" is a name of a send component(model) and a receive 
+component respectively. "send_grid" and "recv_grid" is a name of grid, 
+"map_file_name" is a mapping table file name, ""map_file_type" sets type of mapping 
+table file. When map_file_type = T, the table is written in text format, and 
+map_file_type = B, the table is written in binary format.
+“send_data" and "recv_data" is a name of send data and receive data respectively. 
+"interval" is exchange interval. "flag" is "SNP" or "AVR". When flag = "SNP", 
+snap shot data is exchanged and flag = "AVR", average data is exchanged.
+
+
+
+#rum_mode  : "DEBUG" or "NORMAL"
+
+&nmcoupling
+  run_mode = "NORMAL"
+&end
+
+#send_comp, recv_comp : send component name and receive component name
+#send_grid, recv_grid : send grid name and receive grid name
+#map_file_name : mapping table file name
+#map_file_type : “T"  (=text) or “B" (=binary)
+
+&nmcoupling
+  send_comp = "FDM", recv_comp = "FEM"
+  send_grid = "FDM_GRID", recv_grid = "FEM_GRID"
+  map_file_name = "FDM_to_FEM_mapping.txt", map_file_type = "T"
+&end
+
+#send_data, recv_data : send data name and receive data name
+#interval : exchange interval (sec)
+#flag : "SNP" (=snap shot) or "AVR" (=average)
+
+&nmcoupling  send_data = "FDM_T", recv_data = "FDM_T", interval = 5, flag = "SNP", &end
+
+&nmcoupling
+  send_comp = "FEM", recv_comp = "FDM"
+  send_grid = "FEM_GRID", recv_grid = "FDM_GRID"
+  map_file_name = "FEM_to_FDM_mapping.txt", map_file_type = "T"
+&end
+
+&nmcoupling  send_data = "FEM_T", recv_data = "FEM_T", interval = 5, flag = "SNP", &end
+
+
+
+
+3 Insert API subroutines into the model code
+--------------------------------------------
+
+Typical pattern of API call is as follows.
+ppoh_MATHMP_init, ppoh_MATHMP_def_grid and ppoh_MATHMP_end_init are APIs called in 
+initialization process. ppoh_MATHMP_set_time, ppoh_MATHMP_get_data, 
+ppoh_MATHMP_put_data are called in the time integration loop. ppoh_MATHMP_finalize 
+is a finalization API.
+
+
+  call ppoh_MATHMP_init(MY_NAME, CONF_FILE, "SYSOUT.PE")
+
+  call ppoh_MATHMP_def_grid(MY_GRID, gnx, gny, gnz, is, ie, js, je, ks, ke)                            
+
+  call ppoh_MATHMP_end_init()
+
+  call ppoh_MATHMP_put_data("FDM_T", data_t)
+
+
+  do t = 1, 10
+
+    call ppoh_MATHMP_set_time(1)
+
+    call ppoh_MATHMP_get_data("FEM_T", recv_data)
+
+    MAIN CALCULATION
+
+    call ppoh_MATHMP_put_data("FDM_T", send_data)
+
+  end do
+
+  call ppoh_MATHMP_finalize()
+
+
+Besides of these APIs above, use must call ppoh_MATHMP_get_mpi_parameters in many 
+case to get a local communicator.
+
+REFERRENCE
+==========
+
+1 Initialization APIs
+---------------------
+
+[ppoh_MATHM_init]
+This API initializes ppohMATHMP. The subroutine must be called at first 
+
+ppoh_MATHMP_def_grid
+This API defines the grid. It has three types of argument, one dimension grid index, 
+tow dimension grid area and three dimension grid area. Global array size nx, ny 
+(and nz) must be same in all processors of the component. PpohMATHMP can defined 
+more than one grid for one component, so user can call ppoh_MATHMP_def_grid more 
+than once.
+
+[ppoh_MATHMP_end_init]
+This API finalizes coupler initialization process.
+
+ppoh_MATHMP_init
+           character(len=*) comp_name       ! component name
+           character(len=*) conf_file_name  ! configuration file name
+           character(len=*) log_file_name   ! log file name
+
+ppoh_MATHMP_def_grid
+           character(len=*) grd_name        ! grid name
+           integer grid_index(:)            ! grid index
+
+ppoh_MATHMP_def_grid
+           chacater(len=*) grid_name        ! grid name
+           integer nx, ny                   ! global array size
+           integer is, ie, js, je           ! index of local area
+
+ppoh_MATHMP_def_grid
+           chacater(len=*) grid_name        ! grid name
+           integer nx, ny, nz               ! global array size
+           integer is, ie, js, je, ks, ke   ! index of local area
+
+ppoh_MATHMP_end_init
+
+2 Data exchange APIs
+--------------------
+
+[ppoh_MATHMP_set_time]
+This API is expected to be called at the beginning of the time integration loop. 
+Argument delta_t is delta t of every time step or the index of iteration loop. 
+Data exchange is carried out in this subroutine.
+
+[ppoh_MATHMP_get_data]
+This API gets the data sent from send component. The array size must be same as 
+the size of local grid defined by the API ppoh_MATHMP_def_grid.
+
+[ppoh_MATHMP_put_data]
+This API puts the data to the coupler. The array size must be same as the size of 
+local grid defined by the API ppoh_MATHMP_def_grid.
+
+ppoh_MATHMP_set_time
+           integer delta_t                  ! delta t
+
+ppoh_MATHMP_get_data
+           character(len=*) data_name       ! data name
+           real(kind=8) data(*)             ! data array
+
+ppoh_MATHMP_put_data
+           chacater(len=*) data_name        ! data name
+           real(kind=8) data(*)             ! data array
+
+3 Finalization API
+------------------
+
+[ppoh_MATHMP_finalize]
+This API finalizes coupling processes. A mpi subroutine MPI_Finalize is called in 
+this API. Therefore, user must not use MPI_Finalize to finalize your mpi processes.
+
+ppoh_MATHMP_finalize
+
+4 Service APIs
+--------------
+
+[ppoh_MATHMP_get_mpi_parameters]
+User can get mpi parameters local communicator, local size and local rank through 
+this API. User must use local communicator for intra communication in every component 
+instead of MPI_COMM_WORLD.
+
+[ppoh_MATHMP_put_log]
+This API outputs log string to the log file defined in ppoh_MATHMP_initialize.
+
+[ppoh_MATHMP_error]
+This API aborts the process.
+
+[ppoh_MATHMP_write_mapping_txext, ppoh_MATHMP_write_mapping_binary]
+These APIs create a mapping table file. The subroutine is not called in the coupled 
+component ordinary, but used in the program making a mapping table.
+
+ppoh_MATHMP_get_mpi_parameters
+           integer my_comm                  ! local communicator
+           integer my_size                  ! local mpi size
+           integer my_rank                  ! local my mpi rank
+
+ppoh_MATHMP_put_log           
+           character(len=*) log_str         ! log string
+
+ppoh_MATHMP_error             
+           character(len=*) err_str         ! error string
+
+ppoh_MATHMP_write_mapping_text              
+           chacater(len=*) file_name        ! mapping table file name
+           integer send_grid(:)             ! grid index of send model
+           integer recv_grid(:)             ! grid index of receive model
+           real(kind=8) coef(:)             ! coefficient
+
+ppoh_MATHMP_write_mapping_binary
+           chacater(len=*) file_name        ! mapping table file name
+           integer send_grid(:)             ! grid index of send model
+           integer recv_grid(:)             ! grid index of receive model
+           real(kind=8) coef(:)             ! coefficient
+
+
+
+

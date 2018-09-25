@@ -1,0 +1,1 @@
+pjsub --interact -L "node=2" --mpi "proc=32"

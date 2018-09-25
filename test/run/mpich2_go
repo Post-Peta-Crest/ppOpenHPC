@@ -1,0 +1,1 @@
+mpiexec -np 4 ./comp1 : -np 4 ./comp2

@@ -1,0 +1,16 @@
+PPOHDIR = $(HOME)/ppohMATHMP
+MYDIR = $(PPOHDIR)/test/src
+MATHMPDIR = $(PPOHDIR)
+LIBMATHMP = $(MATHMPDIR)/lib/libmathmp.a
+INCMATHMP = $(MATHMPDIR)/include
+
+FC = mpifrtpx
+LD = mpifrtpx
+
+# 32-bit mode
+DEFMPI = MPI2
+#FFLAGS = -c -O2 -KV8PLUS -Am -Ay
+#FFLAGS = -cpp -mcmodel medium -shared-intel -O1 -debug all -check all -g
+FFLAGS = -Cpp -Ccpp -O3
+#FFLAGS = -c -g -cpp -ladebug 
+

@@ -1,0 +1,76 @@
+&nmcomp
+  comp_name = "FDM"
+  grid_name = "FDM_GRID", "", ""
+  nx = 10, 0, 0
+  ny = 10, 0, 0
+  nz =  5, 0, 0
+  ox = 0.d0, 0.d0, 0.d0
+  oy = 0.d0, 0.d0, 0.d0
+  oz = 0.d0, 0.d0, 0.d0
+  dx = 10.d0, 0.d0, 0.d0
+  dy = 10.d0, 0.d0, 0.d0
+  dz =  1.d0, 0.d0, 0.d0
+&end
+
+&nmcomp
+  comp_name = "FEM"
+  grid_name = "FEM_GRID", "", ""
+  nx = 100, 0, 0
+  ny =  0, 0, 0
+  nz =  0, 0, 0
+  ox = 0.d0, 0.d0, 0.d0
+  oy = 0.d0, 0.d0, 0.d0
+  oz = 0.d0, 0.d0, 0.d0
+  dx = 0.d0, 0.d0, 0.d0
+  dy = 0.d0, 0.d0, 0.d0
+  dz = 0.d0, 0.d0, 0.d0
+&end
+
+
+#rum_mode  : “DEBUG” or “NORMAL”
+
+&nmcoupling
+  run_mode = "NORMAL"
+&end
+
+#send_comp, recv_comp : send component name and recv component name
+#send_grid, recv_grid : send grid name and recv grid name
+#map_file_name : mapping table file name
+#map_file_type : “T”  (=text) or “B” (=binary)
+
+&nmcoupling
+  send_comp = "FDM", recv_comp = "FEM"
+  send_grid = "FDM_GRID", recv_grid = "FEM_GRID"
+  map_file_name = "FDM_to_FEM_mapping.txt", map_file_type = "T"
+&end
+
+#send_data, recv_data : send data name and recv data name
+#interval : exchange interval (sec)
+#flag : “SNP” (=snap shot) or “AVR” (=average)
+
+&nmcoupling  send_data = "FDM_T", recv_data = "FDM_T", interval = 5, flag = "SNP", &end 
+
+&nmcoupling
+  send_comp = "FEM", recv_comp = "FDM"
+  send_grid = "FEM_GRID", recv_grid = "FDM_GRID"
+  map_file_name = "FEM_to_FDM_mapping.txt", map_file_type = "T"
+&end
+
+&nmcoupling  send_data = "FEM_T", recv_data = "FEM_T", interval = 5, flag = "SNP", &end 
+
+
+#&nmcoupling 
+#  data_name   = "FEM_VELOCITY", 
+#  comp_name   = "FDM", 
+#  vector_data = "FEM_U", "FEM_V", "", 
+#  rot_file_name = "FEM_to_FDM_rot.txt", 
+3  rot_file_type = "T", 
+#3&end 
+
+#3&nmcoupling 
+#  data_name   = "FEM_VELOCITY", 
+#  comp_name   = "FEM", 
+#  vector_data = "FDM_U", "FDM_V", "", 
+#  rot_file_name = "FDM_to_FEM_rot.txt", 
+#  rot_file_type = "T", 
+#&end 
