@@ -1,0 +1,26 @@
+# Install directory
+PREFIX        = /usr/local/ppOpen-HPC/ppohFVM_0.3.0
+INCDIR        = $(PREFIX)/include
+LIBDIR        = $(PREFIX)/lib
+BINDIR        = $(PREFIX)/bin
+
+# Fortran compiler settings
+F90           = frtpx
+F77           = frtpx
+MPIF90        = mpifrtpx
+MPIF77        = mpifrtpx
+sFFLAGS       = -Kfast
+sMGFLAGS      = -Kfast
+pFFLAGS       = -Kfast
+
+# METIS settings
+METISDIR      = ~/metis-4.0
+
+# Archiver settings
+AR      = ar
+ARFLAGS = rv
+
+# ETC
+CP            = cp -f
+RM            = rm -rf
+MKDIR         = mkdir -p

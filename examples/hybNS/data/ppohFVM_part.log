@@ -1,0 +1,25 @@
+
+RECURSIVE COORDINATE BISECTION
+
+*** GRID  file   b.0                                                                             
+
+    1 PEs
+
+TOTAL EDGE     #     199710
+TOTAL EDGE CUT #          0
+
+TOTAL NODE     #      40992
+TOTAL CELL     #     128000
+
+ PE    NODE#   CELL#
+  1   40992  128000
+
+MAX.node/PE           40992
+MIN.node/PE           40992
+MAX.cell/PE          128000
+MIN.cell/PE          128000
+
+OVERLAPPED ELEMENTS       0
+
+ PE/NEIB-PE#    NEIB-PEs
+  1   0

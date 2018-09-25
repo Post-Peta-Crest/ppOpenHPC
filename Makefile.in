@@ -1,0 +1,26 @@
+# Install directory
+PREFIX        = /home/c26000/ppohFVM-tutorial/ppohFILES
+INCDIR        = $(PREFIX)/include
+LIBDIR        = $(PREFIX)/lib
+BINDIR        = $(PREFIX)/bin
+
+# Fortran compiler settings
+F90           = frtpx
+F77           = frtpx
+MPIF90        = mpifrtpx
+MPIF77        = mpifrtpx
+sFFLAGS       = -Kfast
+sMGFLAGS      = -Kfast
+pFFLAGS       = -Kfast,openmp
+
+# METIS settings
+METISDIR      = /usr/local/METIS/4.0.1
+
+# Archiver settings
+AR      = ar
+ARFLAGS = rv
+
+# ETC
+CP            = cp -f
+RM            = rm -rf
+MKDIR         = mkdir -p

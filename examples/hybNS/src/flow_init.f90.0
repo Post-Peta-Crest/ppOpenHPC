@@ -1,0 +1,246 @@
+!!====================================================================!!
+!!                                                                    !!
+!!   Software Name : hybNS on ppOpen-APPL/FVM                         !!
+!!         Version : 0.1.0                                            !!
+!!                                                                    !!
+!!   License:                                                         !!
+!!     This file is part of ppohFVM.                                  !!
+!!     ppohFVM is a free software, you can use it under the terms     !!
+!!     of The MIT License (MIT). See LICENSE file and User's guide    !!
+!!     for more details.                                              !!
+!!                                                                    !!
+!!   ppOpen-HPC project:                                              !!
+!!     Open Source Infrastructure for Development and Execution of    !!
+!!     Large-Scale Scientific Applications on Post-Peta-Scale         !!
+!!     Supercomputers with Automatic Tuning (AT).                     !!
+!!                                                                    !!
+!!   Organizations:                                                   !!
+!!     The University of Tokyo                                        !!
+!!       - Information Technology Center                              !!
+!!       - Atmosphere and Ocean Research Institute (AORI)             !!
+!!       - Interfaculty Initiative in Information Studies/            !!
+!!         Earthquake Research Institute (ERI)                        !!
+!!       - Graduate School of Frontier Science                        !!
+!!     Kyoto University                                               !!
+!!       - Academic Center for Computing and Media Studies            !!
+!!     Japan Agency for Marine-Earth Science and Technology (JAMSTEC) !!
+!!                                                                    !!
+!!   Sponsorship:                                                     !!
+!!     Japan Science and Technology Agency (JST), Basic Research      !!
+!!     Programs: CREST, Development of System Software Technologies   !!
+!!     for post-Peta Scale High Performance Computing.                !!
+!!                                                                    !!
+!!   Copyright (c) 2012 <Kengo Nakajima, The University of Tokyo      !!
+!!                       nakajima(at)cc.u-tokyo.ac.jp           >     !!
+!!                                                                    !!
+!!====================================================================!!
+
+!C
+!C***
+!C*** FLOW_INIT
+!C***
+!C
+!C    set. GRID & POINTER INFORMATION
+!C    init. FLOW fields
+!C
+      subroutine FLOW_INIT (comm_info)
+
+      use ppohFVM_util
+      use HYBRID
+      implicit REAL*8 (A-H,O-Z)
+      integer(kind=kint ),dimension(:)  ,allocatable      :: IWORK
+      real (kind=kreal), dimension (3) :: CP
+      type (ppohFVM_comm_info)  ::  comm_info
+
+!C
+!C +---------------------+
+!C | BOUNDARY conditions |
+!C +---------------------+
+!C===
+      if (NODgrpTOT.eq.1) then
+        if (NODgrpNAME(1).eq.'WAL') then
+          IBWALTOT= NODgrpSTACK(1)
+          IBFFDTOT= 0
+         else
+          IBWALTOT= 0
+          IBFFDTOT= NODgrpSTACK(1)
+        endif
+      endif
+
+      if (NODgrpTOT.eq.2) then
+        if (NODgrpNAME(1).eq.'WAL') then
+          IBWALTOT= NODgrpSTACK(1)
+          IBFFDTOT= NODgrpSTACK(2)-NODgrpSTACK(1)
+         else
+          IBWALTOT= NODgrpSTACK(2)-NODgrpSTACK(1)
+          IBFFDTOT= NODgrpSTACK(1)
+        endif
+      endif
+
+      allocate (IBWAL(IBWALTOT,2), IBFFD(IBFFDTOT))
+
+      IBWAL= 0
+      IBFFD= 0
+
+      if (NODgrpTOT.eq.1) then
+        if (NODgrpNAME(1).eq.'WAL') then
+          do is= NODgrpSTACK(0)+1, NODgrpSTACK(1)
+            IBWAL(is-NODgrpSTACK(0),1)= NODgrpITEM(is)
+          enddo
+         else
+          do is= NODgrpSTACK(0)+1, NODgrpSTACK(1)
+            IBFFD(is-NODgrpSTACK(0)  )= NODgrpITEM(is)
+          enddo
+        endif
+      endif
+
+      if (NODgrpTOT.eq.2) then
+        if (NODgrpNAME(1).eq.'WAL') then
+          do is= NODgrpSTACK(0)+1, NODgrpSTACK(1)
+            IBWAL(is-NODgrpSTACK(0),1)= NODgrpITEM(is)
+          enddo
+          do is= NODgrpSTACK(1)+1, NODgrpSTACK(2)
+            IBFFD(is-NODgrpSTACK(1)  )= NODgrpITEM(is)
+          enddo
+         else
+          do is= NODgrpSTACK(0)+1, NODgrpSTACK(1)
+            IBFFD(is-NODgrpSTACK(0)  )= NODgrpITEM(is)
+          enddo
+          do is= NODgrpSTACK(1)+1, NODgrpSTACK(2)
+            IBWAL(is-NODgrpSTACK(1),1)= NODgrpITEM(is)
+          enddo
+        endif
+      endif
+
+      allocate (IWORK(NODTOT))
+      IWORK= 0        
+!$omp parallel do private (ib,in)
+      do ib= 1, IBWALTOT
+              in = IBWAL(ib,1)
+        IWORK(in)= 1
+      enddo
+
+!$omp parallel do private (ib,in,X0,Y0,Z0,DELmin,i,X1,Y1,Z1,DEL,IDmin) 
+      do ib= 1, IBWALTOT
+        in= IBWAL(ib,1)
+        X0= XYZ(in,1)
+        Y0= XYZ(in,2)
+        Z0= XYZ(in,3)
+        DELmin= +1.d+12
+        do i= 1, NODTOT
+          if (IWORK(i).eq.0) then  
+            X1= XYZ(i,1)
+            Y1= XYZ(i,2)
+            Z1= XYZ(i,3)
+            DEL= dsqrt((X1-X0)**2+(Y1-Y0)**2+(Z1-Z0)**2)
+            if (DEL.lt.DELmin) then
+               IDmin= i
+              DELmin= DEL
+            endif
+          endif
+        enddo
+        IBWAL(ib,2)= IDmin
+      enddo
+!C===
+
+!C
+!C +--------------------------+
+!C | SET INITIAL UNIFORM FLOW |
+!C +--------------------------+
+!C===
+      call VAR_FREE
+
+!C
+!C-- allocation
+      allocate (DTNOD(NODTOT  ))
+
+      allocate (U(NODTOT,10))
+      allocate (P(NODTOT))
+      allocate (VISCL(NODTOT), VISCT(NODTOT))
+
+      allocate (FCV(NODTOT,6))
+      allocate (GCV(NODTOT,5))
+      allocate (HCV(NODTOT,5))
+      allocate (PU (NODTOT,5))
+
+!C
+!C-- NODAL VALUE
+
+      Rinit= Rinf
+      Pinit= Pinf
+      Uinit= Uinf 
+      Vinit= Vinf 
+      Winit= Winf 
+
+      PDYN = 0.5d0*Rinit*(Uinit**2 + Vinit**2 + Winit**2)
+
+!$omp parallel do private (in)
+      do in= 1, NODTOT
+        P(in  )= Pinit
+        U(in,1)= Rinit 
+        U(in,2)= Rinit * Uinit
+        U(in,3)= Rinit * Vinit 
+        U(in,4)= Rinit * Winit 
+        U(in,5)= Pinf / GM1 + PDYN
+      enddo
+!C===
+
+!C
+!C-- INIT.
+      call ppohFVM_update_1_R (comm_info, U(1,1), NODTOT)
+      call ppohFVM_update_1_R (comm_info, P(1)  , NODTOT)
+
+!$omp parallel do private (in)
+        do in = 1, NODTOT
+          U(in, 6)= 0.d0
+          U(in, 7)= 0.d0
+          U(in, 8)= 0.d0
+          U(in, 9)= 0.d0
+          U(in,10)= 0.d0
+        enddo
+
+        call CALCSUF( CP, 0)
+        call BOUNDARY (comm_info)
+
+!$omp parallel do private (in,PDYN)
+        do in= 1, NODTOT
+          U(in,1)= U(in,1) + U(in, 6)
+          U(in,2)= U(in,2) + U(in, 7)
+          U(in,3)= U(in,3) + U(in, 8)
+          U(in,4)= U(in,4) + U(in, 9)
+          U(in,5)= U(in,5) + U(in,10)
+
+          PDYN = U(in,2)**2 + U(in,3)**2 + U(in,4)**2
+          P(in)= GM1 * (U(in,5) - 0.5d0*PDYN/U(in,1))
+        enddo
+
+!C
+!C-- COMMUNICATION
+      call ppohFVM_update_5_R (comm_info, U(1,1), NODTOT)
+      call ppohFVM_update_1_R (comm_info, P(1)  , NODTOT)
+
+!C
+!C +-------------+
+!C | RESTART RUN |
+!C +-------------+
+!C===
+      if (RESTART) then      
+        write (*,*) "path-000", my_rank
+        call RSTART (0)
+        write (*,*) "path-001", my_rank
+      endif
+!C===
+
+      return
+
+!C
+!C-- ERROR
+ 998  continue
+      call ppohFVM_error_exit (21)
+
+ 999  continue
+      call ppohFVM_error_exit (101)
+
+      end
+
+

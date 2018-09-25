@@ -1,0 +1,32 @@
+ *** VARIABLE INIT.
+ *** CNTL. DATA INPUT
+inp                                                                             
+ *** MESH DATA INPUT
+ *** FLOW FIELD INIT.
+Cinf   1.000E+00  Mach #   1.400E+00  REYN   1.000E+03
+ *** MAIN SOLVER
+ max. dt :    2.393141E-03
+ min. dt :    1.282514E-04
+ITERs=       1  dRmax=    4.440892E-16   Pmin=    7.107807E-01
+    3.191771E-18    6.488416E-19    4.942243E-18
+ITERs=       2  dRmax=    3.680271E-03   Pmin=    7.074138E-01
+   -6.116188E-04   -2.557362E-17    1.228537E-17
+ITERs=       3  dRmax=    7.353253E-03   Pmin=    7.040430E-01
+   -1.732658E-03   -4.213481E-17    1.725237E-17
+ITERs=       4  dRmax=    1.101926E-02   Pmin=    7.006734E-01
+   -3.277459E-03   -6.093216E-17    2.068116E-17
+ITERs=       5  dRmax=    1.467849E-02   Pmin=    6.973064E-01
+   -5.174589E-03   -7.963465E-17    3.057450E-17
+ITERs=       6  dRmax=    1.833109E-02   Pmin=    6.939426E-01
+   -7.364580E-03   -8.391725E-17    3.263449E-17
+ITERs=       7  dRmax=    2.197717E-02   Pmin=    6.905826E-01
+   -9.797974E-03   -1.078781E-16    3.426079E-17
+ITERs=       8  dRmax=    2.561681E-02   Pmin=    6.872268E-01
+   -1.243358E-02   -1.078781E-16    3.979022E-17
+ITERs=       9  dRmax=    2.925007E-02   Pmin=    6.838753E-01
+   -1.523714E-02   -1.118897E-16    4.293441E-17
+ITERs=      10  dRmax=    3.287698E-02   Pmin=    6.805286E-01
+HISTORY FILE is written at       10 iterations   1.283E-03 sec.
+RESTART FILE is written at       10 iterations   1.283E-03 sec.
+   -1.818012E-02   -1.246832E-16    4.662069E-17
+jwe0002i stop  * normal termination

@@ -1,0 +1,19 @@
+resid1
+0                             BCWAL
+1.40d00  0.00d00  0.00d-01   (u/v/w)
+1.00     1.0e-3             (rho, visc.)
+0.51d0                       (C2tref)
+1.00e-01  1.00e-02           (sig2/4)
+0.72 0.90                    (PRL/T0)
+0.10                         (omega)
+10                           (maxITER.)
+T                            (STEADY)
+F                            (RESTART)
+8000  8000                   (freq.HIS/RES)
+16                            (PEsmpTOT)
+../data/bbb
+bb2r
+bb2
+
+
+

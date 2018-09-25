@@ -1,0 +1,168 @@
+
+### ppOpen-APPL/FVM ver.0.3.0 ###
+### hybNS           ver.0.3.0 ###
+### heat3D          ver.0.3.0 ###
+
+***********************************************************************************
+1. Descriptions
+
+This directory contains ppOpen-APPL/FVM (ver.0.3.0), utilities for partition
+and sample codes with data sets. ppOpen-APPL/FVM is a set of libraries for 
+development of 3D parallel applications based on finite-volume method (FVM) 
+by the following capabilities:
+
+- Edge-based operations
+- Terahedral, prismatic and hexahedral meshes
+- Preconditioned iterative solvers
+- Flat MPI & OpenMP/MPI hybrid parallel programming models
+
+All the codes are written in Fortran 90.
+
+(New in ver.0.3.0)
+- New rule for names is applied
+- Hexahedral meshes are supported
+- Interface for binary-type mesh files
+- heat3D code with future ppOpen-APPL/FVM library's
+
+(hybNS)
+ -Solver for 3D compressible Navier-Stokes equations with explicit time-marching.
+ -Prismatic & tetrahedral meshes
+ 
+(heat3D)
+ -Solver for 3D stady-state heat conduction equation based on Galerkin-FEM formulation
+ -Functions to be introduced to ppOpen-APPL/FVM in future
+ -Hexahedral meshes
+ -Parallel CG solvers
+ -Parallel mesh generators
+
+***********************************************************************************
+2. Directories
+
+   * $(CUR): current directory
+
+   $(CUR)/src              : source code files of ppOpen-APPL/FVM
+   $(CUR)/utils/partitioner: source code files of ppOpen-APPL/FVM-Tool/Partitioner
+                             a partitioning utility for ppOpen-APPL/FVM 
+   
+   $(CUR)/examples/hybNS/src : source code files of hybNS using ppOpen-APPL/FVM
+   $(CUR)/examples/hybNS/mg  : source code files of hybNSmg, mesh generator for hybNS.
+                               Prismatic and tetrahedral meshes of region between 
+                               dual-sphere surfaces are generated.
+   $(CUR)/examples/hybNS/data: sample data sets of hybNS (mesh data)
+   $(CUR)/examples/hybNS/run : sample data sets of hybNS (control data)
+   $(CUR)/examples/hybNS/run/results : directory storing sample results
+
+   $(CUR)/examples/heat3D/src  : source code files of heat3D using ppOpen-APPL/FVM
+   $(CUR)/examples/heat3D/pmesh: source code files of pmesh, parallel mesh generator for heat3D
+   $(CUR)/examples/heat3D/data : sample data sets of heat3D (mesh data)
+   $(CUR)/examples/heat3D/run  : sample data sets of heat3D (control data)
+   $(CUR)/examples/heat3D/run/results : directory storing sample results
+
+   $(CUR)/include: directory which stores created module files
+   $(CUR)/lib    :                                libraries
+   $(CUR)/bin    :                                exec. files
+
+   $(CUR)/etc    : samples of 'Makefile.in'
+   $(CUR)/doc    : documents
+          
+***********************************************************************************
+3. Quick Start
+
+(1) Preparation
+
+ - Fortran 90 compliers (Operations have been confirmed by Intel, PGI, Fujitsu compilers)
+ - MPI library
+ - OpenMP must be supported if you want to develop OpenMP/MPI Hybrid codes
+ - METIS library (v.4) (libmetis.a)
+   *** NOTICE *** Most recent version (METIS 5.0) does not work. 
+                  Please obtain the previous version (v.4) from the following site:
+   http://glaros.dtc.umn.edu/gkhome/fsroot/sw/metis/OLD
+
+(2) Modify 'Makefile.in', samples are found in $(CUR)/etc
+  $(CUR)/etc/Makefile.in.fx10.flatmpi  : Flat MPI for Fujitsu FX10
+  $(CUR)/etc/Makefile.in.intel.flatmpi :              Intel Compiler
+  $(CUR)/etc/Makefile.in.pgi.flatmpi   :              PGI Compiler
+
+  $(CUR)/etc/Makefile.in.fx10.hybrid   : OpenMP/MPI Hybrid for Fujitsu FX10
+  $(CUR)/etc/Makefile.in.intel.hybrid  :                       Intel Compiler
+  $(CUR)/etc/Makefile.in.pgi.hybrid    :                       PGI Compiler
+
+  $(MPIF90), $(MPIF77): FORTRAN 90/77 with MPI
+  $(F90),    $(F77)   : FORTRAN 90/77 for single core
+  $(sFFLAGS)          : Compiler options for Optimizations for ppOpen-APPL/FVM-Tool/Partitioner 
+                         (DO NOT INCLUDE "OpenMP" flags)
+  $(sMGFLAGS)         : Compiler options for Optimizations for hybNS-mg & pmesh
+                        (DO NOT INCLUDE "OpenMP" flags)
+  $(pFFFLAGS)         : Compiler options for Optimizations for ppOpen-APPL/FVM, hybNS, & heat3D
+  $(METISDIR)         : Name of directory, where 'libmetis.a' is located
+
+  $(PREFIX)/include   : directory that holds the installed module files
+  $(PREFIX)/lib       :                                    libraries
+  $(PREFIX)/bin       :                                    exec. files
+
+ *** NOTICE ***: $(PREFIX) directory must be specified as ABSOLUTE/FULL path.
+
+(3) Complile/install ppOpen-APPL/FVM and utility for partitioning
+ $>  cd $(CUR)/
+ $>  make                 -> ppOpen-APPL/FVM + ppOpen-APPL/FVM-Tool/Partitioner
+                             $<CUR>/lib/ppohFVMlib.a
+                             $<CUR>/bin/ppohFVM_part
+
+($>  make ppohFVM         -> ppOpen-APPL/FVM only)   
+                             $<CUR>/lib/ppohFVMlib.a   
+($>  make part            -> ppOpen-APPL/FVM-Tool/Partitioner only)
+                             $<CUR>/bin/ppohFVM_part
+
+ $>  make install         -> Install ppohFVM library and partitioner to the destination
+                             $<PREFIX>/lib/ppohFVMlib.a
+                             $<PREFIX>/bin/ppohFVM_part
+
+ $>  make ppohFVM_install -> Install ppohFVM library to the destination
+                             $<PREFIX>/lib/ppohFVMlib.a
+
+ $>  make bin_install    -> Install partitioner to the destination
+                             $<PREFIX>/bin/ppohFVM_part
+
+(4) Compile/install hybNS and hybNSmg
+ $>  cd $(CUR)/
+ $>  make hybNS           -> hybNS + hybNS-mg
+                             $<CUR>/bin/hybNS
+                             $<CUR>/bin/hybNS_mg
+ $>  make bin_install
+                             $<PREFIX>/bin/hybNS
+                             $<PREFIX>/bin/hybNS_mg
+
+(5) Compile/install heat3D, pmesh & pmesh_bin
+ $>  cd $(CUR)/
+ $>  make heat3D          -> heat3D + pmesh
+                             $<CUR>/bin/heat3D
+                             $<CUR>/bin/pmesh
+                             $<CUR>/bin/pmesh_bin
+ $>  make bin_install
+                             $<PREFIX>/bin/heat3D
+                             $<PREFIX>/bin/pmesh
+                             $<PREFIX>/bin/pmesh_bin
+
+ *** NOTICE ***: Processes (4) & (5) must be done after (3).
+
+(6) Running the code 
+(hybNS)
+ $>  cd $(CUR)/examples/hybNS/run
+ $>  mpiexec -n 8 <$PREFIX>/bin/hybNS with appropriate thread number for OpenMP
+     (or corresponding operations)
+ $>  cat $(CUR)/examples/hybNS/run/results.lst 
+     -> Reference result is $(CUR)/examples/hybNS/run/results/results.lst 
+
+     (heat3D)
+ $>  cd $(CUR)/examples/heat3D/run
+ $>  mpiexec -n 8 <$PREFIX>/bin/heat3D with appropriate thread number for OpenMP
+     (or corresponding operations)
+ $>  cat $(CUR)/examples/heat3D/run/test.lst 
+     -> Reference result is $(CUR)/examples/heat3D/run/results/test.lst 
+
+(7) Clean/Unistall
+ $>  cd $(CUR)/
+ $>  make clean          -> Clean files
+ $>  make unistall       -> Delete all installed files and directories
+
+***********************************************************************************

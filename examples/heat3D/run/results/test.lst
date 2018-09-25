@@ -1,0 +1,14 @@
+../pmesh/pcube_asci                                                             
+ T
+  
+### Number of Element Colors (HEXA)       8
+*** matrix conn.     3.987265E-02 sec.
+*** matrix ass.      9.135346E-02 sec.
+
+    1    5.189549E+00
+   95    6.435628E-09
+    1.262583E+04
+*** real  COMP.      1.695723E-02 sec.
+
+    1.262583E+04
+jwe0002i stop  * normal termination
