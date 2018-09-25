@@ -1,0 +1,20 @@
+#
+# for partitioner
+#
+!MESH, NAME=part_in,TYPE=HECMW-ENTIRE
+ mesh.msh
+!MESH, NAME=part_out,TYPE=HECMW-DIST
+ mesh_4
+#
+# for solver
+#
+#!MESH, NAME=fstrMSH, TYPE=HECMW-ENTIRE
+# mesh.msh
+!MESH, NAME=fstrMSH,TYPE=HECMW-DIST
+ mesh_4
+!CONTROL, NAME=fstrCNT
+ mesh.cnt
+!RESULT, NAME=fstrRES, IO=OUT
+ mesh.res
+!RESULT, NAME=vis_out, IO=OUT
+ mesh

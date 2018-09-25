@@ -1,0 +1,23 @@
+# C compiler settings
+CC             = mpifccpx
+CFLAGS         = 
+LDFLAGS        = -lm
+OPTFLAGS       = -Kfast
+
+# Fortran compiler settings
+F90            = mpifrtpx
+F90FLAGS       = 
+F90LDFLAGS     =
+F90OPTFLAGS    = -Kfast,openmp
+
+# Tools
+MAKE           = make
+AR             = ar ruv
+CP             = cp -f
+RM             = rm -f
+MKDIR          = mkdir -p
+
+# Metis
+METISDIR       = /usr/local/METIS/5.1.0
+METISLIBDIR    = $(METISDIR)/lib
+METISINCDIR    = $(METISDIR)/include

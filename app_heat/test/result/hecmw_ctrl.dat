@@ -1,0 +1,18 @@
+#
+# for partitioner
+#
+!MESH, NAME=part_in,TYPE=HECMW-ENTIRE
+ MA361.msh
+!MESH, NAME=part_out,TYPE=HECMW-DIST
+ MA361
+#
+# for solver
+#
+!MESH, NAME=fstrMSH, TYPE=HECMW-DIST
+ MA361
+!CONTROL, NAME=fstrCNT
+ A.cnt
+!RESULT, NAME=fstrRES, IO=OUT
+ MA361.res
+!RESULT, NAME=vis_out, IO=OUT
+ MA361_vis

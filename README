@@ -1,0 +1,92 @@
+************************************************************************
+1. Descriptions
+
+ppOpen-APPL/FEM (ppohFEM) is a middleware to allow a Finite Element 
+Method (FEM) analysis code developer to devote himself to development of 
+the application software by offering a function commonly used in FEM. 
+
+Contents of this package is described in User's guide, 
+doc/ppohFEM_users_guide.pdf
+Reference manual for APIs provided by middleware is described in 
+Reference manual, doc/ppohFEM_reference_manual.pdf
+
+The codes are written in C and Fortran
+
+************************************************************************
+2. Directories
+
+   ./app_flow         : Example fluid dynamics application program using 
+                        ppohFEM library.
+   ./app_heat         : Example heat transfer application program using 
+                        ppohFEM library.
+   ./app_struct       : Example structural analysis program using 
+                        ppohFEM library
+   ./doc              : Document files of ppohFEM library. 
+   ./etc              : Example Makefile.in file to define system 
+                        depend settings.
+   ./ppohFEM          : Source code of ppohFEM library. 
+
+************************************************************************
+3 How to compile
+
+This software requires the following developer tools and libraries to be  
+available for use in the build procedure.
+ A Fortran compiler
+ A C compiler
+ A MPI library
+ The METIS4.0.3 library
+
+Edit the file Makefile.in that resides in the same directory as this file
+according to the requirements of your system. In particular you may need
+to modify the following: 
+
+1. The CC variable, to be the name of C compiler in your system. 
+2. The F90 variable, to be the name of Fortran compiler in your system. 
+
+After saving the modified Makefile.in, type 'make' at the prompt. 
+
+This will build 
+ppohFEM/lib/libppohFEM.a  : library file which contain functions 
+                            provided by this library. 
+app_struct/bin/app_struct : sample program which perform 
+                            static linear analysis.
+app_heat/bin/app_heat     : sample program which perform heat transfer.
+app_flow/bin/app_flow     : sample program which perform fluid dynamics.
+
+************************************************************************
+4. Installation Instructions
+
+(1) Modify 'Makefile.in'. samples for Intel and FX10 compiler are avilable.
+  etc/Makefile.in.FX10  : Fujitsu FX10
+  etc/Makefile.in.linux : Ordinary linux
+
+(2) Complile ppOpen-APPL
+ $>  make  -> ppohFEM/lib/libppohFEM.a & app_struct/bin/app_struct
+              & app_heat/bin/app_heat
+
+
+(3) Run the sample code
+ $>  cd ./app_struct/test01
+ $>  mpirun -np 4 ../bin/app_struct
+
+ $>  cd ./app_heat/test
+ $>  mpirun -np 4 ../bin/app_heat
+
+(4) Clean
+ $>  cd ./
+ $>  make distclean      -> Clean all library, objects and executable
+
+************************************************************************
+5. Change History
+
+Change in release 0.2.0
+Add fortran alpha version.
+
+Change in release 0.3.0
+Fix class name and file name. 
+
+Change in release 1.0.0
+Fix Fortran code as release version. 
+
+Change in release 1.0.1
+Add fluid dynamics sample application program. 
