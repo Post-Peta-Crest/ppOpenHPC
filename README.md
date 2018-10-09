@@ -22,7 +22,7 @@ extended version of ppOpen-HPC, which is a framework for exa-feasible applicatio
 iterative solvers for quantum sciences, parallel reordering methods, and a framework for AT with a 
 performance model.
 
-![Image of ppOpen-HPC](https://github.com/Post-Peta-Crest/ppOpenHPC/Image_ppOpen-HPC.png "image")
+![Image of ppOpen-HPC](https://github.com/Post-Peta-Crest/ppOpenHPC/blob/master/Image_ppOpen-HPC.png "image")
 
 ### How to use
 
