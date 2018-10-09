@@ -23,6 +23,7 @@ iterative solvers for quantum sciences, parallel reordering methods, and a frame
 performance model.
 
 ![Image of ppOpen-HPC](https://github.com/Post-Peta-Crest/ppOpenHPC/blob/master/Image_ppOpen-HPC.png "image")
+<img src="https://github.com/Post-Peta-Crest/ppOpenHPC/blob/master/Image_ppOpen-HPC.png" title="An image of ppOpen-HPC">
 
 ### How to use
 
