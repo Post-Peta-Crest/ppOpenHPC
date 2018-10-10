@@ -29,7 +29,7 @@ on a parallel computer. The current version includes a software framework
 ------------------------------------------------------------------------ 
 
  --- Change History ---
-（Changes in release 0.4.0）
+Changes in release 0.4.0
 
-・The new version of HACApK which is paralleized in the hybrid parallel programming model is included.
-・The BEM-BB framework was minorly updated.
+The new version of HACApK which is paralleized in the hybrid parallel programming model is included.
+The BEM-BB framework was minorly updated.
