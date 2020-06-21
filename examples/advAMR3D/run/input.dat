@@ -1,0 +1,31 @@
+# The power index n of grid points at initial Lv.0 for 1D direction per process
+# (This is restricted to the n-th power of 2 (2^n * 2^n * 2^n) and n >= 2)
+4
+# The power index n of the number of MPI processes for 1D direction
+# (This is also restricted to the n-th power of 2 (2^n * 2^n * 2^n))
+2
+# Number of OpenMP Threads (In compilation excluding openmp, this number is ignored)
+16
+# Maximum hierarchical level:LvMax (from Lv.0 to LvMax)
+6
+# set Lv for setup initial condition
+3
+# Dynamic Domain Decomposition (ON:1, OFF:0)
+# (To enable DDD function, the power index of grid points n >= 4)
+0
+# Criterion for Dynamic Domain Decomposition
+4.0d0
+# Number of variables used in the appl.
+7
+# Grid points at overlap region between each sub-domain associated with MPI (>= 2)
+1
+# Criterion for Mesh Refinement
+0.5d0
+# Criterion for Mesh De-refinement
+0.5d0
+# Space interval between each grid point at Lv.0 layer: dx dy dz
+1.0d0 1.0d0 1.0d0
+# Time interval at Lv.0 layer: dt
+0.25d0
+# Maximum iteration step at Lv.0 layer: itmax (main loop iteration from 0 to itmax)
+64
