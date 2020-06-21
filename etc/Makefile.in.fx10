@@ -1,0 +1,25 @@
+# Install directory
+PREFIX        = ~/ppohDEM_1.0.0
+INCDIR        = $(PREFIX)/include
+LIBDIR        = $(PREFIX)/lib
+BINDIR        = $(PREFIX)/bin
+
+# Fortran compiler settings
+F90           = frtpx
+F77           = frtpx
+MPIF90        = mpifrtpx
+MPIF77        = mpifrtpx
+F90FLAGS      = -Kfast
+F90OMPFLAGS   = -Kfast,openmp
+
+# Archiver settings
+AR      = ar
+ARFLAGS = rv
+
+# ETC
+CP            = cp -f
+RM            = rm -rf
+MKDIR         = mkdir -p
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

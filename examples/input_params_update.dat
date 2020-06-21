@@ -1,0 +1,8 @@
+Lx_Ly_Lz: 11 11 11
+Time_finish: 300
+Obj_n_x_y_z: 20 20 20 
+Obj_winstart_x_y_z: 28 28 28
+Obj_velocity_x_y_z: 0 0 0.005
+Obj_omega_x_y_z: 0 0 1
+Obj_omega_Pi_rad_per_w: 1200
+Obj_centroid_x_y_z: 22 22 11

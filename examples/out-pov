@@ -1,0 +1,42 @@
+#! /bin/bash
+
+#rm ./pov/*.pov
+
+for i in {1..300};
+
+do 
+
+   name=$(printf out%03d $i); 
+   name2=$(printf obj%03d $i); 
+   
+#   echo $name;
+
+
+echo "#include \"colors.inc\" " >  ./pov/$name.pov
+echo "#include \"textures.inc\" " >>  ./pov/$name.pov
+echo "#include \"stones.inc\" " >>  ./pov/$name.pov
+echo "#include \"metals.inc\" " >>  ./pov/$name.pov
+echo "#include \"woods.inc\" " >>  ./pov/$name.pov
+
+#echo "camera { location <-30, 100, 50>  sky  <0, 0, 1>   look_at  <30, 0, -5>   angle    45 } " >>  ./pov/$name.pov
+#echo "camera { orthographic location < 150, 200, 150> look_at  <0, 0, 0>   angle    0 } " >>  ./pov/$name.pov
+
+#echo "camera { orthographic location < 120, 150, 250> look_at  <120, 0, 0>   angle 30 } " >>  ./pov/$name.pov
+#echo "camera { orthographic location < 5, 5, -5> look_at  < 5, 0, 0>   angle 150 } " >>  ./pov/$name.pov
+
+echo "camera { orthographic location < 6.36, 3.18, -6.36> look_at  < 3.18, 1.59, -3.18>   angle 150 } " >>  ./pov/$name.pov
+
+
+echo "light_source {  <10, 200, 10>  color rgb <1, 1, 1>  parallel  } " >>  ./pov/$name.pov
+echo "background { color rgb <0.3, 0.4, 1.2> } " >>  ./pov/$name.pov
+echo "plane { y, -50 texture { T_Wood10 scale 10.0 }   } " >>  ./pov/$name.pov
+
+#cat ./data/$name.dat | awk '{print "sphere { <" $1 ","  $2 ","  $3 ">," $4  " pigment { rgbt <1, 1, 1, 0> } }"}' >> ./pov/$name.pov
+
+cat ./data/$name.dat | awk '{print "sphere { <" $1 ","  $3 "," $2 ">," $4 " texture{T_Stone10} }"}' >> ./pov/$name.pov
+
+cat ./obj/$name2.pov >> ./pov/$name.pov
+
+povray Display=no -H1200 -W1600 Antialias=On ./pov/$name.pov
+
+done;
