@@ -1,0 +1,7 @@
+ (ppohBEMresidual_direct
+   (OAT_NUMPROCS  1 )
+   (OAT_SAMPDIST  100 )
+   (OAT_PROBSIZE  600  
+      (ppohBEMresidual_direct_I  17 )
+   )
+ )
