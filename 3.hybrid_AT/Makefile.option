@@ -1,0 +1,27 @@
+#Macro
+
+#for intel fortran compiler
+#FC = mpiifort
+
+#for mpich
+#FC = /opt/mpich-mic/bin/mpif90
+
+#for MVAPICH
+#FC = mpif90
+
+#CFLAG = -c
+#FFLAGS = -openmp -ipo20 -O3 -xhost -warn all
+RM = rm -f
+
+#for MIC
+#FFLAGS = -ipo20 -O3 -warn all -openmp -mcmodel=medium -shared-intel -mmic -align array64byte 
+
+#for Ivy
+#FFLAGS = -ipo20 -O3 -warn all -openmp -mcmodel=medium -shared-intel
+
+
+#for fx10 fujitsu compiler
+FC = mpifrtpx
+#FC = mpifrt
+FFLAGS = -O3 -Kfast,openmp
+#RM = rm -f

@@ -1,0 +1,6 @@
+# medium parameter
+# number of layers
+# Z (km), RO (t/m3), Vp(km/s), Vs(km/s)
+# 
+1
+10  2.3 3.0 1.7

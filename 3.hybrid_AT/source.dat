@@ -1,0 +1,7 @@
+# Source parameter
+# Source location: X, Y and Z (km)
+# Source mechanism: STRIKE, DIP, LAKE
+# Source time function: AT, T0
+16.0 16.0 4.0
+0.0 45.0 90.0 
+1.0 2.0

@@ -1,0 +1,45 @@
+# code selector
+
+# standard I/O
+CODE_STDIO = m_stdio.f90
+
+# Data Output
+CODE_OUTPUT = m_io.f90
+
+# Condition(medium,station,source)
+CODE_CONDITION = m_set_condition.f90
+
+# Embeded Parameter file
+CODE_PARAMS = m_param.f90
+
+CODE_OAT_INSTALL = ./OAT/OAT_InstallRoutines.f90
+CODE_OAT_STATIC = ./OAT/OAT_StaticRoutines.f90
+CODE_OAT_DYNAMIC = ./OAT/OAT_DynamicRoutines.f90
+CODE_OAT_CONTL = ./OAT/OAT_ControlRoutines.f90
+
+# FDM Computation Kernel Velocity
+CODE_KERNEL_V = ./OAT/OAT_m_velocity.f90
+
+# FDM Computation Kernel Pressure
+CODE_KERNEL_S = ./OAT/OAT_m_stress.f90
+
+# FDM Differential
+CODE_DIF = ./OAT/OAT_m_pfd3d.f90
+
+# Seismic Source
+CODE_SOURCE = m_source.f90
+
+# Seismic Source time function
+CODE_SOURCE_TF = m_pssub.f90
+
+# Surface Boundary Conditions
+CODE_SURFBC = m_boundary.f90
+
+# Boundary Conditions Absorber
+CODE_BOUNDARY = m_sponge_absorber.f90
+
+# Main Program
+CODE_MAIN   = ./OAT/OAT_seism3d3n.f90
+
+
+
