@@ -49,7 +49,7 @@ contains
  icomm=st_ctl%lpmd(1)
  lrtrn=HACApK_generate(st_leafmtxp,st_bemv,st_ctl,gmid,ztol)
  call MPI_Barrier( icomm, ierr )
-! lrtrn=HACApK_solve(st_leafmtxp,st_bemv,st_ctl,rhs,sol,ztol)
+ lrtrn=HACApK_solve(st_leafmtxp,st_bemv,st_ctl,rhs,sol,ztol)
  call MPI_Barrier( icomm, ierr )
 ! st_ctl%time(:)=0.0d0
 
