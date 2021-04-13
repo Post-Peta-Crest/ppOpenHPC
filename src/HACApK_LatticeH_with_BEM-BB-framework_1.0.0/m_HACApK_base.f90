@@ -145,7 +145,7 @@ integer function HACApK_init(nd,st_ctl,st_bemv,icomma)
  st_ctl%param(52)=0;        ! H-matrix : 0:weak admissibility 1:strong
  st_ctl%param(53)=100;        ! H-matrix : maximun depth of block cluster tree 100
  st_ctl%param(54)=0;        ! H-matrix : 0: quad(Ver1.2), 1:BLR, 2: quad or bi
- st_ctl%param(60)=2         ! 1:ACA,  2:ACA+
+ st_ctl%param(60)=2         ! 1:ACA,  2:ACA+ 
  st_ctl%param(61)=1         ! ACA norm 1:MREM,  2:test, 3:norm
  st_ctl%param(62)=7         ! ACA : predictive average of k
  st_ctl%param(63)=1000;     ! ACA : k-max of R_k-matrix 30
