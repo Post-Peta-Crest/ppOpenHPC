@@ -489,7 +489,173 @@ endfunction
  call HACApK_adotsub_dsm(vec,zaa,zz,ndp,k,ndp)
  where(lmsk==1) vec=0.0d0
  endsubroutine
+
+!***HACApK_SVD
+ integer function HACApK_SVD(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lod,st_bemv,kmax,eps,znrmmat,pSVD_EPS)
+ type(st_HACApK_calc_entry) :: st_bemv
+ real*8 :: param(:)
+ real*8,target :: zaa(ndl,kmax),zab(ndt,kmax)
+ real*8,pointer :: prow(:),pcol(:)
+ integer*4 :: lod(:)
+ integer*4,dimension(:), allocatable :: lrow_msk,lcol_msk
+real*8,dimension(:),allocatable :: w,work
+real*8,dimension(:,:),allocatable :: u,vt,waa,waa2
  
+ 1000 format(5(a,i12)/)
+ 2000 format(5(a,1pe15.8)/)
+  
+  kmin=param(64)
+!!! write(6,1000) 'nstrtl=',nstrtl,' nstrtt=',nstrtt,' ndl=',ndl,' ndt=',ndt, 'kmax=',kmax
+ krank=min(ndl,ndt)
+ znrm=znrmmat*sqrt(real(ndl)*real(ndt))
+!!! allocate(lrow_msk(ndl),lcol_msk(ndt)); lrow_msk(:)=0; lcol_msk(:)=0; nrow_done=0; ncol_done=0
+ HACApK_SVD=0; k=1; lstop_aca=0
+ 
+nn=min(ndl,ndt)
+!!!print*,'nn=',nn,' eps=',eps
+    lwork=10*nn; lda=ndl; ldu=ndl; ldvt=ndt
+!!!allocate(w(nn),work(lwork),u(ldu,nn),vt(ldvt,nn),waa(ndl,ndt),waa2(ndl,ndt))
+allocate(w(nn),work(lwork),u(ldu,nn),vt(nn,ldvt),waa(ndl,ndt),waa2(ndl,ndt))
+
+ do il=1,ndl
+   do it=1,ndt
+     ill=il+nstrtl-1; itt=it+nstrtt-1
+     waa(il,it)=HACApK_entry_ij(lod(ill),lod(itt),st_bemv)
+   enddo
+ enddo
+ 
+!!! HACApK_SVD=kmax; zaa=waa; zab=0.0d0; do il=1,nn; zab(il,il)=1.0d0; enddo; return
+!!!   waa2=waa
+
+!!!call dgesvd ( 'A', 'A', ndl, ndt, waa, lda, w, u, ldu, vt, ldvt, work, lwork, info)
+!!!call dgesvd ( 'S', 'S', ndl, ndt, waa, lda, w, u, ldu, vt, ldvt, work, lwork, info)
+call dgesvd ( 'S', 'S', ndl, ndt, waa, lda, w, u, ldu, vt, nn, work, lwork, info)
+!!! call gesvd (waa,w,u,vt)
+
+!!!    print*, 'info_dgesvd=',info
+!!!    print*, 'eigenvalues_large=',w(1:10)
+!!!    print*, 'eigenvalues_small=',w(nn-10:nn)
+ if (w(1)<pSVD_EPS) then
+    HACApK_SVD=0
+ else
+    do il=2,nn
+      zzz=w(il)/w(1)
+      if(zzz<eps)then
+        print*,'HACApK_SVD; rank_e4=',il,'/',nn
+!!!        print*,'eigen_max=',w(1)
+!!!        print*,'eigen_il=',w(il)
+        exit
+      endif
+    enddo
+    !!!if(il==nn+1) print*,'HACApK_SVD; rank_e4=',nn,'/',nn
+    HACApK_SVD=min(il,nn)
+ end if
+ if(HACApK_SVD<kmin)then
+   HACApK_SVD=kmin
+   print*,'HACApK_SVD; rank_e4 is changed to',kmin
+ elseif(HACApK_SVD>kmax)then
+   HACApK_SVD=kmax
+   print*,'HACApK_SVD; rank_e4 is changed to',kmax
+ endif
+ 
+ za2=0.0d0; za1=0.0d0
+ do it=1,HACApK_SVD
+   do il=1,ndl
+     zaa(il,it)=u(il,it)*w(it)
+   enddo
+ enddo
+ do it=1,HACApK_SVD
+   do il=1,ndt
+       zab(il,it)=vt(it,il)
+   enddo
+ enddo
+ 
+ return
+ 
+ do il=1,ndl
+   do it=1,ndt
+     zz=0.0d0
+     do ik=1,HACApK_SVD
+       zz=zz+zaa(il,ik)*zab(it,ik)
+     enddo
+     zzd=abs(zz-waa2(il,it))
+     if(zzd>1.0d-10)then
+       print*, 'il=',il,' it=',it,' zz=',zz,' waa2=',waa2(il,it)
+       stop
+     endif
+   enddo
+ enddo
+ stop
+ 
+ 
+ kstop=min(kmax,krank)
+ if(nstrtl>nstrtt)then; ist=1
+ else; ist=ndl
+ endif
+ do
+!  print*,'k=',k,' zeps=',zeps,' ist=',ist
+   pcol => zaa(:,k); prow => zab(:,k)
+    call HACApK_calc_vec(zab, zaa, ndt, k-1, ist, prow, nstrtl, nstrtt,lod, st_bemv, lcol_msk,0) 
+!   print*, 'prow=',prow
+   call HACApK_maxabsvallocm_d(prow,row_maxval,jst,ndt,lcol_msk)
+!   print*,'jst=',jst,' row_maxval=',row_maxval
+! write(6,1000) 'ist=',ist,'  jst=',jst
+     zdltinv=1.0d0/prow(jst); prow(:)=prow(:)*zdltinv
+    call HACApK_calc_vec(zaa, zab, ndl, k-1, jst, pcol, nstrtl, nstrtt,lod, st_bemv, lrow_msk,1)
+   lrow_msk(ist)=1
+   call HACApK_maxabsvallocm_d(pcol,col_maxval,istn,ndl,lrow_msk)
+!   print*, 'pcol=',pcol
+!   print *,'zeps=',zeps
+!   print*,'istn=',istn,' col_maxval=',col_maxval
+   lcol_msk(jst)=1
+   ist=istn; nrow_done=nrow_done+1; ncol_done=ncol_done+1
+   if(abs(row_maxval)<ACA_EPS .and. abs(col_maxval)<ACA_EPS .and. k>=param(64)) then
+!$omp critical
+     print *, 'ACA_EPS=',ACA_EPS
+     print *, 'abs(row_maxval)=',abs(row_maxval)
+     print *, 'abs(col_maxval)=',abs(col_maxval)
+     print *, 'stop HACApK_aca 3';
+!!!     stop
+!$omp end critical
+     goto 9999
+   endif
+   zeps=HACApK_unrm_d(ndl,pcol)*HACApK_unrm_d(ndt,prow)
+!   zcolm=HACApK_unrm_d(ndl,pcol); zrowm=HACApK_unrm_d(ndt,prow)
+!   zeps=max(zcolm,zrowm,zcolm*zrowm)
+   if(k==1 .and. param(61)==1) znrm=zeps
+   zeps=zeps/znrm
+!  print*,'pcol'; print*,pcol
+!  print*,'prow'; print*,prow
+!  print*,'lcol_msk',lcol_msk
+!  print*,'lrow_msk',lrow_msk
+!  write(6,2000) 'zeps=',zeps
+  if(zeps<eps .or. k==kstop) lstop_aca = 1
+  if(lstop_aca==1 .and. k>=param(64)) then
+!    print *,'k=',k, 'param(64)=',param(64)
+!    print *,'zeps=',zeps
+!    print *,'eps=',eps
+!    print*,'???????????'
+    exit
+  endif
+  k=k+1
+ enddo
+ 9999 continue
+ deallocate(lrow_msk,lcol_msk)
+ HACApK_SVD=k
+! print*,'HACApK_aca=',aca
+  if(zeps>eps .and. k<krank)then
+!$omp critical
+    print *,'k=',k
+    print *,'zeps=',zeps
+    print *,'eps=',eps
+    write(6,1000) 'nstrtl=',nstrtl,' nstrtt=',nstrtt,' ndl=',ndl,' ndt=',ndt
+    print*,'znrm=',znrm
+    stop
+!$omp end critical
+  endif
+! stop
+ endfunction
+
 !***HACApK_aca
  integer function HACApK_aca(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lod,st_bemv,kmax,eps,znrmmat,pACA_EPS)
  type(st_HACApK_calc_entry) :: st_bemv
