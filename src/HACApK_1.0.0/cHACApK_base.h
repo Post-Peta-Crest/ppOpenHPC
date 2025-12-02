@@ -122,6 +122,81 @@ extern void cHACApK_setcutthread(
   int nthr,
   int ktp);
 
+extern int cHACApK_RRQR(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pRRQR_EPS);
+
+extern int cHACApK_SVD(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pSVD_EPS);
+
+extern void cHACApK_calc_vec(
+  double *zaa,
+  double *zab,
+  int ndp,
+  int ndt,
+  int k,
+  int ip,
+  double *vec,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int *lmsk,
+  int ld);
+
+extern int cHACApK_acaplus(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pACA_EPS);
+
+extern void cHACApK_fill_leafmtx_hyp(
+  st_cHACApK_leafmtx *st_lf,
+  int i_bemv,
+  double *param,
+  double znrmmat,
+  int *lpmd,
+  int *lnmtx,
+  int *lodl, // [nd]
+  int *lodt, // [nd]
+  int nd,
+  int nlf,
+  int *lnps,
+  int *lnpe,
+  int *lthr); // [0:]
+
 extern void cHACApK_count_blrnmb(
   st_cHACApK_cluster st_cltl,
   st_cHACApK_cluster st_cltt,

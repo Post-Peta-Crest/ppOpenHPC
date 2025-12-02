@@ -33,14 +33,17 @@
 !C  added functions related to Block clustering to HACApK1.2.0 on May 2017
 !C  translated to C language by Akihiro Ida and Kazuya Goto
 !C**************************************************************************
-*/
-#include "cHACApK_base.h"
+*/#include "cHACApK_base.h"
 #include "cHACApK_calc_entry_ij.h"
 #include "cHACApK_lib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <mpi.h>
+
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 //***cHACApK_generate_frame_blrleaf
 void cHACApK_generate_frame_blrleaf(
@@ -110,6 +113,7 @@ void cHACApK_generate_frame_blrleaf(
   //!!!!!!!!!!!!!!!! end clustering !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   free(lodfc);
 
+  
   //for(ill=1; ill<10; ill++) {
     //ill=1; itt=1; zzz=cHACApK_entry_ij(lod[ill],lod[itt],i_bemv);
     //itt=1; zzz=cHACApK_entry_ij(lod[ill],lod[itt],i_bemv);
@@ -128,8 +132,16 @@ void cHACApK_generate_frame_blrleaf(
   cHACApK_count_blrnmb(st_clt,st_clt,param,lpmd,lnmtx,nofc,nffc,&ndpth);
   nblall=lnmtx[4];
   st_leafmtx = (st_cHACApK_leafmtx *) malloc(sizeof(st_cHACApK_leafmtx)*(nblall+1));
+  if(st_leafmtx==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtx\n");
+    goto error;
+  }
   for(il=1; il<=nblall; il++) {
     st_leafmtx[il] = (st_cHACApK_leafmtx) calloc(1,sizeof(struct st_cHACApK_leafmtx));
+    if(st_leafmtx[il]==NULL) {
+      fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtx[%d]\n",il);
+      goto error;
+    }
   }
   nlfalt=sqrt((double)nblall); st_leafmtxp->nlfalt=nlfalt;
   if(st_ctl->param[1]>0 && mpinr==0) printf("Number of MPI_Blocks=%12d; sqrt(nblall)=%12d\n",nblall,nlfalt);
@@ -220,6 +232,10 @@ void cHACApK_generate_frame_blrleaf(
   nrank_t=st_ctl->lpmd[32]; nrank_l=st_ctl->lpmd[36];
 
   st_leafmtxp->lbl2t = (int *) calloc(npgl,sizeof(int));
+  if(st_leafmtxp->lbl2t==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtxp->lbl2t\n");
+    goto error;
+  }
   irank_t=st_ctl->lpmd[33]; irank_l=st_ctl->lpmd[37];
   for(in=0; in<nlfalt; in++) {
     inml=in%npgl; inmt=in%npgt;
@@ -236,6 +252,15 @@ void cHACApK_generate_frame_blrleaf(
   st_leafmtxp->lbndt = (int *) malloc(sizeof(int)*(nlfalt+1));
   st_leafmtxp->lbndlfs = (int *) calloc(nrank_l,sizeof(int));
   st_leafmtxp->lbndtfs = (int *) calloc(nrank_t,sizeof(int));
+  if(st_leafmtxp->lbstrtl==NULL ||
+     st_leafmtxp->lbstrtt==NULL ||
+     st_leafmtxp->lbndl  ==NULL ||
+     st_leafmtxp->lbndt  ==NULL ||
+     st_leafmtxp->lbndlfs==NULL ||
+     st_leafmtxp->lbndtfs==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtxp->lb***\n");
+    goto error;
+  }
   for(il=0; il<nlfalt; il++) {
     is=nlfalt*il+1;
     ilh=il%npgl;
@@ -266,8 +291,16 @@ void cHACApK_generate_frame_blrleaf(
 
   st_leafmtx_lcl = (st_cHACApK_leafmtx *) malloc(sizeof(st_cHACApK_leafmtx)*(nbl+1));
   st_leafmtxp->lnlfl2g_t = (int64_t **) malloc(sizeof(int64_t *)*(nlfl+1));
+  if(st_leafmtxp->lnlfl2g_t==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtxp->lnlfl2g\n");
+    goto error;
+  }
   for(il=1; il<=nlfl; il++) {
     st_leafmtxp->lnlfl2g_t[il] = (int64_t *) malloc(sizeof(int64_t)*(nlft+1));
+    if(st_leafmtxp->lnlfl2g_t[il]==NULL) {
+      fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtxp->lnlfl2g[%d]\n",il);
+      goto error;
+    }
   }
   ip=0; nlf=0;
   for(il=0; il<nlfalt; il++) {
@@ -304,6 +337,10 @@ void cHACApK_generate_frame_blrleaf(
 //  print*,'mpinr=',mpinr,'; nlf=',nlf
   st_leafmtxp->nlf=nlf;
   st_leafmtxp->st_lf = (st_cHACApK_leafmtx *) malloc(sizeof(st_cHACApK_leafmtx)*(nlf+1));
+  if(st_leafmtxp->st_lf==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_frame_blrleaf: malloc st_leafmtxp->st_lf\n");
+    goto error;
+  }
   ip=0; ndlfs=0; ndtfs=0;
   for(il=0; il<nlfalt; il++) {
     for(it=0; it<nlfalt; it++) {
@@ -401,6 +438,622 @@ void cHACApK_setcutthread(
     }
   }
   // if(st_ctl->param[1]>1) printf("HACApK_setcutthread; lthr=%12d\n",lthr[0:nthr]);
+}
+
+//***min
+static int min(
+  int i1,
+  int i2)
+{
+  return i1<i2 ? i1 : i2;
+}
+
+//***max
+static int max(
+  int i1,
+  int i2)
+{
+  return i1>i2 ? i1 : i2;
+}
+
+extern void dgeqp3_(int*,int*,double*,int*,int*,double*,double*,int*,int*);
+extern void dorgqr_(int*,int*,int*,double*,int*,double*,double*,int*,int*);
+
+//***cHACApK_RRQR
+int cHACApK_RRQR(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pRRQR_EPS)
+{
+  double *tau,*work,work1[1];
+  double *waa;
+  int *jpvt;
+  int kmin,kRRQR,nn,lwork,lda,il,it,ill,itt,info;
+  double zzz;
+
+  kmin=param[64];
+  kRRQR=0;
+
+  nn=min(ndl,ndt);
+  lda=ndl;
+  waa = (double *) calloc(lda*ndt,sizeof(double));
+  jpvt = (int *) calloc(ndt,sizeof(int));
+  tau = (double *) calloc(nn,sizeof(double));
+  if(waa==NULL || jpvt==NULL || tau==NULL) {
+    fprintf(stderr, "Error: cHACApK_RRQR: malloc waa jpvt tau\n");
+    goto error;
+  }
+
+  for (il=0; il<ndl; il++) {
+    for (it=0; it<ndt; it++) {
+      ill=il+nstrtl; itt=it+nstrtt;
+      waa[il+lda*it]=cHACApK_entry_ij(lod[ill],lod[itt],i_bemv);
+    }
+  }
+
+  lwork=-1;
+  dgeqp3_(&ndl,&ndt,waa,&lda,jpvt,tau,work1,&lwork,&info);
+  lwork=work1[0];
+  work = (double *) malloc(lwork*sizeof(double));
+  if(work==NULL) {
+    fprintf(stderr, "Error: cHACApK_RRQR: malloc work\n");
+    goto error;
+  }
+  dgeqp3_(&ndl,&ndt,waa,&lda,jpvt,tau,work,&lwork,&info);
+
+  for (il=1; il<nn; il++) {
+    zzz=fabs(waa[il+lda*il]/waa[0]);
+    if(zzz<eps) break;
+  }
+
+  kRRQR=min(il,nn);
+  if(kRRQR<kmin) {
+    kRRQR=kmin;
+  } else if(kRRQR>kmax) {
+    kRRQR=kmax;
+  }
+
+  for (it=0; it<kRRQR; it++) {
+    for (il=0; il<it; il++) {
+      zab[(jpvt[il]-1)+ndt*it]=0.0;
+    }
+    for (il=it; il<ndt; il++) {
+      zab[(jpvt[il]-1)+ndt*it]=waa[it+lda*il];
+    }
+  }
+
+  // dorgqr_(&ndl,&nn,&nn,waa,&lda,tau,work,&lwork,&info);
+  // dorgqr_(&ndl,&nn,&kRRQR,waa,&lda,tau,work,&lwork,&info);
+  dorgqr_(&ndl,&kRRQR,&kRRQR,waa,&lda,tau,work,&lwork,&info);
+  for (it=0; it<kRRQR; it++) {
+    for (il=0; il<ndl; il++) {
+      zaa[il+ndl*it]=waa[il+lda*it];
+    }
+  }
+
+  free(work); free(waa); free(jpvt); free(tau);
+  return kRRQR;
+error:
+  exit(EXIT_FAILURE);
+}
+
+extern void dgesvd_(char*,char*,int*,int*,double*,int*,double*,double*,int*,double*,int*,double*,int*,int*);
+
+//***cHACApK_SVD
+int cHACApK_SVD(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pSVD_EPS)
+{
+  double *prow,*pcol;
+  int *lrow_msk,*lcol_msk;
+  double *w,*work;
+  double *u,*vt,*waa;
+  int kmin,krank,kSVD,k,lstop_aca,nn,lwork,lda,ldu,ldvt,il,it,ill,itt,info;
+  double znrm,zzz;
+  char jobu,jobvt;
+
+  kmin=param[64];
+  // printf("nstrtl=%12d nstrtt=%12d ndl=%12d ndt=%12d kmax=%12d\n",nstrtl,nstrtt,ndl,ndt,kmax);
+  krank=min(ndl,ndt);
+  znrm=znrmmat*sqrt((double)ndl*(double)ndt);
+  // allocate(lrow_msk(ndl),lcol_msk(ndt)); lrow_msk(:)=0; lcol_msk(:)=0; nrow_done=0; ncol_done=0
+  kSVD=0; k=1; lstop_aca=0;
+
+  nn=min(ndl,ndt);
+  //print*,'nn=',nn,' eps=',eps
+  lwork=10*nn; lda=ndl; ldu=ndl; ldvt=ndt;
+  //allocate(w(nn),work(lwork),u(ldu,nn),vt(ldvt,nn),waa(ndl,ndt),waa2(ndl,ndt))
+  w = (double *) calloc(nn,sizeof(double));
+  work = (double *) calloc(lwork,sizeof(double));
+  u = (double *) calloc(ldu*nn,sizeof(double));
+  vt = (double *) calloc(nn*ldvt,sizeof(double));
+  waa = (double *) calloc(ndl*ndt,sizeof(double));
+  if(w==NULL || work==NULL || u==NULL || vt==NULL || waa==NULL) {
+    fprintf(stderr, "Error: cHACApK_SVD: malloc w work u vt waa\n");
+    goto error;
+  }
+
+  for (il=0; il<ndl; il++) {
+    for (it=0; it<ndt; it++) {
+      ill=il+nstrtl; itt=it+nstrtt;
+      waa[il+ndl*it]=cHACApK_entry_ij(lod[ill],lod[itt],i_bemv);
+    }
+  }
+
+  // HACApK_SVD=kmax; zaa=waa; zab=0.0d0; do il=1,nn; zab(il,il)=1.0d0; enddo; return
+  //   waa2=waa
+
+  //call dgesvd ( 'A', 'A', ndl, ndt, waa, lda, w, u, ldu, vt, ldvt, work, lwork, info)
+  //call dgesvd ( 'S', 'S', ndl, ndt, waa, lda, w, u, ldu, vt, ldvt, work, lwork, info)
+  jobu = 'S'; jobvt = 'S';
+  dgesvd_(&jobu, &jobvt, &ndl, &ndt, waa, &lda, w, u, &ldu, vt, &nn, work, &lwork, &info);
+  // call HACApK_gesvd (waa,w,u,vt)
+
+  //    print*, 'info_dgesvd=',info
+  //    print*, 'eigenvalues_large=',w(1:10)
+  //    print*, 'eigenvalues_small=',w(nn-10:nn)
+  for (il=1; il<nn; il++) {
+    zzz=w[il]/w[0];
+    if(zzz<eps) {
+      //!        print*,'HACApK_SVD; rank_e4=',il-1,'/',nn
+      //        print*,'eigen_max=',w(1)
+      //        print*,'eigen_il=',w(il)
+      break;
+    }
+  }
+  //!    if(il==nn+1) then
+  //!      print*,'HACApK_SVD; rank_e4=',nn,'/',nn
+  //!    endif
+
+  kSVD=min(il,nn);
+  if(kSVD<kmin) {
+    kSVD=kmin;
+    //   print*,'HACApK_SVD; rank_e4 is changed to',kmin
+  } else if(kSVD>kmax) {
+    kSVD=kmax;
+    //   print*,'HACApK_SVD; rank_e4 is changed to',kmax
+  }
+
+  //za2=0.0; za1=0.0;
+  for (it=0; it<kSVD; it++) {
+    for (il=0; il<ndl; il++) {
+      zaa[il+ndl*it]=u[il+it*ndl]*w[it];
+    }
+    for (il=0; il<ndt; il++) {
+      zab[il+ndt*it]=vt[it+il*nn];
+    }
+  }
+
+  free(w); free(work); free(u); free(vt); free(waa);
+  return kSVD;
+error:
+  exit(EXIT_FAILURE);
+}
+
+//***cHACApK_calc_vec
+// ld==0: row direction, ld==1: column direction
+void cHACApK_calc_vec(
+  double *zaa,
+  double *zab,
+  int ndp,
+  int ndt,
+  int k,
+  int ip,
+  double *vec,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int *lmsk,
+  int ld)
+{
+  double *zz;
+  int ii,ill,itt,it,il;
+
+  for (ii=0; ii<ndp; ii++) {
+    if(lmsk[ii]==0) {
+      if(ld==0) {
+        ill=ip+nstrtl; itt=ii+nstrtt;
+      } else {
+        ill=ii+nstrtl; itt=ip+nstrtt;
+      }
+      vec[ii]=cHACApK_entry_ij(lod[ill],lod[itt],i_bemv);
+    }
+  }
+  if(k==0) return;
+  zz = (double *) calloc(k,sizeof(double));
+  if(zz == NULL) {
+#pragma omp critical
+    printf("sub cHACApK_calc_vec; zz allocation failed !\n");
+    exit(EXIT_FAILURE);
+  }
+  for (it=0; it<k; it++) zz[it]=zab[ip+ndt*it];
+  cHACApK_adotsub_dsm(vec,zaa,zz,ndp,k,ndp);
+  for (il=0; il<ndp; il++) {
+    if(lmsk[il]==1) vec[il]=0.0;
+  }
+  free(zz);
+}
+
+//***cHACApK_acaplus
+int cHACApK_acaplus(
+  double *zaa, // zaa(ndl,kmax)
+  double *zab, // zab(ndt,kmax)
+  double *param,
+  int ndl,
+  int ndt,
+  int nstrtl,
+  int nstrtt,
+  int *lod,
+  int i_bemv,
+  int kmax,
+  double eps,
+  double znrmmat,
+  double pACA_EPS)
+{
+  int *lrow_msk,*lcol_msk;
+  double *pa_ref,*pb_ref;
+  double *prow,*pcol;
+
+  const double za_ACA_EPS=1.0e-30;
+  double znrm,ACA_EPS,colnorm,rownorm,apxnorm,col_maxval,row_maxval,zinvmax,blknorm;
+  int kacaplus,ntries,ntries_row,ntries_col,k,j_ref,i_ref,lstop_aca,i,j,il,it;
+  // write(6,1000) 'nstrtl=',nstrtl,' nstrtt=',nstrtt,' ndl=',ndl,' ndt=',ndt
+  znrm=znrmmat*sqrt((double)ndl*(double)ndt);
+  if(param[61]==2 || param[61]==1) ACA_EPS=pACA_EPS;
+  if(param[61]==3) ACA_EPS=pACA_EPS*znrm;
+
+  kacaplus=0; ntries = max(ndl,ndt)+1; ntries_row = 6; ntries_col = 6;
+  lrow_msk = (int *) calloc(ndl,sizeof(int));
+  lcol_msk = (int *) calloc(ndt,sizeof(int));
+  if(lrow_msk==NULL || lcol_msk==NULL) {
+    fprintf(stderr, "Error: cHACApK_acaplus: malloc lrow_msk lcol_msk\n");
+    goto error;
+  }
+  k = 0;
+
+  j_ref=0; // arbitrary j_ref
+  pa_ref = (double *) calloc(ndl,sizeof(double));
+  if(pa_ref==NULL) {
+    fprintf(stderr, "Error: cHACApK_acaplus: malloc pa_ref\n");
+    goto error;
+  }
+
+  cHACApK_calc_vec(zaa,zab,ndl,ndt,k,j_ref,pa_ref,nstrtl,nstrtt,lod,i_bemv,lrow_msk,1);
+  //  print*,'pa_ref=',pa_ref
+  colnorm = cHACApK_unrm_d(ndl,pa_ref);
+
+  cHACApK_minabsvalloc_d(pa_ref,&rownorm,&i_ref,ndl); // determine i_ref:=argmin ||pa_ref(1:ndl)||
+  //    print*,'i_ref=',i_ref
+  pb_ref = (double *) calloc(ndt,sizeof(double));
+  if(pb_ref==NULL) {
+    fprintf(stderr, "Error: cHACApK_acaplus: malloc pb_ref\n");
+    goto error;
+  }
+  cHACApK_calc_vec(zab,zaa,ndt,ndl,k,i_ref,pb_ref,nstrtl,nstrtt,lod,i_bemv,lcol_msk,0);
+  //  print*,'pb_ref=',pb_ref
+  rownorm=cHACApK_unrm_d(ndt,pb_ref);
+
+  apxnorm = 0.0; lstop_aca = 0;
+
+  while((k<kmax) && (ntries_row>0 || ntries_col>0) && (ntries>0)) {
+    ntries=ntries-1;
+    pcol = zaa + ndl*k; // (k+1)th column of zaa
+    prow = zab + ndt*k; // (k+1)th column of zab
+    col_maxval = 0.0; cHACApK_maxabsvalloc_d(pa_ref,&col_maxval,&i,ndl);
+    row_maxval = 0.0; cHACApK_maxabsvalloc_d(pb_ref,&row_maxval,&j,ndt);
+
+    //    write(6,1000) 'i=',i,' i_ref=',i_ref,' j=',j,' j_ref=',j_ref
+
+    if(row_maxval>col_maxval) {
+      if(j!=j_ref) {
+        cHACApK_calc_vec(zaa,zab,ndl,ndt,k,j,pcol,nstrtl,nstrtt,lod,i_bemv,lrow_msk,1);
+      } else {
+        for (il=0; il<ndl; il++) pcol[il]=pa_ref[il];
+      }
+      cHACApK_maxabsvalloc_d(pcol,&col_maxval,&i,ndl);
+
+      if(col_maxval < ACA_EPS && k>=param[64]) {
+        lstop_aca = 1; 
+        //         print*,'2***************lstop_aca==1***********************2'
+      } else {
+        cHACApK_calc_vec(zab,zaa,ndt,ndl,k,i,prow,nstrtl,nstrtt,lod,i_bemv,lcol_msk,0);
+        if(fabs(pcol[i])>1.0e-20) {
+          zinvmax=1.0/pcol[i];
+        } else {
+          k=max(k-1,0); break;
+        }
+        //        if(isnan(zinvmax))then
+        //          print*,'1.0/pcol(i)=NaN',' k=',k
+        //          exit
+        //          stop
+        //        endif
+        for (il=0; il<ndl; il++) pcol[il]*=zinvmax;
+      }
+    } else {
+      if(i!=i_ref) {
+        cHACApK_calc_vec(zab,zaa,ndt,ndl,k,i,prow,nstrtl,nstrtt,lod,i_bemv,lcol_msk,0);
+      } else {
+        for (it=0; it<ndt; it++) prow[it]=pb_ref[it];  
+      }
+      cHACApK_maxabsvalloc_d(prow,&row_maxval,&j,ndt);
+
+      if(row_maxval < ACA_EPS && k>=param[64]) {
+        lstop_aca = 1;
+        //         print*,'3***************lstop_aca==1***********************3'
+      } else {
+        cHACApK_calc_vec(zaa,zab,ndl,ndt,k,j,pcol,nstrtl,nstrtt,lod,i_bemv,lrow_msk,1);
+        if(fabs(prow[j])>1.0e-20) {
+          zinvmax=1.0/prow[j];
+        } else {
+          k=max(k-1,0); break;
+        }
+        //        if(isnan(zinvmax))then
+        //          print*,'1.0/prow(j)=NaN',' k=',k
+        //          exit
+        //          stop
+        //        endif
+        for (it=0; it<ndt; it++) prow[it]*=zinvmax;
+      }
+    }
+    lrow_msk[i] = 1; lcol_msk[j] = 1;
+    //    write(6,1000) 'i=',i,' i_ref=',i_ref,' j=',j,' j_ref=',j_ref
+
+    if(i!=i_ref) {
+      zinvmax = -pcol[i_ref];
+      for (it=0; it<ndt; it++) pb_ref[it]+=prow[it]*zinvmax;
+      rownorm = cHACApK_unrm_d(ndt,pb_ref);
+    }
+    if(i==i_ref || rownorm<ACA_EPS) {
+      if(i==i_ref) ntries_row++;
+      if(ntries_row>0) {
+        rownorm = 0.0; i=i_ref;
+        //        print*,'lrow_msk',lrow_msk
+        while(i!=(i_ref+ndl-1)%ndl && rownorm<za_ACA_EPS && ntries_row>0) {
+          //          print*,'i=',i,' ii=',mod((i_ref+ndl-2),ndl)+1
+          if(lrow_msk[i]==0) {
+            //            write(6,1000) 'i=',i
+            cHACApK_calc_vec(zab,zaa,ndt,ndl,k+1,i,pb_ref,nstrtl,nstrtt,lod,i_bemv,lcol_msk,0);
+            rownorm = cHACApK_unrm_d(ndt,pb_ref);
+            if(rownorm<ACA_EPS) lrow_msk[i] = 1;
+            ntries_row--;
+          } else {
+            rownorm = 0.0;
+          }
+          i=(i+1)%ndl;
+        }
+        i_ref=(i+ndl-1)%ndl;
+      }
+    }
+    //    print*,'i_ref=',i_ref
+
+    if(j!=j_ref) {
+      zinvmax = -prow[j_ref];
+      for (il=0; il<ndl; il++) pa_ref[il]+=pcol[il]*zinvmax;
+      colnorm = cHACApK_unrm_d(ndl,pa_ref);
+    }
+    if(j==j_ref || colnorm<ACA_EPS) {
+      if(j==j_ref) ntries_col++;
+      if(ntries_col>0) {
+        colnorm = 0.0; j=j_ref;
+        //        print*,'lcol_msk',lcol_msk
+        while(j!=(j_ref+ndt-1)%ndt && colnorm<za_ACA_EPS && ntries_col>0) {
+          if(lcol_msk[j]==0) {
+            cHACApK_calc_vec(zaa,zab,ndl,ndt,k+1,j,pa_ref,nstrtl,nstrtt,lod,i_bemv,lrow_msk,1);
+            colnorm = cHACApK_unrm_d(ndl,pa_ref);
+            if(colnorm<ACA_EPS) lcol_msk[j]=1;
+            ntries_col--;
+          } else {
+            colnorm = 0.0;
+          }
+          j=(j+1)%ndt;
+        }
+        j_ref=(j+ndt-1)%ndt;
+      }
+    }
+
+    //    write(6,2000) 'colnorm=',colnorm,' rownorm=',rownorm
+    if(colnorm<ACA_EPS && rownorm<ACA_EPS && k>=param[64]) {
+      lstop_aca=1; k++;
+      //       print*,'1***************lstop_aca==1***********************1'
+    }
+
+    if(lstop_aca==0) {
+      blknorm = (cHACApK_unrm_d(ndl,pcol)*cHACApK_unrm_d(ndt,prow));
+      if(k == 0) {
+        if(param[61]==1) {
+          apxnorm = blknorm;
+        } else if(param[61]==2 || param[61]==3) {
+          apxnorm =znrm;
+        } else {
+#pragma omp critical
+          printf("ERROR!:: invalid param[61]=%lf\n",param[61]);
+          exit(EXIT_FAILURE);
+        }
+      } else {
+        if(blknorm < apxnorm * eps &&
+           rownorm < apxnorm * eps &&
+           colnorm < apxnorm * eps &&
+           k>=param[64]) lstop_aca = 1;
+      }
+    }
+    if(0) {
+#pragma omp critical
+      {
+        printf("pcol\n");
+        for (il=0; il<ndl; il++) printf("%lf\n",pcol[il]);
+        printf("prow\n");
+        for (it=0; it<ndt; it++) printf("%lf\n",prow[it]);
+      }
+    }
+    if(lstop_aca==1 && k>=param[64]) break;
+    k++;
+  }
+  //  if(k==kmax .or. ntries_row==0 .or. ntries_col==0 .or. ntries==0)then
+  //    k=k-1
+  //  endif
+
+  if(k<param[64]) {
+#pragma omp critical
+    {
+      printf("colnorm=%lf rownorm=%lf ACA_EPS=%lf\n",colnorm,rownorm,ACA_EPS);
+      printf("col_maxval=%lf, row_maxval=%lf\n",col_maxval,row_maxval);
+      printf("ntries_row=%d ntries_col=%d ntries=%d\n",ntries_row,ntries_col,ntries);
+      printf("k=%d\n",k);
+      //    k=k-1; if(k<1) stop
+      //    stop
+    }
+  }
+  free(lrow_msk); free(lcol_msk); free(pa_ref); free(pb_ref);
+  kacaplus=k;
+  //  print*,'HACApK_acaplus=',HACApK_acaplus
+  //  write(6,2000) 'blknorm=',blknorm/apxnorm,' colnorm=',colnorm/apxnorm,' rownorm=',rownorm/apxnorm
+  //  if(nstrtt==         113) stop
+  return kacaplus;
+error:
+  exit(EXIT_FAILURE);
+}
+
+//***cHACApK_fill_leafmtx_hyp
+void cHACApK_fill_leafmtx_hyp(
+  st_cHACApK_leafmtx *st_lf,
+  int i_bemv,
+  double *param,
+  double znrmmat,
+  int *lpmd,
+  int *lnmtx,
+  int *lodl, // [nd]
+  int *lodt, // [nd]
+  int nd,
+  int nlf,
+  int *lnps,
+  int *lnpe,
+  int *lthr) // [0:]
+{
+  // type(st_HACApK_leafmtxp) ::  st_leafmtxp
+  double *zab,*zaa;
+  int mpinr,mpilog,nrank,icomm,kparam;
+  int ith,nthr,ith1,nths,nthe,ierr,ip,ndl,ndt,ns,nstrtl,nstrtt,ltmtx,kt;
+  int il,it,ill,itt;
+  double eps,ACA_EPS;
+
+  mpinr=lpmd[3]; mpilog=lpmd[4]; nrank=lpmd[2]; icomm=lpmd[1];
+  eps=param[71]; ACA_EPS=param[72]*eps; kparam=param[63];
+#pragma omp parallel default(none) \
+  shared(st_lf,lodl,i_bemv,znrmmat,lodt,lthr,param,mpilog,mpinr)       \
+  private(zab,zaa,kt,ith,ith1,nths,nthr,nthe,ltmtx,ierr,ndl,ndt,ns,nstrtl,nstrtt,ip,il,it,ill,itt) \
+  firstprivate(eps, ACA_EPS, kparam)
+  {
+    ith = omp_get_thread_num();
+    nthr = omp_get_num_threads();
+    if(nthr == 0) printf("%d %d\n",nthr,ith);
+#pragma omp barrier
+    ith1 = ith+1;
+    nths=lthr[ith]; nthe=lthr[ith1]-1;
+    if(param[1]>1) {
+#pragma omp critical
+      if(mpilog>0) printf("sub HACApK_fill_leafmtx_hyp; nths=%12d; nthe=%12d\n",nths,nthe);
+    }
+    ierr=0;
+    for (ip=nths; ip<=nthe; ip++) {
+      ndl   =st_lf[ip]->ndl   ; ndt   =st_lf[ip]->ndt   ; ns=ndl*ndt;
+      nstrtl=st_lf[ip]->nstrtl; nstrtt=st_lf[ip]->nstrtt; ltmtx=st_lf[ip]->ltmtx;
+      // write(mpilog,1000) 'sub HACApK_fill_leafmtx_hyp; ip=',ip,'; ndl=',ndl,'; ndt=',ndt,'; mpinr',mpinr
+
+      if(ltmtx==1) {
+        zab = (double *) calloc(ndt*kparam,sizeof(double *));
+        zaa = (double *) calloc(ndl*kparam,sizeof(double *));
+        if(zab == NULL || zaa == NULL) {
+#pragma omp critical
+          {
+            printf("sub cHACApK_fill_leafmtx_hyp; zab,zaa Memory allocation failed !\n");
+            printf("ip=%d ndt=%d ndl=%d kparam=%d\n",ip,ndt,ndl,kparam);
+          }
+          exit(10);
+        }
+        if(param[60]==1) {
+          // kt=HACApK_aca(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lodl,st_bemv,kparam,eps,znrmmat,ACA_EPS)
+        } else if(param[60]==2) {
+          kt=cHACApK_acaplus(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lodl,i_bemv,kparam,eps,znrmmat,ACA_EPS);
+        } else if(param[60]==3) {
+          kt=cHACApK_SVD(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lodl,i_bemv,kparam,eps,znrmmat,ACA_EPS);
+        } else if(param[60]==4) {
+          // kt=HACApK_rSVD(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lodl,st_bemv,kparam,eps,znrmmat,ACA_EPS)
+        } else if(param[60]==5) {
+          kt=cHACApK_RRQR(zaa,zab,param,ndl,ndt,nstrtl,nstrtt,lodl,i_bemv,kparam,eps,znrmmat,ACA_EPS);
+        } else {
+          printf("Only ACA and ACA+ is available! Set param[60]=1-5.\n");
+          exit(EXIT_FAILURE);
+        }
+        if(kt>kparam-1) {
+          //!!$omp critical
+          //        write(*,1000) 'WARNING: Insufficient k: kt=',kt,', kparam=',kparam, &
+          //                      ' nstrtl=',nstrtl,' nstrtt=',nstrtt,' ndl=',ndl,' ndt=',ndt
+          //!!$omp end critical
+        }
+        st_lf[ip]->kt=kt;
+        st_lf[ip]->a1 = (double *) calloc(ndt*kt,sizeof(double));
+        st_lf[ip]->a2 = (double *) calloc(ndl*kt,sizeof(double));
+        if(st_lf[ip]->a1 == NULL || st_lf[ip]->a2 == NULL) {
+#pragma omp critical
+          {
+            printf("sub cHACApK_fill_leafmtx_hyp; a1,a2 Memory allocation failed !\n");
+            printf("ip=%d ndt=%d ndl=%d kt=%d\n",ip,ndt,ndl,kt);
+          }
+          exit(20);
+        }
+        for (il=0; il<ndt*kt; il++) st_lf[ip]->a1[il]=zab[il];
+        for (il=0; il<ndl*kt; il++) st_lf[ip]->a2[il]=zaa[il];
+        free(zab); free(zaa);
+      } else if(ltmtx==2) {
+        st_lf[ip]->a1 = (double *) calloc(ndt*ndl,sizeof(double));
+        if(st_lf[ip]->a1 == NULL) {
+#pragma omp critical
+          {
+            printf("sub cHACApK_fill_leafmtx_hyp; a1 Memory allocation failed !\n");
+            printf("ip=%d ndt=%d ndl=%d\n",ip,ndt,ndl);
+          }
+          exit(30);
+        }
+        for (il=0; il<ndl; il++) {
+          ill=il+nstrtl;
+          for (it=0; it<ndt; it++) {
+            itt=it+nstrtt;
+            st_lf[ip]->a1[it+ndt*il]=cHACApK_entry_ij(lodl[ill],lodt[itt],i_bemv);
+          }
+        }
+      } else {
+#pragma omp critical
+        printf("HACApK_fill_leafmtx_hyp; ip=%d ltmtx=%d\n",ip,ltmtx);
+      }
+    }
+  }
+  for (ip=1; ip<=nlf; ip++) {
+    ndl=st_lf[ip]->ndl; nstrtl=st_lf[ip]->nstrtl;
+    if(nstrtl < *lnps) *lnps=nstrtl;
+    if(nstrtl+ndl > *lnpe) *lnpe=nstrtl+ndl;
+  }
 }
 
 //***cHACApK_count_blrnmb
@@ -519,8 +1172,16 @@ void cHACApK_count_blrleaf(
     }
     st_leafmtx[ibl]->nlf=iblnlf;
     st_leafmtx[ibl]->st_lf = (st_cHACApK_leafmtx *) malloc(sizeof(st_cHACApK_leafmtx)*(iblnlf+1));
+    if(st_leafmtx[ibl]->st_lf==NULL) {
+      fprintf(stderr, "Error: cHACApK_count_blrleaf: malloc st_leafmtx[%d]->st_lf\n",ibl);
+      goto error;
+    }
     for(il=1; il<=iblnlf; il++) {
       st_leafmtx[ibl]->st_lf[il] = (st_cHACApK_leafmtx) calloc(1,sizeof(struct st_cHACApK_leafmtx));
+      if(st_leafmtx[ibl]->st_lf[il]==NULL) {
+        fprintf(stderr, "Error: cHACApK_count_blrleaf: malloc st_leafmtx[%d]->st_lf[il]\n",ibl,il);
+        goto error;
+      }
     }
     *p_ndpth=ndpth;
     return;
@@ -547,6 +1208,9 @@ void cHACApK_count_blrleaf(
     }
   }
   *p_ndpth=ndpth;
+  return;
+error:
+  exit(EXIT_FAILURE);
 }
 
 //***cHACApK_generate_blrleaf
@@ -893,6 +1557,10 @@ st_cHACApK_cluster cHACApK_generate_cluster(
   nmbr=*p_nmbr;
 
   st_clt = (st_cHACApK_cluster) calloc(1,sizeof(struct st_cHACApK_cluster));
+  if(st_clt==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_cluster: malloc st_clt\n");
+    goto error;
+  }
   st_clt->bmin = NULL;
   st_clt->bmax = NULL;
 
@@ -900,9 +1568,15 @@ st_cHACApK_cluster cHACApK_generate_cluster(
   st_clt->nstrt=nstrt; st_clt->nsize=nsize; st_clt->ndim=ndim; st_clt->nnson=nson;
   st_clt->nmbr=nmbr; st_clt->ndpth=ndpth;
   st_clt->pc_sons = (st_cHACApK_cluster *) malloc(sizeof(st_cHACApK_cluster)*(nson+1));
+  if(st_clt->pc_sons==NULL) {
+    fprintf(stderr, "Error: cHACApK_generate_cluster: malloc st_clt->pc_sons\n");
+    goto error;
+  }
 
   *p_nmbr=nmbr;
   return st_clt;
+error:
+  exit(EXIT_FAILURE);
 }
 
 //***cHACApK_bndbox
@@ -923,6 +1597,10 @@ void cHACApK_bndbox(
   ndim=st_clt->ndim;
   st_clt->bmin = (double *) malloc(sizeof(double)*(ndim+1));
   st_clt->bmax = (double *) malloc(sizeof(double)*(ndim+1));
+  if(st_clt->bmin==NULL || st_clt->bmax==NULL) {
+    fprintf(stderr, "Error: cHACApK_bndbox: malloc st_clt->bmin st_clt->bmax\n");
+    goto error;
+  }
   if(st_clt->nnson == 0) {
     for(id=1; id<=ndim; id++) {
       st_clt->bmin[id]=zgmid_t[id][lod[1]]; st_clt->bmax[id]=zgmid_t[id][lod[1]];
@@ -950,6 +1628,9 @@ void cHACApK_bndbox(
     zwdth=zwdth+(st_clt->bmax[id]-st_clt->bmin[id])*(st_clt->bmax[id]-st_clt->bmin[id]);
   }
   st_clt->zwdth=sqrt(zwdth);
+  return;
+error:
+  exit(EXIT_FAILURE);
 }
 
 //***cHACApK_generate_cbitree
@@ -989,6 +1670,10 @@ void cHACApK_generate_cbitree(
   } else {
     zlmin = (double *) malloc(sizeof(double)*(ndim+1));
     zlmax = (double *) malloc(sizeof(double)*(ndim+1));
+    if(zlmin==NULL || zlmax==NULL) {
+      fprintf(stderr, "Error: cHACApK_generate_cbitree: malloc zlmin zlmax\n");
+      goto error;
+    }
     for(id=1; id<=ndim; id++) {
       zlmin[id]=zgmid_t[id][lod[1]]; zlmax[id]=zlmin[id];
       for(il=2; il<=nd; il++) {
@@ -1034,4 +1719,7 @@ void cHACApK_generate_cbitree(
   *p_st_clt=st_clt;
   *p_ndpth=ndpth;
   *p_nclst=nclst;
+  return;
+error:
+  exit(EXIT_FAILURE);
 }
