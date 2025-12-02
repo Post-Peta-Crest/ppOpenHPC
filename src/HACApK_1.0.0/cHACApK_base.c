@@ -33,7 +33,8 @@
 !C  added functions related to Block clustering to HACApK1.2.0 on May 2017
 !C  translated to C language by Akihiro Ida and Kazuya Goto
 !C**************************************************************************
-*/#include "cHACApK_base.h"
+*/
+#include "cHACApK_base.h"
 #include "cHACApK_calc_entry_ij.h"
 #include "cHACApK_lib.h"
 #include <stdio.h>
