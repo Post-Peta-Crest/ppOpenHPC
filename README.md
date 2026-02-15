@@ -25,8 +25,6 @@ Introduction:
   Applications on Post-Peta-Scale Supercomputers with Automatic Tuning
   (AT)" project.
 
-  See also the project web site:
-    http://ppopenhpc.cc.u-tokyo.ac.jp/
 ========================================================================
 
 How to try our software anyway:
