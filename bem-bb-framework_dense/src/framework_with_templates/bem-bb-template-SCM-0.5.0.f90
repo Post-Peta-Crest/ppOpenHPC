@@ -87,11 +87,24 @@ module user_func
          d = l * yi - m * xi
          ti = l * xi + m * yi;  tj = l * xj ! (yj = 0)
 
-         !            theta = sign(1d0, yi) * acos( xi / sqrt( xi**2 + yi**2 ) ) ! (xj > 0, yj = 0)
-         theta = atan2(yi, xi)
-         omega = theta - atan2( r(i) * d, zpabs * ti ) + atan2( r(j) * d, zpabs * tj )
-         q = log( (r(j) + tj) / ( r(i) + ti ) )
-         g = d * q - zpabs * omega 
+         if (d == 0d0) then
+            ! Degenerate edge: the foot of the observation point lies exactly on
+            ! this edge's supporting line (d = in-plane perpendicular distance = 0).
+            ! The edge contribution is a removable zero -- both the in-plane term
+            ! d*q and the solid-angle term omega carry a factor d, so g -> 0 here.
+            ! Guarding is essential: with d a signed zero, atan2(+/-0, zpabs*ti)
+            ! returns +/-pi when ti<0, leaking a spurious -/+2*pi into omega and
+            ! hence a bogus +/-2*pi*|zp| into g. On regular grids exact collinearity
+            ! occurs (rational vertex coordinates), producing O(1e10) poisoned
+            ! entries. Setting g=0 restores the correct removable-zero value.
+            g = 0d0
+         else
+            !            theta = sign(1d0, yi) * acos( xi / sqrt( xi**2 + yi**2 ) ) ! (xj > 0, yj = 0)
+            theta = atan2(yi, xi)
+            omega = theta - atan2( r(i) * d, zpabs * ti ) + atan2( r(j) * d, zpabs * tj )
+            q = log( (r(j) + tj) / ( r(i) + ti ) )
+            g = d * q - zpabs * omega
+         endif
          face_integral = face_integral + g
       enddo
 
